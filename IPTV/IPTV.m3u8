@@ -3,6 +3,56 @@
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="Помощь проекту! Юмани", 4100119260753027 Юмани
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Легендарное HD" tvg-name="5:KBC-Легендарное HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/b1da24ab87e292bf9b0c592b9c4cf54b.png" catchup="shift" catchup-days="0", KBC-Легендарное
+http://str6.oxtve.live:8080/KBC_legend/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Кошмарное HD" tvg-name="5:KBC-Кошмарное HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/d0813e11be076db2cf92580db054e9a5.png" catchup="shift" catchup-days="0", KBC-Кошмарное
+http://str6.oxtve.live:8080/KBC_koshmarnoe/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Видак HD" tvg-name="5:KBC-Видак HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/3db52808dd6f076ad24b390f3bb9efbb.png" catchup="shift" catchup-days="0", KBC-Видак
+http://str6.oxtve.live:8080/KBC_vidac/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-ДрамаTic HD" tvg-name="5:KBC-ДрамаTic HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-dramatic.png" catchup="shift" catchup-days="0", KBC-Драма Tic
+http://str6.oxtve.live:8080/KBC_dramatic/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Союзмультзал" tvg-name="5:KBC-Союзмультзал" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/1985c87828c2e220000ae0d7a09ea7ce.png" catchup="shift" catchup-days="0", KBC-Союзмультзал
+http://str6.oxtve.live:8080/KBC_soyuzmultzal/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC +100500" tvg-name="5:KBC +100500" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-100500.png" catchup="shift" catchup-days="0", KBC-+100500
+http://str6.oxtve.live:8080/KBC_plus100500/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Elite comedys HD" tvg-name="5:KBC-Elite comedys HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/17d8da1d645f428d02549f966fadca9b.png" catchup="shift" catchup-days="0", KBC-Elite Comedy's
+http://str6.oxtve.live:8080/KBC_elitecomedys/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Russian Комедия HD" tvg-name="5:KBC-Russian Комедия HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/KBC-Russian Комедия.png" catchup="shift" catchup-days="0", KBC-Russian Комедия
+http://str6.oxtve.live:8080/KBC_Russiancomedy/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Family Animation HD" tvg-name="5:KBC-Family Animation HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/c891bed2253cb86d821a173a92a4f725.png" catchup="shift" catchup-days="0", KBC-Family Animation
+http://str6.oxtve.live:8080/KBC_FamilyAnimation/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-В.О.В. HD" tvg-name="5:KBC-В.О.В. HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/177af782e25a68da92ef94c1fea2f0b0.png" catchup="shift" catchup-days="0", KBC-В.О.В.
+http://str6.oxtve.live:8080/KBC_vov/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Страна СССР HD" tvg-name="5:KBC-Страна СССР HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-sssr.png" catchup="shift" catchup-days="0", KBC-Страна СССР
+http://str6.oxtve.live:8080/KBC_stranaUSSR/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Шпионское HD" tvg-name="5:KBC-Шпионское HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/4a3f1fd1dec84721e70569b21592273c.png" catchup="shift" catchup-days="0", KBC-Шпионское
+http://str6.oxtve.live:8080/KBC_shpionskoe/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Comics HD" tvg-name="5:KBC-Comics HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-comics.png" catchup="shift" catchup-days="0", KBC-Comics
+http://str6.oxtve.live:8080/KBC_comics/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Аниме HD" tvg-name="5:KBC-Аниме HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-anime.png" catchup="shift" catchup-days="0", KBC-Аниме
+http://str6.oxtve.live:8080/KBC_anime/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-History HD" tvg-name="5:KBC-History HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/cdc6b5f1dbdfbb758ce8f8a1219be621.png" catchup="shift" catchup-days="0", KBC-History
+http://str6.oxtve.live:8080/KBC_History/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Fantastic HD" tvg-name="5:KBC-Fantastic HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/811551bc96ae98082c482b68477642f8.png" catchup="shift" catchup-days="0", KBC-Fantastic
+http://str6.oxtve.live:8080/KBC_fantastic/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Newfilm HD" tvg-name="5:KBC-Newfilm HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/KBC-Newfilm.png" catchup="shift" catchup-days="0", KBC-New Film
+http://str6.oxtve.live:8080/KBC_Newfilm/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Гоблин HD" tvg-name="5:KBC-Гоблин HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-goblin.png" catchup="shift" catchup-days="0", KBC-Гоблин
+http://str6.oxtve.live:8080/KBC_goblin/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Вестерн HD" tvg-name="5:KBC-Вестерн HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/1c5b27b68e147deb4548f7f19ecf91a0.png" catchup="shift" catchup-days="0", KBC-Вестерн
+http://str6.oxtve.live:8080/KBC_western/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-WAR HD" tvg-name="5:KBC-WAR HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-war.png" catchup="shift" catchup-days="0", KBC-WAR
+http://str6.oxtve.live:8080/KBC_war/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-ГАЙ Ritchie and Tarantino HD" tvg-name="5:KBC-ГАЙ Ritchie and Tarantino HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-ritchie-tarantino.png" catchup="shift" catchup-days="0", KBC-Гай Ritchie & Tarantino
+http://str6.oxtve.live:8080/KBC_guyrichieandtarantino/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Animals HD" tvg-name="5:KBC-Animals HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-animals.png" catchup="shift" catchup-days="0", KBC-Animals
+http://str6.oxtve.live:8080/KBC_animals/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-MusKino HD" tvg-name="5:KBC-MusKino HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-muskino.png" catchup="shift" catchup-days="0", KBC-MusKino
+http://str6.oxtve.live:8080/KBC_muskino/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-СпортМикс HD" tvg-name="5:KBC-СпортМикс HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-sportmiks.png" catchup="shift" catchup-days="0", KBC-СпортМикс
+http://str6.oxtve.live:8080/KBC_sportmix/mpegts?token=Evgeshka_BLR
+#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Наш Rock HD" tvg-name="5:KBC-Наш Rock HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-nash-rock.png" catchup="shift" catchup-days="0", KBC-НАШ ROCK
+http://str6.oxtve.live:8080/KBC_nashrock/mpegts?token=Evgeshka_BLR
 #EXTINF:-1 group-title="Эфирные" tvg-id="pervy" tvg-logo="http://i120.fastpic.org/big/2022/0731/5a/975757b7227dd15519c6a0e0d5f0065a.png" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", Первый канал
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
 http://zabava-htlive.cdn.ngenix.net/hls/CH_1TVSD/variant.m3u8
@@ -2542,53 +2592,3 @@ http://str6.oxtve.live:8080/Eroluxe_asian/mpegts?token=Evgeshka_BLR
 http://str6.oxtve.live:8080/Eroluxe_4kuhd/mpegts?token=Evgeshka_BLR
 #EXTINF:-1 group-title="18+" tvg-id="10:EroLuxe4k60fps-1" tvg-name="10:EroLuxe4k60fps-1" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/4k60fps.png" catchup="shift" catchup-days="0", Eroluxe VIP 4K 60FPS
 http://str6.oxtve.live:8080/Eroluxe_vip4k60fps/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Легендарное HD" tvg-name="5:KBC-Легендарное HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/b1da24ab87e292bf9b0c592b9c4cf54b.png" catchup="shift" catchup-days="0", KBC-Легендарное
-http://str6.oxtve.live:8080/KBC_legend/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Кошмарное HD" tvg-name="5:KBC-Кошмарное HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/d0813e11be076db2cf92580db054e9a5.png" catchup="shift" catchup-days="0", KBC-Кошмарное
-http://str6.oxtve.live:8080/KBC_koshmarnoe/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Видак HD" tvg-name="5:KBC-Видак HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/3db52808dd6f076ad24b390f3bb9efbb.png" catchup="shift" catchup-days="0", KBC-Видак
-http://str6.oxtve.live:8080/KBC_vidac/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-ДрамаTic HD" tvg-name="5:KBC-ДрамаTic HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-dramatic.png" catchup="shift" catchup-days="0", KBC-Драма Tic
-http://str6.oxtve.live:8080/KBC_dramatic/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Союзмультзал" tvg-name="5:KBC-Союзмультзал" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/1985c87828c2e220000ae0d7a09ea7ce.png" catchup="shift" catchup-days="0", KBC-Союзмультзал
-http://str6.oxtve.live:8080/KBC_soyuzmultzal/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC +100500" tvg-name="5:KBC +100500" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-100500.png" catchup="shift" catchup-days="0", KBC-+100500
-http://str6.oxtve.live:8080/KBC_plus100500/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Elite comedys HD" tvg-name="5:KBC-Elite comedys HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/17d8da1d645f428d02549f966fadca9b.png" catchup="shift" catchup-days="0", KBC-Elite Comedy's
-http://str6.oxtve.live:8080/KBC_elitecomedys/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Russian Комедия HD" tvg-name="5:KBC-Russian Комедия HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/KBC-Russian Комедия.png" catchup="shift" catchup-days="0", KBC-Russian Комедия
-http://str6.oxtve.live:8080/KBC_Russiancomedy/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Family Animation HD" tvg-name="5:KBC-Family Animation HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/c891bed2253cb86d821a173a92a4f725.png" catchup="shift" catchup-days="0", KBC-Family Animation
-http://str6.oxtve.live:8080/KBC_FamilyAnimation/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-В.О.В. HD" tvg-name="5:KBC-В.О.В. HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/177af782e25a68da92ef94c1fea2f0b0.png" catchup="shift" catchup-days="0", KBC-В.О.В.
-http://str6.oxtve.live:8080/KBC_vov/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Страна СССР HD" tvg-name="5:KBC-Страна СССР HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-sssr.png" catchup="shift" catchup-days="0", KBC-Страна СССР
-http://str6.oxtve.live:8080/KBC_stranaUSSR/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Шпионское HD" tvg-name="5:KBC-Шпионское HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/4a3f1fd1dec84721e70569b21592273c.png" catchup="shift" catchup-days="0", KBC-Шпионское
-http://str6.oxtve.live:8080/KBC_shpionskoe/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Comics HD" tvg-name="5:KBC-Comics HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-comics.png" catchup="shift" catchup-days="0", KBC-Comics
-http://str6.oxtve.live:8080/KBC_comics/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Аниме HD" tvg-name="5:KBC-Аниме HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-anime.png" catchup="shift" catchup-days="0", KBC-Аниме
-http://str6.oxtve.live:8080/KBC_anime/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-History HD" tvg-name="5:KBC-History HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/cdc6b5f1dbdfbb758ce8f8a1219be621.png" catchup="shift" catchup-days="0", KBC-History
-http://str6.oxtve.live:8080/KBC_History/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Fantastic HD" tvg-name="5:KBC-Fantastic HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/811551bc96ae98082c482b68477642f8.png" catchup="shift" catchup-days="0", KBC-Fantastic
-http://str6.oxtve.live:8080/KBC_fantastic/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Newfilm HD" tvg-name="5:KBC-Newfilm HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/KBC-Newfilm.png" catchup="shift" catchup-days="0", KBC-New Film
-http://str6.oxtve.live:8080/KBC_Newfilm/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Гоблин HD" tvg-name="5:KBC-Гоблин HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-goblin.png" catchup="shift" catchup-days="0", KBC-Гоблин
-http://str6.oxtve.live:8080/KBC_goblin/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Вестерн HD" tvg-name="5:KBC-Вестерн HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/1c5b27b68e147deb4548f7f19ecf91a0.png" catchup="shift" catchup-days="0", KBC-Вестерн
-http://str6.oxtve.live:8080/KBC_western/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-WAR HD" tvg-name="5:KBC-WAR HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-war.png" catchup="shift" catchup-days="0", KBC-WAR
-http://str6.oxtve.live:8080/KBC_war/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-ГАЙ Ritchie and Tarantino HD" tvg-name="5:KBC-ГАЙ Ritchie and Tarantino HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-ritchie-tarantino.png" catchup="shift" catchup-days="0", KBC-Гай Ritchie & Tarantino
-http://str6.oxtve.live:8080/KBC_guyrichieandtarantino/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Animals HD" tvg-name="5:KBC-Animals HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-animals.png" catchup="shift" catchup-days="0", KBC-Animals
-http://str6.oxtve.live:8080/KBC_animals/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-MusKino HD" tvg-name="5:KBC-MusKino HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-muskino.png" catchup="shift" catchup-days="0", KBC-MusKino
-http://str6.oxtve.live:8080/KBC_muskino/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-СпортМикс HD" tvg-name="5:KBC-СпортМикс HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-sportmiks.png" catchup="shift" catchup-days="0", KBC-СпортМикс
-http://str6.oxtve.live:8080/KBC_sportmix/mpegts?token=Evgeshka_BLR
-#EXTINF:-1 group-title="KBC" tvg-id="5:KBC-Наш Rock HD" tvg-name="5:KBC-Наш Rock HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/kbc-nash-rock.png" catchup="shift" catchup-days="0", KBC-НАШ ROCK
-http://str6.oxtve.live:8080/KBC_nashrock/mpegts?token=Evgeshka_BLR
