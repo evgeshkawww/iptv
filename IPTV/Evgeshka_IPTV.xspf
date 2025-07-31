@@ -3,6 +3,12 @@
 	<title>Playlist</title>
 	<trackList>
 		<track>
+			<title>Поддержи проект!</title>
+			<image/>
+			<album>Обновлено 31.07.25</album>
+			<location>https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4</location>
+		</track>
+		<track>
 			<title>Помощь проекту</title>
 			<image/>
 			<album>Помощь проекту! Юмани</album>
