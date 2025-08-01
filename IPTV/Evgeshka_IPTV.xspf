@@ -5,11 +5,17 @@
 		<track>
 			<title>Поддержи проект!</title>
 			<image/>
-			<album>Обновлено 31.07.25</album>
+			<album>Обновлено 1.08.25</album>
 			<location>https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4</location>
 		</track>
 		<track>
-			<title>Помощь проекту 4100119260753027</title>
+			<title>Помощь проекту</title>
+			<image/>
+			<album>Помощь проекту! Юмани</album>
+			<location>https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4</location>
+		</track>
+		<track>
+			<title>4100119260753027 Юмани</title>
 			<image/>
 			<album>Помощь проекту! Юмани</album>
 			<location>https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4</location>
@@ -865,12 +871,6 @@
 			<image/>
 			<album>Спортивные</album>
 			<location>http://176.62.72.48:8001/play/a035/index.m3u8</location>
-		</track>
-		<track>
-			<title>UzSport</title>
-			<image/>
-			<album>Спортивные</album>
-			<location>https://vs1759.vcdn.biz/519f03ad03fe54e0d772b98cf1be2087_megogo/live/hls/b/4000/u_sid/0/o/140085841/rsid/e31ac304-6b51-4858-8220-2426f7ba0679/u_uid/0/u_vod/0/u_device/cms_webandroid/u_devicekey/_site_mobile/lip/213.230.87.109*asn/u_srvc/83576/u_did/web_A3X9Ki7uk5l71nHQLj1IQyMVwDVRnQLz/type.live/chunklist-sid8417518138264452615-b4000000-a72531.m3u8</location>
 		</track>
 		<track>
 			<title>TyC Sports [AR]</title>
@@ -2643,12 +2643,6 @@
 			<location>http://45.159.74.22/Fox/mono.m3u8</location>
 		</track>
 		<track>
-			<title>Fox Life HD</title>
-			<image/>
-			<album>Кино и сериалы</album>
-			<location>http://188.237.47.212:6008</location>
-		</track>
-		<track>
 			<title>FlixSnip</title>
 			<image/>
 			<album>Кино и сериалы</album>
@@ -4351,12 +4345,6 @@
 			<image/>
 			<album>Музыкальные</album>
 			<location>https://stream-msk-10.ott.tricolor.tv/dtv/id901_MSKSG-PVR-1--Music_Box_GOLD/04/plst.m3u8?drmreq=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDI3NzE4NywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzUzNjcyMzg3LCJzZXNzaW9uX2lkIjoiYjQ1ODgxYmFkZTYzYzYzMDZmNzQxYjBmNzhhMDAyYWIiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.SRlFzRqXuoSDebs_khsLHrsvfnG3aKOkZ4pS6cLWijo</location>
-		</track>
-		<track>
-			<title>ТНТ Music HD</title>
-			<image/>
-			<album>Музыкальные</album>
-			<location>http://tntmsmotr.mediacdn.ru/cdn/smotr/playlist_hdhigh.m3u8</location>
 		</track>
 		<track>
 			<title>O!2</title>
