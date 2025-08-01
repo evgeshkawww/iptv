@@ -1,10 +1,6 @@
 ﻿#EXTM3U
 #EXTINF:-1 group-title="Обновлено 1.08.25", Поддержи проект!
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
-#EXTINF:-1 group-title="Помощь проекту! Юмани", Помощь проекту
-https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
-#EXTINF:-1 group-title="Помощь проекту! Юмани", 4100119260753027 Юмани
-https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="ОБЩЕСТВЕННЫЕ", 11 Экспресс
 acestream://36948509df3692d202bea2883610eee89f1f6798
 #EXTINF:-1 group-title="ОБЩЕСТВЕННЫЕ", 12 канал HD
