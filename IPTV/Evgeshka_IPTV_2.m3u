@@ -807,11 +807,11 @@ https://autopilot.catcast.tv/content/47689/index.m3u8
 http://kino-1.catcast.tv/content/38617/index.m3u8
 #EXTINF:-1 group-title="KINOZAL", Нове тв
 https://novoe.top/nove_tv.m3u8.jpg?m3u8
-#EXTINF:-1 group-title="KINOZAL" tvg-name="Про Любовь HD" catchup="flussonic" catchup-days="3", Про Любовь HD
+#EXTINF:-1 group-title="KINOZAL", Про Любовь HD
 http://vod.stb.tvime.ru/Pro_Lubov_HD/video.m3u8?token=Evgeshka
-#EXTINF:-1 group-title="KINOZAL" tvg-name="Кинозал Деревяшки ТВ" catchup="flussonic" catchup-days="3", Кинозал Деревяшки ТВ
+#EXTINF:-1 group-title="KINOZAL", Кинозал Деревяшки ТВ
 http://vod.stb.tvime.ru/Derev/video.m3u8?token=Evgeshka
-#EXTINF:-1 group-title="KINOZAL" tvg-name="Fox HD" catchup="flussonic" catchup-days="3", Fox HD
+#EXTINF:-1 group-title="KINOZAL", Fox HD
 http://vod.stb.tvime.ru/Fox_HD/video.m3u8?token=Evgeshka
 #EXTINF:-1 group-title="KINOZAL", FoX
 http://45.159.74.22/Fox/mono.m3u8
@@ -2019,13 +2019,13 @@ http://media.finest.tv/hls/live.m3u8
 https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_1660.m3u8
 #EXTINF:-1 group-title="Турция", MC EU TV
 https://rrr.sz.xlcdn.com/?account=mceutv&file=mc2&type=live&service=wowza&protocol=https&output=playlist.m3u8
-#EXTINF:-1 group-title="ПОЗНАВАТЕЛЬНЫЕ" tvg-name="National Geographic HD" catchup="flussonic" catchup-days="3", National Geographic HD
+#EXTINF:-1 group-title="ПОЗНАВАТЕЛЬНЫЕ", National Geographic HD
 http://vod2.stb.tvime.ru/National_Geographic_HD/video.m3u8?token=Evgeshka
-#EXTINF:-1 group-title="ПОЗНАВАТЕЛЬНЫЕ" tvg-name="Discovery HD" catchup="flussonic" catchup-days="3", Discovery HD
+#EXTINF:-1 group-title="ПОЗНАВАТЕЛЬНЫЕ", Discovery HD
 http://vod2.stb.tvime.ru/Discovery_HD/video.m3u8?token=Evgeshka
-#EXTINF:-1 group-title="ПОЗНАВАТЕЛЬНЫЕ" tvg-name="Nat Geo Wild HD" catchup="flussonic" catchup-days="3", Nat Geo Wild HD
+#EXTINF:-1 group-title="ПОЗНАВАТЕЛЬНЫЕ", Nat Geo Wild HD
 http://vod2.stb.tvime.ru/Nat_Geo_Wild_HD/video.m3u8?token=Evgeshka
-#EXTINF:-1 group-title="ПОЗНАВАТЕЛЬНЫЕ" tvg-name="Investigation Discovery HD" catchup="flussonic" catchup-days="3", Investigation Discovery HD
+#EXTINF:-1 group-title="ПОЗНАВАТЕЛЬНЫЕ", Investigation Discovery HD
 http://vod.stb.tvime.ru/Investigation_Discovery_HD_CEE/video.m3u8?token=Evgeshka
 #EXTINF:-1 group-title="ПОЗНАВАТЕЛЬНЫЕ", Рыбалка
 http://iptv.prosto.tv:7000/ch344/video.m3u8
@@ -2163,15 +2163,15 @@ http://185.26.157.3:8080/live/tlc/mono.m3u8
 http://185.26.157.3:8080/live/teleputeshestviya/mono.m3u8
 #EXTINF:-1 group-title="ПОЗНАВАТЕЛЬНЫЕ", Motorvision TV
 https://stream.ads.ottera.tv/playlist.m3u8?network_id=535
-#EXTINF:-1 group-title="SPORT" tvg-name="Матч! Планета" catchup="flussonic" catchup-days="3", Матч! Планета
+#EXTINF:-1 group-title="SPORT", Матч! Планета
 http://vod2.stb.tvime.ru/MatchPlanetaHD/video.m3u8?token=Evgeshka
-#EXTINF:-1 group-title="SPORT" tvg-name="Евроспорт 1" catchup="flussonic" catchup-days="3", Евроспорт 1
+#EXTINF:-1 group-title="SPORT", Евроспорт 1
 http://vod2.stb.tvime.ru/evrosport_1/video.m3u8?token=Evgeshka
-#EXTINF:-1 group-title="SPORT" tvg-name="SetantaSports1 HD" catchup="flussonic" catchup-days="3", SetantaSports1 HD
+#EXTINF:-1 group-title="SPORT", SetantaSports1 HD
 http://vod2.stb.tvime.ru/Setanta_Sports_1_HD/video.m3u8?token=Evgeshka
-#EXTINF:-1 group-title="SPORT" tvg-name="SetantaSports2 HD" catchup="flussonic" catchup-days="3", SetantaSports2 HD
+#EXTINF:-1 group-title="SPORT", SetantaSports2 HD
 http://vod2.stb.tvime.ru/Setanta_Sports_2_HD/video.m3u8?token=Evgeshka
-#EXTINF:-1 group-title="SPORT" tvg-name="Extreme Sports" catchup="flussonic" catchup-days="3", Extreme Sports
+#EXTINF:-1 group-title="SPORT", Extreme Sports
 http://vod.stb.tvime.ru/Extreme_Sports/video.m3u8?token=Evgeshka
 #EXTINF:-1 group-title="SPORT", Суспільне Kiev Спорт HD
 https://tva.in.ua/live/susp-sport.m3u8?key=fas-tv.com
