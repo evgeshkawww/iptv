@@ -5,7 +5,7 @@
 		<track>
 			<title>Поддержи проект!</title>
 			<image/>
-			<album>Обновлено 1.08.25</album>
+			<album>Обновлено 2.08.25</album>
 			<location>https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4</location>
 		</track>
 		<track>
@@ -691,12 +691,6 @@
 			<image>https://pic.rutube.ru/video/fc/91/fc91c05aee140f8480be3d13d7c4291a.jpg</image>
 			<album>MEDIATEKA</album>
 			<location>https://river-1.rutube.ru/hls-vod/tgB3NfKMgIz9VrAzwC9WQA/1754150087/2074/0x5000c500f1da6e43/57645a3242bc4249b4a911fb85a7f290.mp4.m3u8?i=1920x800_2235</location>
-		</track>
-		<track>
-			<title>Индиана Джонс: В поисках утраченного ковчега (1981)</title>
-			<image>https://pic.rutube.ru/video/ef/6b/ef6b1dbbb66a58f5b8d288e9fb80457e.jpg</image>
-			<album>MEDIATEKA</album>
-			<location>https://river-1.rutube.ru/hls-vod/GeZygpt0mccfdRTvHGh-qA/1754150088/2080/0x5000c500f1e3749d/c52ff8bb90904a49b0d272ac65e2f496.mp4.m3u8?i=1920x816_4502</location>
 		</track>
 		<track>
 			<title>Индиана Джонс и Храм Судьбы (1984)</title>
@@ -9154,3 +9148,4 @@
 		</track>
 	</trackList>
 </playlist>
+
