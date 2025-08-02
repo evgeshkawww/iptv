@@ -1,7 +1,7 @@
 #EXTM3U url-tvg="http://epg.it999.ru/epg2.xml,http://epg.one/epg.xml,http://194.26.229.4/live/lime_epg.xml.gz,https://raw.githubusercontent.com/IPTVSHARED/iptv/refs/heads/main/epg_lite.xml.gz,https://raw.githubusercontent.com/IPTVSHARED/iptv/refs/heads/main/epg_lite_gabbarit.xml.gz,http://epg.ping-tv.com/1.xmltv,http://epg.team/tvteam.xml"
 #EXTINF:-1 group-title="Смена ключа каждый день в 00:00 по МСК", Поддержи проект!
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
-#EXTINF:-1 group-title="Обновлено 2.08.25", Поддержи проект!
+#EXTINF:-1 group-title="Обновлено 3.08.25", Поддержи проект!
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="Помощь проекту! Юмани", Помощь проекту
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
@@ -864,7 +864,7 @@ https://edge50.dc.beltelecom.by/ngtrk/smil:belarus3.smil/chunklist_b5160000_slen
 http://stream-msk-10.ott.tricolor.tv/dtv/id360_MSKSG-PVR-1--Vremya/03/plst.m3u8?drmreq=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDI3NzE4NywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzUzNjcyMzg3LCJzZXNzaW9uX2lkIjoiYjQ1ODgxYmFkZTYzYzYzMDZmNzQxYjBmNzhhMDAyYWIiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.SRlFzRqXuoSDebs_khsLHrsvfnG3aKOkZ4pS6cLWijo
 #EXTINF:-1 group-title="Кино", Кино 1 International
 http://kino-1.catcast.tv/content/38617/index.m3u8
-#EXTINF:-1 group-title="Кинозалы Stream", Видеокасета VHS
+#EXTINF:-1 group-title="Кинозалы Stream", Видеокасcета VHS
 https://132544.edgevideo.ru/streams/132544_806129/playlist.m3u8
 #EXTINF:-1 group-title="Кинозалы Stream", ⱧØⱤⱤØⱤ ₮V
 https://132544.edgevideo.ru/streams/132544_847220/1325441080/index.m3u8
@@ -1587,25 +1587,25 @@ http://str6.oxtve.live:8080/kinodzhem_1/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI
 http://str6.oxtve.live:8080/kinodzhem_2/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
 #EXTINF:-1 group-title="Спорт" tvg-name="7:4576" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKYSPORTSF1200.png", Sky sports F1 HD (test)
 http://str6.oxtve.live:8080/EN_Sky_Sport_F1/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="КиноЗал" tvg-name="3:SKYHIGHEPOCHHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH EPOCH HD.png", SKY HIGH epoch
+#EXTINF:-1 group-title="КиноЗал" tvg-name="SKYHIGHEPOCHHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH EPOCH HD.png", Sky High Epoch
 http://str6.oxtve.live:8080/SKYHIGHEPOCHHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="КиноЗал" tvg-name="5:Sky High Heroes HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH HEROES HD.png", SKY HIGH heroes
+#EXTINF:-1 group-title="КиноЗал" tvg-name="Sky High Heroes HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH HEROES HD.png", Sky High Heroes
 http://str6.oxtve.live:8080/SKYHIGHHEROESHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="UHD 4K" tvg-name="3:SKYHIGHDANCEHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH DANCE HD.png", SKY HIGH dance
+#EXTINF:-1 group-title="UHD 4K" tvg-name="SKYHIGHDANCEHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH DANCE HD.png", Sky High dance
 http://str6.oxtve.live:8080/SKYHIGHDANCEHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="КиноЗал" tvg-name="3:SKYHIGHSPIRITHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH SPIRIT HD.png", SKY HIGH spirit
+#EXTINF:-1 group-title="КиноЗал" tvg-name="SKYHIGHSPIRITHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH SPIRIT HD.png", Sky High Spirit
 http://str6.oxtve.live:8080/SKYHIGHSPIRITHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="Спорт" tvg-name="5:Sky High Fight+ HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH FIGHT + HD.png", SKY HIGH FIGHT
+#EXTINF:-1 group-title="Спорт" tvg-name="Sky High Fight+ HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH FIGHT + HD.png", Sky High Fight
 http://str6.oxtve.live:8080/SKYHIGHFIGHT/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="КиноЗал" tvg-name="3:SKYHIGHSERIESHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH SERIES HD.png", SKY HIGH SERIES
+#EXTINF:-1 group-title="КиноЗал" tvg-name="SKYHIGHSERIESHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH SERIES HD.png", Sky High Series
 http://str6.oxtve.live:8080/SKYHIGHSERIESHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
 #EXTINF:-1 group-title="Познавательные" tvg-name="Sky High Man HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH MAN HD.png", Sky High Man HD
 http://str6.oxtve.live:8080/SKYHIGHMANHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="Музыкальные" tvg-name="3:SKYHIGHCONCERTHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH CONCERT HD.png", SKY HIGH CONCERT
+#EXTINF:-1 group-title="Музыкальные" tvg-name="SKYHIGHCONCERTHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH CONCERT HD.png", Sky High Concert
 http://str6.oxtve.live:8080/SKYHIGHCONCERTHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="КиноЗал" tvg-name="3:SKYHIGHFRESHHDR" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH FRESH HDR.png", SKY HIGH fresh HDR
+#EXTINF:-1 group-title="КиноЗал" tvg-name="SKYHIGHFRESHHDR" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH FRESH HDR.png", Sky High Fresh HDR
 http://str6.oxtve.live:8080/SKYHIGHFRESHHDR/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="КиноЗал" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH FUTURE HD.png", SKY HIGH FUTURE
+#EXTINF:-1 group-title="КиноЗал" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH FUTURE HD.png", Sky High Space
 http://str6.oxtve.live:8080/SKYHIGHFUTUREHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
 #EXTINF:-1 group-title="КиноЗал" tvg-name="Sky High Bunny HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/bunny.png", Sky High Bunny HD
 http://str6.oxtve.live:8080/BUNNYHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
@@ -1613,47 +1613,47 @@ http://str6.oxtve.live:8080/BUNNYHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6Ikp
 http://str6.oxtve.live:8080/MSANIMATED/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
 #EXTINF:-1 group-title="КиноЗал" tvg-name="Sky High Fresh HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH FRESH HD.png", Sky High Fresh HD
 http://str6.oxtve.live:8080/SKYHIGHFRESHHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="UHD 4K" tvg-name="3:SKYHIGHNATURE4K" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH NATURE 4K.png", SKY HIGH nature 4K
+#EXTINF:-1 group-title="UHD 4K" tvg-name="SKYHIGHNATURE4K" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH NATURE 4K.png", Sky High Nature 4K
 http://str6.oxtve.live:8080/SKYHIGHNATURE4K/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
 #EXTINF:-1 group-title="UHD 4K" tvg-name="Sky High Drama 4K HDR" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH MIX 3D.png", Sky High Drama 4K HDR
 http://str6.oxtve.live:8080/SKYHIGH3D/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
 #EXTINF:-1 group-title="КиноЗал" tvg-name="Sky High Чбу HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH BYSLONKA.png", Sky High Чбу HD
 http://str6.oxtve.live:8080/SKYHIGHBYSLONKA/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="КиноЗал" tvg-name="3:SKYHIGHCLASSICHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH CLASSIC HD.png", SKY HIGH CLASSIC
+#EXTINF:-1 group-title="КиноЗал" tvg-name="SKYHIGHCLASSICHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH CLASSIC HD.png", Sky High Classic
 http://str6.oxtve.live:8080/SKYHIGHCLASSICHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="UHD 4K" tvg-name="3:SKYHIGHNATURE4KHDR" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH NATURE 4K HDR.png", SKY HIGH nature 4K HDR
+#EXTINF:-1 group-title="UHD 4K" tvg-name="SKYHIGHNATURE4KHDR" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH NATURE 4K HDR.png", Sky High Nature 4K HDR
 http://str6.oxtve.live:8080/SKYHIGHNATURE4KHDR/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="КиноЗал" tvg-name="3:SKYHIGHADULTHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH ADULT HD.png", SKY HIGH ADULT
+#EXTINF:-1 group-title="18+" tvg-name="SKYHIGHADULTHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH ADULT HD.png", Sky High Adult
 http://str6.oxtve.live:8080/SKYHIGHADULTHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="КиноЗал" tvg-name="3:SKYHIGHRUSSIANHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH RUSSIAN HD.png", SKY HIGH RUSSIAN
+#EXTINF:-1 group-title="КиноЗал" tvg-name="SKYHIGHRUSSIANHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH RUSSIAN HD.png", Sky High Russian
 http://str6.oxtve.live:8080/SKYHIGHRUSSIANHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="КиноЗал" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH FRESH 60.png", SKY HIGH fresh 60
+#EXTINF:-1 group-title="КиноЗал" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH FRESH 60.png", Sky High Fresh 60
 http://str6.oxtve.live:8080/SKYHIGHNEW60/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
 #EXTINF:-1 group-title="КиноЗал" tvg-name="Sky High Kids USSR" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/ussr kids.png", Sky High Kids USSR
 http://str6.oxtve.live:8080/SKYHIGHKIDSUSSR/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="КиноЗал" tvg-name="3:SKYHIGHANIMEHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/skyanime.png", SKY HIGH anime
+#EXTINF:-1 group-title="КиноЗал" tvg-name="SKYHIGHANIMEHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/skyanime.png", Sky High Anime
 http://str6.oxtve.live:8080/SKYHIGHANIMEHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="UHD 4K" tvg-name="3:SKYHIGHMIX4K" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH MIX 4K.png", SKY HIGH mix 4K
+#EXTINF:-1 group-title="UHD 4K" tvg-name="SKYHIGHMIX4K" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH MIX 4K.png", Sky High Mix 4K
 http://str6.oxtve.live:8080/SKYHIGHMIX4K/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="UHD 4K" tvg-name="3:SKYHIGHDOCUHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH DOC UHD.png", SKY HIGH doc UHD
+#EXTINF:-1 group-title="UHD 4K" tvg-name="SKYHIGHDOCUHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH DOC UHD.png", Sky High Doc UHD
 http://str6.oxtve.live:8080/SKYHIGHDOCUHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
 #EXTINF:-1 group-title="UHD 4K" tvg-name="Sky High UHD HDR" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH UHD HDR.png", Sky High UHD HDR
 http://str6.oxtve.live:8080/SKYHIGHUHDHDR/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="UHD 4K" tvg-name="3:SKYHIGHVHSUHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH VHS UHD.png", SKY HIGH VHS UHD
+#EXTINF:-1 group-title="UHD 4K" tvg-name="SKYHIGHVHSUHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH VHS UHD.png", Sky High VHS UHD
 http://str6.oxtve.live:8080/SKYHIGHVHSUHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="Познавательные" tvg-name="3:SKYHIGHDOCHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH DOC HD.png", SKY HIGH doc
+#EXTINF:-1 group-title="Познавательные" tvg-name="SKYHIGHDOCHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH DOC HD.png", Sky High Doc HD
 http://str6.oxtve.live:8080/SKYHIGHDOCHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
 #EXTINF:-1 group-title="Познавательные" tvg-name="Sky High Brain HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/skybrain.png", Sky High Brain HD
 http://str6.oxtve.live:8080/SKYHIGHBRAINHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="Познавательные" tvg-name="3:SKYHIGHNATUREHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH NATURE FHD.png", SKY HIGH nature
+#EXTINF:-1 group-title="Познавательные" tvg-name="3:SKYHIGHNATUREHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH NATURE FHD.png", Sky High Nature
 http://str6.oxtve.live:8080/SKYHIGHNATUREFHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="КиноЗал" tvg-name="3:SKYHIGHORIGHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH ORIG HD.png", SKY HIGH orig
+#EXTINF:-1 group-title="КиноЗал" tvg-name="SKYHIGHORIGHD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH ORIG HD.png", Sky High orig
 http://str6.oxtve.live:8080/SKYHIGHORIGHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="Музыкальные" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH LO FI HD.png", SKY HIGH lo-fi
+#EXTINF:-1 group-title="Музыкальные" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH LO FI HD.png", Sky High lo-fi
 http://str6.oxtve.live:8080/SKYHIGHLOFIHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="Музыкальные" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/blank.png", SKY HIGH MUSIC
+#EXTINF:-1 group-title="Музыкальные" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/blank.png", Sky High Music
 http://str6.oxtve.live:8080/SKYHIGHMUSICHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="18+" tvg-name="5:Sky High Sex VR" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/blank.png", SKY HIGH SEX
+#EXTINF:-1 group-title="18+" tvg-name="Sky High Sex VR" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/blank.png", Sky High SEX
 http://str6.oxtve.live:8080/SKYHIGHSEX/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
 #EXTINF:-1 group-title="КиноЗал" tvg-name="4:Freshcinema-1" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/FreshCinema.png", Fresh Cinema
 http://str6.oxtve.live:8080/Fresh_Cinema/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
