@@ -1,4 +1,4 @@
-﻿#EXTM3U url-tvg="http://epg.it999.ru/epg2.xml,http://epg.one/epg.xml,http://194.26.229.4/live/lime_epg.xml.gz,https://raw.githubusercontent.com/IPTVSHARED/iptv/refs/heads/main/epg_lite.xml.gz,https://raw.githubusercontent.com/IPTVSHARED/iptv/refs/heads/main/epg_lite_gabbarit.xml.gz,http://epg.ping-tv.com/1.xmltv,http://epg.team/tvteam.xml"
+#EXTM3U url-tvg="http://epg.it999.ru/epg2.xml,http://epg.one/epg.xml,http://194.26.229.4/live/lime_epg.xml.gz,https://raw.githubusercontent.com/IPTVSHARED/iptv/refs/heads/main/epg_lite.xml.gz,https://raw.githubusercontent.com/IPTVSHARED/iptv/refs/heads/main/epg_lite_gabbarit.xml.gz,http://epg.ping-tv.com/1.xmltv,http://epg.team/tvteam.xml"
 #EXTINF:-1 group-title="Смена ключа каждый день в 00:00 по МСК", Поддержи проект!
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="Обновлено 2.08.25", Поддержи проект!
@@ -1323,20 +1323,12 @@ http://str6.oxtve.live:8080/vipserialhd/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI
 http://str6.oxtve.live:8080/tv1000russkoehd/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
 #EXTINF:-1 group-title="Кино" tvg-name="1:2202" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/TVXXI200.png", ТВ XXI
 http://str6.oxtve.live:8080/tvxxi/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="Спорт" tvg-name="1:1211" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/MATCHSTRANA200.png", Матч! Страна
-http://str6.oxtve.live:8080/matchstrana/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
 #EXTINF:-1 group-title="Спорт" tvg-name="1:1211" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/MATCHSTRANA200.png", Матч! Страна HD
 http://str6.oxtve.live:8080/matchstranahd/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
 #EXTINF:-1 group-title="Спорт" tvg-name="1:749" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/MATCHTV2OO.png", Матч!
 http://str6.oxtve.live:8080/match/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
 #EXTINF:-1 group-title="Спорт" tvg-name="1:524" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/MATCHIGRA200.png", Матч! Игра
 http://str6.oxtve.live:8080/matchigra/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="Спорт" tvg-name="1:281" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/MATCHBOETC200.png", Матч! Боец
-http://str6.oxtve.live:8080/matchboec/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="Спорт" tvg-name="1:428" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/MATCHFUTBOL3200.png", Матч! Футбол 3
-http://str6.oxtve.live:8080/matchfutbol3/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
-#EXTINF:-1 group-title="Спорт" tvg-name="1:429" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/MATCHFUTBOL3HD200.png", Матч! Футбол 3 HD
-http://str6.oxtve.live:8080/HDFUT3/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
 #EXTINF:-1 group-title="Спорт" tvg-name="7:2530" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/STARTTV200.png", Старт
 http://str6.oxtve.live:8080/RU_START_HD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MTMxNjQ0LCJleHAiOjE3NTQyMTgwNDQsImlhdCI6MTc1NDEzMTY0NCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.2JhgMK8eLkoEDRFuJdfXh4rA7Ff5Ezi_cfcgqe-cKmUEvgeshka_BLR
 #EXTINF:-1 group-title="Спорт" tvg-name="1:1541" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SETANTASPORTPLUS200.png", Setanta Sports +
@@ -2333,40 +2325,24 @@ https://river-1.rutube.ru/hls-vod/jKHdPJ1gtdOGWNaadPlIJA/1754150179/2460/0x5000c
 https://river-1.rutube.ru/hls-vod/uKDQloV82CVR18D41wlRSw/1754150180/2417/0x5000c500f2b4a9bb/c09d0b20afc94057b1c502381e64d5af.mp4.m3u8?i=1920x1080_5179
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Каратэ-пацан: Легенды (HDR) (2025)
 https://vod.plvideo.ru/JLxVTeJD/L5GCiHLZ8G/zE2SWKS6lsmEkccoFxf/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Как приручить дракона (2025)
-https://vod.plvideo.ru/JLxVTeJD/L5GCiHLZ8G/5jktNnXn9mDSxfT8kSX/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Группа крови (2025)
 https://vod.plvideo.ru/GMPb65uk/L5GCiHLZ8G/zE2SWKSunpsweCdFrsT/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Финикийская схема (2025)
-https://vod.plvideo.ru/GMPb65uk/L5GCiHLZ8G/5jktNnXQ5YgCXv5m6gT/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Широкий Запад (2025)
 https://vod.plvideo.ru/xdhKhqAx/L5GCiHLZ8G/zE2SWKSlGfs74P0uuBB/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Шальная пуля 3 (2025)
 https://vod.plvideo.ru/xdhKhqAx/L5GCiHLZ8G/5jktNnX9nYittY2KteX/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Соловей против Муромца (2025)
 https://vod.plvideo.ru/GMPb65uk/L5GCiHLZ8G/zE2SWKSy2DcEvScW6jk/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Дора и поиски Соль Дорадо (2025)
-https://vod.plvideo.ru/GMPb65uk/L5GCiHLZ8G/zE2SWKSSIhcGlj6gJFi/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Главы Государств (2025)
-https://vod.plvideo.ru/GMPb65uk/L5GCiHLZ8G/5jktNnX7ST3edoCmEod/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Олень (2025)
 https://vod.plvideo.ru/GMPb65uk/L5GCiHLZ8G/zE2SWKSOKp9EuBwR-Cu/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Бессмертная гвардия 2 (2025)
-https://vod.plvideo.ru/xdhKhqAx/L5GCiHLZ8G/zE2SWKSJ_5DzKagbJTQ/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Громовержцы (2025)
-https://vod.plvideo.ru/JLxVTeJD/L5GCiHLZ8G/5jktNnXDb7YSTFLCRsD/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Сокровища гномов (2025)
 https://vod.plvideo.ru/GMPb65uk/bTkXNvLx6U/zE2SWKScwr-7RVCVOKJ/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Балерина (2025)
 https://vod.plvideo.ru/JLxVTeJD/L5GCiHLZ8G/5jktNnXcMZAWEWt23Up/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Обезьяна (2025)
 https://vod.plvideo.ru/xdhKhqAx/bTkXNvLx6U/zE2SWKSLLKvWhTyYQ3_/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Последний охотник на демонов (2025)
-https://vod.plvideo.ru/FbZEopwh/bTkXNvLx6U/zE2SWKS0y6MffXGlILD/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", В списках не значился (2025)
 https://vod.plvideo.ru/JLxVTeJD/bTkXNvLx6U/zE2SWKSyxNiegroHMDV/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Под прикрытием (2025)
-https://vod.plvideo.ru/FbZEopwh/bTkXNvLx6U/zE2SWKSYjMCLQFf9oqX/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Чёрный чемодан - двойная игра (2025)
 https://vod.plvideo.ru/FbZEopwh/bTkXNvLx6U/zE2SWKSPnIyLM4NWnWe/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Источник вечной молодости (HDR) (2025)
@@ -2381,8 +2357,6 @@ https://vod.plvideo.ru/FbZEopwh/bTkXNvLx6U/zE2SWKS6YmQKusSvJ11/ZX
 https://vod.plvideo.ru/GMPb65uk/bTkXNvLx6U/5jktNnXoYIK2WhFHI1T/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Дроп (2025)
 https://vod.plvideo.ru/xdhKhqAx/bTkXNvLx6U/zE2SWKSI6NbMOa3hrCx/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Новичок (2025)
-https://vod.plvideo.ru/FbZEopwh/bTkXNvLx6U/zE2SWKSza2RUjN8bnbg/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Грешники (2025)
 https://vod.plvideo.ru/JLxVTeJD/bTkXNvLx6U/zE2SWKSXYaayEsjVKcS/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Особо опасный пассажир (2025)
@@ -2569,8 +2543,6 @@ https://vod.plvideo.ru/xdhKhqAx/kfSkUj-sWy/zE2SWKSuZSJv9_mPPj6/ZX
 https://vod.plvideo.ru/FbZEopwh/kfSkUj-sWy/zE2SWKShe1GPwGGalGs/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Одинокие волки (2024)
 https://vod.plvideo.ru/xdhKhqAx/0GRdptsjAb/YI8o3NtJ2UqZYWdxV0t/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Ускорение (2024)
-https://vod.plvideo.ru/FbZEopwh/0GRdptsjAb/5jktNnXtV5QhOmDvVbM/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Ночная сучка (2024)
 https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/zE2SWKSscWxzIi4pSGj/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Бессмертный (2023)
@@ -2643,8 +2615,6 @@ https://vod.plvideo.ru/JLxVTeJD/bTkXNvLx6U/zE2SWKSSv7hIsXU9kNp/ZX
 https://vod.plvideo.ru/JLxVTeJD/bTkXNvLx6U/zE2SWKSwCLfKuoqf1Wc/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Тепло наших тел (2013)
 https://vod.plvideo.ru/xdhKhqAx/EiKYJIFOyO/zE2SWKSoc3AyZFgRCFe/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Эффект бабочки (2004)
-https://vod.plvideo.ru/FbZEopwh/EiKYJIFOyO/zE2SWKSO4wUdu0T8YYW/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", На гребне волны (1991)
 https://vod.plvideo.ru/JLxVTeJD/uknUrzHzQA/zE2SWKSOETRlkKMSxLE/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", На гребне волны (2015)
@@ -2785,8 +2755,6 @@ https://vod.plvideo.ru/GMPb65uk/oUYaYhn1uR/FP7MRNSkuI82HP1hOHn/ZX
 https://vod.plvideo.ru/GMPb65uk/0GRdptsjAb/zE2SWKSMIXxMMeoQ7NQ/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Великий уравнитель (2014)
 https://vod.plvideo.ru/JLxVTeJD/oUYaYhn1uR/zE2SWKSpcq-3w6JpOs3/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Ван Хельсинг (2004)
-https://vod.plvideo.ru/GMPb65uk/zaA4EcW22E/zE2SWKSKI_VNrukjTDZ/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Радиоволна (2000)
 https://vod.plvideo.ru/JLxVTeJD/0GRdptsjAb/zE2SWKSfyUfydbL2rQv/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Глaвный герoй (2021)
@@ -2807,8 +2775,6 @@ https://vod.plvideo.ru/xdhKhqAx/0GRdptsjAb/5jktNnX-2nBiGDH2ZEY/ZX
 https://vod.plvideo.ru/xdhKhqAx/cXyXEGJ0A4/zE2SWKSPXRrKHep-xFx/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Геркулес в Нью-Йорке (1969)
 https://vod.plvideo.ru/GMPb65uk/EiKYJIFOyO/zE2SWKSABGGFgnoE0K3/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Бегущий человек (1987)
-https://vod.plvideo.ru/JLxVTeJD/AZAevqJa5r/zE2SWKSGf-CD3cyhGv1/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Люси (2014)
 https://vod.plvideo.ru/xdhKhqAx/0GRdptsjAb/zE2SWKSSlAmsiNeQS9k/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Пассажиры (2016)
@@ -2827,8 +2793,6 @@ https://vod.plvideo.ru/FbZEopwh/0GRdptsjAb/zE2SWKSxSCoyd24EBIC/ZX
 https://vod.plvideo.ru/FbZEopwh/0GRdptsjAb/zE2SWKSTMcMUF6fuHNP/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Хеллбой: Проклятие Горбуна (2024)
 https://vod.plvideo.ru/GMPb65uk/EiKYJIFOyO/zE2SWKSpvjYtGFB7Qy7/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Блэйд (1998)
-https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/zE2SWKSZHUSxcbgtKH9/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Блэйд 3: Троица (2004)
 https://vod.plvideo.ru/xdhKhqAx/uknUrzHzQA/zE2SWKSCGksXvwjhJcQ/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Остров доктора Моро (1996)
@@ -2859,14 +2823,8 @@ https://vod.plvideo.ru/xdhKhqAx/zaA4EcW22E/zE2SWKSoKn4cN-S9jVT/ZX
 https://vod.plvideo.ru/FbZEopwh/cXyXEGJ0A4/zE2SWKS4LMwTZ5pt1vY/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Прометей (2012)
 https://vod.plvideo.ru/FbZEopwh/zaA4EcW22E/zE2SWKS-Qs2gNTo3rco/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Чужой (1979)
-https://vod.plvideo.ru/JLxVTeJD/AZAevqJa5r/zE2SWKSoIYqnpfEIyq9/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Чужой против Хищника (2004)
 https://vod.plvideo.ru/JLxVTeJD/oUYaYhn1uR/zE2SWKSl5Nhi2qiDYjs/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Чужой: Завет (2017)
-https://vod.plvideo.ru/JLxVTeJD/zaA4EcW22E/zE2SWKSDSW_8kYHCei-/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Чужой: Ромул (2024)
-https://vod.plvideo.ru/xdhKhqAx/0GRdptsjAb/zE2SWKSqg0946T0rLL1/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Война миров (1953)
 https://vod.plvideo.ru/JLxVTeJD/zaA4EcW22E/zE2SWKSN5omlC8M7bP9/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Война миров (2005)
@@ -2897,24 +2855,16 @@ https://vod.plvideo.ru/GMPb65uk/kfSkUj-sWy/zE2SWKSZfLBx3jCK7Bn/ZX
 https://vod.plvideo.ru/GMPb65uk/kfSkUj-sWy/zE2SWKSWTIrirkNntLJ/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Начало (2010)
 https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/zE2SWKSaX1tL8iIM3HJ/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Троя (2004)
-https://vod.plvideo.ru/GMPb65uk/uknUrzHzQA/zE2SWKSZfX1fMVKLph_/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Шестое чувство (1999)
 https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/zE2SWKSxt6C7jv21bKl/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Бесславные ублюдки (2009)
 https://vod.plvideo.ru/JLxVTeJD/uknUrzHzQA/zE2SWKSEW5uXY2jLo3v/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Крепкий орешек 4.0 (2007)
-https://vod.plvideo.ru/xdhKhqAx/kfSkUj-sWy/zE2SWKS9cDLru3RHRvd/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Путеводитель: Автостопом по галактике (2005)
 https://vod.plvideo.ru/GMPb65uk/kfSkUj-sWy/zE2SWKSbezIK6a3ek_k/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Дюна: Часть 1 (2021)
 https://vod.plvideo.ru/JLxVTeJD/kfSkUj-sWy/zE2SWKSgoQqxoCt0MA_/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Дюна: Часть 2 (2024)
 https://vod.plvideo.ru/JLxVTeJD/CZjqmtgIIH/5jktNnXxmSZtGqI5BLk/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Бэтмен и Робин (1997)
-https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/zE2SWKSDxFyNHtTXifb/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Бэтмен: Начало (2005)
-https://vod.plvideo.ru/JLxVTeJD/0GRdptsjAb/zE2SWKSA5tv0T503q1s/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Мир Юрского периода: Господство (2022)
 https://vod.plvideo.ru/GMPb65uk/kfSkUj-sWy/zE2SWKSf--w0lCdbLzm/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Последние дни на Марсе (2013)
@@ -2983,8 +2933,6 @@ https://vod.plvideo.ru/JLxVTeJD/oUYaYhn1uR/5jktNnX-QO4NBTYvDQH/ZX
 https://vod.plvideo.ru/xdhKhqAx/0GRdptsjAb/zE2SWKSltFY47_Kc5sH/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Джонни Мнемоник (1995)
 https://vod.plvideo.ru/xdhKhqAx/zaA4EcW22E/zE2SWKSPNgbbD7vbpnA/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Судья Дредд (1995)
-https://vod.plvideo.ru/FbZEopwh/bTkXNvLx6U/zE2SWKSAxXBxskWbKZG/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Демоны (1986)
 https://vod.plvideo.ru/FbZEopwh/zaA4EcW22E/zE2SWKStAcaN65gKjZQ/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Лабиринт (1986)
@@ -3051,8 +2999,6 @@ https://vod.plvideo.ru/JLxVTeJD/CZjqmtgIIH/zE2SWKSCVZ9-Pjbj_o7/ZX
 https://vod.plvideo.ru/GMPb65uk/oUYaYhn1uR/zE2SWKSffzNzkzgx494/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Солярис (1972)
 https://vod.plvideo.ru/JLxVTeJD/zaA4EcW22E/zE2SWKS33ZuUMZ5h_zP/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Старик Хоттабыч (1956)
-https://vod.plvideo.ru/FbZEopwh/kfSkUj-sWy/zE2SWKSqblImLV6ciqy/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Чапаев (1934)
 https://vod.plvideo.ru/FbZEopwh/AZAevqJa5r/zE2SWKSrmN5wXYJXk2x/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Ирония судьбы или С лёгким паром (1975)
@@ -3073,12 +3019,8 @@ https://vod.plvideo.ru/GMPb65uk/zaA4EcW22E/zE2SWKSuqOxa7561NUW/ZX
 https://vod.plvideo.ru/JLxVTeJD/CZjqmtgIIH/zE2SWKSuPIP-I_oL0hk/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Я шагаю по Москве (1963)
 https://vod.plvideo.ru/JLxVTeJD/oUYaYhn1uR/5jktNnXphbWMnRP-e89/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Терминатор (1984)
-https://vod.plvideo.ru/GMPb65uk/oUYaYhn1uR/zE2SWKS8icpv5rp--qK/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Терминатор: Да придёт спаситель (2009)
 https://vod.plvideo.ru/GMPb65uk/0GRdptsjAb/zE2SWKSwV8bOrHd810S/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Маска (1994)
-https://vod.plvideo.ru/JLxVTeJD/CZjqmtgIIH/zE2SWKSRJdaPntQOUSX/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Криминальное чтиво (1994)
 https://vod.plvideo.ru/xdhKhqAx/uknUrzHzQA/zE2SWKSpWacyXtvoCku/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Кукловоды (1994)
@@ -3101,8 +3043,6 @@ https://vod.plvideo.ru/xdhKhqAx/EiKYJIFOyO/zE2SWKSElwtFdlNxGnr/ZX
 https://vod.plvideo.ru/JLxVTeJD/AZAevqJa5r/5jktNnXL6nsFFqsEw_s/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Эспен в поисках Золотого замка (2019)
 https://vod.plvideo.ru/JLxVTeJD/AZAevqJa5r/zE2SWKS_UB3bbaS4-IE/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Скала (1996)
-https://vod.plvideo.ru/xdhKhqAx/uknUrzHzQA/YI8o3NtELQL6-NIuajP/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Эльвира: Повелительница тьмы (1988)
 https://vod.plvideo.ru/GMPb65uk/oUYaYhn1uR/YI8o3NtHSwPt9n_MdIY/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Воздушная тюрьма (1997)
@@ -3115,8 +3055,6 @@ https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/zE2SWKSYhhWV6watVka/ZX
 https://vod.plvideo.ru/FbZEopwh/AZAevqJa5r/zE2SWKSKKhw9X8F19Eq/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Адвокат дьявола (1997)
 https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/zE2SWKSHZFieZd4XciX/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Звездный десант (1997)
-https://vod.plvideo.ru/JLxVTeJD/AZAevqJa5r/zE2SWKSFGE_pWsaIxql/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Киборг (1989)
 https://vod.plvideo.ru/FbZEopwh/oUYaYhn1uR/YI8o3NtozWx7xjrnitv/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Форсаж (2001)
@@ -3125,8 +3063,6 @@ https://vod.plvideo.ru/GMPb65uk/uknUrzHzQA/zE2SWKS4YZUhfTLByke/ZX
 https://vod.plvideo.ru/FbZEopwh/zaA4EcW22E/zE2SWKSZHyVO_EzZfca/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Беглец (1993)
 https://vod.plvideo.ru/JLxVTeJD/oUYaYhn1uR/YI8o3NttjFXvJfd6eIx/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Один дома (1990)
-https://vod.plvideo.ru/GMPb65uk/kfSkUj-sWy/zE2SWKSNzJREV9d2HV7/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Один Дома 2: Затерянный В Нью-Йорке (1992)
 https://vod.plvideo.ru/GMPb65uk/kfSkUj-sWy/zE2SWKScjRc2EFhHPlw/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Зубастики (1986)
@@ -3163,16 +3099,6 @@ https://vod.plvideo.ru/JLxVTeJD/zaA4EcW22E/YI8o3NtoMIQ1tuZ1KYU/ZX
 https://vod.plvideo.ru/GMPb65uk/zaA4EcW22E/YI8o3Nt6I_wOYtOY7kT/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Обитель зла 1 (2002)
 https://vod.plvideo.ru/xdhKhqAx/0GRdptsjAb/5jktNnXhv9CGKnzAZmk/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Обитель зла 2: Апокалипсис (2004)
-https://vod.plvideo.ru/GMPb65uk/0GRdptsjAb/5jktNnXL32yJpGzJCOs/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Обитель зла 3 (2007)
-https://vod.plvideo.ru/FbZEopwh/0GRdptsjAb/5jktNnXIz7zmgrYZV6j/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Обитель зла 4: Жизнь после смерти (2010)
-https://vod.plvideo.ru/xdhKhqAx/0GRdptsjAb/zE2SWKSl1Ia6NicTYfG/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Обитель зла: Возмездие (2012)
-https://vod.plvideo.ru/FbZEopwh/0GRdptsjAb/5jktNnXJOU6V1T3yBDs/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Обитель зла: Последняя глава (2016)
-https://vod.plvideo.ru/JLxVTeJD/0GRdptsjAb/5jktNnX4vvAtJbUfqFY/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Обитель зла: Раккун-Сити (2021)
 https://vod.plvideo.ru/FbZEopwh/0GRdptsjAb/5jktNnXw_nMG40euPla/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Гарри Поттер и философский камень (2001)
@@ -3191,15 +3117,5 @@ https://vod.plvideo.ru/xdhKhqAx/oUYaYhn1uR/aItZ6wkYz3Lx1wJzqFE/ZX
 https://vod.plvideo.ru/JLxVTeJD/oUYaYhn1uR/5jktNnXQW1t4vHKD1KR/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Гарри Поттер и Дары Смерти: Часть 2 (2010)
 https://vod.plvideo.ru/GMPb65uk/oUYaYhn1uR/5jktNnXwmE7Tjryww_b/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Матрица (1999)
-https://vod.plvideo.ru/FbZEopwh/oUYaYhn1uR/5jktNnXeF1D-Mz3ft_e/ZX
 #EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Индиана Джонс: В поисках утраченного ковчега (1981)
 https://vod.plvideo.ru/xdhKhqAx/oUYaYhn1uR/zE2SWKSnBTu9cfLTEHJ/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Индиана Джонс и Храм судьбы (1984)
-https://vod.plvideo.ru/JLxVTeJD/oUYaYhn1uR/zE2SWKSTR9PwlMSgwCs/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Индиана Джонс и последний крестовый поход (1989)
-https://vod.plvideo.ru/xdhKhqAx/oUYaYhn1uR/zE2SWKSg7ARgZXu9gWO/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Индиана Джонс и Королевство хрустального черепа (2008)
-https://vod.plvideo.ru/xdhKhqAx/oUYaYhn1uR/zE2SWKSxouzsIoGXekb/ZX
-#EXTINF:-1 group-title="MEDIATEKA 4K" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Индиана Джонс и Колесо судьбы (2023)
-https://vod.plvideo.ru/FbZEopwh/oUYaYhn1uR/5jktNnXDUCGkZpEubis/ZX
