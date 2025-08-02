@@ -1,4 +1,4 @@
-﻿#EXTM3U url-tvg="#EXTM3U url-tvg="https://iptvx.one/EPG,http://epg.one/epg2.xml.gz,http://epg.one/epg.xml,http://epg.it999.ru/epg2.xml""
+﻿#EXTM3U url-tvg="#EXTM3U url-tvg="https://iptvx.one/EPG,http://epg.one/epg2.xml.gz,http://epg.one/epg.xml,http://epg.it999.ru/epg2.xml"
 #EXTINF:-1 group-title="Обновлено 1.08.25", Поддержи проект!
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="Помощь проекту! Юмани", Помощь проекту
@@ -3049,3 +3049,4 @@ http://pl.online24.pm/play/50122/FB4F94DA00C3BE0/video.m3u8
 http://pl.online24.pm/play/50123/FB4F94DA00C3BE0/video.m3u8
 #EXTINF:-1 group-title="JK" tvg-name="jk_rizdvo", jk_rizdvo
 http://pl.online24.pm/play/50125/FB4F94DA00C3BE0/video.m3u8
+
