@@ -1,5 +1,5 @@
 ﻿#EXTM3U url-tvg="#EXTM3U url-tvg="https://iptvx.one/EPG,http://epg.one/epg2.xml.gz,http://epg.one/epg.xml,http://epg.it999.ru/epg2.xml"
-#EXTINF:-1 group-title="Обновлено 1.08.25", Поддержи проект!
+#EXTINF:-1 group-title="Обновлено 2.08.25", Поддержи проект!
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="Помощь проекту! Юмани", Помощь проекту
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
@@ -229,8 +229,6 @@ https://river-1.rutube.ru/hls-vod/19XGAOSaVMMGGWs5O6JR2A/1754150085/2082/0x5000c
 https://river-1.rutube.ru/hls-vod/E02_mlOcK8AvCOP78qeDIg/1754150086/2086/0x5000c500f1e56de3/9de2911dea204690ac0b1188951639ca.mp4.m3u8?i=1920x808_1744
 #EXTINF:-1 group-title="MEDIATEKA" tvg-logo="https://pic.rutube.ru/video/fc/91/fc91c05aee140f8480be3d13d7c4291a.jpg", Бэтмен против Супермена: На заре справедливости (2024)
 https://river-1.rutube.ru/hls-vod/tgB3NfKMgIz9VrAzwC9WQA/1754150087/2074/0x5000c500f1da6e43/57645a3242bc4249b4a911fb85a7f290.mp4.m3u8?i=1920x800_2235
-#EXTINF:-1 group-title="MEDIATEKA" tvg-logo="https://pic.rutube.ru/video/ef/6b/ef6b1dbbb66a58f5b8d288e9fb80457e.jpg", Индиана Джонс: В поисках утраченного ковчега (1981)
-https://river-1.rutube.ru/hls-vod/GeZygpt0mccfdRTvHGh-qA/1754150088/2080/0x5000c500f1e3749d/c52ff8bb90904a49b0d272ac65e2f496.mp4.m3u8?i=1920x816_4502
 #EXTINF:-1 group-title="MEDIATEKA" tvg-logo="https://pic.rutube.ru/video/e7/28/e728a99cc0c3d14734727f5591b48817.jpg", Индиана Джонс и Храм Судьбы (1984)
 https://river-1.rutube.ru/hls-vod/eXcVB5jbvqLPPYCNtPtNJg/1754150089/2088/0x5000c500f1e14287/1533f43905004dc8ae06e74af4e9e9fd.mp4.m3u8?i=1920x816_6669
 #EXTINF:-1 group-title="MEDIATEKA" tvg-logo="https://pic.rutube.ru/video/91/1a/911ab7e6cea9c7b3b52ce6313c5b92b1.jpg", Индиана Джонс и последний крестовый поход (1989)
@@ -3049,4 +3047,5 @@ http://pl.online24.pm/play/50122/FB4F94DA00C3BE0/video.m3u8
 http://pl.online24.pm/play/50123/FB4F94DA00C3BE0/video.m3u8
 #EXTINF:-1 group-title="JK" tvg-name="jk_rizdvo", jk_rizdvo
 http://pl.online24.pm/play/50125/FB4F94DA00C3BE0/video.m3u8
+
 
