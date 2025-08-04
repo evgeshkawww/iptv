@@ -1,4 +1,4 @@
-﻿#EXTM3U
+#EXTM3U
 #EXTINF:-1 group-title="Обновлено 4.08.25", Поддержи проект!
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="Помощь проекту! Юмани", Помощь проекту
@@ -17,8 +17,6 @@ https://s2.audiostream.hu/roxy_FLAC
 https://s2.audiostream.hu/bdpstrock_FLAC
 #EXTINF:-1, BDPST Radio Juventus
 http://s2.audiostream.hu:8090/juventus_FLAC
-#EXTINF:-1, BesideFM
-http://5.128.138.8:8000/stream
 #EXTINF:-1, Dance Wave!
 http://dancewave.online/dance.flac.ogg
 #EXTINF:-1, Calamar Rradio
@@ -51,8 +49,6 @@ http://mscp2.live-streams.nl:8100/flac.flac
 https://stream.cor.insanityradio.com/insanity.flac
 #EXTINF:-1, Intense Radio
 https://secure.live-streams.nl/flac.flac
-#EXTINF:-1, Reggae Classic Hits Radio
-https://azuracast.jammimvibez.com/listen/reggae/live.flac
 #EXTINF:-1, JB Radio-2
 https://mediacp.jb-radio.net:8001/flac
 #EXTINF:-1, Joy Hits
