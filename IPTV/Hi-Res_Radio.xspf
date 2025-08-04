@@ -57,12 +57,6 @@
 			<location>http://s2.audiostream.hu:8090/juventus_FLAC</location>
 		</track>
 		<track>
-			<title>BesideFM</title>
-			<image/>
-			<album/>
-			<location>http://5.128.138.8:8000/stream</location>
-		</track>
-		<track>
 			<title>Dance Wave!</title>
 			<image/>
 			<album/>
@@ -157,12 +151,6 @@
 			<image/>
 			<album/>
 			<location>https://secure.live-streams.nl/flac.flac</location>
-		</track>
-		<track>
-			<title>Reggae Classic Hits Radio</title>
-			<image/>
-			<album/>
-			<location>https://azuracast.jammimvibez.com/listen/reggae/live.flac</location>
 		</track>
 		<track>
 			<title>JB Radio-2</title>
