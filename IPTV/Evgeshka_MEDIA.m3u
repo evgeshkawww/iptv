@@ -1,7 +1,7 @@
 #EXTM3U url-tvg="http://epg.it999.ru/epg2.xml,http://epg.one/epg.xml,http://194.26.229.4/live/lime_epg.xml.gz,https://raw.githubusercontent.com/IPTVSHARED/iptv/refs/heads/main/epg_lite.xml.gz,https://raw.githubusercontent.com/IPTVSHARED/iptv/refs/heads/main/epg_lite_gabbarit.xml.gz,http://epg.ping-tv.com/1.xmltv,http://epg.team/tvteam.xml"
 #EXTINF:-1 group-title="Смена ключа каждый день в 00:00 по МСК", Поддержи проект!
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
-#EXTINF:-1 group-title="Обновлено 4.08.25", Поддержи проект!
+#EXTINF:-1 group-title="Обновлено 5.08.25", Поддержи проект!
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="Помощь проекту! Юмани", Помощь проекту
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
@@ -23,7 +23,7 @@ http://player.smotrim.ru/iframe/stream/live_id/d7fef212-df66-485d-9952-7eab82d7d
 https://edge52.dc.beltelecom.by/ngtrk/_definst_/smil:informacionnyy.smil/chunklist_w499524774_b5160000_sleng.m3u8
 #EXTINF:-1 group-title="Эфирные", Беларусь 1 HD
 https://edge50.dc.beltelecom.by/ngtrk/smil:belarus1.smil/chunklist_b5160000_sleng.m3u8
-#EXTINF:-1 group-title="Эфирные", Неизвестная россия HD
+#EXTINF:-1 group-title="Познавательные", Неизвестная россия HD
 https://stream-msk-15.ott.tricolor.tv/dtv/id923_MSKSG-PVR-1--UnknownRussia/02/plst.m3u8?drmreq=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
 #EXTINF:-1 group-title="Эфирные", Первый Российский Национальный канал
 https://serv25.vintera.tv/1pnk/prnk/chunks.m3u8
@@ -127,6 +127,58 @@ http://str6.oxtve.live:8080/ZVEZDA_PLIUS/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cC
 http://str6.oxtve.live:8080/sanktpererburg/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MzE0OTI0LCJleHAiOjE3NTQ0MDEzMjQsImlhdCI6MTc1NDMxNDkyNCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.M9ht7ksP6P1jynkpzSiofounODwWQvaTWW9x1KexXP4Evgeshka_BLR
 #EXTINF:-1 group-title="Эфирные" tvg-name="1:1716" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/GROZNIY200.png" catchup="shift" catchup-days="0", Грозный
 http://str6.oxtve.live:8080/groznyy/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MzE0OTI0LCJleHAiOjE3NTQ0MDEzMjQsImlhdCI6MTc1NDMxNDkyNCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.M9ht7ksP6P1jynkpzSiofounODwWQvaTWW9x1KexXP4Evgeshka_BLR
+#EXTINF:-1 group-title="4K RELAX UHD 3840P", 4K
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502984&extension=ts&play_token=JAyRyxIOYW
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX MOROCCO ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1503006&extension=ts&play_token=aK5hlKZuWr
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX TURKEY ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502984&extension=ts&play_token=JAyRyxIOYW
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX NORWAY ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1503008&extension=ts&play_token=dnLI5jcc2d
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX ICELAND ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1503007&extension=ts&play_token=5X9hr9n4Ou
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX TROPICAL BEACH ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502990&extension=ts&play_token=drJ2ZWDVbS
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX THE OCEAN ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502989&extension=ts&play_token=cwHuEzGPMO
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX INSPIRATIONAL MOTIVATIONAL ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502988&extension=ts&play_token=lTjH3tNgbA
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX FOREST ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502987&extension=ts&play_token=syG835FqFK
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX EARTH NATURE ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502986&extension=ts&play_token=bUgGmAq6nJ
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX AUSTRALIA ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502985&extension=ts&play_token=36nM9AqAuI
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 1 ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502991&extension=ts&play_token=uyXzPeU4lt
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 2 ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502992&extension=ts&play_token=n0SgqMu1GS
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 3 ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502993&extension=ts&play_token=UPmZC7G7kD
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 4 ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502994&extension=ts&play_token=HokVEAIfMq
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 5 ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502995&extension=ts&play_token=8UzTelm5oE
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 6 ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502996&extension=ts&play_token=UGvbXBltQ1
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 7 ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502997&extension=ts&play_token=PCN0MglINs
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 8 ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502998&extension=ts&play_token=qWBYqQpKFd
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 9 ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502999&extension=ts&play_token=kZNQbb5RLT
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 10 ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1503000&extension=ts&play_token=Woui00bsPg
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 11 ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1503001&extension=ts&play_token=DXEFoGJf3E
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 12 ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1503002&extension=ts&play_token=SMA48sEYFj
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 13 ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1503003&extension=ts&play_token=9NKlnCyvhD
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 14 ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1503004&extension=ts&play_token=Rvq5z5dBh0
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 15 ᵁᴴᴰ 3840P
+http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1503005&extension=ts&play_token=WGpwrWxXpP
 #EXTINF:-1 group-title="Детские" tvg-name="Cartoon Network" tvg-logo="http://only4.tv/ch/802.png", Cartoon Network RU
 http://hls.stb.md/CARTOON_NETWORKRU_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MzE0OTI0LCJleHAiOjE3NTQ0MDEzMjQsImlhdCI6MTc1NDMxNDkyNCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.M9ht7ksP6P1jynkpzSiofounODwWQvaTWW9x1KexXP4
 #EXTINF:-1 group-title="Детские" tvg-logo="https://www.appello.rs/wp-content/uploads/2020/03/518ef8a1e68e742b275b0605330bd3d2.jpg", Da Vinci Learning Россия
@@ -1989,8 +2041,3 @@ https://glb.bozztv.com/glb/ushba-flocke/index.m3u8
 https://glb.bozztv.com/glb/ushba55/index.m3u8
 #EXTINF:-1 group-title="Ushba", Шоу Бенни Хилла
 https://glb.bozztv.com/glb/ushba62/index.m3u8
-
-
-
-
-
