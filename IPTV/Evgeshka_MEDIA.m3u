@@ -1931,3 +1931,221 @@ http://77.235.1.19:8000/play/a059/index.m3u8
 http://77.235.1.19:8000/play/a072/index.m3u8
 #EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", Шансон ТВ
 http://77.235.1.19:8000/play/a04v/index.m3u8
+#EXTINF:-1 group-title="Кино-2", .RED FHD
+http://158.101.222.193:88/georgia_play.php?id=red
+#EXTINF:-1 group-title="Кино-2" tvg-rec="1", .sci-fi
+http://158.160.149.81:8080/242/index.m3u8
+#EXTINF:-1 group-title="Кино-2", 1+2 Int
+http://81.198.190.9:7878/1plus2/playlist.m3u8
+#EXTINF:-1 group-title="Кино-2", Alpha Cinema HD
+http://live.15plusmg.ru/memfs/b389173a-df4e-4171-8904-e249893e71eb.m3u8
+#EXTINF:-1 group-title="Кино-2", Alpha Moretime HD
+http://live.15plusmg.ru/memfs/3546fc09-2eba-459d-9a1f-9a2fc39e50bd.m3u8
+#EXTINF:-1 group-title="Кино-2", Amedia 1 HD
+http://178.217.72.66:8080/A1/video.m3u8
+#EXTINF:-1 group-title="Кино-2", Amedia 2 HD
+http://178.217.72.66:8080/A2/index.m3u8
+#EXTINF:-1 group-title="Кино-2", Amedia Hit HD
+http://178.217.72.66:8080/Amedia_Hit/index.m3u8
+#EXTINF:-1 group-title="Кино-2", Amedia Premium
+http://31.148.48.15:80/Amedia_Premium_HD/index.m3u8?token=rostik_tv
+#EXTINF:-1 group-title="Кино-2", Amedia Premium HD
+http://178.217.72.66:8080/Amedia_Premium_HD/index.m3u8
+#EXTINF:-1 group-title="Кино-2", BCU Action HD
+http://178.217.72.66:8080/BCUActionHD/index.m3u8
+#EXTINF:-1 group-title="Кино-2", BCU Catastrophe HD
+http://178.217.72.66:8080/BCUCatastropheHD/index.m3u8
+#EXTINF:-1 group-title="Кино-2", BCU Comedy HD
+http://178.217.72.66:8080/BCUComedyHD/index.m3u8
+#EXTINF:-1 group-title="Кино-2", BCU Fantastic HD
+http://178.217.72.66:8080/BCUFantasticHD/index.m3u8
+#EXTINF:-1 group-title="Кино-2", BCU Kinorating HD
+http://178.217.72.66:8080/BCUKinoratingHD/index.m3u8
+#EXTINF:-1 group-title="Кино-2", BCU Romantic HD
+http://178.217.72.66:8080/BCURomanticHD/index.m3u8
+#EXTINF:-1 group-title="Кино-2", BCU Stars HD
+http://178.217.72.66:8080/BCUStarsHD/index.m3u8
+#EXTINF:-1 group-title="Кино-2", BOLT HD UA
+http://81.198.190.9:7878/BOLT/video.m3u8
+#EXTINF:-1 group-title="Кино-2", CineMan Action HD
+http://178.217.72.66:8080/CineMan_Action/index.m3u8
+#EXTINF:-1 group-title="Кино-2", CineMan Comedy HD
+http://178.217.72.66:8080/CineMan_Comedy/index.m3u8
+#EXTINF:-1 group-title="Кино-2", CineMan HD
+http://178.217.72.66:8080/CineMan/index.m3u8
+#EXTINF:-1 group-title="Кино-2", CineMan Marvel HD
+http://178.217.72.66:8080/CineMan_Marvel/index.m3u8
+#EXTINF:-1 group-title="Кино-2", CineMan Melodrama HD
+http://178.217.72.66:8080/CineMan_Melodrama/index.m3u8
+#EXTINF:-1 group-title="Кино-2", CineMan Thriller HD
+http://178.217.72.66:8080/CineMan_Thriller/index.m3u8
+#EXTINF:-1 group-title="Кино-2", CineMan Top HD
+http://178.217.72.66:8080/CineMan_Top/index.m3u8
+#EXTINF:-1 group-title="Кино-2", Cinema
+http://tv.ttk.mx:9053
+#EXTINF:-1 group-title="Кино-2", Cinema HD
+http://178.212.71.253:8000/play/40/index.m3u8
+#EXTINF:-1 group-title="Кино-2", Cinema Test
+https://rpn3.bozztv.com/dvrfl07/ushba64/index.m3u8
+#EXTINF:-1 group-title="Кино-2", FilmUA: Drama HD
+http://81.198.190.9:7878/filmuadrama/playlist.m3u8
+#EXTINF:-1 group-title="Кино-2", FilmZone HD
+http://81.198.190.9:7878/FilmZone/video.m3u8
+#EXTINF:-1 group-title="Кино-2", FlixSnip HD
+http://178.217.72.66:8080/flixsnip/video.m3u8
+#EXTINF:-1 group-title="Кино-2", Fox
+http://45.159.74.22/Fox/mono.m3u8
+#EXTINF:-1 group-title="Кино-2" tvg-rec="1", Hollywood HD
+http://178.217.72.66:8080/hollywoodhd/index.m3u8
+#EXTINF:-1 group-title="Кино-2", Kino 1 HD
+http://81.198.190.9:7878/kino1/video.m3u8
+#EXTINF:-1 group-title="Кино-2", Kino 2 HD
+http://81.198.190.9:7878/kino2/video.m3u8
+#EXTINF:-1 group-title="Кино-2", Kino 7
+http://81.198.190.9:7878/kino7/video.m3u8
+#EXTINF:-1 group-title="Кино-2", KinoKazka HD
+http://cdnua03.hls.tv/476/hls/c4a7acbb4f6a85595a117f7aa2099d65/4812/stream.m3u8
+#EXTINF:-1 group-title="Кино-2", Plan_B
+http://158.160.149.81:8080/7688/index.m3u8
+#EXTINF:-1 group-title="Кино-2", RED Premium HD
+http://95.85.109.219:7000/play/a06e
+#EXTINF:-1 group-title="Кино-2", RED Thriller HD
+http://95.85.109.219:7000/play/a06h
+#EXTINF:-1 group-title="Кино-2", SD REX
+http://195.26.83.96:7029/play/a008
+#EXTINF:-1 group-title="Кино-2", START Air
+https://livetv.mylifeisgood.net.ru/channels/strwc.m3u8
+#EXTINF:-1 group-title="Кино-2", START Air HD
+http://158.160.149.81:8080/8173/index.m3u8
+#EXTINF:-1 group-title="Кино-2", START World HD
+http://158.160.149.81:8080/7879/index.m3u8
+#EXTINF:-1 group-title="Кино-2", Saga TV
+http://178.212.71.253:8001/play/144/index.m3u8
+#EXTINF:-1 group-title="Кино-2", Star Cinema HD
+http://81.198.190.9:7878/STARCINEMAHD/video.m3u8
+#EXTINF:-1 group-title="Кино-2", Star Family HD
+http://81.198.190.9:7878/STARFAMILY/video.m3u8
+#EXTINF:-1 group-title="Кино-2", Super Baltic HD
+http://81.198.190.9:7878/superbaltic/video.m3u8
+#EXTINF:-1 group-title="Кино-2", Super+ HD
+http://81.198.190.9:7878/superplus/video.m3u8
+#EXTINF:-1 group-title="Кино-2", TV 1000
+http://85.117.61.97:8000/play/a00v/index.m3u8
+#EXTINF:-1 group-title="Кино-2", TV 1000 Action
+http://178.217.72.66:8080/TV_1000_Action/index.m3u8
+#EXTINF:-1 group-title="Кино-2", TV 1000 HD
+http://178.217.72.66:8080/TV_1000/index.m3u8
+#EXTINF:-1 group-title="Кино-2", TV 1000 Русское кино
+http://158.101.222.193:88/georgia_play.php?id=tv1000rukino
+#EXTINF:-1 group-title="Кино-2", TV 1000 Русское кино HD
+http://158.160.149.81:8080/3794/index.m3u8
+#EXTINF:-1 group-title="Кино-2", TV3 plus HD
+http://81.198.190.9:7878/3plus/video.m3u8
+#EXTINF:-1 group-title="Кино-2", VIP Megahit HD
+http://178.217.72.66:8080/vip_megahit/index.m3u8
+#EXTINF:-1 group-title="Кино-2", VIP Premiere FHD
+http://85.117.61.97:8000/play/a00u/index.m3u8
+#EXTINF:-1 group-title="Кино-2", Viju+ Comedy
+http://85.117.61.97:8000/play/a00s/index.m3u8
+#EXTINF:-1 group-title="Кино-2", Viju+ Comedy FHD
+http://178.217.72.66:8080/vip_comedy/index.m3u8
+#EXTINF:-1 group-title="Кино-2", Viju+ Comedy HD
+http://95.85.109.219:7000/play/a090
+#EXTINF:-1 group-title="Кино-2", Viju+ Premiere HD
+http://178.217.72.66:8080/vip_premiere/index.m3u8
+#EXTINF:-1 group-title="Кино-2", Детское кино HD
+https://v2.catcast.tv/content/38720/index.m3u8
+#EXTINF:-1 group-title="Кино-2", Дом Кино
+http://31.148.48.15:80/Dom_Kino/index.m3u8?token=test
+#EXTINF:-1 group-title="Кино-2", Дом кино Премиум FHD
+http://tv.ttk.mx:9084
+#EXTINF:-1 group-title="Кино-2" tvg-rec="1", Дом кино Премиум HD
+http://31.148.48.15:80/Dom_Kino_Premium_HD/index.m3u8?token=test
+#EXTINF:-1 group-title="Кино-2", Дорама HD
+http://95.67.12.82:9046
+#EXTINF:-1 group-title="Кино-2" tvg-rec="1", ЕвроКино
+http://tv.ttk.mx:9030
+#EXTINF:-1 group-title="Кино-2", Звезда HD
+https://tvchannelstream1.tvzvezda.ru/cdn/tvzvezda/playlist_hdhigh.m3u8
+#EXTINF:-1 group-title="Кино-2" tvg-rec="1", Иллюзион +
+http://tv.ttk.mx:9028
+#EXTINF:-1 group-title="Кино-2", Кино 18+
+https://autopilot.catcast.tv/content/40381/index.m3u8
+#EXTINF:-1 group-title="Кино-2", Кино Зал
+https://rpn3.bozztv.com/dvrfl07/ushba64/index.m3u8
+#EXTINF:-1 group-title="Кино-2" tvg-rec="1", Кино ТВ
+http://tv.ttk.mx:9046
+#EXTINF:-1 group-title="Кино-2", Кино ТВ HD
+http://31.148.48.15:80/Kino_TV_HD/index.m3u8?token=test
+#EXTINF:-1 group-title="Кино-2", Кино и сериалы
+https://live-vgtrksmotrim.cdnvideo.ru/vgtrksmotrim/smotrim-live-01.smil/tracks-v3a1/mono.m3u8
+#EXTINF:-1 group-title="Кино-2", Кино и сериалы HD
+https://live-vgtrksmotrim.cdnvideo.ru/vgtrksmotrim/smotrim-live-01.smil/tracks-v5a1/mono.m3u8
+#EXTINF:-1 group-title="Кино-2", Кинокомедия FHD
+http://45.159.74.22/Kinokomedia/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="Кино-2", Кинокомедия HD
+http://158.101.222.193:88/georgia_play.php?id=kinokomediya
+#EXTINF:-1 group-title="Кино-2", Киномикс
+http://158.101.222.193:88/georgia_play.php?id=kinomiks
+#EXTINF:-1 group-title="Кино-2", Киномикс HD
+http://158.160.149.81:8080/4468/index.m3u8
+#EXTINF:-1 group-title="Кино-2", Кинопремьера FHD
+http://45.159.74.22/Kinopremera/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="Кино-2", Кинопремьера HD
+http://tvip.btk.teleos.ru:8081/chid518/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="Кино-2", Киносвидание [R]
+http://158.101.222.193:88/georgia_play.php?id=kinosvidanie
+#EXTINF:-1 group-title="Кино-2", Киносемья
+http://45.159.74.22/VipComedy/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="Кино-2", Киносемья [R]
+http://158.101.222.193:88/georgia_play.php?id=kinosemya
+#EXTINF:-1 group-title="Кино-2", Киносерия
+http://158.101.222.193:88/georgia_play.php?id=kinoseria
+#EXTINF:-1 group-title="Кино-2", Киноужас
+http://158.101.222.193:88/georgia_play.php?id=kinoujas
+#EXTINF:-1 group-title="Кино-2", Киноужас HD
+http://178.217.72.66:8080/kinoujas/index.m3u8
+#EXTINF:-1 group-title="Кино-2", Кинохит
+http://45.159.74.22:80/Kinokhit/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="Кино-2", Кинохит HD
+http://158.101.222.193:88/georgia_play.php?id=kinohit
+#EXTINF:-1 group-title="Кино-2" tvg-rec="1", Комедия
+http://tv.ttk.mx:9050
+#EXTINF:-1 group-title="Кино-2", Кіно ТВ Бровари
+https://live20.bozztv.com/giatv/giatv-88882com/88882com/chunks.m3u8
+#EXTINF:-1 group-title="Кино-2", Кіно та Серіал HD
+https://cdnua03.hls.tv/178/hls/6154479a1319705257f2335762b18f51/4867/stream.m3u8
+#EXTINF:-1 group-title="Кино-2", ЛИК
+http://autopilot.catcast.tv/content/41596/index.m3u8
+#EXTINF:-1 group-title="Кино-2", Мировое Кино HD
+http://158.160.149.81:8080/8532/index.m3u8
+#EXTINF:-1 group-title="Кино-2", Мужское Кино
+http://45.159.74.22/MujskoeKino/mono.m3u8
+#EXTINF:-1 group-title="Кино-2", Мужское Кино HD
+http://158.101.222.193:88/georgia_play.php?id=interesnoetv
+#EXTINF:-1 group-title="Кино-2", НСТ
+http://tv.ttk.mx:9057
+#EXTINF:-1 group-title="Кино-2", НТВ Право
+https://cdn.ntv.ru/th_pravo/tracks-v1a1/playlist.m3u8
+#EXTINF:-1 group-title="Кино-2", НТВ Сериал HD
+https://cdn.ntv.ru/th_serial/tracks-v1a1/playlist.m3u8
+#EXTINF:-1 group-title="Кино-2", НТВ Хит HD
+https://cdn.ntv.ru/th_hit/tracks-v1a1/playlist.m3u8
+#EXTINF:-1 group-title="Кино-2", Победа
+http://178.217.72.66:8080/pobeda/index.m3u8
+#EXTINF:-1 group-title="Кино-2", Премиум Кино HD
+http://158.160.149.81:8080/8535/index.m3u8
+#EXTINF:-1 group-title="Кино-2", Русский Бестселлер
+http://tv.ttk.mx:9043
+#EXTINF:-1 group-title="Кино-2", Русский Детектив
+http://tv.ttk.mx:9051
+#EXTINF:-1 group-title="Кино-2", Русский Иллюзион
+http://tv.ttk.mx:9027
+#EXTINF:-1 group-title="Кино-2", Семейное Кино HD
+http://158.160.149.81:8080/8533/index.m3u8
+#EXTINF:-1 group-title="Кино-2", Сити Эдем - КиноМистика
+https://autopilot.catcast.tv/content/40783/index.m3u8
+#EXTINF:-1 group-title="Кино-2", ТВ 21
+http://tv.ttk.mx:9067
+#EXTINF:-1 group-title="Кино-2", Твое ТВ HD
+http://tvoetv.space:8080/tvoetv/index.m3u8
