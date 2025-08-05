@@ -520,8 +520,6 @@ https://dmidspta.cdn.mgmlcdn.com/dubaisports/smil:dubaisports.stream.smil/chunkl
 http://dmitwlvvll.cdn.mangomolo.com/dubaisportshd/smil:dubaisportshd.smil/chunklist_b1600000.m3u8
 #EXTINF:-1 group-title="Спорт", Dubai Sports 3
 http://dmitwlvvll.cdn.mangomolo.com/dubaisportshd5/smil:dubaisportshd5.smil/chunklist_b1600000.m3u8
-#EXTINF:-1 group-title="4K RELAX UHD 3840P", 4K
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502984&extension=ts&play_token=JAyRyxIOYW
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX MOROCCO ᵁᴴᴰ 3840P
 http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1503006&extension=ts&play_token=aK5hlKZuWr
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX TURKEY ᵁᴴᴰ 3840P
@@ -2051,3 +2049,4 @@ http://vod2.stb.tvime.ru/Setanta_Sports_1_HD/video.m3u8?token=eyJhbGciOiJIUzI1Ni
 http://vod2.stb.tvime.ru/Setanta_Sports_2_HD/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
 #EXTINF:-1 group-title="Спорт" tvg-name="Extreme Sports" catchup="flussonic" catchup-days="0", Extreme Sports
 http://vod.stb.tvime.ru/Extreme_Sports/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
+
