@@ -127,58 +127,6 @@ http://str6.oxtve.live:8080/ZVEZDA_PLIUS/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cC
 http://str6.oxtve.live:8080/sanktpererburg/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MzE0OTI0LCJleHAiOjE3NTQ0MDEzMjQsImlhdCI6MTc1NDMxNDkyNCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.M9ht7ksP6P1jynkpzSiofounODwWQvaTWW9x1KexXP4Evgeshka_BLR
 #EXTINF:-1 group-title="Эфирные" tvg-name="1:1716" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/GROZNIY200.png" catchup="shift" catchup-days="0", Грозный
 http://str6.oxtve.live:8080/groznyy/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MzE0OTI0LCJleHAiOjE3NTQ0MDEzMjQsImlhdCI6MTc1NDMxNDkyNCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.M9ht7ksP6P1jynkpzSiofounODwWQvaTWW9x1KexXP4Evgeshka_BLR
-#EXTINF:-1 group-title="4K RELAX UHD 3840P", 4K
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502984&extension=ts&play_token=JAyRyxIOYW
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX MOROCCO ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1503006&extension=ts&play_token=aK5hlKZuWr
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX TURKEY ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502984&extension=ts&play_token=JAyRyxIOYW
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX NORWAY ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1503008&extension=ts&play_token=dnLI5jcc2d
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX ICELAND ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1503007&extension=ts&play_token=5X9hr9n4Ou
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX TROPICAL BEACH ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502990&extension=ts&play_token=drJ2ZWDVbS
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX THE OCEAN ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502989&extension=ts&play_token=cwHuEzGPMO
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX INSPIRATIONAL MOTIVATIONAL ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502988&extension=ts&play_token=lTjH3tNgbA
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX FOREST ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502987&extension=ts&play_token=syG835FqFK
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX EARTH NATURE ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502986&extension=ts&play_token=bUgGmAq6nJ
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX AUSTRALIA ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502985&extension=ts&play_token=36nM9AqAuI
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 1 ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502991&extension=ts&play_token=uyXzPeU4lt
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 2 ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502992&extension=ts&play_token=n0SgqMu1GS
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 3 ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502993&extension=ts&play_token=UPmZC7G7kD
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 4 ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502994&extension=ts&play_token=HokVEAIfMq
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 5 ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502995&extension=ts&play_token=8UzTelm5oE
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 6 ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502996&extension=ts&play_token=UGvbXBltQ1
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 7 ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502997&extension=ts&play_token=PCN0MglINs
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 8 ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502998&extension=ts&play_token=qWBYqQpKFd
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 9 ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1502999&extension=ts&play_token=kZNQbb5RLT
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 10 ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1503000&extension=ts&play_token=Woui00bsPg
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 11 ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1503001&extension=ts&play_token=DXEFoGJf3E
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 12 ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1503002&extension=ts&play_token=SMA48sEYFj
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 13 ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1503003&extension=ts&play_token=9NKlnCyvhD
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 14 ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1503004&extension=ts&play_token=Rvq5z5dBh0
-#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 15 ᵁᴴᴰ 3840P
-http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1503005&extension=ts&play_token=WGpwrWxXpP
 #EXTINF:-1 group-title="Детские" tvg-name="Cartoon Network" tvg-logo="http://only4.tv/ch/802.png", Cartoon Network RU
 http://hls.stb.md/CARTOON_NETWORKRU_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MzE0OTI0LCJleHAiOjE3NTQ0MDEzMjQsImlhdCI6MTc1NDMxNDkyNCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.M9ht7ksP6P1jynkpzSiofounODwWQvaTWW9x1KexXP4
 #EXTINF:-1 group-title="Детские" tvg-logo="https://www.appello.rs/wp-content/uploads/2020/03/518ef8a1e68e742b275b0605330bd3d2.jpg", Da Vinci Learning Россия
@@ -327,6 +275,8 @@ http://hls.stb.md/PERVYY_KOSMICHESKIYHD_H264/video.m3u8?token=eyJhbGciOiJIUzI1Ni
 http://hls.stb.md/PRIKLIUCENIAHD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MzE0OTI0LCJleHAiOjE3NTQ0MDEzMjQsImlhdCI6MTc1NDMxNDkyNCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.M9ht7ksP6P1jynkpzSiofounODwWQvaTWW9x1KexXP4
 #EXTINF:-1 group-title="Познавательные" tvg-logo="http://www.oreol.tv/img/usadba1.jpg", Усадьба
 http://hls.stb.md/USADBA_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MzE0OTI0LCJleHAiOjE3NTQ0MDEzMjQsImlhdCI6MTc1NDMxNDkyNCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.M9ht7ksP6P1jynkpzSiofounODwWQvaTWW9x1KexXP4
+#EXTINF:-1 group-title="Кино", День Победы HD
+http://sgw.ott.tricolor.tv/streamingGateway/GetLivePlayList?source=Den_Pobedy.m3u8&serviceArea=MSK-SA-1&drmreq=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
 #EXTINF:-1 group-title="Развлекательные" tvg-name="Sky High Standup HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/SKY HIGH STANDUP HD.png" catchup="shift" catchup-days="0", SKY HIGH standup
 http://str6.oxtve.live:8080/SKYHIGHSTANDUPHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MzE0OTI0LCJleHAiOjE3NTQ0MDEzMjQsImlhdCI6MTc1NDMxNDkyNCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.M9ht7ksP6P1jynkpzSiofounODwWQvaTWW9x1KexXP4Evgeshka_BLR
 #EXTINF:-1 group-title="Развлекательные" tvg-logo="https://ic.wampi.ru/2021/04/14/ffba4e24ee46bfe7895fceda5656f0cc.png", Fashion TV HD
@@ -367,8 +317,6 @@ http://hls.stb.md/VIASAT_SPORTHD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5c
 http://hls.stb.md/WE_SPORT_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MzE0OTI0LCJleHAiOjE3NTQ0MDEzMjQsImlhdCI6MTc1NDMxNDkyNCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.M9ht7ksP6P1jynkpzSiofounODwWQvaTWW9x1KexXP4
 #EXTINF:-1 group-title="Спорт" tvg-logo="http://only4.tv/ch/5563.png", Драйв
 http://hls.stb.md/DRAIV_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MzE0OTI0LCJleHAiOjE3NTQ0MDEzMjQsImlhdCI6MTc1NDMxNDkyNCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.M9ht7ksP6P1jynkpzSiofounODwWQvaTWW9x1KexXP4
-#EXTINF:-1 group-title="Спорт" tvg-logo="https://tv.nalench.com/uploads/screenshots/match_planeta.png", Матч! Планета
-http://hls.stb.md/MATCH_PLANETA_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MzE0OTI0LCJleHAiOjE3NTQ0MDEzMjQsImlhdCI6MTc1NDMxNDkyNCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.M9ht7ksP6P1jynkpzSiofounODwWQvaTWW9x1KexXP4
 #EXTINF:-1 group-title="Украина" tvg-name="Bolt" tvg-country="UA" tvg-logo="http://img.rnx.ru/logotvchannel/437-250.jpg", Bolt HD
 http://hls.stb.md/BOLT_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MzE0OTI0LCJleHAiOjE3NTQ0MDEzMjQsImlhdCI6MTc1NDMxNDkyNCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.M9ht7ksP6P1jynkpzSiofounODwWQvaTWW9x1KexXP4
 #EXTINF:-1 group-title="Украина" tvg-logo="http://kct.me/static/media/images/ktv/%D0%B8%D0%BD%D1%82%D0%B5%D1%80%2B.png", Iнтер+
@@ -377,8 +325,6 @@ http://hls.stb.md/INTERPLUS_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6Ik
 http://hls.stb.md/UATV_HD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MzE0OTI0LCJleHAiOjE3NTQ0MDEzMjQsImlhdCI6MTc1NDMxNDkyNCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.M9ht7ksP6P1jynkpzSiofounODwWQvaTWW9x1KexXP4
 #EXTINF:-1 group-title="Украина" tvg-logo="http://crazy.net.ua/templates/tv/icons/rozv/Kvartal%20TV.png", Квартал ТВ
 http://hls.stb.md/KVARTALTV_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0MzE0OTI0LCJleHAiOjE3NTQ0MDEzMjQsImlhdCI6MTc1NDMxNDkyNCwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.M9ht7ksP6P1jynkpzSiofounODwWQvaTWW9x1KexXP4
-#EXTINF:-1 group-title="Кино", День Победы HD
-http://sgw.ott.tricolor.tv/streamingGateway/GetLivePlayList?source=Den_Pobedy.m3u8&serviceArea=MSK-SA-1&drmreq=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
 #EXTINF:-1 group-title="Кино", Премиальное HD
 http://sgw.ott.tricolor.tv/streamingGateway/GetLivePlayList?source=Premialnoe_HD.m3u8&serviceArea=MSK-SA-1&drmreq=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
 #EXTINF:-1 group-title="Кино", Остросюжетное HD
@@ -649,8 +595,6 @@ https://stream-msk-06.ott.tricolor.tv:443/dtv/id697_MSKSG-PVR-1--Gagsnetwork/04/
 https://stream-msk-08.ott.tricolor.tv/dtv/id862_MSKSG-PVR-1--Kaleydoskop/04/plst.m3u8?drmreq=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
 #EXTINF:-1 group-title="Развлекательные", Теледом HD
 http://iam-profi.ru/hls-live/livepkgr/_definst_/liveevent/td720.m3u8
-#EXTINF:-1 group-title="Развлекательные", Тео-ТВ
-https://stream.teotv.ru/live/site360/playlist.m3u8
 #EXTINF:-1 group-title="Развлекательные", E TV
 http://stream-msk-09.ott.tricolor.tv/dtv/id484_MSKSG-PVR-1--Telekanal_E_HD/03/plst.m3u8?drmreq=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
 #EXTINF:-1 group-title="Развлекательные", Кулинар ТВ
@@ -696,12 +640,6 @@ https://stream-msk-09.ott.tricolor.tv/dtv/id872_MSKSG-PVR-1--OCEAN_TV/02/plst.m3
 https://live-mirror-19.ott.tricolor.tv/dtv/id1010_MSKSG-PVR-1--russian_ship_HD/04/plst.m3u8?drmreq=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
 #EXTINF:-1 group-title="Познавательные", Тайны Галактики
 http://77.235.1.19:8000/play/a065/index.m3u8
-#EXTINF:-1 group-title="Познавательные", Nat Geo Wild HD
-http://178.217.72.66:8080/Nat_Geo_Wild/video.m3u8
-#EXTINF:-1 group-title="Познавательные", National Geographic HD
-http://178.217.72.66:8080/National_Geographic/index.m3u8
-#EXTINF:-1 group-title="Познавательные", Discovery HD
-http://178.217.72.66:8080/Discovery_HD/video.m3u8
 #EXTINF:-1 group-title="Познавательные", Ep!c
 https://stream-msk-15.ott.tricolor.tv/dtv/id1011_MSKSG-PVR-1--Epic_HD/04/plst.m3u8?drmreq=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
 #EXTINF:-1 group-title="Познавательные", МЫ
@@ -884,8 +822,6 @@ https://livetv.mylifeisgood.net.ru/channels/trash.m3u8
 https://stream-msk-09.ott.tricolor.tv/dtv/id366_MSKSG-PVR-1--Telecafe/04/plst.m3u8?drmreq=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
 #EXTINF:-1 group-title="Кино", Про100 ТВ
 https://sirius.greenhosting.ru/Pro100tvRu/video.m3u8
-#EXTINF:-1 group-title="Кино", FOX HD
-http://rr3.8v8i8p.com/20689cbc9966bdeb8a18b96b8aa36090cb3/52276/hls/pl.m3u8
 #EXTINF:-1 group-title="Кино", Кинопремьера
 http://tvip.btk.teleos.ru:8081/chid518/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Кино", Киномикс
@@ -2041,3 +1977,25 @@ https://glb.bozztv.com/glb/ushba-flocke/index.m3u8
 https://glb.bozztv.com/glb/ushba55/index.m3u8
 #EXTINF:-1 group-title="Ushba", Шоу Бенни Хилла
 https://glb.bozztv.com/glb/ushba62/index.m3u8
+#EXTINF:-1 group-title="Эфирные" tvg-name="Пятый канал (урал)" catchup="flussonic" catchup-days="3", Пятый канал +3
+http://vs6.cdn.mrf.tvime.ru/5tv_URAL/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
+#EXTINF:-1 group-title="Познавательные" tvg-name="National Geographic HD" catchup="flussonic" catchup-days="3", National Geographic HD
+http://vod2.stb.tvime.ru/National_Geographic_HD/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
+#EXTINF:-1 group-title="Познавательные" tvg-name="Discovery HD" catchup="flussonic" catchup-days="3", Discovery HD
+http://vod2.stb.tvime.ru/Discovery_HD/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
+#EXTINF:-1 group-title="Познавательные" tvg-name="Nat Geo Wild HD" catchup="flussonic" catchup-days="3", Nat Geo Wild HD
+http://vod2.stb.tvime.ru/Nat_Geo_Wild_HD/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
+#EXTINF:-1 group-title="Кино" tvg-name="Fox HD" catchup="flussonic" catchup-days="0", Fox HD
+http://vod.stb.tvime.ru/Fox_HD/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
+#EXTINF:-1 group-title="КиноЗал" tvg-name="Кинозал Деревяшки ТВ" catchup="flussonic" catchup-days="0", Кинозал Деревяшки ТВ
+http://vod.stb.tvime.ru/Derev/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
+#EXTINF:-1 group-title="Спорт" tvg-name="Матч! Планета" catchup="flussonic" catchup-days="3", Матч! Планета
+http://vod2.stb.tvime.ru/MatchPlanetaHD/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
+#EXTINF:-1 group-title="Спорт" tvg-name="Евроспорт 1" catchup="flussonic" catchup-days="3", Евроспорт 1
+http://vod2.stb.tvime.ru/evrosport_1/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
+#EXTINF:-1 group-title="Спорт" tvg-name="SetantaSports1 HD" catchup="flussonic" catchup-days="3", SetantaSports1 HD
+http://vod2.stb.tvime.ru/Setanta_Sports_1_HD/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
+#EXTINF:-1 group-title="Спорт" tvg-name="SetantaSports2 HD" catchup="flussonic" catchup-days="3", SetantaSports2 HD
+http://vod2.stb.tvime.ru/Setanta_Sports_2_HD/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
+#EXTINF:-1 group-title="Спорт" tvg-name="Extreme Sports" catchup="flussonic" catchup-days="0", Extreme Sports
+http://vod.stb.tvime.ru/Extreme_Sports/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
