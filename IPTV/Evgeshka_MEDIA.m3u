@@ -7,7 +7,7 @@ https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="Не показывает? Обнови лист!", 4100119260753027 Юмани
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
-#EXTINF:-1 group-title="ФЕДЕРАЛЬНЫЕ" tvg-id="pervy" tvg-logo="https://iptvx.one/picons/pervy.png", Первый канал HD
+#EXTINF:-1 group-title="ФЕДЕРАЛЬНЫЕ" tvg-id="pervy" tvg-logo="https://iptvx.one/picons/pervy.png", Первый канал
 http://192.162.64.99:4000/play/a00e/index.m3u8
 #EXTINF:-1 group-title="ФЕДЕРАЛЬНЫЕ" tvg-id="rossia1" tvg-logo="https://iptvx.one/picons/rossia1.png", Россия 1 HD
 https://vgtrkregion-reg.cdnvideo.ru/vgtrk/0/russia1-hd/index.m3u8
@@ -1141,8 +1141,6 @@ http://str6.oxtve.live:8080/MezzoLivehd/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI
 http://str6.oxtve.live:8080/Zharahd/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0NDkyNzc5LCJleHAiOjE3NTQ1NzkxNzksImlhdCI6MTc1NDQ5Mjc3OSwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.Hnh2t6iPPlGslBfbj4Vu6sSGqVbIIQAyalbc9XHhI7AEvgeshka_BLR
 #EXTINF:-1 group-title="Спорт" tvg-name="1:831" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/XSPORT200.png", XSport HD
 http://str6.oxtve.live:8080/XSPORTHD/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0NDkyNzc5LCJleHAiOjE3NTQ1NzkxNzksImlhdCI6MTc1NDQ5Mjc3OSwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.Hnh2t6iPPlGslBfbj4Vu6sSGqVbIIQAyalbc9XHhI7AEvgeshka_BLR
-#EXTINF:-1 group-title="UHD 4K" tvg-name="TR: Love Nature 4K HD" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/LOVENATURE4K200.png", Love Nature 4K
-http://str6.oxtve.live:8080/FashionOne4K/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0NDkyNzc5LCJleHAiOjE3NTQ1NzkxNzksImlhdCI6MTc1NDQ5Mjc3OSwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.Hnh2t6iPPlGslBfbj4Vu6sSGqVbIIQAyalbc9XHhI7AEvgeshka_BLR
 #EXTINF:-1 group-title="UHD 4K" tvg-name="7:2743" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/CINEMAULTRAHD200.png", UltraHD Cinema
 http://str6.oxtve.live:8080/UltraHDCinema4K/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0NDkyNzc5LCJleHAiOjE3NTQ1NzkxNzksImlhdCI6MTc1NDQ5Mjc3OSwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.Hnh2t6iPPlGslBfbj4Vu6sSGqVbIIQAyalbc9XHhI7AEvgeshka_BLR
 #EXTINF:-1 group-title="UHD 4K" tvg-name="7:2746" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/NASHASIBIR4K200.png", Наша Сибирь 4K
@@ -2189,5 +2187,6 @@ https://autopilot.catcast.tv/content/40783/index.m3u8
 http://tv.ttk.mx:9067
 #EXTINF:-1 group-title="Кино-2", Твое ТВ HD
 http://tvoetv.space:8080/tvoetv/index.m3u8
+
 
 
