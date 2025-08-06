@@ -45,7 +45,7 @@ http://178.134.1.158:8081/RENTV/index.m3u8
 http://hls.mirtv.cdnvideo.ru/mirtv-parampublish/mirtv_2500/playlist.m3u8
 #EXTINF:-1 group-title="ФЕДЕРАЛЬНЫЕ" tvg-id="tvcentr" tvg-logo="https://iptvx.one/picons/tvcentr.png", ТВ Центр
 http://tvc-hls.cdnvideo.ru/tvc-res/smil:vd9221_2.smil/playlist.m3u8
-#EXTINF:-1 group-title="РАЗНОЕ", Пятый канал
+#EXTINF:-1 group-title="ФЕДЕРАЛЬНЫЕ", Пятый канал
 http://178.217.72.66:8080/5_Kanal/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="ФЕДЕРАЛЬНЫЕ", Домашний HD
 http://178.217.72.66:8080/Domashniy/index.m3u8
@@ -53,7 +53,7 @@ http://178.217.72.66:8080/Domashniy/index.m3u8
 http://178.124.152.238:8088/dom
 #EXTINF:-1 group-title="Познавательные" tvg-id="kultura" tvg-logo="https://iptvx.one/picons/kultura.png", Россия К HD
 https://vgtrkregion-reg.cdnvideo.ru/vgtrk/0/kultura-hd/index.m3u8
-#EXTINF:-1 group-title="РАЗНОЕ", Звезда
+#EXTINF:-1 group-title="ФЕДЕРАЛЬНЫЕ", Звезда
 http://178.217.72.66:8080/Zvezda/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Эфирные", Звезда Плюс HD
 http://tvzvezda.bonus-tv.ru/cdn/zvezdaplus/tracks-v1a1/mono.ts.m3u8
@@ -62,7 +62,7 @@ https://live1.1tvcrimea.ru/1tvcrimea.m3u8
 #EXTINF:-1 group-title="Эфирные", Красная линия
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
 http://s55766.cdn.ngenix.net/s55766-media-origin/rline_high/index.m3u8
-#EXTINF:-1 group-title="РАЗНОЕ", ОТР
+#EXTINF:-1 group-title="ФЕДЕРАЛЬНЫЕ", ОТР
 http://178.217.72.66:8080/OTR/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Эфирные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", Москва. Доверие
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
@@ -524,7 +524,7 @@ http://31.148.48.15/STS_Love/index.m3u8
 https://cdn4.skygo.mn/live/disk1/TNT4/HLSv3-FTA/TNT4.m3u8
 #EXTINF:-1 group-title="ФЕДЕРАЛЬНЫЕ", ТВ3 HD
 http://77.235.1.19:8000/play/a053/index.m3u8
-#EXTINF:-1 group-title="РАЗНОЕ", Че!
+#EXTINF:-1 group-title="ФЕДЕРАЛЬНЫЕ", Че!
 http://77.235.1.19:8000/play/a072/index.m3u8
 #EXTINF:-1 group-title="Развлекательные", ТНТ Exclusiv TV [MD]
 http://89.28.25.122/hls/tnt_md.m3u8
@@ -726,7 +726,7 @@ https://autopilot.catcast.tv/content/44051/index.m3u8
 http://sochinskayatrk.ru/hdtv/hls/CTPK_HD/playlist.m3u8
 #EXTINF:-1 group-title="Детские", Kids TV
 http://77.235.1.19:8000/play/a030/index.m3u8
-#EXTINF:-1 group-title="РАЗНОЕ", 2x2
+#EXTINF:-1 group-title="ФЕДЕРАЛЬНЫЕ", 2x2
 http://178.217.72.66:8080/2x2/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Детские", Да Винчи
 http://178.217.72.66:8080/Da_Vinchi/index.m3u8
