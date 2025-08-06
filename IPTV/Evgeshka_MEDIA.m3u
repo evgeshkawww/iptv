@@ -1899,7 +1899,7 @@ http://77.235.1.19:8000/play/a072/index.m3u8
 http://77.235.1.19:8000/play/a04v/index.m3u8
 #EXTINF:-1 group-title="Кино-2", .RED FHD
 http://158.101.222.193:88/georgia_play.php?id=red
-#EXTINF:-1 group-title="Кино-2" tvg-rec="1", .sci-fi
+#EXTINF:-1 group-title="Кино-2", .sci-fi
 http://158.160.149.81:8080/242/index.m3u8
 #EXTINF:-1 group-title="Кино-2", 1+2 Int
 http://81.198.190.9:7878/1plus2/playlist.m3u8
@@ -1961,7 +1961,7 @@ http://81.198.190.9:7878/FilmZone/video.m3u8
 http://178.217.72.66:8080/flixsnip/video.m3u8
 #EXTINF:-1 group-title="Кино-2", Fox
 http://45.159.74.22/Fox/mono.m3u8
-#EXTINF:-1 group-title="Кино-2" tvg-rec="1", Hollywood HD
+#EXTINF:-1 group-title="Кино-2", Hollywood HD
 http://178.217.72.66:8080/hollywoodhd/index.m3u8
 #EXTINF:-1 group-title="Кино-2", Kino 1 HD
 http://81.198.190.9:7878/kino1/video.m3u8
@@ -2025,21 +2025,21 @@ https://v2.catcast.tv/content/38720/index.m3u8
 http://31.148.48.15:80/Dom_Kino/index.m3u8?token=test
 #EXTINF:-1 group-title="Кино-2", Дом кино Премиум FHD
 http://tv.ttk.mx:9084
-#EXTINF:-1 group-title="Кино-2" tvg-rec="1", Дом кино Премиум HD
+#EXTINF:-1 group-title="Кино-2", Дом кино Премиум HD
 http://31.148.48.15:80/Dom_Kino_Premium_HD/index.m3u8?token=test
 #EXTINF:-1 group-title="Кино-2", Дорама HD
 http://95.67.12.82:9046
-#EXTINF:-1 group-title="Кино-2" tvg-rec="1", ЕвроКино
+#EXTINF:-1 group-title="Кино-2", ЕвроКино
 http://tv.ttk.mx:9030
 #EXTINF:-1 group-title="Кино-2", Звезда HD
 https://tvchannelstream1.tvzvezda.ru/cdn/tvzvezda/playlist_hdhigh.m3u8
-#EXTINF:-1 group-title="Кино-2" tvg-rec="1", Иллюзион +
+#EXTINF:-1 group-title="Кино-2", Иллюзион +
 http://tv.ttk.mx:9028
 #EXTINF:-1 group-title="Кино-2", Кино 18+
 https://autopilot.catcast.tv/content/40381/index.m3u8
 #EXTINF:-1 group-title="Кино-2", Кино Зал
 https://rpn3.bozztv.com/dvrfl07/ushba64/index.m3u8
-#EXTINF:-1 group-title="Кино-2" tvg-rec="1", Кино ТВ
+#EXTINF:-1 group-title="Кино-2", Кино ТВ
 http://tv.ttk.mx:9046
 #EXTINF:-1 group-title="Кино-2", Кино ТВ HD
 http://31.148.48.15:80/Kino_TV_HD/index.m3u8?token=test
@@ -2075,7 +2075,7 @@ http://178.217.72.66:8080/kinoujas/index.m3u8
 http://45.159.74.22:80/Kinokhit/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Кино-2", Кинохит HD
 http://158.101.222.193:88/georgia_play.php?id=kinohit
-#EXTINF:-1 group-title="Кино-2" tvg-rec="1", Комедия
+#EXTINF:-1 group-title="Кино-2", Комедия
 http://tv.ttk.mx:9050
 #EXTINF:-1 group-title="Кино-2", Кіно ТВ Бровари
 https://live20.bozztv.com/giatv/giatv-88882com/88882com/chunks.m3u8
