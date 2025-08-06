@@ -1,7 +1,7 @@
 #EXTM3U url-tvg="http://epg.it999.ru/epg2.xml,http://epg.one/epg.xml,http://194.26.229.4/live/lime_epg.xml.gz,https://raw.githubusercontent.com/IPTVSHARED/iptv/refs/heads/main/epg_lite.xml.gz,https://raw.githubusercontent.com/IPTVSHARED/iptv/refs/heads/main/epg_lite_gabbarit.xml.gz,http://epg.ping-tv.com/1.xmltv,http://epg.team/tvteam.xml"
 #EXTINF:-1 group-title="Смена ключа каждый день в 00:00 по МСК", Поддержи проект!
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
-#EXTINF:-1 group-title="Обновлено 6.08.25", Поддержи проект!
+#EXTINF:-1 group-title="Обновлено 7.08.25", Поддержи проект!
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="Помощь проекту! Юмани", Помощь проекту
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
@@ -181,77 +181,77 @@ http://hls.stb.md/NASHENOVOIE_KINO_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR
 #EXTINF:-1 group-title="Кино" tvg-logo="https://getsiptv.ru/img/ch_icons/rodnoe_kino.png", Родное кино
 http://hls.stb.md/RODNOIE_KINO_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0NDkyNzc5LCJleHAiOjE3NTQ1NzkxNzksImlhdCI6MTc1NDQ5Mjc3OSwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.Hnh2t6iPPlGslBfbj4Vu6sSGqVbIIQAyalbc9XHhI7A
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Concert
-http://65.109.83.185:8080/Clarity4K_molodoznoe/index.m3u8?token=d98334135ce3746da017ddf9bd3396fc7fac9760-03dc83a9147c535ed46739036b9c2680-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_molodoznoe/index.m3u8?token=91282df08afbd2703c025437e831ad1f6f42b52c-ac68a31b85629a2e70d8e397af83de19-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4k Relax камин
-http://65.109.83.185:8080/Clarity4k_vsel/index.m3u8?token=c74a62a02af2074eac8e1b8a6997b34f902746b9-08895ca18433adb02f037bc3e1d5718a-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4k_vsel/index.m3u8?token=1f7dfae29ceffbf5a2290f558ab35fc520fb61b3-d3d709d36decefb585c8dd4b6cb4bd27-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4k Драмы
-http://65.109.83.185:8080/clariti_drama/index.m3u8?token=274b63ae541cffef8d11ddbe5efd573036c798a5-837411048d0428297ed59e48083af705-1754523504-1754480304
+http://65.109.83.185:8080/clariti_drama/index.m3u8?token=e1a3c20eb7f5369d9066468676d1c9373f6e27cb-7b3cd812d2326083f91842d042dd5cd4-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4k Боевик
-http://65.109.83.185:8080/Clarity4k_boevik/index.m3u8?token=aa4b8cd6d1dc92f9f34c73725628fef9d5f817aa-9243ce9cc3e5940879cdfa5fdacf2f59-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4k_boevik/index.m3u8?token=825723b5462ad9322ffd2a15cfd592d10da465f7-b458500bf71ba626de1e8afa96c0578b-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Walt Disney
-http://65.109.83.185:8080/Clarity4K_Walt_Disney/index.m3u8?token=170dd7a1a2f5c4989bf3ae32e1f5cd7d6811a286-e3cf243e4dd259cdc087f08d7faf1287-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_Walt_Disney/index.m3u8?token=962550e4bb889edc15877e088c68bfda7f2d107d-4062a518c5e69ec4e9649285e39038e7-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Ужасы
-http://65.109.83.185:8080/Clarity4K_uzasa/index.m3u8?token=757744d6dfe6c48935aa6c4687bdd89341ae3a17-d57c968cdb035647524af7fc9da211f3-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_uzasa/index.m3u8?token=0ee2dc7cbb801a7f5aea4f76539f32fa9756b2c4-6c866cff0dd562cdb2c5ba2fa12c0b35-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Фэнтези
-http://65.109.83.185:8080/Clarity4K_fantazy/index.m3u8?token=d5b97474168cce7375284050463904ed831aced6-f9180abea010fb9215496e2734cb5769-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_fantazy/index.m3u8?token=232dcf632804d9b9e79f8ae376b7fd530672473a-9a0125a1b7a125afa84d52de48450417-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4k Кинодети СССР
-http://65.109.83.185:8080/Clarity4k_russia_serias/index.m3u8?token=9252dd317e25c9d3c1ab9b3660c099dd8d247924-6c546bd576b3b13712dc6ec3cb610ed4-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4k_russia_serias/index.m3u8?token=f4b14f00fe968847e834cbc53f6241dd7d56a984-aaedbfda74e4d0be76447fffda15eb3e-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Korean music
-http://65.109.83.185:8080/Clarity4K_Korean_music/index.m3u8?token=6d3b9ed89a7370c36b3ae3342a58b3d202182655-1ac46f0b9750b4cd2cb2e5da8dfa53b0-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_Korean_music/index.m3u8?token=a79a391b14a441a62a6d4e9cfb0e551dac257538-8d7b86d861343a04ce747d0266e2af32-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K World Music
-http://65.109.83.185:8080/Clarity4K_World_Music/index.m3u8?token=1826421d9e9f990b5709627160401fe8482ced50-8f647702a2b0f5a39684e5b5ddcad951-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_World_Music/index.m3u8?token=adec2dd073af9d6f392c78bde6b95d22494d0dc2-e2f7fe7d1a9de720e8d046e5a5d53ee6-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Мюзикл
-http://65.109.83.185:8080/Clarity4K_comed_sssr1/index.m3u8?token=29e6a5c07556e288951d14c862979cca1510c2ce-bee4fbb72ab9237e17050c33b5b186c6-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_comed_sssr1/index.m3u8?token=4af84427d14973a2dcbdf2b255c44dc7cb0c75a7-f113649f487cc47f9bfccde64a58b234-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Ukrainian music
-http://65.109.83.185:8080/Clarity4K_Ukrainian_music/index.m3u8?token=5502f92a2ac2b48d2ff53b1d8af1fe2aa4285d5a-c234749c0f0685466b0b1c353ed475cf-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_Ukrainian_music/index.m3u8?token=165a83b9024adcd2e08188f5b75b6007a176100c-73b79f5ff5fa7412910aac421ed09c2c-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Звериный мир
-http://65.109.83.185:8080/Clarity4K_zvermir/index.m3u8?token=b67a44c38cb0af63311bad3228dc244c88c51191-6b09ce268f66eaa4778b8db21b0bc241-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_zvermir/index.m3u8?token=488233e4c58302560b33ffcd3cfdf89eafc162aa-41fb96c09099a64c1fdf2f921cc52662-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Bollywood music
-http://65.109.83.185:8080/Clarity4K_Bollywood_music/index.m3u8?token=ce7b3ac33e9094e3a107562a1faccd15997e2f1f-197b7157966a6ed6e1912812a9700b20-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_Bollywood_music/index.m3u8?token=39f73c46c81454e807c957da71d963cf8f076e7d-7cdebc5242d639edbf6a1c62501e1668-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Russian music
-http://65.109.83.185:8080/Clarity4K_Russian_music/index.m3u8?token=637f72f0c03b4cec431a7501a7620cc66f914391-db2378b79f1ea03d131840de8bfc0282-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_Russian_music/index.m3u8?token=541df1461f63209d3aa7137f1841af2eba27b8b5-5e35e5a0ce2a926b0e32d794f751b7c1-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4k Anime
-http://65.109.83.185:8080/Clarity4k_Anime/index.m3u8?token=35a274cdf8ed5918935f2191ac279101045794b9-8400d2320f7b21469fbac15645517833-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4k_Anime/index.m3u8?token=9656e90f398c4ab6b0b1c05b8192123da2a21711-e89bcd144f2c46d2e0489334d030ff00-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Киношарм
-http://65.109.83.185:8080/Clarity4K_kinosharm/index.m3u8?token=9e55e8eca474fd9e10db79734b59b87290595029-1ab29e5d2dd375a90a057df736998c79-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_kinosharm/index.m3u8?token=66351d428bf341eead20dc9c8e93cdb3f9de36bf-dcf7f63c20b91c15ef7dd77223a2c222-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Мультимир
-http://65.109.83.185:8080/Clarity4K_multmir/index.m3u8?token=d75e376dc8c3b10c67d626424dc3881fa5b5e453-cccae48dd39a4786ff1a2fa15dbe7a0e-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_multmir/index.m3u8?token=3d319158b34a2e1fa3402da0c18e37b5381c14a0-53e00cdc401648d92d5bb9fc32292523-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Netflix
-http://65.109.83.185:8080/Clarity4K_Netflix/index.m3u8?token=d94d9315ce184e2849fae61614195f65df52725d-e6e0552450cd6b1a3cc49951cd1a00e0-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_Netflix/index.m3u8?token=2ee3018b87bb25ad6b472e896a597576af5b55ad-4e1add6ec7f79d52336d70ce9dc3a962-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Приключения
-http://65.109.83.185:8080/Clarity4K_pricluchenia/index.m3u8?token=28bc738aae0b19c5cc47ece74016a50c136b88d9-47f16c190d6b8464bca45bc672379f3e-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_pricluchenia/index.m3u8?token=652f46297695fb142aad22aa35d517fb48db6554-69dda300d7f1b03672f7fdf87ef8293f-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4k Истории во времени
-http://65.109.83.185:8080/Clarity4k_DeepMe/index.m3u8?token=85697e2d27655c180bc0777932657e57846946fd-454666c1c92558dc87d6be4844b0944d-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4k_DeepMe/index.m3u8?token=463b7af5fe000a23524694dfa7c48e08ea414abf-6237d77c44faa055dc325dc907110511-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Запал
-http://65.109.83.185:8080/Clarity4K_zapal/index.m3u8?token=312d0771d7b7e9c699c6571279dffe69f77e9ad0-9aa905b7eab9c35eb71ddf57881f5f31-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_zapal/index.m3u8?token=4d0eccc9b9fd506a9df49bee0cfda3af6693d4b4-05001ca9efa722ed29babe6ab4c882a0-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4k Вестерн
-http://65.109.83.185:8080/Clarity4k_boevic_vhs/index.m3u8?token=09a6e07ae38c20a93d74a122425c38b07cde3c71-68b7b11b394543e8f2b9f7cbc34a0df6-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4k_boevic_vhs/index.m3u8?token=a1fdb4a0f7439883b2e6136071310b6f40233da9-e4f94bca386b0c831f6947f0201eb4e0-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Комедия
-http://65.109.83.185:8080/Clarity4K_comedy/index.m3u8?token=365dbcc86d06d7228629ad7031f32d0fcc389d9b-55a680b7e47d3e15edb4b540b80a71e1-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_comedy/index.m3u8?token=f582d431e7b52f9d5aa730ce7409520ed73f6104-dbd337bd4103a05b28131c88874fe45e-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4k КиноФраншизы
-http://65.109.83.185:8080/Clarity4k_filmfrans/index.m3u8?token=be1d6e7451dd6d9d40425854d296a5b3b36f1181-eafc729677b133bc7ed90d23577ab748-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4k_filmfrans/index.m3u8?token=b77678a6b57450933cce71650a63635d18e29f80-4f1d52b6bbda2cb94ac525059f1d3ae2-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Мультляндия
-http://65.109.83.185:8080/Clarity4K_multlandia/index.m3u8?token=af7a701de222ada01cd3d7259964c91d7aece58a-48ea695584c7191b9ca3213d86659e73-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_multlandia/index.m3u8?token=e6dc1c53b0410b3f3011f1bc58c3b74d06cbc1db-322dea87bc760a5e020c43456c3ba03e-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Военные
-http://65.109.83.185:8080/Clarity4K_kinosssr/index.m3u8?token=9ae63e01e1459cd84a10339525168d2155a0bb7d-4128958123996325aa454ca727acc770-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_kinosssr/index.m3u8?token=9fa6021809093330101cd5c19ebf92c050e5cdeb-650d592800f916cf89f8e9cd308e5b9a-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4k Сделано в СССР
-http://65.109.83.185:8080/Clarity4k_classic_kino/index.m3u8?token=5eac9a1b4a23dacf539b001629f0df9c50fe45a0-437322796d16bae445bc974fe2d8f6ec-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4k_classic_kino/index.m3u8?token=e5a435e9c88efb98f423d0ce3fafae9261115f6d-e314a4056ec5e0b74e8f8b9a3997ee36-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K КиноНовинки
-http://65.109.83.185:8080/Clarity4K_kino_new/index.m3u8?token=375a7e4f673dfeb5b28d741e5a3cb2c7c9951de4-572a26cd08c0afa130663bea752d1ef7-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_kino_new/index.m3u8?token=e5ef991d5f3da5ebceb36b2c862fad0b97dc383b-88b568d54b61ce3359c9a55356faf85f-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4k Сумеречный Эфир
-http://65.109.83.185:8080/Clarity4k_sumer/index.m3u8?token=dbd07a219fcade53c263322a5568fb0e2143b7c2-3efd31c51c62cc7f8df2a0c548e829d0-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4k_sumer/index.m3u8?token=edb6174e4cc1ea03cbcfc4b65e5abc8859c05edb-014d3e5e925325f813cf48e7e8b1f83d-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Фантастика
-http://65.109.83.185:8080/Clarity4K_fantastica/index.m3u8?token=4f9934e7b10d8991552697b0b6c9c17d7aecdcc9-5d324fb69085319d09247ac89c64bc41-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_fantastica/index.m3u8?token=42b481556e1184c5ab52c66ef2ae3faa722faf47-5ea5dcb321c20441534454480c3fbe7c-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Asia
-http://65.109.83.185:8080/Clarity4K_Asia/index.m3u8?token=5701d492a15bbe37c5f2f55e8193238beb5da86c-25ca0a09944328f2761637842cdaf6ed-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_Asia/index.m3u8?token=1dd6a4dc2af8a78fefd7b833103e9bb70860d232-d1dda449d3613ae7e4c5d02c540fd71c-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Космомир
-http://65.109.83.185:8080/Clarity4K_kosmomir/index.m3u8?token=758b36efc30e7bf2359a5352cd64fb1f453796e4-8029528c107d70e926d5efc832af1c3f-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_kosmomir/index.m3u8?token=6cb3c9d78da6087b020878ccd8c4a312706f7350-937b9ac451d93bb078ba6cdcddebb8fe-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Gamefilm
-http://65.109.83.185:8080/Clarity4K_Gamefilm/index.m3u8?token=3b168f38b0b9dc6ea9d7aa5b2c7c848abd741d1a-d61994cfc7809e2216df5725fcd05c7c-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_Gamefilm/index.m3u8?token=7f1b883b0365bb66e4082a65624c32a20544c067-abd89b06a73c06c6ff630527b8061da7-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Семейный
-http://65.109.83.185:8080/Clarity4K_famili/index.m3u8?token=e45e9d1486c35cda539f48e78bc86adef6977bc5-f8e490f4b29ea6d684c1f6703a6c97f9-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4K_famili/index.m3u8?token=f6bb010bfa24ff8ae3f8722e0a32cc2c86a6dc67-427cddc0cb0eb65883eb0cd9d649f201-1754557930-1754514730
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4k Единоборства
-http://65.109.83.185:8080/Clarity4k_borba/index.m3u8?token=1d7a5d788aa4b34de2179d58ea96ab4bf3898ed3-21087ef9bdd59769b67515397aaf441d-1754523504-1754480304
+http://65.109.83.185:8080/Clarity4k_borba/index.m3u8?token=b8cc257e05a0dc322f4115c129741f1f072755c0-68f67dfa554cbaeeba7bcae7332dbe83-1754557930-1754514730
 #EXTINF:-1 group-title="Музыкальные" tvg-name="RO:  Atomic" tvg-logo="https://cdnedge.starnet.md/media/attachments/23eb1538-7b2d-4e87-8db2-ff17f93b8877.png", Atomic TV
 http://hls.stb.md/ATOMIC_TV_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjcuMTIzIiwibmJmIjoxNzU0NDkyNzc5LCJleHAiOjE3NTQ1NzkxNzksImlhdCI6MTc1NDQ5Mjc3OSwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.Hnh2t6iPPlGslBfbj4Vu6sSGqVbIIQAyalbc9XHhI7A
 #EXTINF:-1 group-title="Музыкальные" tvg-logo="https://tv.nalench.com/uploads/screenshots/Europa_Plus_TV.jpg", Europa Plus TV
@@ -2185,7 +2185,3 @@ https://autopilot.catcast.tv/content/40783/index.m3u8
 http://tv.ttk.mx:9067
 #EXTINF:-1 group-title="Кино-2", Твое ТВ HD
 http://tvoetv.space:8080/tvoetv/index.m3u8
-
-
-
-
