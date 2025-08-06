@@ -1563,7 +1563,7 @@ https://glb.bozztv.com/glb/ushba-flocke/index.m3u8
 https://glb.bozztv.com/glb/ushba55/index.m3u8
 #EXTINF:-1 group-title="Ushba", Шоу Бенни Хилла
 https://glb.bozztv.com/glb/ushba62/index.m3u8
-#EXTINF:-1 group-title="КиноЗал" tvg-name="Кинозал Деревяшки ТВ" catchup="flussonic" catchup-days="0", Кинозал Деревяшки ТВ
+#EXTINF:-1 group-title="Детские" tvg-name="Кинозал Деревяшки ТВ" catchup="flussonic" catchup-days="0", Кинозал Деревяшки ТВ
 http://vod.stb.tvime.ru/Derev/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
 #EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", .Red HD
 http://77.235.1.19:8000/play/a07e/index.m3u8
