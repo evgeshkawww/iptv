@@ -1,18 +1,16 @@
 #EXTM3U url-tvg="http://epg.it999.ru/epg2.xml,http://epg.one/epg.xml,http://194.26.229.4/live/lime_epg.xml.gz,https://raw.githubusercontent.com/IPTVSHARED/iptv/refs/heads/main/epg_lite.xml.gz,https://raw.githubusercontent.com/IPTVSHARED/iptv/refs/heads/main/epg_lite_gabbarit.xml.gz,http://epg.ping-tv.com/1.xmltv,http://epg.team/tvteam.xml"
 #EXTINF:-1 group-title="Смена ключа каждый день в 00:00 по МСК", Поддержи проект!
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
-#EXTINF:-1 group-title="Обновлено 5.08.25", Поддержи проект!
+#EXTINF:-1 group-title="Обновлено 6.08.25", Поддержи проект!
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="Помощь проекту! Юмани", Помощь проекту
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="Помощь проекту! Юмани", 4100119260753027 Юмани
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
-#EXTINF:-1 group-title="Эфирные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", Первый канал
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_1TVSD/variant.m3u8
-#EXTINF:-1 group-title="Эфирные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", Россия 1
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_RUSSIA1/variant.m3u8
+#EXTINF:-1 group-title="Общественные" tvg-id="pervy" tvg-logo="https://iptvx.one/picons/pervy.png", 1 канал HD
+https://edge1.1internet.tv/dash-live2/streams/1tv-dvr/1tvdash.mpd
+#EXTINF:-1 group-title="Общественные" tvg-id="rossia1" tvg-logo="https://iptvx.one/picons/rossia1.png", Россия 1 HD
+https://vgtrkregion-reg.cdnvideo.ru/vgtrk/0/russia1-hd/index.m3u8
 #EXTINF:-1 group-title="Эфирные", РТР-Планета Европа
 http://player.smotrim.ru/iframe/stream/live_id/d7fef212-df66-485d-9952-7eab82d7d51b.m3u8
 #EXTINF:-1 group-title="Эфирные", Первый информационный Беларусь
@@ -31,9 +29,8 @@ http://vod2.stb.tvime.ru/Nat_Geo_Wild_HD/video.m3u8?token=eyJhbGciOiJIUzI1NiIsIn
 https://serv25.vintera.tv/1pnk/prnk/chunks.m3u8
 #EXTINF:-1 group-title="Эфирные", Конгресс ТВ
 http://live-3.otcnet.ru/congresstv/index.m3u8
-#EXTINF:-1 group-title="Эфирные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", НТВ
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_NTV/variant.m3u8
+#EXTINF:-1 group-title="Общественные" tvg-id="ntv" tvg-logo="https://iptvx.one/picons/ntv.png", НТВ HD
+http://cdn2.ntv.ru/ntv0_hd/playlist.m3u8
 #EXTINF:-1 group-title="Эфирные", НТВ Хит
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
 http://cdn.ntv.ru/th_hit/tracks-v1a1/mono.m3u8
@@ -42,31 +39,22 @@ http://cdn.ntv.ru/th_hit/tracks-v1a1/mono.m3u8
 http://cdn.ntv.ru/th_serial/tracks-v1a1/playlist.m3u8
 #EXTINF:-1 group-title="Эфирные", TV BRICS
 http://rusbrics.mediacdn.ru/cdn/brics/russian/chunklist.m3u8
-#EXTINF:-1 group-title="Эфирные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", РЕН ТВ
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_RENTV/variant.m3u8
 #EXTINF:-1 group-title="Эфирные", Рен ТВ International
 http://178.134.1.158:8081/RENTV/index.m3u8
-#EXTINF:-1 group-title="Эфирные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", Мир
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_MIR/variant.m3u8
-#EXTINF:-1 group-title="Эфирные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", ТВ Центр
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_TVC/variant.m3u8
-#EXTINF:-1 group-title="Эфирные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", Пятый канал
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_5TV/variant.m3u8
-#EXTINF:-1 group-title="Эфирные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", Домашний
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_DOMASHNIY/variant.m3u8
+#EXTINF:-1 group-title="Общественные" tvg-id="mir" tvg-logo="https://iptvx.one/picons/mir.png", Мир
+http://hls.mirtv.cdnvideo.ru/mirtv-parampublish/mirtv_2500/playlist.m3u8
+#EXTINF:-1 group-title="Общественные" tvg-id="tvcentr" tvg-logo="https://iptvx.one/picons/tvcentr.png", ТВ Центр
+http://tvc-hls.cdnvideo.ru/tvc-res/smil:vd9221_2.smil/playlist.m3u8
+#EXTINF:-1 group-title="РАЗНОЕ", Пятый канал
+http://178.217.72.66:8080/5_Kanal/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="ФЕДЕРАЛЬНЫЕ", Домашний HD
+http://178.217.72.66:8080/Domashniy/index.m3u8
 #EXTINF:-1 group-title="Эфирные", Домашний Int
 http://178.124.152.238:8088/dom
-#EXTINF:-1 group-title="Эфирные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", Россия К
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_RUSSIAK/variant.m3u8
-#EXTINF:-1 group-title="Эфирные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", Звезда
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_ZVEZDA/variant.m3u8
+#EXTINF:-1 group-title="Познавательные" tvg-id="kultura" tvg-logo="https://iptvx.one/picons/kultura.png", Россия К HD
+https://vgtrkregion-reg.cdnvideo.ru/vgtrk/0/kultura-hd/index.m3u8
+#EXTINF:-1 group-title="РАЗНОЕ", Звезда
+http://178.217.72.66:8080/Zvezda/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Эфирные", Звезда Плюс HD
 http://tvzvezda.bonus-tv.ru/cdn/zvezdaplus/tracks-v1a1/mono.ts.m3u8
 #EXTINF:-1 group-title="Эфирные", Первый Крымский
@@ -74,9 +62,8 @@ https://live1.1tvcrimea.ru/1tvcrimea.m3u8
 #EXTINF:-1 group-title="Эфирные", Красная линия
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
 http://s55766.cdn.ngenix.net/s55766-media-origin/rline_high/index.m3u8
-#EXTINF:-1 group-title="Эфирные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", ОТР
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_OTR/variant.m3u8
+#EXTINF:-1 group-title="РАЗНОЕ", ОТР
+http://178.217.72.66:8080/OTR/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Эфирные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", Москва. Доверие
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
 http://rt-mos-htlive.cdn.ngenix.net/hls/CH_R04_DOVERIE/variant.m3u8
@@ -327,9 +314,8 @@ http://77.235.1.19:8000/play/a080/index.m3u8
 http://178.134.1.158:8081/eurosport/index.m3u8
 #EXTINF:-1 group-title="Спорт", Fast & FunBox
 http://77.235.1.19:8000/play/a07z/index.m3u8
-#EXTINF:-1 group-title="Спорт" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", Матч! ТВ
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_MATCHTV/variant.m3u8
+#EXTINF:-1 group-title="СПОРТ", Матч ТВ HD
+http://77.235.1.19:8000/play/a00u/index.m3u8
 #EXTINF:-1 group-title="Спорт", Матч! Арена
 http://tv.streams.baikal-telecom.net:8080/MatchArena/mpegts
 #EXTINF:-1 group-title="Спорт", Матч! Арена HD
@@ -524,35 +510,22 @@ http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1503003&ext
 http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1503004&extension=ts&play_token=Rvq5z5dBh0
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 15 ᵁᴴᴰ 3840P
 http://innovationtv.eu:80/play/live.php?mac=00:1A:79:7a:d8:76&stream=1503005&extension=ts&play_token=WGpwrWxXpP
-#EXTINF:-1 group-title="Развлекательные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", Пятница
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_PYATNIZZA/variant.m3u8
+#EXTINF:-1 group-title="РАЗВЛЕЧЕНИЕ", Пятница! HD
+http://178.217.72.66:8080/Pyatnitsa/index.m3u8
 #EXTINF:-1 group-title="Развлекательные", СРЕДА
 http://iptv46.mcx-ix.ru:8077/sreda/index.m3u8
-#EXTINF:-1 group-title="Развлекательные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", СТС
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_STS/variant.m3u8
-#EXTINF:-1 group-title="Развлекательные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", ТНТ
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_TNT/variant.m3u8
-#EXTINF:-1 group-title="Развлекательные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", СТС Love
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_STSLOVE/variant.m3u8
-#EXTINF:-1 group-title="Развлекательные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", Суббота!
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_SUPER/variant.m3u8
-#EXTINF:-1 group-title="Развлекательные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", ТНТ4
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_TNT4/variant.m3u8
-#EXTINF:-1 group-title="Развлекательные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", ТВ-3
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_TV3/variant.m3u8
-#EXTINF:-1 group-title="Развлекательные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", Че
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_PERETZ/variant.m3u8
-#EXTINF:-1 group-title="Развлекательные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", Ю
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_U/variant.m3u8
+#EXTINF:-1 group-title="КИНО", СТС HD
+http://77.235.1.19:8000/play/a00b/index.m3u8
+#EXTINF:-1 group-title="РАЗВЛЕЧЕНИЕ", ТНТ HD
+http://178.217.72.66:8080/TNT_HD/index.m3u8
+#EXTINF:-1 group-title="Развлекательные" tvg-id="sts-love" tvg-logo="https://iptvx.one/picons/sts-love.png", СТС Love
+http://31.148.48.15/STS_Love/index.m3u8
+#EXTINF:-1 group-title="Развлекательные" tvg-id="tnt4-international" tvg-logo="https://iptvx.one/picons/tnt4.png", ТНТ4 Int.
+https://cdn4.skygo.mn/live/disk1/TNT4/HLSv3-FTA/TNT4.m3u8
+#EXTINF:-1 group-title="ФЕДЕРАЛЬНЫЕ", ТВ3 HD
+http://77.235.1.19:8000/play/a053/index.m3u8
+#EXTINF:-1 group-title="РАЗНОЕ", Че!
+http://77.235.1.19:8000/play/a072/index.m3u8
 #EXTINF:-1 group-title="Развлекательные", ТНТ Exclusiv TV [MD]
 http://89.28.25.122/hls/tnt_md.m3u8
 #EXTINF:-1 group-title="Развлекательные", Беларусь 2 HD
@@ -648,9 +621,6 @@ http://cdn.universmotri.ru/live/smil:mbr.smil/playlist.m3u8
 http://tv.streams.baikal-telecom.net:8080/RT_DOC/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Познавательные", Silk Way
 https://ikomg-kazakh.akamaized.net/kazakh/kazakh.m3u8
-#EXTINF:-1 group-title="Кино", Всё ТВ Трейлеры
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_VSETVHD/variant.m3u8
 #EXTINF:-1 group-title="Кино", Феникс+Кино
 http://77.235.1.19:8000/play/a059/index.m3u8
 #EXTINF:-1 group-title="Кино", viju TV1000
@@ -756,9 +726,8 @@ https://autopilot.catcast.tv/content/44051/index.m3u8
 http://sochinskayatrk.ru/hdtv/hls/CTPK_HD/playlist.m3u8
 #EXTINF:-1 group-title="Детские", Kids TV
 http://77.235.1.19:8000/play/a030/index.m3u8
-#EXTINF:-1 group-title="Детские", 2x2
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_2X2/variant.m3u8
+#EXTINF:-1 group-title="РАЗНОЕ", 2x2
+http://178.217.72.66:8080/2x2/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Детские", Да Винчи
 http://178.217.72.66:8080/Da_Vinchi/index.m3u8
 #EXTINF:-1 group-title="Детские", Мультиландия
@@ -897,9 +866,6 @@ http://190.102.246.93:9005/play/a01p
 #EXTINF:-1 group-title="Музыкальные", MTV Classic
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
 http://fl5.moveonjoy.com/MTV_CLASSIC/index.m3u8
-#EXTINF:-1 group-title="Музыкальные", Муз ТВ
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-http://zabava-htlive.cdn.ngenix.net/hls/CH_MUZTV/variant.m3u8
 #EXTINF:-1 group-title="Музыкальные", 1HD Music
 http://91.247.68.229:8000/play/eee/index.m3u8
 #EXTINF:-1 group-title="Музыкальные", Первый музыкальный
