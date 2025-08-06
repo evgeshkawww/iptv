@@ -7,8 +7,8 @@ https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="Не показывает? Обнови лист!", 4100119260753027 Юмани
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
-#EXTINF:-1 group-title="ФЕДЕРАЛЬНЫЕ" tvg-id="pervy" tvg-logo="https://iptvx.one/picons/pervy.png", 1 канал HD
-https://edge1.1internet.tv/dash-live2/streams/1tv-dvr/1tvdash.mpd
+#EXTINF:-1 group-title="ФЕДЕРАЛЬНЫЕ" tvg-id="pervy" tvg-logo="https://iptvx.one/picons/pervy.png", Первый канал HD
+http://77.235.1.19:8000/play/a07r/index.m3u8
 #EXTINF:-1 group-title="ФЕДЕРАЛЬНЫЕ" tvg-id="rossia1" tvg-logo="https://iptvx.one/picons/rossia1.png", Россия 1 HD
 https://vgtrkregion-reg.cdnvideo.ru/vgtrk/0/russia1-hd/index.m3u8
 #EXTINF:-1 group-title="Эфирные", РТР-Планета Европа
@@ -2189,3 +2189,4 @@ https://autopilot.catcast.tv/content/40783/index.m3u8
 http://tv.ttk.mx:9067
 #EXTINF:-1 group-title="Кино-2", Твое ТВ HD
 http://tvoetv.space:8080/tvoetv/index.m3u8
+
