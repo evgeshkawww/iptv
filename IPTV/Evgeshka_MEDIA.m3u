@@ -246,8 +246,6 @@ http://65.109.83.185:8080/Clarity4K_fantastica/index.m3u8?token=4f9934e7b10d8991
 http://65.109.83.185:8080/Clarity4K_Asia/index.m3u8?token=5701d492a15bbe37c5f2f55e8193238beb5da86c-25ca0a09944328f2761637842cdaf6ed-1754523504-1754480304
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Космомир
 http://65.109.83.185:8080/Clarity4K_kosmomir/index.m3u8?token=758b36efc30e7bf2359a5352cd64fb1f453796e4-8029528c107d70e926d5efc832af1c3f-1754523504-1754480304
-#EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K HBO series
-http://65.109.83.185:8080/Clarity4KHBOseries/index.m3u8?token=77925323e8dc54aa3701c24696c3ac819de65f4d-9d4f95878a295ade9ecafe7d9f43102a-1754523504-1754480304
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Gamefilm
 http://65.109.83.185:8080/Clarity4K_Gamefilm/index.m3u8?token=3b168f38b0b9dc6ea9d7aa5b2c7c848abd741d1a-d61994cfc7809e2216df5725fcd05c7c-1754523504-1754480304
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Семейный
@@ -2187,6 +2185,7 @@ https://autopilot.catcast.tv/content/40783/index.m3u8
 http://tv.ttk.mx:9067
 #EXTINF:-1 group-title="Кино-2", Твое ТВ HD
 http://tvoetv.space:8080/tvoetv/index.m3u8
+
 
 
 
