@@ -89,279 +89,279 @@ http://str6.oxtve.live:8080/sanktpererburg/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5
 #EXTINF:-1 group-title="Эфирные" tvg-name="1:1716" tvg-logo="http://stb.ping-tv.com/images/logo_chanel/GROZNIY200.png" catchup="shift" catchup-days="0", Грозный
 http://str6.oxtve.live:8080/groznyy/mpegts?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNS4xNiIsIm5iZiI6MTc1NDUzMzMyNSwiZXhwIjoxNzU0NjE5NzI1LCJpYXQiOjE3NTQ1MzMzMjUsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.8ltTWZ9bqgXpcxElbp7RQLfZcg0YXjOngBGmwKLYMbwEvgeshka_BLR
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Матч! Премьер HD orig
-http://65.109.83.185:8080/match-premier-orig/index.m3u8?token=2a780bf804fe1ed4d8717db39536c06506a2ec11-7d2c8476d344f6ef119d1c7ebfd0d45a-1754584430-1754541230
+http://65.109.83.185:8080/match-premier-orig/index.m3u8?token=7d57bdfab6501379359fe5193b224b9de7191dcb-dc61cc4d856e5d26512f4818927d774c-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Setanta Sports 1 HD
-http://65.109.83.185:8080/setanta1hd/index.m3u8?token=8f5cd4c402b82ee0c14e27e77a38117ff0a0809c-da2c42c55bf79347cbca489d30550879-1754584430-1754541230
+http://65.109.83.185:8080/setanta1hd/index.m3u8?token=a1cf4771bf5fbb1ddf4f368885554395fe29c50f-5e3c21727d2c3625f435dfbd0c389c29-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Setanta Sports 2 HD
-http://65.109.83.185:8080/setanta2hd/index.m3u8?token=6a561cfaac4885d5b74859345987f13efa0c749b-4d338d95c252d8216791217be52bce90-1754584430-1754541230
+http://65.109.83.185:8080/setanta2hd/index.m3u8?token=cddcc359916f6aed5a23b7a0d0ea730545cb2da9-fca5e3c036d52e5dd7548686a165ede4-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Setanta Sports Premium
-http://65.109.83.185:8080/setanta-prem-ua/index.m3u8?token=e1f8fdf3be58fced5efd2a21e94529ed2478a5bb-3f08f32be269850c8f72ab3cad40cf2c-1754584430-1754541230
+http://65.109.83.185:8080/setanta-prem-ua/index.m3u8?token=dbb0ccd5420f05782eab6a4892c761e7d27d656e-310772a44dd735a67be684c26caa6055-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Setanta Ukraine HD
-http://65.109.83.185:8080/SetantaSportsUkraine/index.m3u8?token=0694f1c9d670fb58b4de16295f1a58909abd8e0b-ef5d7df2188e9d33b4b516a6897d14fa-1754584430-1754541230
+http://65.109.83.185:8080/SetantaSportsUkraine/index.m3u8?token=c6563ccdb0af34356da07ffde13b240572fa728b-e41dd2e9b6fbc7bc6112f42c4e550ff6-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Setanta Ukraine Plus HD
-http://65.109.83.185:8080/setantaua/index.m3u8?token=5cd78735a8671000b50634c40e38089dcbe17cd7-d84320a49dab407f45bac1a4c44c3597-1754584430-1754541230
+http://65.109.83.185:8080/setantaua/index.m3u8?token=64533e4d9ce0ef1e65a09bbad869baa58267bfbc-50d51393b63f3123edd6aaf681232a2f-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Setanta Sports 1 HD KZ
-http://65.109.83.185:8080/setanta1kz/index.m3u8?token=5db0f0771b1f7588c27dd7f48af1bf440285ed56-4895e41769a4d3be46b4442ae577e762-1754584430-1754541230
+http://65.109.83.185:8080/setanta1kz/index.m3u8?token=388df905b817cd3395edaf26f919c3a05c2526de-e01005767f21ef34dbcf71d10630ae78-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Setanta Sports 2 HD KZ
-http://65.109.83.185:8080/setanta2kz/index.m3u8?token=e4eb2e03c85ab97880cc9156d4421862fd462035-ac725fa0c6164152517a43c8d02d8da7-1754584430-1754541230
+http://65.109.83.185:8080/setanta2kz/index.m3u8?token=54e74cb2d4b64aa08e0964b21f3987b6c8ac9310-6bed9d6ab9db80195da93ca478e1d485-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Setanta Qazaqstan HD
-http://65.109.83.185:8080/setanraqz/index.m3u8?token=5ff670789ea655c2e64afffe77d28e2d59888c27-b8f02654fe60af55c27db2e663dce9c9-1754584430-1754541230
+http://65.109.83.185:8080/setanraqz/index.m3u8?token=f9a8f05fc777119de863ad81f0855079a83535db-968d4d4b00adf59b4cc47db752276c5a-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Setanta Moldova HD
-http://65.109.83.185:8080/setanta/index.m3u8?token=a9db61835b8ea4a79569c4ca931e81019795249e-fec0296dbd9e20d99a641f6b75172f54-1754584430-1754541230
+http://65.109.83.185:8080/setanta/index.m3u8?token=a8132827428ab7369877c4b08eed650730bfefbc-012000b807a470e239e0eb407727fbfa-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Матч! HD
-http://65.109.83.185:8080/matchhd/index.m3u8?token=099e84756e566893145b26e4750bc803be0aadfb-f5bd90f7a171eb77df14a3743d64f1df-1754584430-1754541230
+http://65.109.83.185:8080/matchhd/index.m3u8?token=ad1ecb2bd7b10f7a6f11c2ca8a3a95cf3b2ab177-4be8e2dac074850ac3592b65e0fb56e4-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Матч!
-http://65.109.83.185:8080/match/index.m3u8?token=382b0b6e5567f33d15313b50846bbacb59ab6921-eb8317d037fc203b75d89277527b5f6f-1754584430-1754541230
+http://65.109.83.185:8080/match/index.m3u8?token=d1aa5a6886412d6d00627328a3bf74b11d8e443c-640095f81657ac84a1f4066df5c2827f-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Матч! Премьер HD
-http://65.109.83.185:8080/matchprem/index.m3u8?token=30bba77571fe6899ac3f023797ef04669a772222-b237d31d5f01c7c81e51a0262b2cfa46-1754584430-1754541230
+http://65.109.83.185:8080/matchprem/index.m3u8?token=b7fe180568ec7ed612b37127dc8e60e0eac0b8cb-253701b125355915f8e81ad87b22191c-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Матч! Премьер
-http://65.109.83.185:8080/Premiermach/index.m3u8?token=0a9b2508e633159220ba14d2db828de139bb1b19-fe244e175ae25b525762096244ea7074-1754584430-1754541230
+http://65.109.83.185:8080/Premiermach/index.m3u8?token=4abc5c15bcdcc517e4c45c97e2eaad9365fc5ca3-21c95fdd1cae63f8327497b1b9259521-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Матч! Футбол 1 HD
-http://65.109.83.185:8080/matchf1hd/index.m3u8?token=6d52e190a8c128f408d0b64953d147d828e15c53-7ca42becfa87c0fb0cc0acc8ac2dceef-1754584430-1754541230
+http://65.109.83.185:8080/matchf1hd/index.m3u8?token=e509bfc44ee4807fc2b2612be6375cccde518b50-f6bcac68bc4bdd8d45adf05c43dc2120-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Матч! Футбол 1
-http://65.109.83.185:8080/MatchFutbol1/index.m3u8?token=71e1ee462ef5aa816edde934c80df7c7b7314dfe-b408c9cc9685085cd6c4becd048675fe-1754584430-1754541230
+http://65.109.83.185:8080/MatchFutbol1/index.m3u8?token=dde9cbc436165163cf7f1fad8e58be03f9209cf8-48c4d60f6da20387009bd2e158a197f4-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Матч! Футбол 2 HD
-http://65.109.83.185:8080/matchf2hd/index.m3u8?token=65167e072c0fd84e72c44830419789101deba10a-c2b82cdd6ef6e127da1c5d70fc458972-1754584430-1754541230
+http://65.109.83.185:8080/matchf2hd/index.m3u8?token=82471463020bf950512a0ba7b5d2d83cffb174b0-77551389d40fc4f3ab427b6c8f783148-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Матч! Футбол 2
-http://65.109.83.185:8080/MatchFutbol2/index.m3u8?token=c55e0c5f8908497ecdd2619ff78416f48f2af6bb-2157155dc78dc84cf0808394777658b9-1754584430-1754541230
+http://65.109.83.185:8080/MatchFutbol2/index.m3u8?token=ead26938bb8b380d978d3b6be87e33376597eba6-9a3715ca868e23ec1f2c2484f8e1d3a8-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Матч! Футбол 3 HD
-http://65.109.83.185:8080/matchf3hd/index.m3u8?token=e04d129cae4e08f0a00ff22de267649941df6634-86daea661190c3703cf997f2b4127fb9-1754584430-1754541230
+http://65.109.83.185:8080/matchf3hd/index.m3u8?token=906a0c658e6d23893e684f24512146c0d3c6db1b-c5305ae1c7d922396fedb14e488fec9e-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Матч! Футбол 3
-http://65.109.83.185:8080/MatchFutbol3/index.m3u8?token=343007b0204704dbee6b39900343f4d52c14fb82-76d6c434408bb2e065af1488a8b62b8e-1754584430-1754541230
+http://65.109.83.185:8080/MatchFutbol3/index.m3u8?token=afb678ea51bc96f4a60746f74047a6e85d7afcad-56b5b32bf8d84003335401b56816fd4d-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Матч! Боец HD
-http://65.109.83.185:8080/boec/index.m3u8?token=7f1cff81b71e38364a11007ea6e7b4d53cd3431a-b8583246ec0e01c1aaf02b2abcec14a7-1754584430-1754541230
+http://65.109.83.185:8080/boec/index.m3u8?token=7eaad18cda26ae0148b88cb8dbe0346ecff0058a-a614b0ea8a0f769b498fcd08b564aed1-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Матч! Боец
-http://65.109.83.185:8080/Matchboez/index.m3u8?token=48784a07367046b7e91a665177d17a23d3f65c7b-7866dc15b827fc30982920677df6e887-1754584430-1754541230
+http://65.109.83.185:8080/Matchboez/index.m3u8?token=b0cfd46ce5ca242842c633cba58464314ea6f338-1e5515c2a6fa5f25a126fdec9f0e6170-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Матч! Страна HD
-http://65.109.83.185:8080/matchstranahd/index.m3u8?token=2011a31d08e66beaba6a35d8f2210af64292d2b3-fa38c5f3c503b0061f3097ecac426513-1754584430-1754541230
+http://65.109.83.185:8080/matchstranahd/index.m3u8?token=9362b078ca25966e4650f0a06db0cf1055fbeb11-d1933eb7629ab8657006360a3d0157e2-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Матч! Страна
-http://65.109.83.185:8080/matchstrana/index.m3u8?token=c3b0db97cbd93c7588981a618f6b740d5708fb9a-22b6f1d1a3bfc8acff57a54bcd19827f-1754584430-1754541230
+http://65.109.83.185:8080/matchstrana/index.m3u8?token=43aefbe614acdce4fb0da94a7c3c1136fa678cf1-0f4ab47fbabb4191ec46ebf01cd840e8-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Матч! Арена HD
-http://65.109.83.185:8080/matcarenahd/index.m3u8?token=68898f57284f9e1b74a86acd0d39db254f414e52-bf66284d8e0eba2c6e46fb58f350e1c5-1754584430-1754541230
+http://65.109.83.185:8080/matcarenahd/index.m3u8?token=b650c6c4131545bac0c5aff190c7976b920f202f-f6f10576cbcd8f040dfe5978563ee815-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Матч! Арена
-http://65.109.83.185:8080/matcarena/index.m3u8?token=b668a0dee25205d07bf5970259f2e0fb0ac0aedb-2753a29527bc581d7348dd388b15936e-1754584430-1754541230
+http://65.109.83.185:8080/matcarena/index.m3u8?token=caf0c8b8effe89294ed961058c90bbf1c0593912-a1e48a740d10c747f657b404950cff75-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Матч! Игра HD
-http://65.109.83.185:8080/matcigrahd/index.m3u8?token=cc9240411f5a6bf9c6a0ad631d435d2fc4bb2b3d-a80250bd349b9fdc1e3280f03d822206-1754584430-1754541230
+http://65.109.83.185:8080/matcigrahd/index.m3u8?token=32876c96cb85eff343fa51c528ab551ed7dff4d2-0fef57594620ef2560c4703e2d886457-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Матч! Игра
-http://65.109.83.185:8080/matcigra/index.m3u8?token=4b0181d3a0d6ca6c6b256f335619ba6406160bf1-4213774014d95cb1fdf406622c0941f3-1754584430-1754541230
+http://65.109.83.185:8080/matcigra/index.m3u8?token=0d3180cc9bea07b11e8351c8310e351ae168d040-10461d12ed832e6d806135d15fc2ee63-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Матч! Планета
-http://65.109.83.185:8080/math_planet/index.m3u8?token=1019384cf8090e4e5d6f7e8078fb8f6e596d0484-ee4b74d00d26f912e52af3bef36708af-1754584430-1754541230
+http://65.109.83.185:8080/math_planet/index.m3u8?token=b29c6c42ae5fed8cee45d81684f623bb23803a19-76647dec903e1ad346ddfe1a7530c4fe-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Футбол HD
-http://65.109.83.185:8080/futbol/index.m3u8?token=45976d4c412a559ff313b478d7ea6bc70f20b8e6-2c693a57107cc444a7936f6baab2a950-1754584430-1754541230
+http://65.109.83.185:8080/futbol/index.m3u8?token=00cb41784e52f786e6ac21339eee05f5015191f7-d76294c1f46e8dc6aee70aa23ee09b37-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Megogo Спорт HD
-http://65.109.83.185:8080/Megogosport/index.m3u8?token=6139ecc1bc61ddb059973cbb66696ec23ab84316-c3e278d8d5d3937a3ecb577672262b1e-1754584430-1754541230
+http://65.109.83.185:8080/Megogosport/index.m3u8?token=759f890579efd89351b213cd87d6ef3e8baf3249-23cf3c37b0ff7c451008b896f101a9ff-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Megogo Футбол 1 HD
-http://65.109.83.185:8080/megogo-football-3/index.m3u8?token=0c7a40688af766c6bebaa3728af3203bca724df4-534db1fb080a569523a1b76ca93a481c-1754584430-1754541230
+http://65.109.83.185:8080/megogo-football-1/index.m3u8?token=3c14d591e434ee772fadea8db86d3386a0593b85-3020472b833369c62709f3bb7ee687ba-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Megogo Футбол 2 HD
-http://65.109.83.185:8080/megogo-football-3/index.m3u8?token=0c7a40688af766c6bebaa3728af3203bca724df4-534db1fb080a569523a1b76ca93a481c-1754584430-1754541230
+http://65.109.83.185:8080/megogo-football-1/index.m3u8?token=3c14d591e434ee772fadea8db86d3386a0593b85-3020472b833369c62709f3bb7ee687ba-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Megogo Футбол 3 HD
-http://65.109.83.185:8080/megogo-football-3/index.m3u8?token=0c7a40688af766c6bebaa3728af3203bca724df4-534db1fb080a569523a1b76ca93a481c-1754584430-1754541230
+http://65.109.83.185:8080/megogo-football-1/index.m3u8?token=3c14d591e434ee772fadea8db86d3386a0593b85-3020472b833369c62709f3bb7ee687ba-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Megogo Gong HD
-http://65.109.83.185:8080/megogo-gong/index.m3u8?token=c945cfbf379032c646220d9f029574df5ce528fe-7424354f10763d51bcb864a39704e9ab-1754584430-1754541230
+http://65.109.83.185:8080/megogo-gong/index.m3u8?token=cd4ab67a1bf5efc6f07324b0302f5251ad7f6f12-81e12a8d3fc774a3aed107ee8d7d406b-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Удар HD
-http://65.109.83.185:8080/udar/index.m3u8?token=ea3ec470ddccb30c0b7d27933229ba8013af71b6-b40c7a2964633fa81a7b45260d3910b9-1754584430-1754541230
+http://65.109.83.185:8080/udar/index.m3u8?token=88b8dd03ad3f4d451dfe9e288dcca3e82885aa19-fd385add1e805af8d7cc277884275726-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", MMA-TV HD
-http://65.109.83.185:8080/mmatvhd/index.m3u8?token=ba3dfa9920170279098a4a831295a1d4df0a8370-8579118e0de6a6d9bfbf5ecaab986810-1754584430-1754541230
+http://65.109.83.185:8080/mmatvhd/index.m3u8?token=95953ed0ebe861584f934ee94f14100fbd336875-9413d322010248e7e566c4e04307c893-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Бокс ТВ
-http://65.109.83.185:8080/bokstv/index.m3u8?token=59d09012964c9ba19daeffc37f6f79d0870c5f8e-e14a0c93950167fb180312f9d8d20e6e-1754584430-1754541230
+http://65.109.83.185:8080/bokstv/index.m3u8?token=044a8de43ac0f61c0592d860f6eeecc4b631fcc7-b412e13d44f1ed71645a8d3a4ec7ac14-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", KHL
-http://65.109.83.185:8080/khlhd/index.m3u8?token=a3a9427fa9a9ea80cc1f557d36ed0d2affcf337c-fdf23966d8955ecda923769a30c5926c-1754584430-1754541230
+http://65.109.83.185:8080/khlhd/index.m3u8?token=96c4cb5e4b6d87b9abd2870ffaceb9f43f697b11-01bc796d3859920cce7f14d70a8cb72b-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", KHL Prime HD
-http://65.109.83.185:8080/khlprime/index.m3u8?token=0e69d31c5da1835df8ffd98c43f353c7ca6add63-ae5d032b47c88161648ac0bb0073ef3a-1754584430-1754541230
+http://65.109.83.185:8080/khlprime/index.m3u8?token=38f08d0124c7d08fcb21883847352b32e7e3cd83-8a8d416881228312e3d20bf62b25ff56-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Eurosport 1 HD
-http://65.109.83.185:8080/eurosport1hd/index.m3u8?token=fb7f8683525bad9766040af0ac73b2938584753f-c763a9c3147655cb46f9baaad590fe83-1754584430-1754541230
+http://65.109.83.185:8080/eurosport1hd/index.m3u8?token=fdb93071c5cb198941e18afd40274cf368625348-cb3b5144d91d49ff9c4c596b40807b79-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Eurosport 2 HD
-http://65.109.83.185:8080/eurosport2hd/index.m3u8?token=55beb48a59013f5a3ee12091db4815c35ea9e39d-20addb8a21a69de69f8d40f41f938057-1754584430-1754541230
+http://65.109.83.185:8080/eurosport2hd/index.m3u8?token=c12e975bec90e1ec0b390ca0737734cbafa583b4-b65d5367169346bbae721eba7af4a6fa-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Старт HD
-http://65.109.83.185:8080/start/index.m3u8?token=4d7795d3340a52e603cf66c36416b5996dcb8433-cf0a4be836cefa7daddecf648e00f94e-1754584430-1754541230
+http://65.109.83.185:8080/start/index.m3u8?token=66dfba4cacf5fd6f1422a0ae2d8f2410189f8a5b-4994a836c8476ebcb10b3109e8393fa7-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Старт Триумф HD
-http://65.109.83.185:8080/start_trim/index.m3u8?token=0cfc3d58e9de3e0a54635527e73787f8b11ce2a4-c24ff760abe6970b6343e90a9966eceb-1754584430-1754541230
+http://65.109.83.185:8080/start_trim/index.m3u8?token=70ab09929ebc313bb5dfdc3dab9cbaa79dbfdcb8-2676429e2b90e4ead66700fc234aab76-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Viju+ Sport HD
-http://65.109.83.185:8080/vijusporthd/index.m3u8?token=4a70fa069286af1f5f0502d7ce0f6f6b9aadd919-2ac60de994b0e996e5977deb68c8b49f-1754584430-1754541230
+http://65.109.83.185:8080/vijusporthd/index.m3u8?token=677707b40933e1f98ffeddb67f7bc49179723a07-a0046d07b403693ba475ee573e826579-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Viju+ Sport
-http://65.109.83.185:8080/vijusport/index.m3u8?token=aa27c1125cc843255039b144564ce2af41b7bd49-c75ab3096e98618ec51bb21a6ff01ae1-1754584430-1754541230
+http://65.109.83.185:8080/vijusport/index.m3u8?token=3e189aab69a6e67167ca3b0b0a12d73733f6bd00-6384ca0fbb972552d611478236173271-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", ViP Sport 1
-http://65.109.83.185:8080/ViP_Sport_1/index.m3u8?token=518bb9746cddf1617c1a456e2ff19f3f6d27b907-0c5978d112768cb1dae473baf4faa1b5-1754584430-1754541230
+http://65.109.83.185:8080/ViP_Sport_1/index.m3u8?token=1b98f75337da67b304ddce26a826c4fe1d0ea6c8-d192e164a33bccb6912a68527b9872cd-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", ViP Sport 2
-http://65.109.83.185:8080/ViP_Sport_2/index.m3u8?token=13c1dc07b8db59d8afeb0b6e4bd053be42f4fc93-b9ac14c87830069d209f7b9d3272c085-1754584430-1754541230
+http://65.109.83.185:8080/ViP_Sport_2/index.m3u8?token=99f1ac55fd0f36bfc995fbe10935f780d13c196c-9a01377fd8eaa21138ad2ba35f19e931-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", ViP Sport 3
-http://65.109.83.185:8080/ViP_Sport_3/index.m3u8?token=67ecf22d5fe440b6b91f3a779226e246db4db101-c445a42e86430f9022323176d13a5ec3-1754584430-1754541230
+http://65.109.83.185:8080/ViP_Sport_3/index.m3u8?token=262df41a3b76c6325abaea77196063f7dbb3d275-7fecbcd7a616e59830e384b35f46d5ee-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", ViP Sport 4
-http://65.109.83.185:8080/ViP_Sport_4/index.m3u8?token=fe89659040f9baf7503773a73ebf2efa2a6f927d-fa07678cfbd3ccf8a6c7f7a546b682fa-1754584430-1754541230
+http://65.109.83.185:8080/ViP_Sport_4/index.m3u8?token=0b991fdb14e3c3f6a0a3050e4b1703acec0cfab4-d03396e91256be45c316b1d3a1f269d7-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", ViP Sport 5
-http://65.109.83.185:8080/ViP_Sport_5/index.m3u8?token=515acc94cdb28cc5cfc4951321bed8a54c03fb0f-4dea0388e94fc0384317d7f69f061b1b-1754584430-1754541230
+http://65.109.83.185:8080/ViP_Sport_5/index.m3u8?token=82255d62a66385d9250ffe80eacdce7ad03e880f-a2e0f336d56b031c4a474d54e94d698c-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", ViP Sport 6
-http://65.109.83.185:8080/ViP_Sport_6/index.m3u8?token=1fc5b5707432ea6445dc098f2e1fb4381c4bc70b-66e1f5488423d770b378225ef6d440d8-1754584430-1754541230
+http://65.109.83.185:8080/ViP_Sport_6/index.m3u8?token=24c5f5e1b1a643a746e7247c2d344bfa0c81bc89-64ace1464318a4b7641cb52c21173e03-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", ViP Sport 7
-http://65.109.83.185:8080/ViP_Sport_7/index.m3u8?token=856d298ec873efc235a3def1d3107019c482af04-3d9158c19b38a10eb24665400d7943b2-1754584430-1754541230
+http://65.109.83.185:8080/ViP_Sport_7/index.m3u8?token=91d7981a35db8956dd05f5126f280e838ecbd52d-3c23b96a3ad0e2c7e8c50bf759af5914-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", ViP Sport 8
-http://65.109.83.185:8080/ViP_Sport_8/index.m3u8?token=ce8b44b5c656eea339b741e58510f21d773f711d-e6686577f9df063099758bfd7e91bc1d-1754584430-1754541230
+http://65.109.83.185:8080/ViP_Sport_8/index.m3u8?token=45c93c8419e72bf8abfedeb6242d20166370fcb3-7a1ca659f7cecb6ddb8ebbc2f9cc8b1c-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", ViP Sport 9
-http://65.109.83.185:8080/ViP_Sport_9/index.m3u8?token=a77877dd2370c9b1806768233902b11ec12f58a2-ae4f663dad33702a39717d7ddc2e7b8d-1754584430-1754541230
+http://65.109.83.185:8080/ViP_Sport_9/index.m3u8?token=85cb00f617224981f8a24b6ff986499ff1a8e04b-f8d15d23cd5846070a91884d85349fe7-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", ViP Sport 10
-http://65.109.83.185:8080/ViP_Sport_10/index.m3u8?token=0b0c8e0f3fa7e2f0a2b29853ca62f56b855b3ce9-a001e3d19930b7b8ee558f227260efd3-1754584430-1754541230
+http://65.109.83.185:8080/ViP_Sport_10/index.m3u8?token=4fa0578a01b6e016d9508c8404a5ba39c4d9b0d7-74482292477472ed2c6679595b175ef3-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", ViP Sport 11
-http://65.109.83.185:8080/ViP_Sport_11/index.m3u8?token=214b46b82d1bc36be362bf2aa2eb6cad83b49edd-53eb21706bc27301a3fd0f464816c2c7-1754584430-1754541230
+http://65.109.83.185:8080/ViP_Sport_11/index.m3u8?token=e727873eba3c825e6e933beb297eedf5e36bbe74-cefbf582c5938b1086dedb7e426f721d-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", ViP Sport 12
-http://65.109.83.185:8080/ViP_Sport_12/index.m3u8?token=a88ad286666a8243d1c7dafd28fc8d839ac87a2e-83f090294d4aeca9b594d983abd733cf-1754584430-1754541230
+http://65.109.83.185:8080/ViP_Sport_12/index.m3u8?token=dd97912ad0fdbce7cf93c5c3163d22eadb826f41-e46c9451635804ebfd140aa0a993879d-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", ViP Sport 13
-http://65.109.83.185:8080/ViP_Sport_13/index.m3u8?token=27205365641372f28ebbe012b1f33bf7bc9758b9-8c5118790a2b50c0ab16226c226232df-1754584430-1754541230
+http://65.109.83.185:8080/ViP_Sport_13/index.m3u8?token=53e223bba3e8d205ecdbcb672acd07f9400751c5-9e0d7b319dc5dc9c337f25386c87ed04-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", FintGa 1
-http://65.109.83.185:8080/FintGa1/index.m3u8?token=2c06237b4c3945a8051dc7393334351dd201790d-dc3dfbb03e5b6cb0c8905335d05ac822-1754584430-1754541230
+http://65.109.83.185:8080/FintGa1/index.m3u8?token=aa46e059603586aa6003645814b71e43c13064a5-d38cbe6e30e8fb699531e298425941a6-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", FintGa 2
-http://65.109.83.185:8080/FintGa2/index.m3u8?token=c18105de71ca32194036f4dea45ca7f1aeaa0828-62984b372485b014684f5d3a4ec9d68c-1754584430-1754541230
+http://65.109.83.185:8080/FintGa2/index.m3u8?token=bdfdba257493e9242de84724f67f7aeac30b68e6-92608137cd08a97fd159b5c3ec5215f8-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", FintGa 3
-http://65.109.83.185:8080/FintGa3/index.m3u8?token=295962d10eaa6f63b1dab44d31def2ef9d67bd5b-1e5d177af5846c007a75e919b7e85ec9-1754584430-1754541230
+http://65.109.83.185:8080/FintGa3/index.m3u8?token=42dd472d0f40ba7d15b505ff91e7ea26b6644bcb-1da0228d2ffd8a446a4b97aa4178f1f9-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", FintGa 4
-http://65.109.83.185:8080/FintGa4/index.m3u8?token=1b79901c04f3adf80f04f4cbc87598053417bcad-4e83a643aaf6bebdef7e320f6afd2818-1754584430-1754541230
+http://65.109.83.185:8080/FintGa4/index.m3u8?token=e9e3595d0ce323c8233ae2a37bca91438ff951fe-5d7a7c15d3156d921ea1fe0797890482-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Pimple 1
-http://65.109.83.185:8080/Pimple1/index.m3u8?token=c63cf7763fb00841eda47159d95f4a08a2ac7a84-ebc6be2f6d325f8e1f223eda8eb71894-1754584430-1754541230
+http://65.109.83.185:8080/Pimple1/index.m3u8?token=9c8f0a6ad56737891961802f5d0a0f62376a0271-57a82a2b6e6538a54779ac03f371d61a-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Pimple 2
-http://65.109.83.185:8080/Pimple2/index.m3u8?token=30b894cffb010208fb034481f90e94d854ad5109-9c58bdfe3d2f97779aa5fff080b6c69d-1754584430-1754541230
+http://65.109.83.185:8080/Pimple2/index.m3u8?token=7d47eef41165066ef63f818be2d64ec2c314fe22-155ed0cd6a95c8da446c2d5c38eabe4a-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Pimple 3
-http://65.109.83.185:8080/Pimple3/index.m3u8?token=aaf42130051007baec1a45fbc257127ef1aa7841-64ed18e12c8d2696c124a92f0cdc184c-1754584430-1754541230
+http://65.109.83.185:8080/Pimple3/index.m3u8?token=fb68db8be1a488cad8e8fbf314f65bbb943a55e2-9dc6bfab7e6e33fbe635e3b4a7af7074-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Pimple 4
-http://65.109.83.185:8080/Pimple4/index.m3u8?token=337c0f88bd1f1df045785c040bedddd75c6fec56-e73abdf8ea21f08f61d849efd05ac490-1754584430-1754541230
+http://65.109.83.185:8080/Pimple4/index.m3u8?token=2abbb7b010663716a34214c47ef944afd251b4c9-d28418b17b1e65bea4a80d32698e9d3e-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Pimple 5
-http://65.109.83.185:8080/Pimple5/index.m3u8?token=dfd329175d25942edca79d29cf59e52d2ff8ee9d-69e9ede16214dc1ccd8450d234c04534-1754584430-1754541230
+http://65.109.83.185:8080/Pimple5/index.m3u8?token=99de5607970643386af551d9e7409b7f70814926-48153201e0ac1acb7beff615e1edf18b-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Pimple 6
-http://65.109.83.185:8080/Pimple6/index.m3u8?token=f7642c67c6c052e900e851df3a07924c235c15cc-e39aab9c5a56f4a9cb59df93b9d19c47-1754584430-1754541230
+http://65.109.83.185:8080/Pimple6/index.m3u8?token=d9a05cd5dfee282ab784efc49394eccf75b9a827-a980f554c9dc2d55326b23a335af7d27-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Vital Sport 1
-http://65.109.83.185:8080/Vital_Sport_1/index.m3u8?token=085843e7e09371468b314f367f8e2ec50ea5adac-87dcfc8454a14f5cfe8a70a16fa30418-1754584430-1754541230
+http://65.109.83.185:8080/Vital_Sport_1/index.m3u8?token=55afd75a4ed3e1268844dfe965924c982f47fc80-2aee49dff1249479e210e61bd74aba4c-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Vital Sport 2
-http://65.109.83.185:8080/Vital_Sport_2/index.m3u8?token=edba915d7677ed2916dd47e551c8bea04763d126-385a319f4d8ee03ef7c50d84a96d081e-1754584430-1754541230
+http://65.109.83.185:8080/Vital_Sport_2/index.m3u8?token=c6dcfe2e572be45cf07c4567b3bc15e34f853c50-f045a8eb1147c7d5de815470acd71309-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Vital Sport 3
-http://65.109.83.185:8080/Vital_Sport_3/index.m3u8?token=f9033bfb45a2c5ab6d81f46b77ebee7282c3f9b4-aa4bfd3315ee7735e0417d1577d629e6-1754584430-1754541230
+http://65.109.83.185:8080/Vital_Sport_3/index.m3u8?token=4022b503dd43daf961a579112b51bf7422f5ed29-5e9e0ed9df863f5f6baad55211d3a3ec-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Vital Sport 4
-http://65.109.83.185:8080/Vital_Sport_4/index.m3u8?token=f981ff2e275086b4839e8fe0ba541de21d547f12-b7be7e16733103bad586d1d335703fa7-1754584430-1754541230
+http://65.109.83.185:8080/Vital_Sport_4/index.m3u8?token=9ad3d09c1648fe17072cf2987418f72c86e34e30-bc64a494b9b604712db21f22e2cf76b1-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Vital Sport 5
-http://65.109.83.185:8080/Vital_Sport_5/index.m3u8?token=56122cad0723f005536e0d5ce67bed2dd5e8aa2e-35bd77179be2242d884a14143e65a183-1754584430-1754541230
+http://65.109.83.185:8080/Vital_Sport_5/index.m3u8?token=24257eec03f13b68de3d5ca1350ff9ce6e4e95d1-e08f14b7312aaf0dc7b8607dee2f68ae-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Vital Sport 6
-http://65.109.83.185:8080/Vital_Sport_6/index.m3u8?token=dc5a92f2a115181f9cab0181a6a42d5d29718e16-4da1356999d91fee2a55e86b8ea2f9b0-1754584430-1754541230
+http://65.109.83.185:8080/Vital_Sport_6/index.m3u8?token=2e4f7dff3142c8bfe09a5bf825dc848b690eb0af-d431d39d0028ba9c889450025ec49ee0-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", NBA TV HD
-http://65.109.83.185:8080/NBA_LIVE/index.m3u8?token=5e6e15a4988522ee120f355b6aa4f8c6c18be6a1-0164369b840419f87a586c6e7e1b8400-1754584430-1754541230
+http://65.109.83.185:8080/NBA_LIVE/index.m3u8?token=92e1b5549e09349313d5cce6e03c2e454f786216-9c8aa2c9915a14a180d09fd3d1f2ead2-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Dubai Sports 2 HD
-http://65.109.83.185:8080/dubaisport2/index.m3u8?token=94838d8dbf398b355d46ac13483bfdbe81c9cf7f-fb27e41f231d83868a8449f4899db791-1754584430-1754541230
+http://65.109.83.185:8080/dubaisport2/index.m3u8?token=5e203562836109d732ad5f12de03711ee4c68ec6-ff68500b306f747271c36ee78f674538-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Dubai Sports 3 HD
-http://65.109.83.185:8080/dubaisport3/index.m3u8?token=65fa64793d9a0ae5026ccdf5986e674166c428c4-899cc84ac28fa48792b488706690a431-1754584430-1754541230
+http://65.109.83.185:8080/dubaisport3/index.m3u8?token=18bbe7f8e08c3a646172292f03645d7889b55949-a97f77e90f1d18932814c68d5dbf6ed3-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", SKY HIGH FIGHT
-http://65.109.83.185:8080/SKY_HIGH_FIGHT/index.m3u8?token=8b7c7129dab539c75b88241f04ce613cc05494a7-9f3b8d64431702453f7713d4839ed2d9-1754584430-1754541230
+http://65.109.83.185:8080/SKY_HIGH_FIGHT/index.m3u8?token=4c10e6f8b3e14ef99518f25d72ca032cf7de75be-7414954287ab324bd6621b49c0469bd3-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Старт
-http://65.109.83.185:8080/startsd/index.m3u8?token=8637a563f3df07b45c45ae246b649961f1c92e9d-d6ed7fff5c5924dc0c6f3f58eb0654ce-1754584430-1754541230
+http://65.109.83.185:8080/startsd/index.m3u8?token=44a592e37900cdb1814966474a7a62e9c92ae198-069dc71688427c37e240834b23e794ea-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Sport 1 UA
-http://65.109.83.185:8080/sport1ua/index.m3u8?token=d9065a294f4485ca123ce9cc58401045534f489f-4d16949719665fccd19457bdc7ef3357-1754584430-1754541230
+http://65.109.83.185:8080/sport1ua/index.m3u8?token=fa90023147b7e5fdb338398a77152d9669d05247-536036bc8574bf2005c036c1b98a8ff6-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Sport 2 UA
-http://65.109.83.185:8080/sport2ua/index.m3u8?token=50fe9cf57b3936e55ee2bfda21a6fe1d57b28dd5-348599161049862ca4a798cd3ebec579-1754584430-1754541230
+http://65.109.83.185:8080/sport2ua/index.m3u8?token=54cd3134ae840ab9cf17a665d6d2ed05353fc265-078c4e3a91f81ec9ca81b767bc32ddc9-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", FightBox
-http://65.109.83.185:8080/fightboxhd/index.m3u8?token=6e940ceb9b759dd804cd6e1beff267560d1c29f2-2c660526348bec27d564dda98662846d-1754584430-1754541230
+http://65.109.83.185:8080/fightboxhd/index.m3u8?token=9597a0bead44743ee59f0c5670c8706139d9555d-fd0600238fccd7c093ef37f06600e490-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Dazn 1 HD
-http://65.109.83.185:8080/Dazn_1_HD/index.m3u8?token=884292f62fc992b36c9377d039a30b058fee3839-c08c10465ec17a50fc5429724f31bf96-1754584430-1754541230
+http://65.109.83.185:8080/Dazn_1_HD/index.m3u8?token=06b2831f8c366eb26dcc32a49ae576f5be1259c4-1c9451452b3e0eb9adf5df04ff2c6634-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Dazn 2 HD
-http://65.109.83.185:8080/Dazn_2_HD/index.m3u8?token=2d4014f32fe6350b00b6b034adb709b91809b3a5-8c7baa03853a177be09a66790f62f5f9-1754584430-1754541230
+http://65.109.83.185:8080/Dazn_2_HD/index.m3u8?token=fa9d6ea737aa850fb0ff57e4d1136aa9366775f1-6db0dc5b801e7c1e0c7da8630a63c28f-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Dazn 3 HD
-http://65.109.83.185:8080/dazn3hd/index.m3u8?token=f70f48e39c1420cab41599d4077bdebd1b0b2d37-60f22894b9cfd82141cc9119fa1ec6e5-1754584430-1754541230
+http://65.109.83.185:8080/dazn3hd/index.m3u8?token=374485349af214bdd3be438fdc80a015060dd725-ba307765d037b91b753d21e207935655-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Dazn 4 HD
-http://65.109.83.185:8080/dazn4hd/index.m3u8?token=cd33883cb2e9cd83eafa708e4ab55c9fd08898a3-526e6543a9bff2ac598397099a5039a4-1754584430-1754541230
+http://65.109.83.185:8080/dazn4hd/index.m3u8?token=a70698578e052bac63859c8adefe2c81a3e89d6d-a4d12c4addc34a2959dad13bf6c4e841-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Dazn 5 HD
-http://65.109.83.185:8080/dazn5hd/index.m3u8?token=82569b552e60b08a825972565f7dbe024fad98e9-d76b6377eaaf0e10e2ebfd07d128414d-1754584430-1754541230
+http://65.109.83.185:8080/dazn5hd/index.m3u8?token=ef815fa6bd268b7c3c44225e8f13b1e227785590-0cd01096fd39808fe696cc94c12d9c48-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Dazn 6 HD
-http://65.109.83.185:8080/Dazn_6_HD/index.m3u8?token=b8ea01f1e09c7851e36e214456fc8b2e069d41c3-ed0a81d5017ba8ebaae80bcc8ec448a8-1754584430-1754541230
+http://65.109.83.185:8080/Dazn_6_HD/index.m3u8?token=112193d1210c8da09cd42dba1dd1d4cbb2a53473-11a01290be785ff654895dba1c3d8caa-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Sky Sport News HD
-http://65.109.83.185:8080/Sky_Sport_News_HD/index.m3u8?token=8c689135cc0f0e43761729b26c595ea745b64a1b-d3b3a34156e470e31cfa58f9825f39d1-1754584430-1754541230
+http://65.109.83.185:8080/Sky_Sport_News_HD/index.m3u8?token=6425c164a4d05dc476425635e0351698d9e83102-5bb1943bb4b9b2cef46cb11dd3a48d12-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Arena SPORT 1 HD
-http://65.109.83.185:8080/arenasport1hd/index.m3u8?token=f40ebe96721450c21dd384806b8a38c95a47238c-895a6c643e4ef07c1d345e4946423864-1754584430-1754541230
+http://65.109.83.185:8080/arenasport1hd/index.m3u8?token=ef085fe9ce51387d26d3d1894373b23f4c3631c0-65f47187bebc69ba679491fe57ee287a-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Arena SPORT 2 HD
-http://65.109.83.185:8080/arenasport2hd/index.m3u8?token=dbd4b6ad64993467d0df570818dcab75b6b7baa2-b75da65236b6e5f2886ec208dd422876-1754584430-1754541230
+http://65.109.83.185:8080/arenasport2hd/index.m3u8?token=d6aaf6cf0885cdca406fc49bbe11a93031ada03e-eb78262d665b50d798c96025fff548f4-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Arena SPORT 3 HD
-http://65.109.83.185:8080/arenasport3hd/index.m3u8?token=c9bd1caec4c17b39ced5eb377e14291d5d4b7ec7-91e654355d358af0e1a64a2c45e7b686-1754584430-1754541230
+http://65.109.83.185:8080/arenasport3hd/index.m3u8?token=6beb6bb0adb733c1243d91253d11a0a5358ef04a-c6d2ce046f9d77bb70ed84a1aa39347f-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Arena SPORT 4 HD
-http://65.109.83.185:8080/arenasport4hd/index.m3u8?token=b41ec881b7406a1d551720c547166efbb414f3bc-ebf160e203204cd43847b7c3fdf72270-1754584430-1754541230
+http://65.109.83.185:8080/arenasport4hd/index.m3u8?token=e3dfd4bb296be7d5a31358414816cd358a14e55c-1293d5e1610b2662f49f028d9aafff71-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Arena SPORT 5 HD
-http://65.109.83.185:8080/arenasport5hd/index.m3u8?token=5188106b9758426c3b9b00a61c75a71e9235ed6d-dd7e41090919fab4037dc4ac51debff9-1754584430-1754541230
+http://65.109.83.185:8080/arenasport5hd/index.m3u8?token=426111b6d31e8d3ace2ad2ce61c37b805ce45c1a-30db6627a2468fcfe17ef790c2e8f372-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Arena SPORT 6 HD
-http://65.109.83.185:8080/arenasport6hd/index.m3u8?token=726d404549d54ad9f2e736a8406c5a358ebc5bf2-4c2d61a1ecd3d70d94559afbb6abf394-1754584430-1754541230
+http://65.109.83.185:8080/arenasport6hd/index.m3u8?token=17f071a46c96f566874856a42190a2eb8bec99b8-40b53206b6de7693869fbcff95ec0404-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Окко Спорт HD
-http://65.109.83.185:8080/Xokko-sport/index.m3u8?token=dc2522380df2f2ffb161db273499f856a585a850-5d37d113fa1cc5fcd88d43d735635033-1754584430-1754541230
+http://65.109.83.185:8080/Xokko-sport/index.m3u8?token=830a642096f3b850d9d92eb96e3382de52969c4d-908c2fe226a9738e4a3dab47aab3bbc3-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Окко Прайм Спорт
-http://65.109.83.185:8080/9324/index.m3u8?token=7e9de7643b8060ce890a77485c31d194eeed570b-fe532fdba9ea96e7448c42d24c92b172-1754584430-1754541230
+http://65.109.83.185:8080/9324/index.m3u8?token=c5d265635786fa5f3dbdf4a40b71e5c36f58a4b1-c6509bd9aac96242bb1fe738e81cd723-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Окко Футбол HD
-http://65.109.83.185:8080/okkofutbolhd/index.m3u8?token=910d6a2bc36d1d5118f96b58a1855bd18e006c2a-877e44bbc06e78df32caab016474072f-1754584430-1754541230
+http://65.109.83.185:8080/okkofutbolhd/index.m3u8?token=c1591e8dc59b3b638e6675b700cc357e79496c10-a18564e6d71036be08f3813e8594e65d-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", BOX Be On Edge HD
-http://65.109.83.185:8080/BOXBeOnEdgeHD/index.m3u8?token=dcd7d7fd0f977cc5539a4e78ed958dd2dded52d3-897165acf3f052f2d0aa32dc7be90c0e-1754584430-1754541230
+http://65.109.83.185:8080/BOXBeOnEdgeHD/index.m3u8?token=677a7b251cf09a54833a974aa57fb7779d5239ab-466992cc003eaabee551f11aff5cf9f3-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", BOX Be On Edge Live 1 HD
-http://65.109.83.185:8080/BOXBeOnEdgeLive2HD/index.m3u8?token=899e27a1a315dd99cc091dd4c040eab71f763611-a47be46764bd9572a4fede78ec48adf5-1754584430-1754541230
+http://65.109.83.185:8080/BOXBeOnEdgeLive1HD/index.m3u8?token=56096109e90b6220739115f3c6ae9e0c1e33cc33-4559c95a3e32169cc41e0e165ca9ea04-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", BOX Be On Edge Live 2 HD
-http://65.109.83.185:8080/BOXBeOnEdgeLive2HD/index.m3u8?token=899e27a1a315dd99cc091dd4c040eab71f763611-a47be46764bd9572a4fede78ec48adf5-1754584430-1754541230
+http://65.109.83.185:8080/BOXBeOnEdgeLive1HD/index.m3u8?token=56096109e90b6220739115f3c6ae9e0c1e33cc33-4559c95a3e32169cc41e0e165ca9ea04-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", BOX Sport 1 Live HD
-http://65.109.83.185:8080/1412/index.m3u8?token=8cd3ff9c4e41d9f05297cd38ac82046a7f000b0a-d877473178dd4526e9df7b4f0ecbae2e-1754584430-1754541230
+http://65.109.83.185:8080/1412/index.m3u8?token=cdee5e6c9371c6c5a84d67fc4d3c98749d15592a-4e0bba316d1d7d51c0309194c9ad25a4-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", BOX Sport 2 Live HD
-http://65.109.83.185:8080/2024020/index.m3u8?token=f66ad8c4f9013c409962f6217cd064c831b5b5ab-c5c5a40476bdcf6dd831c08075517787-1754584430-1754541230
+http://65.109.83.185:8080/2024020/index.m3u8?token=c5b7164ebdb03ab1408dafe1f900e47778278aff-4e9a3822b19f05401c56f5a325e30287-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", BOX Sport 3 Live HD
-http://65.109.83.185:8080/2024021/index.m3u8?token=4331f3361614dd57f8d05ff37ffe53cc3f9c3d44-06405d06cedc269d372d5e8c9bd566fc-1754584430-1754541230
+http://65.109.83.185:8080/2024021/index.m3u8?token=74a0f63723f83667a2720c6e4210754a2d832a3d-550dc7e5009ca4aa274abe72e1aff5a9-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", BOX Sport 4 Live HD
-http://65.109.83.185:8080/2024022/index.m3u8?token=6ba1ed4cab79ab14321183281175cda8dafed69c-65b15c0fe0d52aedffb5fcce74668035-1754584430-1754541230
+http://65.109.83.185:8080/2024022/index.m3u8?token=6f80558266978b85de2105bb03fd649246f14906-cb2961071a3eeb5943536edd6521a036-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", BOX Sport 5 Live HD
-http://65.109.83.185:8080/2024023/index.m3u8?token=99b133552701d51f195ec7ca6b2d526be039cfc3-8dd8701f06945b70821fd534db3e8f10-1754584430-1754541230
+http://65.109.83.185:8080/2024023/index.m3u8?token=f2711537dc41c4a5b608d5427138f574fb5f73cd-e88409521f23f119a094d77dfe024ab5-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", BOX Sport 6 Live HD
-http://65.109.83.185:8080/2024025/index.m3u8?token=5eb06cc4aa1bea0f6080b5b681ff1faecf48e935-0ad739d650e1a931a93f510523876449-1754584430-1754541230
+http://65.109.83.185:8080/2024025/index.m3u8?token=1aeb438db46a62a213a260e695b988a95b5e1201-be6735ab49300fb1a12418207727b348-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", BOX Sport 7 Live HD
-http://65.109.83.185:8080/2024026/index.m3u8?token=600cc7378c901101866319229f6f3d445c186391-96bc6fc141c769a77900487bf0b3e336-1754584430-1754541230
+http://65.109.83.185:8080/2024026/index.m3u8?token=03e8746d6645757cb797bdb9a9a1ad3ae147d55c-cf9965d5ecaa701eab0c9ae1e9d41851-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", BOX Sport 8 Live HD
-http://65.109.83.185:8080/2024027/index.m3u8?token=006d8762a8a1d118bdff4b4b5198c5fa5a453b1a-5702b11d2ea571f6afe089e633fe01fc-1754584430-1754541230
+http://65.109.83.185:8080/2024027/index.m3u8?token=d6acceea1d76f909d1853727618cb35b697fb594-ca5523f34d7cb3190c4f93e534a30d89-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", BOX Sport 9 Live HD
-http://65.109.83.185:8080/2024028/index.m3u8?token=2a9f6e0a10e970f29426e25f5a6d2902d5f9d64f-5d171ac57511a0fb781f9860cd1025da-1754584430-1754541230
+http://65.109.83.185:8080/2024028/index.m3u8?token=e15161b39c0b832fa8af630957e6d8213fe1d4be-8f9cacd350fea32a3fe396492964024f-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", BOX SportCast Live 1 HD
-http://65.109.83.185:8080/2024029/index.m3u8?token=5a3d07fbe8490fc5ad015dc89e95974921263819-f7bdfb33d4fefe05bd503e896ca51351-1754584430-1754541230
+http://65.109.83.185:8080/2024029/index.m3u8?token=2154c5b0fbf0c1de582c0ea9caa83d74e8ba4b0c-51dad2d85ac32d6e479919997dd40762-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", BOX SportCast Live 2 HD
-http://65.109.83.185:8080/chanell_0036/index.m3u8?token=0ae0d87bb9edd8c256ae20d3c27f7ee6f7294bc2-6c51997ee2f8024eedcb613db14578ec-1754584430-1754541230
+http://65.109.83.185:8080/chanell_0036/index.m3u8?token=ed29f179708c872056955d9f29fe9c0c5a178644-22bf296ee9f2d92fe3f8e9a698d3baf2-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", BOX SportCast Live 3 HD
-http://65.109.83.185:8080/chanell_0037/index.m3u8?token=bdd2b952c1ba4eaafbef5b4abaa410f832493bfa-a0d26b93fb993024279c0a37ff9ce405-1754584430-1754541230
+http://65.109.83.185:8080/chanell_0037/index.m3u8?token=86a9934675d069da8f1d2324b8685d687d9fdb37-52865c6b87a0894eb33feb7f22dd02b0-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", BOX SportCast Live 4 HD
-http://65.109.83.185:8080/chanell_0039/index.m3u8?token=4645c7fae73baa2b8feef790c263ac38f4263fa8-3fc8d7d26b207f051c40b864ce52447e-1754584430-1754541230
+http://65.109.83.185:8080/chanell_0039/index.m3u8?token=4d5787287920f43bf12bb9a6113b82a40d0df3bb-20a685ad640d2a327ca1532eba827125-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", BOX SportCast Live 5 HD
-http://65.109.83.185:8080/chanell_0040/index.m3u8?token=8f25e6015e39c26185850b41e23fa30b4236ba6c-a86234beddf56ae55124fbfe0a35cc3d-1754584430-1754541230
+http://65.109.83.185:8080/chanell_0040/index.m3u8?token=f7870fc6c22a1916b970d65f24f937978f3e5e97-46092d00179a9a61ef07e61eb98125bd-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", BOX SportCast Live 6 HD
-http://65.109.83.185:8080/chanell_0041/index.m3u8?token=100248955998fccd817a12eb9fd2e1bc448e8a21-10eb93988b4a9d0b19ff32302df9dd08-1754584430-1754541230
+http://65.109.83.185:8080/chanell_0041/index.m3u8?token=c99e5d476bb4a785fdc3315362566d0586b174b8-4d5abcbab531a42142e41aa01eac9926-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", BOX SportCast Live 7 HD
-http://65.109.83.185:8080/chanelcrime/index.m3u8?token=55138f2c58baa9604ed0750ec7a7b76f2c7f8472-99dfabe70f8dd0d2ba2daaa257fdf821-1754584430-1754541230
+http://65.109.83.185:8080/chanelcrime/index.m3u8?token=a09b53231e2c56163143347a43618921aa96cc03-ac8f67d39b0feb6b8e8f241660aff0ca-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", BOX SportCast Live 8 HD
-http://65.109.83.185:8080/chanel1980/index.m3u8?token=cc581c06b9ab7b9cef22fb9fa8d8531e00101b95-01c34eb140dad4ca36fcdb6a6acfe199-1754584430-1754541230
+http://65.109.83.185:8080/chanel1980/index.m3u8?token=9da1c1369c8574122d5a3758f416a06be5a3ef89-b5646d69210657ca550faea4e86b6449-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", BOX SportCast Live 9 HD
-http://65.109.83.185:8080/chanel1990/index.m3u8?token=7251e6b8ba4f0670a14fa56a3e1d8c019e21cac2-4c3b10c01b53eccddfd0e9854c472080-1754584430-1754541230
+http://65.109.83.185:8080/chanel1990/index.m3u8?token=30973d5f22267f7e4fdeaccc5262fdd8336d4f1b-88fa067b07dc3cf217d121ab7457ad8b-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Волейбол HD
-http://65.109.83.185:8080/Volleyball/index.m3u8?token=3e5179cb6cddf5bfd026ae6058e1cb352b17dbd5-42aaa799f5c89abda28829a130c96517-1754584430-1754541230
+http://65.109.83.185:8080/Volleyball/index.m3u8?token=39a95bd76c2ed31ef53df8fb2be5972da8764f3f-277240ae4d4d3e15a5d50fce43f7ea6d-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Sky Sports Tennis HD
-http://65.109.83.185:8080/Skysporttennis/index.m3u8?token=92aedf6d8740277417c4a800b8b26a03880ea343-885a04c1c1cf335c8bb63397150c1e2f-1754584430-1754541230
+http://65.109.83.185:8080/Skysporttennis/index.m3u8?token=8246d94d2b1dcb4b302a19b5d31a91af9b5aa456-b359bb0f81940fcfa26b50e5b58203ea-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", NHL NETWORK HD
-http://65.109.83.185:8080/NHLNETWORK/index.m3u8?token=ca84137f1a8328df004d7b50d1b459bb35a62cda-98f8707d06d5a3ab2e73a23f7ab54605-1754584430-1754541230
+http://65.109.83.185:8080/NHLNETWORK/index.m3u8?token=da57954e39fcf8763d89beae473206bde5d9b6f8-a42002a8f19d07139f40fbe5b09efce7-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", UPL TV HD
-http://65.109.83.185:8080/UPLTVHD/index.m3u8?token=5f44bd410d0aad1d82e7049fa89937e64f85dd8d-e3f7043a54bd913edf1cf5f34123ea8f-1754584430-1754541230
+http://65.109.83.185:8080/UPLTVHD/index.m3u8?token=553fa63be7f4d938f1bc4647fc4cdf070479ff0d-6c2dd3c3d987c0db25fd3b46fff15b03-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", beIN Sports 1 HD
-http://65.109.83.185:8080/chanel2000/index.m3u8?token=1626dd297e0ef0040518128552f4239a386597ba-918bb00edf802799141797c21060841e-1754584430-1754541230
+http://65.109.83.185:8080/chanel2000/index.m3u8?token=4b47409c61729890a297d185d055e960d9d9e83a-c675613fe6c2a3df639c2f129b8f7231-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", beIN Sports 2 HD
-http://65.109.83.185:8080/chanel2010/index.m3u8?token=dba16f9a246762baff311bc53d178d0ed5e19999-a3b1f91d0d0626b3c8a22535ba2a3489-1754584430-1754541230
+http://65.109.83.185:8080/chanel2010/index.m3u8?token=115aefe31f28911b226e4fd7336e1dcbcb105e40-f22ac5b118fb1b0f1ba95240bbf3e904-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", beIN Sports 3 HD
-http://65.109.83.185:8080/chanel2020/index.m3u8?token=4c904eb9ad039f2f6bd2ab8c13ef9a9954c412e7-1ee056591f48c39ec8a38b1838561d4b-1754584430-1754541230
+http://65.109.83.185:8080/chanel2020/index.m3u8?token=b2e0e9fbbf11bb6272a8eabc58ed8d9d225eaae3-79378dba39f12668e12f0ce29216dd7a-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", beIN Sports 4 HD
-http://65.109.83.185:8080/7033/index.m3u8?token=1985bfd090a1cd287baee5ad9aad5feee31555a2-14c90c9e61ccf516d4b1818193f98ded-1754584430-1754541230
+http://65.109.83.185:8080/7033/index.m3u8?token=6f84444c793d92f100f2ddc7fdd0c627166b4b32-97062e6f6a9bcf5304d7b647c1262067-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", beIN Sports Xtra
-http://65.109.83.185:8080/0469/index.m3u8?token=2d64a504034b7bd8aa9a558e7b76497017245011-5f1246266e7183dc4c9ab8f34b8eef08-1754584430-1754541230
+http://65.109.83.185:8080/0469/index.m3u8?token=4bdb47bb996a76cb53f619e6caa9ae413c44ea5e-5d9ecd27e342c67d695948cb17338770-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Хоккейный HD
-http://65.109.83.185:8080/4605/index.m3u8?token=38a3ced169da038dc398cac1704388431b994c57-acc71a4bb50d58cedb907cb320d5f4b5-1754584430-1754541230
+http://65.109.83.185:8080/4605/index.m3u8?token=492c1ede1dd52e40c74863a0b6763d3e629e0a9e-01ab4693f52d4781ca0e8dee4f3db20d-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="3", Спортивный HD
-http://65.109.83.185:8080/4678/index.m3u8?token=ee4446a3aa4d5da2480ed13b35507b96bd4da591-0a41bec7472351431ce7e0d38227705a-1754584430-1754541230
+http://65.109.83.185:8080/4678/index.m3u8?token=aa0b7f833e910cccf01b2eabe0ed0ee8908166f7-5d5c926720001c34951ad26eca5388fb-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", KHL HD
-http://65.109.83.185:8080/KHLHD/index.m3u8?token=3a779059b1f518da70eed3ca9eabac8aa9758d4a-c988976c2ef8139378bec78f0f1b0b36-1754584430-1754541230
+http://65.109.83.185:8080/KHLHD/index.m3u8?token=af8e3038f6768e17f8737d143f4f739bcc5d97e1-d466ad84e4342cd1f1a44379f1c74426-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Матч! Ultra 4К
-http://65.109.83.185:8080/matcultra4k/index.m3u8?token=710b6b7d14f104f804cb9382b7fd23e19c7fdb7d-3639fcf826b08ffddbad21c0245cb383-1754584430-1754541230
+http://65.109.83.185:8080/matcultra4k/index.m3u8?token=0ba87d55f17edb3f63428b0ebcd98f073a8620ea-11ad140bb5be3a96f272af0ac9558a9e-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Мяч HD
-http://65.109.83.185:8080/footbolny/index.m3u8?token=6bca5b79e9ecc2ae008e6c0e806a3b2c25307da2-c82aa07f4ce30c93450c6a9907c4fbda-1754584430-1754541230
+http://65.109.83.185:8080/footbolny/index.m3u8?token=34d7beae98defb143175cd68497f2ca8b02489cd-894983f3fe9e661fd708c7186595131f-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Поединок HD
-http://65.109.83.185:8080/poedinok/index.m3u8?token=1e0e032f0b6e6a44a2682e190bcd366b30146eaf-d3233b2cb7fb9f50fcc22eff774edfbb-1754584430-1754541230
+http://65.109.83.185:8080/poedinok/index.m3u8?token=8a5399fd26f17a943c76ed8c88f4d0d08a011596-8fc426d274c0f51e834ccedf985e0240-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Сила HD
-http://65.109.83.185:8080/sila/index.m3u8?token=266ea625b5915dde03e923f82dc2e554a80c38ed-f8eb9bff79a249ae8a81d1da09f62c4f-1754584430-1754541230
+http://65.109.83.185:8080/sila/index.m3u8?token=f8124f7f5462966a9501dbe3117cc7e3d74b6cef-39a859aeb3b1becc7db2669bff42269d-1754603419-1754560219
 #EXTINF:-1 group-title="Спортивные ПРЕМИУМ" catchup="flussonic" catchup-days="0", Спортмастер ТВ
-http://65.109.83.185:8080/sportmaster-tv/index.m3u8?token=8e6b656c38e5c93b2225fca1e9275beff7638e3f-5a34f73734b31d71d99e422902a7e97a-1754584430-1754541230
+http://65.109.83.185:8080/sportmaster-tv/index.m3u8?token=4ba69eb138227f83712ff23d06b667ccb74ca662-afd1382dd68b16aee67c0619f47dd655-1754603419-1754560219
 #EXTINF:-1 group-title="Детские" tvg-name="Cartoon Network" tvg-logo="http://only4.tv/ch/802.png", Cartoon Network RU
 http://hls.stb.md/CARTOON_NETWORKRU_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNS4xNiIsIm5iZiI6MTc1NDUzMzMyNSwiZXhwIjoxNzU0NjE5NzI1LCJpYXQiOjE3NTQ1MzMzMjUsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.8ltTWZ9bqgXpcxElbp7RQLfZcg0YXjOngBGmwKLYMbw
 #EXTINF:-1 group-title="Детские" tvg-logo="https://www.appello.rs/wp-content/uploads/2020/03/518ef8a1e68e742b275b0605330bd3d2.jpg", Da Vinci Learning Россия
@@ -455,77 +455,77 @@ http://hls.stb.md/NASHENOVOIE_KINO_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR
 #EXTINF:-1 group-title="Кино" tvg-logo="https://getsiptv.ru/img/ch_icons/rodnoe_kino.png", Родное кино
 http://hls.stb.md/RODNOIE_KINO_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNS4xNiIsIm5iZiI6MTc1NDUzMzMyNSwiZXhwIjoxNzU0NjE5NzI1LCJpYXQiOjE3NTQ1MzMzMjUsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.8ltTWZ9bqgXpcxElbp7RQLfZcg0YXjOngBGmwKLYMbw
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Concert
-http://65.109.83.185:8080/Clarity4K_molodoznoe/index.m3u8?token=02fca17c0be66c296ea2c472c46f364ed1b44a62-fbabd5c4e1954d43fcff56c7e1ecd9d4-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_molodoznoe/index.m3u8?token=44ca224342046a66bc136a6be260a28121c51db2-c61478130b99edbd8e6eec4cd7b4cf48-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4k Relax камин
-http://65.109.83.185:8080/Clarity4k_vsel/index.m3u8?token=4a6540528af4ddf22d3b95cfad4538d71cb8a345-fc97c6552159585dd43e07b4900cf8b4-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4k_vsel/index.m3u8?token=8bb9ad9db8a88a918cfbcca2cfed960d514da149-dbfbe4f729597f00f037a8300576c32c-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4k Драмы
-http://65.109.83.185:8080/clariti_drama/index.m3u8?token=0a0ac0c532be9b52ed6a6e19aaf1b74a72cb0982-0513759b321ad82837423e6c4aeaf794-1754575296-1754532096
+http://65.109.83.185:8080/clariti_drama/index.m3u8?token=35c826e72e61ec9e0c9594426d2f4478e0313d78-b5a5955d92da3ef28989910b378c0e80-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4k Боевик
-http://65.109.83.185:8080/Clarity4k_boevik/index.m3u8?token=5f47e15cbd52da8ee0efe468449c4eef0f1182f1-8ed07a260938a51131da0f6ee652a4e2-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4k_boevik/index.m3u8?token=f5b782cfc5d39e0ccda91b247399887cd0ec06a5-5d06392569bcf497c43d4158d327fbfc-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Walt Disney
-http://65.109.83.185:8080/Clarity4K_Walt_Disney/index.m3u8?token=fcba2e7a93d79feabac48c668175af9cf173eabf-74ebc3e7862cf3a6998f1ede78bc89ab-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_Walt_Disney/index.m3u8?token=40a5d770430fe26ddbf88e791585b45464145a75-c3c3e7e58710f984b098f5c0c7416cb0-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Ужасы
-http://65.109.83.185:8080/Clarity4K_uzasa/index.m3u8?token=2ff82664e53f6a93589b577926849cff91e25f61-c0646304540a8ad9a07d2f162fa72ab0-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_uzas_vhs/index.m3u8?token=ee171825e7be14f6a15a8c93cf02faee65146a2a-d597d5ebdc6568bf888da7758819e30d-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Фэнтези
-http://65.109.83.185:8080/Clarity4K_fantazy/index.m3u8?token=b162dcdc1319008558ea3ed12ad4a373c3e37173-9cbb302ada8a7699216194a4197e73fa-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_fantastic_serias/index.m3u8?token=48545d95466b4037bbd6620a0942531d2937fc88-b7ef7251bced9ff704c09e95540030f8-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4k Кинодети СССР
-http://65.109.83.185:8080/Clarity4k_russia_serias/index.m3u8?token=cf0c3c8e4046153412ffbdd574eeb9c7227337e9-afe29cfd1d055ba16718af2e8aa48ccc-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4k_russia_serias/index.m3u8?token=90188eadfd1a30edfa090d17a4d94fa4a36f6551-79b6c80ae9f9a86e4c3292498c92c085-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Korean music
-http://65.109.83.185:8080/Clarity4K_Korean_music/index.m3u8?token=edda339c1c308af0949fc041d2995ef16d24f845-9ae0c52f06fad83bd14f51d6afd84625-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_Korean_music/index.m3u8?token=0b203ae702ff7cb46fbf686030f0fedbb161c1f2-89fbdc52fb23b3cbbe3c17e4d19a2da7-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K World Music
-http://65.109.83.185:8080/Clarity4K_World_Music/index.m3u8?token=62a0e48af234fd0119638ad07c2af1b74e31ca4e-336894c7e52922490c757a5a294eefa6-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_World_Music/index.m3u8?token=c073f625d9aac55359263b1074bf8f855dc6c368-ed5bf00dcb5e6f2e1357abfd6914f111-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Мюзикл
-http://65.109.83.185:8080/Clarity4K_comed_sssr1/index.m3u8?token=44b368d4b7b36677ae736092df4dbe162bf442e5-6ccbc78bceeef688832b1d60f4618459-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_comed_sssr2/index.m3u8?token=7c696d4d970edb61d93ab5a8c2294324c5e45aee-4807d27e00e6d6f89fa604986e6e4851-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Ukrainian music
-http://65.109.83.185:8080/Clarity4K_Ukrainian_music/index.m3u8?token=beee9a61e9ba7773f7df592dd763a534ecca32e6-84843a3b52ee4b80c90122bf5c17fcbf-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_Ukrainian_music/index.m3u8?token=f19202ccd615288cd4f3743c1ad824e896a5ec4a-ee4ba1a5fa887f45bcc3a3ac79450738-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Звериный мир
-http://65.109.83.185:8080/Clarity4K_zvermir/index.m3u8?token=166e155ed8a74ac37d9d7e90d574b1bbbc02c7e7-4977e7b22978b42c64a8e9e68469a66f-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_zvermir/index.m3u8?token=cfbedaf8527ecbd091a1eb38e0432940072bc1e5-355c20e5e8337779cc48ab3843d06d50-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Bollywood music
-http://65.109.83.185:8080/Clarity4K_Bollywood_music/index.m3u8?token=2ef8965a3d64412fb88ba5a3f919cb634b3e7529-97a264d6a8f7f7887c38b1019ebf94f7-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_Bollywood_music/index.m3u8?token=c97695016f434ecc2124d57cd3d8764ad4bbadff-542aefe98cc2bb5b32cd9cbe0008fa3c-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Russian music
-http://65.109.83.185:8080/Clarity4K_Russian_music/index.m3u8?token=7d7490ec43afa75074e2403843336edff9f4f4bc-c99f6e6b8e81e7d856be1f00eed68cb4-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_Russian_music/index.m3u8?token=2f0d6da04f1731b00da04e26b77332e4bd1fc937-c94bfe523908a86ad03a772f84b5efed-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4k Anime
-http://65.109.83.185:8080/Clarity4k_Anime/index.m3u8?token=aef7cf516c356cb23e4ce69405840386ffb4a921-e60464afcdfacde8d97acc5f10f78ceb-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4k_Anime/index.m3u8?token=cc48928f161212f5624dc3701ae8cecf6ac35210-07c4e198238c1122dba51dd8c00c9e95-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Киношарм
-http://65.109.83.185:8080/Clarity4K_kinosharm/index.m3u8?token=53cf0e1615eefdfad0acdc4596769ef2d92efac7-f098c914b02d7dfcafd71b2fb72fec5a-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_kinosharm/index.m3u8?token=b7ba75d6f1849c23aebf88bff497c547e1cf05f8-fcec72442166589370149042d0e51f65-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Мультимир
-http://65.109.83.185:8080/Clarity4K_multmir/index.m3u8?token=77d36ec7120af24af81f454db484fd70cbf6a6ed-5a91ad6b97692e4793e3e3fff36bea83-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_multmir/index.m3u8?token=59502097c9793df20f7a793e86893aeec0577f16-f8ad4efa57d7a66ccf1ebcf787afa8e6-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Netflix
-http://65.109.83.185:8080/Clarity4K_Netflix/index.m3u8?token=a935f266863feae508d43353f847ba84f7f9afb1-0a2a153fe9b1139930c72b0e9dfb0719-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_Netflix/index.m3u8?token=6cd010addb766e289f7e24b6c362a36d690dcfb0-27342929ba08f44da32612dc4f688fcf-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Приключения
-http://65.109.83.185:8080/Clarity4K_pricluchenia/index.m3u8?token=66a8630dfd28241b40d1afcd43c6600ce5975d4c-527136aa7dbd198917b336f6a4e1d789-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_pricluchenia/index.m3u8?token=26febaf3372408ec985441726f88fb11c2a11c42-a3de80c4666c58b1f9d0445e15e64ffb-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4k Истории во времени
-http://65.109.83.185:8080/Clarity4k_DeepMe/index.m3u8?token=120814ad1524853aed1f727cd279c498e4c8a509-3c8905a6fbcef41a9aca28bf12c4fce3-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4k_DeepMe/index.m3u8?token=fd22a8a0d14d30cda3b92be53499473749968228-dd2129cabbea2a51537dc85da7f5ab44-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Запал
-http://65.109.83.185:8080/Clarity4K_zapal/index.m3u8?token=af685245ec21d2d5321e52e9bd33d7bf054fecaa-ea13b1bd319af4df3691685b208c3861-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_zapal/index.m3u8?token=9bc03e7959b31072d430e425b2ceb3c95e227ae4-7956cb05fca1a6fb2ba4479c439ce6b8-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4k Вестерн
-http://65.109.83.185:8080/Clarity4k_boevic_vhs/index.m3u8?token=3bbe77c99aa63c6c55c78c2ce41c93482c03dce0-216f9519c66a28e9660a93cb46b174b4-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4k_boevik/index.m3u8?token=f5b782cfc5d39e0ccda91b247399887cd0ec06a5-5d06392569bcf497c43d4158d327fbfc-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Комедия
-http://65.109.83.185:8080/Clarity4K_comedy/index.m3u8?token=038475ca112d32c20d2ca5c1e1561d43915648c2-2ada682230f1600a6690cd6e2c19a0db-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_comed_sssr2/index.m3u8?token=7c696d4d970edb61d93ab5a8c2294324c5e45aee-4807d27e00e6d6f89fa604986e6e4851-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4k КиноФраншизы
-http://65.109.83.185:8080/Clarity4k_filmfrans/index.m3u8?token=4fc7522d8fbc90cdc90a57ab354a23a67b603d62-41e7318f4f77c4673e2092323a8212e2-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4k_filmfrans/index.m3u8?token=62040fdd3a35639736dd8bc2c4719d283cf2a9ef-fe457f1a1fc48ae51984dad7db695e01-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Мультляндия
-http://65.109.83.185:8080/Clarity4K_multlandia/index.m3u8?token=d4f1844cd458821ee19ce1862c6ac177010bac31-39f24f481521ca2209b5123041970d0c-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_multmir/index.m3u8?token=59502097c9793df20f7a793e86893aeec0577f16-f8ad4efa57d7a66ccf1ebcf787afa8e6-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Военные
-http://65.109.83.185:8080/Clarity4K_kinosssr/index.m3u8?token=b3e15c2a1f0e9117bea4d916fe28086610a1afdb-8b0daee07beef58013bf6bbc8be16f5e-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_kinosharm/index.m3u8?token=b7ba75d6f1849c23aebf88bff497c547e1cf05f8-fcec72442166589370149042d0e51f65-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4k Сделано в СССР
-http://65.109.83.185:8080/Clarity4k_classic_kino/index.m3u8?token=24404fac1bd4c1eaf1304467fcd47903aa22e5f9-d86192efa7ab034963b9d11a82977c7c-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4k_classic_kino/index.m3u8?token=3b2c8d8d832ad4812b3f3db42b19c2a67e023665-c65fc45e60c47fe84893cfd7430811be-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K КиноНовинки
-http://65.109.83.185:8080/Clarity4K_kino_new/index.m3u8?token=c01da76512ab8fe30ae4b9e48f69a59cdabdab85-961343807b4d8801ce601ae4df3b1716-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_kinosharm/index.m3u8?token=b7ba75d6f1849c23aebf88bff497c547e1cf05f8-fcec72442166589370149042d0e51f65-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4k Сумеречный Эфир
-http://65.109.83.185:8080/Clarity4k_sumer/index.m3u8?token=b5bbe51061065eb1e5841e56f64056953c168270-33de6988002c79658f529a9701fa092a-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4k_sumer/index.m3u8?token=f2104c67b931691f51a84db054b37ea9a2edfd73-18bd74b4a3b27cada4fb743b8fb90b81-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Фантастика
-http://65.109.83.185:8080/Clarity4K_fantastica/index.m3u8?token=9019b40c61a6e37081bc72922c82c9db27fd7bad-8402705b639a72fe7b0c37eb775d8b5f-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_fantastic_serias/index.m3u8?token=48545d95466b4037bbd6620a0942531d2937fc88-b7ef7251bced9ff704c09e95540030f8-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Asia
-http://65.109.83.185:8080/Clarity4K_Asia/index.m3u8?token=2eef02ee75c22e4244edb32a7d6e5044f8f770d7-c97c9679c06078dbdd8cb2312512830a-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_Asia/index.m3u8?token=40b2fff4a49b1e26e7209592e003264457ef98b0-2090050019a131f9148e322e4642c107-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Космомир
-http://65.109.83.185:8080/Clarity4K_kosmomir/index.m3u8?token=b542fe9acb0272988ab4bfb8c24eb6d92d281ead-1c6ca0585185d100f5251925a5b41f5a-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_kosmomir/index.m3u8?token=7a44281c754636cf65b9c3abf7e3287c4c11719d-197260e1b7d64ab64df3610810005b91-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Gamefilm
-http://65.109.83.185:8080/Clarity4K_Gamefilm/index.m3u8?token=e1dc4fd83d94006b179de574227a162f7bc70699-012bf71760a2826b12a225b802c29246-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_Gamefilm/index.m3u8?token=a5991eb7f033170d79196d07d2eac6a118c32542-72806129e20f6412e9ed62e9d2ade299-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4K Семейный
-http://65.109.83.185:8080/Clarity4K_famili/index.m3u8?token=19bb67550837d008c5761346fd96a6377c9f74d2-d341995030c8240c64446ee90deb570d-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4K_famili/index.m3u8?token=e5269b3f0903320d8dbb46bb10185218d78e188f-f1ef970e7850241fe9196de863ed256c-1754603419-1754560219
 #EXTINF:-1 group-title="Кинозал Clarity4k" tvg-logo="https://tvboom.vip/ico/logo_clarity4k.png" catchup="flussonic" catchup-days="0", Clarity4k Единоборства
-http://65.109.83.185:8080/Clarity4k_borba/index.m3u8?token=f03e4b736721d5d5b7c11f8d141de467c462f234-29e60f68bcaee807cc1983461c8a5c99-1754575296-1754532096
+http://65.109.83.185:8080/Clarity4k_borba/index.m3u8?token=5a5d1351f4a1c3ccc8e4a9bc866ae20f83373af3-7fd6daf613f86c20794e5226f5911d7b-1754603419-1754560219
 #EXTINF:-1 group-title="Музыкальные" tvg-name="RO:  Atomic" tvg-logo="https://cdnedge.starnet.md/media/attachments/23eb1538-7b2d-4e87-8db2-ff17f93b8877.png", Atomic TV
 http://hls.stb.md/ATOMIC_TV_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNS4xNiIsIm5iZiI6MTc1NDUzMzMyNSwiZXhwIjoxNzU0NjE5NzI1LCJpYXQiOjE3NTQ1MzMzMjUsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.8ltTWZ9bqgXpcxElbp7RQLfZcg0YXjOngBGmwKLYMbw
 #EXTINF:-1 group-title="Музыкальные" tvg-logo="https://tv.nalench.com/uploads/screenshots/Europa_Plus_TV.jpg", Europa Plus TV
@@ -2459,4 +2459,3 @@ https://autopilot.catcast.tv/content/40783/index.m3u8
 http://tv.ttk.mx:9067
 #EXTINF:-1 group-title="Кино-2", Твое ТВ HD
 http://tvoetv.space:8080/tvoetv/index.m3u8
-
