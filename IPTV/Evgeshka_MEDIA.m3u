@@ -5,7 +5,7 @@ https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="Помощь проекту! Юмани", Помощь проекту
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
-#EXTINF:-1 group-title="Не показывает? бнови лист!", 4100119260753027 Юмани
+#EXTINF:-1 group-title="Не показывает? Обнови лист!", 4100119260753027 Юмани
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="ФЕДЕРАЛЬНЫЕ" tvg-id="pervy" tvg-logo="https://iptvx.one/picons/pervy.png", Первый канал
 http://192.162.64.99:4000/play/a00e/index.m3u8
@@ -2113,4 +2113,5 @@ https://autopilot.catcast.tv/content/40783/index.m3u8
 http://tv.ttk.mx:9067
 #EXTINF:-1 group-title="Кино-2", Твое ТВ HD
 http://tvoetv.space:8080/tvoetv/index.m3u8
+
 
