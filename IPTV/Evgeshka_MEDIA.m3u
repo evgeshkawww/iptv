@@ -5,7 +5,7 @@ https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="Помощь проекту! Юмани", Помощь проекту
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
-#EXTINF:-1 group-title="Не показывает? Обнови лист", 4100119260753027 Юмани
+#EXTINF:-1 group-title="Не показывает? Обнови лист!", 4100119260753027 Юмани
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="Кино" tvg-name=".Red HD", .Red HD
 http://hls.stb.md/RED_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNS4xNiIsIm5iZiI6MTc1NDcwNzc0MiwiZXhwIjoxNzU0Nzk0MTQyLCJpYXQiOjE3NTQ3MDc3NDIsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.sKuS7vwk6TsUQkxOlxQNszktvL5Tfsv7wmrNPQmIo_c
@@ -1629,4 +1629,5 @@ https://glb.bozztv.com/glb/ushba62/index.m3u8
 http://iptv.prosto.tv:7000/ch316/video.m3u8
 #EXTINF:-1 group-title="Развлекательные", Ювелирочка
 http://live-uvelirochka.cdnvideo.ru/uvelirochka/uvelirochka_720p3/playlist.m3u8
+
 
