@@ -1341,8 +1341,6 @@ http://178.217.72.66:8080/Black/index.m3u8
 http://77.235.1.19:8000/play/a06x/index.m3u8
 #EXTINF:-1 group-title="Познавательные" tvg-logo="http://only4.tv/ch/5599.png", В мире животных HD
 http://hls.stb.md/VMIRE_JIVOTNIH_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNS4xNiIsIm5iZiI6MTc1NDcwNzc0MiwiZXhwIjoxNzU0Nzk0MTQyLCJpYXQiOjE3NTQ3MDc3NDIsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.sKuS7vwk6TsUQkxOlxQNszktvL5Tfsv7wmrNPQmIo_c
-#EXTINF:-1 group-title="Кинозалы Stream", Видеокасcета VHS
-https://132544.edgevideo.ru/streams/132544_806129/playlist.m3u8
 #EXTINF:-1 group-title="Развлекательные", Витрина ТВ
 https://v4.proofix.ru/vitrina-live/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="RELAX" tvg-logo="https://img.prosto.tv/storage/channel/logo/ch00500.jpg", Водопад
@@ -2179,5 +2177,3 @@ https://glb.bozztv.com/glb/ushba62/index.m3u8
 http://iptv.prosto.tv:7000/ch316/video.m3u8
 #EXTINF:-1 group-title="Развлекательные", Ювелирочка
 http://live-uvelirochka.cdnvideo.ru/uvelirochka/uvelirochka_720p3/playlist.m3u8
-#EXTINF:-1 group-title="Кинозалы Stream", ⱧØⱤⱤØⱤ ₮V
-https://132544.edgevideo.ru/streams/132544_847220/1325441080/index.m3u8
