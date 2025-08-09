@@ -2177,3 +2177,45 @@ https://glb.bozztv.com/glb/ushba62/index.m3u8
 http://iptv.prosto.tv:7000/ch316/video.m3u8
 #EXTINF:-1 group-title="Развлекательные", Ювелирочка
 http://live-uvelirochka.cdnvideo.ru/uvelirochka/uvelirochka_720p3/playlist.m3u8
+#EXTINF:-1 group-title="Music (no stable)" tvg-rec="7" timeshift="7", М1 HD
+http://ott.watch/stream/D3FX33QMIH1/218.m3u8
+#EXTINF:-1 group-title="Music (no stable)" tvg-rec="7" timeshift="7", М2 HD
+http://ott.watch/stream/D3FX33QMIH1/330.m3u8
+#EXTINF:-1 group-title="Music (no stable)" tvg-rec="7" timeshift="7", МУЗВАР HD
+http://ott.watch/stream/D3FX33QMIH1/467.m3u8
+#EXTINF:-1 group-title="Music (no stable)" tvg-rec="7" timeshift="7", MTV Hits
+http://ott.watch/stream/D3FX33QMIH1/302.m3u8
+#EXTINF:-1 group-title="Music (no stable)" tvg-rec="7" timeshift="7", MTV Live HD
+http://ott.watch/stream/D3FX33QMIH1/215.m3u8
+#EXTINF:-1 group-title="Music (no stable)" tvg-rec="7" timeshift="7", MTV 00s
+http://ott.watch/stream/D3FX33QMIH1/165.m3u8
+#EXTINF:-1 group-title="Music (no stable)" tvg-rec="7" timeshift="7", MTV 90s
+http://ott.watch/stream/D3FX33QMIH1/88.m3u8
+#EXTINF:-1 group-title="Music (no stable)" tvg-rec="7" timeshift="7", MTV 80s
+http://ott.watch/stream/D3FX33QMIH1/87.m3u8
+#EXTINF:-1 group-title="Music (no stable)" tvg-rec="7" timeshift="7", Stingray CMusic HD
+http://ott.watch/stream/D3FX33QMIH1/312.m3u8
+#EXTINF:-1 group-title="Music (no stable)" tvg-rec="7" timeshift="7", BRIDGE DELUXE HD
+http://ott.watch/stream/D3FX33QMIH1/92.m3u8
+#EXTINF:-1 group-title="Music (no stable)" tvg-rec="7" timeshift="7", BRIDGE CLASSIC
+http://ott.watch/stream/D3FX33QMIH1/272.m3u8
+#EXTINF:-1 group-title="Music (no stable)" tvg-rec="7" timeshift="7", BRIDGE
+http://ott.watch/stream/D3FX33QMIH1/318.m3u8
+#EXTINF:-1 group-title="Music (no stable)" tvg-rec="7" timeshift="7", Europa Plus TV
+http://ott.watch/stream/D3FX33QMIH1/184.m3u8
+#EXTINF:-1 group-title="Music (no stable)" tvg-rec="7" timeshift="7", Inrating HD
+http://ott.watch/stream/D3FX33QMIH1/147.m3u8
+#EXTINF:-1 group-title="Music (no stable)" tvg-rec="7" timeshift="7", Музыка Первого
+http://ott.watch/stream/D3FX33QMIH1/153.m3u8
+#EXTINF:-1 group-title="Music (no stable)" tvg-rec="7" timeshift="7", Муз-ТВ
+http://ott.watch/stream/D3FX33QMIH1/86.m3u8
+#EXTINF:-1 group-title="Music (no stable)" tvg-rec="7" timeshift="7", Жара HD
+http://ott.watch/stream/D3FX33QMIH1/386.m3u8
+#EXTINF:-1 group-title="Music (no stable)" tvg-rec="7" timeshift="7", Mezzo Live HD
+http://ott.watch/stream/D3FX33QMIH1/276.m3u8
+#EXTINF:-1 group-title="Music (no stable)" tvg-rec="7" timeshift="7", Stingray iConcerts HD
+http://ott.watch/stream/D3FX33QMIH1/267.m3u8
+#EXTINF:-1 group-title="Music (no stable)" tvg-rec="7" timeshift="7", Ля-минор ТВ
+http://ott.watch/stream/D3FX33QMIH1/303.m3u8
+#EXTINF:-1 group-title="Music (no stable)" tvg-rec="7" timeshift="7", ТНТ MUSIC
+http://ott.watch/stream/D3FX33QMIH1/317.m3u8
