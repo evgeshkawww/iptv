@@ -233,6 +233,18 @@ http://178.217.72.66:8080/BCUPremiereHD/index.m3u8
 http://178.217.72.66:8080/BCURomanticHD/index.m3u8
 #EXTINF:-1 group-title="КиноЗал", BCU Stars HD
 http://178.217.72.66:8080/BCUStarsHD/index.m3u8
+#EXTINF:-1 group-title="TDM" tvg-logo="https://lh4.ggpht.com/usGW8vwiQGrEH6OH6kLgVrXAqJlqzcmm1qnkwQ3AnHywhA73Hs8vVOxd1_qfv720y4M", TechnoDanceMusic
+https://132544.edgevideo.ru/streams/132544_931193/1325441080/index.m3u8
+#EXTINF:-1 group-title="TDM", RETROMusicHits
+https://132544.edgevideo.ru/streams/132544_931325/1325441080/index.m3u8
+#EXTINF:-1 group-title="TDM" tvg-logo="https://pluspng.com/img-png/shows-hd-png--1920.jpg", Сериалы
+https://132544.edgevideo.ru/streams/132544_931337/1325441080/index.m3u8
+#EXTINF:-1 group-title="TDM" tvg-logo="https://psv4.userapi.com/c536236/u1279180/docs/d24/bca59dc00165/www.png", ЧТО? ГДЕ? КОГДА?
+https://132544.edgevideo.ru/streams/132544_931349/1325441080/index.m3u8
+#EXTINF:-1 group-title="TDM" tvg-logo="https://psv4.userapi.com/c520036/u1279180/docs/d20/69fcef75b548/FMC.png", Фантастика и мистика
+https://132544.edgevideo.ru/streams/132544_931346/1325441080/index.m3u8
+#EXTINF:-1 group-title="TDM" tvg-logo="https://i.postimg.cc/YS90VJYX/image.png", МУЛЬТИКИ И СКАЗКИ
+https://132544.edgevideo.ru/streams/132544_931352/132544720/index.m3u8
 #EXTINF:-1 group-title="КиноЗал", BCU VHS HD
 http://178.217.72.66:8080/BCUVHSHD/index.m3u8
 #EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", BRIDGE TV
