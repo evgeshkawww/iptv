@@ -17,6 +17,18 @@ http://hls.stb.md/BLACK_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVC
 http://hls.stb.md/SCI_FI_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNS4xNiIsIm5iZiI6MTc1NDg4MzA2MywiZXhwIjoxNzU0OTY5NDYzLCJpYXQiOjE3NTQ4ODMwNjMsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.Keu3uhalqx-eUe-Yy_ZS_qNgVuC8O4Vu7BnBdAEEdtI
 #EXTINF:-1 group-title="Музыкальные", 1HD Music
 http://91.247.68.229:8000/play/eee/index.m3u8
+#EXTINF:-1 group-title="Эфирные" tvg-id="(no tvg-id)" tvg-name="1 канал HD" tvg-logo="https://iptvx.one/picons/pervy.png", 1 канал HD
+https://edge1.1internet.tv/dash-live2/streams/1tv-dvr/1tvdash.mpd
+#EXTINF:-1 group-title="Эфирные" tvg-id="rossia1" tvg-logo="https://iptvx.one/picons/rossia1.png", Россия 1 HD
+https://vgtrkregion-reg.cdnvideo.ru/vgtrk/0/russia1-hd/index.m3u8
+#EXTINF:-1 group-title="Эфирные" tvg-id="ntv" tvg-logo="https://iptvx.one/picons/ntv.png", НТВ HD
+http://cdn2.ntv.ru/ntv0_hd/playlist.m3u8
+#EXTINF:-1 group-title="Эфирные" tvg-id="pervy" tvg-logo="https://iptvx.one/picons/pervy.png", Первый канал
+http://192.162.64.99:4000/play/a00e/index.m3u8
+#EXTINF:-1 group-title="Эфирные", РТР-Планета Европа
+http://player.smotrim.ru/iframe/stream/live_id/d7fef212-df66-485d-9952-7eab82d7d51b.m3u8
+#EXTINF:-1 group-title="Эфирные", Пятый канал
+http://178.217.72.66:8080/5_Kanal/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Эфирные", 2x2
 http://178.217.72.66:8080/2x2/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", 360
@@ -37,8 +49,6 @@ http://178.124.152.238:8088/dom
 http://178.217.72.66:8080/Zvezda/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Эфирные", Звезда Плюс HD
 http://tvzvezda.bonus-tv.ru/cdn/zvezdaplus/tracks-v1a1/mono.ts.m3u8
-#EXTINF:-1 group-title="Эфирные", Конгресс ТВ
-http://live-3.otcnet.ru/congresstv/index.m3u8
 #EXTINF:-1 group-title="Эфирные", Красная линия
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
 http://s55766.cdn.ngenix.net/s55766-media-origin/rline_high/index.m3u8
@@ -50,8 +60,6 @@ http://rt-ct-belg-htlive.cdn.ngenix.net/hls/CH_R01_OTT_CT_BELG_MIR_BLG/variant.m
 #EXTINF:-1 group-title="Эфирные" catchup="append" catchup-days="3" catchup-source="?offset=-${offset}&utcstart=${timestamp}", Москва. Доверие
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
 http://rt-mos-htlive.cdn.ngenix.net/hls/CH_R04_DOVERIE/variant.m3u8
-#EXTINF:-1 group-title="Эфирные" tvg-id="ntv" tvg-logo="https://iptvx.one/picons/ntv.png", НТВ HD
-http://cdn2.ntv.ru/ntv0_hd/playlist.m3u8
 #EXTINF:-1 group-title="Эфирные", НТВ Сериал
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
 http://cdn.ntv.ru/th_serial/tracks-v1a1/playlist.m3u8
@@ -66,18 +74,10 @@ https://live1.1tvcrimea.ru/1tvcrimea.m3u8
 https://serv25.vintera.tv/1pnk/prnk/chunks.m3u8
 #EXTINF:-1 group-title="Эфирные", Первый информационный Беларусь
 https://edge52.dc.beltelecom.by/ngtrk/_definst_/smil:informacionnyy.smil/chunklist_w499524774_b5160000_sleng.m3u8
-#EXTINF:-1 group-title="Эфирные" tvg-id="pervy" tvg-logo="https://iptvx.one/picons/pervy.png", Первый канал
-http://192.162.64.99:4000/play/a00e/index.m3u8
-#EXTINF:-1 group-title="Эфирные", Пятый канал
-http://178.217.72.66:8080/5_Kanal/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Эфирные" tvg-name="Пятый канал (урал)" catchup="flussonic" catchup-days="3", Пятый канал +3
 http://vs6.cdn.mrf.tvime.ru/5tv_URAL/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBfdHlwZSI6ImFwdHBfb3R0IiwiY2xhc3MiOiJCUk9XU0VSIiwiZHJlaWQiOiI0MzIxOTAwOTMzMTI2NyIsImV4cCI6MTc1NDg4MTg1MywiaHdpZCI6IjYwZmI5ZjQ2OTVjNWEzMTc4Mjc5ZmUyNzY3YTQxMzE4ODMwNTYwZjJiMTc4ODQ2ZmQ4NjAzNmQxMzMzMTdjYWYiLCJsYXN0X3JlcV9kYXRlIjoxNzU0Mjc3MDUzLCJzZXNzaW9uX2lkIjoiZDQ5NWJmMzdkMzA1NWMxNDRlNjhkYWU4YjY0OGM4ZDQiLCJ0b2tlbl90eXBlIjoiQ29udGVudEFjY2Vzc1Rva2VuIiwidHlwZSI6Ik1PWklMTEEifQ.KcnS7a2Hun9IzvzRuKF-URjY_58O8CG-x-a6AWHQ2FE
-#EXTINF:-1 group-title="Эфирные", РТР-Планета Европа
-http://player.smotrim.ru/iframe/stream/live_id/d7fef212-df66-485d-9952-7eab82d7d51b.m3u8
 #EXTINF:-1 group-title="Эфирные", Рен ТВ International
 http://178.134.1.158:8081/RENTV/index.m3u8
-#EXTINF:-1 group-title="Эфирные" tvg-id="rossia1" tvg-logo="https://iptvx.one/picons/rossia1.png", Россия 1 HD
-https://vgtrkregion-reg.cdnvideo.ru/vgtrk/0/russia1-hd/index.m3u8
 #EXTINF:-1 group-title="Эфирные" tvg-id="tvcentr" tvg-logo="https://iptvx.one/picons/tvcentr.png", ТВ Центр
 http://tvc-hls.cdnvideo.ru/tvc-res/smil:vd9221_2.smil/playlist.m3u8
 #EXTINF:-1 group-title="Эфирные", ТВ3 HD
@@ -318,8 +318,6 @@ http://hls.stb.md/DAVINCI_LEARNING_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR
 https://eu-nl-012.worldcast.tv/dancetelevisionone/2/dancetelevisionone.m3u8
 #EXTINF:-1 group-title="Музыкальные", DanceHits 80'
 http://dancehits80.denvs.ru:8080/index.m3u8
-#EXTINF:-1 group-title="Музыкальные", DeeJay
-https://streamcdnb4-4c4b867c89244861ac216426883d1ad0.msvdn.net/live/S85984808/sMO0tz9Sr2Rk/playlist.m3u8
 #EXTINF:-1 group-title="Музыкальные", Deep House District
 https://eu-nl-012.worldcast.tv/dancetelevisiontwo/dancetelevisiontwo.m3u8
 #EXTINF:-1 group-title="Музыкальные", Deluxe Music TV
@@ -765,8 +763,6 @@ http://hls.stb.md/AVTO_PLUS_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6Ik
 http://iptv.prosto.tv:7000/ch325/video.m3u8
 #EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", Анекдот ТВ
 http://77.235.1.19:8000/play/a05b/index.m3u8
-#EXTINF:-1 group-title="Ushba", Анекдоты
-https://glb.bozztv.com/glb/ushba81/index.m3u8
 #EXTINF:-1 group-title="Развлекательные", Аппетитный
 http://77.235.1.19:8000/play/a031/index.m3u8
 #EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", БСТ
@@ -990,8 +986,6 @@ http://hls.stb.md/KUHNEATV_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6Ikp
 https://live20.bozztv.com/giatv/giatv-88882com/88882com/chunks.m3u8
 #EXTINF:-1 group-title="Кино", Кіно та Серіал HD
 https://cdnua03.hls.tv/178/hls/6154479a1319705257f2335762b18f51/4867/stream.m3u8
-#EXTINF:-1 group-title="Кино", ЛИК
-http://autopilot.catcast.tv/content/41596/index.m3u8
 #EXTINF:-1 group-title="Ushba", Лекторий Достоевский
 https://glb.bozztv.com/glb/ushba3/index.m3u8
 #EXTINF:-1 group-title="RELAX" tvg-logo="https://img.prosto.tv/storage/channel/logo/ch00503.jpg", Лес
@@ -1169,7 +1163,7 @@ http://origin5.mediacdn.ru/live/prodvizhenie_new/index.m3u8
 http://cdn-01.bonus-tv.ru/prosveschenie_edge/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", Пятница!
 http://77.235.1.19:8000/play/a07o/index.m3u8
-#EXTINF:-1 group-title="РАЗВЛЕЧЕНИЕ", Пятница! HD
+#EXTINF:-1 group-title="Развлекательные", Пятница! HD
 http://178.217.72.66:8080/Pyatnitsa/index.m3u8
 #EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", РБК
 http://77.235.1.19:8000/play/a05s/index.m3u8
@@ -1271,7 +1265,7 @@ http://77.235.1.19:8000/play/a085/index.m3u8
 http://77.235.1.19:8000/play/a00j/index.m3u8
 #EXTINF:-1 group-title="Развлекательные", ТНТ Exclusiv TV [MD]
 http://89.28.25.122/hls/tnt_md.m3u8
-#EXTINF:-1 group-title="РАЗВЛЕЧЕНИЕ", ТНТ HD
+#EXTINF:-1 group-title="Развлекательные", ТНТ HD
 http://178.217.72.66:8080/TNT_HD/index.m3u8
 #EXTINF:-1 group-title="Музыкальные" tvg-logo="https://s3.dantsertv.ru/rosing-dantser-production/797605c639a14912da8e.jpg", ТНТ MUSIC
 http://hls.stb.md/TNT_MUSIC_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNS4xNiIsIm5iZiI6MTc1NDg4MzA2MywiZXhwIjoxNzU0OTY5NDYzLCJpYXQiOjE3NTQ4ODMwNjMsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.Keu3uhalqx-eUe-Yy_ZS_qNgVuC8O4Vu7BnBdAEEdtI
