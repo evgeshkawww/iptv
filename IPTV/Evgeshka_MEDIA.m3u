@@ -9,6 +9,80 @@ https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="Кино", .Red HD
 http://hls.stb.md/RED_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQwMDQxOCwiZXhwIjoxNzU1NDg2ODE4LCJpYXQiOjE3NTU0MDA0MTgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.4JmyhRYOP4gzsUS7J3XeUyILgxaRFX6PSzJBudaJS4s
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/518.png" tvg-rec="7", НСТ
+http://178.217.72.66:8080/NSTV/index.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/6005.png" tvg-rec="0", ФИЛЬМ
+http://185.57.68.33:8091/237/playlist.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.it999.ru/img/2359.png" tvg-rec="7", FAN
+http://178.217.72.66:8080/fan/index.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.it999.ru/img/2833.png" tvg-rec="3", Хит HD
+http://178.217.72.66:8080/hithd/index.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/2834.png" tvg-rec="3", Кинопоказ HD
+http://178.217.72.66:8080/kinopokazhd/index.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/1037.png" tvg-rec="3", Кино ТВ
+http://178.217.72.66:8080/Kino_TV/index.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/2754.png" tvg-rec="3", Cinema
+http://178.217.72.66:8080/cinema/index.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/6643.png" tvg-rec="0", Plan B HD
+http://77.235.1.19:8000/play/a04z/index.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/127.png" tvg-rec="3", Viju TV1000
+http://178.134.1.158:8081/tv1000/index.m3u8?token=tva.in.ua
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/125.png" tvg-rec="3", TV 1000 Action
+http://178.134.1.158:8081/tv1000action/index.m3u8?token=tva.in.ua
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img2/125.png" tvg-rec="3", TV 1000 Action HD
+http://85.117.61.97:8000/play/a00w/index.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.it999.ru/img/1012.png" tvg-rec="7", Viju+ Megahit HD
+http://85.117.61.97:8000/play/a00t/index.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/267.png" tvg-rec="0", Viju TV1000 Русское HD
+http://85.117.61.97:8000/play/a00x/index.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/8881.png" tvg-rec="0", Viasat Kino HD
+http://cdnua03.hls.tv/524/hls/8743361621b245838bee193c9ec28322/311/stream.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/7944.png" tvg-rec="0", Viasat Kino Action HD
+http://cdnua03.hls.tv/524/hls/8743361621b245838bee193c9ec28322/308/stream.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/9066.png" tvg-rec="0", Viasat Kino Megahit HD
+http://cdnua03.hls.tv/524/hls/8743361621b245838bee193c9ec28322/3981/stream.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/8883.png" tvg-rec="0", Viasat Kino World
+http://cdnua03.hls.tv/524/hls/8743361621b245838bee193c9ec28322/4816/stream.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/8880.png" tvg-rec="0", Viasat Kino Comedy HD
+http://cdnua03.hls.tv/524/hls/8743361621b245838bee193c9ec28322/309/stream.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.it999.ru/img/934.png" tvg-rec="7", Hollywood HD
+http://cdnua03.hls.tv/524/hls/8743361621b245838bee193c9ec28322/262/stream.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.it999.ru/img/608.png" tvg-rec="7", Hollywood
+http://cdnua03.hls.tv/524/hls/8743361621b245838bee193c9ec28322/171/stream.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.it999.ru/img/2102.png" tvg-rec="3", Enter-фільм
+http://31.43.48.248:7000/ch54/video.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/2138.png" tvg-rec="0", Bolt HD
+http://95.142.88.250:80/Bolt/index.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/8288.png" tvg-rec="0", AMC
+http://cdnua03.hls.tv/524/hls/8743361621b245838bee193c9ec28322/4248/stream.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-name="Kinoliving" tvg-logo="http://play.ukrainske.tv/images/ico/kinoliving.png", Kinoliving
+http://95.85.109.219:7000/play/a05x
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.it999.ru/img/1584.png" tvg-rec="0", Мужское Кино
+http://45.159.74.22/MujskoeKino/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/821.png" tvg-rec="7", Кинокомедия
+http://178.217.72.66:8080/Kinokomediya/index.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.it999.ru/img/987.png" tvg-rec="0", Киносемья HD
+http://178.217.72.66:8080/Kinosemya/index.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/485.png" tvg-rec="0", Наше Новое Кино
+http://178.217.72.66:8080/Nashe_Novoe_Kino/index.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.it999.ru/img/462.png" tvg-rec="7", Киносвидание
+http://178.217.72.66:8080/Kinosvidanie/index.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/12.png" tvg-rec="7", Родное Кино
+http://178.217.72.66:8080/Rodnoe_Kino/index.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/615.png" tvg-rec="3", FX Life
+http://188.237.47.212:6008
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/1371.png" tvg-rec="7", Amedia 1
+http://sc.id-tv.kz/A1.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/2007.png" tvg-rec="7", Amedia Hit
+http://178.217.72.66:8080/Amedia_Hit/index.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/311.png" tvg-rec="3", .red HD
+http://178.124.152.238:8088/sony
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/516.png" tvg-rec="7", .sci-fi
+http://178.124.179.122:8088/Sci-Fi/index.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/2509.png" tvg-rec="3", Любимое HD
+http://178.217.72.66:8080/Lyubimoe_Kino/index.m3u8
+#EXTINF:-1 group-title="Кино2" tvg-logo="http://epg.one/img/783.png" tvg-rec="7", Ностальгия
+http://178.124.152.238:8088/nostalgia
 #EXTINF:-1 group-title="Музыкальные" tvg-logo="https://cdnedge.starnet.md/media/attachments/23eb1538-7b2d-4e87-8db2-ff17f93b8877.png", Atomic TV
 http://hls.stb.md/ATOMIC_TV_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQwMDQxOCwiZXhwIjoxNzU1NDg2ODE4LCJpYXQiOjE3NTU0MDA0MTgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.4JmyhRYOP4gzsUS7J3XeUyILgxaRFX6PSzJBudaJS4s
 #EXTINF:-1 group-title="Кино", .black HD
@@ -355,8 +429,6 @@ https://live.15plusmg.ru/memfs/24fdf856-77f9-4af5-aa76-ae6cd77896f2.m3u8
 #EXTINF:-1 group-title="Кинозалы Stream", Alpha Moretime
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
 http://live.15plusmg.ru/memfs/3546fc09-2eba-459d-9a1f-9a2fc39e50bd.m3u8
-#EXTINF:-1 group-title="Кинозалы Stream", Alpha Moretime HD
-http://live.15plusmg.ru/memfs/3546fc09-2eba-459d-9a1f-9a2fc39e50bd.m3u8
 #EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", Amedia 1
 http://77.235.1.19:8000/play/a05v/index.m3u8
 #EXTINF:-1 group-title="Кино", Amedia 1 HD
@@ -534,8 +606,6 @@ http://fashs043.cloudycdn.services/scte/africa/africa_chunklist.m3u8
 #EXTINF:-1 group-title="Развлекательные" tvg-logo="https://ic.wampi.ru/2021/04/14/ffba4e24ee46bfe7895fceda5656f0cc.png", Fashion TV HD
 http://hls.stb.md/FASHIONTV_HD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQwMDQxOCwiZXhwIjoxNzU1NDg2ODE4LCJpYXQiOjE3NTU0MDA0MTgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.4JmyhRYOP4gzsUS7J3XeUyILgxaRFX6PSzJBudaJS4s
 #EXTINF:-1 group-title="Спорт", Fast & FunBox
-http://77.235.1.19:8000/play/a07z/index.m3u8
-#EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", FastnfunBox
 http://77.235.1.19:8000/play/a07z/index.m3u8
 #EXTINF:-1 group-title="Спорт", FightBox
 http://77.235.1.19:8000/play/a080/index.m3u8
@@ -747,8 +817,6 @@ http://hls.stb.md/STARFAMILY_HD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cC
 http://iptv.prosto.tv:7000/ch321/video.m3u8
 #EXTINF:-1 group-title="Кино", Suspense
 http://77.235.1.19:8000/play/a051/index.m3u8
-#EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", Suspense HD
-http://77.235.1.19:8000/play/a051/index.m3u8
 #EXTINF:-1 group-title="Спорт", Swerve Sports
 https://linear-253.frequency.stream/dist/glewedtv/253/hls/master/playlist.m3u8
 #EXTINF:-1 group-title="Развлекательные" tvg-logo="https://www.oreol.tv/img/tlc_1.jpg", TLC
@@ -896,15 +964,9 @@ https://bein-esp-xumo.amagi.tv/playlistR1080p.m3u8
 http://77.235.1.19:8000/play/a02x/index.m3u8
 #EXTINF:-1 group-title="Музыкальные", radio m2o
 http://4c4b867c89244861ac216426883d1ad0.msvdn.net/live/S62628868/uhdWBlkC1AoO/chunklist_b1728000.m3u8
-#EXTINF:-1 group-title="Кино", viju TV1000
-http://178.217.72.66:8080/TV_1000/index.m3u8
-#EXTINF:-1 group-title="Кино", viju TV1000 Action
-http://178.217.72.66:8080/TV_1000_Action/index.m3u8
 #EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", viju+ Megahit
 http://77.235.1.19:8000/play/a05d/index.m3u8
 #EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", viju+ Planet
-http://77.235.1.19:8000/play/a05m/index.m3u8
-#EXTINF:-1 group-title="Познавательные", viju+ Planet HD
 http://77.235.1.19:8000/play/a05m/index.m3u8
 #EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", viju+ Premiere
 http://77.235.1.19:8000/play/a05c/index.m3u8
@@ -1065,8 +1127,6 @@ http://77.235.1.19:8000/play/a06v/index.m3u8
 http://77.235.1.19:8000/play/a06z/index.m3u8
 #EXTINF:-1 group-title="Кино", Кино 1 International
 http://kino-1.catcast.tv/content/38617/index.m3u8
-#EXTINF:-1 group-title="Кино", Кино Зал
-https://rpn3.bozztv.com/dvrfl07/ushba64/index.m3u8
 #EXTINF:-1 group-title="Кино" tvg-logo="http://only4.tv/ch/0147.png", Кино ТВ HD
 http://hls1.stb.md/KINOTV_HD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQwMDQxOCwiZXhwIjoxNzU1NDg2ODE4LCJpYXQiOjE3NTU0MDA0MTgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.4JmyhRYOP4gzsUS7J3XeUyILgxaRFX6PSzJBudaJS4s
 #EXTINF:-1 group-title="Кино", Кино и сериалы
@@ -1083,8 +1143,6 @@ http://45.159.74.22/Kinokomedia/tracks-v1a1/mono.m3u8
 http://158.101.222.193:88/georgia_play.php?id=kinokomediya
 #EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", Киноман
 http://77.235.1.19:8000/play/a06r/index.m3u8
-#EXTINF:-1 group-title="Кино", Киномикс
-http://77.235.1.19:8000/play/a05k/index.m3u8
 #EXTINF:-1 group-title="Ushba", Кинопанорама
 https://glb.bozztv.com/glb/ushba-rvisionkinopanorama/index.m3u8
 #EXTINF:-1 group-title="Кино", Кинопремьера
@@ -1110,8 +1168,6 @@ http://hls.stb.md/KINOHIT_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX
 #EXTINF:-1 group-title="Кино", Китай ТВ
 https://cdn.nexttvnet.ru/hlsl/provide/61394/ChinaTV2/china-tv_1920x1080/index.m3u8
 #EXTINF:-1 group-title="Познавательные", Ключ
-http://77.235.1.19:8000/play/a064/index.m3u8
-#EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", Ключ ТВ
 http://77.235.1.19:8000/play/a064/index.m3u8
 #EXTINF:-1 group-title="Ushba", Колонки
 https://glb.bozztv.com/glb/ushba74/index.m3u8
@@ -1383,8 +1439,6 @@ https://autopilot.catcast.tv/content/46209/index.m3u8
 #EXTINF:-1 group-title="Кинозалы Stream", Сити Эдем - КиноЭкшен
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
 https://autopilot.catcast.tv/content/41333/index.m3u8
-#EXTINF:-1 group-title="Кинозалы Stream", Смотрим Кино и сериалы
-https://live-vgtrksmotrim.cdnvideo.ru/vgtrksmotrim/smotrim-live-01.smil/tracks-v5a1/mono.m3u8
 #EXTINF:-1 group-title="Ushba", Собачки
 https://glb.bozztv.com/glb/ushba20/index.m3u8
 #EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", Спас
@@ -1397,8 +1451,6 @@ https://glb.bozztv.com/glb/ushba61/index.m3u8
 http://178.124.179.122:8088/Malish/index.m3u8
 #EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", Т24
 http://77.235.1.19:8000/play/a01a/index.m3u8
-#EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", ТВ-3 HD
-http://77.235.1.19:8000/play/a053/index.m3u8
 #EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", ТВЦ
 http://77.235.1.19:8000/play/a087/index.m3u8
 #EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", ТНВ Планета
@@ -1417,13 +1469,9 @@ http://hls.stb.md/TNT_MUSIC_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6Ik
 http://tntmsmotr.mediacdn.ru/cdn/smotr/playlist_hdhigh.m3u8
 #EXTINF:-1 group-title="Развлекательные" tvg-logo="https://iptvx.one/picons/tnt4.png", ТНТ4 Int.
 https://cdn4.skygo.mn/live/disk1/TNT4/HLSv3-FTA/TNT4.m3u8
-#EXTINF:-1 group-title="Познавательные", Тайны Галактики
-http://77.235.1.19:8000/play/a065/index.m3u8
 #EXTINF:-1 group-title="Спорт", Танцуй!
 http://77.235.1.19:8000/play/a035/index.m3u8
 #EXTINF:-1 group-title="Кино", Твое ТВ HD
-http://tvoetv.space:8080/tvoetv/index.m3u8
-#EXTINF:-1 group-title="Кино", Твоё ТВ HD
 http://tvoetv.space:8080/tvoetv/index.m3u8
 #EXTINF:-1 group-title="Развлекательные", Твоё ТВ HD Юмор
 http://tvoetv.space:8080/tvoetv_humor/index.m3u8
@@ -1445,14 +1493,10 @@ http://iptv.prosto.tv:7000/ch303/video.m3u8
 http://hls.stb.md/USADBA_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQwMDQxOCwiZXhwIjoxNzU1NDg2ODE4LCJpYXQiOjE3NTU0MDA0MTgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.4JmyhRYOP4gzsUS7J3XeUyILgxaRFX6PSzJBudaJS4s
 #EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", Феникс плюс Кино
 http://77.235.1.19:8000/play/a059/index.m3u8
-#EXTINF:-1 group-title="Кино", Феникс+Кино
-http://77.235.1.19:8000/play/a059/index.m3u8
 #EXTINF:-1 group-title="Ushba", Флоки
 https://glb.bozztv.com/glb/ushba-flocke/index.m3u8
 #EXTINF:-1 group-title="RELAX" tvg-logo="https://img.prosto.tv/storage/channel/logo/ch00536.jpg", Флора
 http://iptv.prosto.tv:7000/ch346/video.m3u8
-#EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", Че
-http://77.235.1.19:8000/play/a072/index.m3u8
 #EXTINF:-1 group-title="Детские", Чип и Дейл
 http://194.26.229.213/chip-n-dale-rescue-rangers/index.m3u8
 #EXTINF:-1 group-title="Ushba", Чирлидинг
