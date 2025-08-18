@@ -232,8 +232,6 @@ https://585b674743bbb.streamlock.net/9050/9050/playlist.m3u8
 http://k3.usastreams.com/CableLatino/88stereo/playlist.m3u8
 #EXTINF:-1 group-title="Спорт", Окко Прайм Спорт
 http://185.221.213.254:8080/Okko/tracks-v1a1/index.m3u8
-#EXTINF:-1 group-title="Спорт", A21 Network
-https://tv.a21network.ru/content/37909/index.m3u8
 #EXTINF:-1 group-title="Кинозалы Stream", Alpha Cinema HD
 http://live.15plusmg.ru/memfs/b389173a-df4e-4171-8904-e249893e71eb.m3u8
 #EXTINF:-1 group-title="Кинозалы Stream", Alpha Funny
@@ -519,9 +517,6 @@ http://hls.stb.md/MTV_RUSSIA_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6I
 https://glb.bozztv.com/glb/ushba-mafia/index.m3u8
 #EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", Mezzo Live HD
 http://77.235.1.19:8000/play/a02y/index.m3u8
-#EXTINF:-1 group-title="Музыкальные", NM Television
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0
-https://tv.a21network.ru/stream/40650/index.m3u8
 #EXTINF:-1 group-title="Детские", Nick Jr
 http://158.160.149.81:8080/520/tracks-v1a2/mono.m3u8
 #EXTINF:-1 group-title="Детские" tvg-logo="https://images-na.ssl-images-amazon.com/images/I/41DAgNJEGkL.png", Nick Jr.
