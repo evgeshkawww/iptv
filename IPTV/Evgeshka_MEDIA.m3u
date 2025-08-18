@@ -380,50 +380,56 @@ http://77.235.1.19:8000/play/a08d/index.m3u8
 #EXTINF:-1 group-title="Кино", ИНДИЙСКОЕ КИНО
 #EXTVLCOPT:http-user-agent=BASS/2.4 (compatible; Linux; Android 8.1.0; Mobile) AIMP/3.0
 http://77.235.1.19:8000/play/a06y/index.m3u8
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX MOROCCO ᵁᴴᴰ 3840P
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1503006&extension=ts&play_token=nFoveIHmaE
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX TURKEY ᵁᴴᴰ 3840P
-http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:C7:51:6A&stream=1502984&extension=ts
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1502984&extension=ts&play_token=5rb4QJEpEv
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX NORWAY ᵁᴴᴰ 3840P
-http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:C7:51:6A&stream=1503008&extension=ts
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1503008&extension=ts&play_token=Ep1slrzAdp
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX ICELAND ᵁᴴᴰ 3840P
-http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:C7:51:6A&stream=1503007&extension=ts
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1503007&extension=ts&play_token=uVY5Zmwvng
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX TROPICAL BEACH ᵁᴴᴰ 3840P
-http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:C7:51:6A&stream=1502990&extension=ts
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1502990&extension=ts&play_token=1WlavQb5vf
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX THE OCEAN ᵁᴴᴰ 3840P
-http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:C7:51:6A&stream=1502989&extension=ts
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1502989&extension=ts&play_token=DKGe2AVE1Y
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX INSPIRATIONAL MOTIVATIONAL ᵁᴴᴰ 3840P
-http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:C7:51:6A&stream=1502988&extension=ts
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1502988&extension=ts&play_token=hhdHkRpJ3y
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX FOREST ᵁᴴᴰ 3840P
-http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:C7:51:6A&stream=1502987&extension=ts
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1502987&extension=ts&play_token=WfitDcYbxl
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX EARTH NATURE ᵁᴴᴰ 3840P
-http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:C7:51:6A&stream=1502986&extension=ts
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1502986&extension=ts&play_token=3aW8H6chPL
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX AUSTRALIA ᵁᴴᴰ 3840P
-http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:C7:51:6A&stream=1502985&extension=ts
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1502985&extension=ts&play_token=ejZ9kiY6Z2
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 1 ᵁᴴᴰ 3840P
-http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:C7:51:6A&stream=1502991&extension=ts
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1502991&extension=ts&play_token=2Ir5oCU4zr
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 2 ᵁᴴᴰ 3840P
-http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:C7:51:6A&stream=1502992&extension=ts
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1502992&extension=ts&play_token=AGfEIYrcyu
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 3 ᵁᴴᴰ 3840P
-http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:C7:51:6A&stream=1502993&extension=ts
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1502993&extension=ts&play_token=2U2XTltS6U
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 4 ᵁᴴᴰ 3840P
-http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:C7:51:6A&stream=1502994&extension=ts
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1502994&extension=ts&play_token=lutnRQP8ES
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 5 ᵁᴴᴰ 3840P
-http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:C7:51:6A&stream=1502995&extension=ts
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1502995&extension=ts&play_token=Ng1gZu8skt
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 6 ᵁᴴᴰ 3840P
-http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:C7:51:6A&stream=1502996&extension=ts
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1502996&extension=ts&play_token=wzw08AlFFr
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 7 ᵁᴴᴰ 3840P
-http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:C7:51:6A&stream=1502997&extension=ts
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1502997&extension=ts&play_token=bDZdUjrLxD
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 8 ᵁᴴᴰ 3840P
-http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:C7:51:6A&stream=1502998&extension=ts
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1502998&extension=ts&play_token=YkyiFs4FBT
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 9 ᵁᴴᴰ 3840P
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1502999&extension=ts&play_token=sSXeX2jls1
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 10 ᵁᴴᴰ 3840P
-http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:C7:51:6A&stream=1503000&extension=ts
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1503000&extension=ts&play_token=tf4Y4uBjqD
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 11 ᵁᴴᴰ 3840P
-http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:C7:51:6A&stream=1503001&extension=ts
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1503001&extension=ts&play_token=uqzQlDrkFu
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 12 ᵁᴴᴰ 3840P
-http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:C7:51:6A&stream=1503002&extension=ts
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1503002&extension=ts&play_token=u8KtpcvhwC
+#EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 13 ᵁᴴᴰ 3840P
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1503003&extension=ts&play_token=J4HKQhrO7n
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 14 ᵁᴴᴰ 3840P
-http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:C7:51:6A&stream=1503004&extension=ts
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1503004&extension=ts&play_token=wGc9ZXQnBr
 #EXTINF:-1 group-title="4K RELAX UHD 3840P" tvg-logo="http://picons.cmshulk.com/picons/4k.png", 4K| RELAX 15 ᵁᴴᴰ 3840P
-http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:C7:51:6A&stream=1503005&extension=ts
+http://mag.senpay25.com:80/play/live.php?mac=00:1A:79:AF:04:FA&stream=1503005&extension=ts&play_token=wESNHQzjdj
 #EXTINF:-1 group-title="Музыкальные", 4fun.TV
 https://stream.4fun.tv:8888/hls/4f_high/index.m3u8
 #EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", 5
