@@ -1,7 +1,7 @@
 #EXTM3U url-tvg="http://epg.it999.ru/epg2.xml,http://epg.one/epg.xml,http://194.26.229.4/live/lime_epg.xml.gz,https://raw.githubusercontent.com/IPTVSHARED/iptv/refs/heads/main/epg_lite.xml.gz,https://raw.githubusercontent.com/IPTVSHARED/iptv/refs/heads/main/epg_lite_gabbarit.xml.gz,http://epg.ping-tv.com/1.xmltv,http://epg.team/tvteam.xml"
 #EXTINF:-1 group-title="VIP Канал!", Крафтовое IPTV
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/VIP.mp4
-#EXTINF:-1 group-title="Обновлено 17.08.25", Поддержи проект!
+#EXTINF:-1 group-title="Обновлено 18.08.25", Поддержи проект!
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="Помощь проекту! Юмани", Помощь проекту
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
@@ -15,6 +15,60 @@ http://hls.stb.md/ATOMIC_TV_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6Ik
 http://hls.stb.md/BLACK_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
 #EXTINF:-1 group-title="Кино", .sci-fi
 http://hls.stb.md/SCI_FI_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
+#EXTINF:-1 group-title="O'zbekiston", O'zbekiston
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4BIu69a75xGtcsHlh4L8rI0/m3u8
+#EXTINF:-1 group-title="O'zbekiston", Yoshlar HD
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4CpVo3DHqwmxzZlFg7FsL38/m3u8
+#EXTINF:-1 group-title="O'zbekiston", Toshkent HD
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4C6_z474mI-Arakr01dntN4/m3u8
+#EXTINF:-1 group-title="O'zbekiston", Zor TV HD
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4PA_XEWfxJ2fD6mG52cPmLI/m3u8
+#EXTINF:-1 group-title="O'zbekiston", My5
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4Ml153INlN6600TwKLSFfBQ/m3u8
+#EXTINF:-1 group-title="O'zbekiston", Nurafshon TV
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4JK24ncFUhalVEXub5rZ4fk/m3u8
+#EXTINF:-1 group-title="O'zbekiston", Taraqqiyot
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4EFtlvpt89SDvkFknKzqvtg/m3u8
+#EXTINF:-1 group-title="O'zbekiston", 8TV
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4H41iI36whKZya4Fs1b3pf0/m3u8
+#EXTINF:-1 group-title="O'zbekiston", I-Kbol
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4ETQRXaeXudHQNjiAnudgws/m3u8
+#EXTINF:-1 group-title="O'zbekiston", Lux TV
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4P6LtDyWd-q3ESQbT4T10eg/m3u8
+#EXTINF:-1 group-title="O'zbekiston", Makon TV
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4O0732MVOAwTp4SfmGK8M7Q/m3u8
+#EXTINF:-1 group-title="O'zbekiston", Renessans TV
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4KQ7_9dceZ7qtb2lb6FwpaU/m3u8
+#EXTINF:-1 group-title="O'zbekiston", Dunyo Bo'ylab
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4Hqr3RMxAmCZlbaL6ej6QGk/m3u8
+#EXTINF:-1 group-title="O'zbekiston", Uzbekiston tarixi
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4L_4RjQ9XXHfNZZY5BRJzu8/m3u8
+#EXTINF:-1 group-title="O'zbekiston", Kinoteatr
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4BObUwg9r_IWo0MsDC_aFsw/m3u8
+#EXTINF:-1 group-title="O'zbekiston", Mahalla
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4EbQ0RIS9T3hnVE-U0EMH7s/m3u8
+#EXTINF:-1 group-title="O'zbekiston", FTV
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4KCnRX7Lz47M_ZVioLhpdG8/m3u8
+#EXTINF:-1 group-title="O'zbekiston", Муз-ТВ (O'zbekiston)
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4Lnk8Y-2HbPHsNEx2URfT9s/m3u8
+#EXTINF:-1 group-title="O'zbekiston", Navo
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4Eui6-MJmqopC3LTYMMxXC4/m3u8
+#EXTINF:-1 group-title="O'zbekiston", TTV Musiqa
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4MR0NibNQlx05wI1UmlVIMs/m3u8
+#EXTINF:-1 group-title="O'zbekiston", Dasturxon TV
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4La5qYAfKtWELTnOfUILKeo/m3u8
+#EXTINF:-1 group-title="O'zbekiston", MyDayTV
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4NSu99Us1MfWl5Int1ID1Kk/m3u8
+#EXTINF:-1 group-title="O'zbekiston", Aqlvoy
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4LdUzrPTdXsXvP5hk5QmpXc/m3u8
+#EXTINF:-1 group-title="O'zbekiston", Bolajon
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4MA9PBvo7LIAejO58cNM-74/m3u8
+#EXTINF:-1 group-title="O'zbekiston", Uzreport
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4PVAiqgjJ-ATmJLoU3oxbrM/m3u8
+#EXTINF:-1 group-title="O'zbekiston", Futbol TV
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4MqvASuOXsJbLTp9tKXkuqw/m3u8
+#EXTINF:-1 group-title="O'zbekiston", Sport Uz
+http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4EereNL-dmxMZT09ihq1CzM/m3u8
 #EXTINF:-1 group-title="Музыкальные", 1HD Music
 http://91.247.68.229:8000/play/eee/index.m3u8
 #EXTINF:-1 group-title="Эфирные" tvg-logo="https://iptvx.one/picons/pervy.png", Первый канал HD
