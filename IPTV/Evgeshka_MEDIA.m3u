@@ -7,17 +7,17 @@ https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="Не показывает? Обнови лист!", 4100119260753027 Юмани
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
-#EXTINF:-1 group-title="Детские" tvg-id="boomerang" tvg-logo="http://only4.tv/ch/821.png" catchup="append" catchup-days="7", Boomerang
+#EXTINF:-1 group-title="Детские" tvg-id="boomerang" tvg-logo="http://only4.tv/ch/821.png", Boomerang
 http://hls.stb.md/BOOMERANGTV_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Детские" tvg-logo="http://only4.tv/ch/802.png" catchup="append" catchup-days="7", Cartoon Network RO
+#EXTINF:-1 group-title="Детские" tvg-logo="http://only4.tv/ch/802.png", Cartoon Network RO
 http://hls.stb.md/CARTOON_NETWORKRO_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Детские" tvg-id="cartoon-network" tvg-name="Cartoon Network" tvg-logo="http://only4.tv/ch/802.png" catchup="append" catchup-days="7", Cartoon Network RU
+#EXTINF:-1 group-title="Детские" tvg-id="cartoon-network" tvg-name="Cartoon Network" tvg-logo="http://only4.tv/ch/802.png", Cartoon Network RU
 http://hls.stb.md/CARTOON_NETWORKRU_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
 #EXTINF:-1 group-title="Детские" tvg-id="da-vinci" tvg-logo="https://www.appello.rs/wp-content/uploads/2020/03/518ef8a1e68e742b275b0605330bd3d2.jpg", Da Vinci Learning Россия
 http://hls.stb.md/DAVINCI_LEARNING_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Детские" tvg-logo="https://www.goldmir.net/uploads/tv/channel/57/logo_big.jpg" catchup="append" catchup-days="7", Disney Channel RO
+#EXTINF:-1 group-title="Детские" tvg-logo="https://www.goldmir.net/uploads/tv/channel/57/logo_big.jpg", Disney Channel RO
 http://hls.stb.md/DISNEY_CHANNELRO_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Детские" tvg-id="disney-jr" tvg-logo="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/012014/logo_disney_junior.png?itok=4qSQzM4I" catchup="append" catchup-days="7", Disney Junior
+#EXTINF:-1 group-title="Детские" tvg-id="disney-jr" tvg-logo="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/012014/logo_disney_junior.png?itok=4qSQzM4I", Disney Junior
 http://hls.stb.md/DISNEY_JUNIOR_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
 #EXTINF:-1 group-title="Детские" tvg-id="ducktv" tvg-logo="http://crazy.net.ua/templates/tv/icons/kids/Ducktv.jpg", Duck TV
 http://hls.stb.md/DUCKTVHD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
@@ -63,51 +63,51 @@ http://hls2.stb.md/PARAMOUNT_COMEDY_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsIn
 http://hls.stb.md/STARCINEMA_HD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
 #EXTINF:-1 group-title="Кино" tvg-id="star-family" tvg-name="Star Family" tvg-country="RU" tvg-logo="http://only4.tv/ch/6213.png", Star Family HD
 http://hls.stb.md/STARFAMILY_HD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Кино" tvg-logo="https://cdnedge.starnet.md/media/attachments/59ebf0a1-7c06-44bb-98dd-dcc6ab6cdf70.png" catchup="append" catchup-days="7", Start Air HD
+#EXTINF:-1 group-title="Кино" tvg-logo="https://cdnedge.starnet.md/media/attachments/59ebf0a1-7c06-44bb-98dd-dcc6ab6cdf70.png", Start Air HD
 http://hls.stb.md/START_AIR_HD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Кино" tvg-logo="https://cdnedge.starnet.md/media/attachments/2accf090-fe29-4390-acdb-39fa232d5a3d.png" catchup="append" catchup-days="7", Start World HD
+#EXTINF:-1 group-title="Кино" tvg-logo="https://cdnedge.starnet.md/media/attachments/2accf090-fe29-4390-acdb-39fa232d5a3d.png", Start World HD
 http://hls.stb.md/START_WORLD_HD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Кино" tvg-id="tv1000-action" tvg-name="TV1000 Action" tvg-logo="https://ic.wampi.ru/2021/04/14/c964d441f5a014026e2bd77e01c26e2c.png" catchup="append" catchup-days="7", TV1000 Action HD
+#EXTINF:-1 group-title="Кино" tvg-id="tv1000-action" tvg-name="TV1000 Action" tvg-logo="https://ic.wampi.ru/2021/04/14/c964d441f5a014026e2bd77e01c26e2c.png", TV1000 Action HD
 http://hls.stb.md/TV1000ACTION_HD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Кино" tvg-id="tv1000" tvg-logo="http://only4.tv/ch/5581.png" catchup="append" catchup-days="7", TV1000 HD
+#EXTINF:-1 group-title="Кино" tvg-id="tv1000" tvg-logo="http://only4.tv/ch/5581.png", TV1000 HD
 http://hls.stb.md/TV1000_HD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Кино" tvg-id="tv1000-russkoe-kino" tvg-logo="http://only4.tv/ch/6324.png" catchup="append" catchup-days="7", TV1000 Русское кино HD
+#EXTINF:-1 group-title="Кино" tvg-id="tv1000-russkoe-kino" tvg-logo="http://only4.tv/ch/6324.png", TV1000 Русское кино HD
 http://hls.stb.md/TV1000RU_HD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Кино" tvg-id="vip-comedy" tvg-logo="http://only4.tv/ch/17102.png" catchup="append" catchup-days="7", ViP Comedy HD
+#EXTINF:-1 group-title="Кино" tvg-id="vip-comedy" tvg-logo="http://only4.tv/ch/17102.png", ViP Comedy HD
 http://hls.stb.md/VIP_COMEDYHD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Кино" tvg-id="vip-megahit" tvg-logo="http://only4.tv/ch/17103.png" catchup="append" catchup-days="7", ViP Megahit HD
+#EXTINF:-1 group-title="Кино" tvg-id="vip-megahit" tvg-logo="http://only4.tv/ch/17103.png", ViP Megahit HD
 http://hls.stb.md/VIP_MEGAHITHD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Кино" tvg-id="vip-premiere" tvg-logo="http://only4.tv/ch/17104.png" catchup="append" catchup-days="7", ViP Premiere HD
+#EXTINF:-1 group-title="Кино" tvg-id="vip-premiere" tvg-logo="http://only4.tv/ch/17104.png", ViP Premiere HD
 http://hls.stb.md/VIP_PREMIERHD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Кино" tvg-id="vip-serial" tvg-logo="http://only4.tv/ch/0109.png" catchup="append" catchup-days="7", ViP Serial HD
+#EXTINF:-1 group-title="Кино" tvg-id="vip-serial" tvg-logo="http://only4.tv/ch/0109.png", ViP Serial HD
 http://hls.stb.md/VIP_SERIALHD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
 #EXTINF:-1 group-title="Кино" tvg-id="zee-tv" tvg-logo="https://static.wikia.nocookie.net/youtube/images/b/b6/Zee_TV.jpg", Zee TV
 http://hls.stb.md/ZEETV_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Кино" tvg-id="kino-tv" tvg-logo="http://only4.tv/ch/0147.png" catchup="append" catchup-days="7", Кино ТВ HD
+#EXTINF:-1 group-title="Кино" tvg-id="kino-tv" tvg-logo="http://only4.tv/ch/0147.png", Кино ТВ HD
 http://hls1.stb.md/KINOTV_HD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Кино" tvg-id="kinokomedia" tvg-logo="https://getsiptv.ru/img/ch_icons/kinokomediya.png" catchup="append" catchup-days="7", Кинокомедия
+#EXTINF:-1 group-title="Кино" tvg-id="kinokomedia" tvg-logo="https://getsiptv.ru/img/ch_icons/kinokomediya.png", Кинокомедия
 http://hls.stb.md/KINO_KOMEDYA_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Кино" tvg-id="kinomiks" tvg-logo="https://getsiptv.ru/img/ch_icons/kinomiks_hd.png" catchup="append" catchup-days="7", Киномикс HD
+#EXTINF:-1 group-title="Кино" tvg-id="kinomiks" tvg-logo="https://getsiptv.ru/img/ch_icons/kinomiks_hd.png", Киномикс HD
 http://hls.stb.md/KINOMIX_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Кино" tvg-id="kinopremiera-hd" tvg-logo="https://getsiptv.ru/img/ch_icons/kinopremera_hd.png" catchup="append" catchup-days="7", Кинопремьера HD
+#EXTINF:-1 group-title="Кино" tvg-id="kinopremiera-hd" tvg-logo="https://getsiptv.ru/img/ch_icons/kinopremera_hd.png", Кинопремьера HD
 http://hls.stb.md/KINOPREMIERA_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
 #EXTINF:-1 group-title="Кино" tvg-id="kinosat" tvg-logo="http://tv.kubtel.ru/tv_icon/kinosat.jpg", Киносат
 http://hls.stb.md/KINOMAN_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Кино" tvg-id="kinosvidanie" tvg-logo="https://getsiptv.ru/img/ch_icons/kinosvidanie.png" catchup="append" catchup-days="7", Киносвидание
+#EXTINF:-1 group-title="Кино" tvg-id="kinosvidanie" tvg-logo="https://getsiptv.ru/img/ch_icons/kinosvidanie.png", Киносвидание
 http://hls.stb.md/KINO_SVIDANIE_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Кино" tvg-id="kinosemiya" tvg-logo="https://getsiptv.ru/img/ch_icons/kinosemya.png" catchup="append" catchup-days="7", Киносемья
+#EXTINF:-1 group-title="Кино" tvg-id="kinosemiya" tvg-logo="https://getsiptv.ru/img/ch_icons/kinosemya.png", Киносемья
 http://hls.stb.md/KINOSEMYA_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Кино" tvg-id="kinoseria" tvg-logo="https://getsiptv.ru/img/ch_icons/kinoseriya.png" catchup="append" catchup-days="7", Киносерия
+#EXTINF:-1 group-title="Кино" tvg-id="kinoseria" tvg-logo="https://getsiptv.ru/img/ch_icons/kinoseriya.png", Киносерия
 http://hls.stb.md/KINOSERYA_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Кино" tvg-id="kinoxit" tvg-logo="https://getsiptv.ru/img/ch_icons/kinohit.png" catchup="append" catchup-days="7", Кинохит
+#EXTINF:-1 group-title="Кино" tvg-id="kinoxit" tvg-logo="https://getsiptv.ru/img/ch_icons/kinohit.png", Кинохит
 http://hls.stb.md/KINOHIT_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
 #EXTINF:-1 group-title="Кино" tvg-id="mosfilm" tvg-logo="https://crimeastar.net/wp-content/uploads/2020/09/mosfilm-300x300.png", Мосфильм. Золотая коллекция
 http://hls.stb.md/MOSFILM_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Кино" tvg-id="muzhskoe-kino" tvg-logo="https://getsiptv.ru/img/ch_icons/mujskoe_kino.png" catchup="append" catchup-days="7", Мужское кино
+#EXTINF:-1 group-title="Кино" tvg-id="muzhskoe-kino" tvg-logo="https://getsiptv.ru/img/ch_icons/mujskoe_kino.png", Мужское кино
 http://hls.stb.md/MUJSKOE_KINO_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Кино" tvg-id="nashe-novoe-kino" tvg-logo="https://getsiptv.ru/img/ch_icons/nashe_novoe_kino.png" catchup="append" catchup-days="7", Наше новое кино
+#EXTINF:-1 group-title="Кино" tvg-id="nashe-novoe-kino" tvg-logo="https://getsiptv.ru/img/ch_icons/nashe_novoe_kino.png", Наше новое кино
 http://hls.stb.md/NASHENOVOIE_KINO_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Кино" tvg-id="rodnoe-kino" tvg-logo="https://getsiptv.ru/img/ch_icons/rodnoe_kino.png" catchup="append" catchup-days="7", Родное кино
+#EXTINF:-1 group-title="Кино" tvg-id="rodnoe-kino" tvg-logo="https://getsiptv.ru/img/ch_icons/rodnoe_kino.png", Родное кино
 http://hls.stb.md/RODNOIE_KINO_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
 #EXTINF:-1 group-title="Музыкальные" tvg-logo="https://cdnedge.starnet.md/media/attachments/23eb1538-7b2d-4e87-8db2-ff17f93b8877.png", Atomic TV
 http://hls.stb.md/ATOMIC_TV_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
@@ -125,15 +125,15 @@ http://hls.stb.md/LEA_MINOR_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6Ik
 http://hls.stb.md/TNT_MUSIC_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
 #EXTINF:-1 group-title="Музыкальные" tvg-id="shanson-tv" tvg-logo="https://minsknews.by/parser/tv/logo/shansontv.png", Шансон ТВ
 http://hls.stb.md/SHANSON_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Познавательные" tvg-id="animal-planet" tvg-logo="http://only4.tv/ch/2202.png" catchup="append" catchup-days="7", Animal Planet HD
+#EXTINF:-1 group-title="Познавательные" tvg-id="animal-planet" tvg-logo="http://only4.tv/ch/2202.png", Animal Planet HD
 http://hls.stb.md/ANIMAL_PLANETHD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Познавательные" tvg-id="discovery-east" tvg-logo="https://ministar.ru/upload/medialibrary/081/08180a6494e2dcbb2ce6de461357d81e.png" catchup="append" catchup-days="7", Discovery EE
+#EXTINF:-1 group-title="Познавательные" tvg-id="discovery-east" tvg-logo="https://ministar.ru/upload/medialibrary/081/08180a6494e2dcbb2ce6de461357d81e.png", Discovery EE
 http://hls.stb.md/DISCOVERY_CHANNEL_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
 #EXTINF:-1 group-title="Познавательные" tvg-id="food-network" tvg-logo="https://ic.wampi.ru/2021/04/14/abdf15815cf16f05c8f633fa55f6ae38.png", Food Network HD
 http://hls.stb.md/FOODNETWORK_HD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
 #EXTINF:-1 group-title="Познавательные" tvg-id="hd-life" tvg-logo="https://www.oreol.tv/img/hdlife.jpg", HDL HD
 http://hls.stb.md/HD_LIFE_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Познавательные" tvg-id="id-xtra-ru" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/ID_HD_logo_2017.jpg/115px-ID_HD_logo_2017.jpg" catchup="append" catchup-days="7", Investigation Discovery HD
+#EXTINF:-1 group-title="Познавательные" tvg-id="id-xtra-ru" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/ID_HD_logo_2017.jpg/115px-ID_HD_logo_2017.jpg", Investigation Discovery HD
 http://hls.stb.md/IDXTRA_HD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
 #EXTINF:-1 group-title="Познавательные" tvg-id="travel-channel" tvg-logo="http://only4.tv/ch/26006.png", Travel Channel HD
 http://hls.stb.md/TRAVELCHANNEL_HD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
@@ -169,7 +169,7 @@ http://hls.stb.md/USADBA_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXV
 http://hls.stb.md/EXPLORIS_HD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
 #EXTINF:-1 group-title="Развлекательные" tvg-id="fashion-tv" tvg-logo="https://ic.wampi.ru/2021/04/14/ffba4e24ee46bfe7895fceda5656f0cc.png", Fashion TV HD
 http://hls.stb.md/FASHIONTV_HD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Развлекательные" tvg-id="tlc" tvg-logo="https://www.oreol.tv/img/tlc_1.jpg" catchup="append" catchup-days="7", TLC
+#EXTINF:-1 group-title="Развлекательные" tvg-id="tlc" tvg-logo="https://www.oreol.tv/img/tlc_1.jpg", TLC
 http://hls.stb.md/DISCOVERY_TLC_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
 #EXTINF:-1 group-title="Развлекательные" tvg-id="dikaya-oxota-hd" tvg-logo="https://ic.wampi.ru/2021/04/14/04ae9f3537063ac965be96d757ed53ac.png", Дикая охота HD
 http://hls.stb.md/DIKAYAOHOTA_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
@@ -215,7 +215,7 @@ http://hls.stb.md/BOLT_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ
 http://hls.stb.md/INTERPLUS_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
 #EXTINF:-1 group-title="Украина" tvg-id="ua-tv" tvg-logo="http://betatv.by/d/1_uaitv.jpg", UATV
 http://hls.stb.md/UATV_HD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
-#EXTINF:-1 group-title="Украина" tvg-id="kvartal-tv" tvg-logo="http://crazy.net.ua/templates/tv/icons/rozv/Kvartal%20TV.png" catchup="append" catchup-days="7", Квартал ТВ
+#EXTINF:-1 group-title="Украина" tvg-id="kvartal-tv" tvg-logo="http://crazy.net.ua/templates/tv/icons/rozv/Kvartal%20TV.png", Квартал ТВ
 http://hls.stb.md/KVARTALTV_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuNC40MCIsIm5iZiI6MTc1NTQ5MDE3OCwiZXhwIjoxNzU1NTc2NTc4LCJpYXQiOjE3NTU0OTAxNzgsImlzcyI6InN0Yi5zdGFybmV0Lm1kIn0.y85E7RM6qRCVmQmcIRdAym4NNityi5I4j_4JbJp2fpQ
 #EXTINF:-1 group-title="O'zbekiston", O'zbekiston
 http://128.140.55.5:80/play/FcUEfmKn0o_qEyu7r_qo4BIu69a75xGtcsHlh4L8rI0/m3u8
