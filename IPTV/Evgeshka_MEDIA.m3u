@@ -751,8 +751,6 @@ https://oxygenmusic.hu:2443/hls/oxygenmusic.m3u8
 http://hls2.stb.md/PARAMOUNT_COMEDY_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjkuMjQwIiwibmJmIjoxNzU1NjYzODIxLCJleHAiOjE3NTU3NTAyMjEsImlhdCI6MTc1NTY2MzgyMSwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.cZZbHJrE0hcMxIwFsARMg__SEaTq8GxusAQVbRnGjws
 #EXTINF:-1 group-title="Бишкек-ТВ (megaline.kg)", Plan B HD
 http://77.235.1.19:8000/play/a06p/index.m3u8
-#EXTINF:-1 group-title="Кино", Plan B
-http://158.160.149.81:8080/7688/index.m3u8
 #EXTINF:-1 group-title="Музыкальные", RADIO CITTA
 https://stream10.xdevel.com/video0s977971-2391/stream/playlist.m3u8
 #EXTINF:-1 group-title="Кино", RED Premium HD
