@@ -633,8 +633,6 @@ http://fl3.moveonjoy.com/MTV_LIVE/index.m3u8
 https://glb.bozztv.com/glb/ushba-mafia/index.m3u8
 #EXTINF:-1 group-title="🇰🇬 Бишкек-ТВ 🇰🇬", Mezzo Live HD
 http://77.235.1.19:8000/play/a02y/index.m3u8
-#EXTINF:-1 group-title="🍭Детские🍭", Nick Jr
-http://158.160.149.81:8080/520/tracks-v1a2/mono.m3u8
 #EXTINF:-1 group-title="🎶Музыкальные🎶", Nick Music
 http://fl5.moveonjoy.com/NICK_MUSIC/index.m3u8
 #EXTINF:-1 group-title="🎶Музыкальные🎶", Now 70's
@@ -694,12 +692,8 @@ http://77.235.1.19:8000/play/a075/index.m3u8
 http://serv30.vintera.tv:8081/sochi/sochi_stream/chunks.m3u8
 #EXTINF:-1 group-title="🇰🇬 Бишкек-ТВ 🇰🇬", START Air
 http://77.235.1.19:8000/play/a07k/index.m3u8
-#EXTINF:-1 group-title="🎦Кино🎦", START Air HD
-http://158.160.149.81:8080/8173/index.m3u8
 #EXTINF:-1 group-title="🇰🇬 Бишкек-ТВ 🇰🇬", START World
 http://77.235.1.19:8000/play/a07l/index.m3u8
-#EXTINF:-1 group-title="🎦Кино🎦", START World HD
-http://158.160.149.81:8080/7879/index.m3u8
 #EXTINF:-1 group-title="🚗🏕Развлекательные🚗🏕", Shopping Live
 http://shoppinglive.mediacdn.ru/cdn/shopping/playlist_sdhigh.m3u8
 #EXTINF:-1 group-title="🧬Познавательные🧬", Silk Way
@@ -734,8 +728,6 @@ http://178.217.72.66:8080/TV_1000_Action/index.m3u8
 http://178.217.72.66:8080/TV_1000/index.m3u8
 #EXTINF:-1 group-title="🎦Кино🎦", TV 1000 Русское кино
 http://158.101.222.193:88/georgia_play.php?id=tv1000rukino
-#EXTINF:-1 group-title="🎦Кино🎦", TV 1000 Русское кино HD
-http://158.160.149.81:8080/3794/index.m3u8
 #EXTINF:-1 group-title="🚗🏕Развлекательные🚗🏕", TV RUS
 http://api.alpaca.t62a.com/hls/9106/stream0.m3u8
 #EXTINF:-1 group-title="🇰🇬 Бишкек-ТВ 🇰🇬", TV XXI
@@ -1081,8 +1073,6 @@ http://77.235.1.19:8000/play/a034/index.m3u8
 http://iptv.prosto.tv:7000/ch351/video.m3u8
 #EXTINF:-1 group-title="🇰🇬 Бишкек-ТВ 🇰🇬", Мир сериала
 http://77.235.1.19:8000/play/a06c/index.m3u8
-#EXTINF:-1 group-title="🎦Кино🎦", Мировое Кино HD
-http://158.160.149.81:8080/8532/index.m3u8
 #EXTINF:-1 group-title="🌴Ushba🌴", Мистер Бин
 https://glb.bozztv.com/glb/ushba45/index.m3u8
 #EXTINF:-1 group-title="🌴Ushba🌴", Мода-1
@@ -1179,8 +1169,6 @@ http://iptv.prosto.tv:7000/ch305/video.m3u8
 http://iptv.prosto.tv:7000/ch348/video.m3u8
 #EXTINF:-1 group-title="🏝️RELAX🏝️" tvg-logo="http://img.prosto.tv/storage/channel/logo/ch00564.jpg", Поле
 http://iptv.prosto.tv:7000/ch302/video.m3u8
-#EXTINF:-1 group-title="🎦Кино🎦", Премиум Кино HD
-http://158.160.149.81:8080/8535/index.m3u8
 #EXTINF:-1 group-title="🏝️RELAX🏝️" tvg-logo="https://img.prosto.tv/storage/channel/logo/ch00301.png", ПроФАКТ
 http://iptv.prosto.tv:7000/ch315/video.m3u8
 #EXTINF:-1 group-title="🚗🏕Развлекательные🚗🏕", Продвижение
@@ -1237,8 +1225,6 @@ http://iptv.prosto.tv:7000/ch347/video.m3u8
 http://77.235.1.19:8000/play/a06q/index.m3u8
 #EXTINF:-1 group-title="🇰🇬 Бишкек-ТВ 🇰🇬", Сапфир HD
 http://77.235.1.19:8000/play/a070/index.m3u8
-#EXTINF:-1 group-title="🎦Кино🎦", Семейное Кино HD
-http://158.160.149.81:8080/8533/index.m3u8
 #EXTINF:-1 group-title="🇰🇬 Бишкек-ТВ 🇰🇬", Синема HD
 http://77.235.1.19:8000/play/a01d/index.m3u8
 #EXTINF:-1 group-title="🌴Ushba🌴", Собачки
@@ -1341,8 +1327,6 @@ https://edge-b-04.ctc.ru/vod/hls/fta/7d060Sg85tBw19T5UFjpnQ/370e566ab440ca80a72a
 https://edge-b-04.ctc.ru/vod/hls/fta/sDBW2uyWqB1YlDsXu3ABfQ/07e80d9700fb0d60380d7359353876bb-,hd10,hd20,hd30,hd40,.mp4.urlset/index-f1-v1-a1.m3u8
 #EXTINF:-1 group-title="🥣Званый ужин🥣", Званый ужин 16 выпуск
 https://edge-b-04.ctc.ru/vod/hls/fta/nwm_uhUnlqjBWa-eO1TKMQ/dcd1afbb5e6364d71f74fe42d0efe533-,hd10,hd20,hd30,hd40,.mp4.urlset/index-f1-v1-a1.m3u8
-#EXTINF:-1 group-title="🥣Званый ужин🥣", Званый ужин 17 выпуск
-https://edge-b-04.ctc.ru/vod/hls/fta/YKonyQL9phTyRtS79FMhZA/01c83435617db3b04f0f0e6d8e212e8f-,hd10,hd20,hd30,hd40,.mp4.urlset/index-f1-v1-a1.m3u8
 #EXTINF:-1 group-title="🥣Званый ужин🥣", Званый ужин 18 выпуск
 https://edge-b-04.ctc.ru/vod/hls/fta/uuUNJpKy9ztLuXkhd14O0A/a4d29d86bdeb00d343a2d4827246e8d0-,hd10,hd20,hd30,hd40,.mp4.urlset/index-f1-v1-a1.m3u8
 #EXTINF:-1 group-title="🥣Званый ужин🥣", Званый ужин 19 выпуск
