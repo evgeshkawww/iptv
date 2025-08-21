@@ -313,6 +313,141 @@ http://178.217.72.66:8080/Match_Futbol_1_HD/index.m3u8
 http://178.217.72.66:8080/mir_basketbola/index.m3u8
 #EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Бокс ТВ
 http://178.217.72.66:8080/Boks_TV/index.m3u8
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX MOROCCO \u1d41\u1d34\u1d30 3840P", 4K| RELAX MOROCCO 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1503006&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX TURKEY \u1d41\u1d34\u1d30 3840P", 4K| RELAX TURKEY 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1502984&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX ICELAND \u1d41\u1d34\u1d30 3840P", 4K| RELAX ICELAND 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1503007&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX THE OCEAN \u1d41\u1d34\u1d30 3840P", 4K| RELAX THE OCEAN 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1502989&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX TROPICAL BEACH \u1d41\u1d34\u1d30 3840P", 4K| RELAX TROPICAL BEACH 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1502990&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX AUSTRALIA \u1d41\u1d34\u1d30 3840P", 4K| RELAX AUSTRALIA 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1502985&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX EARTH NATURE \u1d41\u1d34\u1d30 3840P", 4K| RELAX EARTH NATURE 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1502986&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX FOREST \u1d41\u1d34\u1d30 3840P", 4K| RELAX FOREST 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1502987&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX INSPIRATIONAL MOTIVATIONAL \u1d41\u1d34\u1d30 3840P", 4K| RELAX INSPIRATIONAL MOTIVATIONAL 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1502988&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX NORWAY \u1d41\u1d34\u1d30 3840P", 4K| RELAX NORWAY 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1503008&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX 1 \u1d41\u1d34\u1d30 3840P", 4K| RELAX 1 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1502991&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX 2 \u1d41\u1d34\u1d30 3840P", 4K| RELAX 2 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1502992&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX 3 \u1d41\u1d34\u1d30 3840P", 4K| RELAX 3 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1502993&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX 4 \u1d41\u1d34\u1d30 3840P", 4K| RELAX 4 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1502994&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX 5 \u1d41\u1d34\u1d30 3840P", 4K| RELAX 5 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1502995&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX 6 \u1d41\u1d34\u1d30 3840P", 4K| RELAX 6 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1502996&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX 7 \u1d41\u1d34\u1d30 3840P", 4K| RELAX 7 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1502997&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX 8 \u1d41\u1d34\u1d30 3840P", 4K| RELAX 8 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1502998&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX 9 \u1d41\u1d34\u1d30 3840P", 4K| RELAX 9 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1502999&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX 10 \u1d41\u1d34\u1d30 3840P", 4K| RELAX 10 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1503000&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX 11 \u1d41\u1d34\u1d30 3840P", 4K| RELAX 11 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1503001&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX 12 \u1d41\u1d34\u1d30 3840P", 4K| RELAX 12 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1503002&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX 13 \u1d41\u1d34\u1d30 3840P", 4K| RELAX 13 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1503003&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX 14 \u1d41\u1d34\u1d30 3840P", 4K| RELAX 14 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1503004&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX 15 \u1d41\u1d34\u1d30 3840P", 4K| RELAX 15 3840P
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1503005&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX MOROCCO 4K", 4K| RELAX MOROCCO 4K
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1505557&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX TURKEY 4K", 4K| RELAX TURKEY 4K
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1505563&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX NORWAY 4K", 4K| RELAX NORWAY 4K
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1505559&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX ICELAND 4K", 4K| RELAX ICELAND 4K
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1505558&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX TROPICAL BEACH 4K", 4K| RELAX TROPICAL BEACH 4K
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1505576&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX THE OCEAN 4K", 4K| RELAX THE OCEAN 4K
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1505575&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX STARDUST 4K", 4K| RELAX STARDUST 4K
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1505574&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX SNOW WINTER 4K", 4K| RELAX SNOW WINTER 4K
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1505573&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX FOREST 4K", 4K| RELAX FOREST 4K
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1505572&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX FLOWER 4K", 4K| RELAX FLOWER 4K
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1505571&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX EARTH NATURE 4K", 4K| RELAX EARTH NATURE 4K
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1505570&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX NATURE RELAXATION 4K", 4K| RELAX NATURE RELAXATION 4K
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1505569&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX MORNING RELAXING 4K", 4K| RELAX MORNING RELAXING 4K
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1505568&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX INSPIRATIONAL MOTIVATIONAL 4K", 4K| RELAX INSPIRATIONAL MOTIVATIONAL 4K
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1505567&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX EUROPE TOWNS 4K", 4K| RELAX EUROPE TOWNS 4K
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1505566&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX FOREST AMERICAN 4K", 4K| RELAX FOREST AMERICAN 4K
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1505565&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX VIETNAM 4K", 4K| RELAX VIETNAM 4K
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1505564&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX SWITZERLAND 4K", 4K| RELAX SWITZERLAND 4K
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1505562&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX ITALY 4K", 4K| RELAX ITALY 4K
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1505561&extension=ts
+#EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX AUSTRALIA 4K", 4K| RELAX AUSTRALIA 4K
+#EXTVLCOPT:http-user-agent=Lavf53.32.100
+http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1505560&extension=ts
 #EXTINF:-1 group-title="🍭Детские🍭" tvg-id="boomerang" tvg-logo="http://only4.tv/ch/821.png", Boomerang
 http://hls.stb.md/BOOMERANGTV_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjkuMjQwIiwibmJmIjoxNzU1NzUwMDg2LCJleHAiOjE3NTU4MzY0ODYsImlhdCI6MTc1NTc1MDA4NiwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.Sj3DPufPheh9WwjNYHrxImgM5FiXCcxl1mFPPajseOc
 #EXTINF:-1 group-title="🍭Детские🍭" tvg-logo="http://only4.tv/ch/802.png", Cartoon Network RO
