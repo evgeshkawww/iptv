@@ -125,6 +125,8 @@ http://hls.stb.md/LEA_MINOR_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6Ik
 http://hls.stb.md/TNT_MUSIC_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjkuMjQwIiwibmJmIjoxNzU1NzUwMDg2LCJleHAiOjE3NTU4MzY0ODYsImlhdCI6MTc1NTc1MDA4NiwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.Sj3DPufPheh9WwjNYHrxImgM5FiXCcxl1mFPPajseOc
 #EXTINF:-1 group-title="🎶Музыкальные🎶" tvg-id="shanson-tv" tvg-logo="https://minsknews.by/parser/tv/logo/shansontv.png", Шансон ТВ
 http://hls.stb.md/SHANSON_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjkuMjQwIiwibmJmIjoxNzU1NzUwMDg2LCJleHAiOjE3NTU4MzY0ODYsImlhdCI6MTc1NTc1MDA4NiwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.Sj3DPufPheh9WwjNYHrxImgM5FiXCcxl1mFPPajseOc
+#EXTINF:-1 group-title="🧬Познавательные🧬" tvg-logo="https://view.my-tv.biz/img/curiosity_stream.png", CuriosityStream
+https://view.my-tv.biz/tv/7e0b703c7f/97fb80702f/video.m3u8
 #EXTINF:-1 group-title="🧬Познавательные🧬" tvg-id="animal-planet" tvg-logo="http://only4.tv/ch/2202.png", Animal Planet HD
 http://hls.stb.md/ANIMAL_PLANETHD_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjkuMjQwIiwibmJmIjoxNzU1NzUwMDg2LCJleHAiOjE3NTU4MzY0ODYsImlhdCI6MTc1NTc1MDA4NiwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.Sj3DPufPheh9WwjNYHrxImgM5FiXCcxl1mFPPajseOc
 #EXTINF:-1 group-title="🧬Познавательные🧬" tvg-id="discovery-east" tvg-logo="https://ministar.ru/upload/medialibrary/081/08180a6494e2dcbb2ce6de461357d81e.png", Discovery EE
@@ -451,8 +453,6 @@ https://132544.edgevideo.ru/streams/132544_931193/1325441080/index.m3u8
 https://132544.edgevideo.ru/streams/132544_931325/1325441080/index.m3u8
 #EXTINF:-1 group-title="TDM🔴" tvg-logo="https://pluspng.com/img-png/shows-hd-png--1920.jpg", Сериалы
 https://132544.edgevideo.ru/streams/132544_931337/1325441080/index.m3u8
-#EXTINF:-1 group-title="TDM🔴" tvg-logo="https://psv4.userapi.com/c536236/u1279180/docs/d24/bca59dc00165/www.png", ЧТО? ГДЕ? КОГДА?
-https://132544.edgevideo.ru/streams/132544_931349/1325441080/index.m3u8
 #EXTINF:-1 group-title="TDM🔴" tvg-logo="https://psv4.userapi.com/c520036/u1279180/docs/d20/69fcef75b548/FMC.png", Фантастика и мистика
 https://132544.edgevideo.ru/streams/132544_931346/1325441080/index.m3u8
 #EXTINF:-1 group-title="TDM🔴" tvg-logo="https://i.postimg.cc/YS90VJYX/image.png", МУЛЬТИКИ И СКАЗКИ
@@ -1195,8 +1195,6 @@ http://178.217.72.66:8080/Pyatnitsa/index.m3u8
 http://77.235.1.19:8000/play/a05s/index.m3u8
 #EXTINF:-1 group-title="🍭Детские🍭", Радио Kids FM
 https://cqw2lystveu.a.trbcdn.net/livemaster/7ak8t_live-hv25n82a0l8.smil/playlist.m3u8
-#EXTINF:-1 group-title="🌴Ushba🌴", Расследования Авиакатастроф
-https://glb.bozztv.com/glb/ushba36/index.m3u8
 #EXTINF:-1 group-title="🏝️RELAX🏝️" tvg-logo="https://img.prosto.tv/storage/channel/logo/ch00512.jpg", Река
 http://iptv.prosto.tv:7000/ch338/video.m3u8
 #EXTINF:-1 group-title="🇰🇬 Бишкек-ТВ 🇰🇬", Рен ТВ (+2)
