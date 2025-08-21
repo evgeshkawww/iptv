@@ -7,6 +7,312 @@ https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="❓Не показывает? Обнови лист!✏️", 4100119260753027 Юмани
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Рен ТВ HD
+http://178.217.72.66:8080/REN_TV/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Россия 1 HD
+http://178.217.72.66:8080/Rossiya_HD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Россия 24
+http://178.217.72.66:8080/Rossiya_24/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Россия К
+http://178.217.72.66:8080/Rossiya_Kultura/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", ТНТ HD
+http://178.217.72.66:8080/TNT_HD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", ТНТ4
+http://178.217.72.66:8080/TNT4/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", НТВ HD
+http://178.217.72.66:8080/NTV_HD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", НТВ стиль
+http://178.217.72.66:8080/NTV_Stil/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Galaxy HD
+http://178.217.72.66:8080/galaxyhd/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Глазами туриста HD
+http://178.217.72.66:8080/glazamiturista/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", HOME 4K
+http://178.217.72.66:8080/HOME_4K/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", insight HD
+http://178.217.72.66:8080/insight/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Investigation Discovery
+http://178.217.72.66:8080/ID_Xtra/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Big Planet
+http://178.217.72.66:8080/big_planet/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Телепутешествия
+http://178.217.72.66:8080/teleputeshestviya/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Nat Geo Wild
+http://178.217.72.66:8080/Nat_Geo_Wild/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Nat Geo Wild HD
+http://178.217.72.66:8080/Nat_Geo_Wild_HD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", National Geographic
+http://178.217.72.66:8080/National_Geographic/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Ocean TV
+http://178.217.72.66:8080/Ocean_TV/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", RTG TV
+http://178.217.72.66:8080/RTG_TV/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Точка РФ
+http://178.217.72.66:8080/HDL/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Оружие
+http://178.217.72.66:8080/orujie/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Моя планета
+http://178.217.72.66:8080/Moya_Planeta/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Драйв
+http://178.217.72.66:8080/Drayv/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Живая планета
+http://178.217.72.66:8080/Zhivaya_Planeta/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Animal Planet HD
+http://178.217.72.66:8080/Animal_Planet_HD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Нано ТВ HD
+http://178.217.72.66:8080/NANO_HD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Наука
+http://178.217.72.66:8080/Nauka_2_0/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Travel Channel
+http://178.217.72.66:8080/Travel_Channel/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Travel+Adventure
+http://178.217.72.66:8080/Travel_And_Adventure/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Viasat Explore
+http://178.217.72.66:8080/Viasat_Explorer/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Viasat History
+http://178.217.72.66:8080/Viasat_History/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Viasat Nature
+http://178.217.72.66:8080/Viasat_Nature/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Discovery HD
+http://178.217.72.66:8080/Discovery_HD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Дикий
+http://178.217.72.66:8080/Dikiy/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Загородная жизнь
+http://178.217.72.66:8080/Zagorodnaya_Zhizn/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", .Black
+http://178.217.72.66:8080/Black/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", 2x2
+http://178.217.72.66:8080/2x2/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Amedia Hit HD
+http://178.217.72.66:8080/Amedia_Hit/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Amedia Premium HD
+http://178.217.72.66:8080/Amedia_Premium_HD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Amedia 1 HD
+http://178.217.72.66:8080/A1/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Amedia 2 HD
+http://178.217.72.66:8080/A2/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", BCU Action HD
+http://178.217.72.66:8080/BCUActionHD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", BCU Catastrophe HD
+http://178.217.72.66:8080/BCUCatastropheHD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", BCU Comedy HD
+http://178.217.72.66:8080/BCUComedyHD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", BCU Fantastic HD
+http://178.217.72.66:8080/BCUFantasticHD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", BCU Romantic HD
+http://178.217.72.66:8080/BCURomanticHD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", BCU Stars HD
+http://178.217.72.66:8080/BCUStarsHD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", BCU VHS HD
+http://178.217.72.66:8080/BCUVHSHD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", BCU Kinorating HD
+http://178.217.72.66:8080/BCUKinoratingHD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Bollywood HD
+http://178.217.72.66:8080/Bollywood_HD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Cinema
+http://178.217.72.66:8080/cinema/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", CineMan Action HD
+http://178.217.72.66:8080/CineMan_Action/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", CineMan Comedy HD
+http://178.217.72.66:8080/CineMan_Comedy/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", CineMan HD
+http://178.217.72.66:8080/CineMan/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", CineMan Marvel HD
+http://178.217.72.66:8080/CineMan_Marvel/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", CineMan Melodrama HD
+http://178.217.72.66:8080/CineMan_Melodrama/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", CineMan Thriller HD
+http://178.217.72.66:8080/CineMan_Thriller/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", CineMan Top HD
+http://178.217.72.66:8080/CineMan_Top/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", CineMan VHS HD
+http://178.217.72.66:8080/CineMan_VHS/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Fan
+http://178.217.72.66:8080/fan/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Food network
+http://178.217.72.66:8080/food_network/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", h2 HD
+http://178.217.72.66:8080/h2/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Hollywood
+http://178.217.72.66:8080/hollywood/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Hollywood HD
+http://178.217.72.66:8080/hollywoodhd/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", tv5 HD
+http://178.217.72.66:8080/tv5/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", TV XXI
+http://178.217.72.66:8080/TV_XXI/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", VIP Comedy HD
+http://178.217.72.66:8080/vip_comedy/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", VIP Megahit HD
+http://178.217.72.66:8080/vip_megahit/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", VIP Premiere HD
+http://178.217.72.66:8080/vip_premiere/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Авто 24
+http://178.217.72.66:8080/Avto_24/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Аппетитный
+http://178.217.72.66:8080/Morskoy/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Арсенал HD
+http://178.217.72.66:8080/arsenalhd/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Беларусь 24
+http://178.217.72.66:8080/belarus24/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Время
+http://178.217.72.66:8080/Vremya/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Дом кино
+http://178.217.72.66:8080/Dom_Kino/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Дом Кино Премиум HD
+http://178.217.72.66:8080/Dom_Kino_Premium_HD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Домашний HD
+http://178.217.72.66:8080/Domashniy/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Дорама HD
+http://178.217.72.66:8080/Dorama/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Звезда
+http://178.217.72.66:8080/Zvezda/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Зоо ТВ
+http://178.217.72.66:8080/zootv/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Зоопарк
+http://178.217.72.66:8080/Zoopark/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", КВН ТВ
+http://178.217.72.66:8080/KVN_TV/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Кинеко
+http://178.217.72.66:8080/kineko/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Кино ТВ
+http://178.217.72.66:8080/Kino_TV/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Кинопоказ HD
+http://178.217.72.66:8080/kinopokazhd/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Премиальное HD
+http://178.217.72.66:8080/kinopremium/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Кинокомедия
+http://178.217.72.66:8080/Kinokomediya/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Киномикс
+http://178.217.72.66:8080/Kinomiks/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Киносвидание
+http://178.217.72.66:8080/Kinosvidanie/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Киносерия
+http://178.217.72.66:8080/kinoseriya/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Киноужас
+http://178.217.72.66:8080/kinoujas/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Наше новое кино
+http://178.217.72.66:8080/Nashe_Novoe_Kino/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Кинохит
+http://178.217.72.66:8080/Kinokhit/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Киносемья
+http://178.217.72.66:8080/Kinosemya/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Комедийное HD
+http://178.217.72.66:8080/komediynoe/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Комедия
+http://178.217.72.66:8080/Komediya/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Красная линия
+http://178.217.72.66:8080/Krasnaya_Liniya/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Мир
+http://178.217.72.66:8080/Mir/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Мир 24
+http://178.217.72.66:8080/Mir_24/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Москва 24
+http://178.217.72.66:8080/Moskva_24/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Мосфильм. Золотая коллекция
+http://178.217.72.66:8080/mosfilm/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Наш кинопоказ HD
+http://178.217.72.66:8080/nashkinopokazhd/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Наше HD
+http://178.217.72.66:8080/nashekrutoe/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Ностальгия
+http://178.217.72.66:8080/Nostalgiya/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", НСТ
+http://178.217.72.66:8080/NSTV/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", О!
+http://178.217.72.66:8080/O/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", ОТР
+http://178.217.72.66:8080/OTR/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Победа
+http://178.217.72.66:8080/pobeda/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Поехали!
+http://178.217.72.66:8080/Poehali/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Пятница HD
+http://178.217.72.66:8080/Pyatnitsa/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", РБК
+http://178.217.72.66:8080/RBK/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Русский бестселлер
+http://178.217.72.66:8080/russkiy_bestseller/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Русский бестселлер
+http://178.217.72.66:8080/Sony_Sci_Fi/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Сарафан
+http://178.217.72.66:8080/Sarafan/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Спас
+http://178.217.72.66:8080/Spas/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Ю
+http://178.217.72.66:8080/Yu_TV/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", СТС HD
+http://178.217.72.66:8080/STS/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Суббота
+http://178.217.72.66:8080/super/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", ТВ3 HD
+http://178.217.72.66:8080/TV3/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Телекафе
+http://178.217.72.66:8080/Telekafe/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Точка ТВ
+http://178.217.72.66:8080/Tochka_TV/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Усадьба
+http://178.217.72.66:8080/Usadba/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Успех
+http://178.217.72.66:8080/uspeh/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Хит HD
+http://178.217.72.66:8080/hithd/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", СТС Kids HD
+http://178.217.72.66:8080/ctc_kids_hd/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Солнце
+http://178.217.72.66:8080/Disney_Channel/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Мама
+http://178.217.72.66:8080/Mama/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Gulli Girl
+http://178.217.72.66:8080/Gulli/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Карусель
+http://178.217.72.66:8080/Karusel/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Детский мир
+http://178.217.72.66:8080/Detskiy_Mir/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Бобёр
+http://178.217.72.66:8080/Bober/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", JimJam
+http://178.217.72.66:8080/JimJam/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Bolt HD
+http://178.217.72.66:8080/bolt/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Ani
+http://178.217.72.66:8080/Ani/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Мульт HD
+http://178.217.72.66:8080/Mult/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Мультимузыка
+http://178.217.72.66:8080/Multimuzyka/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", TiJi
+http://178.217.72.66:8080/TiJi/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Bridge HD
+http://178.217.72.66:8080/Bridge_HD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Bridge TV classic
+http://178.217.72.66:8080/bridge_classic/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Bridge TV HD
+http://178.217.72.66:8080/Bridge_TV/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Шансон ТВ
+http://178.217.72.66:8080/Shanson_TV/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Mezzo Live HD
+http://178.217.72.66:8080/Mezzo_Live_HD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Eurosport 1 HD
+http://178.217.72.66:8080/Eurosport_HD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Матч HD
+http://178.217.72.66:8080/Match_HD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Матч! Арена HD
+http://178.217.72.66:8080/Match_Arena_HD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Матч! Игра HD
+http://178.217.72.66:8080/Match_Igra_HD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Матч! Страна HD
+http://178.217.72.66:8080/Match_Nash_Sport/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Матч! Футбол 1 HD
+http://178.217.72.66:8080/Match_Futbol_3_HD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Матч! Футбол 2 HD
+http://178.217.72.66:8080/Match_Futbol_2_HD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Матч! Футбол 3 HD
+http://178.217.72.66:8080/Match_Futbol_1_HD/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Мир баскетбола
+http://178.217.72.66:8080/mir_basketbola/index.m3u8
+#EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Бокс ТВ
+http://178.217.72.66:8080/Boks_TV/index.m3u8
 #EXTINF:-1 group-title="🍭Детские🍭" tvg-id="boomerang" tvg-logo="http://only4.tv/ch/821.png", Boomerang
 http://hls.stb.md/BOOMERANGTV_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjkuMjQwIiwibmJmIjoxNzU1NzUwMDg2LCJleHAiOjE3NTU4MzY0ODYsImlhdCI6MTc1NTc1MDA4NiwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.Sj3DPufPheh9WwjNYHrxImgM5FiXCcxl1mFPPajseOc
 #EXTINF:-1 group-title="🍭Детские🍭" tvg-logo="http://only4.tv/ch/802.png", Cartoon Network RO
