@@ -1,12 +1,14 @@
 #EXTM3U url-tvg="http://epg.it999.ru/epg2.xml,http://epg.one/epg.xml,http://194.26.229.4/live/lime_epg.xml.gz,https://raw.githubusercontent.com/IPTVSHARED/iptv/refs/heads/main/epg_lite.xml.gz,https://raw.githubusercontent.com/IPTVSHARED/iptv/refs/heads/main/epg_lite_gabbarit.xml.gz,http://epg.ping-tv.com/1.xmltv,http://epg.team/tvteam.xml,https://iptvx.one/EPG"
 #EXTINF:-1 group-title="✨VIP Канал!✨", Крафтовое IPTV
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/VIP.mp4
-#EXTINF:-1 group-title="⚠️Обновлено 21.08.25⚠️", Поддержи проект!
+#EXTINF:-1 group-title="⚠️Обновлено 22.08.25⚠️", Поддержи проект!
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="🛠️Помощь проекту! Юмани🛠️", Помощь проекту
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="❓Не показывает? Обнови лист!✏️", 4100119260753027 Юмани
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
+#EXTINF:-1 group-title="🎦Кино🎦", .black HD
+http://hls.stb.md/BLACK_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjkuMjQwIiwibmJmIjoxNzU1NzUwMDg2LCJleHAiOjE3NTU4MzY0ODYsImlhdCI6MTc1NTc1MDA4NiwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.Sj3DPufPheh9WwjNYHrxImgM5FiXCcxl1mFPPajseOc
 #EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Рен ТВ HD
 http://178.217.72.66:8080/REN_TV/index.m3u8
 #EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Россия 1 HD
@@ -313,6 +315,406 @@ http://178.217.72.66:8080/Match_Futbol_1_HD/index.m3u8
 http://178.217.72.66:8080/mir_basketbola/index.m3u8
 #EXTINF:-1 group-title="🥷 Zabava TEST 🥷", Бокс ТВ
 http://178.217.72.66:8080/Boks_TV/index.m3u8
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", 1+1 (2011)
+https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/zE2SWKSikOuFunSVHj3/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", 12 разгневанных мужчин (1957)
+https://vod.plvideo.ru/GMPb65uk/AZAevqJa5r/zE2SWKSFrcFCIJNaAGr/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", 13-й район (2004)
+https://vod.plvideo.ru/xdhKhqAx/kfSkUj-sWy/zE2SWKSn5IF-JXJrJiX/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Aпгрейд (2018)
+https://vod.plvideo.ru/GMPb65uk/oUYaYhn1uR/FP7MRNSkuI82HP1hOHn/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", G. I. Joe. Бросок кобры : Снейк Айз (2021)
+https://vod.plvideo.ru/JLxVTeJD/uknUrzHzQA/zE2SWKSWIqP9bkN8R27/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Meгaлoпoлиc (2024)
+https://vod.plvideo.ru/GMPb65uk/uknUrzHzQA/zE2SWKSj2d7OEv6bLBe/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Minecraft в кино (2025)
+https://vod.plvideo.ru/JLxVTeJD/zgo80TEGgy/zE2SWKSd5ZerUS9YziR/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Mиниcтepcтвo нeджeнтльмeнcкиx дeл (2024)
+https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/5jktNnXUzHUjveSkb9N/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", ON и Она (2025)
+https://vod.plvideo.ru/JLxVTeJD/EiKYJIFOyO/zE2SWKSACbaiut9RR6-/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Адвокат дьявола (1997)
+https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/zE2SWKSHZFieZd4XciX/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Академия пана Кляксы 1-я серия (1983)
+https://vod.plvideo.ru/JLxVTeJD/AZAevqJa5r/zE2SWKSBWSeFAbg0RPZ/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Академия пана Кляксы 2-я серия (1983)
+https://vod.plvideo.ru/xdhKhqAx/AZAevqJa5r/zE2SWKSQlArQGsHDVrE/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Аквамен (2018)
+https://vod.plvideo.ru/GMPb65uk/uknUrzHzQA/zE2SWKSQoOCOuHKnPEi/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Аларум (2025)
+https://vod.plvideo.ru/xdhKhqAx/AZAevqJa5r/zE2SWKS6g67NFqRLw9Z/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Алые паруса (1961)
+https://vod.plvideo.ru/GMPb65uk/oUYaYhn1uR/5jktNnXBrJfcBss2usi/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Американская история X (1998)
+https://vod.plvideo.ru/JLxVTeJD/uknUrzHzQA/zE2SWKSVuQW70xk7Otj/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Анчартед: На картах не значится (HDR) (2022)
+https://vod.plvideo.ru/FbZEopwh/bTkXNvLx6U/zE2SWKSSo-oRKo_1Vzg/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Аэроплан (1980)
+https://vod.plvideo.ru/FbZEopwh/oUYaYhn1uR/5jktNnXZRm2ukLcseFd/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Аэроплан 2 (1982)
+https://vod.plvideo.ru/JLxVTeJD/kfSkUj-sWy/zE2SWKS6ibiMgVhBjEh/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Баллада о солдате (1959)
+https://vod.plvideo.ru/JLxVTeJD/uknUrzHzQA/zE2SWKSmQgNZ7YXTxQY/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Батальон 6888 (2024)
+https://vod.plvideo.ru/GMPb65uk/kfSkUj-sWy/zE2SWKSyQWqkCvMo_TF/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Беглец (1993)
+https://vod.plvideo.ru/JLxVTeJD/oUYaYhn1uR/YI8o3NttjFXvJfd6eIx/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Бегущая в лабиринте (2020)
+https://vod.plvideo.ru/xdhKhqAx/uknUrzHzQA/zE2SWKSuqlooHlX2IX_/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Бегущий по лезвию 2049 (HDR) (2017)
+https://vod.plvideo.ru/JLxVTeJD/bTkXNvLx6U/zE2SWKSwCLfKuoqf1Wc/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Без лица (1997)
+https://vod.plvideo.ru/FbZEopwh/bTkXNvLx6U/zE2SWKSYvgPTeLJAVxE/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Безумный Макс: Дорога ярости (2015)
+https://vod.plvideo.ru/xdhKhqAx/uknUrzHzQA/zE2SWKS18Eo70e5EcvL/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Белоснежка (2025)
+https://vod.plvideo.ru/GMPb65uk/zgo80TEGgy/5jktNnX9lyOmteKHQxM/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Бесславные ублюдки (2009)
+https://vod.plvideo.ru/JLxVTeJD/uknUrzHzQA/zE2SWKSEW5uXY2jLo3v/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Бессмертная гвардия 2 (2025)
+https://vod.plvideo.ru/xdhKhqAx/L5GCiHLZ8G/zE2SWKSJ_5DzKagbJTQ/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Бешеные псы (1992)
+https://vod.plvideo.ru/GMPb65uk/uknUrzHzQA/zE2SWKSlLW9nEMG4mt-/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Блэйд (1998)
+https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/zE2SWKSZHUSxcbgtKH9/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Блэйд 3: Троица (2004)
+https://vod.plvideo.ru/xdhKhqAx/uknUrzHzQA/zE2SWKSCGksXvwjhJcQ/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Богатыри земли Русской HDR (2025)
+https://vod.plvideo.ru/JLxVTeJD/cXyXEGJ0A4/zE2SWKSK-sBwurhrOkf/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Бэтмен: Начало (2005)
+https://vod.plvideo.ru/JLxVTeJD/0GRdptsjAb/zE2SWKSA5tv0T503q1s/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", В бой идут одни «старики» (1973)
+https://vod.plvideo.ru/GMPb65uk/oUYaYhn1uR/zE2SWKSZhdZXd1zZmjo/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", В списках не значился (2025)
+https://vod.plvideo.ru/JLxVTeJD/bTkXNvLx6U/zE2SWKSyxNiegroHMDV/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Варкрафт (2016)
+https://vod.plvideo.ru/xdhKhqAx/uknUrzHzQA/zE2SWKS2GS22U81_IJB/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Василий (2025)
+https://vod.plvideo.ru/GMPb65uk/EiKYJIFOyO/zE2SWKSosCh22CLvSlQ/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Властелин колец: Возвращение короля (2003)
+https://vod.plvideo.ru/FbZEopwh/cXyXEGJ0A4/zE2SWKSzPG2_2novr9k/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Властелин колец: Война рохирримов (2024)
+https://vod.plvideo.ru/FbZEopwh/kfSkUj-sWy/zE2SWKShe1GPwGGalGs/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Властелин колец: Две крепости (2002)
+https://vod.plvideo.ru/xdhKhqAx/cXyXEGJ0A4/zE2SWKS6Ur4gLSe4z_n/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Воздушная тюрьма (1997)
+https://vod.plvideo.ru/GMPb65uk/kfSkUj-sWy/YI8o3NtmFOQR4HK--Fv/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Война миров (1953)
+https://vod.plvideo.ru/JLxVTeJD/zaA4EcW22E/zE2SWKSN5omlC8M7bP9/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Выстрел в пустоту (2017)
+https://vod.plvideo.ru/JLxVTeJD/uknUrzHzQA/zE2SWKS7V4tUEhtCPP1/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Гарри Поттер и узник Азкабана(2004)
+https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/YI8o3NtTbYuJipTKQg1/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Гарри Поттер и философский камень (2001)
+https://vod.plvideo.ru/FbZEopwh/oUYaYhn1uR/5jktNnXRoYDkDF9uZBy/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Главы Государств (2025)
+https://vod.plvideo.ru/GMPb65uk/L5GCiHLZ8G/5jktNnX7ST3edoCmEod/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Город Эмбер: Побег (2008)
+https://vod.plvideo.ru/xdhKhqAx/0GRdptsjAb/5jktNnX-2nBiGDH2ZEY/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Грешники (2025)
+https://vod.plvideo.ru/JLxVTeJD/bTkXNvLx6U/zE2SWKSXYaayEsjVKcS/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Громовержцы (2025)
+https://vod.plvideo.ru/JLxVTeJD/L5GCiHLZ8G/5jktNnXDb7YSTFLCRsD/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Группа крови (2025)
+https://vod.plvideo.ru/GMPb65uk/L5GCiHLZ8G/zE2SWKSunpsweCdFrsT/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Д'Артаньян и три мушкетера 1-серия (1979)
+https://vod.plvideo.ru/GMPb65uk/oUYaYhn1uR/zE2SWKSvx14wvS1Pr6J/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Д'Артаньян и три мушкетера 2-серия (1979)
+https://vod.plvideo.ru/JLxVTeJD/oUYaYhn1uR/zE2SWKSznl1UHnM6PDE/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", День Курка (2019)
+https://vod.plvideo.ru/xdhKhqAx/EiKYJIFOyO/zE2SWKSElwtFdlNxGnr/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", День независимости (1996)
+https://vod.plvideo.ru/JLxVTeJD/kfSkUj-sWy/zE2SWKSyR1F_4dwSBMd/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", День сурка (1993)
+https://vod.plvideo.ru/JLxVTeJD/oUYaYhn1uR/zE2SWKSjqBJiZStadjz/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Джейсон Борн (2016)
+https://vod.plvideo.ru/JLxVTeJD/oUYaYhn1uR/zE2SWKS9h1DUe4PRr8R/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Джонни Мнемоник (1995)
+https://vod.plvideo.ru/xdhKhqAx/zaA4EcW22E/zE2SWKSPNgbbD7vbpnA/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Джуманджи (1995)
+https://vod.plvideo.ru/JLxVTeJD/oUYaYhn1uR/5jktNnX-QO4NBTYvDQH/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Доктор Стрэндж: В мультивселенной безумия (2022)
+https://vod.plvideo.ru/JLxVTeJD/0GRdptsjAb/zE2SWKS68zWXHE5pzko/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Доспехи Бога 2: Операция Кондор (HDR) (1991)
+https://vod.plvideo.ru/GMPb65uk/bTkXNvLx6U/zE2SWKSo8MMbGnUizCp/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Доспехи бога (HDR) (1986)
+https://vod.plvideo.ru/FbZEopwh/bTkXNvLx6U/zE2SWKSa0BElEbf9E4g/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Дядя Вася (1970)
+https://vod.plvideo.ru/GMPb65uk/zaA4EcW22E/zE2SWKS3UwYsZmPS_4P/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", За пригоршню долларов (1964)
+https://vod.plvideo.ru/xdhKhqAx/uknUrzHzQA/zE2SWKSGmNib-8VvFmB/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", За спичками (1979)
+https://vod.plvideo.ru/GMPb65uk/CZjqmtgIIH/5jktNnXltSMR0hh4M7H/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Зависнуть в Палм-Спрингс (2020)
+https://vod.plvideo.ru/GMPb65uk/EiKYJIFOyO/zE2SWKSUKcHzOsvQnrk/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Закадычные друзья (1954)
+https://vod.plvideo.ru/xdhKhqAx/zaA4EcW22E/zE2SWKSWJMLGvX1PwI_/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Законопослушный Гражданин (2009)
+https://vod.plvideo.ru/xdhKhqAx/uknUrzHzQA/zE2SWKS5A1uUsGnUJfw/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Звездный десант (1997)
+https://vod.plvideo.ru/JLxVTeJD/AZAevqJa5r/zE2SWKSFGE_pWsaIxql/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Звёздные войны: Эпизод 1 – Скрытая угроза (1999)
+https://vod.plvideo.ru/xdhKhqAx/EiKYJIFOyO/zE2SWKSziJvIZlG95oo/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Звёздные войны: Эпизод 2 – Атака клонов (2002)
+https://vod.plvideo.ru/xdhKhqAx/EiKYJIFOyO/zE2SWKSmVcQZBAQYmTg/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Звёздные войны: Эпизод 3 – Месть ситхов (2005)
+https://vod.plvideo.ru/FbZEopwh/EiKYJIFOyO/zE2SWKSUqt7Zf17dEtZ/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Зеленая миля (1999)
+https://vod.plvideo.ru/JLxVTeJD/0GRdptsjAb/zE2SWKSjKHsxpX0guiY/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Знакомьтесь Джо Блэк (1998)
+https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/zE2SWKSyNH0ayNPt0zQ/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Игла (1988)
+https://vod.plvideo.ru/JLxVTeJD/zaA4EcW22E/zE2SWKSdoBQWQvjY36N/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Игра (1997)
+https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/zE2SWKSYhhWV6watVka/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Индиана Джонс и Колесо судьбы (2023)
+https://vod.plvideo.ru/FbZEopwh/oUYaYhn1uR/5jktNnXDUCGkZpEubis/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Индиана Джонс и Королевство хрустального черепа (2008)
+https://vod.plvideo.ru/xdhKhqAx/oUYaYhn1uR/zE2SWKSxouzsIoGXekb/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Индиана Джонс и Храм судьбы (1984)
+https://vod.plvideo.ru/JLxVTeJD/oUYaYhn1uR/zE2SWKSTR9PwlMSgwCs/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Ирония судьбы или С лёгким паром (1975)
+https://vod.plvideo.ru/xdhKhqAx/kfSkUj-sWy/zE2SWKSxldZz4DE8l9o/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Источник вечной молодости (HDR) (2025)
+https://vod.plvideo.ru/xdhKhqAx/bTkXNvLx6U/zE2SWKSD2KZhOtL3m_A/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Как приручить дракона (2025)
+https://vod.plvideo.ru/JLxVTeJD/L5GCiHLZ8G/5jktNnXn9mDSxfT8kSX/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Капитан Америка: Новый мир (2025)
+https://vod.plvideo.ru/JLxVTeJD/cXyXEGJ0A4/5jktNnXi0afdMsAFDZL/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Капитан Крюк (2025)
+https://vod.plvideo.ru/xdhKhqAx/EiKYJIFOyO/zE2SWKSitlPaLVDOhBU/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Киборг (1989)
+https://vod.plvideo.ru/FbZEopwh/oUYaYhn1uR/YI8o3NtozWx7xjrnitv/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Коля домой (2025)
+https://vod.plvideo.ru/JLxVTeJD/bTkXNvLx6U/zE2SWKSCXn8HCKjz1Tj/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Компаньон (2025)
+https://vod.plvideo.ru/FbZEopwh/AZAevqJa5r/zE2SWKScas4nGXJzw1X/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Константин: Повелитель тьмы 60 FPS (2005)
+https://vod.plvideo.ru/JLxVTeJD/uknUrzHzQA/zE2SWKSbbt_iOoMTlsY/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Космическая одиссея 2001 (1968)
+https://vod.plvideo.ru/FbZEopwh/zaA4EcW22E/zE2SWKSxFTFgJjywddp/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Кракен (2025)
+https://vod.plvideo.ru/JLxVTeJD/bTkXNvLx6U/zE2SWKSkTHi8xw46tuG/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Красный шёлк (2025)
+https://vod.plvideo.ru/xdhKhqAx/cXyXEGJ0A4/zE2SWKSnXgShPKDLRGB/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Крепкий орешек 4.0 (2007)
+https://vod.plvideo.ru/xdhKhqAx/kfSkUj-sWy/zE2SWKS9cDLru3RHRvd/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Крестный отец 1 (1972)
+https://vod.plvideo.ru/FbZEopwh/kfSkUj-sWy/zE2SWKS49K_h508_7al/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Крестный отец 2 (1974)
+https://vod.plvideo.ru/JLxVTeJD/kfSkUj-sWy/zE2SWKSfCp5mQTfuUrX/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Крестный отец 3 (1990)
+https://vod.plvideo.ru/GMPb65uk/kfSkUj-sWy/zE2SWKSExGaWMGn7dyl/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Крикуны (1995)
+https://vod.plvideo.ru/xdhKhqAx/0GRdptsjAb/zE2SWKSltFY47_Kc5sH/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Криминальное чтиво (1994)
+https://vod.plvideo.ru/xdhKhqAx/uknUrzHzQA/zE2SWKSpWacyXtvoCku/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Кровавый спорт (1988)
+https://vod.plvideo.ru/JLxVTeJD/oUYaYhn1uR/zE2SWKSMCrAeBcz8Uw1/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Куда приводят мечты (1998)
+https://vod.plvideo.ru/JLxVTeJD/zaA4EcW22E/5jktNnXjz2nOhUiKpjC/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Лара Крофт Расхитительница Гробниц (HDR) (2001)
+https://vod.plvideo.ru/JLxVTeJD/bTkXNvLx6U/zE2SWKSN_IAUl02Bde4/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Летучий корабль (2024)
+https://vod.plvideo.ru/GMPb65uk/AZAevqJa5r/zE2SWKS3hquVKgRvOPv/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Любовь и голуби (1984)
+https://vod.plvideo.ru/JLxVTeJD/zaA4EcW22E/zE2SWKSFLYkE1fJA54R/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Люси (2014)
+https://vod.plvideo.ru/xdhKhqAx/0GRdptsjAb/zE2SWKSSlAmsiNeQS9k/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Марс Атакует! (1996)
+https://vod.plvideo.ru/FbZEopwh/oUYaYhn1uR/5jktNnXukTjJs237_6K/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Маска (1994)
+https://vod.plvideo.ru/JLxVTeJD/CZjqmtgIIH/zE2SWKSRJdaPntQOUSX/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Мастер (2025)
+https://vod.plvideo.ru/GMPb65uk/bTkXNvLx6U/5jktNnXoYIK2WhFHI1T/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Матрица (1999)
+https://vod.plvideo.ru/FbZEopwh/oUYaYhn1uR/5jktNnXeF1D-Mz3ft_e/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Микки 17 (2025)
+https://vod.plvideo.ru/JLxVTeJD/cXyXEGJ0A4/zE2SWKSt0MqmAh2NqO2/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Мой пингвин (2024)
+https://vod.plvideo.ru/JLxVTeJD/0GRdptsjAb/zE2SWKS9gfHcWjvkFQp/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Музей восковых фигур 2: Затерянные во времени (1992)
+https://vod.plvideo.ru/JLxVTeJD/0GRdptsjAb/zE2SWKSBBCtnHJ6-dpl/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", На гребне волны (1991)
+https://vod.plvideo.ru/JLxVTeJD/uknUrzHzQA/zE2SWKSOETRlkKMSxLE/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Начало (2010)
+https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/zE2SWKSaX1tL8iIM3HJ/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Начальник Чукотки (1966)
+https://vod.plvideo.ru/xdhKhqAx/0GRdptsjAb/5jktNnXNvuDFDpo2EFm/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Не может быть! (1975)
+https://vod.plvideo.ru/JLxVTeJD/CZjqmtgIIH/zE2SWKS01-AeJGUdfjF/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Не пойман — не вор (2006)
+https://vod.plvideo.ru/JLxVTeJD/uknUrzHzQA/zE2SWKSgjCWnaCZ1J4B/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Немыслимое (2010)
+https://vod.plvideo.ru/JLxVTeJD/uknUrzHzQA/zE2SWKSJ3kF51j8vNRG/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Неуязвимый (2000)
+https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/zE2SWKSz7Xj6CU9RPM7/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Новички (2024)
+https://vod.plvideo.ru/FbZEopwh/oUYaYhn1uR/zE2SWKSFypbpmqWD60z/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Новичок (2025)
+https://vod.plvideo.ru/FbZEopwh/bTkXNvLx6U/zE2SWKSza2RUjN8bnbg/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Обезьяна (2025)
+https://vod.plvideo.ru/xdhKhqAx/bTkXNvLx6U/zE2SWKSLLKvWhTyYQ3_/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Обитель зла 1 (2002)
+https://vod.plvideo.ru/xdhKhqAx/0GRdptsjAb/5jktNnXhv9CGKnzAZmk/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Обитель зла 2: Апокалипсис (2004)
+https://vod.plvideo.ru/GMPb65uk/0GRdptsjAb/5jktNnXL32yJpGzJCOs/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Один Дома 2: Затерянный В Нью-Йорке (1992)
+https://vod.plvideo.ru/GMPb65uk/kfSkUj-sWy/zE2SWKScjRc2EFhHPlw/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Один дома (1990)
+https://vod.plvideo.ru/GMPb65uk/kfSkUj-sWy/zE2SWKSNzJREV9d2HV7/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Одинокие волки (2024)
+https://vod.plvideo.ru/xdhKhqAx/0GRdptsjAb/YI8o3NtJ2UqZYWdxV0t/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Озеро Каддо (2024)
+https://vod.plvideo.ru/GMPb65uk/kfSkUj-sWy/zE2SWKSiUNxNZtbxreS/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Оно Новая глава (2025)
+https://vod.plvideo.ru/FbZEopwh/bTkXNvLx6U/zE2SWKS6YmQKusSvJ11/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Опустошение (2025)
+https://vod.plvideo.ru/FbZEopwh/cXyXEGJ0A4/zE2SWKSCv665aZH0xas/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Остров доктора Моро (1996)
+https://vod.plvideo.ru/xdhKhqAx/EiKYJIFOyO/zE2SWKSmkJSETbuEEZt/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", От заката до рассвета (1996)
+https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/zE2SWKSc9vQgJqLJGmb/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", От заката до рассвета 2: Кровавые деньги из Техаса (1999)
+https://vod.plvideo.ru/GMPb65uk/uknUrzHzQA/zE2SWKSWVZCVXTX5HDi/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Пpoфeccиoнaл (2024)
+https://vod.plvideo.ru/xdhKhqAx/uknUrzHzQA/5jktNnXAyNEUDXd8i7Q/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Пароль Рыба-меч (2001)
+https://vod.plvideo.ru/JLxVTeJD/bTkXNvLx6U/zE2SWKSSv7hIsXU9kNp/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Паспорт (1990)
+https://vod.plvideo.ru/GMPb65uk/oUYaYhn1uR/zE2SWKSgwj6w0QR33g1/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Первому игроку приготовиться (2018)
+https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/zE2SWKS27wPrDHl_ML_/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Планета обезьян: Новое царство (2024)
+https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/zE2SWKS7CrWRL68KXFf/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Под прикрытием (2025)
+https://vod.plvideo.ru/FbZEopwh/bTkXNvLx6U/zE2SWKSYjMCLQFf9oqX/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Полицейская история (1985)
+https://vod.plvideo.ru/JLxVTeJD/bTkXNvLx6U/zE2SWKS9QSHI871Igmb/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Полный нокаут (2025)
+https://vod.plvideo.ru/FbZEopwh/bTkXNvLx6U/5jktNnX7UhePBJk4zD9/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Помешанная на контроле (2025)
+https://vod.plvideo.ru/GMPb65uk/EiKYJIFOyO/zE2SWKSfuNH2BkHmn1m/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Последние дни на Марсе (2013)
+https://vod.plvideo.ru/FbZEopwh/kfSkUj-sWy/zE2SWKSqHKDJ-u9Jz0-/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Последний охотник на демонов (2025)
+https://vod.plvideo.ru/FbZEopwh/bTkXNvLx6U/zE2SWKS0y6MffXGlILD/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Престиж (2006)
+https://vod.plvideo.ru/JLxVTeJD/AZAevqJa5r/zE2SWKSzAlRtUIB3ZTO/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Проект X: Дорвались (Расширенная версия) (2012)
+https://vod.plvideo.ru/JLxVTeJD/AZAevqJa5r/zE2SWKSGrzqHBtG7z_R/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Пункт назначения (2000)
+https://vod.plvideo.ru/JLxVTeJD/cXyXEGJ0A4/zE2SWKS1sSAVPK5I8r8/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Пункт назначения 2 (2003)
+https://vod.plvideo.ru/FbZEopwh/cXyXEGJ0A4/zE2SWKSmq2rmX9HZbuU/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Рейд (2011)
+https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/zE2SWKSlmeC0kSUWFJi/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Рембо: Первая кровь (1982)
+https://vod.plvideo.ru/JLxVTeJD/uknUrzHzQA/zE2SWKS2Uzj1uUoCv3q/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Руслан и Людмила 2 серии (1972)
+https://vod.plvideo.ru/GMPb65uk/oUYaYhn1uR/zE2SWKSffzNzkzgx494/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Рэкетир (2007)
+https://vod.plvideo.ru/xdhKhqAx/AZAevqJa5r/zE2SWKSJnWXeSMKcZ_K/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Санктум (2011)
+https://vod.plvideo.ru/xdhKhqAx/oUYaYhn1uR/zE2SWKS7nb0kkShRLKv/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Скала (1996)
+https://vod.plvideo.ru/xdhKhqAx/uknUrzHzQA/YI8o3NtELQL6-NIuajP/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Скорость (1994)
+https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/zE2SWKS4Ory7A6w3u06/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Сломанная стрела (1996)
+https://vod.plvideo.ru/xdhKhqAx/bTkXNvLx6U/zE2SWKSjVHrTogfTT1u/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Снова в деле (2025)
+https://vod.plvideo.ru/GMPb65uk/AZAevqJa5r/zE2SWKSvFW5SHGaPT1t/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Собачье сердце (1988)
+https://vod.plvideo.ru/xdhKhqAx/oUYaYhn1uR/zE2SWKSflzYkqPfG6j4/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Солярис (1972)
+https://vod.plvideo.ru/JLxVTeJD/zaA4EcW22E/zE2SWKS33ZuUMZ5h_zP/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Соник 3 в кино (2024)
+https://vod.plvideo.ru/JLxVTeJD/uknUrzHzQA/zE2SWKSTL36h5XVp0Yu/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Сорок первый (1956)
+https://vod.plvideo.ru/JLxVTeJD/0GRdptsjAb/zE2SWKS_rGzNsb_Rbu7/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Социальная сеть (2010)
+https://vod.plvideo.ru/JLxVTeJD/uknUrzHzQA/zE2SWKSRvIWiyOfqzx3/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Сталкер (1979)
+https://vod.plvideo.ru/GMPb65uk/zaA4EcW22E/zE2SWKSuqOxa7561NUW/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Старик Хоттабыч (1956)
+https://vod.plvideo.ru/JLxVTeJD/CZjqmtgIIH/zE2SWKSCVZ9-Pjbj_o7/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Старик Хоттабыч (1956)
+https://vod.plvideo.ru/FbZEopwh/kfSkUj-sWy/zE2SWKSqblImLV6ciqy/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Судья Дредд (1995)
+https://vod.plvideo.ru/FbZEopwh/bTkXNvLx6U/zE2SWKSAxXBxskWbKZG/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Сфера (1998)
+https://vod.plvideo.ru/FbZEopwh/oUYaYhn1uR/zE2SWKSIqcGlWA8kLCU/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Схватка (1995)
+https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/zE2SWKSrpB_zlaYerV2/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Такси (1998)
+https://vod.plvideo.ru/FbZEopwh/kfSkUj-sWy/zE2SWKSHw0z6WMgWK1c/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Такси 2 (2000)
+https://vod.plvideo.ru/xdhKhqAx/kfSkUj-sWy/zE2SWKSGaMXkeJU_NPb/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Такси 3 (2003)
+https://vod.plvideo.ru/FbZEopwh/kfSkUj-sWy/zE2SWKScUxMveDTTzuK/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Такси 4 (2007)
+https://vod.plvideo.ru/JLxVTeJD/kfSkUj-sWy/zE2SWKSjZnAtUL4Y5JT/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Тогда Сейчас Потом (2024)
+https://vod.plvideo.ru/GMPb65uk/uknUrzHzQA/zE2SWKSSY81e9hPiM4j/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Тренер Картер (2005)
+https://vod.plvideo.ru/GMPb65uk/AZAevqJa5r/zE2SWKSVsPnz2o1hECv/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Троя (2004)
+https://vod.plvideo.ru/GMPb65uk/uknUrzHzQA/zE2SWKSZfX1fMVKLph_/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Улыбка 2 (2024)
+https://vod.plvideo.ru/JLxVTeJD/kfSkUj-sWy/zE2SWKSKGQgTRzOd2mt/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Универсальный солдат (1992)
+https://vod.plvideo.ru/FbZEopwh/oUYaYhn1uR/YI8o3NtX0dEU5BUeoOm/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Уоллес и Громит: Самая дикая месть (2024)
+https://vod.plvideo.ru/xdhKhqAx/uknUrzHzQA/zE2SWKS4GwHpQoJEZoa/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Финикийская схема (2025)
+https://vod.plvideo.ru/GMPb65uk/L5GCiHLZ8G/5jktNnXQ5YgCXv5m6gT/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Форсаж (2001)
+https://vod.plvideo.ru/GMPb65uk/uknUrzHzQA/zE2SWKS4YZUhfTLByke/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Форсаж 5 (2011)
+https://vod.plvideo.ru/FbZEopwh/zaA4EcW22E/zE2SWKSZHyVO_EzZfca/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Хеллбой: Герой из пекла (2004)
+https://vod.plvideo.ru/FbZEopwh/0GRdptsjAb/zE2SWKSxSCoyd24EBIC/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Хищник (2018)
+https://vod.plvideo.ru/JLxVTeJD/kfSkUj-sWy/zE2SWKS55C1NoCpNdzY/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Хищные земли (2024)
+https://vod.plvideo.ru/FbZEopwh/kfSkUj-sWy/5jktNnXxYYslVGzUk2d/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Хулиганы зеленой улицы (2005)
+https://vod.plvideo.ru/JLxVTeJD/uknUrzHzQA/zE2SWKSlHCJoFxJpIVI/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Чапаев (1934)
+https://vod.plvideo.ru/FbZEopwh/AZAevqJa5r/zE2SWKSrmN5wXYJXk2x/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Человек–амфибия (1961)
+https://vod.plvideo.ru/JLxVTeJD/CZjqmtgIIH/zE2SWKSuPIP-I_oL0hk/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Чужой: Завет (2017)
+https://vod.plvideo.ru/JLxVTeJD/zaA4EcW22E/zE2SWKSDSW_8kYHCei-/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Чужой: Ромул (2024)
+https://vod.plvideo.ru/xdhKhqAx/0GRdptsjAb/zE2SWKSqg0946T0rLL1/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Чёрная дыра (2000)
+https://vod.plvideo.ru/FbZEopwh/cXyXEGJ0A4/zE2SWKS4LMwTZ5pt1vY/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Чёрный чемодан - двойная игра (2025)
+https://vod.plvideo.ru/FbZEopwh/bTkXNvLx6U/zE2SWKSPnIyLM4NWnWe/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Шальная пуля 3 (2025)
+https://vod.plvideo.ru/xdhKhqAx/L5GCiHLZ8G/5jktNnX9nYittY2KteX/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Шерлок Холмс (2009)
+https://vod.plvideo.ru/GMPb65uk/oUYaYhn1uR/zE2SWKSLO04wtmlx8DD/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Шестое чувство (1999)
+https://vod.plvideo.ru/FbZEopwh/uknUrzHzQA/zE2SWKSxt6C7jv21bKl/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Шрек 2 (2004)
+https://vod.plvideo.ru/FbZEopwh/cXyXEGJ0A4/zE2SWKS6fKdKbyrGfPe/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Щен из созвездия Гончих псов (1991)
+https://vod.plvideo.ru/FbZEopwh/oUYaYhn1uR/zE2SWKS5Ou33CTNuZbn/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Электрический штат (2025)
+https://vod.plvideo.ru/GMPb65uk/cXyXEGJ0A4/zE2SWKSohdXl3YvF7P_/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Элементарно (2023)
+https://vod.plvideo.ru/JLxVTeJD/uknUrzHzQA/zE2SWKSviNPXI_i6ZI7/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Эльвира: Повелительница тьмы (1988)
+https://vod.plvideo.ru/GMPb65uk/oUYaYhn1uR/YI8o3NtHSwPt9n_MdIY/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Эпидемия: Вирус-32 (2022)
+https://vod.plvideo.ru/JLxVTeJD/CZjqmtgIIH/zE2SWKSo1xac1S8NSCs/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Эффект бабочки (2004)
+https://vod.plvideo.ru/FbZEopwh/EiKYJIFOyO/zE2SWKSO4wUdu0T8YYW/ZX
+#EXTINF:-1 group-title="🕓UHD CINEMA🕓" tvg-logo="https://i.postimg.cc/FH6m8kSR/1.jpg", Я шагаю по Москве (1963)
+https://vod.plvideo.ru/JLxVTeJD/oUYaYhn1uR/5jktNnXphbWMnRP-e89/ZX
 #EXTINF:-1 group-title="🏖️4K RELAX🏖️" tvg-name="4K| RELAX MOROCCO \u1d41\u1d34\u1d30 3840P", 4K| RELAX MOROCCO 3840P
 #EXTVLCOPT:http-user-agent=Lavf53.32.100
 http://skipcf.cwdn.cx:80/play/live.php?mac=00:1A:79:37:2F:19&stream=1503006&extension=ts
@@ -482,14 +884,6 @@ http://hls.stb.md/MULIT_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVC
 http://hls.stb.md/RIJII_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjkuMjQwIiwibmJmIjoxNzU1NzUwMDg2LCJleHAiOjE3NTU4MzY0ODYsImlhdCI6MTc1NTc1MDA4NiwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.Sj3DPufPheh9WwjNYHrxImgM5FiXCcxl1mFPPajseOc
 #EXTINF:-1 group-title="🍭Детские🍭" tvg-id="sts-kids-hd" tvg-logo="https://ic.wampi.ru/2021/04/14/c112f07f0092fcb68f8b7ff312b96bd5.jpg", СТС Kids
 http://hls.stb.md/CTC_KIDS_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjkuMjQwIiwibmJmIjoxNzU1NzUwMDg2LCJleHAiOjE3NTU4MzY0ODYsImlhdCI6MTc1NTc1MDA4NiwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.Sj3DPufPheh9WwjNYHrxImgM5FiXCcxl1mFPPajseOc
-#EXTINF:-1 group-title="😵Информационные😵" tvg-id="cnn" tvg-logo="http://www.interntv.ru/ai/channel/14/logo120x120/logo120x120.gif", CNN
-http://hls.stb.md/CNN_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjkuMjQwIiwibmJmIjoxNzU1NzUwMDg2LCJleHAiOjE3NTU4MzY0ODYsImlhdCI6MTc1NTc1MDA4NiwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.Sj3DPufPheh9WwjNYHrxImgM5FiXCcxl1mFPPajseOc
-#EXTINF:-1 group-title="😵Информационные😵" tvg-id="euronews" tvg-logo="https://pbs.twimg.com/profile_images/732676684156145665/ibnA2mqB_400x400.jpg", Euronews
-http://hls.stb.md/EURONEWS_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjkuMjQwIiwibmJmIjoxNzU1NzUwMDg2LCJleHAiOjE3NTU4MzY0ODYsImlhdCI6MTc1NTc1MDA4NiwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.Sj3DPufPheh9WwjNYHrxImgM5FiXCcxl1mFPPajseOc
-#EXTINF:-1 group-title="😵Информационные😵" tvg-id="nastoyaschee-vremia" tvg-logo="http://s1.hostingkartinok.com/uploads/images/2021/06/bec4ebd144916068ffcb7ee4fd17b796.png", Настоящее время
-http://hls.stb.md/NASTOIASHIE_VREMEA_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjkuMjQwIiwibmJmIjoxNzU1NzUwMDg2LCJleHAiOjE3NTU4MzY0ODYsImlhdCI6MTc1NTc1MDA4NiwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.Sj3DPufPheh9WwjNYHrxImgM5FiXCcxl1mFPPajseOc
-#EXTINF:-1 group-title="🎦Кино🎦", .black HD
-http://hls.stb.md/BLACK_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjkuMjQwIiwibmJmIjoxNzU1NzUwMDg2LCJleHAiOjE3NTU4MzY0ODYsImlhdCI6MTc1NTc1MDA4NiwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.Sj3DPufPheh9WwjNYHrxImgM5FiXCcxl1mFPPajseOc
 #EXTINF:-1 group-title="🎦Кино🎦", .sci-fi
 http://hls.stb.md/SCI_FI_H264/video.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpcCI6IjE3OC4xMjEuMjkuMjQwIiwibmJmIjoxNzU1NzUwMDg2LCJleHAiOjE3NTU4MzY0ODYsImlhdCI6MTc1NTc1MDA4NiwiaXNzIjoic3RiLnN0YXJuZXQubWQifQ.Sj3DPufPheh9WwjNYHrxImgM5FiXCcxl1mFPPajseOc
 #EXTINF:-1 group-title="🎦Кино🎦", .red HD
@@ -886,6 +1280,9 @@ http://178.217.72.66:8080/BCUKinoratingHD/index.m3u8
 http://178.217.72.66:8080/BCUPremiereHD/index.m3u8
 #EXTINF:-1 group-title="🎥КиноЗал🎥", BCU Romantic HD
 http://178.217.72.66:8080/BCURomanticHD/index.m3u8
+#EXTINF:-1 group-title="🎥КиноЗал🎥", BCU VHS
+#EXTVLCOPT:http-user-agent=okhttp/4.12.0
+http://178.217.72.66:8080/BCUVHSHD/index.m3u8
 #EXTINF:-1 group-title="🎥КиноЗал🎥", BCU Stars HD
 http://178.217.72.66:8080/BCUStarsHD/index.m3u8
 #EXTINF:-1 group-title="TDM🔴" tvg-logo="https://lh4.ggpht.com/usGW8vwiQGrEH6OH6kLgVrXAqJlqzcmm1qnkwQ3AnHywhA73Hs8vVOxd1_qfv720y4M", TechnoDanceMusic
@@ -928,6 +1325,9 @@ http://194.26.229.213/chdtv_rock/index.m3u8
 http://digicom.hls.iptvdc.com/canalmotor/index.m3u8
 #EXTINF:-1 group-title="🍭Детские🍭", Cartoon Classics
 http://77.235.1.19:8000/play/a052/index.m3u8
+#EXTINF:-1 group-title="🎥КиноЗал🎥", PLAY-X Андрей Федорцов
+#EXTVLCOPT:http-user-agent=Player (Linux; Android 14)
+http://cdn1.starcinemax.fun:2095/0423/index.m3u8?token=137946825
 #EXTINF:-1 group-title="🎥КиноЗал🎥", CineMan Action HD
 http://178.217.72.66:8080/CineMan_Action/index.m3u8
 #EXTINF:-1 group-title="🎥КиноЗал🎥", CineMan Comedy HD
