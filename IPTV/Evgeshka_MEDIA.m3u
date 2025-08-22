@@ -1260,6 +1260,38 @@ http://78.130.250.2:8023/play/a02o/index.m3u8
 https://glb.bozztv.com/glb/ushba80/index.m3u8
 #EXTINF:-1 group-title="🏝️RELAX🏝️" tvg-logo="https://img.prosto.tv/storage/channel/logo/ch00549.jpg", Avia Stream
 http://iptv.prosto.tv:7000/ch306/video.m3u8
+#EXTINF:-1 group-title="🏝️RELAX🏝️" tvg-id="simpleTVFakeEpgId", AKVARIUM
+http://105894.fly24.be/live/pikisi0101/AsSaNBsOo3/64331.ts
+#EXTINF:-1 group-title="🏝️RELAX🏝️" tvg-id="simpleTVFakeEpgId", AUSTRIA
+http://105894.fly24.be/live/pikisi0101/AsSaNBsOo3/64332.ts
+#EXTINF:-1 group-title="🏝️RELAX🏝️" tvg-id="simpleTVFakeEpgId" tvg-logo="../Channel/Logo/BRIDGE TV DELUXE.png", Deluxe Lounge HD
+https://d46c0ebf9ef94053848fdd7b1f2f6b90.mediatailor.eu-central-1.amazonaws.com/v1/master/81bfcafb76f9c947b24574657a9ce7fe14ad75c0/live-prod/9a087b26-8be4-11eb-a7de-bacfe1f83627/0/master.m3u8?country=DE&optout=0&uid=749544ec3d9a45d48c600d03cac91dfd&vendor=philips
+#EXTINF:-1 group-title="🏝️RELAX🏝️" tvg-id="simpleTVFakeEpgId", DRON DUNYASI
+http://105894.fly24.be/live/pikisi0101/AsSaNBsOo3/64330.ts
+#EXTINF:-1 group-title="🏝️RELAX🏝️" tvg-id="simpleTVFakeEpgId", KAMIN
+http://105894.fly24.be/live/pikisi0101/AsSaNBsOo3/64781.ts
+#EXTINF:-1 group-title="🏝️RELAX🏝️" tvg-id="simpleTVFakeEpgId", KAR
+http://105894.fly24.be/live/pikisi0101/AsSaNBsOo3/65375.ts
+#EXTINF:-1 group-title="🏝️RELAX🏝️" tvg-id="simpleTVFakeEpgId" tvg-logo="../Channel/Logo/O'zbekiston.png", KIS
+http://105894.fly24.be/live/pikisi0101/AsSaNBsOo3/64822.ts
+#EXTINF:-1 group-title="🏝️RELAX🏝️" tvg-id="simpleTVFakeEpgId", KOSTER
+http://105894.fly24.be/live/pikisi0101/AsSaNBsOo3/100624.ts
+#EXTINF:-1 group-title="🏝️RELAX🏝️" tvg-id="simpleTVFakeEpgId", like Gecko
+https://tv.mediacp.eu:8081/happyradio/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="🏝️RELAX🏝️" tvg-id="simpleTVFakeEpgId", SAHILLER
+http://105894.fly24.be/live/pikisi0101/AsSaNBsOo3/264811.ts
+#EXTINF:-1 group-title="🏝️RELAX🏝️" tvg-id="simpleTVFakeEpgId" tvg-logo="../Channel/Logo/Song TV.png", SONBAHAR
+http://105894.fly24.be/live/pikisi0101/AsSaNBsOo3/246028.ts
+#EXTINF:-1 group-title="🏝️RELAX🏝️" tvg-id="simpleTVFakeEpgId", SUYUN SESI
+http://105894.fly24.be/live/pikisi0101/AsSaNBsOo3/66287.ts
+#EXTINF:-1 group-title="🏝️RELAX🏝️" tvg-id="simpleTVFakeEpgId", TROPIKAL SAHIL
+http://105894.fly24.be/live/pikisi0101/AsSaNBsOo3/81968.ts
+#EXTINF:-1 group-title="🏝️RELAX🏝️" tvg-id="simpleTVFakeEpgId" tvg-logo="../Channel/Logo/Sony Turbo.png", TURKIYE
+http://105894.fly24.be/live/pikisi0101/AsSaNBsOo3/66433.ts
+#EXTINF:-1 group-title="🏝️RELAX🏝️" tvg-id="simpleTVFakeEpgId", 4K travel
+https://d35j504z0x2vu2.cloudfront.net/v1/manifest/0bc8e8376bd8417a1b6761138aa41c26c7309312/4k-travel-tv/1967b0de-bf90-4339-a563-a5d06bba32ed/2.m3u8
+#EXTINF:-1 group-title="🏝️RELAX🏝️" tvg-id="simpleTVFakeEpgId", YAGMUR
+http://105894.fly24.be/live/pikisi0101/AsSaNBsOo3/64782.ts
 #EXTINF:-1 group-title="🎥КиноЗал🎥", BCU Action HD
 http://178.217.72.66:8080/BCUActionHD/index.m3u8
 #EXTINF:-1 group-title="🎥КиноЗал🎥", BCU Catastrophe HD
@@ -1378,6 +1410,50 @@ http://dmitwlvvll.cdn.mangomolo.com/dubaisportshd5/smil:dubaisportshd5.smil/chun
 http://stream.ehrhiti.lv:8000/khr.mp3
 #EXTINF:-1 group-title="📻Радио📻", EHR FM Русские Хиты 2000-х
 http://stream.ehrhiti.lv:8000/Stream_66.mp3
+#EXTINF:-1 group-title="📻Радио📻" tvg-id="simpleTVFakeEpgId" tvg-logo="https://suzus-tv-kabinet.usite.pro/LOGO/novoe_radio.png", 1 FM - Afterbeat Electronica
+http://strm112.1.fm/electronica_mobile_mp3
+#EXTINF:-1 group-title="📻Радио📻" tvg-id="simpleTVFakeEpgId" tvg-logo="https://suzus-tv-kabinet.usite.pro/LOGO/novoe_radio.png", 1 FM - All Euro 80s
+http://strm112.1.fm/80s_90s_mobile_mp3
+#EXTINF:-1 group-title="📻Радио📻" tvg-id="simpleTVFakeEpgId" tvg-logo="https://suzus-tv-kabinet.usite.pro/LOGO/novoe_radio.png", 1 FM - All Times Urban Gospe
+http://strm112.1.fm/gospel_mobile_mp3
+#EXTINF:-1 group-title="📻Радио📻" tvg-id="simpleTVFakeEpgId" tvg-logo="https://suzus-tv-kabinet.usite.pro/LOGO/novoe_radio.png", 1 FM - Americas Best Ballads
+http://strm112.1.fm/onelive_mobile_mp3
+#EXTINF:-1 group-title="📻Радио📻" tvg-id="simpleTVFakeEpgId" tvg-logo="https://suzus-tv-kabinet.usite.pro/LOGO/novoe_radio.png", 1 FM - Back To The 50s & 60s
+http://strm112.1.fm/60s_70s_mobile_mp3
+#EXTINF:-1 group-title="📻Радио📻" tvg-id="simpleTVFakeEpgId" tvg-logo="https://suzus-tv-kabinet.usite.pro/LOGO/novoe_radio.png", 1 FM - Blues
+http://strm112.1.fm/blues_mobile_mp3
+#EXTINF:-1 group-title="📻Радио📻" tvg-id="simpleTVFakeEpgId" tvg-logo="https://suzus-tv-kabinet.usite.pro/LOGO/novoe_radio.png", 1 FM - Bombay Beats India
+http://strm112.1.fm/bombaybeats_mobile_mp3
+#EXTINF:-1 group-title="📻Радио📻" tvg-id="simpleTVFakeEpgId" tvg-logo="https://suzus-tv-kabinet.usite.pro/LOGO/novoe_radio.png", 1 FM - Chillout Costa Del Ma
+http://strm112.1.fm/costadelmarchillout_mobile_mp3
+#EXTINF:-1 group-title="📻Радио📻" tvg-id="simpleTVFakeEpgId" tvg-logo="https://suzus-tv-kabinet.usite.pro/LOGO/novoe_radio.png", 1 FM - Chillout Lounge
+http://strm112.1.fm/chilloutlounge_mobile_mp3
+#EXTINF:-1 group-title="📻Радио📻" tvg-id="simpleTVFakeEpgId" tvg-logo="https://suzus-tv-kabinet.usite.pro/LOGO/novoe_radio.png", 1 FM - Circuit Pride
+http://strm112.1.fm/circuitpride_mobile_mp3
+#EXTINF:-1 group-title="📻Радио📻" tvg-id="simpleTVFakeEpgId" tvg-logo="https://suzus-tv-kabinet.usite.pro/LOGO/novoe_radio.png", 1 FM - Classic Country
+http://strm112.1.fm/ccountry_mobile_mp3
+#EXTINF:-1 group-title="📻Радио📻" tvg-id="simpleTVFakeEpgId" tvg-logo="https://suzus-tv-kabinet.usite.pro/LOGO/novoe_radio.png", 1 FM - Classic Rock Replay
+http://strm112.1.fm/crock_mobile_mp3
+#EXTINF:-1 group-title="📻Радио📻" tvg-id="simpleTVFakeEpgId" tvg-logo="https://suzus-tv-kabinet.usite.pro/LOGO/novoe_radio.png", 1 FM - Club 1 Radio
+http://strm112.1.fm/club_mobile_mp3
+#EXTINF:-1 group-title="📻Радио📻" tvg-id="simpleTVFakeEpgId" tvg-logo="https://suzus-tv-kabinet.usite.pro/LOGO/novoe_radio.png", 1 FM - Country One
+http://strm112.1.fm/country_mobile_mp3
+#EXTINF:-1 group-title="📻Радио📻" tvg-id="simpleTVFakeEpgId" tvg-logo="https://suzus-tv-kabinet.usite.pro/LOGO/novoe_radio.png", 1 FM - Dance One
+http://strm112.1.fm/dance_mobile_mp3
+#EXTINF:-1 group-title="📻Радио📻" tvg-id="simpleTVFakeEpgId" tvg-logo="https://suzus-tv-kabinet.usite.pro/LOGO/novoe_radio.png", 1 FM - Deep House
+http://strm112.1.fm/deephouse_mobile_mp3
+#EXTINF:-1 group-title="📻Радио📻" tvg-id="simpleTVFakeEpgId" tvg-logo="https://suzus-tv-kabinet.usite.pro/LOGO/novoe_radio.png", 1 FM - Destination SPA
+http://strm112.1.fm/spa_mobile_mp3
+#EXTINF:-1 group-title="📻Радио📻" tvg-id="simpleTVFakeEpgId" tvg-logo="https://suzus-tv-kabinet.usite.pro/LOGO/novoe_radio.png", 1 FM - Disco Ball 70s-80s
+http://strm112.1.fm/disco_mobile_mp3
+#EXTINF:-1 group-title="📻Радио📻" tvg-id="simpleTVFakeEpgId" tvg-logo="https://suzus-tv-kabinet.usite.pro/LOGO/novoe_radio.png", 1 FM - Eternal Praise Worship
+http://strm112.1.fm/praise_mobile_mp3
+#EXTINF:-1 group-title="📻Радио📻" tvg-id="simpleTVFakeEpgId" tvg-logo="https://suzus-tv-kabinet.usite.pro/LOGO/novoe_radio.png", 1 FM - High Voltage
+http://strm112.1.fm/highvoltage_mobile_mp3
+#EXTINF:-1 group-title="📻Радио📻" tvg-id="simpleTVFakeEpgId" tvg-logo="https://suzus-tv-kabinet.usite.pro/LOGO/novoe_radio.png", 1 FM - Ottos Opera House Music
+http://strm112.1.fm/opera_mobile_mp3
+#EXTINF:-1 group-title="📻Радио📻" tvg-id="simpleTVFakeEpgId" tvg-logo="https://suzus-tv-kabinet.usite.pro/LOGO/novoe_radio.png", 1 FM - Reggae Trade
+http://strm112.1.fm/reggae_mobile_mp3
 #EXTINF:-1 group-title="🇰🇬 Бишкек-ТВ 🇰🇬", Ep!c
 http://77.235.1.19:8000/play/a00v/index.m3u8
 #EXTINF:-1 group-title="⛹️‍Спорт⛹️", Eurosport 1 HD
