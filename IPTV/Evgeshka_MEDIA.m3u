@@ -1,7 +1,7 @@
 #EXTM3U url-tvg="http://epg.it999.ru/epg2.xml,http://epg.one/epg.xml,http://194.26.229.4/live/lime_epg.xml.gz,https://raw.githubusercontent.com/IPTVSHARED/iptv/refs/heads/main/epg_lite.xml.gz,https://raw.githubusercontent.com/IPTVSHARED/iptv/refs/heads/main/epg_lite_gabbarit.xml.gz,http://epg.ping-tv.com/1.xmltv,http://epg.team/tvteam.xml,https://iptvx.one/EPG"
 #EXTINF:-1 group-title="✨VIP Канал!✨", Крафтовое IPTV
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/VIP.mp4
-#EXTINF:-1 group-title="⚠️Обновлено 22.08.25⚠️", Поддержи проект!
+#EXTINF:-1 group-title="⚠️Обновлено 24.08.25⚠️", Поддержи проект!
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
 #EXTINF:-1 group-title="🛠️Помощь проекту! Юмани🛠️", Помощь проекту
 https://github.com/PeterBLR334/iptv/raw/refs/heads/main/IPTV/ym.mp4
@@ -3166,3 +3166,4 @@ http://77.235.1.19:8000/play/a07x/index.m3u8?|User-Agent=http-user-agent=Lavf/56
 http://77.235.1.19:8000/play/a06p/index.m3u8?|User-Agent=http-user-agent=Lavf/56.15.102
 #EXTINF:-1 group-title="🎆Резервное🎆", Red Lips
 http://77.235.1.19:8000/play/a006/index.m3u8?|User-Agent=http-user-agent=Lavf/56.15.102
+
