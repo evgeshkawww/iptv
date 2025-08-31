@@ -2011,8 +2011,6 @@ http://iam-profi.ru/hls-live/livepkgr/_definst_/liveevent/td720.m3u8
 http://iptv.prosto.tv:7000/ch336/video.m3u8
 #EXTINF:-1 group-title="🧬Познавательные🧬", Точка отрыва
 http://77.235.1.19:8000/play/a06g/index.m3u8
-#EXTINF:-1 group-title="🧬Познавательные🧬", Точка.РФ
-http://87.246.54.249:8085/HDL/index.m3u8
 #EXTINF:-1 group-title="🏝️RELAX🏝️" tvg-logo="https://img.prosto.tv/storage/channel/logo/ch00508.jpg", Тропики
 http://iptv.prosto.tv:7000/ch335/video.m3u8
 #EXTINF:-1 group-title="🏝️RELAX🏝️" tvg-logo="https://img.prosto.tv/storage/channel/logo/ch00563.jpg", Украина
