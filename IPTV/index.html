@@ -6,10 +6,11 @@
   <title>E-IPTV</title>
   <style>
     body {
-      /* Убираем фоновую картинку */
-      background-image: none;
-      /* Задаём серый цвет фона. Можно использовать другие значения, например, '#808080', 'gray', 'lightgray' и т.д. */
-      background-color: #cccccc;
+      /* Добавляем фоновую картинку */
+      background-image: url("https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/iptv-ott.jpg");
+      background-size: cover; /*  Растягиваем картинку на весь фон */
+      background-repeat: no-repeat; /* Отключаем повторение картинки */
+      background-attachment: fixed; /* Фиксируем фон при прокрутке */
       margin: 0;
       overflow: hidden; /* Предотвращает появление полос прокрутки при перемещении iframe */
     }
@@ -17,7 +18,7 @@
     #donateFrame {
       position: absolute; /* Абсолютное позиционирование для перемещения */
       cursor: grab;  /* Меняет курсор мыши при наведении, показывая, что элемент можно перетаскивать */
-        border-radius: 10px;
+      border-radius: 10px;
     }
   </style>
 </head>
