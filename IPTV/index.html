@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-IPTV</title>
+  <style>
+    body {
+      /* Убираем фоновую картинку */
+      background-image: none;
+      /* Задаём серый цвет фона. Можно использовать другие значения, например, '#808080', 'gray', 'lightgray' и т.д. */
+      background-color: #cccccc;
+      margin: 0;
+      overflow: hidden; /* Предотвращает появление полос прокрутки при перемещении iframe */
+    }
+
+    #donateFrame {
+      position: absolute; /* Абсолютное позиционирование для перемещения */
+      cursor: grab;  /* Меняет курсор мыши при наведении, показывая, что элемент можно перетаскивать */
+        border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <iframe id="donateFrame" src="https://widget.donatepay.ru/widgets/page/d9d64c75f2c708207465577b59477020e44f5409a869d542d7c19ed24c801e06?widget_id=7048050&sum=300" width="510" height="220" frameBorder="0"></iframe>
+
+  <script>
+    const frame = document.getElementById('donateFrame');
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    frame.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      offsetX = e.clientX - frame.offsetLeft; // Смещение курсора от левого края iframe
+      offsetY = e.clientY - frame.offsetTop; // Смещение курсора от верхнего края iframe
+      frame.style.cursor = 'grabbing'; // Меняем курсор, когда захватили элемент
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      frame.style.cursor = 'grab'; // Возвращаем курсор в исходное состояние
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      const x = e.clientX - offsetX; // Новая позиция X
+      const y = e.clientY - offsetY; // Новая позиция Y
+      frame.style.left = x + 'px'; // Устанавливаем позицию X
+      frame.style.top = y + 'px';  // Устанавливаем позицию Y
+    });
+  </script>
+
+</body>
+</html>
