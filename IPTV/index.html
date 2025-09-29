@@ -6,18 +6,17 @@
   <title>E-IPTV</title>
   <style>
     body {
-      /* Добавляем фоновую картинку */
-      background-image: url("https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/iptv-ott.jpg");
-      background-size: cover; /*  Растягиваем картинку на весь фон */
-      background-repeat: no-repeat; /* Отключаем повторение картинки */
-      background-attachment: fixed; /* Фиксируем фон при прокрутке */
+      background-image: url("https://raw.githubusercontent.com/evgeshkawww/iptv/main/IPTV/iptv-ott.jpg"); /* Исправленный URL */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       margin: 0;
-      overflow: hidden; /* Предотвращает появление полос прокрутки при перемещении iframe */
+      overflow: hidden;
     }
 
     #donateFrame {
-      position: absolute; /* Абсолютное позиционирование для перемещения */
-      cursor: grab;  /* Меняет курсор мыши при наведении, показывая, что элемент можно перетаскивать */
+      position: absolute;
+      cursor: grab;
       border-radius: 10px;
     }
   </style>
@@ -33,22 +32,22 @@
 
     frame.addEventListener('mousedown', (e) => {
       isDragging = true;
-      offsetX = e.clientX - frame.offsetLeft; // Смещение курсора от левого края iframe
-      offsetY = e.clientY - frame.offsetTop; // Смещение курсора от верхнего края iframe
-      frame.style.cursor = 'grabbing'; // Меняем курсор, когда захватили элемент
+      offsetX = e.clientX - frame.offsetLeft;
+      offsetY = e.clientY - frame.offsetTop;
+      frame.style.cursor = 'grabbing';
     });
 
     document.addEventListener('mouseup', () => {
       isDragging = false;
-      frame.style.cursor = 'grab'; // Возвращаем курсор в исходное состояние
+      frame.style.cursor = 'grab';
     });
 
     document.addEventListener('mousemove', (e) => {
       if (!isDragging) return;
-      const x = e.clientX - offsetX; // Новая позиция X
-      const y = e.clientY - offsetY; // Новая позиция Y
-      frame.style.left = x + 'px'; // Устанавливаем позицию X
-      frame.style.top = y + 'px';  // Устанавливаем позицию Y
+      const x = e.clientX - offsetX;
+      const y = e.clientY - offsetY;
+      frame.style.left = x + 'px';
+      frame.style.top = y + 'px';
     });
   </script>
 
