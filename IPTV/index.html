@@ -1,59 +1,305 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-IPTV</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Реквизиты для донатов</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      background-image: url("https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/187a3d1ce61f599a18cc1d5a76b73d156f7439a71d6559376aa1c1dbc5ba7e05_200.webp"); /* Или другой URL, который у вас работает */
-      background-repeat: repeat; /*  Изображение повторяется по горизонтали и вертикали */
-      /*  Уберите или закомментируйте background-size и background-attachment */
-      /* background-size: cover; */
-      /* background-attachment: fixed; */
-      background-position: center center;
-      margin: 0;
-      overflow: hidden;
-    }
-
-    #donateFrame {
-      position: absolute;
-      cursor: grab;
-      border-radius: 10px;
-    }
+    :root{ --bg1:#071127; --bg2:#071a28; --accent:#36b37e; --muted:#9aa7b2; --glass: rgba(255,255,255,0.03); }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:"Inter",system-ui,Arial;background:linear-gradient(135deg,var(--bg1),var(--bg2));color:#e6eef6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px;}
+    .container{width:100%;max-width:1120px;border-radius:14px;padding:18px 22px 20px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 10px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03);position:relative}
+    header{display:flex;gap:14px;align-items:center;margin-bottom:14px}
+    .logo{width:56px;height:56px;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff}
+    .logo img{width:100%;height:100%;object-fit:cover;display:block}
+    h1{margin:0;font-size:20px}
+    p.lead{margin:4px 0 0 0;color:var(--muted);font-size:13px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:12px;border:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column;gap:10px;min-height:140px}
+    .title{display:flex;align-items:center;justify-content:space-between;gap:8px}
+    .bank{font-weight:600;font-size:15px;display:flex;gap:8px;align-items:center}
+    .bank-logo{width:36px;height:36px;flex:0 0 36px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.03);overflow:hidden}
+    .bank-logo img{width:100%;height:100%;object-fit:cover;display:block}
+    .chip{background:var(--glass);padding:6px 8px;border-radius:8px;font-size:12px;color:var(--muted)}
+    .number{font-family:ui-monospace, "Roboto Mono", monospace;font-size:15px;letter-spacing:1.2px;padding:8px;border-radius:8px;background:rgba(0,0,0,0.04);display:flex;align-items:center;justify-content:space-between}
+    .holder{color:var(--muted);font-size:13px}
+    .actions{display:flex;gap:8px;margin-top:auto;flex-wrap:wrap}
+    button.copy, button.toggle{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--accent);padding:8px 10px;border-radius:8px;cursor:pointer;font-weight:600;display:inline-flex;gap:8px;align-items:center}
+    a.donate{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:linear-gradient(90deg,#16a34a,#36b37e);color:#042022;padding:9px 12px;border-radius:8px;font-weight:700}
+    footer{margin-top:14px;color:var(--muted);font-size:13px;display:flex;align-items:center;justify-content:space-between}
+    .copied{position:fixed;right:18px;bottom:18px;background:#052b22;color:var(--accent);padding:10px 14px;border-radius:10px;border:1px solid rgba(54,179,126,0.12);display:none}
+    .qr-wrap{display:flex;gap:12px;align-items:center}
+    .qr-wrap img{width:84px;height:84px;border-radius:8px;background:#fff;object-fit:cover;cursor:zoom-in}
+    /* modal */
+    .modal-overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,23,0.75);z-index:9999;visibility:hidden;opacity:0;transition:opacity .18s,visibility .18s}
+    .modal-overlay.open{visibility:visible;opacity:1}
+    .modal-overlay img{max-width:92vw;max-height:92vh;border-radius:10px;box-shadow:0 20px 40px rgba(2,6,23,0.6);background:#fff}
+    .modal-close{position:fixed;right:18px;top:18px;background:rgba(255,255,255,0.06);color:var(--muted);padding:8px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);cursor:pointer}
+    /* bottom-left logos */
+    .bottom-logos{display:flex;gap:12px;align-items:center}
+    .bottom-logos .item{display:flex;gap:8px;align-items:center;background:rgba(255,255,255,0.02);padding:6px 10px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+    .bottom-logos img{width:28px;height:28px;object-fit:cover;border-radius:6px}
+    .bottom-logos .label{font-size:12px;color:var(--muted)}
+    @media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:480px){ .grid{grid-template-columns:repeat(1,1fr)} .logo{width:48px;height:48px} h1{font-size:18px} .bank-logo{width:32px;height:32px} .bottom-logos img{width:22px;height:22px} }
   </style>
 </head>
 <body>
+  <div class="container" role="main">
+    <header>
+      <div class="logo" aria-hidden="true">
+        <img src="https://raw.githubusercontent.com/evgeshkawww/iptv/main/IPTV/photo_2025-09-26_09-11-17.jpg" alt="Логотип">
+      </div>
+      <div>
+        <h1>Реквизиты для донатов</h1>
+        <p class="lead">Нажмите "Скопировать" чтобы скопировать полные данные. Клик по QR — для увеличения.</p>
+      </div>
+    </header>
 
-  <iframe id="donateFrame" src="https://widget.donatepay.ru/widgets/page/d9d64c75f2c708207465577b59477020e44f5409a869d542d7c19ed24c801e06?widget_id=7048050&sum=300" width="510" height="220" frameBorder="0"></iframe>
+    <div class="grid">
+      <!-- (карточки прежние) -->
+      <div class="card" aria-labelledby="sber-title">
+        <div class="title"><div class="bank" id="sber-title"><span class="bank-logo" aria-hidden="true" title="Сбер"><img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/%D1%81%D0%B1%D0%B5%D1%80.jpg" alt="Сбер логотип"></span>Сбер <span class="chip">Карта</span></div></div>
+        <div class="number"><span class="num" data-full="9112388038035577">**** **** **** 5577</span></div>
+        <div class="holder">EVGENIY MASK</div>
+        <div class="actions"><button class="copy" data-copy="9112388038035577" aria-label="Скопировать номер карты Сбер">Скопировать</button><button class="toggle" aria-label="Показать номер карты Сбер">Показать</button></div>
+      </div>
 
-  <script>
-    const frame = document.getElementById('donateFrame');
-    let isDragging = false;
-    let offsetX, offsetY;
+      <div class="card" aria-labelledby="belg-title">
+        <div class="title"><div class="bank" id="belg-title"><span class="bank-logo" aria-hidden="true" title="Белгазпромбанк"><img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/%D0%B1%D0%B5%D0%BB%D0%B7%D0%B0%D0%B3%D0%B1%D0%B0%D0%BD%D0%BA.jpg" alt="Белгазпромбанк логотип"></span>Белгазпромбанк <span class="chip">Карта</span></div></div>
+        <div class="number"><span class="num" data-full="5185974906810892">**** **** **** 0892</span></div>
+        <div class="holder">EVGENIY MASK</div>
+        <div class="actions"><button class="copy" data-copy="5185974906810892">Скопировать</button><button class="toggle">Показать</button></div>
+      </div>
 
-    frame.addEventListener('mousedown', (e) => {
-      isDragging = true;
-      offsetX = e.clientX - frame.offsetLeft;
-      offsetY = e.clientY - frame.offsetTop;
-      frame.style.cursor = 'grabbing';
+      <div class="card" aria-labelledby="yoom-title">
+        <div class="title"><div class="bank" id="yoom-title"><span class="bank-logo" aria-hidden="true" title="YooMoney"><img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/%D1%8E%D0%BC%D0%B0%D0%BD%D0%B8.png" alt="ЮMoney логотип"></span>Юмани <span class="chip">YooMoney</span></div></div>
+        <div class="number"><span class="num" data-full="4100119260753027">**** **** **** 3027</span></div>
+        <div class="holder" style="min-height:1em"> </div>
+        <div class="actions"><button class="copy" data-copy="4100119260753027">Скопировать</button><a class="donate" id="yoom-link" href="https://yoomoney.ru/to/4100119260753027" target="_blank" rel="noopener noreferrer">Перейти на донат</a></div>
+
+        <div style="margin-top:10px;display:flex;align-items:center;gap:12px">
+          <div class="qr-wrap" title="QR для перевода в YooMoney (нажмите, чтобы увеличить)">
+            <!-- QR для https://yoomoney.ru/to/4100119260753027 -->
+            <img id="yoom-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://yoomoney.ru/to/4100119260753027" alt="QR YooMoney">
+          </div>
+          <div style="color:var(--muted);font-size:13px">QR для быстрой оплаты через приложение</div>
+        </div>
+      </div>
+
+      <div class="card" aria-labelledby="mir1-title">
+        <div class="title"><div class="bank" id="mir1-title"><span class="bank-logo" aria-hidden="true" title="Мир"><img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/%D0%BC%D0%B8%D1%80.jpg" alt="Мир логотип"></span>Мир <span class="chip">Карта</span></div></div>
+        <div class="number"><span class="num" data-full="5599002117222853">**** **** **** 2853</span></div>
+        <div class="holder">донат</div>
+        <div class="actions"><button class="copy" data-copy="5599002117222853">Скопировать</button><button class="toggle">Показать</button></div>
+      </div>
+
+      <div class="card" aria-labelledby="mir2-title">
+        <div class="title"><div class="bank" id="mir2-title"><span class="bank-logo" aria-hidden="true" title="Мир"><img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/%D0%BC%D0%B8%D1%80.jpg" alt="Мир логотип"></span>Мир <span class="chip">Карта</span></div></div>
+        <div class="number"><span class="num" data-full="2202200140003301">**** **** **** 3301</span></div>
+        <div class="holder">донат</div>
+        <div class="actions"><button class="copy" data-copy="2202200140003301">Скопировать</button><button class="toggle">Показать</button></div>
+      </div>
+
+      <div class="card" aria-labelledby="belinvest-title">
+        <div class="title"><div class="bank" id="belinvest-title"><span class="bank-logo" aria-hidden="true" title="Белинвестбанк"><img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/%D0%B1%D0%B5%D0%BB%D0%B8%D0%BD%D0%B2%D0%B5%D1%81%D1%82.jpeg" alt="Белинвестбанк логотип"></span>Белинвестбанк <span class="chip">Карта</span></div></div>
+        <div class="number"><span class="num" data-full="7701123456789012">**** **** **** 9012</span></div>
+        <div class="holder">EVGENIY MASK</div>
+        <div class="actions"><button class="copy" data-copy="7701123456789012">Скопировать</button><button class="toggle">Показать</button></div>
+      </div>
+
+    </div>
+
+<footer>
+  <div class="bottom-logos" aria-hidden="true">
+    <!-- "Безопасные платежи" первым -->
+    <div class="item" title="Безопасные платежи">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="24" height="24" rx="6" fill="#033b4a"/>
+        <path d="M12 6l6 2v4c0 5-4 8-6 9-2-1-6-4-6-9V8l6-2z" fill="#36b37e"/>
+        <path d="M10 12l2 2 4-4" stroke="#042022" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      <div class="label">Безопасные платежи</div>
+    </div>
+
+    <!-- ЮMoney теперь второй -->
+    <div class="item" title="ЮMoney">
+      <img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/%D1%8E%D0%BC%D0%B0%D0%BD%D0%B8.png" alt="ЮMoney">
+      <div class="label">ЮMoney</div>
+    </div>
+
+    <!-- SSL третьим -->
+    <div class="item" title="SSL зашифрованное соединение">
+      <img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/ssl.png" alt="SSL" style="width:200px;height:28px;object-fit:cover;border-radius:6px">
+    </div>
+  </div>
+
+  <div style="color:var(--muted);font-size:13px">© E-IPTV 2025</div>
+</footer>
+
+
+    <div class="copied" id="copiedToast" role="status" aria-live="polite">Скопировано</div>
+  </div>
+
+  <!-- Модальное окно для увеличения изображений -->
+  <div id="imgModal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
+    <img id="imgModalImg" src="" alt="Увеличенный QR">
+    <button class="modal-close" aria-label="Закрыть" title="Закрыть">Закрыть</button>
+  </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // --- Вспомогательные функции ---
+  function formatDigitsGrouped(digits) {
+    if (!digits) return '';
+    return digits.replace(/(\d{4})(?=\d)/g, '$1 ').trim();
+  }
+
+  function maskDigits(digits) {
+    if (!digits) return '';
+    if (digits.length <= 4) return digits;
+    const maskedFlat = digits.replace(/\d(?=\d{4})/g, '*'); // все цифры, кроме последних 4 -> '*'
+    return maskedFlat.replace(/(.{4})/g, '$1 ').trim(); // вставляем пробелы каждые 4 символа
+  }
+
+  // --- Toast уведомление (совместимо с элементом #copiedToast или временным) ---
+  function showToast(msg){
+    const t = document.getElementById('copiedToast');
+    if (!t) {
+      const tmp = document.createElement('div');
+      tmp.textContent = msg;
+      tmp.style.position = 'fixed';
+      tmp.style.left = '50%';
+      tmp.style.transform = 'translateX(-50%)';
+      tmp.style.bottom = '18px';
+      tmp.style.background = 'rgba(0,0,0,0.8)';
+      tmp.style.color = '#fff';
+      tmp.style.padding = '8px 12px';
+      tmp.style.borderRadius = '8px';
+      tmp.style.zIndex = 9999;
+      document.body.appendChild(tmp);
+      setTimeout(() => tmp.remove(), 1800);
+      return;
+    }
+    t.textContent = msg;
+    t.style.display = 'block';
+    clearTimeout(t._h);
+    t._h = setTimeout(()=>{ t.style.display = 'none'; }, 1800);
+  }
+
+  // --- Инициализация .num: сохраняем чистые цифры и ставим маску по умолчанию ---
+  document.querySelectorAll('.num').forEach(span => {
+    const raw = span.getAttribute('data-full') || '';
+    const digits = raw.replace(/\D/g, ''); // оставляем только цифры
+    span.dataset.fullDigits = digits;
+    span.textContent = maskDigits(digits);
+    span.setAttribute('aria-live', span.getAttribute('aria-live') || 'polite');
+  });
+
+  // --- Копирование ---
+  document.querySelectorAll('button.copy').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const v = btn.getAttribute('data-copy') ?? btn.dataset.copy ?? '';
+      if (!v) {
+        showToast('Нечего копировать');
+        return;
+      }
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(v);
+        } else {
+          // fallback для старых браузеров
+          const ta = document.createElement('textarea');
+          ta.value = v;
+          ta.style.position = 'fixed';
+          ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+        }
+        showToast('Скопировано');
+      } catch (e) {
+        showToast('Не удалось скопировать');
+      }
+    });
+  });
+
+  // --- Показать/скрыть номера (корректная логика: пробелы сохраняются) ---
+  document.querySelectorAll('button.toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.card');
+      if (!card) return;
+      const span = card.querySelector('.num');
+      if (!span) return;
+      const digits = span.dataset.fullDigits || '';
+      if (!digits) return;
+
+      const isMasked = span.textContent.includes('*') || btn.getAttribute('aria-pressed') === 'false';
+
+      if (isMasked) {
+        // показать полный формат
+        span.textContent = formatDigitsGrouped(digits);
+        btn.textContent = 'Скрыть';
+        btn.setAttribute('aria-pressed', 'true');
+        btn.setAttribute('aria-label', (btn.getAttribute('aria-label') || '').replace(/Показать/i, 'Скрыть'));
+      } else {
+        // скрыть — маскируем, сохраняя пробелы
+        span.textContent = maskDigits(digits);
+        btn.textContent = 'Показать';
+        btn.setAttribute('aria-pressed', 'false');
+        btn.setAttribute('aria-label', (btn.getAttribute('aria-label') || '').replace(/Скрыть/i, 'Показать'));
+      }
+    });
+  });
+
+  // --- Увеличение QR (работает по клику) ---
+  (function(){
+    const qr = document.getElementById('yoom-qr');
+    const modal = document.getElementById('imgModal');
+    if (!qr || !modal) return;
+    const modalImg = document.getElementById('imgModalImg');
+    const closeBtn = modal.querySelector('.modal-close');
+
+    function makeLargeSrc(src){
+      try{
+        if (/size=\d+x\d+/.test(src)) {
+          return src.replace(/size=\d+x\d+/, 'size=640x640');
+        }
+        return src.indexOf('?') !== -1 ? src + '&size=640x640' : src + '?size=640x640';
+      } catch(e){
+        return src;
+      }
+    }
+
+    function openModal(){
+      const large = makeLargeSrc(qr.src);
+      if (modalImg) modalImg.src = large;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      modal.focus?.();
+    }
+
+    function closeModal(){
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      // modalImg.src = ''; // при желании можно очищать src
+    }
+
+    qr.addEventListener('click', openModal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal || e.target === closeBtn) closeModal();
     });
 
-    document.addEventListener('mouseup', () => {
-      isDragging = false;
-      frame.style.cursor = 'grab';
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
     });
-
-    document.addEventListener('mousemove', (e) => {
-      if (!isDragging) return;
-      const x = e.clientX - offsetX;
-      const y = e.clientY - offsetY;
-      frame.style.left = x + 'px';
-      frame.style.top = y + 'px';
-    });
-  </script>
-
+  })();
+});
+</script>
 </body>
 </html>
-
-
