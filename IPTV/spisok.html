@@ -74,17 +74,7 @@
   </div>
 
   <script>
-    /* ----------------------------
-       Шаблон массива групп (32 штуки).
-       Для каждой группы вписывайте каналы в поле channels: [ ... ]
-       Структура канала:
-         { name: 'Название канала', archive: 'Архив - 14 дней', icon: 'icons/example.png' }
-       Пример (уже добавлен в первой группе):
-         { name: 'Первый канал', archive: 'Архив - 14 дней' }
 
-       Если у вас уже известно общее число каналов (1323),
-       можно принудительно подставить его в totalChannels ниже.
-       ---------------------------- */
 
 const groupsData = [
   {
@@ -1885,6 +1875,12 @@ const groupsData = [
     name: 'Кинотеатры Sky High',
     icon: 'http://team.ga/images/chIcons/1971.png',
     channels: [
+      { name: 'Sky High Medy VHS HD', archive: 'Архив - 1 день', icon: 'http://team.ga/images/chIcons/1068.png' },
+      { name: 'Sky High Romix HD', archive: 'Архив - 1 день', icon: 'http://team.ga/images/chIcons/1069.png' },
+      { name: 'Sky High RED S HD', archive: 'Архив - 1 день', icon: 'http://team.ga/images/chIcons/1070.png' },
+      { name: 'Sky High Ring S HD', archive: 'Архив - 1 день', icon: 'http://team.ga/images/chIcons/1071.png' },
+      { name: 'Sky High Wizz VHS HD', archive: 'Архив - 1 день', icon: 'http://team.ga/images/chIcons/1072.png' },
+      { name: 'Sky High Dragon HD', archive: 'Архив - 1 день', icon: 'http://team.ga/images/chIcons/1073.png' },
       { name: 'Sky High Undead HD', archive: 'Архив - 3 дня', icon: 'http://team.ga/images/chIcons/1961.png' },
       { name: 'Sky High  Fear VHS HD', archive: 'Архив - 3 дня', icon: 'http://team.ga/images/chIcons/1962.png' },
       { name: 'Sky High Strike VHS HD', archive: 'Архив - 3 дня', icon: 'http://team.ga/images/chIcons/1963.png' },
@@ -1938,19 +1934,6 @@ const groupsData = [
   },
   {
     id: 'group29',
-    name: 'Кинотеатры TOP',
-    icon: 'http://team.ga/images/chIcons/1073.png',
-    channels: [
-      { name: 'TOP 80', archive: '', icon: 'http://team.ga/images/chIcons/1069.png' },
-      { name: 'TOP Великолепный Век', archive: '', icon: 'http://team.ga/images/chIcons/1068.png' },
-      { name: 'TOP BUDO HD', archive: '', icon: 'http://team.ga/images/chIcons/1070.png' },
-      { name: 'TOP CINEMA HD', archive: '', icon: 'http://team.ga/images/chIcons/1071.png' },
-      { name: 'TOP USSR', archive: '', icon: 'http://team.ga/images/chIcons/1072.png' },
-      { name: 'TOP MIX HD', archive: '', icon: 'http://team.ga/images/chIcons/1073.png' }
-    ]
-  },
-  {
-    id: 'group30',
     name: 'Кинотеатры VeleS',
     icon: 'http://team.ga/images/chIcons/2591.png',
     channels: [
@@ -1973,7 +1956,7 @@ const groupsData = [
     ]
   },
   {
-    id: 'group31',
+    id: 'group30',
     name: 'Кинотеатры Velilla TV',
     icon: 'http://team.ga/images/chIcons/3135.png',
     channels: [
@@ -1990,7 +1973,7 @@ const groupsData = [
     ]
   },
   {
-    id: 'group32',
+    id: 'group31',
     name: 'Кинотеатры Viasat',
     icon: 'http://team.ga/images/chIcons/17.png',
     channels: [
@@ -2011,7 +1994,7 @@ const groupsData = [
     ]
   },
   {
-    id: 'group33',
+    id: 'group32',
     name: 'Кинотеатры Yosso TV',
     icon: 'http://team.ga/images/chIcons/1297.png',
     channels: [
@@ -2041,7 +2024,7 @@ const groupsData = [
     ]
   },
   {
-    id: 'group34',
+    id: 'group33',
     name: 'Others',
     icon: 'http://team.ga/images/chIcons/420.png',
     channels: [
@@ -2099,6 +2082,7 @@ const groupsData = [
     ]
   }
 ];
+
 
 
     // ------------------------------------
@@ -2242,4 +2226,3 @@ const groupsData = [
   </script>
 </body>
 </html>
-
