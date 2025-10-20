@@ -10,128 +10,237 @@
 function I(i){return document.getElementById(i);}
 
 //LIST OF TEST SERVERS. See documentation for details if needed
-var SPEEDTEST_SERVERS=[
-		{	name:"Premium RU2", //user friendly name for the server
-                server:"https://ru2.team.ga:8080/", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
-                dlURL:"backend/garbage.php",  //path to download test on this server (garbage.php or replacement)
-                ulURL:"backend/empty.php",  //path to upload test on this server (empty.php or replacement)
-                pingURL:"backend/empty.php",  //path to ping/jitter test on this server (empty.php or replacement)
-                getIpURL:"backend/getIP.php"  //path to getIP on this server (getIP.php or replacement)
-        },
-		{	name:"Premium RU3", //user friendly name for the server
-                server:"https://ru3.team.ga:8080/", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
-                dlURL:"backend/garbage.php",  //path to download test on this server (garbage.php or replacement)
-                ulURL:"backend/empty.php",  //path to upload test on this server (empty.php or replacement)
-                pingURL:"backend/empty.php",  //path to ping/jitter test on this server (empty.php or replacement)
-                getIpURL:"backend/getIP.php"  //path to getIP on this server (getIP.php or replacement)
-        },
-		{	name:"Premium RU", //user friendly name for the server
-                server:"https://ru.team.ga:8080/", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
-                dlURL:"backend/garbage.php",  //path to download test on this server (garbage.php or replacement)
-                ulURL:"backend/empty.php",  //path to upload test on this server (empty.php or replacement)
-                pingURL:"backend/empty.php",  //path to ping/jitter test on this server (empty.php or replacement)
-                getIpURL:"backend/getIP.php"  //path to getIP on this server (getIP.php or replacement)
-        },
-		{	name:"Premium NL", //user friendly name for the server
-                server:"https://nl.team.ga:8080", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
-                dlURL:"backend/garbage.php",  //path to download test on this server (garbage.php or replacement)
-                ulURL:"backend/empty.php",  //path to upload test on this server (empty.php or replacement)
-                pingURL:"backend/empty.php",  //path to ping/jitter test on this server (empty.php or replacement)
-                getIpURL:"backend/getIP.php"  //path to getIP on this server (getIP.php or replacement)
-        },
-		{	name:"Premium 55", //user friendly name for the server
-                server:"https://5.team.ga:8080/", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
-                dlURL:"backend/garbage.php",  //path to download test on this server (garbage.php or replacement)
-                ulURL:"backend/empty.php",  //path to upload test on this server (empty.php or replacement)
-                pingURL:"backend/empty.php",  //path to ping/jitter test on this server (empty.php or replacement)
-				serveropen: "YES",
-                getIpURL:"backend/getIP.php"  //path to getIP on this server (getIP.php or replacement)
-        },
-		{	name:"Premium 16", //user friendly name for the server
-                server:"https://16.team.ga:8080/", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
-                dlURL:"backend/garbage.php",  //path to download test on this server (garbage.php or replacement)
-                ulURL:"backend/empty.php",  //path to upload test on this server (empty.php or replacement)
-                pingURL:"backend/empty.php",  //path to ping/jitter test on this server (empty.php or replacement)
-                getIpURL:"backend/getIP.php"  //path to getIP on this server (getIP.php or replacement)
-        },
-		{	name:"Premium 5", //user friendly name for the server
-                server:"https://5.team.ga:8080/", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
-                dlURL:"backend/garbage.php",  //path to download test on this server (garbage.php or replacement)
-                ulURL:"backend/empty.php",  //path to upload test on this server (empty.php or replacement)
-                pingURL:"backend/empty.php",  //path to ping/jitter test on this server (empty.php or replacement)
-                getIpURL:"backend/getIP.php"  //path to getIP on this server (getIP.php or replacement)
-        },		
-		{	name:"Premium 16", //user friendly name for the server
-                server:"https://16.team.ga:8080/", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
-                dlURL:"backend/garbage.php",  //path to download test on this server (garbage.php or replacement)
-                ulURL:"backend/empty.php",  //path to upload test on this server (empty.php or replacement)
-                pingURL:"backend/empty.php",  //path to ping/jitter test on this server (empty.php or replacement)
-                getIpURL:"backend/getIP.php"  //path to getIP on this server (getIP.php or replacement)
-        },
-		{	name:"Premium n12", //user friendly name for the server
-                server:"https://nl2.team.ga:8080/", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
-                dlURL:"backend/garbage.php",  //path to download test on this server (garbage.php or replacement)
-                ulURL:"backend/empty.php",  //path to upload test on this server (empty.php or replacement)
-                pingURL:"backend/empty.php",  //path to ping/jitter test on this server (empty.php or replacement)
-                getIpURL:"backend/getIP.php"  //path to getIP on this server (getIP.php or replacement)
-        },
-		{	name:"Premium 8", //user friendly name for the server
-                server:"https://8.team.ga:8080/", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
-                dlURL:"backend/garbage.php",  //path to download test on this server (garbage.php or replacement)
-                ulURL:"backend/empty.php",  //path to upload test on this server (empty.php or replacement)
-                pingURL:"backend/empty.php",  //path to ping/jitter test on this server (empty.php or replacement)
-                getIpURL:"backend/getIP.php"  //path to getIP on this server (getIP.php or replacement)
-        },
-		{	name:"Premium 10", //user friendly name for the server
-                server:"https://10.team.ga:8080/", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
-                dlURL:"backend/garbage.php",  //path to download test on this server (garbage.php or replacement)
-                ulURL:"backend/empty.php",  //path to upload test on this server (empty.php or replacement)
-                pingURL:"backend/empty.php",  //path to ping/jitter test on this server (empty.php or replacement)
-                getIpURL:"backend/getIP.php"  //path to getIP on this server (getIP.php or replacement)
-        },
-		{	name:"Premium 1", //user friendly name for the server
-                server:"https://1.team.ga:8080/", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
-                dlURL:"backend/garbage.php",  //path to download test on this server (garbage.php or replacement)
-                ulURL:"backend/empty.php",  //path to upload test on this server (empty.php or replacement)
-                pingURL:"backend/empty.php",  //path to ping/jitter test on this server (empty.php or replacement)
-                getIpURL:"backend/getIP.php"  //path to getIP on this server (getIP.php or replacement)
-        }
-		,
-		{	name:"Premium 9", //user friendly name for the server
-                server:"https://9.team.ga:8080/", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
-                dlURL:"backend/garbage.php",  //path to download test on this server (garbage.php or replacement)
-                ulURL:"backend/empty.php",  //path to upload test on this server (empty.php or replacement)
-                pingURL:"backend/empty.php",  //path to ping/jitter test on this server (empty.php or replacement)
-                getIpURL:"backend/getIP.php"  //path to getIP on this server (getIP.php or replacement)
-        },
-		{	name:"Premium HK", //user friendly name for the server
-                server:"https://hk.team.ga:8080/", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
-                dlURL:"backend/garbage.php",  //path to download test on this server (garbage.php or replacement)
-                ulURL:"backend/empty.php",  //path to upload test on this server (empty.php or replacement)
-                pingURL:"backend/empty.php",  //path to ping/jitter test on this server (empty.php or replacement)
-                getIpURL:"backend/getIP.php"  //path to getIP on this server (getIP.php or replacement)
-        },
-		{	name:"Premium 14", //user friendly name for the server
-                server:"https://14.team.ga:8080/", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
-                dlURL:"backend/garbage.php",  //path to download test on this server (garbage.php or replacement)
-                ulURL:"backend/empty.php",  //path to upload test on this server (empty.php or replacement)
-                pingURL:"backend/empty.php",  //path to ping/jitter test on this server (empty.php or replacement)
-                getIpURL:"backend/getIP.php"  //path to getIP on this server (getIP.php or replacement)
-        },
-		{	name:"Premium UA2", //user friendly name for the server
-                server:"https://ua2.team.ga:8080/", //URL to the server. // at the beginning will be replaced with http:// or https:// automatically
-                dlURL:"backend/garbage.php",  //path to download test on this server (garbage.php or replacement)
-                ulURL:"backend/empty.php",  //path to upload test on this server (empty.php or replacement)
-                pingURL:"backend/empty.php",  //path to ping/jitter test on this server (empty.php or replacement)
-                getIpURL:"backend/getIP.php"  //path to getIP on this server (getIP.php or replacement)
-        }
-
-];
+var SPEEDTEST_SERVERS=[  
+    {
+      name: "1.prem.com",
+      server: "https://1.team.ga:8080/",
+      serveropen: "NO",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php"
+    },
+    {
+      name: "2.prem.com",
+      server: "https://2.team.ga:8080/",
+      serveropen: "YES",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php"
+    },
+    {
+      name: "3.prem.com",
+      server: "https://3.team.ga:8080/",
+      serveropen: "YES",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php"
+    },
+    {
+      name: "4.prem.com",
+      server: "https://4.team.ga:8080/",
+      serveropen: "YES",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php"
+    },
+    {
+      name: "5.prem.com",
+      server: "https://5.team.ga:8080/",
+      serveropen: "YES",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php"
+    },
+    {
+      name: "6.prem.com",
+      server: "https://6.team.ga:8080/",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php",
+      serveropen: "YES"
+    },
+    {
+      name: "7.prem.com",
+      server: "https://7.team.ga:8080/",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php",
+      serveropen: "YES"
+    },
+    {
+      name: "8.prem.com",
+      server: "https://8.team.ga:8080/",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php",
+      serveropen: "NO"
+    },
+    {
+      name: "9.prem.com",
+      server: "https://9.team.ga:8080/",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php",
+      serveropen: "NO"
+    },
+    {
+      name: "10.prem.com",
+      server: "https://10.team.ga:8080/",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php",
+      serveropen: "YES"
+    },
+    {
+      name: "11.prem.com",
+      server: "https://11.team.ga:8080/",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php",
+      serveropen: "YES"
+    },
+    {
+      name: "12.prem.com",
+      server: "https://12.team.ga:8080/",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php",
+      serveropen: "NO"
+    },
+    {
+      name: "13.prem.com",
+      server: "https://13.team.ga:8080/",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php",
+      serveropen: "YES"
+    },
+    {
+      name: "14.prem.com",
+      server: "https://14.team.ga:8080/",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php",
+      serveropen: "YES"
+    },
+    {
+      name: "15.prem.com",
+      server: "https://15.team.ga:8080/",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php",
+      serveropen: "YES"
+    },
+    {
+      name: "16.prem.com",
+      server: "https://16.team.ga:8080/",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php",
+      serveropen: "YES"
+    },
+    {
+      name: "de.prem.com",
+      server: "https://de.team.ga:8080/",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php",
+      serveropen: "NO"
+    },
+    {
+      name: "hk.prem.com",
+      server: "https://hk.team.ga:8080/",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php",
+      serveropen: "YES"
+    },
+    {
+      name: "nl.prem.com",
+      server: "https://nl.team.ga:8080/",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php",
+      serveropen: "YES"
+    },
+    {
+      name: "nl2.prem.com",
+      server: "https://nl2.team.ga:8080/",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php",
+      serveropen: "NO"
+    },
+    {
+      name: "ru.prem.com",
+      server: "https://ru.team.ga:8080/",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php",
+      serveropen: "YES"
+    },
+    {
+      name: "ru2.prem.com",
+      server: "https://ru2.team.ga:8080/",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php",
+      serveropen: "YES"
+    },
+    {
+      name: "ru3.prem.com",
+      server: "https://ru3.team.ga:8080/",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php",
+      serveropen: "NO"
+    },
+    {
+      name: "ua.prem.com",
+      server: "https://ua.team.ga:8080/",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php",
+      serveropen: "YES"
+    },
+    {
+      name: "ua2.prem.com",
+      server: "https://ua2.team.ga:8080/",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php",
+      serveropen: "YES"
+    }
+  ];
 
 //INITIALIZE SPEEDTEST
 var s=new Speedtest(); //create speedtest object
-s.setParameter("telemetry_level","none");
-s.setParameter("test_order","pD");
+s.setParameter("telemetry_level","basic"); //enable telemetry
 
 //SERVER AUTO SELECTION
 function initServers(){
@@ -142,13 +251,18 @@ function initServers(){
         s.selectServer(function(server){
             if(server!=null){ //at least 1 server is available
                 I("loading").className="hidden"; //hide loading message
-
+                
+                // Добавляем опцию для тестирования всех доступных серверов
+                var optionAllAvailable = document.createElement("option");
+                optionAllAvailable.value = "all_available";
+                optionAllAvailable.textContent = "Все доступные сервера";
+                optionAllAvailable.selected = true; // Устанавливаем эту опцию как выбранную по умолчанию
+                I("server").appendChild(optionAllAvailable);
                 
                 // Добавляем опцию для тестирования всех серверов, включая заполненные
                 var optionAllFull = document.createElement("option");
                 optionAllFull.value = "all_with_filled";
                 optionAllFull.textContent = "Все сервера";
-				optionAllFull.selected = true;
                 I("server").appendChild(optionAllFull);
                 
                 // Отделяем группы от отдельных серверов
@@ -163,6 +277,9 @@ function initServers(){
                     var option=document.createElement("option");
                     option.value=i;
                     option.textContent=SPEEDTEST_SERVERS[i].name;
+                    if(SPEEDTEST_SERVERS[i].serveropen === "NO") {
+                        option.textContent += " (заполнен)";
+                    }
                     // Убираем автоматическое выделение серверов, т.к. теперь всегда выбрана группа
                     // if(SPEEDTEST_SERVERS[i]===server) option.selected=true;
                     I("server").appendChild(option);
@@ -171,7 +288,6 @@ function initServers(){
                 //show test UI
                 I("testWrapper").className="visible";
                 initUI();
-			
             }else{ //no servers are available, the test cannot proceed
                 noServersAvailable();
             }
@@ -192,7 +308,6 @@ function initServers(){
         s.addTestPoints(SPEEDTEST_SERVERS);
         runServerSelect();
     }
-	setTimeout(function() {I("startStopBtn").click();}, 2000);
 }
 
 var meterBk=/Trident.*rv:(\d+\.\d+)/i.test(navigator.userAgent)?"#EAEAEA":"#80808040";
@@ -318,7 +433,7 @@ function prepareResultTable() {
     // Очищаем и инициализируем таблицу
     document.getElementById("multi_results").getElementsByTagName('tbody')[0].innerHTML = '<tr>' +
         '<th>Сервер</th>' +
-		'<th>Пинг, мс</th>' +
+        '<th>Статус</th>' +
         '<th>Джиттер, мс</th>' +
         '<th>Скорость, Мбит/с</th>' +
         '<th>Оценка</th>' +
@@ -344,6 +459,7 @@ function runSingleServerTest() {
             // Добавляем результат единичного теста в таблицу
             appendResult(
                 serverObj.name,
+                serverObj.serveropen,
                 uiData.dlStatus,
                 uiData.pingStatus,
                 uiData.jitterStatus
@@ -432,6 +548,7 @@ function startMultiTest() {
             // Добавляем результат в таблицу
             appendResult(
                 SPEEDTEST_SERVERS[currentServer].name,
+                SPEEDTEST_SERVERS[currentServer].serveropen,
                 uiData.dlStatus,
                 uiData.pingStatus,
                 uiData.jitterStatus
@@ -441,6 +558,7 @@ function startMultiTest() {
             var result = {
                 index: currentServer,
                 name: SPEEDTEST_SERVERS[currentServer].name,
+                serveropen: SPEEDTEST_SERVERS[currentServer].serveropen,
                 dl: uiData.dlStatus,
                 ping: uiData.pingStatus,
                 jitter: uiData.jitterStatus,
@@ -489,25 +607,27 @@ function startMultiTest() {
 }
 
 // Функция для добавления результата в таблицу
-function appendResult(server, dl, ping, jitter) {
+function appendResult(server, serveropen, dl, ping, jitter) {
     // Определяем иконку статуса на основе джиттера и скорости загрузки
     let statusIcon;
     if (jitter < 3 && dl > 100) {
         statusIcon = '⚡⚡⚡';
     } else if (jitter < 5 && dl > 50) {
         statusIcon = '⚡⚡';
-    } else if (jitter < 20 && dl > 30) {
+    } else if (jitter < 10 && dl > 30) {
         statusIcon = '⚡';
     } else {
         statusIcon = '☠️';
     }
     
+    // Определяем символ статуса на основе значения serveropen
+    let isopen = serveropen === "YES" ? "Доступен ✅" : "Заполнен 🔓";
     
     // Добавляем строку с результатом в таблицу
     document.getElementById("multi_results").getElementsByTagName('tbody')[0].innerHTML +=
         '<tr><td>' +
         server + "</td><td>" +
-		ping + "</td><td>" +
+        isopen + "</td><td>" +
         jitter + "</td><td>" +
         dl + "</td><td>" +
         statusIcon + "</td></tr>";
@@ -526,7 +646,7 @@ function findBestServer(results) {
     
     // Фильтруем серверы, которые рекомендованы и не имеют признака заполнен
     var recommendedServers = results.filter(function(server) {
-        return server.recommended;
+        return server.recommended && server.serveropen === "YES";
     });
     
     if(recommendedServers.length === 0) {
@@ -824,12 +944,12 @@ if(!document.getElementById("recommendStyles")) {
 		}
 	}
 </style>
-<script src="allservers.js"
+<script src="js/allservers.js"
         defer>
         </script>
-<title>Premium IPTV Speed test</title>
+<title>Premium IPTV speed test</title>
 </head>
-<body onload="initServers();">
+<body onload="initServers()">
 <h1></h1>
 <div id="loading" class="visible">
 	<p id="message"><span class="loadCircle"></span>Selecting a server...</p>
@@ -877,7 +997,3 @@ if(!document.getElementById("recommendStyles")) {
 </div>
 </body>
 </html>
-
-
-
-
