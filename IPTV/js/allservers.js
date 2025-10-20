@@ -39,16 +39,16 @@ function appendResult(server,serveropen, dl, ping, jitter) {
     // Determine the status icon based on jitter and download speed
     let statusIcon;
     if (jitter < 3 && dl > 100) {
-        statusIcon = 'рџ‘ЌрџЏ»рџ‘ЌрџЏ»рџ‘ЌрџЏ»';
+        statusIcon = '⚡⚡⚡';
     } else if (jitter < 5 && dl > 50) {
-        statusIcon = 'рџ‘ЌрџЏ»рџ‘ЌрџЏ»';
+        statusIcon = '⚡⚡';
     } else if (jitter < 10 && dl > 30) {
-        statusIcon = 'рџ‘ЌрџЏ»';
+        statusIcon = '⚡';
     } else {
-        statusIcon = 'вќЊ';
+        statusIcon = '☠️';
     }
     // Determine the output symbol based on serveropen value
-        let isopen = serveropen === "YES" ? "Р”РѕСЃС‚СѓРїРµРЅ вњ…" : "Р—Р°РїРѕР»РЅРµРЅ рџ”“";
+        let isopen = serveropen === "YES" ? "Доступен ✅" : "Заполнен 🔓";
     // Append the result row to the table
     document.getElementById("multi_results").getElementsByTagName('tbody')[0].innerHTML +=
         '<tr><td>' +
@@ -135,3 +135,4 @@ function startStop3() {
 
   startStop2()
 }
+
