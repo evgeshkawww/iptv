@@ -944,10 +944,10 @@ if(!document.getElementById("recommendStyles")) {
 		}
 	}
 </style>
-<script src="allservers.js"
+<script src="js/allservers.js"
         defer>
         </script>
-<title>tv.team SpeedTest</title>
+<title>Premium IPTV Speed test</title>
 </head>
 <body onload="initServers()">
 <h1></h1>
@@ -997,3 +997,4 @@ if(!document.getElementById("recommendStyles")) {
 </div>
 </body>
 </html>
+
