@@ -6,7 +6,7 @@
 */
 
 // data reported to main thread
-var testState = 0; // -1=not started, 0=starting, 1=download test, 2=ping+jitter test, 3=upload test, 4=finished, 5=abort
+var testState = -1; // -1=not started, 0=starting, 1=download test, 2=ping+jitter test, 3=upload test, 4=finished, 5=abort
 var dlStatus = ""; // download speed in megabit/s with 2 decimal digits
 var ulStatus = ""; // upload speed in megabit/s with 2 decimal digits
 var pingStatus = ""; // ping in milliseconds with 2 decimal digits
@@ -54,7 +54,7 @@ var settings = {
 	xhr_dlMultistream: 6, // number of download streams to use (can be different if enable_quirks is active)
 	xhr_ulMultistream: 3, // number of upload streams to use (can be different if enable_quirks is active)
 	xhr_multistreamDelay: 300, //how much concurrent requests should be delayed
-	xhr_ignoreErrors: 2, // 0=fail on errors, 1=attempt to restart a stream if it fails, 2=ignore all errors
+	xhr_ignoreErrors: 1, // 0=fail on errors, 1=attempt to restart a stream if it fails, 2=ignore all errors
 	xhr_dlUseBlob: false, // if set to true, it reduces ram usage but uses the hard drive (useful with large garbagePhp_chunkSize and/or high xhr_dlMultistream)
 	xhr_ul_blob_megabytes: 20, //size in megabytes of the upload blobs sent in the upload test (forced to 4 on chrome mobile)
 	garbagePhp_chunkSize: 100, // size of chunks sent by garbage.php (can be different if enable_quirks is active)
@@ -723,6 +723,7 @@ function sendTelemetry(done) {
 	}
 
 }
+
 
 
 
