@@ -6,6 +6,219 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
 <meta charset="UTF-8" />
 <link rel="stylesheet" href="style/theme.css">
+<style>
+  :root {
+    --bg1: #071127;
+    --bg2: #071a28;
+    --accent: #36b37e;
+    --muted: #9aa7b2;
+    --glass: rgba(255,255,255,0.03);
+  }
+  * { box-sizing: border-box !important; }
+  body {
+    margin: 0 !important;
+    font-family: "Inter", system-ui, Arial !important;
+    background: linear-gradient(135deg, var(--bg1), var(--bg2)) !important;
+    color: #e6eef6 !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 28px !important;
+  }
+  .container {
+    width: 100% !important;
+    max-width: 1120px !important;
+    border-radius: 14px !important;
+    padding: 18px 22px 20px !important;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)) !important;
+    box-shadow: 0 10px 30px rgba(2,6,23,0.6) !important;
+    border: 1px solid rgba(255,255,255,0.03) !important;
+    position: relative !important;
+  }
+  header {
+    display: flex !important;
+    gap: 14px !important;
+    align-items: center !important;
+    margin-bottom: 14px !important;
+  }
+  .logo {
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #fff !important;
+  }
+  .logo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  h1 {
+    margin: 0 !important;
+    font-size: 20px !important;
+  }
+  p.lead {
+    margin: 4px 0 0 0 !important;
+    color: var(--muted) !important;
+    font-size: 13px !important;
+  }
+  .grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 14px !important;
+    margin-top: 16px !important;
+  }
+  .card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)) !important;
+    border-radius: 12px !important;
+    padding: 12px !important;
+    border: 1px solid rgba(255,255,255,0.03) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    min-height: 140px !important;
+  }
+  .title {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+  }
+  .bank {
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    display: flex !important;
+    gap: 8px !important;
+    align-items: center !important;
+  }
+  .bank-logo {
+    width: 36px !important;
+    height: 36px !important;
+    flex: 0 0 36px !important;
+    border-radius: 8px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(255,255,255,0.03) !important;
+    overflow: hidden !important;
+  }
+  .bank-logo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  .chip {
+    background: var(--glass) !important;
+    padding: 6px 8px !important;
+    border-radius: 8px !important;
+    font-size: 12px !important;
+    color: var(--muted) !important;
+  }
+  .number {
+    font-family: ui-monospace, "Roboto Mono", monospace !important;
+    font-size: 15px !important;
+    letter-spacing: 1.2px !important;
+    padding: 8px !important;
+    border-radius: 8px !important;
+    background: rgba(0,0,0,0.04) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+  .holder {
+    color: var(--muted) !important;
+    font-size: 13px !important;
+  }
+  .actions {
+    display: flex !important;
+    gap: 8px !important;
+    margin-top: auto !important;
+    flex-wrap: wrap !important;
+  }
+  a.donate {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    text-decoration: none !important;
+    background: linear-gradient(90deg,#16a34a,#36b37e) !important;
+    color: #042022 !important;
+    padding: 9px 12px !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+  }
+  footer {
+    margin-top: 14px !important;
+    color: var(--muted) !important;
+    font-size: 13px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+  .copied {
+    position: fixed !important;
+    right: 18px !important;
+    bottom: 18px !important;
+    background: #052b22 !important;
+    color: var(--accent) !important;
+    padding: 10px 14px !important;
+    border-radius: 10px !important;
+    border: 1px solid rgba(54,179,126,0.12) !important;
+    display: none !important;
+  }
+  .qr-wrap {
+    display: flex !important;
+    gap: 12px !important;
+    align-items: center !important;
+  }
+  .qr-wrap img {
+    width: 84px !important;
+    height: 84px !important;
+    border-radius: 8px !important;
+    background: #fff !important;
+    object-fit: cover !important;
+    cursor: zoom-in !important;
+  }
+  .modal-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(2,6,23,0.75) !important;
+    z-index: 9999 !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    transition: opacity .18s, visibility .18s !important;
+  }
+  .modal-overlay.open {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  .modal-overlay img {
+    max-width: 92vw !important;
+    max-height: 92vh !important;
+    border-radius: 10px !important;
+    box-shadow: 0 20px 40px rgba(2,6,23,0.6) !important;
+    background: #fff !important;
+  }
+  .modal-close {
+    position: fixed !important;
+    right: 18px !important;
+    top: 18px !important;
+    background: rgba(255,255,255,0.06) !important;
+    color: var(--muted) !important;
+    padding: 8px 10px !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255,255,255,0.03) !important;
+    cursor: pointer !important;
+  }
+</style>
 <script type="text/javascript" src="js/speedtest.js"></script>
 <script type="text/javascript">
 function I(i){return document.getElementById(i);}
@@ -998,6 +1211,7 @@ if(!document.getElementById("recommendStyles")) {
 </div>
 </body>
 </html>
+
 
 
 
