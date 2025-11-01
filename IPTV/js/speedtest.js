@@ -1,31 +1,4 @@
-import { startMassTest } from './allservers.js';
-
-function applyTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
-  localStorage.setItem('theme', theme);
-}
-
-function detectSystemTheme() {
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-}
-
-function toggleTheme() {
-  const current = localStorage.getItem('theme') || detectSystemTheme();
-  const next = current === 'light' ? 'dark' : 'light';
-  applyTheme(next);
-  document.getElementById('themeToggle').textContent = next === 'dark' ? '?? День' : '?? Ночь';
-}
-
 window.addEventListener('DOMContentLoaded', () => {
-  const savedTheme = localStorage.getItem('theme') || detectSystemTheme();
-  applyTheme(savedTheme);
-
-  const themeBtn = document.createElement('button');
-  themeBtn.id = 'themeToggle';
-  themeBtn.textContent = savedTheme === 'dark' ? '?? День' : '?? Ночь';
-  themeBtn.onclick = toggleTheme;
-  document.body.appendChild(themeBtn);
-
   const s = new Speedtest();
   window.speedtestInstance = s;
 
@@ -54,6 +27,6 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   document.getElementById("multiTestBtn").onclick = () => {
-    startMassTest();
+    import('./allservers.js').then(mod => mod.startMassTest());
   };
 });
