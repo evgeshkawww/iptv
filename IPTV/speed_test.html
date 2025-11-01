@@ -850,9 +850,9 @@ if(!document.getElementById("recommendStyles")) {
         </script>
 <title>Premium IPTV speed test</title>
 </head>
-<body onload="initServers()">
+<body onload="initServers() autoStartTest();">
 <h1></h1>
-<div id="loading" class="visible">
+<div id="loading" class="hidden">
 	<p id="message"><span class="loadCircle"></span>Selecting a server...</p>
 </div>
 <div id="testWrapper" class="hidden">
@@ -898,6 +898,7 @@ if(!document.getElementById("recommendStyles")) {
 </div>
 </body>
 </html>
+
 
 
 
