@@ -1,8 +1,6 @@
 :root {
-  --color-bg-light: #f9f9f9;
-  --color-bg-dark: #222;
-  --color-text-light: #333;
-  --color-text-dark: #ddd;
+  --color-bg: linear-gradient(135deg, #071127, #071a28);
+  --color-text: #e6eef6;
   --color-accent: #3498db;
   --color-accent-light: #5dade2;
   --color-danger: #e74c3c;
@@ -18,32 +16,9 @@ body {
   padding: 0;
   text-align: center;
   line-height: 1.6;
+  background: var(--color-bg);
+  color: var(--color-text);
   transition: background-color 0.3s, color 0.3s;
-}
-
-/* Цветовая схема */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--color-bg-dark);
-    color: var(--color-text-dark);
-  }
-  select, input, button {
-    background-color: #333;
-    color: var(--color-text-dark);
-    border: 1px solid #666;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: var(--color-bg-light);
-    color: var(--color-text-light);
-  }
-  select, input, button {
-    background-color: #fff;
-    color: var(--color-text-light);
-    border: 1px solid #ddd;
-  }
 }
 
 /* Заголовки */
@@ -56,9 +31,9 @@ h1, h3 {
 /* Кнопка */
 #startStopBtn {
   display: inline-block;
-  padding: 0.5em 1em;
-  font-size: 0.9em;
-  border-radius: 12px; /* Было 4px */
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  border-radius: 12px;
   border: none;
   background-color: var(--color-accent);
   color: white;
@@ -88,9 +63,9 @@ select {
   font-size: 0.9em;
   border-radius: 4px;
   appearance: none;
-  background-color: inherit;
-  color: inherit;
-  border: 1px solid currentColor;
+  background-color: #0c1c2f;
+  color: var(--color-text);
+  border: 1px solid #444;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='currentColor' d='M0 2l4 4 4-4H0z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.5em center;
@@ -100,7 +75,7 @@ select {
 
 /* Области теста */
 .testArea, .testArea2 {
-  background-color: rgba(0,0,0,0.02);
+  background-color: rgba(255,255,255,0.02);
   border-radius: 8px;
   padding: 1.2em;
   margin: 1.2em auto;
@@ -143,12 +118,14 @@ table#multi_results {
   box-shadow: var(--shadow-md);
   border-radius: 8px;
   overflow: hidden;
+  background-color: rgba(255,255,255,0.02);
 }
 
 table#multi_results th, table#multi_results td {
   padding: 0.7em;
   border: none;
   text-align: center;
+  color: var(--color-text);
 }
 
 table#multi_results th {
@@ -158,10 +135,10 @@ table#multi_results th {
 }
 
 table#multi_results tbody tr:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: rgba(255, 255, 255, 0.03);
 }
 
 table#multi_results tbody tr:hover {
-  background-color: rgba(0, 0, 0, 0.07);
+  background-color: rgba(255, 255, 255, 0.06);
   transition: background-color 0.2s ease;
 }
