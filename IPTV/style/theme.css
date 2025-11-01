@@ -1,10 +1,15 @@
 :root {
-  --color-bg-light: #071127;
-  --color-bg-dark: #071127;
+  --bg1: #071127;
+  --bg2: #071a28;
+  --accent: #36b37e;
+  --muted: #9aa7b2;
+  --glass: rgba(255,255,255,0.03);
+  --color-bg-light: #f9f9f9;
+  --color-bg-dark: #222;
   --color-text-light: #333;
-  --color-text-dark: #333;
-  --color-accent: #36b37e;
-  --color-accent-light: #36b37e;
+  --color-text-dark: #ddd;
+  --color-accent: #3498db;
+  --color-accent-light: #5dade2;
   --color-danger: #e74c3c;
   --color-success: #2ecc71;
   --font-main: 'Arial', sans-serif;
@@ -165,5 +170,3 @@ table#multi_results tbody tr:hover {
   background-color: rgba(0, 0, 0, 0.07);
   transition: background-color 0.2s ease;
 }
-
-
