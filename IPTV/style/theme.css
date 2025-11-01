@@ -1,0 +1,67 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #202020;
+  --accent-color: #6060AA;
+  --button-bg: rgba(0,0,0,0);
+  --button-border: #6060FF;
+  --button-hover: rgba(0,0,0,0.1);
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --accent-color: #90caf9;
+  --button-bg: #1e1e1e;
+  --button-border: #90caf9;
+  --button-hover: rgba(255,255,255,0.1);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: sans-serif;
+  margin: 0;
+  padding: 1em;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button {
+  background-color: var(--button-bg);
+  border: 2px solid var(--button-border);
+  color: var(--accent-color);
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: box-shadow 0.3s;
+}
+
+button:hover {
+  box-shadow: 0 0 2em var(--button-hover), inset 0 0 1em var(--button-hover);
+}
+
+#themeToggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: var(--button-bg);
+  border: 1px solid var(--button-border);
+  color: var(--accent-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+table {
+  border-collapse: collapse;
+  margin-top: 20px;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid var(--button-border);
+  padding: 8px;
+  text-align: center;
+}
