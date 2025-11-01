@@ -622,7 +622,7 @@ function appendResult(server, serveropen, dl, ping, jitter) {
     }
     
     // Определяем символ статуса на основе значения serveropen
-    let isopen = serveropen === "YES" ? "В строю ✅" : "Заполнен 🔓";
+    let isopen = serveropen === "YES" ? "В строю! ✅" : "Заполнен 🔓";
     
     // Добавляем строку с результатом в таблицу
     document.getElementById("multi_results").getElementsByTagName('tbody')[0].innerHTML +=
@@ -998,6 +998,7 @@ if(!document.getElementById("recommendStyles")) {
 </div>
 </body>
 </html>
+
 
 
 
