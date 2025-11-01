@@ -1,175 +1,167 @@
 :root {
-    --color-bg-light: #f9f9f9;
-    --color-bg-dark: #222;
-    --color-text-light: #333;
-    --color-text-dark: #ddd;
-    --color-accent: #3498db;
-    --color-accent-light: #5dade2;
-    --color-danger: #e74c3c;
-    --color-success: #2ecc71;
-    --font-main: 'Arial', sans-serif;
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    --shadow-md: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  --color-bg-light: #f9f9f9;
+  --color-bg-dark: #222;
+  --color-text-light: #333;
+  --color-text-dark: #ddd;
+  --color-accent: #3498db;
+  --color-accent-light: #5dade2;
+  --color-danger: #e74c3c;
+  --color-success: #2ecc71;
+  --font-main: 'Arial', sans-serif;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  --shadow-md: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 body {
-    font-family: var(--font-main);
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    line-height: 1.6;
-    transition: background-color 0.3s, color 0.3s;
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Цветовая схема */
 @media (prefers-color-scheme: dark) {
-    body {
-        background-color: var(--color-bg-dark);
-        color: var(--color-text-dark);
-    }
-
-    select,
-    input,
-    button {
-        background-color: #333;
-        color: var(--color-text-dark);
-        border: 1px solid #666;
-    }
+  body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
+  }
+  select, input, button {
+    background-color: #333;
+    color: var(--color-text-dark);
+    border: 1px solid #666;
+  }
 }
 
 @media (prefers-color-scheme: light) {
-    body {
-        background-color: var(--color-bg-light);
-        color: var(--color-text-light);
-    }
-
-    select,
-    input,
-    button {
-        background-color: #fff;
-        color: var(--color-text-light);
-        border: 1px solid #ddd;
-    }
+  body {
+    background-color: var(--color-bg-light);
+    color: var(--color-text-light);
+  }
+  select, input, button {
+    background-color: #fff;
+    color: var(--color-text-light);
+    border: 1px solid #ddd;
+  }
 }
 
 /* Заголовки */
-h1,
-h3 {
-    margin-top: 1em;
-    color: var(--color-accent);
-    font-weight: 500;
+h1, h3 {
+  margin-top: 1em;
+  color: var(--color-accent);
+  font-weight: 500;
 }
 
 /* Кнопка */
-body #startStopBtn {
-    display: inline-block !important;
-    padding: 0.5em 1em !important;
-    font-size: 0.9em !important;
-    border-radius: 4px !important;
-    border: none !important;
-    background-color: var(--color-accent) !important;
-    color: white !important;
-    cursor: pointer !important;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease !important;
-    box-shadow: var(--shadow-sm) !important;
-    margin-top: 0.5em !important;
+#startStopBtn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  font-size: 0.9em;
+  border-radius: 4px;
+  border: none;
+  background-color: var(--color-accent);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  margin-top: 0.5em;
 }
 
-body #startStopBtn:hover {
-    background-color: var(--color-accent-light) !important;
-    box-shadow: var(--shadow-md) !important;
+#startStopBtn:hover {
+  background-color: var(--color-accent-light);
+  box-shadow: var(--shadow-md);
 }
 
-body #startStopBtn:active {
-    box-shadow: var(--shadow-sm) !important;
-    transform: translateY(1px) !important;
+#startStopBtn:active {
+  box-shadow: var(--shadow-sm);
+  transform: translateY(1px);
 }
 
-body #startStopBtn.running {
-    background-color: var(--color-danger) !important;
+#startStopBtn.running {
+  background-color: var(--color-danger);
 }
 
 /* Селекты */
-body select {
-    padding: 0.4em !important;
-    font-size: 0.9em !important;
-    border-radius: 4px !important;
-    appearance: none !important;
-    /* Убираем стандартные23" + (getComputedStyle(document.documentElement).getPropertyValue('--color-text-light').substring(1) || "333") + "' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") !important;
-    background-repeat: no-repeat !important;
-    background-position: right 0.5em top 50% !important;
-    background-size: 0.8em auto !important;
-    padding-right: 1.5em !important;
+select {
+  padding: 0.4em;
+  font-size: 0.9em;
+  border-radius: 4px;
+  appearance: none;
+  background-color: inherit;
+  color: inherit;
+  border: 1px solid currentColor;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='currentColor' d='M0 2l4 4 4-4H0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5em center;
+  background-size: 0.6em;
+  padding-right: 1.5em;
 }
 
 /* Области теста */
-body .testArea,
-body .testArea2 {
-    background-color: rgba(0, 0, 0, 0.02) !important;
-    border-radius: 8px !important;
-    padding: 1.2em !important;
-    margin: 1.2em auto !important;
-    width: 90% !important;
-    max-width: 500px !important;
-    box-shadow: var(--shadow-sm) !important;
+.testArea, .testArea2 {
+  background-color: rgba(0,0,0,0.02);
+  border-radius: 8px;
+  padding: 1.2em;
+  margin: 1.2em auto;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: var(--shadow-sm);
 }
 
 /* Метр */
-body .meterText {
-    font-size: 2.2em !important;
-    font-weight: 600 !important;
-    margin-bottom: 0.5em !important;
+.meterText {
+  font-size: 2.2em;
+  font-weight: 600;
+  margin-bottom: 0.5em;
 }
 
 /* Рекомендации */
-body .recommendationBox {
-    margin-top: 1em !important;
-    padding: 1em !important;
-    border-radius: 6px !important;
-    font-size: 1em !important;
-    box-shadow: var(--shadow-sm) !important;
+.recommendationBox {
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 6px;
+  font-size: 1em;
+  box-shadow: var(--shadow-sm);
 }
 
-body .recommended {
-    background-color: var(--color-success) !important;
-    color: white !important;
+.recommended {
+  background-color: var(--color-success);
+  color: white;
 }
 
-body .notRecommended {
-    background-color: var(--color-danger) !important;
-    color: white !important;
+.notRecommended {
+  background-color: var(--color-danger);
+  color: white;
 }
 
 /* Таблица */
-body table#multi_results {
-    width: 95% !important;
-    margin: 2em auto !important;
-    border-collapse: collapse !important;
-    box-shadow: var(--shadow-md) !important;
-    border-radius: 8px !important;
-    overflow: hidden !important;
+table#multi_results {
+  width: 95%;
+  margin: 2em auto;
+  border-collapse: collapse;
+  box-shadow: var(--shadow-md);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-body table#multi_results th,
-body table#multi_results td {
-    padding: 0.7em !important;
-    border: none !important;
-    text-align: center !important;
+table#multi_results th, table#multi_results td {
+  padding: 0.7em;
+  border: none;
+  text-align: center;
 }
 
-body table#multi_results th {
-    background-color: var(--color-accent) !important;
-    color: white !important;
-    font-weight: 500 !important;
+table#multi_results th {
+  background-color: var(--color-accent);
+  color: white;
+  font-weight: 500;
 }
 
-/* Чередующиеся строки */
-body table#multi_results tbody tr:nth-child(even) {
-    background-color: rgba(0, 0, 0, 0.03) !important;
+table#multi_results tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
-/* Подсветка при наведении */
-body table#multi_results tbody tr:hover {
-    background-color: rgba(0, 0, 0, 0.07) !important;
-    transition: background-color 0.2s ease !important;
+table#multi_results tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.07);
+  transition: background-color 0.2s ease;
 }
