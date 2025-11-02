@@ -372,11 +372,11 @@ function runSingleServerTest() {
             var recommended = isServerRecommended(uiData.jitterStatus, uiData.dlStatus);
             if(recommended) {
                 document.getElementById("currentTest").innerHTML = 
-                    '<div class="recommendationBox recommended"><span class="recommendIcon">✅</span> ' +
+                    '<div class="recommendationBox recommended"><span class="recommendIcon">👍</span> ' +
                     'Рекомендован: <strong>' + serverObj.name + '</strong></div>';
             } else {
                 document.getElementById("currentTest").innerHTML = 
-                    '<div class="recommendationBox notRecommended"><span class="recommendIcon">⚠️</span> ' +
+                    '<div class="recommendationBox notRecommended"><span class="recommendIcon">👎</span> ' +
                     'Не рекомендован</div>';
             }
             
@@ -491,11 +491,11 @@ function startMultiTest() {
                 var bestServer = findBestServer(groupTestResults);
                 if(bestServer) {
                     document.getElementById("currentTest").innerHTML = 
-                        '<div class="recommendationBox recommended"><span class="recommendIcon">✅</span> ' +
+                        '<div class="recommendationBox recommended"><span class="recommendIcon">👍</span> ' +
                         'Рекомендован: <strong>' + bestServer.name + '</strong></div>';
                 } else {
                     document.getElementById("currentTest").innerHTML = 
-                        '<div class="recommendationBox notRecommended"><span class="recommendIcon">⚠️</span> ' +
+                        '<div class="recommendationBox notRecommended"><span class="recommendIcon">👎</span> ' +
                         'Нет подходящих серверов</div>';
                 }
             }
@@ -900,6 +900,7 @@ if(!document.getElementById("recommendStyles")) {
 </div>
 </body>
 </html>
+
 
 
 
