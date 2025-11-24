@@ -1,0 +1,20 @@
+{
+  "data": {
+    "items": [
+      { "name": "s1.turbod.iptv", "url": "https://1.team.ga/speedtest", "open": false },
+      { "name": "s2.turbod.iptv", "url": "https://5.team.ga/speedtest", "open": false },
+      { "name": "s3.turbod.iptv", "url": "https://8.team.ga/speedtest", "open": false },
+      { "name": "s4.turbod.iptv", "url": "https://9.team.ga/speedtest", "open": false },
+      { "name": "s5.turbod.iptv", "url": "https://10.team.ga/speedtest", "open": false },
+      { "name": "s6.turbod.iptv", "url": "https://14.team.ga/speedtest", "open": false },
+      { "name": "s7.turbod.iptv", "url": "https://16.team.ga/speedtest", "open": false },
+      { "name": "s8.turbod.iptv", "url": "https://hk.team.ga/speedtest", "open": false },
+      { "name": "s9.turbod.iptv", "url": "https://nl.team.ga/speedtest", "open": false },
+      { "name": "s10.turbod.iptv", "url": "https://nl2.team.ga/speedtest", "open": false },
+      { "name": "s11.turbod.iptv", "url": "https://ru.team.ga/speedtest", "open": false },
+      { "name": "s12.turbod.iptv", "url": "https://ru2.team.ga/speedtest", "open": false },
+      { "name": "s13.turbod.iptv", "url": "https://hk.team.ga/speedtest", "open": true },
+      { "name": "s14.turbod.iptv", "url": "https://ua2.team.ga/speedtest", "open": false }
+    ]
+  }
+}
