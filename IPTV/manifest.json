@@ -1,0 +1,23 @@
+{
+  "name": "Тест скорости интернета",
+  "short_name": "SpeedTest",
+  "description": "Профессиональный тест скорости интернета с проверкой качества HLS потоков",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0b12",
+  "theme_color": "#0b0b12",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["utilities", "productivity"],
+  "screenshots": [],
+  "prefer_related_applications": false,
+  "related_applications": []
+}
