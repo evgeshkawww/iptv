@@ -1,44 +1,32 @@
-
 <!doctype html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-   <link rel="icon" type="image/svg+xml" href="/iptv/IPTV/favicon.ico" />
-    
-    <!-- Оптимизированный viewport для мобильных устройств -->
+    <link rel="icon" type="image/svg+xml" href="/iptv/IPTV/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, viewport-fit=cover" />
-    
-    <!-- Мета-теги для улучшенного отображения на мобильных -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="SpeedTest" />
     <meta name="theme-color" content="#0b0b12" />
-    
-    <!-- Описание для SEO и социальных сетей -->
     <meta name="description" content="Тест скорости Premium с проверкой качества HLS потоков" />
-    
-    <!-- Оптимизация производительности -->
     <meta name="format-detection" content="telephone=no" />
-    
-    <!-- PWA Manifest -->
     <link rel="manifest" href="/iptv/IPTV/manifest.json" />
-    
-    <!-- Apple Touch Icons -->
     <link rel="apple-touch-icon" href="/iptv/IPTV/favicon.svg" />
     <meta property="og:image" content="https://evgeshkawww.github.io/iptv/IPTV/assets/logo-ipv-gradient.png">
     <meta name="twitter:image" content="https://evgeshkawww.github.io/iptv/IPTV/assets/logo-ipv-gradient.png">
     <title>Premium IPTV</title>
-    <script type="module" crossorigin src="/iptv/IPTV/assets/index-rXCmlGUy.js"></script>
-    <link rel="stylesheet" crossorigin href="/iptv/IPTV/assets/index-JXv4NXlQ.css">
+    <script type="module" crossorigin src="/bundle.js"></script>
+    <link rel="stylesheet" crossorigin href="/style.css">
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('Service Worker зарегистрирован:', reg))
+          .catch(err => console.error('Ошибка регистрации Service Worker:', err));
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
   </body>
-
 </html>
-
-
-
-
-
