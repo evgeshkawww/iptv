@@ -16,11 +16,11 @@
     <meta property="og:image" content="https://evgeshkawww.github.io/iptv/IPTV/assets/logo-ipv-gradient.png">
     <meta name="twitter:image" content="https://evgeshkawww.github.io/iptv/IPTV/assets/logo-ipv-gradient.png">
     <title>Premium IPTV</title>
-    <script type="module" crossorigin src="/bundle.js"></script>
-    <link rel="stylesheet" crossorigin href="/style.css">
+    <script type="module" crossorigin src="/iptv/IPTV/bundle.js"></script>
+    <link rel="stylesheet" crossorigin href="/iptv/IPTV/style.css">
     <script>
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js')
+        navigator.serviceWorker.register('/iptv/IPTV/sw.js')
           .then(reg => console.log('Service Worker зарегистрирован:', reg))
           .catch(err => console.error('Ошибка регистрации Service Worker:', err));
       }
@@ -30,3 +30,4 @@
     <div id="root"></div>
   </body>
 </html>
+
