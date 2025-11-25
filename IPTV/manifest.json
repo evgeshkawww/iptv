@@ -1,5 +1,5 @@
 {
-  "name": "Тест скорости интернета",
+  "name": "Premium IPTV",
   "short_name": "SpeedTest",
   "description": "Профессиональный тест скорости интернета с проверкой качества HLS потоков",
   "start_url": "/",
@@ -10,7 +10,7 @@
   "scope": "/",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "/iptv/IPTV/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
@@ -20,4 +20,5 @@
   "screenshots": [],
   "prefer_related_applications": false,
   "related_applications": []
+
 }
