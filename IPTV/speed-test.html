@@ -20,7 +20,7 @@
     <link rel="stylesheet" crossorigin href="/iptv/IPTV/style.css">
     <script>
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/iptv/IPTV/sw.js')
+        navigator.serviceWorker.register('/iptv/IPTV/sw.js', { scope: '/iptv/IPTV/' })
           .then(reg => console.log('Service Worker зарегистрирован:', reg))
           .catch(err => console.error('Ошибка регистрации Service Worker:', err));
       }
@@ -30,4 +30,3 @@
     <div id="root"></div>
   </body>
 </html>
-
