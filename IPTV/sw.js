@@ -1,13 +1,21 @@
+const mapping = {
+  "/iptv/IPTV/bundle.js": "/iptv/IPTV/assets/index-rXCmlGUy.js",
+  "/iptv/IPTV/style.css": "/iptv/IPTV/assets/index-JXv4NXlQ.css"
+};
+
 self.addEventListener("install", e => {
-  console.log("SW install");
   self.skipWaiting();
 });
 
 self.addEventListener("activate", e => {
-  console.log("SW activate");
   self.clients.claim();
 });
 
 self.addEventListener("fetch", e => {
-  console.log("SW fetch:", e.request.url);
+  const u = new URL(e.request.url);
+  if (mapping[u.pathname]) {
+    e.respondWith(fetch(mapping[u.pathname]));
+    return;
+  }
+  e.respondWith(fetch(e.request));
 });
