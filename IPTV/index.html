@@ -13,7 +13,7 @@
     body{margin:0;font-family:"Inter",system-ui,Arial;background:linear-gradient(135deg,var(--bg1),var(--bg2));color:#e6eef6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px;}
     .container{width:100%;max-width:1120px;border-radius:14px;padding:18px 22px 20px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 10px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03);position:relative}
     header{display:flex;gap:14px;align-items:center;margin-bottom:14px}
-    .logo{width:56px;height:56px;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff}
+    .logo{width:46px;height:46px;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff}
     .logo img{width:100%;height:100%;object-fit:cover;display:block}
     h1{margin:0;font-size:20px}
     p.lead{margin:4px 0 0 0;color:var(--muted);font-size:13px}
@@ -32,7 +32,7 @@
     footer{margin-top:14px;color:var(--muted);font-size:13px;display:flex;align-items:center;justify-content:space-between}
     .copied{position:fixed;right:18px;bottom:18px;background:#052b22;color:var(--accent);padding:10px 14px;border-radius:10px;border:1px solid rgba(54,179,126,0.12);display:none}
     .qr-wrap{display:flex;gap:12px;align-items:center}
-    .qr-wrap img{width:72px;height:72px;border-radius:6px;background:linear-gradient(135deg,#36b37e,#16a34a);padding:2px;
+    .qr-wrap img{width:84px;height:84px;border-radius:8px;background:#fff;object-fit:cover;cursor:zoom-in}
     /* modal */
     .modal-overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,23,0.75);z-index:9999;visibility:hidden;opacity:0;transition:opacity .18s,visibility .18s}
     .modal-overlay.open{visibility:visible;opacity:1}
@@ -365,6 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
 
 
 
