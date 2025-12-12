@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Premium каталог фильмов</title>
+  <title>Premium каталог кинотеатров</title>
 
   <!-- Favicons и соц. превью -->
   <link rel="icon" type="image/svg+xml" href="/iptv/IPTV/favicon.ico" />
@@ -11,11 +11,14 @@
   <meta property="og:image" content="https://evgeshkawww.github.io/iptv/IPTV/favicon_black.png">
   <meta name="twitter:image" content="https://evgeshkawww.github.io/iptv/IPTV/favicon_black.png">
 
+  <!-- Красивый шрифт -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     :root{ --bg1:#071127; --bg2:#071a28; --accent:#36b37e; --muted:#9aa7b2; }
     body{
       margin:0;
-      font-family:"Inter",system-ui,Arial;
+      font-family:"Raleway",system-ui,Arial;
       background:linear-gradient(135deg,var(--bg1),var(--bg2));
       color:#e6eef6;
       min-height:100vh;
@@ -23,12 +26,14 @@
     }
     h1{
       text-align:center;
-      font-size:22px;
+      font-size:26px;
       margin-bottom:24px;
+      font-weight:600;
     }
     h2{
-      font-size:18px;
+      font-size:20px;
       margin:20px 0 10px;
+      font-weight:600;
     }
     img{
       width:100%;
@@ -39,21 +44,40 @@
     .section{
       max-width:900px;
       margin:0 auto 30px;
+      text-align:center;
+    }
+    .caption{
+      margin-top:12px;
+      font-size:16px;
+      color:var(--muted);
+    }
+
+    /* Адаптивность */
+    @media (max-width:600px){
+      h1{ font-size:22px; }
+      h2{ font-size:18px; }
+      .caption{ font-size:14px; }
     }
   </style>
 </head>
 <body>
-  <h1>Примиум каталог</h1>
+  <h1>Премиум каталог</h1>
 
   <div class="section">
     <h2>Русские кинотеатры</h2>
     <img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/img/russ.png" alt="Русские кинотеатры">
+    <p class="caption">А также любое кино или сериал в прекрасном качестве с большим выбором источников!</p>
   </div>
 
   <div class="section">
     <h2>Иностранные кинотеатры</h2>
     <img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/img/import.png" alt="Иностранные кинотеатры">
+    <p class="caption">А также любое кино или сериал в прекрасном качестве с большим выбором источников!</p>
+  </div>
+
+  <div class="section">
+    <h2>Общий каталог фильмов и сериалов</h2>
+    <img src="https://ts3.mm.bing.net/th?id=OIP.z26HVNpFjAmyhqjs_qYaeQHaC1&pid=15.1" alt="Коллаж фильмов и сериалов">
   </div>
 </body>
 </html>
-
