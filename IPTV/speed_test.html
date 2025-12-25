@@ -137,7 +137,7 @@ var SPEEDTEST_SERVERS=[
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
-      serveropen: "YES"
+      serveropen: "NO"
     },
 	{
       name: "s15.turbod.iptv",
@@ -146,7 +146,7 @@ var SPEEDTEST_SERVERS=[
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
-      serveropen: "NO"
+      serveropen: "YES"
     }
   ];
 
@@ -190,7 +190,7 @@ function initServers(){
                     option.value=i;
                     option.textContent=SPEEDTEST_SERVERS[i].name;
                     if(SPEEDTEST_SERVERS[i].serveropen === "NO") {
-                        option.textContent += " (заполнен)";
+                        option.textContent += " (OFF)";
                     }
                     // Убираем автоматическое выделение серверов, т.к. теперь всегда выбрана группа
                     // if(SPEEDTEST_SERVERS[i]===server) option.selected=true;
@@ -533,7 +533,7 @@ function appendResult(server, serveropen, dl, ping, jitter) {
     }
     
     // Определяем символ статуса на основе значения serveropen
-    let isopen = serveropen === "YES" ? "Online 🌎" : "Заполнен 🔓";
+    let isopen = serveropen === "YES" ? "Online 🌎" : "OFF ❌";
     
     // Добавляем строку с результатом в таблицу
     document.getElementById("multi_results").getElementsByTagName('tbody')[0].innerHTML +=
@@ -914,6 +914,7 @@ if(!document.getElementById("recommendStyles")) {
 </footer>
 </body>
 </html>
+
 
 
 
