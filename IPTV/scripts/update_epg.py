@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import requests
 
-URL = "http://epg.team/5.1.xml.gz"
+URL = "https://epg.team/5.1.xml.gz"
 OUT_FILE = "IPTV/epg.xml.gz"
 
 def download_epg():
