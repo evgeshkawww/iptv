@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 INPUT_FILE="IPTV/ico/tabl_ico.txt"
 OUTPUT_DIR="IPTV/ico"
