@@ -14,6 +14,9 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Install dependencies
+        run: pip install requests
+
       - name: Run update script
         run: python IPTV/scripts/update_epg.py
 
