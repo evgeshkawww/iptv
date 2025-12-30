@@ -1,0 +1,26 @@
+name: Update EPG
+on:
+  schedule:
+    - cron: "0 2 * * *"   # каждый день в 02:00 UTC
+  workflow_dispatch:      # запуск вручную
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run update script
+        run: python IPTV/scripts/update_epg.py
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add IPTV/epg.xml.gz
+          git commit -m "Daily EPG update" || echo "No changes"
+          git push
