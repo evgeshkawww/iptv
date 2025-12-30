@@ -1,0 +1,22 @@
+name: Download Icons Once
+
+on:
+  workflow_dispatch:   # запуск вручную
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Run download script
+        run: bash download_icons.sh
+
+      - name: Commit and push icons
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add IPTV/ico/*.png
+          git commit -m "Add downloaded channel icons"
+          git push
