@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
 <meta charset="UTF-8" />
 <link rel="stylesheet" href="style/theme.css">
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script type="text/javascript" src="js/speedtest.js"></script>
 <script type="text/javascript">
 function I(i){return document.getElementById(i);}
@@ -160,36 +159,9 @@ var SPEEDTEST_SERVERS=[
     }
   ];
 
-<script type="text/javascript">
-function getAvailableFromQuery() {
-    try {
-        const params = new URLSearchParams(window.location.search);
-        const available = params.get("available");
-        if (!available) return [];
-        return available.split(",").map(s => s.trim()).filter(Boolean);
-    } catch (e) {
-        return [];
-    }
-}
-
-(function applyServerOpenFlags(){
-    const available = getAvailableFromQuery();
-    const set = new Set(available);
-    for (let i = 0; i < SPEEDTEST_SERVERS.length; i++) {
-        const name = SPEEDTEST_SERVERS[i].name;
-        SPEEDTEST_SERVERS[i].serveropen = set.has(name) ? "YES" : "NO";
-    }
-})();
-</script>
-
 //INITIALIZE SPEEDTEST
 var s=new Speedtest(); //create speedtest object
 s.setParameter("telemetry_level","basic"); //enable telemetry
-
-if (window.Telegram && window.Telegram.WebApp) {
-    window.Telegram.WebApp.ready();
-    window.Telegram.WebApp.expand();
-}
 
 //SERVER AUTO SELECTION
 function initServers(){
@@ -417,12 +389,11 @@ function runSingleServerTest() {
             // Проверяем, рекомендован ли сервер
             var recommended = isServerRecommended(uiData.jitterStatus, uiData.dlStatus);
             if(recommended) {
-                document.getElementById("currentTest").innerHTML =
+                document.getElementById("currentTest").innerHTML = 
                     '<div class="recommendationBox recommended"><span class="recommendIcon">👍</span> ' +
                     'Рекомендован: <strong>' + serverObj.name + '</strong></div>';
-				sendRecommendationToBot(serverObj.name);
             } else {
-                document.getElementById("currentTest").innerHTML =
+                document.getElementById("currentTest").innerHTML = 
                     '<div class="recommendationBox notRecommended"><span class="recommendIcon">👎</span> ' +
                     'Не рекомендован</div>';
             }
@@ -540,7 +511,6 @@ function startMultiTest() {
                     document.getElementById("currentTest").innerHTML = 
                         '<div class="recommendationBox recommended"><span class="recommendIcon">👍</span> ' +
                         'Рекомендован: <strong>' + bestServer.name + '</strong></div>';
-					sendRecommendationToBot(bestServer.name);
                 } else {
                     document.getElementById("currentTest").innerHTML = 
                         '<div class="recommendationBox notRecommended"><span class="recommendIcon">👎</span> ' +
@@ -618,14 +588,6 @@ function findBestServer(results) {
     
     // Возвращаем лучший сервер
     return recommendedServers[0];
-}
-
-function sendRecommendationToBot(serverName){
-    try {
-        if (window.Telegram && window.Telegram.WebApp) {
-            window.Telegram.WebApp.sendData(JSON.stringify({ recommended: serverName }));
-        }
-    } catch (e) {}
 }
 
 // Массив для хранения результатов тестов для группы серверов
