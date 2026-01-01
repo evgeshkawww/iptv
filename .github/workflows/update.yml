@@ -1,8 +1,8 @@
 name: Update EPG
 on:
   schedule:
-    - cron: "0 2 * * *"   # каждый день в 02:00 UTC
-  workflow_dispatch:      # запуск вручную
+    - cron: "0 */3 * * *"   # каждые 3 часа (UTC)
+  workflow_dispatch:        # запуск вручную
 jobs:
   update:
     runs-on: ubuntu-latest
