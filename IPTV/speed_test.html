@@ -68,9 +68,8 @@ function initServers(){
                 initUI();
 
                 setTimeout(function(){
-                    I("startStopBtn").className = "running";
                     startStop();
-                },1500);
+                },500);
             }else{ //no servers are available, the test cannot proceed
                 noServersAvailable();
             }
