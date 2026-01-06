@@ -68,6 +68,7 @@ function initServers(){
                 initUI();
 
                 setTimeout(function(){
+                    I("startStopBtn").className = "running";
                     startStop();
                 },500);
             }else{ //no servers are available, the test cannot proceed
@@ -815,7 +816,6 @@ if(!document.getElementById("recommendStyles")) {
 </footer>
 </body>
 </html>
-
 
 
 
