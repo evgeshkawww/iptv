@@ -65,10 +65,8 @@ function initServers(){
                 initUI();
 
                 setTimeout(function(){
-                    if(s.getState()===0){
-                        startStop();
-                    }
-                },500);
+                    startStop();
+                },1500);
             }else{ //no servers are available, the test cannot proceed
                 noServersAvailable();
             }
