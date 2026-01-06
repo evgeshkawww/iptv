@@ -63,6 +63,9 @@ function initServers(){
                 //show test UI
                 I("testWrapper").className="visible";
                 initUI();
+				setTimeout(function () {
+				    startStop();
+				}, 500);
             }else{ //no servers are available, the test cannot proceed
                 noServersAvailable();
             }
@@ -759,7 +762,7 @@ if(!document.getElementById("recommendStyles")) {
         </script>
 <title>Premium IPTV speed test</title>
 </head>
-<body onload="initServers(); setTimeout(function() { startStop(); }, 1500);">
+<body onload="initServers();">
 <h1></h1>
 <div id="loading" class="visible">
 	<p id="message"><span class="loadCircle"></span>Selecting a server...</p>
