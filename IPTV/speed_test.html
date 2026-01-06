@@ -16,6 +16,7 @@ function I(i){return document.getElementById(i);}
 //INITIALIZE SPEEDTEST
 var s=new Speedtest(); //create speedtest object
 s.setParameter("telemetry_level","basic"); //enable telemetry
+var autoStartPending = true;
 
 //SERVER AUTO SELECTION
 function initServers(){
@@ -63,9 +64,6 @@ function initServers(){
                 //show test UI
                 I("testWrapper").className="visible";
                 initUI();
-				setTimeout(function () {
-				    startStop();
-				}, 500);
             }else{ //no servers are available, the test cannot proceed
                 noServersAvailable();
             }
@@ -137,7 +135,7 @@ function startStop(){
         document.getElementById("currentTest").innerHTML = ''
 		//speedtest is running, abort
 		s.abort();
-		data=null;
+		uiData = null;
 		I("startStopBtn").className="";
 		I("server").disabled=false;
 		initUI();
@@ -508,12 +506,35 @@ function frame(){
 	updateUI();
 }
 frame(); //start frame loop
+// ======================
+// AUTO START SPEEDTEST
+// ======================
+(function autoStartWatcher(){
+    if (!autoStartPending) {
+        return;
+    }
+
+    if (
+        typeof s !== "undefined" &&
+        typeof SPEEDTEST_SERVERS === "object" &&
+        SPEEDTEST_SERVERS.length > 0 &&
+        document.getElementById("testWrapper") &&
+        document.getElementById("testWrapper").classList.contains("visible") &&
+        s.getState &&
+        s.getState() === 0
+    ) {
+        autoStartPending = false;
+        console.log("AUTO START");
+        startStop();
+        return;
+    }
+
+    setTimeout(autoStartWatcher, 200);
+})();
 //function to (re)initialize UI
 function initUI(){
 	drawMeter(I("dlMeter"),0,meterBk,dlColor,0);
-	drawMeter(I("ulMeter"),0,meterBk,ulColor,0);
 	I("dlText").textContent="";
-	I("ulText").textContent="";
 	I("pingText").textContent="";
 	I("jitText").textContent="";
 	I("ip").textContent="";
@@ -757,9 +778,6 @@ if(!document.getElementById("recommendStyles")) {
 		}
 	}
 </style>
-<script src="llservers.js"
-        defer>
-        </script>
 <title>Premium IPTV speed test</title>
 </head>
 <body onload="initServers();">
@@ -769,7 +787,7 @@ if(!document.getElementById("recommendStyles")) {
 </div>
 <div id="testWrapper" class="hidden">
 	<div id="serverArea">
-                <select id="server" onchange="s.setSelectedServer(SPEEDTEST_SERVERS[this.value])"></select>
+                <select id="server"></select>
 		&nbsp;&nbsp;
 	<div id="startStopBtn" onclick="startStop()"></div><br/>
 	<br>
