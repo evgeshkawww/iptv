@@ -69,7 +69,7 @@ function initServers(){
 
                 setTimeout(function(){
                     startStop();
-                },500);
+                },1500);
             }else{ //no servers are available, the test cannot proceed
                 noServersAvailable();
             }
@@ -762,7 +762,7 @@ if(!document.getElementById("recommendStyles")) {
 </style>
 <title>Premium IPTV speed test</title>
 </head>
-<body>
+<body onload="initServers();">
 <h1></h1>
 <div id="loading" class="visible">
 	<p id="message"><span class="loadCircle"></span>Selecting a server...</p>
