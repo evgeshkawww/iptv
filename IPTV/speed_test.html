@@ -8,7 +8,10 @@
 <meta charset="UTF-8" />
 <link rel="stylesheet" href="style/theme.css">
 <script type="text/javascript" src="js/speedtest.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/assets/index_HJFG7776G.js"></script>
+<script
+    src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/assets/index_HJFG7776G.js"
+    onload="initServers();">
+</script>
 <script type="text/javascript">
 function I(i){return document.getElementById(i);}
 
@@ -66,7 +69,7 @@ function initServers(){
 
                 setTimeout(function(){
                     startStop();
-                },3000);
+                },1500);
             }else{ //no servers are available, the test cannot proceed
                 noServersAvailable();
             }
@@ -759,7 +762,7 @@ if(!document.getElementById("recommendStyles")) {
 </style>
 <title>Premium IPTV speed test</title>
 </head>
-<body onload="initServers();">
+<body>
 <h1></h1>
 <div id="loading" class="visible">
 	<p id="message"><span class="loadCircle"></span>Selecting a server...</p>
@@ -812,7 +815,6 @@ if(!document.getElementById("recommendStyles")) {
 </footer>
 </body>
 </html>
-
 
 
 
