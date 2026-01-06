@@ -451,79 +451,87 @@ function prepareMultiTest(groupType) {
 
 // Функция для тестирования всех серверов последовательно
 function startMultiTest() {
-    if(s.getState() == 3) {
-        // Если тест уже запущен, прерываем его
+
+    if (s.getState() == 3) {
         s.abort();
-        I("startStopBtn").className="";
-        I("server").disabled=false;
+        I("startStopBtn").className = "";
+        I("server").disabled = false;
         document.getElementById("currentTest").innerHTML = '';
         return;
     }
-    
-    s.onupdate = function(data) {
+
+    var testTimeout = null;
+
+    // ⏱ ТАЙМ-АУТ 15 СЕКУНД
+    testTimeout = setTimeout(function () {
+        console.warn("Timeout >15s, skip server:", SPEEDTEST_SERVERS[currentServer].name);
+        s.abort();
+    }, 15000);
+
+    s.onupdate = function (data) {
         uiData = data;
     };
-    
-    s.onend = function(aborted) {
-        if(!aborted) {
-            // Добавляем результат в таблицу
-            appendResult(
-                SPEEDTEST_SERVERS[currentServer].name,
-                SPEEDTEST_SERVERS[currentServer].serveropen,
-                uiData.dlStatus,
-                uiData.pingStatus,
-                uiData.jitterStatus
-            );
-            
-            // Сохраняем результат для последующего анализа
-            var result = {
-                index: currentServer,
-                name: SPEEDTEST_SERVERS[currentServer].name,
-                serveropen: SPEEDTEST_SERVERS[currentServer].serveropen,
-                dl: uiData.dlStatus,
-                ping: uiData.pingStatus,
-                jitter: uiData.jitterStatus,
-                recommended: isServerRecommended(uiData.jitterStatus, uiData.dlStatus)
-            };
-            
-            groupTestResults.push(result);
-            
-            // Находим индекс текущего сервера в массиве и переходим к следующему
-            var currentIndex = serversToTest.indexOf(currentServer);
-            if(currentIndex < serversToTest.length - 1) {
-                currentServer = serversToTest[currentIndex + 1];
-                document.getElementById("currentTest").innerHTML = "Тестируется: " + 
-                    SPEEDTEST_SERVERS[currentServer].name + 
-                    " (" + (currentIndex + 2) + " из " + serversToTest.length + ")";
-                
-                s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
-                
-                // Запускаем тест для следующего сервера
-                s.start();
-            } else {
-                // Все серверы протестированы
-                I("startStopBtn").className="";
-                I("server").disabled=false;
-                
-                // Находим лучший рекомендуемый сервер
-                var bestServer = findBestServer(groupTestResults);
-                if(bestServer) {
-                    document.getElementById("currentTest").innerHTML = 
-                        '<div class="recommendationBox recommended"><span class="recommendIcon">👍</span> ' +
-                        'Рекомендован: <strong>' + bestServer.name + '</strong></div>';
-                } else {
-                    document.getElementById("currentTest").innerHTML = 
-                        '<div class="recommendationBox notRecommended"><span class="recommendIcon">👎</span> ' +
-                        'Нет подходящих серверов</div>';
-                }
-            }
+
+    s.onend = function (aborted) {
+
+        clearTimeout(testTimeout);
+
+        if (!uiData) uiData = {
+            dlStatus: 0,
+            pingStatus: 999,
+            jitterStatus: 999
+        };
+
+        appendResult(
+            SPEEDTEST_SERVERS[currentServer].name,
+            SPEEDTEST_SERVERS[currentServer].serveropen,
+            uiData.dlStatus,
+            uiData.pingStatus,
+            uiData.jitterStatus
+        );
+
+        groupTestResults.push({
+            index: currentServer,
+            name: SPEEDTEST_SERVERS[currentServer].name,
+            serveropen: SPEEDTEST_SERVERS[currentServer].serveropen,
+            dl: uiData.dlStatus,
+            ping: uiData.pingStatus,
+            jitter: uiData.jitterStatus,
+            recommended: isServerRecommended(uiData.jitterStatus, uiData.dlStatus)
+        });
+
+        var currentIndex = serversToTest.indexOf(currentServer);
+
+        // ▶️ ПЕРЕХОД К СЛЕДУЮЩЕМУ
+        if (currentIndex < serversToTest.length - 1) {
+
+            currentServer = serversToTest[currentIndex + 1];
+
+            document.getElementById("currentTest").innerHTML =
+                "Тестируется: " + SPEEDTEST_SERVERS[currentServer].name +
+                " (" + (currentIndex + 2) + " из " + serversToTest.length + ")";
+
+            s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
+            s.start();
+
         } else {
-            // Тест был прерван
-            I("startStopBtn").className="";
-            I("server").disabled=false;
+            // 🏁 ВСЕ СЕРВЕРА ПРОЙДЕНЫ
+            I("startStopBtn").className = "";
+            I("server").disabled = false;
+
+            var bestServer = findBestServer(groupTestResults);
+
+            if (bestServer) {
+                document.getElementById("currentTest").innerHTML =
+                    '<div class="recommendationBox recommended">👍 Рекомендован: <strong>' +
+                    bestServer.name + '</strong></div>';
+            } else {
+                document.getElementById("currentTest").innerHTML =
+                    '<div class="recommendationBox notRecommended">👎 Нет подходящих серверов</div>';
+            }
         }
     };
-    
+
     s.start();
 }
 
@@ -591,16 +599,27 @@ function findBestServer(results) {
         return null;
     }
 
-    // ✅ СОРТИРОВКА: JITTER → SPEED
+    // ✅ СОРТИРОВКА: SMART (jitter < 3 → SPEED, иначе jitter)
     recommendedServers.sort(function (a, b) {
 
-        // 1. Сравнение по джиттеру (меньше = лучше)
-        if (a.jitter !== b.jitter) {
-            return a.jitter - b.jitter;
+        var jitterA = Number(a.jitter);
+        var jitterB = Number(b.jitter);
+
+        var speedA = Number(a.dl);
+        var speedB = Number(b.dl);
+
+        // 🔥 ЕСЛИ У ОБОИХ jitter < 3 → РЕШАЕТ СКОРОСТЬ
+        if (jitterA < 3 && jitterB < 3) {
+            return speedB - speedA;
         }
 
-        // 2. Если джиттер одинаковый — больше скорость лучше
-        return b.dl - a.dl;
+        // 🔁 ИНАЧЕ → РЕШАЕТ JITTER
+        if (jitterA !== jitterB) {
+            return jitterA - jitterB;
+        }
+
+        // ⚖️ ЗАПАСНОЙ ВАРИАНТ → СКОРОСТЬ
+        return speedB - speedA;
     });
 
     // Лучший сервер
