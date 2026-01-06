@@ -530,16 +530,7 @@ function startMultiTest() {
 // Функция для добавления результата в таблицу
 function appendResult(server, serveropen, dl, ping, jitter) {
     // Определяем иконку статуса на основе джиттера и скорости загрузки
-    let statusIcon;
-    if (jitter < 2) {
-        statusIcon = '⭐⭐⭐';
-    } else if (jitter < 5) {
-        statusIcon = '⭐⭐';
-    } else if (jitter < 10) {
-        statusIcon = '⭐';
-    } else {
-        statusIcon = '💀';
-    }
+    let statusIcon = getServerRating(jitter, dl);
     
     // Определяем символ статуса на основе значения serveropen
     let isopen = serveropen === "YES" ? "Online 🌎" : "OFF ❌";
@@ -556,7 +547,32 @@ function appendResult(server, serveropen, dl, ping, jitter) {
 
 // Функция для определения, рекомендуется ли сервер
 function isServerRecommended(jitter, dl) {
-    return (jitter < 10 && dl > 30);
+    return getServerRating(jitter, dl) !== "💀";
+}
+
+function getServerRating(jitter, dl) {
+
+    // ❌ жёсткие стоп-условия
+    if (dl < 30 || jitter >= 15) {
+        return "💀";
+    }
+
+    // ⭐⭐⭐
+    if (dl >= 80 && jitter < 5) {
+        return "⭐⭐⭐";
+    }
+
+    // ⭐⭐
+    if (dl >= 50 && jitter < 10) {
+        return "⭐⭐";
+    }
+
+    // ⭐
+    if (dl >= 30) {
+        return "⭐";
+    }
+
+    return "💀";
 }
 
 // Функция для поиска лучшего сервера среди протестированных
