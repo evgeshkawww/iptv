@@ -16,7 +16,6 @@ function I(i){return document.getElementById(i);}
 //INITIALIZE SPEEDTEST
 var s=new Speedtest(); //create speedtest object
 s.setParameter("telemetry_level","basic"); //enable telemetry
-var autoStartPending = true;
 
 //SERVER AUTO SELECTION
 function initServers(){
@@ -64,6 +63,12 @@ function initServers(){
                 //show test UI
                 I("testWrapper").className="visible";
                 initUI();
+
+                setTimeout(function(){
+                    if(s.getState()===0){
+                        startStop();
+                    }
+                },500);
             }else{ //no servers are available, the test cannot proceed
                 noServersAvailable();
             }
@@ -506,31 +511,7 @@ function frame(){
 	updateUI();
 }
 frame(); //start frame loop
-// ======================
-// AUTO START SPEEDTEST
-// ======================
-(function autoStartWatcher(){
-    if (!autoStartPending) {
-        return;
-    }
 
-    if (
-        typeof s !== "undefined" &&
-        typeof SPEEDTEST_SERVERS === "object" &&
-        SPEEDTEST_SERVERS.length > 0 &&
-        document.getElementById("testWrapper") &&
-        document.getElementById("testWrapper").classList.contains("visible") &&
-        s.getState &&
-        s.getState() === 0
-    ) {
-        autoStartPending = false;
-        console.log("AUTO START");
-        startStop();
-        return;
-    }
-
-    setTimeout(autoStartWatcher, 200);
-})();
 //function to (re)initialize UI
 function initUI(){
 	drawMeter(I("dlMeter"),0,meterBk,dlColor,0);
