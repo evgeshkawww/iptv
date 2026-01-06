@@ -531,11 +531,11 @@ function startMultiTest() {
 function appendResult(server, serveropen, dl, ping, jitter) {
     // Определяем иконку статуса на основе джиттера и скорости загрузки
     let statusIcon;
-    if (jitter < 3 && dl > 100) {
+    if (jitter < 2) {
         statusIcon = '⭐⭐⭐';
-    } else if (jitter < 5 && dl > 50) {
+    } else if (jitter < 5) {
         statusIcon = '⭐⭐';
-    } else if (jitter < 10 && dl > 30) {
+    } else if (jitter < 10) {
         statusIcon = '⭐';
     } else {
         statusIcon = '💀';
@@ -560,36 +560,36 @@ function isServerRecommended(jitter, dl) {
 }
 
 // Функция для поиска лучшего сервера среди протестированных
+// Функция для поиска лучшего сервера среди протестированных
 function findBestServer(results) {
-    if(!results || results.length === 0) {
+    if (!results || results.length === 0) {
         return null;
     }
-    
-    // Фильтруем серверы, которые рекомендованы и не имеют признака заполнен
-    var recommendedServers = results.filter(function(server) {
-        return server.recommended && server.serveropen === "YES";
+
+    // Оставляем только рекомендованные серверы
+    var recommendedServers = results.filter(function (server) {
+        return server.recommended === true;
     });
-    
-    if(recommendedServers.length === 0) {
-        // Если нет рекомендованных серверов с serveropen=YES, пробуем найти хотя бы любой рекомендованный
-        recommendedServers = results.filter(function(server) {
-            return server.recommended;
-        });
-        
-        if(recommendedServers.length === 0) {
-            return null; // Нет подходящих серверов
-        }
+
+    if (recommendedServers.length === 0) {
+        return null;
     }
-    
-    // Сортируем рекомендованные серверы по скорости загрузки (от высокой к низкой)
-    recommendedServers.sort(function(a, b) {
+
+    // ✅ СОРТИРОВКА: JITTER → SPEED
+    recommendedServers.sort(function (a, b) {
+
+        // 1. Сравнение по джиттеру (меньше = лучше)
+        if (a.jitter !== b.jitter) {
+            return a.jitter - b.jitter;
+        }
+
+        // 2. Если джиттер одинаковый — больше скорость лучше
         return b.dl - a.dl;
     });
-    
-    // Возвращаем лучший сервер
+
+    // Лучший сервер
     return recommendedServers[0];
 }
-
 // Массив для хранения результатов тестов для группы серверов
 var groupTestResults = [];
 var serversToTest = [];
@@ -870,7 +870,7 @@ if(!document.getElementById("recommendStyles")) {
         </script>
 <title>Premium IPTV speed test</title>
 </head>
-<body onload="initServers();">
+<body onload="initServers(); setTimeout(function() { startStop(); }, 1500);">
 <h1></h1>
 <div id="loading" class="visible">
 	<p id="message"><span class="loadCircle"></span>Selecting a server...</p>
