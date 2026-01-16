@@ -10,7 +10,7 @@ window.SPEEDTEST_SERVERS = [
     },
 	{
       name: "s2.turbod.iptv",
-      server: "https://5.tvtm.one:8080/",
+      server: "https://9.tvtm.one:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
