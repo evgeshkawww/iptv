@@ -12,212 +12,260 @@
       --muted:#9aa7b2;
       --accent:#36b37e;
     }
-    html,body{margin:0;padding:0;background:linear-gradient(135deg,var(--bg),#071a28);color:var(--text);font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Playfair Display", Arial, sans-serif;}
-    main{max-width:1100px;margin:0 auto;padding:24px;}
-    h1{font-size:26px;text-align:center;margin:0 0 18px;font-weight:700;}
-    .nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:18px;}
-    .nav a{padding:8px 12px;border:1px solid rgba(255,255,255,0.06);border-radius:8px;color:var(--accent);text-decoration:none;font-weight:700;font-size:13px;background:rgba(255,255,255,0.01);}
-    .note{color:var(--muted);text-align:center;margin-bottom:18px;font-size:14px;}
-    .section{margin:18px 0;}
-    .section h2{font-size:18px;margin:0 0 12px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;}
-    .list{display:flex;flex-direction:column;gap:14px;}
-    .item{display:flex;gap:14px;align-items:flex-start;background:var(--card);border-radius:12px;padding:12px;border:1px solid rgba(255,255,255,0.04);}
-    .thumb{flex:0 0 440px;max-width:440px;border-radius:8px;overflow:hidden;background:#000;}
-    .thumb img{display:block;width:100%;height:100%;object-fit:cover;}
-    @media (max-width:1100px){ .item{flex-direction:column;align-items:stretch;} .thumb{flex:0 0 auto;max-width:100%;} }
-    .info{flex:1;display:flex;flex-direction:column;gap:6px;}
-    .title{font-weight:800;font-size:16px;margin:0;}
+    html,body{margin:0;padding:0;background:linear-gradient(135deg,var(--bg),#071a28);color:var(--text);font-family:system-ui,Roboto,Arial;}
+    main{max-width:1100px;margin:0 auto;padding:20px;}
+    h1{text-align:center;font-size:22px;margin:0 0 12px;font-weight:700;}
+    nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:8px 0 20px;}
+    nav a{padding:8px 12px;border:1px solid var(--accent);border-radius:8px;color:var(--accent);text-decoration:none;font-weight:700;font-size:14px;}
+    .section-title{font-size:14px;color:var(--muted);margin:18px 0 6px;font-weight:700;text-transform:uppercase;}
+    .list{display:flex;flex-direction:column;gap:18px;}
+    .item{background:var(--card);border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.04);}
+    .meta{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;}
+    .title{font-weight:800;font-size:16px;margin:0;color:var(--text);}
     .link{color:var(--accent);font-weight:700;text-decoration:none;word-break:break-all;}
     .desc{color:var(--muted);font-size:13px;margin:0;}
-    .small{color:var(--muted);font-size:12px;}
-    pre.code{background:#071827;color:#9fffb0;padding:10px;border-radius:8px;overflow:auto;font-size:13px;}
+    .thumbs{display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap;margin-top:8px;}
+    .main-thumb{flex:0 0 440px;max-width:440px;border-radius:8px;overflow:hidden;background:#000;}
+    .main-thumb img{display:block;width:100%;height:100%;object-fit:cover;}
+    .mini{width:120px;height:80px;border-radius:6px;overflow:hidden;background:#000;}
+    .mini img{width:100%;height:100%;object-fit:cover;display:block;}
+    @media (max-width:1100px){ .main-thumb{flex:0 0 100%;max-width:100%;} .mini{width:30%;} }
+    footer{margin-top:20px;color:var(--muted);font-size:13px;text-align:center;}
   </style>
 </head>
 <body>
   <main>
-    <h1>Плагины для Lampa — Каталог (с превью)</h1>
+    <h1>Плагины для Lampa — Полный каталог</h1>
 
-    <div class="nav">
+    <nav>
       <a href="#ui">Оформление</a>
       <a href="#themes">Темы</a>
       <a href="#collections">Подборки</a>
       <a href="#torrents">Торренты</a>
       <a href="#startpages">Стартовые</a>
       <a href="#misc">Разное</a>
-    </div>
-
-    <p class="note">Превью берутся с CDN: <strong>https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/</strong>. Если CDN недоступен, сработает fallback на GitHub Pages: <strong>https://evgeshkawww.github.io/iptv/IPTV/img/</strong>.</p>
+    </nav>
 
     <!-- Оформление -->
-    <section id="ui" class="section">
-      <h2>Плагины для оформления</h2>
+    <section id="ui">
+      <div class="section-title">Оформление</div>
       <div class="list">
 
-        <!-- rating_omdb -->
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-194558.webp"
-                 alt="rating_omdb"
-                 onerror="imgFallback(this,'screenshot_20251012-194558.webp')">
-          </div>
-          <div class="info">
-            <div class="title">rating_omdb.js — Рейтинги (IMDB/TMDB/Metacritic/Rotten)</div>
+          <div class="meta">
+            <div class="title">rating_omdb.js — Рейтинги (IMDB / TMDB / Metacritic / Rotten)</div>
             <a class="link" href="https://tvigl.info/plugins/rating_omdb.js" target="_blank" rel="noopener">https://tvigl.info/plugins/rating_omdb.js</a>
-            <p class="desc">Агрегирует рейтинги из нескольких источников, считает итоговую оценку, показывает награды и возрастные ограничения.</p>
+            <p class="desc">Агрегирует рейтинги из нескольких источников, вычисляет итоговую оценку и показывает награды и возрастные ограничения.</p>
+          </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-194558.webp"
+                   alt="rating_omdb"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'screenshot_20251012-194558.webp')">
+            </div>
+            <div class="mini">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-194558@x2.webp"
+                   alt="rating_omdb_x2"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'screenshot_20251012-194558@x2.webp')">
+            </div>
           </div>
         </article>
 
-        <!-- vote_colour -->
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-195403.webp"
-                 alt="vote_colour"
-                 onerror="imgFallback(this,'screenshot_20251012-195403.webp')">
-          </div>
-          <div class="info">
+          <div class="meta">
             <div class="title">vote_colour.js — Цветовые рейтинги на карточках</div>
             <a class="link" href="https://tvigl.info/plugins/vote_colour.js" target="_blank" rel="noopener">https://tvigl.info/plugins/vote_colour.js</a>
             <p class="desc">Подсветка рейтингов по диапазонам значений: красный/оранжевый/синий/зелёный.</p>
           </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-195403.webp"
+                   alt="vote_colour"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'screenshot_20251012-195403.webp')">
+            </div>
+            <div class="mini">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-195403@x2.webp"
+                   alt="vote_colour_x2"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'screenshot_20251012-195403@x2.webp')">
+            </div>
+          </div>
         </article>
 
-        <!-- collections -->
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-195922.webp"
-                 alt="collections"
-                 onerror="imgFallback(this,'screenshot_20251012-195922.webp')">
-          </div>
-          <div class="info">
-            <div class="title">collections.js — Подборки Netflix/Prime/HBO/Disney/Apple/Hulu</div>
+          <div class="meta">
+            <div class="title">collections.js — Подборки (Netflix / Prime / HBO / Disney / Apple / Hulu)</div>
             <a class="link" href="https://tvigl.info/plugins/collections.js" target="_blank" rel="noopener">https://tvigl.info/plugins/collections.js</a>
             <p class="desc">Добавляет раздел «Подборки» и пункты в боковом меню для популярных сетей (TMDB networks).</p>
           </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-195922.webp"
+                   alt="collections"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'screenshot_20251012-195922.webp')">
+            </div>
+          </div>
         </article>
 
-        <!-- 3buttons -->
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-202947.webp"
-                 alt="3buttons"
-                 onerror="imgFallback(this,'screenshot_20251012-202947.webp')">
-          </div>
-          <div class="info">
-            <div class="title">3buttons.js — Стилизация кнопок (Online/Torrent/Trailers)</div>
+          <div class="meta">
+            <div class="title">3buttons.js — Стилизация кнопок (Online / Torrent / Trailers)</div>
             <a class="link" href="https://tvigl.info/plugins/3buttons.js" target="_blank" rel="noopener">https://tvigl.info/plugins/3buttons.js</a>
             <p class="desc">Меняет порядок и оформление кнопок источников в карточке.</p>
           </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-202947.webp"
+                   alt="3buttons"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'screenshot_20251012-202947.webp')">
+            </div>
+          </div>
         </article>
 
-        <!-- cache -->
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-202513.webp"
-                 alt="cache"
-                 onerror="imgFallback(this,'screenshot_20251012-202513.webp')">
-          </div>
-          <div class="info">
+          <div class="meta">
             <div class="title">cache.js — Кнопка очистки кэша + стили</div>
             <a class="link" href="https://tvigl.info/plugins/cache.js" target="_blank" rel="noopener">https://tvigl.info/plugins/cache.js</a>
             <p class="desc">Добавляет CLEARCACHE в шапку, анимации и цветовую индикацию типов источников.</p>
           </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-202513.webp"
+                   alt="cache"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'screenshot_20251012-202513.webp')">
+            </div>
+          </div>
         </article>
 
-        <!-- exit -->
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-203147.webp"
-                 alt="exit"
-                 onerror="imgFallback(this,'screenshot_20251012-203147.webp')">
-          </div>
-          <div class="info">
+          <div class="meta">
             <div class="title">exit.js — Кнопка «Выход» в меню</div>
             <a class="link" href="https://tvigl.info/plugins/exit.js" target="_blank" rel="noopener">https://tvigl.info/plugins/exit.js</a>
             <p class="desc">Добавляет пункт «Выход» в главное меню Lampa.</p>
           </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-203147.webp"
+                   alt="exit"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'screenshot_20251012-203147.webp')">
+            </div>
+          </div>
         </article>
 
-        <!-- logo -->
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-210912.webp"
-                 alt="logo"
-                 onerror="imgFallback(this,'screenshot_20251012-210912.webp')">
-          </div>
-          <div class="info">
+          <div class="meta">
             <div class="title">logo.js — Логотипы вместо названий</div>
             <a class="link" href="https://tvigl.info/plugins/logo.js" target="_blank" rel="noopener">https://tvigl.info/plugins/logo.js</a>
             <p class="desc">Подменяет текст названия на логотип из TMDB. Режимы: только логотип, логотип+текст.</p>
           </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-210912.webp"
+                   alt="logo"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'screenshot_20251012-210912.webp')">
+            </div>
+          </div>
         </article>
 
-        <!-- quality -->
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-211221.webp"
-                 alt="quality"
-                 onerror="imgFallback(this,'screenshot_20251012-211221.webp')">
-          </div>
-          <div class="info">
-            <div class="title">quality.js — Отметки качества (4K/FHD/HD)</div>
+          <div class="meta">
+            <div class="title">quality.js — Отметки качества (4K / FHD / HD)</div>
             <a class="link" href="https://tvigl.info/plugins/quality.js" target="_blank" rel="noopener">https://tvigl.info/plugins/quality.js</a>
             <p class="desc">Показывает максимальное качество по данным JacRed (2160p/1080p/720p).</p>
           </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-211221.webp"
+                   alt="quality"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'screenshot_20251012-211221.webp')">
+            </div>
+          </div>
         </article>
 
-        <!-- seasons -->
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-211636.webp"
-                 alt="seasons"
-                 onerror="imgFallback(this,'screenshot_20251012-211636.webp')">
-          </div>
-          <div class="info">
-            <div class="title">seasons.js — Сезоны/серии на карточках</div>
+          <div class="meta">
+            <div class="title">seasons.js — Сезоны / серии на карточках</div>
             <a class="link" href="https://tvigl.info/plugins/seasons.js" target="_blank" rel="noopener">https://tvigl.info/plugins/seasons.js</a>
             <p class="desc">Добавляет информацию о сезоне и серии прямо на карточке.</p>
           </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-211636.webp"
+                   alt="seasons"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'screenshot_20251012-211636.webp')">
+            </div>
+          </div>
         </article>
 
-        <!-- notrailers -->
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251221-174042.webp"
-                 alt="notrailers"
-                 onerror="imgFallback(this,'screenshot_20251221-174042.webp')">
-          </div>
-          <div class="info">
+          <div class="meta">
             <div class="title">notrailers.js — Убирает кнопку «Трейлеры»</div>
             <a class="link" href="https://tvigl.info/plugins/notrailers.js" target="_blank" rel="noopener">https://tvigl.info/plugins/notrailers.js</a>
             <p class="desc">Скрывает кнопку трейлеров в карточках и на страницах.</p>
           </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251221-174042.webp"
+                   alt="notrailers"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'screenshot_20251221-174042.webp')">
+            </div>
+          </div>
         </article>
 
-        <!-- maxsm_ratings -->
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251013-000619.webp"
-                 alt="maxsm_ratings"
-                 onerror="imgFallback(this,'screenshot_20251013-000619.webp')">
-          </div>
-          <div class="info">
+          <div class="meta">
             <div class="title">maxsm_ratings.js — Рейтинг в карточке (Макс)</div>
             <a class="link" href="https://tvigl.info/plugins/maxsm_ratings.js" target="_blank" rel="noopener">https://tvigl.info/plugins/maxsm_ratings.js</a>
             <p class="desc">Отображает рейтинг внутри карточки в кастомном стиле.</p>
           </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251013-000619.webp"
+                   alt="maxsm_ratings"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'screenshot_20251013-000619.webp')">
+            </div>
+          </div>
         </article>
 
-        <!-- aloader -->
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251013-001546.webp"
-                 alt="aloader"
-                 onerror="imgFallback(this,'screenshot_20251013-001546.webp')">
-          </div>
-          <div class="info">
+          <div class="meta">
             <div class="title">aloader.js — Анимация загрузки</div>
             <a class="link" href="https://tvigl.info/plugins/aloader.js" target="_blank" rel="noopener">https://tvigl.info/plugins/aloader.js</a>
             <p class="desc">Добавляет визуальные индикаторы и анимации загрузки элементов интерфейса.</p>
+          </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251013-001546.webp"
+                   alt="aloader"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'screenshot_20251013-001546.webp')">
+            </div>
           </div>
         </article>
 
@@ -225,78 +273,98 @@
     </section>
 
     <!-- Темы -->
-    <section id="themes" class="section">
-      <h2>Темы</h2>
+    <section id="themes">
+      <div class="section-title">Темы</div>
       <div class="list">
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251019-160333.webp"
-                 alt="drxaos_themes"
-                 onerror="imgFallback(this,'screenshot_20251019-160333.webp')">
-          </div>
-          <div class="info">
+          <div class="meta">
             <div class="title">drxaos_themes.js — Тема от DrXAOS</div>
             <a class="link" href="https://tvigl.info/plugins/drxaos_themes.js" target="_blank" rel="noopener">https://tvigl.info/plugins/drxaos_themes.js</a>
             <p class="desc">Набор визуальных тем оформления.</p>
+          </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251019-160333.webp"
+                   alt="drxaos_themes"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'screenshot_20251019-160333.webp')">
+            </div>
           </div>
         </article>
       </div>
     </section>
 
     <!-- Подборки -->
-    <section id="collections" class="section">
-      <h2>Подборки</h2>
+    <section id="collections">
+      <div class="section-title">Подборки</div>
       <div class="list">
 
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-195922.webp"
-                 alt="prisma"
-                 onerror="imgFallback(this,'screenshot_20251012-195922.webp')">
-          </div>
-          <div class="info">
+          <div class="meta">
             <div class="title">prisma_collections.js — Levende Prisma</div>
             <a class="link" href="https://levende.github.io/lampa-plugins/prisma_collections.js?v=2" target="_blank" rel="noopener">https://levende.github.io/lampa-plugins/prisma_collections.js?v=2</a>
             <p class="desc">Готовые подборки от Levende.</p>
           </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-195922.webp"
+                   alt="prisma"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'screenshot_20251012-195922.webp')">
+            </div>
+          </div>
         </article>
 
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/snimok-jekrana-2025-11-15-195501.webp"
-                 alt="lnum"
-                 onerror="imgFallback(this,'snimok-jekrana-2025-11-15-195501.webp')">
-          </div>
-          <div class="info">
+          <div class="meta">
             <div class="title">lnum.js — LNUM подборки</div>
             <a class="link" href="https://levende.github.io/lampa-plugins/lnum.js" target="_blank" rel="noopener">https://levende.github.io/lampa-plugins/lnum.js</a>
             <p class="desc">Подборки и фильтры от LNUM.</p>
           </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/snimok-jekrana-2025-11-15-195501.webp"
+                   alt="lnum"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'snimok-jekrana-2025-11-15-195501.webp')">
+            </div>
+          </div>
         </article>
 
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/snimok-jekrana-2025-12-18-183101.webp"
-                 alt="nmprs"
-                 onerror="imgFallback(this,'snimok-jekrana-2025-12-18-183101.webp')">
-          </div>
-          <div class="info">
+          <div class="meta">
             <div class="title">nmprs.js — NUMParser</div>
             <a class="link" href="https://num.jac-red.ru/plugin/nmprs.js" target="_blank" rel="noopener">https://num.jac-red.ru/plugin/nmprs.js</a>
             <p class="desc">Парсер и дополнительные подборки/источники.</p>
           </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/snimok-jekrana-2025-12-18-183101.webp"
+                   alt="nmprs"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'snimok-jekrana-2025-12-18-183101.webp')">
+            </div>
+          </div>
         </article>
 
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/111.webp"
-                 alt="movietv"
-                 onerror="imgFallback(this,'111.webp')">
-          </div>
-          <div class="info">
+          <div class="meta">
             <div class="title">MovieTV.js — Дополнительный каталог</div>
             <a class="link" href="https://rugaroo888.github.io/movietv-plugin/MovieTV.js" target="_blank" rel="noopener">https://rugaroo888.github.io/movietv-plugin/MovieTV.js</a>
             <p class="desc">Дополнительный каталог фильмов и сериалов.</p>
+          </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/111.webp"
+                   alt="movietv"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'111.webp')">
+            </div>
           </div>
         </article>
 
@@ -304,46 +372,58 @@
     </section>
 
     <!-- Торренты -->
-    <section id="torrents" class="section">
-      <h2>Торренты</h2>
+    <section id="torrents">
+      <div class="section-title">Торренты</div>
       <div class="list">
 
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-212734.webp"
-                 alt="torr_styles"
-                 onerror="imgFallback(this,'screenshot_20251012-212734.webp')">
-          </div>
-          <div class="info">
+          <div class="meta">
             <div class="title">torr_styles.js — Стилизация результатов торрентов</div>
             <a class="link" href="https://tvigl.info/plugins/torr_styles.js" target="_blank" rel="noopener">https://tvigl.info/plugins/torr_styles.js</a>
             <p class="desc">Визуально улучшает список результатов торрентов.</p>
           </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-212734.webp"
+                   alt="torr_styles"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'screenshot_20251012-212734.webp')">
+            </div>
+          </div>
         </article>
 
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/snipaste_2025-12-23_13-23-42.webp"
-                 alt="continue_watching"
-                 onerror="imgFallback(this,'snipaste_2025-12-23_13-23-42.webp')">
-          </div>
-          <div class="info">
+          <div class="meta">
             <div class="title">ContinueWatching.js — Продолжить просмотр</div>
             <a class="link" href="https://arst113.github.io/log/ContinueWatching.js" target="_blank" rel="noopener">https://arst113.github.io/log/ContinueWatching.js</a>
             <p class="desc">Добавляет логику и кнопку для продолжения просмотра.</p>
           </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/snipaste_2025-12-23_13-23-42.webp"
+                   alt="continue_watching"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'snipaste_2025-12-23_13-23-42.webp')">
+            </div>
+          </div>
         </article>
 
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/snipaste_2025-12-29_19-44-46.webp"
-                 alt="easytorrent"
-                 onerror="imgFallback(this,'snipaste_2025-12-29_19-44-46.webp')">
-          </div>
-          <div class="info">
+          <div class="meta">
             <div class="title">easytorrent.min.js — EasyTorrent</div>
             <a class="link" href="https://darkestclouds.github.io/plugins/easytorrent/easytorrent.min.js" target="_blank" rel="noopener">https://darkestclouds.github.io/plugins/easytorrent/easytorrent.min.js</a>
             <p class="desc">Упрощает работу с торрент‑источниками.</p>
+          </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/snipaste_2025-12-29_19-44-46.webp"
+                   alt="easytorrent"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'snipaste_2025-12-29_19-44-46.webp')">
+            </div>
           </div>
         </article>
 
@@ -351,112 +431,137 @@
     </section>
 
     <!-- Стартовые страницы -->
-    <section id="startpages" class="section">
-      <h2>Стартовые страницы</h2>
+    <section id="startpages">
+      <div class="section-title">Стартовые страницы</div>
       <div class="list">
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-195403.webp"
-                 alt="startpages"
-                 onerror="imgFallback(this,'screenshot_20251012-195403.webp')">
-          </div>
-          <div class="info">
-            <div class="title">Стартовые страницы</div>
+          <div class="meta">
+            <div class="title">Стартовые страницы — добавьте свои плагины</div>
             <a class="link" href="#" target="_blank" rel="noopener">—</a>
-            <p class="desc">Добавь сюда нужные плагины стартовых страниц, если используешь.</p>
+            <p class="desc">Если у вас есть стартовые плагины — вставьте их сюда по шаблону.</p>
+          </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251012-195403.webp"
+                   alt="startpages"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'screenshot_20251012-195403.webp')">
+            </div>
           </div>
         </article>
       </div>
     </section>
 
     <!-- Разное -->
-    <section id="misc" class="section">
-      <h2>Разное</h2>
+    <section id="misc">
+      <div class="section-title">Разное</div>
       <div class="list">
 
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251221-174042.webp"
-                 alt="garland"
-                 onerror="imgFallback(this,'screenshot_20251221-174042.webp')">
-          </div>
-          <div class="info">
+          <div class="meta">
             <div class="title">new_year3.js — Гирлянда</div>
             <a class="link" href="https://tvigl.info/plugins/new_year3.js" target="_blank" rel="noopener">https://tvigl.info/plugins/new_year3.js</a>
             <p class="desc">Праздничная гирлянда для шапки интерфейса.</p>
           </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/screenshot_20251221-174042.webp"
+                   alt="garland"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'screenshot_20251221-174042.webp')">
+            </div>
+          </div>
         </article>
 
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/1766607756_video_rain.webp"
-                 alt="rain"
-                 onerror="imgFallback(this,'1766607756_video_rain.webp')">
-          </div>
-          <div class="info">
+          <div class="meta">
             <div class="title">rain_realistic_sound.js — Дождь (реалистичный звук)</div>
             <a class="link" href="https://weritos666.github.io/rain_realistic_sound.js" target="_blank" rel="noopener">https://weritos666.github.io/rain_realistic_sound.js</a>
             <p class="desc">Реалистичный дождь с фоновым звуком.</p>
           </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/1766607756_video_rain.webp"
+                   alt="rain"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'1766607756_video_rain.webp')">
+            </div>
+          </div>
         </article>
 
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/snipaste_2025-12-25_15-11-25.webp"
-                 alt="vanta"
-                 onerror="imgFallback(this,'snipaste_2025-12-25_15-11-25.webp')">
-          </div>
-          <div class="info">
+          <div class="meta">
             <div class="title">Vanta.js — Туман (Vanta)</div>
             <a class="link" href="https://mulumuu.github.io/mulumuu.githib.io/Vanta.js" target="_blank" rel="noopener">https://mulumuu.github.io/mulumuu.githib.io/Vanta.js</a>
             <p class="desc">Фоновая анимация тумана/эффекты Vanta.</p>
           </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/snipaste_2025-12-25_15-11-25.webp"
+                   alt="vanta"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'snipaste_2025-12-25_15-11-25.webp')">
+            </div>
+          </div>
         </article>
 
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/www.webp"
-                 alt="phone_menu"
-                 onerror="imgFallback(this,'www.webp')">
-          </div>
-          <div class="info">
+          <div class="meta">
             <div class="title">phone_menu.js — Меню для телефонов</div>
             <a class="link" href="https://tvigl.info/plugins/phone_menu.js" target="_blank" rel="noopener">https://tvigl.info/plugins/phone_menu.js</a>
             <p class="desc">Адаптация меню под телефоны.</p>
           </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/www.webp"
+                   alt="phone_menu"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'www.webp')">
+            </div>
+          </div>
         </article>
 
         <article class="item">
-          <div class="thumb">
-            <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/snimok-jekrana-2026-01-14-180301.webp"
-                 alt="shots1"
-                 onerror="imgFallback(this,'snimok-jekrana-2026-01-14-180301.webp')">
-          </div>
-          <div class="info">
+          <div class="meta">
             <div class="title">shots1.js — Отключение Shots</div>
             <a class="link" href="https://tvigl.info/plugins/shots1.js" target="_blank" rel="noopener">https://tvigl.info/plugins/shots1.js</a>
             <p class="desc">Отключает отображение Shots в интерфейсе.</p>
+          </div>
+          <div class="thumbs">
+            <div class="main-thumb">
+              <img src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/img/snimok-jekrana-2026-01-14-180301.webp"
+                   alt="shots1"
+                   crossorigin="anonymous"
+                   referrerpolicy="no-referrer"
+                   onerror="imgFallback(this,'snimok-jekrana-2026-01-14-180301.webp')">
+            </div>
           </div>
         </article>
 
       </div>
     </section>
 
+    <footer>Если какие‑то превью не отображаются — проверьте, что соответствующие файлы лежат в <code>/IPTV/img/</code> репозитория и доступны по CDN.</footer>
   </main>
 
   <script>
     // fallback: если CDN не отдаёт картинку, подставляем GitHub Pages копию
     function imgFallback(imgEl, localName){
       try{
-        var local = 'https://evgeshkawww.github.io/iptv/IPTV/img/' + localName;
-        if(imgEl.src === local) return;
+        var gh = 'https://evgeshkawww.github.io/iptv/IPTV/img/' + localName;
+        if(imgEl.src === gh) return;
         imgEl.onerror = null;
-        imgEl.src = local;
+        imgEl.src = gh;
       }catch(e){}
     }
 
     // плавный скролл для навигации
-    document.querySelectorAll('.nav a[href^="#"]').forEach(a=>{
+    document.querySelectorAll('nav a[href^="#"]').forEach(a=>{
       a.addEventListener('click', function(e){
         e.preventDefault();
         var id = this.getAttribute('href').slice(1);
