@@ -2,84 +2,553 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Плагины для Lampa</title>
-  <link rel="stylesheet" href="styles/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lampa Плагины — Средняя часть</title>
+
+  <!-- Мини-стили под твою тёмную тему -->
+  <style>
+    :root{
+      --bg:#0b162b; --card:#0f1f3a; --text:#e6eef6; --muted:#9aa7b2; --accent:#36b37e;
+    }
+    html,body{margin:0; padding:0; background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,"Playfair Display",sans-serif;}
+    main{max-width:1100px; margin:0 auto; padding:20px;}
+    .header-text{font-size:22px; margin:0 0 16px; font-weight:700; text-align:center;}
+    .nav{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:0 0 16px;}
+    .nav a{display:inline-block; padding:8px 12px; border:1px solid var(--accent); border-radius:8px; color:var(--accent); text-decoration:none; font-weight:700; font-size:14px;}
+    .nav a:hover{background:rgba(54,179,126,0.1);}
+    section{margin:24px 0;}
+    section h3{font-size:18px; margin:0 0 12px; font-weight:800; text-transform:uppercase; letter-spacing:.3px;}
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+    @media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr);} }
+    @media (max-width:600px){ .grid{grid-template-columns:1fr;} }
+    .card{background:var(--card); border:1px solid rgba(255,255,255,0.08); border-radius:12px; overflow:hidden;}
+    .card img{width:100%; height:auto; display:block;}
+    .card .body{padding:12px;}
+    .card .title{font-weight:800; font-size:15px; margin:0 0 6px;}
+    .card .link{display:inline-block; color:var(--accent); font-weight:700; text-decoration:none; font-size:14px;}
+    .card .link:hover{text-decoration:underline;}
+    .card details{margin-top:8px;}
+    .card summary{cursor:pointer; color:#cfe7da; font-weight:700;}
+    .muted{color:var(--muted); font-size:13px;}
+  </style>
 </head>
 <body>
   <main>
-    <h2 style="text-align:center;">Список плагинов для Lampa</h2>
+    <h2 class="header-text">Список плагинов для Lampa (без онлайн)</h2>
 
-    <!-- Навигация -->
-    <ul>
-      <li><a href="#design">🎨 Оформление</a></li>
-      <li><a href="#themes">🎭 Темы</a></li>
-      <li><a href="#collections">📚 Подборки</a></li>
-      <li><a href="#torrents">🌀 Торренты</a></li>
-      <li><a href="#start">🏠 Стартовые страницы</a></li>
-      <li><a href="#other">🔧 Разное</a></li>
-    </ul>
+    <!-- Меню-якоря -->
+    <nav class="nav">
+      <a href="#ui">Оформление</a>
+      <a href="#themes">Темы</a>
+      <a href="#collections">Подборки</a>
+      <a href="#torrents">Торренты</a>
+      <a href="#startpages">Стартовые страницы</a>
+      <a href="#misc">Разное</a>
+    </nav>
 
     <!-- Оформление -->
-    <h3 id="design">🎨 Плагины для оформления</h3>
-    <ul>
-      <li><a href="https://tvigl.info/plugins/rating_omdb.js" target="_blank">Рейтинги IMDb/TMDB/MetaCritic/Rotten Tomato</a></li>
-      <li><a href="https://tvigl.info/plugins/vote_colour.js" target="_blank">Цветные рейтинги</a></li>
-      <li><a href="https://tvigl.info/plugins/collections.js" target="_blank">Подборки Netflix/Prime/HBO/Disney</a></li>
-      <li><a href="https://tvigl.info/plugins/3buttons.js" target="_blank">Стилизация кнопок</a></li>
-      <li><a href="https://tvigl.info/plugins/cache.js" target="_blank">Кнопка кэша</a></li>
-      <li><a href="https://tvigl.info/plugins/exit.js" target="_blank">Кнопка выхода</a></li>
-      <li><a href="https://tvigl.info/plugins/logo.js" target="_blank">Логотипы вместо названий</a></li>
-      <li><a href="https://tvigl.info/plugins/quality.js" target="_blank">Качество на карточках</a></li>
-      <li><a href="https://tvigl.info/plugins/seasons.js" target="_blank">Сезоны/серии</a></li>
-      <li><a href="https://tvigl.info/plugins/notrailers.js" target="_blank">Убирает трейлеры</a></li>
-      <li><a href="https://tvigl.info/plugins/appleTV.js" target="_blank">Apple TV интерфейс</a></li>
-    </ul>
+    <section id="ui">
+      <h3>Плагины для оформления</h3>
+      <div class="grid">
+
+        <!-- rating_omdb -->
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-194558.webp" alt="rating_omdb">
+          <div class="body">
+            <div class="title">Рейтинги IMDb/TMDB/MetaCritic/Rotten Tomatoes</div>
+            <a class="link" href="https://tvigl.info/plugins/rating_omdb.js" target="_blank" rel="noopener">rating_omdb.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Агрегирует рейтинги из нескольких источников, считает итоговую оценку, показывает награды и возрастные ограничения.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- vote_colour -->
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195403.webp" alt="vote_colour">
+          <div class="body">
+            <div class="title">Цветные рейтинги на карточках</div>
+            <a class="link" href="https://tvigl.info/plugins/vote_colour.js" target="_blank" rel="noopener">vote_colour.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Подсветка рейтингов по диапазонам значений: красный/оранжевый/синий/зелёный.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- collections -->
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195922.webp" alt="collections">
+          <div class="body">
+            <div class="title">Подборки Netflix/Prime/HBO/Disney/Apple/Hulu</div>
+            <a class="link" href="https://tvigl.info/plugins/collections.js" target="_blank" rel="noopener">collections.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Добавляет раздел «Подборки» и пункты в боковом меню для популярных сетей (TMDB networks).</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- 3buttons -->
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202947.webp" alt="3buttons">
+          <div class="body">
+            <div class="title">Стилизация кнопок: Online/Torrent/Trailers</div>
+            <a class="link" href="https://tvigl.info/plugins/3buttons.js" target="_blank" rel="noopener">3buttons.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Меняет порядок и оформление кнопок источников в карточке. Часто используется в Lampac.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- cache -->
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp" alt="cache">
+          <div class="body">
+            <div class="title">Кнопка очистки кэша + стили</div>
+            <a class="link" href="https://tvigl.info/plugins/cache.js" target="_blank" rel="noopener">cache.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Добавляет CLEARCACHE в шапку, анимации, цветовую индикацию типов источников.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- exit -->
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-203147.webp" alt="exit">
+          <div class="body">
+            <div class="title">Кнопка «Выход» в меню</div>
+            <a class="link" href="https://tvigl.info/plugins/exit.js" target="_blank" rel="noopener">exit.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Добавляет пункт «Выход» в главное меню Lampa.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- logo -->
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-210912.webp" alt="logo">
+          <div class="body">
+            <div class="title">Логотипы вместо названий</div>
+            <a class="link" href="https://tvigl.info/plugins/logo.js" target="_blank" rel="noopener">logo.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Подменяет текст названия на логотип из TMDB. Режимы: только логотип, логотип+текст.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- quality -->
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195403.webp" alt="quality">
+          <div class="body">
+            <div class="title">Отметки качества (4K/FHD/HD)</div>
+            <a class="link" href="https://tvigl.info/plugins/quality.js" target="_blank" rel="noopener">quality.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Показывает максимальное качество по данным JacRed (ориентиры 2160p/1080p/720p).</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- seasons -->
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195403.webp" alt="seasons">
+          <div class="body">
+            <div class="title">Сезоны/серии на карточках</div>
+            <a class="link" href="https://tvigl.info/plugins/seasons.js" target="_blank" rel="noopener">seasons.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Добавляет информацию о сезоне и серии прямо на карточке.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- notrailers -->
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195403.webp" alt="notrailers">
+          <div class="body">
+            <div class="title">Убирает кнопку «Трейлеры»</div>
+            <a class="link" href="https://tvigl.info/plugins/notrailers.js" target="_blank" rel="noopener">notrailers.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Скрывает кнопку трейлеров в карточках.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- maxsm_ratings -->
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195403.webp" alt="maxsm_ratings">
+          <div class="body">
+            <div class="title">Рейтинг в карточке (Макс)</div>
+            <a class="link" href="https://tvigl.info/plugins/maxsm_ratings.js" target="_blank" rel="noopener">maxsm_ratings.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Отображает рейтинг внутри карточки в кастомном стиле.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- aloader -->
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195403.webp" alt="aloader">
+          <div class="body">
+            <div class="title">Анимация загрузки</div>
+            <a class="link" href="https://tvigl.info/plugins/aloader.js" target="_blank" rel="noopener">aloader.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Добавляет визуальную анимацию загрузки элементов.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- ratingup -->
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195403.webp" alt="ratingup">
+          <div class="body">
+            <div class="title">Рейтинг вверху справа</div>
+            <a class="link" href="https://tvigl.info/plugins/ratingup.js" target="_blank" rel="noopener">ratingup.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Выводит рейтинг на карточке в верхнем правом углу.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- surs_quality -->
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195403.webp" alt="surs_quality">
+          <div class="body">
+            <div class="title">Качество внутри карточек</div>
+            <a class="link" href="https://tvigl.info/plugins/surs_quality.js" target="_blank" rel="noopener">surs_quality.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Показывает качество прямо в карточке, без переходов.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- src-filter -->
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195403.webp" alt="src-filter">
+          <div class="body">
+            <div class="title">Опции с балансерами в фильтрах</div>
+            <a class="link" href="https://tvigl.info/plugins/src-filter.js" target="_blank" rel="noopener">src-filter.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Добавляет фильтры/балансеры в местах переводы/сезоны.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- appleTV -->
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195403.webp" alt="appleTV">
+          <div class="body">
+            <div class="title">Интерфейс в стиле Apple TV</div>
+            <a class="link" href="https://tvigl.info/plugins/appleTV.js" target="_blank" rel="noopener">appleTV.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Меняет интерфейс на Apple TV‑подобный.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- buttons -->
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202947.webp" alt="buttons">
+          <div class="body">
+            <div class="title">Управление кнопками на странице</div>
+            <a class="link" href="https://mylampa1.github.io/buttons.js" target="_blank" rel="noopener">buttons.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Кастомизирует порядок/видимость кнопок на страницах.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- head_filter -->
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp" alt="head_filter">
+          <div class="body">
+            <div class="title">Настройки значков в шапке</div>
+            <a class="link" href="https://tvigl.info/plugins/head_filter.js" target="_blank" rel="noopener">head_filter.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Добавляет фильтры/значки в верхнюю панель.</p>
+            </details>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
     <!-- Темы -->
-    <h3 id="themes">🎭 Темы</h3>
-    <ul>
-      <li><a href="https://tvigl.info/plugins/drxaos_themes.js" target="_blank">Тема DrXAOS</a></li>
-    </ul>
+    <section id="themes">
+      <h3>Темы</h3>
+      <div class="grid">
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195403.webp" alt="drxaos_themes">
+          <div class="body">
+            <div class="title">Тема от DrXAOS</div>
+            <a class="link" href="https://tvigl.info/plugins/drxaos_themes.js" target="_blank" rel="noopener">drxaos_themes.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Набор визуальных тем оформления от DrXAOS.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Подборки -->
-    <h3 id="collections">📚 Подборки</h3>
-    <ul>
-      <li><a href="https://aviamovie.github.io/surs.js" target="_blank">SURS</a></li>
-      <li><a href="https://tvigl.info/plugins/tmdb_mod.js" target="_blank">TMDB mod</a></li>
-      <li><a href="https://levende.github.io/lampa-plugins/lnum.js" target="_blank">LNUM</a></li>
-      <li><a href="https://levende.github.io/lampa-plugins/prisma_collections.js?v=2" target="_blank">Levende Prisma</a></li>
-      <li><a href="https://num.jac-red.ru/plugin/nmprs.js" target="_blank">NUMParser</a></li>
-      <li><a href="https://rugaroo888.github.io/movietv-plugin/MovieTV.js" target="_blank">MovieTV</a></li>
-      <li><a href="https://syvyj.github.io/studios_4lampa/studios.js" target="_blank">Студии (многоязычный)</a></li>
-    </ul>
+    <section id="collections">
+      <h3>Плагины для подборок</h3>
+      <div class="grid">
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195922.webp" alt="surs">
+          <div class="body">
+            <div class="title">SURS</div>
+            <a class="link" href="https://aviamovie.github.io/surs.js" target="_blank" rel="noopener">surs.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Подборки от SURS—категории и быстрый доступ.</p>
+            </details>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195922.webp" alt="tmdb_mod">
+          <div class="body">
+            <div class="title">TMDB mod</div>
+            <a class="link" href="https://tvigl.info/plugins/tmdb_mod.js" target="_blank" rel="noopener">tmdb_mod.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Расширенные подборки на базе TMDB.</p>
+            </details>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195922.webp" alt="lnum">
+          <div class="body">
+            <div class="title">LNUM</div>
+            <a class="link" href="https://levende.github.io/lampa-plugins/lnum.js" target="_blank" rel="noopener">lnum.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Подборки и фильтры от LNUM.</p>
+            </details>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195922.webp" alt="prisma">
+          <div class="body">
+            <div class="title">Levende Prisma</div>
+            <a class="link" href="https://levende.github.io/lampa-plugins/prisma_collections.js?v=2" target="_blank" rel="noopener">prisma_collections.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Готовые подборки от Levende.</p>
+            </details>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195922.webp" alt="numparser">
+          <div class="body">
+            <div class="title">NUMParser</div>
+            <a class="link" href="https://num.jac-red.ru/plugin/nmprs.js" target="_blank" rel="noopener">nmprs.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Дополнительные подборки и парсинг релизов.</p>
+            </details>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195922.webp" alt="movietv">
+          <div class="body">
+            <div class="title">MovieTV</div>
+            <a class="link" href="https://rugaroo888.github.io/movietv-plugin/MovieTV.js" target="_blank" rel="noopener">MovieTV.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Дополнительный каталог фильмов/сериалов.</p>
+            </details>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195922.webp" alt="studios">
+          <div class="body">
+            <div class="title">Студии (многоязычный)</div>
+            <a class="link" href="https://syvyj.github.io/studios_4lampa/studios.js" target="_blank" rel="noopener">studios.js (ориг.)</a>
+            <br>
+            <a class="link" href="https://tvigl.info/plugins/studios.js" target="_blank" rel="noopener">studios.js (укр/рус/eng/pl)</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Быстрый доступ к контенту по студиям.</p>
+            </details>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
     <!-- Торренты -->
-    <h3 id="torrents">🌀 Торренты</h3>
-    <ul>
-      <li><a href="https://tvigl.info/plugins/torr_styles.js" target="_blank">Стилизация результатов</a></li>
-      <li><a href="https://arst113.github.io/log/ContinueWatching.js" target="_blank">Продолжить просмотр</a></li>
-      <li><a href="https://darkestclouds.github.io/plugins/easytorrent/easytorrent.min.js" target="_blank">EasyTorrent</a></li>
-    </ul>
+    <section id="torrents">
+      <h3>Плагины для торрентов</h3>
+      <div class="grid">
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202947.webp" alt="torr_styles">
+          <div class="body">
+            <div class="title">Стилизация результатов торрентов</div>
+            <a class="link" href="https://tvigl.info/plugins/torr_styles.js" target="_blank" rel="noopener">torr_styles.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Визуально улучшает список результатов торрентов.</p>
+            </details>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202947.webp" alt="continue_watching">
+          <div class="body">
+            <div class="title">Продолжить просмотр (торренты)</div>
+            <a class="link" href="https://arst113.github.io/log/ContinueWatching.js" target="_blank" rel="noopener">ContinueWatching.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Добавляет кнопку/логику продолжения просмотра.</p>
+            </details>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202947.webp" alt="easytorrent">
+          <div class="body">
+            <div class="title">EasyTorrent</div>
+            <a class="link" href="https://darkestclouds.github.io/plugins/easytorrent/easytorrent.min.js" target="_blank" rel="noopener">easytorrent.min.js</a>
+            <details><summary>Описание</summary>
+              <p class="muted">Упрощает работу с торрент‑источниками.</p>
+            </details>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
     <!-- Стартовые страницы -->
-    <h3 id="start">🏠 Стартовые страницы</h3>
-    <ul>
-      <li><a href="https://tvigl.info/plugins/cardify.js" target="_blank">Автопоказ трейлеров</a></li>
-      <li><a href="https://tvigl.info/plugins/123.js" target="_blank">Убирает «123»</a></li>
-      <li><a href="https://levende.github.io/lampa-plugins/custom-favs.js" target="_blank">Пользовательские избранные</a></li>
-    </ul>
+    <section id="startpages">
+      <h3>Стартовые страницы</h3>
+      <div class="grid">
+        <!-- Если нужны конкретные плагины стартовых страниц — добавим, пока оставим секцию пустой -->
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195403.webp" alt="start">
+          <div class="body">
+            <div class="title">Стартовые страницы</div>
+            <span class="muted">Добавь сюда нужные плагины стартовых страниц, если используешь.</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Разное -->
-    <h3 id="other">🔧 Разное</h3>
-    <ul>
-      <li><a href="https://fovway.github.io/lampacJS/ai_search/ai_search.js" target="_blank">AI‑поиск</a></li>
-      <li><a href="https://tvigl.info/plugins/phone_menu.js" target="_blank">Меню для телефонов</a></li>
-      <li><a href="https://tvigl.info/plugins/shots1.js" target="_blank">Отключение Shots</a></li>
-      <li><a href="https://tvigl.info/plugins/new_year1.js" target="_blank">Новогодние эффекты: снег</a></li>
-      <li><a href="https://tvigl.info/plugins/new_year2.js" target="_blank">Новогодние эффекты: гирлянда</a></li>
-      <li><a href="https://tvigl.info/plugins/rain_realistic_sound.js" target="_blank">Эффект дождя</a></li>
-      <li><a href="https://tvigl.info/plugins/Vanta.js" target="_blank">Эффект тумана</a></li>
-    </ul>
+    <section id="misc">
+      <h3>Разное</h3>
+      <div class="grid">
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-203147.webp" alt="exit">
+          <div class="body">
+            <div class="title">Кнопка выхода</div>
+            <a class="link" href="https://tvigl.info/plugins/exit.js" target="_blank" rel="noopener">exit.js</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp" alt="cardify">
+          <div class="body">
+            <div class="title">Автопоказ трейлеров в «Новости»</div>
+            <a class="link" href="https://tvigl.info/plugins/cardify.js" target="_blank" rel="noopener">cardify.js</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp" alt="123">
+          <div class="body">
+            <div class="title">Убирает «123» на главной</div>
+            <a class="link" href="https://tvigl.info/plugins/123.js" target="_blank" rel="noopener">123.js</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp" alt="custom-favs">
+          <div class="body">
+            <div class="title">Пользовательские избранные</div>
+            <a class="link" href="https://levende.github.io/lampa-plugins/custom-favs.js" target="_blank" rel="noopener">custom-favs.js</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp" alt="ai_search">
+          <div class="body">
+            <div class="title">AI‑поиск №1</div>
+            <a class="link" href="https://fovway.github.io/lampacJS/ai_search/ai_search.js" target="_blank" rel="noopener">ai_search.js</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp" alt="ai2">
+          <div class="body">
+            <div class="title">AI‑поиск №2</div>
+            <a class="link" href="#" target="_blank" rel="noopener">ai_2.js</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp" alt="new_year1">
+          <div class="body">
+            <div class="title">Снег №1</div>
+            <a class="link" href="https://tvigl.info/plugins/new_year1.js" target="_blank" rel="noopener">new_year1.js</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp" alt="new_year2">
+          <div class="body">
+            <div class="title">Снег №2</div>
+            <a class="link" href="https://tvigl.info/plugins/new_year2.js" target="_blank" rel="noopener">new_year2.js</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp" alt="snow">
+          <div class="body">
+            <div class="title">Снег №3</div>
+            <a class="link" href="https://nemiroff.github.io/lampa/snow.js" target="_blank" rel="noopener">snow.js</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp" alt="garland">
+          <div class="body">
+            <div class="title">Гирлянда</div>
+            <a class="link" href="https://tvigl.info/plugins/new_year3.js" target="_blank" rel="noopener">new_year3.js</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp" alt="rain">
+          <div class="body">
+            <div class="title">Дождь (реалистичный звук)</div>
+            <a class="link" href="https://weritos666.github.io/rain_realistic_sound.js" target="_blank" rel="noopener">rain_realistic_sound.js</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp" alt="vanta">
+          <div class="body">
+            <div class="title">Туман (Vanta)</div>
+            <a class="link" href="https://mulumuu.github.io/mulumuu.githib.io/Vanta.js" target="_blank" rel="noopener">Vanta.js</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp" alt="phone_menu">
+          <div class="body">
+            <div class="title">Меню для телефонов</div>
+            <a class="link" href="https://tvigl.info/plugins/phone_menu.js" target="_blank" rel="noopener">phone_menu.js</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp" alt="shots">
+          <div class="body">
+            <div class="title">Отключение Shots</div>
+            <a class="link" href="https://tvigl.info/plugins/shots1.js" target="_blank" rel="noopener">shots1.js</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
   </main>
 </body>
