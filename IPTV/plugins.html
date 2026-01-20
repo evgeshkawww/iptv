@@ -1,27 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lampa Плагины - Список плагинов</title>
+  <title>Плагины для Lampa</title>
   <link rel="stylesheet" href="styles/style.css">
-  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="list.js"></script>
-  <script src="scripts/script.js" defer></script>
 </head>
 <body>
   <main>
-    <h2 class="header-text" style="text-align: center;">Список плагинов для онлайн-кинотеатра Lampa</h2>
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Поиск плагинов от разработчиков">
-    </div>
-    <div id="tabsContainer" class="tabs-container">
-      <div id="overflow-mobile" class="swiper">
-        <div class="swiper-wrapper"></div>
-      </div>
-    </div>
-    <div class="card-grid" id="cardGrid"></div>
+    <h2 style="text-align:center;">Список плагинов для Lampa</h2>
+
+    <!-- Навигация -->
+    <ul>
+      <li><a href="#design">🎨 Оформление</a></li>
+      <li><a href="#themes">🎭 Темы</a></li>
+      <li><a href="#collections">📚 Подборки</a></li>
+      <li><a href="#torrents">🌀 Торренты</a></li>
+      <li><a href="#start">🏠 Стартовые страницы</a></li>
+      <li><a href="#other">🔧 Разное</a></li>
+    </ul>
+
+    <!-- Оформление -->
+    <h3 id="design">🎨 Плагины для оформления</h3>
+    <ul>
+      <li><a href="https://tvigl.info/plugins/rating_omdb.js" target="_blank">Рейтинги IMDb/TMDB/MetaCritic/Rotten Tomato</a></li>
+      <li><a href="https://tvigl.info/plugins/vote_colour.js" target="_blank">Цветные рейтинги</a></li>
+      <li><a href="https://tvigl.info/plugins/collections.js" target="_blank">Подборки Netflix/Prime/HBO/Disney</a></li>
+      <li><a href="https://tvigl.info/plugins/3buttons.js" target="_blank">Стилизация кнопок</a></li>
+      <li><a href="https://tvigl.info/plugins/cache.js" target="_blank">Кнопка кэша</a></li>
+      <li><a href="https://tvigl.info/plugins/exit.js" target="_blank">Кнопка выхода</a></li>
+      <li><a href="https://tvigl.info/plugins/logo.js" target="_blank">Логотипы вместо названий</a></li>
+      <li><a href="https://tvigl.info/plugins/quality.js" target="_blank">Качество на карточках</a></li>
+      <li><a href="https://tvigl.info/plugins/seasons.js" target="_blank">Сезоны/серии</a></li>
+      <li><a href="https://tvigl.info/plugins/notrailers.js" target="_blank">Убирает трейлеры</a></li>
+      <li><a href="https://tvigl.info/plugins/appleTV.js" target="_blank">Apple TV интерфейс</a></li>
+    </ul>
+
+    <!-- Темы -->
+    <h3 id="themes">🎭 Темы</h3>
+    <ul>
+      <li><a href="https://tvigl.info/plugins/drxaos_themes.js" target="_blank">Тема DrXAOS</a></li>
+    </ul>
+
+    <!-- Подборки -->
+    <h3 id="collections">📚 Подборки</h3>
+    <ul>
+      <li><a href="https://aviamovie.github.io/surs.js" target="_blank">SURS</a></li>
+      <li><a href="https://tvigl.info/plugins/tmdb_mod.js" target="_blank">TMDB mod</a></li>
+      <li><a href="https://levende.github.io/lampa-plugins/lnum.js" target="_blank">LNUM</a></li>
+      <li><a href="https://levende.github.io/lampa-plugins/prisma_collections.js?v=2" target="_blank">Levende Prisma</a></li>
+      <li><a href="https://num.jac-red.ru/plugin/nmprs.js" target="_blank">NUMParser</a></li>
+      <li><a href="https://rugaroo888.github.io/movietv-plugin/MovieTV.js" target="_blank">MovieTV</a></li>
+      <li><a href="https://syvyj.github.io/studios_4lampa/studios.js" target="_blank">Студии (многоязычный)</a></li>
+    </ul>
+
+    <!-- Торренты -->
+    <h3 id="torrents">🌀 Торренты</h3>
+    <ul>
+      <li><a href="https://tvigl.info/plugins/torr_styles.js" target="_blank">Стилизация результатов</a></li>
+      <li><a href="https://arst113.github.io/log/ContinueWatching.js" target="_blank">Продолжить просмотр</a></li>
+      <li><a href="https://darkestclouds.github.io/plugins/easytorrent/easytorrent.min.js" target="_blank">EasyTorrent</a></li>
+    </ul>
+
+    <!-- Стартовые страницы -->
+    <h3 id="start">🏠 Стартовые страницы</h3>
+    <ul>
+      <li><a href="https://tvigl.info/plugins/cardify.js" target="_blank">Автопоказ трейлеров</a></li>
+      <li><a href="https://tvigl.info/plugins/123.js" target="_blank">Убирает «123»</a></li>
+      <li><a href="https://levende.github.io/lampa-plugins/custom-favs.js" target="_blank">Пользовательские избранные</a></li>
+    </ul>
+
+    <!-- Разное -->
+    <h3 id="other">🔧 Разное</h3>
+    <ul>
+      <li><a href="https://fovway.github.io/lampacJS/ai_search/ai_search.js" target="_blank">AI‑поиск</a></li>
+      <li><a href="https://tvigl.info/plugins/phone_menu.js" target="_blank">Меню для телефонов</a></li>
+      <li><a href="https://tvigl.info/plugins/shots1.js" target="_blank">Отключение Shots</a></li>
+      <li><a href="https://tvigl.info/plugins/new_year1.js" target="_blank">Новогодние эффекты: снег</a></li>
+      <li><a href="https://tvigl.info/plugins/new_year2.js" target="_blank">Новогодние эффекты: гирлянда</a></li>
+      <li><a href="https://tvigl.info/plugins/rain_realistic_sound.js" target="_blank">Эффект дождя</a></li>
+      <li><a href="https://tvigl.info/plugins/Vanta.js" target="_blank">Эффект тумана</a></li>
+    </ul>
+
   </main>
 </body>
 </html>
