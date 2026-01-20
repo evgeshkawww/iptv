@@ -3,53 +3,56 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Плагины для Lampa — Каталог</title>
+  <title>Плагины Lampa — Полный каталог</title>
   <style>
     :root{
-      --bg:#0b162b;
+      --bg:#071127;
       --card:#0f1f3a;
       --text:#e6eef6;
       --muted:#9aa7b2;
       --accent:#36b37e;
     }
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial;}
-    main{max-width:1100px;margin:0 auto;padding:20px;}
-    h1{font-size:22px;margin:0 0 12px;text-align:center;font-weight:700;}
-    nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:8px 0 20px;}
-    nav a{padding:8px 12px;border:1px solid var(--accent);border-radius:8px;color:var(--accent);text-decoration:none;font-weight:700;font-size:14px;}
-    nav a:hover{background:rgba(54,179,126,0.06);}
+    html,body{margin:0;padding:0;background:linear-gradient(135deg,var(--bg),#071a28);color:var(--text);font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Playfair Display", Arial, sans-serif;}
+    main{max-width:1100px;margin:0 auto;padding:24px;}
+    h1{font-size:26px;text-align:center;margin:0 0 18px;font-weight:700;}
+    .nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:18px;}
+    .nav a{padding:8px 12px;border:1px solid rgba(255,255,255,0.06);border-radius:8px;color:var(--accent);text-decoration:none;font-weight:700;font-size:13px;background:rgba(255,255,255,0.01);}
+    .note{color:var(--muted);text-align:center;margin-bottom:18px;font-size:14px;}
+    .section{margin:18px 0;}
+    .section h2{font-size:18px;margin:0 0 12px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;}
     .list{display:flex;flex-direction:column;gap:14px;}
     .item{display:flex;gap:14px;align-items:flex-start;background:var(--card);border-radius:12px;padding:12px;border:1px solid rgba(255,255,255,0.04);}
-    @media (max-width:900px){ .item{flex-direction:column;align-items:stretch;} }
-    .thumb{flex:0 0 220px;max-width:220px;border-radius:8px;overflow:hidden;background:#000;}
+    .thumb{flex:0 0 440px;max-width:440px;border-radius:8px;overflow:hidden;background:#000;}
     .thumb img{display:block;width:100%;height:100%;object-fit:cover;}
-    .info{flex:1;display:flex;flex-direction:column;gap:8px;}
-    .title{font-weight:800;font-size:16px;margin:0;color:var(--text);}
+    @media (max-width:1100px){ .item{flex-direction:column;align-items:stretch;} .thumb{flex:0 0 auto;max-width:100%;} }
+    .info{flex:1;display:flex;flex-direction:column;gap:6px;}
+    .title{font-weight:800;font-size:16px;margin:0;}
     .link{color:var(--accent);font-weight:700;text-decoration:none;word-break:break-all;}
-    .link:hover{text-decoration:underline;}
     .desc{color:var(--muted);font-size:13px;margin:0;}
-    .small{font-size:13px;color:var(--muted);margin:6px 0 0;}
-    .section-title{font-size:14px;color:var(--muted);margin:18px 0 6px;font-weight:700;text-transform:uppercase;}
+    .small{color:var(--muted);font-size:12px;}
+    pre.code{background:#071827;color:#9fffb0;padding:10px;border-radius:8px;overflow:auto;font-size:13px;}
   </style>
 </head>
 <body>
   <main>
-    <h1>Список плагинов для Lampa</h1>
-
-    <nav>
+    <h1>Плагины для Lampa — Каталог (с превью)</h1>
+    <div class="nav">
       <a href="#ui">Оформление</a>
       <a href="#themes">Темы</a>
       <a href="#collections">Подборки</a>
       <a href="#torrents">Торренты</a>
-      <a href="#startpages">Стартовые страницы</a>
+      <a href="#startpages">Стартовые</a>
       <a href="#misc">Разное</a>
-    </nav>
+    </div>
+
+    <p class="note">Каждая карточка содержит название плагина, ссылку на .js и превью. Если внешние превью блокируются, сработает fallback на локальную папку <code>/IPTV/img/</code>.</p>
 
     <!-- Оформление -->
-    <section id="ui">
-      <div class="section-title">Оформление</div>
+    <section id="ui" class="section">
+      <h2>Плагины для оформления</h2>
       <div class="list">
 
+        <!-- rating_omdb -->
         <article class="item">
           <div class="thumb">
             <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-194558.webp"
@@ -57,12 +60,13 @@
                  onerror="imgFallback(this,'screenshot_20251012-194558.webp')">
           </div>
           <div class="info">
-            <div class="title">Рейтинги IMDb TMDB Metacritic Rotten Tomatoes</div>
+            <div class="title">rating_omdb.js — Рейтинги (IMDB/TMDB/Metacritic/Rotten)</div>
             <a class="link" href="https://tvigl.info/plugins/rating_omdb.js" target="_blank" rel="noopener">https://tvigl.info/plugins/rating_omdb.js</a>
-            <p class="desc">Агрегирует рейтинги из нескольких источников и показывает итоговую оценку.</p>
+            <p class="desc">Агрегирует рейтинги из нескольких источников, считает итоговую оценку, показывает награды и возрастные ограничения.</p>
           </div>
         </article>
 
+        <!-- vote_colour -->
         <article class="item">
           <div class="thumb">
             <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195403.webp"
@@ -70,12 +74,27 @@
                  onerror="imgFallback(this,'screenshot_20251012-195403.webp')">
           </div>
           <div class="info">
-            <div class="title">Цветные рейтинги на карточках</div>
+            <div class="title">vote_colour.js — Цветовые рейтинги на карточках</div>
             <a class="link" href="https://tvigl.info/plugins/vote_colour.js" target="_blank" rel="noopener">https://tvigl.info/plugins/vote_colour.js</a>
-            <p class="desc">Подсветка рейтингов цветом по диапазонам значений.</p>
+            <p class="desc">Подсветка рейтингов по диапазонам значений: красный/оранжевый/синий/зелёный.</p>
           </div>
         </article>
 
+        <!-- collections -->
+        <article class="item">
+          <div class="thumb">
+            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195922.webp"
+                 alt="collections"
+                 onerror="imgFallback(this,'screenshot_20251012-195922.webp')">
+          </div>
+          <div class="info">
+            <div class="title">collections.js — Подборки Netflix/Prime/HBO/Disney/Apple/Hulu</div>
+            <a class="link" href="https://tvigl.info/plugins/collections.js" target="_blank" rel="noopener">https://tvigl.info/plugins/collections.js</a>
+            <p class="desc">Добавляет раздел «Подборки» и пункты в боковом меню для популярных сетей (TMDB networks).</p>
+          </div>
+        </article>
+
+        <!-- 3buttons -->
         <article class="item">
           <div class="thumb">
             <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202947.webp"
@@ -83,12 +102,13 @@
                  onerror="imgFallback(this,'screenshot_20251012-202947.webp')">
           </div>
           <div class="info">
-            <div class="title">3buttons — порядок и стили кнопок</div>
+            <div class="title">3buttons.js — Стилизация кнопок (Online/Torrent/Trailers)</div>
             <a class="link" href="https://tvigl.info/plugins/3buttons.js" target="_blank" rel="noopener">https://tvigl.info/plugins/3buttons.js</a>
-            <p class="desc">Изменяет порядок и внешний вид кнопок источников в карточках.</p>
+            <p class="desc">Меняет порядок и оформление кнопок источников в карточке.</p>
           </div>
         </article>
 
+        <!-- cache -->
         <article class="item">
           <div class="thumb">
             <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp"
@@ -96,12 +116,13 @@
                  onerror="imgFallback(this,'screenshot_20251012-202513.webp')">
           </div>
           <div class="info">
-            <div class="title">Кнопка очистки кэша и стили</div>
+            <div class="title">cache.js — Кнопка очистки кэша + стили</div>
             <a class="link" href="https://tvigl.info/plugins/cache.js" target="_blank" rel="noopener">https://tvigl.info/plugins/cache.js</a>
-            <p class="desc">Добавляет кнопку очистки кэша и улучшает визуализацию элементов.</p>
+            <p class="desc">Добавляет CLEARCACHE в шапку, анимации и цветовую индикацию типов источников.</p>
           </div>
         </article>
 
+        <!-- exit -->
         <article class="item">
           <div class="thumb">
             <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-203147.webp"
@@ -109,12 +130,13 @@
                  onerror="imgFallback(this,'screenshot_20251012-203147.webp')">
           </div>
           <div class="info">
-            <div class="title">Кнопка Выход</div>
+            <div class="title">exit.js — Кнопка «Выход» в меню</div>
             <a class="link" href="https://tvigl.info/plugins/exit.js" target="_blank" rel="noopener">https://tvigl.info/plugins/exit.js</a>
             <p class="desc">Добавляет пункт «Выход» в главное меню Lampa.</p>
           </div>
         </article>
 
+        <!-- logo -->
         <article class="item">
           <div class="thumb">
             <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-210912.webp"
@@ -122,48 +144,163 @@
                  onerror="imgFallback(this,'screenshot_20251012-210912.webp')">
           </div>
           <div class="info">
-            <div class="title">Логотипы вместо названий</div>
+            <div class="title">logo.js — Логотипы вместо названий</div>
             <a class="link" href="https://tvigl.info/plugins/logo.js" target="_blank" rel="noopener">https://tvigl.info/plugins/logo.js</a>
-            <p class="desc">Заменяет текст названия на логотипы из TMDB.</p>
+            <p class="desc">Подменяет текст названия на логотип из TMDB. Режимы: только логотип, логотип+текст.</p>
           </div>
         </article>
 
+        <!-- quality -->
         <article class="item">
           <div class="thumb">
-            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195403.webp"
+            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-211221.webp"
                  alt="quality"
-                 onerror="imgFallback(this,'screenshot_20251012-195403.webp')">
+                 onerror="imgFallback(this,'screenshot_20251012-211221.webp')">
           </div>
           <div class="info">
-            <div class="title">Отметки качества 4K FHD HD</div>
+            <div class="title">quality.js — Отметки качества (4K/FHD/HD)</div>
             <a class="link" href="https://tvigl.info/plugins/quality.js" target="_blank" rel="noopener">https://tvigl.info/plugins/quality.js</a>
-            <p class="desc">Показывает максимальное доступное качество по данным внешних источников.</p>
+            <p class="desc">Показывает максимальное качество по данным JacRed (2160p/1080p/720p).</p>
           </div>
         </article>
 
+        <!-- seasons -->
         <article class="item">
           <div class="thumb">
-            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195403.webp"
+            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-211636.webp"
                  alt="seasons"
-                 onerror="imgFallback(this,'screenshot_20251012-195403.webp')">
+                 onerror="imgFallback(this,'screenshot_20251012-211636.webp')">
           </div>
           <div class="info">
-            <div class="title">Сезоны и серии на карточках</div>
+            <div class="title">seasons.js — Сезоны/серии на карточках</div>
             <a class="link" href="https://tvigl.info/plugins/seasons.js" target="_blank" rel="noopener">https://tvigl.info/plugins/seasons.js</a>
-            <p class="desc">Отображает информацию о сезоне и серии прямо в карточке.</p>
+            <p class="desc">Добавляет информацию о сезоне и серии прямо на карточке.</p>
           </div>
         </article>
 
+        <!-- notrailers -->
         <article class="item">
           <div class="thumb">
-            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195403.webp"
+            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-212247.webp"
                  alt="notrailers"
-                 onerror="imgFallback(this,'screenshot_20251012-195403.webp')">
+                 onerror="imgFallback(this,'screenshot_20251012-212247.webp')">
           </div>
           <div class="info">
-            <div class="title">Убирает кнопку Трейлеры</div>
+            <div class="title">notrailers.js — Убирает кнопку «Трейлеры»</div>
             <a class="link" href="https://tvigl.info/plugins/notrailers.js" target="_blank" rel="noopener">https://tvigl.info/plugins/notrailers.js</a>
-            <p class="desc">Скрывает кнопку трейлеров в карточках и на страницах.</p>
+            <p class="desc">Скрывает кнопку трейлеров в карточках.</p>
+          </div>
+        </article>
+
+        <!-- maxsm_ratings -->
+        <article class="item">
+          <div class="thumb">
+            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-000619.webp"
+                 alt="maxsm_ratings"
+                 onerror="imgFallback(this,'screenshot_20251013-000619.webp')">
+          </div>
+          <div class="info">
+            <div class="title">maxsm_ratings.js — Рейтинг в карточке (Макс)</div>
+            <a class="link" href="https://tvigl.info/plugins/maxsm_ratings.js" target="_blank" rel="noopener">https://tvigl.info/plugins/maxsm_ratings.js</a>
+            <p class="desc">Отображает объединённый рейтинг, награды и возрастные ограничения в карточке.</p>
+          </div>
+        </article>
+
+        <!-- aloader -->
+        <article class="item">
+          <div class="thumb">
+            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-001546.webp"
+                 alt="aloader"
+                 onerror="imgFallback(this,'screenshot_20251013-001546.webp')">
+          </div>
+          <div class="info">
+            <div class="title">aloader.js — Анимация загрузки</div>
+            <a class="link" href="https://tvigl.info/plugins/aloader.js" target="_blank" rel="noopener">https://tvigl.info/plugins/aloader.js</a>
+            <p class="desc">Добавляет набор SVG-прелоадеров и настраиваемые индикаторы загрузки.</p>
+          </div>
+        </article>
+
+        <!-- ratingup -->
+        <article class="item">
+          <div class="thumb">
+            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-200617.webp"
+                 alt="ratingup"
+                 onerror="imgFallback(this,'screenshot_20251013-200617.webp')">
+          </div>
+          <div class="info">
+            <div class="title">ratingup.js — Рейтинг вверху справа</div>
+            <a class="link" href="https://tvigl.info/plugins/ratingup.js" target="_blank" rel="noopener">https://tvigl.info/plugins/ratingup.js</a>
+            <p class="desc">Выводит рейтинг на карточке в верхнем правом углу с цветовой индикацией.</p>
+          </div>
+        </article>
+
+        <!-- surs_quality -->
+        <article class="item">
+          <div class="thumb">
+            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-201455.webp"
+                 alt="surs_quality"
+                 onerror="imgFallback(this,'screenshot_20251013-201455.webp')">
+          </div>
+          <div class="info">
+            <div class="title">surs_quality.js — Качество внутри карточек</div>
+            <a class="link" href="https://tvigl.info/plugins/surs_quality.js" target="_blank" rel="noopener">https://tvigl.info/plugins/surs_quality.js</a>
+            <p class="desc">Показывает разрешение и пометки «Экранка» прямо в карточке.</p>
+          </div>
+        </article>
+
+        <!-- src-filter -->
+        <article class="item">
+          <div class="thumb">
+            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-203817.webp"
+                 alt="src-filter"
+                 onerror="imgFallback(this,'screenshot_20251013-203817.webp')">
+          </div>
+          <div class="info">
+            <div class="title">src-filter.js — Опции с балансерами в фильтрах</div>
+            <a class="link" href="https://tvigl.info/plugins/src-filter.js" target="_blank" rel="noopener">https://tvigl.info/plugins/src-filter.js</a>
+            <p class="desc">Добавляет фильтры/балансеры в местах переводы/сезоны.</p>
+          </div>
+        </article>
+
+        <!-- appleTV -->
+        <article class="item">
+          <div class="thumb">
+            <img src="https://tvigl.info/uploads/posts/2026-01/medium/screenshot_20260103-144659.webp"
+                 alt="appleTV"
+                 onerror="imgFallback(this,'screenshot_20260103-144659.webp')">
+          </div>
+          <div class="info">
+            <div class="title">appleTV.js — Интерфейс в стиле Apple TV</div>
+            <a class="link" href="https://tvigl.info/plugins/appleTV.js" target="_blank" rel="noopener">https://tvigl.info/plugins/appleTV.js</a>
+            <p class="desc">Меняет интерфейс на Apple TV‑подобный: логотипы, плавные анимации, улучшенные постеры.</p>
+          </div>
+        </article>
+
+        <!-- buttons -->
+        <article class="item">
+          <div class="thumb">
+            <img src="https://tvigl.info/uploads/posts/2026-01/medium/3333333333333.webp"
+                 alt="buttons"
+                 onerror="imgFallback(this,'3333333333333.webp')">
+          </div>
+          <div class="info">
+            <div class="title">buttons.js — Управление кнопками на странице</div>
+            <a class="link" href="https://mylampa1.github.io/buttons.js" target="_blank" rel="noopener">https://mylampa1.github.io/buttons.js</a>
+            <p class="desc">Кастомизирует порядок/видимость кнопок на страницах фильма/сериала.</p>
+          </div>
+        </article>
+
+        <!-- head_filter -->
+        <article class="item">
+          <div class="thumb">
+            <img src="https://tvigl.info/uploads/posts/2026-01/medium/www.webp"
+                 alt="head_filter"
+                 onerror="imgFallback(this,'www.webp')">
+          </div>
+          <div class="info">
+            <div class="title">head_filter.js — Настройки значков в шапке</div>
+            <a class="link" href="https://tvigl.info/plugins/head_filter.js" target="_blank" rel="noopener">https://tvigl.info/plugins/head_filter.js</a>
+            <p class="desc">Добавляет фильтры/значки в верхнюю панель, позволяет отключать элементы шапки.</p>
           </div>
         </article>
 
@@ -171,39 +308,39 @@
     </section>
 
     <!-- Темы -->
-    <section id="themes">
-      <div class="section-title">Темы</div>
+    <section id="themes" class="section">
+      <h2>Темы</h2>
       <div class="list">
         <article class="item">
           <div class="thumb">
-            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195403.webp"
+            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251019-160333.webp"
                  alt="drxaos_themes"
-                 onerror="imgFallback(this,'screenshot_20251012-195403.webp')">
+                 onerror="imgFallback(this,'screenshot_20251019-160333.webp')">
           </div>
           <div class="info">
-            <div class="title">Тема DrXAOS</div>
+            <div class="title">drxaos_themes.js — Тема от DrXAOS</div>
             <a class="link" href="https://tvigl.info/plugins/drxaos_themes.js" target="_blank" rel="noopener">https://tvigl.info/plugins/drxaos_themes.js</a>
-            <p class="desc">Набор визуальных тем оформления.</p>
+            <p class="desc">Набор визуальных тем оформления: Cyberpunk, Matrix, Retro Wave, Ice Blue и т.д.</p>
           </div>
         </article>
       </div>
     </section>
 
     <!-- Подборки -->
-    <section id="collections">
-      <div class="section-title">Подборки</div>
+    <section id="collections" class="section">
+      <h2>Подборки</h2>
       <div class="list">
 
         <article class="item">
           <div class="thumb">
-            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195922.webp"
+            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251014-193222.webp"
                  alt="surs"
-                 onerror="imgFallback(this,'screenshot_20251012-195922.webp')">
+                 onerror="imgFallback(this,'screenshot_20251014-193222.webp')">
           </div>
           <div class="info">
-            <div class="title">SURS</div>
+            <div class="title">surs.js — SURS подборки</div>
             <a class="link" href="https://aviamovie.github.io/surs.js" target="_blank" rel="noopener">https://aviamovie.github.io/surs.js</a>
-            <p class="desc">Подборки и категории от SURS.</p>
+            <p class="desc">Подборки и персонализированные блоки для главного экрана.</p>
           </div>
         </article>
 
@@ -214,33 +351,20 @@
                  onerror="imgFallback(this,'screenshot_20251012-195922.webp')">
           </div>
           <div class="info">
-            <div class="title">TMDB mod</div>
+            <div class="title">tmdb_mod.js — TMDB mod</div>
             <a class="link" href="https://tvigl.info/plugins/tmdb_mod.js" target="_blank" rel="noopener">https://tvigl.info/plugins/tmdb_mod.js</a>
-            <p class="desc">Расширенные подборки и фильтры на базе TMDB.</p>
+            <p class="desc">Расширенные подборки на базе TMDB, кастомные списки и фильтры.</p>
           </div>
         </article>
 
         <article class="item">
           <div class="thumb">
-            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195922.webp"
-                 alt="lnum"
-                 onerror="imgFallback(this,'screenshot_20251012-195922.webp')">
-          </div>
-          <div class="info">
-            <div class="title">LNUM</div>
-            <a class="link" href="https://levende.github.io/lampa-plugins/lnum.js" target="_blank" rel="noopener">https://levende.github.io/lampa-plugins/lnum.js</a>
-            <p class="desc">Подборки и фильтры от LNUM.</p>
-          </div>
-        </article>
-
-        <article class="item">
-          <div class="thumb">
-            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195922.webp"
+            <img src="https://tvigl.info/uploads/posts/2025-11/medium/snipaste_2025-11-15_20-07-35.webp"
                  alt="prisma"
-                 onerror="imgFallback(this,'screenshot_20251012-195922.webp')">
+                 onerror="imgFallback(this,'snipaste_2025-11-15_20-07-35.webp')">
           </div>
           <div class="info">
-            <div class="title">Levende Prisma</div>
+            <div class="title">prisma_collections.js — Levende Prisma</div>
             <a class="link" href="https://levende.github.io/lampa-plugins/prisma_collections.js?v=2" target="_blank" rel="noopener">https://levende.github.io/lampa-plugins/prisma_collections.js?v=2</a>
             <p class="desc">Готовые подборки от Levende.</p>
           </div>
@@ -248,27 +372,53 @@
 
         <article class="item">
           <div class="thumb">
-            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195922.webp"
-                 alt="numparser"
-                 onerror="imgFallback(this,'screenshot_20251012-195922.webp')">
+            <img src="https://tvigl.info/uploads/posts/2025-11/medium/snimok-jekrana-2025-11-15-195501.webp"
+                 alt="lnum"
+                 onerror="imgFallback(this,'snimok-jekrana-2025-11-15-195501.webp')">
           </div>
           <div class="info">
-            <div class="title">NUMParser</div>
-            <a class="link" href="https://num.jac-red.ru/plugin/nmprs.js" target="_blank" rel="noopener">https://num.jac-red.ru/plugin/nmprs.js</a>
-            <p class="desc">Парсер и дополнительные подборки.</p>
+            <div class="title">lnum.js — LNUM подборки</div>
+            <a class="link" href="https://levende.github.io/lampa-plugins/lnum.js" target="_blank" rel="noopener">https://levende.github.io/lampa-plugins/lnum.js</a>
+            <p class="desc">Подборки и фильтры от LNUM.</p>
           </div>
         </article>
 
         <article class="item">
           <div class="thumb">
-            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195922.webp"
-                 alt="movietv"
-                 onerror="imgFallback(this,'screenshot_20251012-195922.webp')">
+            <img src="https://tvigl.info/uploads/posts/2025-12/medium/snimok-jekrana-2025-12-18-183101.webp"
+                 alt="numparser"
+                 onerror="imgFallback(this,'snimok-jekrana-2025-12-18-183101.webp')">
           </div>
           <div class="info">
-            <div class="title">MovieTV</div>
+            <div class="title">nmprs.js — NUMParser</div>
+            <a class="link" href="https://num.jac-red.ru/plugin/nmprs.js" target="_blank" rel="noopener">https://num.jac-red.ru/plugin/nmprs.js</a>
+            <p class="desc">Парсер и дополнительные подборки/источники.</p>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="thumb">
+            <img src="https://tvigl.info/uploads/posts/2026-01/medium/111.webp"
+                 alt="movietv"
+                 onerror="imgFallback(this,'111.webp')">
+          </div>
+          <div class="info">
+            <div class="title">MovieTV.js — Дополнительный каталог</div>
             <a class="link" href="https://rugaroo888.github.io/movietv-plugin/MovieTV.js" target="_blank" rel="noopener">https://rugaroo888.github.io/movietv-plugin/MovieTV.js</a>
-            <p class="desc">Дополнительный каталог фильмов и сериалов.</p>
+            <p class="desc">Дополнительный каталог фильмов и сериалов, можно выставить как основную страницу.</p>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="thumb">
+            <img src="https://tvigl.info/uploads/posts/2026-01/medium/screenshot_20260113-205158.webp"
+                 alt="studios"
+                 onerror="imgFallback(this,'screenshot_20260113-205158.webp')">
+          </div>
+          <div class="info">
+            <div class="title">studios.js — Студии (многоязычный)</div>
+            <a class="link" href="https://tvigl.info/plugins/studios.js" target="_blank" rel="noopener">https://tvigl.info/plugins/studios.js</a>
+            <p class="desc">Быстрый доступ к контенту по студиям (Netflix, Disney, Apple и т.д.).</p>
           </div>
         </article>
 
@@ -276,46 +426,46 @@
     </section>
 
     <!-- Торренты -->
-    <section id="torrents">
-      <div class="section-title">Торренты</div>
+    <section id="torrents" class="section">
+      <h2>Плагины для торрентов</h2>
       <div class="list">
 
         <article class="item">
           <div class="thumb">
-            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202947.webp"
+            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-212734.webp"
                  alt="torr_styles"
-                 onerror="imgFallback(this,'screenshot_20251012-202947.webp')">
+                 onerror="imgFallback(this,'screenshot_20251012-212734.webp')">
           </div>
           <div class="info">
-            <div class="title">Стилизация результатов торрентов</div>
+            <div class="title">torr_styles.js — Стилизация результатов торрентов</div>
             <a class="link" href="https://tvigl.info/plugins/torr_styles.js" target="_blank" rel="noopener">https://tvigl.info/plugins/torr_styles.js</a>
-            <p class="desc">Визуальное улучшение списка результатов торрентов.</p>
+            <p class="desc">Визуально улучшает список результатов торрентов, цветовая индикация и локализация.</p>
           </div>
         </article>
 
         <article class="item">
           <div class="thumb">
-            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202947.webp"
+            <img src="https://tvigl.info/uploads/posts/2025-12/medium/snipaste_2025-12-23_13-23-42.webp"
                  alt="continue_watching"
-                 onerror="imgFallback(this,'screenshot_20251012-202947.webp')">
+                 onerror="imgFallback(this,'snipaste_2025-12-23_13-23-42.webp')">
           </div>
           <div class="info">
-            <div class="title">ContinueWatching</div>
+            <div class="title">ContinueWatching.js — Продолжить просмотр (торренты)</div>
             <a class="link" href="https://arst113.github.io/log/ContinueWatching.js" target="_blank" rel="noopener">https://arst113.github.io/log/ContinueWatching.js</a>
-            <p class="desc">Добавляет логику и кнопку для продолжения просмотра.</p>
+            <p class="desc">Запоминает позицию просмотра для торрентов и предлагает продолжить с места остановки.</p>
           </div>
         </article>
 
         <article class="item">
           <div class="thumb">
-            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202947.webp"
+            <img src="https://tvigl.info/uploads/posts/2025-12/medium/snipaste_2025-12-29_19-44-46.webp"
                  alt="easytorrent"
-                 onerror="imgFallback(this,'screenshot_20251012-202947.webp')">
+                 onerror="imgFallback(this,'snipaste_2025-12-29_19-44-46.webp')">
           </div>
           <div class="info">
-            <div class="title">EasyTorrent</div>
+            <div class="title">easytorrent.min.js — EasyTorrent</div>
             <a class="link" href="https://darkestclouds.github.io/plugins/easytorrent/easytorrent.min.js" target="_blank" rel="noopener">https://darkestclouds.github.io/plugins/easytorrent/easytorrent.min.js</a>
-            <p class="desc">Упрощает работу с торрент-источниками.</p>
+            <p class="desc">Упрощает работу с торрент‑источниками, интеллектуальное ранжирование раздач.</p>
           </div>
         </article>
 
@@ -323,114 +473,176 @@
     </section>
 
     <!-- Стартовые страницы -->
-    <section id="startpages">
-      <div class="section-title">Стартовые страницы</div>
+    <section id="startpages" class="section">
+      <h2>Стартовые страницы</h2>
       <div class="list">
-
         <article class="item">
           <div class="thumb">
-            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp"
-                 alt="cardify"
-                 onerror="imgFallback(this,'screenshot_20251012-202513.webp')">
+            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195403.webp"
+                 alt="startpages"
+                 onerror="imgFallback(this,'screenshot_20251012-195403.webp')">
           </div>
           <div class="info">
-            <div class="title">Cardify — автопоказ трейлеров</div>
-            <a class="link" href="https://tvigl.info/plugins/cardify.js" target="_blank" rel="noopener">https://tvigl.info/plugins/cardify.js</a>
-            <p class="desc">Автоматически показывает трейлеры в новостной ленте и карточках.</p>
+            <div class="title">Стартовые страницы</div>
+            <a class="link" href="#" target="_blank" rel="noopener">—</a>
+            <p class="desc">Добавь сюда нужные плагины стартовых страниц, если используешь.</p>
           </div>
         </article>
-
-        <article class="item">
-          <div class="thumb">
-            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp"
-                 alt="123"
-                 onerror="imgFallback(this,'screenshot_20251012-202513.webp')">
-          </div>
-          <div class="info">
-            <div class="title">Убирает 123</div>
-            <a class="link" href="https://tvigl.info/plugins/123.js" target="_blank" rel="noopener">https://tvigl.info/plugins/123.js</a>
-            <p class="desc">Удаляет лишний маркер на главной странице.</p>
-          </div>
-        </article>
-
-        <article class="item">
-          <div class="thumb">
-            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp"
-                 alt="custom-favs"
-                 onerror="imgFallback(this,'screenshot_20251012-202513.webp')">
-          </div>
-          <div class="info">
-            <div class="title">Пользовательские избранные</div>
-            <a class="link" href="https://levende.github.io/lampa-plugins/custom-favs.js" target="_blank" rel="noopener">https://levende.github.io/lampa-plugins/custom-favs.js</a>
-            <p class="desc">Расширенные возможности избранного для пользователей.</p>
-          </div>
-        </article>
-
       </div>
     </section>
 
     <!-- Разное -->
-    <section id="misc">
-      <div class="section-title">Разное</div>
+    <section id="misc" class="section">
+      <h2>Разное</h2>
       <div class="list">
 
         <article class="item">
           <div class="thumb">
-            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp"
-                 alt="ai_search"
-                 onerror="imgFallback(this,'screenshot_20251012-202513.webp')">
+            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251016-200315.webp"
+                 alt="exit_misc"
+                 onerror="imgFallback(this,'screenshot_20251016-200315.webp')">
           </div>
           <div class="info">
-            <div class="title">AI поиск</div>
-            <a class="link" href="https://fovway.github.io/lampacJS/ai_search/ai_search.js" target="_blank" rel="noopener">https://fovway.github.io/lampacJS/ai_search/ai_search.js</a>
-            <p class="desc">Интеграция AI поиска для быстрого поиска контента.</p>
+            <div class="title">exit.js — Кнопка выхода</div>
+            <a class="link" href="https://tvigl.info/plugins/exit.js" target="_blank" rel="noopener">https://tvigl.info/plugins/exit.js</a>
+            <p class="desc">Кнопка выхода в меню Lampa.</p>
           </div>
         </article>
 
         <article class="item">
           <div class="thumb">
-            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp"
+            <img src="https://tvigl.info/uploads/posts/2025-11/medium/snipaste_2025-11-09_08-45-58.webp"
+                 alt="custom-favs"
+                 onerror="imgFallback(this,'snipaste_2025-11-09_08-45-58.webp')">
+          </div>
+          <div class="info">
+            <div class="title">custom-favs.js — Пользовательские избранные</div>
+            <a class="link" href="https://levende.github.io/lampa-plugins/custom-favs.js" target="_blank" rel="noopener">https://levende.github.io/lampa-plugins/custom-favs.js</a>
+            <p class="desc">Создание и настройка пользовательских папок избранного.</p>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="thumb">
+            <img src="https://tvigl.info/uploads/posts/2025-12/medium/screenshot_20251221-151436.webp"
                  alt="new_year1"
-                 onerror="imgFallback(this,'screenshot_20251012-202513.webp')">
+                 onerror="imgFallback(this,'screenshot_20251221-151436.webp')">
           </div>
           <div class="info">
-            <div class="title">Новогодние эффекты — снег</div>
+            <div class="title">new_year1.js — Снег №1</div>
             <a class="link" href="https://tvigl.info/plugins/new_year1.js" target="_blank" rel="noopener">https://tvigl.info/plugins/new_year1.js</a>
-            <p class="desc">Эффект падающего снега на странице.</p>
+            <p class="desc">Нежные падающие снежинки и праздничные эффекты.</p>
           </div>
         </article>
 
         <article class="item">
           <div class="thumb">
-            <img src="https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp"
-                 alt="rain"
-                 onerror="imgFallback(this,'screenshot_20251012-202513.webp')">
+            <img src="https://tvigl.info/uploads/posts/2025-12/medium/screenshot_20251221-151830.webp"
+                 alt="new_year2"
+                 onerror="imgFallback(this,'screenshot_20251221-151830.webp')">
           </div>
           <div class="info">
-            <div class="title">Дождь с реалистичным звуком</div>
+            <div class="title">new_year2.js — Снег №2</div>
+            <a class="link" href="https://tvigl.info/plugins/new_year2.js" target="_blank" rel="noopener">https://tvigl.info/plugins/new_year2.js</a>
+            <p class="desc">Мягко падающий снег с настройками интенсивности.</p>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="thumb">
+            <img src="https://tvigl.info/uploads/posts/2025-12/medium/screenshot_20251221-152040.webp"
+                 alt="snow"
+                 onerror="imgFallback(this,'screenshot_20251221-152040.webp')">
+          </div>
+          <div class="info">
+            <div class="title">snow.js — Снег №3</div>
+            <a class="link" href="https://nemiroff.github.io/lampa/snow.js" target="_blank" rel="noopener">https://nemiroff.github.io/lampa/snow.js</a>
+            <p class="desc">Простой эффект падающего снега.</p>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="thumb">
+            <img src="https://tvigl.info/uploads/posts/2025-12/medium/screenshot_20251221-174042.webp"
+                 alt="garland"
+                 onerror="imgFallback(this,'screenshot_20251221-174042.webp')">
+          </div>
+          <div class="info">
+            <div class="title">new_year3.js — Гирлянда</div>
+            <a class="link" href="https://tvigl.info/plugins/new_year3.js" target="_blank" rel="noopener">https://tvigl.info/plugins/new_year3.js</a>
+            <p class="desc">Праздничная гирлянда для шапки интерфейса.</p>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="thumb">
+            <img src="https://tvigl.info/uploads/posts/2025-12/medium/1766607756_video_rain.webp"
+                 alt="rain"
+                 onerror="imgFallback(this,'1766607756_video_rain.webp')">
+          </div>
+          <div class="info">
+            <div class="title">rain_realistic_sound.js — Дождь (реалистичный звук)</div>
             <a class="link" href="https://weritos666.github.io/rain_realistic_sound.js" target="_blank" rel="noopener">https://weritos666.github.io/rain_realistic_sound.js</a>
-            <p class="desc">Атмосферный эффект дождя с звуком.</p>
+            <p class="desc">Реалистичный дождь с фоновым звуком (вес плагина увеличен из-за звука).</p>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="thumb">
+            <img src="https://tvigl.info/uploads/posts/2025-12/medium/snipaste_2025-12-25_15-11-25.webp"
+                 alt="vanta"
+                 onerror="imgFallback(this,'snipaste_2025-12-25_15-11-25.webp')">
+          </div>
+          <div class="info">
+            <div class="title">Vanta.js — Туман (Vanta)</div>
+            <a class="link" href="https://mulumuu.github.io/mulumuu.githib.io/Vanta.js" target="_blank" rel="noopener">https://mulumuu.github.io/mulumuu.githib.io/Vanta.js</a>
+            <p class="desc">Фоновая анимация тумана/эффекты Vanta.</p>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="thumb">
+            <img src="https://tvigl.info/uploads/posts/2026-01/medium/www.webp"
+                 alt="phone_menu"
+                 onerror="imgFallback(this,'www.webp')">
+          </div>
+          <div class="info">
+            <div class="title">phone_menu.js — Меню для телефонов</div>
+            <a class="link" href="https://tvigl.info/plugins/phone_menu.js" target="_blank" rel="noopener">https://tvigl.info/plugins/phone_menu.js</a>
+            <p class="desc">Адаптация меню под телефоны, перенос иконок в горизонтальный режим.</p>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="thumb">
+            <img src="https://tvigl.info/uploads/posts/2026-01/medium/snimok-jekrana-2026-01-14-180301.webp"
+                 alt="shots1"
+                 onerror="imgFallback(this,'snimok-jekrana-2026-01-14-180301.webp')">
+          </div>
+          <div class="info">
+            <div class="title">shots1.js — Отключение Shots</div>
+            <a class="link" href="https://tvigl.info/plugins/shots1.js" target="_blank" rel="noopener">https://tvigl.info/plugins/shots1.js</a>
+            <p class="desc">Отключает отображение Shots в боковом меню и кнопке просмотра.</p>
           </div>
         </article>
 
       </div>
     </section>
 
+    <p class="small" style="margin-top:18px;">Если нужно, могу заменить все внешние превью на локальные ссылки (чтобы исключить hotlink) и подготовить список файлов, которые нужно положить в <code>/IPTV/img/</code>. Скопируй этот файл в <code>IPTV/plugins.html</code> — он готов к использованию.</p>
   </main>
 
   <script>
-    // fallback to local images hosted in your repo if external hotlink blocked
     function imgFallback(imgEl, localName){
       try{
-        var local = 'https://evgeshkawww.github.io/iptv/IPTV/img/' + localName;
+        var local = location.origin + '/IPTV/img/' + localName;
         if(imgEl.src === local) return;
         imgEl.onerror = null;
         imgEl.src = local;
       }catch(e){}
     }
-
-    // smooth scroll for nav anchors
-    document.querySelectorAll('nav a[href^="#"]').forEach(a=>{
+    // Smooth anchor scrolling
+    document.querySelectorAll('.nav a[href^="#"]').forEach(a=>{
       a.addEventListener('click', function(e){
         e.preventDefault();
         var id = this.getAttribute('href').slice(1);
