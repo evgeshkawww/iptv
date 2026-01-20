@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lampa Плагины - Список плагинов</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="list.js"></script>
+  <script src="scripts/script.js" defer></script>
+</head>
+<body>
+  <main>
+    <h2 class="header-text" style="text-align: center;">Список плагинов для онлайн-кинотеатра Lampa</h2>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Поиск плагинов от разработчиков">
+    </div>
+    <div id="tabsContainer" class="tabs-container">
+      <div id="overflow-mobile" class="swiper">
+        <div class="swiper-wrapper"></div>
+      </div>
+    </div>
+    <div class="card-grid" id="cardGrid"></div>
+  </main>
+</body>
+</html>
