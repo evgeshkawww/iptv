@@ -8,82 +8,95 @@
 <meta charset="UTF-8" />
 <link rel="stylesheet" href="style/theme.css">
 <script type="text/javascript" src="js/speedtest.js"></script>
-<script
-    src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/assets/index_HJFG7776G.js"
-    onload="initServers();">
-</script>
+<script src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/assets/index_HJFG7776G.js"></script>
 <script type="text/javascript">
 function I(i){return document.getElementById(i);}
 
 
-//INITIALIZE SPEEDTEST
-var s=new Speedtest(); //create speedtest object
-s.setParameter("telemetry_level","basic"); //enable telemetry
+// Создаём объект Speedtest
+var s = new Speedtest();
+s.setParameter("telemetry_level", "basic"); // уровень телеметрии
 
-//SERVER AUTO SELECTION
-function initServers(){
-    var noServersAvailable = function(){
-        I("message").innerHTML = "No servers available";
-    }
+// Функция инициализации серверов
+function initServers() {
+    selectServerWithTimeout(5000).then(server => {
+        if(server) {
+            I("loading").className = "hidden";
+            I("testWrapper").className = "visible";
+            populateServerSelect();
+            initUI();
+        } else {
+            I("message").innerHTML = "No servers responded in 5 seconds";
+        }
+    });
+}
 
-    var runServerSelect = function(){
-        s.selectServer(function(server){
-            if(server != null){ // хотя бы 1 сервер доступен
-                I("loading").className = "hidden"; // скрываем сообщение о загрузке
+// Функция выбора сервера с таймаутом
+function selectServerWithTimeout(timeoutMs = 5000) {
+    return new Promise((resolve) => {
+        let resolved = false;
 
-                var serverSelect = I("server");
-                serverSelect.innerHTML = ""; // очищаем предыдущие опции
-
-                // Опция "Все открытые серверы"
-                var optionAllAvailable = document.createElement("option");
-                optionAllAvailable.value = "all_available";
-                optionAllAvailable.textContent = "Все открытые сервера";
-                optionAllAvailable.selected = true;
-                serverSelect.appendChild(optionAllAvailable);
-
-                // Разделитель
-                var optionSeparator = document.createElement("option");
-                optionSeparator.disabled = true;
-                optionSeparator.textContent = "─────────────────";
-                serverSelect.appendChild(optionSeparator);
-
-                // Добавляем только открытые сервера
-                for(var i = 0; i < SPEEDTEST_SERVERS.length; i++){
-                    var sObj = SPEEDTEST_SERVERS[i];
-                    if(sObj.serveropen === "YES"){ // только открытые
-                        var option = document.createElement("option");
-                        option.value = i;
-                        option.textContent = sObj.name;
-                        serverSelect.appendChild(option);
-                    }
-                }
-
-                //show test UI
-                I("testWrapper").className = "visible";
-                initUI();
-
-                setTimeout(function(){
-                    startStop();
-                }, 1500);
-            } else {
-                noServersAvailable();
+        s.selectServer(function(server) {
+            if (!resolved) {
+                resolved = true;
+                resolve(server);
             }
         });
-    }
 
-    if(typeof SPEEDTEST_SERVERS === "string"){
-        s.loadServerList(SPEEDTEST_SERVERS, function(servers){
-            if(servers == null){
-                noServersAvailable();
-            } else {
-                SPEEDTEST_SERVERS = servers;
-                runServerSelect();
+        setTimeout(() => {
+            if (!resolved) {
+                resolved = true;
+                resolve(null);
             }
-        });
-    } else {
-        s.addTestPoints(SPEEDTEST_SERVERS);
-        runServerSelect();
+        }, timeoutMs);
+    });
+}
+
+// Функция заполнения <select> серверами
+function populateServerSelect() {
+    var select = I("server");
+    select.innerHTML = "";
+
+    var optionAllAvailable = document.createElement("option");
+    optionAllAvailable.value = "all_available";
+    optionAllAvailable.textContent = "Все доступные сервера";
+    optionAllAvailable.selected = true;
+    select.appendChild(optionAllAvailable);
+
+    var optionAllFull = document.createElement("option");
+    optionAllFull.value = "all_with_filled";
+    optionAllFull.textContent = "Все сервера";
+    select.appendChild(optionAllFull);
+
+    var optionSeparator = document.createElement("option");
+    optionSeparator.disabled = true;
+    optionSeparator.textContent = "─────────────────";
+    select.appendChild(optionSeparator);
+
+    for(var i=0; i<SPEEDTEST_SERVERS.length; i++){
+        if(SPEEDTEST_SERVERS[i].pingT == -1) continue;
+        var option = document.createElement("option");
+        option.value = i;
+        option.textContent = SPEEDTEST_SERVERS[i].name;
+        if(SPEEDTEST_SERVERS[i].serveropen === "NO") option.textContent += " (заполнен)";
+        select.appendChild(option);
     }
+}
+
+// Проверяем, что SPEEDTEST_SERVERS готов
+if (typeof SPEEDTEST_SERVERS === "string") {
+    s.loadServerList(SPEEDTEST_SERVERS, function(servers){
+        if (!servers || servers.length === 0) {
+            I("message").innerHTML = "No servers available";
+        } else {
+            SPEEDTEST_SERVERS = servers;
+            s.addTestPoints(SPEEDTEST_SERVERS);
+            initServers();
+        }
+    });
+} else {
+    s.addTestPoints(SPEEDTEST_SERVERS);
+    initServers();
 }
 
 var meterBk=/Trident.*rv:(\d+\.\d+)/i.test(navigator.userAgent)?"#EAEAEA":"#80808040";
@@ -271,9 +284,9 @@ function runSingleServerTest() {
 
 // Подготовка к тестированию группы серверов
 function prepareMultiTest(groupType) {
-    groupTestResults = [];
-    currentServer = 0;
-    serversToTest = [];
+    let groupTestResults = [];
+    let currentServer = 0;
+    let serversToTest = [];
 
     for(var i=0; i<SPEEDTEST_SERVERS.length; i++) {
         if(SPEEDTEST_SERVERS[i].pingT == -1) continue;
