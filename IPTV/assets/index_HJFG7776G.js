@@ -1,7 +1,7 @@
 window.SPEEDTEST_SERVERS = [  
     {
       name: "s1.turbod.iptv",
-      server: "https://66.90.90.202:8080/",
+      server: "https://ru2.tvtm.one:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
@@ -10,7 +10,7 @@ window.SPEEDTEST_SERVERS = [
     },
 	{
       name: "s2.turbod.iptv",
-      server: "https://54.38.221.168:8080/",
+      server: "https://9.tvtm.one:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
@@ -37,7 +37,7 @@ window.SPEEDTEST_SERVERS = [
     },
     {
       name: "s5.turbod.iptv",
-      server: "https://66.90.90.74:8080/",
+      server: "https://ru.tvtm.one:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
@@ -46,7 +46,7 @@ window.SPEEDTEST_SERVERS = [
     },
     {
       name: "s6.turbod.iptv",
-      server: "https://162.249.127.211:8080/",
+      server: "https://4.tvtm.one:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
@@ -64,7 +64,7 @@ window.SPEEDTEST_SERVERS = [
     },
     {
       name: "s8.turbod.iptv",
-      server: "https://66.90.90.235:8080/",
+      server: "https://ru3.tvtm.one:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
@@ -73,7 +73,7 @@ window.SPEEDTEST_SERVERS = [
     },
     {
       name: "s9.turbod.iptv",
-      server: "https://203.25.108.101:8080/",
+      server: "https://nl.tvtm.one:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
@@ -91,7 +91,7 @@ window.SPEEDTEST_SERVERS = [
     },
     {
       name: "s11.turbod.iptv",
-      server: "https://66.90.92.82:8080/",
+      server: "https://ru.tvtm.one:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
@@ -136,7 +136,7 @@ window.SPEEDTEST_SERVERS = [
     },
 	{
       name: "s16.turbod.iptv",
-      server: "https://76.164.202.114:8080/",
+      server: "https://hk.tvtm.one:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
