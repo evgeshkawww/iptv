@@ -8,95 +8,88 @@
 <meta charset="UTF-8" />
 <link rel="stylesheet" href="style/theme.css">
 <script type="text/javascript" src="js/speedtest.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/assets/index_HJFG7776G.js"></script>
+<script
+    src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/assets/index_HJFG7776G.js"
+    onload="initServers();">
+</script>
 <script type="text/javascript">
 function I(i){return document.getElementById(i);}
 
 
-// Создаём объект Speedtest
-var s = new Speedtest();
-s.setParameter("telemetry_level", "basic"); // уровень телеметрии
+//INITIALIZE SPEEDTEST
+var s=new Speedtest(); //create speedtest object
+s.setParameter("telemetry_level","basic"); //enable telemetry
 
-// Функция инициализации серверов
-function initServers() {
-    selectServerWithTimeout(5000).then(server => {
-        if(server) {
-            I("loading").className = "hidden";
-            I("testWrapper").className = "visible";
-            populateServerSelect();
-            initUI();
-        } else {
-            I("message").innerHTML = "No servers responded in 5 seconds";
-        }
-    });
-}
+//SERVER AUTO SELECTION
+function initServers(){
+    var noServersAvailable=function(){
+        I("message").innerHTML="No servers available";
+    }
+    var runServerSelect=function(){
+        s.selectServer(function(server){
+            if(server!=null){ //at least 1 server is available
+                I("loading").className="hidden"; //hide loading message
+                
+                // Добавляем опцию для тестирования всех доступных серверов
+                var optionAllAvailable = document.createElement("option");
+                optionAllAvailable.value = "all_available";
+                optionAllAvailable.textContent = "Все доступные сервера";
+                optionAllAvailable.selected = true; // Устанавливаем эту опцию как выбранную по умолчанию
+                I("server").appendChild(optionAllAvailable);
+                
+                // Добавляем опцию для тестирования всех серверов, включая заполненные
+                var optionAllFull = document.createElement("option");
+                optionAllFull.value = "all_with_filled";
+                optionAllFull.textContent = "Все сервера";
+                I("server").appendChild(optionAllFull);
+                
+                // Отделяем группы от отдельных серверов
+                var optionSeparator = document.createElement("option");
+                optionSeparator.disabled = true;
+                optionSeparator.textContent = "─────────────────";
+                I("server").appendChild(optionSeparator);
+                
+                //populate server list for manual selection
+                for(var i=0;i<SPEEDTEST_SERVERS.length;i++){
+                    if(SPEEDTEST_SERVERS[i].pingT==-1) continue;
+                    var option=document.createElement("option");
+                    option.value=i;
+                    option.textContent=SPEEDTEST_SERVERS[i].name;
+                    if(SPEEDTEST_SERVERS[i].serveropen === "NO") {
+                        option.textContent += " (OFF)";
+                    }
+                    // Убираем автоматическое выделение серверов, т.к. теперь всегда выбрана группа
+                    // if(SPEEDTEST_SERVERS[i]===server) option.selected=true;
+                    I("server").appendChild(option);
+                }
+                
+                //show test UI
+                I("testWrapper").className="visible";
+                initUI();
 
-// Функция выбора сервера с таймаутом
-function selectServerWithTimeout(timeoutMs = 5000) {
-    return new Promise((resolve) => {
-        let resolved = false;
-
-        s.selectServer(function(server) {
-            if (!resolved) {
-                resolved = true;
-                resolve(server);
+                setTimeout(function(){
+                    startStop();
+                },1500);
+            }else{ //no servers are available, the test cannot proceed
+                noServersAvailable();
             }
         });
-
-        setTimeout(() => {
-            if (!resolved) {
-                resolved = true;
-                resolve(null);
-            }
-        }, timeoutMs);
-    });
-}
-
-// Функция заполнения <select> серверами
-function populateServerSelect() {
-    var select = I("server");
-    select.innerHTML = "";
-
-    var optionAllAvailable = document.createElement("option");
-    optionAllAvailable.value = "all_available";
-    optionAllAvailable.textContent = "Все доступные сервера";
-    optionAllAvailable.selected = true;
-    select.appendChild(optionAllAvailable);
-
-    var optionAllFull = document.createElement("option");
-    optionAllFull.value = "all_with_filled";
-    optionAllFull.textContent = "Все сервера";
-    select.appendChild(optionAllFull);
-
-    var optionSeparator = document.createElement("option");
-    optionSeparator.disabled = true;
-    optionSeparator.textContent = "─────────────────";
-    select.appendChild(optionSeparator);
-
-    for(var i=0; i<SPEEDTEST_SERVERS.length; i++){
-        if(SPEEDTEST_SERVERS[i].pingT == -1) continue;
-        var option = document.createElement("option");
-        option.value = i;
-        option.textContent = SPEEDTEST_SERVERS[i].name;
-        if(SPEEDTEST_SERVERS[i].serveropen === "NO") option.textContent += " (заполнен)";
-        select.appendChild(option);
     }
-}
-
-// Проверяем, что SPEEDTEST_SERVERS готов
-if (typeof SPEEDTEST_SERVERS === "string") {
-    s.loadServerList(SPEEDTEST_SERVERS, function(servers){
-        if (!servers || servers.length === 0) {
-            I("message").innerHTML = "No servers available";
-        } else {
-            SPEEDTEST_SERVERS = servers;
-            s.addTestPoints(SPEEDTEST_SERVERS);
-            initServers();
-        }
-    });
-} else {
-    s.addTestPoints(SPEEDTEST_SERVERS);
-    initServers();
+    if(typeof SPEEDTEST_SERVERS === "string"){
+        //need to fetch list of servers from specified URL
+        s.loadServerList(SPEEDTEST_SERVERS,function(servers){
+            if(servers==null){ //failed to load server list
+                noServersAvailable();
+            }else{ //server list loaded
+                SPEEDTEST_SERVERS=servers;
+                runServerSelect();
+            }
+        });
+    }else{
+        //hardcoded server list
+        s.addTestPoints(SPEEDTEST_SERVERS);
+        runServerSelect();
+    }
 }
 
 var meterBk=/Trident.*rv:(\d+\.\d+)/i.test(navigator.userAgent)?"#EAEAEA":"#80808040";
@@ -284,24 +277,35 @@ function runSingleServerTest() {
 
 // Подготовка к тестированию группы серверов
 function prepareMultiTest(groupType) {
-    let groupTestResults = [];
-    let currentServer = 0;
-    let serversToTest = [];
-
+    // Очищаем результаты предыдущих тестов
+    groupTestResults = [];
+    
+    // Обновляем глобальную переменную currentServer и массив serversToTest
+    currentServer = 0;
+    serversToTest = [];
+    
+    // Формируем массив серверов для тестирования в зависимости от выбранной группы
     for(var i=0; i<SPEEDTEST_SERVERS.length; i++) {
-        if(SPEEDTEST_SERVERS[i].pingT == -1) continue;
-
-        // берем только открытые серверы для all_available
+        if(SPEEDTEST_SERVERS[i].pingT==-1) continue;
+        
+        // Для "all_available" берем только серверы с serveropen="YES"
         if(groupType === "all_available" && SPEEDTEST_SERVERS[i].serveropen !== "YES") continue;
-
+        
         serversToTest.push(i);
     }
-
+    
     if(serversToTest.length > 0) {
+        // Устанавливаем первый сервер и запускаем тестирование
         currentServer = serversToTest[0];
+        document.getElementById("currentTest").innerHTML = "Тестируется: " + SPEEDTEST_SERVERS[currentServer].name + 
+            " (1 из " + serversToTest.length + ")";
+        
         s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
         startMultiTest();
     } else {
+        // Если нет серверов для тестирования
+        I("startStopBtn").className="";
+        I("server").disabled=false;
         I("currentTest").innerHTML = "Нет серверов для тестирования";
     }
 }
