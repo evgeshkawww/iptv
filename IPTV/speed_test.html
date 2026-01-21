@@ -8,9 +8,11 @@
 <meta charset="UTF-8" />
 <link rel="stylesheet" href="style/theme.css">
 <script type="text/javascript" src="js/speedtest.js"></script>
-<script
-    src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/assets/index_HJFG7776G.js"
-    onload="initServers();">
+<script src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/assets/index_HJFG7776G.js"></script>
+<script>
+  window.onload = function() {
+      initServers();
+  }
 </script>
 <script type="text/javascript">
 function I(i){return document.getElementById(i);}
@@ -811,6 +813,9 @@ if(!document.getElementById("recommendStyles")) {
   </a>
 </footer>
 	-->
+<script>
+  initServers();
+</script>
 </body>
 </html>
 
