@@ -49,20 +49,16 @@ function initServers(){
                 optionSeparator.textContent = "─────────────────";
                 I("server").appendChild(optionSeparator);
                 
-                //populate server list for manual selection
-                for(var i=0;i<SPEEDTEST_SERVERS.length;i++){
-                    if(SPEEDTEST_SERVERS[i].pingT==-1) continue;
-                    var option=document.createElement("option");
-                    option.value=i;
-                    option.textContent=SPEEDTEST_SERVERS[i].name;
-                    if(SPEEDTEST_SERVERS[i].serveropen === "NO") {
-                        option.textContent += " (OFF)";
-                    }
-                    // Убираем автоматическое выделение серверов, т.к. теперь всегда выбрана группа
-                    // if(SPEEDTEST_SERVERS[i]===server) option.selected=true;
+                //populate server list for manual selection (только включённые)
+                for(var i = 0; i < SPEEDTEST_SERVERS.length; i++) {
+                    if(SPEEDTEST_SERVERS[i].pingT == -1) continue;          // пропускаем недоступные по ping
+                    if(SPEEDTEST_SERVERS[i].serveropen !== "YES") continue;  // пропускаем отключённые
+
+                    var option = document.createElement("option");
+                    option.value = i;
+                    option.textContent = SPEEDTEST_SERVERS[i].name;
                     I("server").appendChild(option);
                 }
-                
                 //show test UI
                 I("testWrapper").className="visible";
                 initUI();
