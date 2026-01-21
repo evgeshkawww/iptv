@@ -7,12 +7,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
 <meta charset="UTF-8" />
 <link rel="stylesheet" href="style/theme.css">
-<script type="text/javascript" src="js/speedtest.js"></script>
+<script src="js/speedtest.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/assets/index_HJFG7776G.js"></script>
+
 <script>
-  window.onload = function() {
+  window.addEventListener("load", function() {
+      // вызываем initServers только после полной загрузки
       initServers();
-  }
+  });
 </script>
 <script type="text/javascript">
 function I(i){return document.getElementById(i);}
