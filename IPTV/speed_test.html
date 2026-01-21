@@ -323,7 +323,7 @@ function startMultiTest() {
     testTimeout = setTimeout(function () {
         console.warn("Timeout >15s, skip server:", SPEEDTEST_SERVERS[currentServer].name);
         s.abort();
-    }, 5000);
+    }, 15000);
 
     s.onupdate = function (data) {
         uiData = data;
