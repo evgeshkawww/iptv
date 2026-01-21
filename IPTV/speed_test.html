@@ -1,15 +1,203 @@
-
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
-<meta charset="UTF-8" />
 <link rel="stylesheet" href="style/theme.css">
-<script src="js/speedtest.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/assets/index_HJFG7776G.js"></script>
 
+<title>Premium IPTV speed test</title>
+
+<style type="text/css">
+	html,body{
+		border:none; padding:0; margin:0;
+		background:#FFFFFF;
+		color:#202020;
+	}
+	body{
+		text-align:center;
+		font-family:"Roboto",sans-serif;
+	}
+	h1{
+		color:#404040;
+	}
+	#loading{
+		background-color:#FFFFFF;
+		color:#404040;
+		text-align:center;
+	}
+	span.loadCircle{
+		display:inline-block;
+		width:2em;
+		height:2em;
+		vertical-align:middle;
+		background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAP1BMVEUAAAB2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZyFzwnAAAAFHRSTlMAEvRFvX406baecwbf0casimhSHyiwmqgAAADpSURBVHja7dbJbQMxAENRahnN5lkc//5rDRAkDeRgHszXgACJoKiIiIiIiIiIiIiIiIiIiIj4HHspsrpAVhdVVguzrA4OWc10WcEqpwKbnBo0OU1Q5NSpsoJFTgOecrrdEag85DRgktNqfoEdTjnd7hrEHMEJvmRUYJbTYk5Agy6nau6Abp5Cm7mDBtRdPi9gyKdU7w4p1fsLvyqs8hl4z9/w3n/Hmr9WoQ65lAU4d7lMYOz//QboRR5jBZibLMZdAR6O/Vfa1PlxNr3XdS3HzK/HVPRu/KnLs8iAOh993VpRRERERMT/fAN60wwWaVyWwAAAAABJRU5ErkJggg==');
+		background-size:2em 2em;
+		margin-right:0.5em;
+		animation: spin 0.6s linear infinite;
+	}
+	@keyframes spin{
+		0%{transform:rotate(0deg);}
+		100%{transform:rotate(359deg);}
+	}
+	#startStopBtn{
+		display:inline-block;
+		margin:0 auto;
+		color:#6060AA;
+		background-color:rgba(0,0,0,0);
+		border:0.15em solid #6060FF;
+		border-radius:0.3em;
+		transition:all 0.3s;
+		box-sizing:content-box;
+		width:8em; height:2.5em;
+		line-height:2.2em;
+		cursor:pointer;
+		box-shadow: 0 0 0 rgba(0,0,0,0.1), inset 0 0 0 rgba(0,0,0,0.1);
+	}
+	#startStopBtn:hover{
+		box-shadow: 0 0 2em rgba(0,0,0,0.1), inset 0 0 1em rgba(0,0,0,0.1);
+	}
+	#startStopBtn.running{
+		background-color:#FF3030;
+		border-color:#FF6060;
+		color:#FFFFFF;
+	}
+	#startStopBtn:before{
+		content:"Тест";
+	}
+	#startStopBtn.running:before{
+		content:"Прервать";
+	}
+
+	#serverArea{
+		margin-top:1em;
+	}
+	#server{
+		font-size:1em;
+		padding:0.2em;
+	}
+	#test{
+		margin-top:2em;
+		margin-bottom:12em;
+	}
+	div.testArea{
+		display:inline-block;
+		width:16em;
+		height:12.5em;
+		position:relative;
+		box-sizing:border-box;
+	}
+	div.testArea2{
+		display:inline-block;
+		width:14em;
+		height:7em;
+		position:relative;
+		box-sizing:border-box;
+		text-align:center;
+	}
+	div.testArea div.testName{
+		position:absolute;
+		top:0.1em; left:0;
+		width:100%;
+		font-size:1.4em;
+		z-index:9;
+	}
+	div.testArea2 div.testName{
+        display:block;
+        text-align:center;
+        font-size:1.4em;
+	}
+	div.testArea div.meterText{
+		position:absolute;
+		bottom:1.55em; left:0;
+		width:100%;
+		font-size:2.5em;
+		z-index:9;
+	}
+	div.testArea2 div.meterText{
+        display:inline-block;
+        font-size:2.5em;
+	}
+	div.meterText:empty:before{
+		content:"0.00";
+	}
+	div.testArea div.unit{
+		position:absolute;
+		bottom:2em; left:0;
+		width:100%;
+		z-index:9;
+	}
+	div.testArea2 div.unit{
+		display:inline-block;
+	}
+	div.testArea canvas{
+		position:absolute;
+		top:0; left:0; width:100%; height:100%;
+		z-index:1;
+	}
+	div.testGroup{
+		display:block;
+        margin: 0 auto;
+	}
+	#shareArea{
+		width:95%;
+		max-width:40em;
+		margin:0 auto;
+		margin-top:2em;
+	}
+	#shareArea > *{
+		display:block;
+		width:100%;
+		height:auto;
+		margin: 0.25em 0;
+	}
+	@media all and (max-width:40em){
+		body{
+			font-size:0.8em;
+		}
+	}
+	div.visible{
+		animation: fadeIn 0.4s;
+		display:block;
+	}
+	div.hidden{
+		animation: fadeOut 0.4s;
+		display:none;
+	}
+	@keyframes fadeIn{
+		0%{opacity:0;}
+		100%{opacity:1;}
+	}
+	@keyframes fadeOut{
+		0%{display:block; opacity:1;}
+		100%{display:block; opacity:0;}
+	}
+</style>
+
+<script src="js/speedtest.js"></script>
+
+<script>
+window.SPEEDTEST_SERVERS = [  
+    { name: "s1.turbod.iptv", server: "http://66.90.90.202:8080/", dlURL: "backend/garbage.php", ulURL: "backend/empty.php", pingURL: "backend/empty.php", getIpURL: "backend/getIP.php", serveropen: "YES" },
+    { name: "s2.turbod.iptv", server: "http://54.38.221.168:8080/", dlURL: "backend/garbage.php", ulURL: "backend/empty.php", pingURL: "backend/empty.php", getIpURL: "backend/getIP.php", serveropen: "YES" },
+    { name: "s3.turbod.iptv", server: "http://51.83.174.109:8080/", dlURL: "backend/garbage.php", ulURL: "backend/empty.php", pingURL: "backend/empty.php", getIpURL: "backend/getIP.php", serveropen: "NO" },
+    { name: "s4.turbod.iptv", server: "http://54.38.221.176:8080/", dlURL: "backend/garbage.php", ulURL: "backend/empty.php", pingURL: "backend/empty.php", getIpURL: "backend/getIP.php", serveropen: "NO" },
+    { name: "s5.turbod.iptv", server: "http://66.90.90.74:8080/", dlURL: "backend/garbage.php", ulURL: "backend/empty.php", pingURL: "backend/empty.php", getIpURL: "backend/getIP.php", serveropen: "YES" },
+    { name: "s6.turbod.iptv", server: "http://162.249.127.211:8080/", dlURL: "backend/garbage.php", ulURL: "backend/empty.php", pingURL: "backend/empty.php", getIpURL: "backend/getIP.php", serveropen: "YES" },
+    { name: "s7.turbod.iptv", server: "http://76.164.202.126:8080/", dlURL: "backend/garbage.php", ulURL: "backend/empty.php", pingURL: "backend/empty.php", getIpURL: "backend/getIP.php", serveropen: "NO" },
+    { name: "s8.turbod.iptv", server: "http://66.90.90.235:8080/", dlURL: "backend/garbage.php", ulURL: "backend/empty.php", pingURL: "backend/empty.php", getIpURL: "backend/getIP.php", serveropen: "YES" },
+    { name: "s9.turbod.iptv", server: "http://203.25.108.101:8080/", dlURL: "backend/garbage.php", ulURL: "backend/empty.php", pingURL: "backend/empty.php", getIpURL: "backend/getIP.php", serveropen: "YES" },
+    { name: "s10.turbod.iptv", server: "http://89.36.95.29:8080/", dlURL: "backend/garbage.php", ulURL: "backend/empty.php", pingURL: "backend/empty.php", getIpURL: "backend/getIP.php", serveropen: "NO" },
+    { name: "s11.turbod.iptv", server: "http://66.90.92.82:8080/", dlURL: "backend/garbage.php", ulURL: "backend/empty.php", pingURL: "backend/empty.php", getIpURL: "backend/getIP.php", serveropen: "YES" },
+    { name: "s12.turbod.iptv", server: "http://76.164.202.125:8080/", dlURL: "backend/garbage.php", ulURL: "backend/empty.php", pingURL: "backend/empty.php", getIpURL: "backend/getIP.php", serveropen: "NO" },
+    { name: "s13.turbod.iptv", server: "http://54.38.221.168:8080/", dlURL: "backend/garbage.php", ulURL: "backend/empty.php", pingURL: "backend/empty.php", getIpURL: "backend/getIP.php", serveropen: "NO" },
+    { name: "s14.turbod.iptv", server: "http://76.164.202.121:8080/", dlURL: "backend/garbage.php", ulURL: "backend/empty.php", pingURL: "backend/empty.php", getIpURL: "backend/getIP.php", serveropen: "NO" },
+    { name: "s15.turbod.iptv", server: "http://162.249.127.201:8080/", dlURL: "backend/garbage.php", ulURL: "backend/empty.php", pingURL: "backend/empty.php", getIpURL: "backend/getIP.php", serveropen: "NO" },
+    { name: "s16.turbod.iptv", server: "http://76.164.202.114:8080/", dlURL: "backend/garbage.php", ulURL: "backend/empty.php", pingURL: "backend/empty.php", getIpURL: "backend/getIP.php", serveropen: "YES" }
+];
+</script>
+</head>
 <body>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
