@@ -10,11 +10,26 @@
 <script src="js/speedtest.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/assets/index_HJFG7776G.js"></script>
 
+<body>
 <script>
-  window.addEventListener("load", function() {
-      // вызываем initServers только после полной загрузки
-      initServers();
-  });
+document.addEventListener("DOMContentLoaded", function() {
+
+    // Проверяем, загружен ли список серверов
+    var waitForServers = setInterval(function() {
+        if (typeof SPEEDTEST_SERVERS !== "undefined" && SPEEDTEST_SERVERS.length > 0) {
+            clearInterval(waitForServers);
+            initServers(); // вызываем один раз и только когда список серверов готов
+        }
+    }, 50);
+
+    // Обновление UI каждый кадр
+    function frame(){
+        requestAnimationFrame(frame);
+        updateUI();
+    }
+    frame();
+
+});
 </script>
 <script type="text/javascript">
 function I(i){return document.getElementById(i);}
@@ -511,15 +526,25 @@ function frame(){
 	requestAnimationFrame(frame);
 	updateUI();
 }
-frame(); //start frame loop
+// frame() запускается внутри DOMContentLoaded один раз
+function frame(){
+    requestAnimationFrame(frame);
+    updateUI();
+}
+frame();
 
 //function to (re)initialize UI
 function initUI(){
-	drawMeter(I("dlMeter"),0,meterBk,dlColor,0);
-	I("dlText").textContent="";
-	I("pingText").textContent="";
-	I("jitText").textContent="";
-	I("ip").textContent="";
+
+    // Проверяем, что блок теста видим и существует
+    if(!I("testWrapper") || I("testWrapper").className.indexOf("visible") === -1) return;
+
+    drawMeter(I("dlMeter"),0,meterBk,dlColor,0);
+    I("dlText").textContent="";
+    I("pingText").textContent="";
+    I("jitText").textContent="";
+    I("ip").textContent="";
+
 }
 
 // Добавим стили для рекомендаций
@@ -762,7 +787,7 @@ if(!document.getElementById("recommendStyles")) {
 </style>
 <title>Premium IPTV speed test</title>
 </head>
-<body onload="initServers();">
+<body>
 <h1></h1>
 <div id="loading" class="visible">
 	<p id="message"><span class="loadCircle"></span>Selecting a server...</p>
@@ -815,9 +840,6 @@ if(!document.getElementById("recommendStyles")) {
   </a>
 </footer>
 	-->
-<script>
-  initServers();
-</script>
 </body>
 </html>
 
