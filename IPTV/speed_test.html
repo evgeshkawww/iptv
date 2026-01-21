@@ -14,7 +14,7 @@
 </script>
 <script type="text/javascript">
 function I(i){return document.getElementById(i);}
-var abortAll = false; // глобальная переменная для прерывания теста
+
 
 //INITIALIZE SPEEDTEST
 var s=new Speedtest(); //create speedtest object
@@ -134,33 +134,34 @@ function format(d){
 var uiData=null;
 function startStop(){
     if(s.getState()==3){
-        // speedtest is running, abort
-        abortAll = true;   // <-- прерываем все тесты
-        s.abort();
-        uiData = null;
-        I("startStopBtn").className="";
-        I("server").disabled=false;
-        initUI();
-    } else {
-        // test is not running, begin
-        abortAll = false;  // <-- начинаем новый тест
-        I("startStopBtn").className="running";
-        I("shareArea").style.display="none";
-        I("server").disabled=true;
-
-        // Подготавливаем таблицу результатов
+        document.getElementById("currentTest").innerHTML = ''
+		//speedtest is running, abort
+		s.abort();
+		uiData = null;
+		I("startStopBtn").className="";
+		I("server").disabled=false;
+		initUI();
+	}else{
+		//test is not running, begin
+		I("startStopBtn").className="running";
+		I("shareArea").style.display="none";
+		I("server").disabled=true;
+        
+        // Подготавливаем таблицу результатов для любого типа теста
         prepareResultTable();
-
+        
         // Проверяем, выбрана ли группа серверов
         var serverSelect = I("server");
         var selectedValue = serverSelect.value;
-
+        
         if (selectedValue === "all_available" || selectedValue === "all_with_filled") {
+            // Запускаем тестирование группы серверов с использованием существующего функционала
             prepareMultiTest(selectedValue);
         } else {
+            // Обычное тестирование одного сервера
             runSingleServerTest();
         }
-    }
+	}
 }
 
 // Функция для подготовки таблицы результатов
@@ -307,15 +308,6 @@ function prepareMultiTest(groupType) {
 
 // Функция для тестирования всех серверов последовательно
 function startMultiTest() {
-
-    if(abortAll) {
-        // ❌ Если пользователь прервал тест, полностью выходим
-        s.abort();
-        I("startStopBtn").className="";
-        I("server").disabled=false;
-        document.getElementById("currentTest").innerHTML='';
-        return;
-    }
 
     if (s.getState() == 3) {
         s.abort();
