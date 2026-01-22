@@ -914,7 +914,10 @@ if(!document.getElementById("recommendStyles")) {
 </div>
 <div id="testWrapper" class="hidden">
 	<div id="serverArea">
-                <select id="server"></select>
+                <select id="server"
+                        onchange="if(this.value !== 'all_available' && this.value !== 'all_with_filled')
+                                s.setSelectedServer(SPEEDTEST_SERVERS[this.value]);">
+                </select>
 		&nbsp;&nbsp;
 	<div id="startStopBtn" onclick="startStop()"></div><br/>
 	<br>
