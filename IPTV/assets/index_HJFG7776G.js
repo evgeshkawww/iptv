@@ -6,7 +6,7 @@ window.SPEEDTEST_SERVERS = [
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
-	  serveropen: "YES"
+	  serveropen: "NO"
     },
 	{
       name: "s2.turbod.iptv",
@@ -15,7 +15,7 @@ window.SPEEDTEST_SERVERS = [
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
-	  serveropen: "YES"
+	  serveropen: "NO"
     },
     {
       name: "s3.turbod.iptv",
@@ -24,7 +24,7 @@ window.SPEEDTEST_SERVERS = [
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
-      serveropen: "NO"
+      serveropen: "YES"
     },
     {
       name: "s4.turbod.iptv",
@@ -33,7 +33,7 @@ window.SPEEDTEST_SERVERS = [
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
-      serveropen: "NO"
+      serveropen: "YES"
     },
     {
       name: "s5.turbod.iptv",
@@ -42,7 +42,7 @@ window.SPEEDTEST_SERVERS = [
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
-      serveropen: "YES"
+      serveropen: "NO"
     },
     {
       name: "s6.turbod.iptv",
@@ -51,7 +51,7 @@ window.SPEEDTEST_SERVERS = [
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
-      serveropen: "YES"
+      serveropen: "NO"
     },
     {
       name: "s7.turbod.iptv",
@@ -69,7 +69,7 @@ window.SPEEDTEST_SERVERS = [
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
-      serveropen: "YES"
+      serveropen: "NO"
     },
     {
       name: "s9.turbod.iptv",
@@ -78,7 +78,7 @@ window.SPEEDTEST_SERVERS = [
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
-      serveropen: "YES"
+      serveropen: "NO"
     },
     {
       name: "s10.turbod.iptv",
@@ -87,7 +87,7 @@ window.SPEEDTEST_SERVERS = [
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
-      serveropen: "NO"
+      serveropen: "YES"
     },
     {
       name: "s11.turbod.iptv",
@@ -96,7 +96,7 @@ window.SPEEDTEST_SERVERS = [
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
-      serveropen: "YES"
+      serveropen: "NO"
     },
     {
       name: "s12.turbod.iptv",
@@ -105,7 +105,7 @@ window.SPEEDTEST_SERVERS = [
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
-      serveropen: "NO"
+      serveropen: "YES"
     },
     {
       name: "s13.turbod.iptv",
@@ -114,7 +114,7 @@ window.SPEEDTEST_SERVERS = [
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
-      serveropen: "NO"
+      serveropen: "YES"
     },
     {
       name: "s14.turbod.iptv",
@@ -123,7 +123,7 @@ window.SPEEDTEST_SERVERS = [
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
-      serveropen: "NO"
+      serveropen: "YES"
     },
 	{
       name: "s15.turbod.iptv",
@@ -132,7 +132,7 @@ window.SPEEDTEST_SERVERS = [
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
-      serveropen: "NO"
+      serveropen: "YES"
     },
 	{
       name: "s16.turbod.iptv",
@@ -141,6 +141,6 @@ window.SPEEDTEST_SERVERS = [
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
-      serveropen: "YES"
+      serveropen: "NO"
     }
 ];
