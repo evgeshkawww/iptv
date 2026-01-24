@@ -25,56 +25,49 @@ function initServers(){
     var noServersAvailable=function(){
         I("message").innerHTML="No servers available";
     }
-    var runServerSelect=function(){
-        s.selectServer(function(server){
-            if(server!=null){ //at least 1 server is available
-                I("loading").className="hidden"; //hide loading message
-                
-                // Добавляем опцию для тестирования всех доступных серверов
-                var optionAllAvailable = document.createElement("option");
-                optionAllAvailable.value = "all_available";
-                optionAllAvailable.textContent = "Все доступные сервера";
-                optionAllAvailable.selected = true; // Устанавливаем эту опцию как выбранную по умолчанию
-                I("server").appendChild(optionAllAvailable);
-                
-                // Добавляем опцию для тестирования всех серверов, включая заполненные
-                var optionAllFull = document.createElement("option");
-                optionAllFull.value = "all_with_filled";
-                optionAllFull.textContent = "Все сервера";
-                I("server").appendChild(optionAllFull);
-                
-                // Отделяем группы от отдельных серверов
-                var optionSeparator = document.createElement("option");
-                optionSeparator.disabled = true;
-                optionSeparator.textContent = "─────────────────";
-                I("server").appendChild(optionSeparator);
-                
-                //populate server list for manual selection
-                for(var i=0;i<SPEEDTEST_SERVERS.length;i++){
-                    if(SPEEDTEST_SERVERS[i].pingT==-1) continue;
-                    var option=document.createElement("option");
-                    option.value=i;
-                    option.textContent=SPEEDTEST_SERVERS[i].name;
-                    if(SPEEDTEST_SERVERS[i].serveropen === "NO") {
-                        option.textContent += " (OFF)";
-                    }
-                    // Убираем автоматическое выделение серверов, т.к. теперь всегда выбрана группа
-                    // if(SPEEDTEST_SERVERS[i]===server) option.selected=true;
-                    I("server").appendChild(option);
-                }
-                
-                //show test UI
-                I("testWrapper").className="visible";
-                initUI();
+        var runServerSelect = function () {
 
-                setTimeout(function(){
-                    startStop();
-                },1500);
-            }else{ //no servers are available, the test cannot proceed
-                noServersAvailable();
+        I("loading").className = "hidden";
+
+        // ===== ГРУППЫ =====
+        var optionAllAvailable = document.createElement("option");
+        optionAllAvailable.value = "all_available";
+        optionAllAvailable.textContent = "Все доступные сервера (YES)";
+        optionAllAvailable.selected = true;
+        I("server").appendChild(optionAllAvailable);
+
+        var optionAll = document.createElement("option");
+        optionAll.value = "all_with_filled";
+        optionAll.textContent = "Все сервера (YES + NO)";
+        I("server").appendChild(optionAll);
+
+        var sep = document.createElement("option");
+        sep.disabled = true;
+        sep.textContent = "─────────────────";
+        I("server").appendChild(sep);
+
+        // ===== ОТДЕЛЬНЫЕ СЕРВЕРА =====
+        for (var i = 0; i < SPEEDTEST_SERVERS.length; i++) {
+
+            var option = document.createElement("option");
+            option.value = i;
+            option.textContent = SPEEDTEST_SERVERS[i].name;
+
+            if (SPEEDTEST_SERVERS[i].serveropen === "NO") {
+                option.textContent += " (OFF)";
             }
-        });
-    }
+
+            I("server").appendChild(option);
+        }
+
+        I("testWrapper").className = "visible";
+        initUI();
+
+        setTimeout(function () {
+            startStop();
+        }, 1500);
+    };
+
     if(typeof SPEEDTEST_SERVERS === "string"){
         //need to fetch list of servers from specified URL
         s.loadServerList(SPEEDTEST_SERVERS,function(servers){
@@ -283,12 +276,10 @@ function prepareMultiTest(groupType) {
 
     for (var i = 0; i < SPEEDTEST_SERVERS.length; i++) {
 
-        var serverOpen =
-            SPEEDTEST_SERVERS[i].serveropen === undefined ||
-            SPEEDTEST_SERVERS[i].serveropen === "YES";
-
-        if (groupType === "all_available" && !serverOpen) {
-            continue;
+        if (groupType === "all_available") {
+            if (SPEEDTEST_SERVERS[i].serveropen !== "YES") {
+                continue;
+            }
         }
 
         serversToTest.push(i);
@@ -297,7 +288,8 @@ function prepareMultiTest(groupType) {
     if (serversToTest.length === 0) {
         I("startStopBtn").className = "";
         I("server").disabled = false;
-        I("currentTest").innerHTML = "Нет серверов для тестирования";
+        I("currentTest").innerHTML =
+            "Нет доступных серверов (serveropen = YES)";
         return;
     }
 
