@@ -281,31 +281,26 @@ function prepareMultiTest(groupType) {
     serversToTest = [];
     currentServer = 0;
 
-    var testPoints = [];
-
     for (var i = 0; i < SPEEDTEST_SERVERS.length; i++) {
 
-        // 🔥 ТОЛЬКО serveropen === "YES"
-        if (groupType === "all_available" &&
-            SPEEDTEST_SERVERS[i].serveropen !== "YES") {
+        var serverOpen =
+            SPEEDTEST_SERVERS[i].serveropen === undefined ||
+            SPEEDTEST_SERVERS[i].serveropen === "YES";
+
+        if (groupType === "all_available" && !serverOpen) {
             continue;
         }
 
         serversToTest.push(i);
-        testPoints.push(SPEEDTEST_SERVERS[i]);
     }
 
-    if (testPoints.length === 0) {
+    if (serversToTest.length === 0) {
         I("startStopBtn").className = "";
         I("server").disabled = false;
-        I("currentTest").innerHTML = "Нет доступных серверов (serveropen = YES)";
+        I("currentTest").innerHTML = "Нет серверов для тестирования";
         return;
     }
 
-    // ⬅️ СНАЧАЛА передаём сервера
-    s.addTestPoints(testPoints);
-
-    // ⬅️ ПОТОМ выбираем первый
     currentServer = serversToTest[0];
 
     document.getElementById("currentTest").innerHTML =
