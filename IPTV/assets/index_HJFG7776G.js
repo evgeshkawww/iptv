@@ -1,7 +1,7 @@
 window.SPEEDTEST_SERVERS = [  
     {
       name: "s1.turbod.iptv",
-      server: "https://tinyurl.com/3ek5ntbf",
+      server: "http://ru.byskaz.ru:8811/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
