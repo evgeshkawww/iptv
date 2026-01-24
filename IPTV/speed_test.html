@@ -51,6 +51,7 @@ function initServers(){
                 
                 //populate server list for manual selection
                 for(var i=0;i<SPEEDTEST_SERVERS.length;i++){
+                    if(SPEEDTEST_SERVERS[i].pingT==-1) continue;
                     var option=document.createElement("option");
                     option.value=i;
                     option.textContent=SPEEDTEST_SERVERS[i].name;
@@ -285,6 +286,8 @@ function prepareMultiTest(groupType) {
     
     // Формируем массив серверов для тестирования в зависимости от выбранной группы
     for(var i=0; i<SPEEDTEST_SERVERS.length; i++) {
+        if(SPEEDTEST_SERVERS[i].pingT==-1) continue;
+        
         // Для "all_available" берем только серверы с serveropen="YES"
         if(groupType === "all_available" && SPEEDTEST_SERVERS[i].serveropen !== "YES") continue;
         
