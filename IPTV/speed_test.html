@@ -966,17 +966,17 @@ function fallbackCopyInput(el) {
 		</div>
 		<div id="ipArea">
 			<span id="ip"></span>
-		</div>
-		<div id="shareArea" style="display:none">
-			<h3>Share results</h3>
-			<p>Test ID: <span id="testId"></span></p>
-			<input type="text"
-                    value=""
-                    id="resultsURL"
-                    readonly="readonly"
-                    onclick="copyInputValue(this)" />
-		</div>
-	</div>
+        </div>
+        <div id="shareArea" style="display:none">
+            <h3>Share results</h3>
+            <p>Test ID: <span id="testId"></span></p>
+            <input type="text"
+                            value=""
+                            id="resultsURL"
+                            readonly="readonly"
+                            onclick="this.select();this.focus();this.select();document.execCommand('copy');alert('Link copied')" />
+        </div>
+    </div>
 </div>
 	<!--
 	<footer style="margin-top:40px; text-align:center;">
