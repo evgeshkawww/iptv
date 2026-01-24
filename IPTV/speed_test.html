@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,6 @@
 <meta charset="UTF-8" />
 <link rel="stylesheet" href="style/theme.css">
 <script type="text/javascript" src="js/speedtest.js"></script>
-
 <script type="text/javascript">
 function I(i){return document.getElementById(i);}
 
@@ -437,7 +437,7 @@ function prepareMultiTest(groupType) {
         currentServer = serversToTest[0];
         document.getElementById("currentTest").innerHTML = "Тестируется: " + SPEEDTEST_SERVERS[currentServer].name + 
             " (1 из " + serversToTest.length + ")";
-        s.addTestPoint(SPEEDTEST_SERVERS[currentServer]);
+        
         s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
         startMultiTest();
     } else {
@@ -509,8 +509,7 @@ function startMultiTest() {
             document.getElementById("currentTest").innerHTML =
                 "Тестируется: " + SPEEDTEST_SERVERS[currentServer].name +
                 " (" + (currentIndex + 2) + " из " + serversToTest.length + ")";
-				
-            s.addTestPoint(SPEEDTEST_SERVERS[currentServer]);
+
             s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
             s.start();
 
@@ -696,34 +695,6 @@ if(!document.getElementById("recommendStyles")) {
     document.head.appendChild(styleSheet);
 }
 </script>
-
-<script>
-function copyInputValue(el) {
-    var text = el.value;
-
-    if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(text).then(function () {
-            alert("Link copied");
-        }).catch(function () {
-            fallbackCopyInput(el);
-        });
-    } else {
-        fallbackCopyInput(el);
-    }
-}
-
-function fallbackCopyInput(el) {
-    el.focus();
-    el.select();
-    try {
-        document.execCommand("copy");
-        alert("Link copied");
-    } catch (e) {
-        alert("Copy failed");
-    }
-}
-</script>
-
 <style type="text/css">
 	html,body{
 		border:none; padding:0; margin:0;
@@ -930,7 +901,7 @@ function fallbackCopyInput(el) {
 <title>Premium IPTV speed test</title>
 </head>
 <body onload="initServers();">
-<h1>Premium IPTV Speed Test</h1>
+<h1></h1>
 <div id="loading" class="visible">
 	<p id="message"><span class="loadCircle"></span>Selecting a server...</p>
 </div>
@@ -966,17 +937,14 @@ function fallbackCopyInput(el) {
 		</div>
 		<div id="ipArea">
 			<span id="ip"></span>
-        </div>
-        <div id="shareArea" style="display:none">
-            <h3>Share results</h3>
-            <p>Test ID: <span id="testId"></span></p>
-            <input type="text"
-                            value=""
-                            id="resultsURL"
-                            readonly="readonly"
-                            onclick="this.select();this.focus();this.select();document.execCommand('copy');alert('Link copied')" />
-        </div>
-    </div>
+		</div>
+		<div id="shareArea" style="display:none">
+			<h3>Share results</h3>
+			<p>Test ID: <span id="testId"></span></p>
+			<input type="text" value="" id="resultsURL" readonly="readonly" onclick="this.select();this.focus();this.select();document.execCommand('copy');alert('Link copied')"/>
+			<img src="" id="resultsImg" />
+		</div>
+	</div>
 </div>
 	<!--
 	<footer style="margin-top:40px; text-align:center;">
@@ -987,3 +955,10 @@ function fallbackCopyInput(el) {
 	-->
 </body>
 </html>
+
+
+
+
+
+
+
