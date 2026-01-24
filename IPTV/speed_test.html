@@ -277,34 +277,24 @@ function runSingleServerTest() {
 
 function prepareMultiTest(groupType) {
 
-    // Сброс результатов
     groupTestResults = [];
     serversToTest = [];
     currentServer = 0;
 
-    // Массив серверов для передачи в Speedtest
     var testPoints = [];
 
-    // Отбор серверов
     for (var i = 0; i < SPEEDTEST_SERVERS.length; i++) {
 
-        // Полностью мёртвые серверы
-        if (SPEEDTEST_SERVERS[i].pingT === -1) {
-            continue;
-        }
-
-        // В АВТОМАТЕ тестируем ТОЛЬКО serveropen === "YES"
+        // 🔥 ТОЛЬКО serveropen === "YES"
         if (groupType === "all_available" &&
             SPEEDTEST_SERVERS[i].serveropen !== "YES") {
             continue;
         }
 
-        // Сохраняем индекс и сервер
         serversToTest.push(i);
         testPoints.push(SPEEDTEST_SERVERS[i]);
     }
 
-    // Если нет подходящих серверов
     if (testPoints.length === 0) {
         I("startStopBtn").className = "";
         I("server").disabled = false;
@@ -312,11 +302,10 @@ function prepareMultiTest(groupType) {
         return;
     }
 
-    // 🔥 КРИТИЧЕСКИ ВАЖНО
-    // Сообщаем Speedtest какие сервера реально тестировать
+    // ⬅️ СНАЧАЛА передаём сервера
     s.addTestPoints(testPoints);
 
-    // Первый сервер
+    // ⬅️ ПОТОМ выбираем первый
     currentServer = serversToTest[0];
 
     document.getElementById("currentTest").innerHTML =
@@ -326,11 +315,9 @@ function prepareMultiTest(groupType) {
         serversToTest.length +
         ")";
 
-    // Устанавливаем сервер и запускаем тест
     s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
     startMultiTest();
 }
-
 
 // Функция для тестирования всех серверов последовательно
 function startMultiTest() {
