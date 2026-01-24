@@ -56,7 +56,7 @@ function initServers(){
                     option.value=i;
                     option.textContent=SPEEDTEST_SERVERS[i].name;
                     if(SPEEDTEST_SERVERS[i].serveropen === "NO") {
-                        option.textContent += " (Online)";
+                        option.textContent += " (OFF)";
                     }
                     // Убираем автоматическое выделение серверов, т.к. теперь всегда выбрана группа
                     // if(SPEEDTEST_SERVERS[i]===server) option.selected=true;
@@ -402,7 +402,7 @@ function appendResult(server, serveropen, dl, ping, jitter) {
     let statusIcon = getServerRating(jitter, dl);
     
     // Определяем символ статуса на основе значения serveropen
-    let isopen = serveropen === "YES" ? "Online 🌎" : "Online 🌎";
+    let isopen = serveropen === "YES" ? "Online 🌎" : "OFF ❌";
     
     // Добавляем строку с результатом в таблицу
     document.getElementById("multi_results").getElementsByTagName('tbody')[0].innerHTML +=
