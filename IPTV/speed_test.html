@@ -317,60 +317,56 @@ function prepareMultiTest(groupType) {
 // Функция для тестирования всех серверов последовательно
 function startMultiTest() {
 
-    var serverIndex = currentServer;
-    var serverObj = SPEEDTEST_SERVERS[serverIndex];
-
-    document.getElementById("currentTest").innerHTML =
-        "Тестируется: " +
-        serverObj.name +
-        " (" +
-        (serversToTest.indexOf(serverIndex) + 1) +
-        " из " +
-        serversToTest.length +
-        ")";
-
-    var s = new Speedtest();
-
-    s.setParameter("telemetry_level", "none");
-    s.setParameter("test_order", "pD");
-
-    s.addTestPoints([serverObj]);
-    s.setSelectedServer(serverObj);
-
-    s.onupdate = function (data) {
+    s.onupdate = function(data) {
         uiData = data;
     };
 
-    s.onend = function (aborted) {
+    s.onend = function(aborted) {
 
-        if (!aborted) {
-
-            appendResult(
-                serverObj.name,
-                uiData.dlStatus,
-                uiData.pingStatus,
-                uiData.jitterStatus
-            );
-
-            groupTestResults.push({
-                index: serverIndex,
-                name: serverObj.name,
-                dl: uiData.dlStatus,
-                ping: uiData.pingStatus,
-                jitter: uiData.jitterStatus,
-                recommended: isServerRecommended(
-                    uiData.jitterStatus,
-                    uiData.dlStatus
-                )
-            });
+        if (aborted) {
+            I("startStopBtn").className = "";
+            I("server").disabled = false;
+            document.getElementById("currentTest").innerHTML = "";
+            return;
         }
 
-        var nextPos = serversToTest.indexOf(serverIndex) + 1;
+        // сохраняем результат
+        appendResult(
+            SPEEDTEST_SERVERS[currentServer].name,
+            SPEEDTEST_SERVERS[currentServer].serveropen,
+            uiData.dlStatus,
+            uiData.pingStatus,
+            uiData.jitterStatus
+        );
 
-        if (nextPos < serversToTest.length) {
-            currentServer = serversToTest[nextPos];
-            setTimeout(startMultiTest, 300); // ← КРИТИЧНО
+        groupTestResults.push({
+            index: currentServer,
+            name: SPEEDTEST_SERVERS[currentServer].name,
+            serveropen: SPEEDTEST_SERVERS[currentServer].serveropen,
+            dl: uiData.dlStatus,
+            ping: uiData.pingStatus,
+            jitter: uiData.jitterStatus,
+            recommended: isServerRecommended(uiData.jitterStatus, uiData.dlStatus)
+        });
+
+        var pos = serversToTest.indexOf(currentServer);
+
+        if (pos + 1 < serversToTest.length) {
+
+            currentServer = serversToTest[pos + 1];
+
+            document.getElementById("currentTest").innerHTML =
+                "Тестируется: " +
+                SPEEDTEST_SERVERS[currentServer].name +
+                " (" + (pos + 2) + " из " + serversToTest.length + ")";
+
+            setTimeout(function () {
+                s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
+                s.start();
+            }, 300);
+
         } else {
+
             I("startStopBtn").className = "";
             I("server").disabled = false;
 
@@ -378,12 +374,10 @@ function startMultiTest() {
 
             if (bestServer) {
                 document.getElementById("currentTest").innerHTML =
-                    '✅ Рекомендован: <strong>' +
-                    bestServer.name +
-                    "</strong>";
+                    "✅ Рекомендован: " + bestServer.name;
             } else {
                 document.getElementById("currentTest").innerHTML =
-                    "Нет подходящих серверов";
+                    "⚠️ Нет подходящих серверов";
             }
         }
     };
