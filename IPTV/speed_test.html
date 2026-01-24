@@ -285,13 +285,12 @@ function prepareMultiTest(groupType) {
     serversToTest = [];
     
     // Формируем массив серверов для тестирования в зависимости от выбранной группы
-    for(var i=0; i<SPEEDTEST_SERVERS.length; i++) {
-        if(SPEEDTEST_SERVERS[i].pingT==-1) continue;
-        
-        // Для "all_available" берем только серверы с serveropen="YES"
-        if(groupType === "all_available" && SPEEDTEST_SERVERS[i].serveropen !== "YES") continue;
-        
-        serversToTest.push(i);
+    for (var i = 0; i < SPEEDTEST_SERVERS.length; i++) {
+        if (SPEEDTEST_SERVERS[i].serveropen === "NO") continue; // показывать только доступные
+        var option = document.createElement("option");
+        option.value = i;
+        option.textContent = SPEEDTEST_SERVERS[i].name;
+        document.getElementById("serverSelect").appendChild(option);
     }
     
     if(serversToTest.length > 0) {
@@ -817,7 +816,6 @@ if(!document.getElementById("recommendStyles")) {
 	-->
 </body>
 </html>
-
 
 
 
