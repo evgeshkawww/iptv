@@ -34,7 +34,7 @@ function initServers(){
                 var optionAllAvailable = document.createElement("option");
                 optionAllAvailable.value = "all_available";
                 optionAllAvailable.textContent = "Все доступные сервера";
-                optionAllAvailable.selected = true;// Устанавливаем эту опцию как выбранную по умолчанию
+                optionAllAvailable.selected = true; // Устанавливаем эту опцию как выбранную по умолчанию
                 I("server").appendChild(optionAllAvailable);
                 
                 // Добавляем опцию для тестирования всех серверов, включая заполненные
@@ -56,7 +56,7 @@ function initServers(){
                     option.value=i;
                     option.textContent=SPEEDTEST_SERVERS[i].name;
                     if(SPEEDTEST_SERVERS[i].serveropen === "NO") {
-                        option.textContent += " (Online)";
+                        option.textContent += " (OFF)";
                     }
                     // Убираем автоматическое выделение серверов, т.к. теперь всегда выбрана группа
                     // if(SPEEDTEST_SERVERS[i]===server) option.selected=true;
@@ -67,12 +67,9 @@ function initServers(){
                 I("testWrapper").className="visible";
                 initUI();
 
-                I("server").value = "all_available";
-
                 setTimeout(function(){
-                    I("server").value = "all_available";
                     startStop();
-                },1000);
+                },1500);
             }else{ //no servers are available, the test cannot proceed
                 noServersAvailable();
             }
@@ -405,7 +402,7 @@ function appendResult(server, serveropen, dl, ping, jitter) {
     let statusIcon = getServerRating(jitter, dl);
     
     // Определяем символ статуса на основе значения serveropen
-    let isopen = serveropen === "YES" ? "Online 🌎" : "Online 🌎";
+    let isopen = serveropen === "YES" ? "Online 🌎" : "OFF ❌";
     
     // Добавляем строку с результатом в таблицу
     document.getElementById("multi_results").getElementsByTagName('tbody')[0].innerHTML +=
@@ -765,7 +762,7 @@ if(!document.getElementById("recommendStyles")) {
 </style>
 <title>Premium IPTV speed test</title>
 </head>
-<body>
+<body onload="initServers();">
 <h1></h1>
 <div id="loading" class="visible">
 	<p id="message"><span class="loadCircle"></span>Selecting a server...</p>
