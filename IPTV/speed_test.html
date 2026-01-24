@@ -275,40 +275,62 @@ function runSingleServerTest() {
     s.start();
 }
 
-// Подготовка к тестированию группы серверов
 function prepareMultiTest(groupType) {
-    // Очищаем результаты предыдущих тестов
+
+    // Сброс результатов
     groupTestResults = [];
-    
-    // Обновляем глобальную переменную currentServer и массив serversToTest
-    currentServer = 0;
     serversToTest = [];
-    
-    // Формируем массив серверов для тестирования в зависимости от выбранной группы
-    for(var i=0; i<SPEEDTEST_SERVERS.length; i++) {
-        if(SPEEDTEST_SERVERS[i].pingT==-1) continue;
-        
-        // Для "all_available" берем только серверы с serveropen="YES"
-        if(groupType === "all_available" && SPEEDTEST_SERVERS[i].serveropen !== "YES") continue;
-        
+    currentServer = 0;
+
+    // Массив серверов для передачи в Speedtest
+    var testPoints = [];
+
+    // Отбор серверов
+    for (var i = 0; i < SPEEDTEST_SERVERS.length; i++) {
+
+        // Полностью мёртвые серверы
+        if (SPEEDTEST_SERVERS[i].pingT === -1) {
+            continue;
+        }
+
+        // В АВТОМАТЕ тестируем ТОЛЬКО serveropen === "YES"
+        if (groupType === "all_available" &&
+            SPEEDTEST_SERVERS[i].serveropen !== "YES") {
+            continue;
+        }
+
+        // Сохраняем индекс и сервер
         serversToTest.push(i);
+        testPoints.push(SPEEDTEST_SERVERS[i]);
     }
-    
-    if(serversToTest.length > 0) {
-        // Устанавливаем первый сервер и запускаем тестирование
-        currentServer = serversToTest[0];
-        document.getElementById("currentTest").innerHTML = "Тестируется: " + SPEEDTEST_SERVERS[currentServer].name + 
-            " (1 из " + serversToTest.length + ")";
-        
-        s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
-        startMultiTest();
-    } else {
-        // Если нет серверов для тестирования
-        I("startStopBtn").className="";
-        I("server").disabled=false;
-        I("currentTest").innerHTML = "Нет серверов для тестирования";
+
+    // Если нет подходящих серверов
+    if (testPoints.length === 0) {
+        I("startStopBtn").className = "";
+        I("server").disabled = false;
+        I("currentTest").innerHTML = "Нет доступных серверов (serveropen = YES)";
+        return;
     }
+
+    // 🔥 КРИТИЧЕСКИ ВАЖНО
+    // Сообщаем Speedtest какие сервера реально тестировать
+    s.addTestPoints(testPoints);
+
+    // Первый сервер
+    currentServer = serversToTest[0];
+
+    document.getElementById("currentTest").innerHTML =
+        "Тестируется: " +
+        SPEEDTEST_SERVERS[currentServer].name +
+        " (1 из " +
+        serversToTest.length +
+        ")";
+
+    // Устанавливаем сервер и запускаем тест
+    s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
+    startMultiTest();
 }
+
 
 // Функция для тестирования всех серверов последовательно
 function startMultiTest() {
@@ -817,7 +839,6 @@ if(!document.getElementById("recommendStyles")) {
 	-->
 </body>
 </html>
-
 
 
 
