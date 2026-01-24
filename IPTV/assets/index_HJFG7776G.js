@@ -1,25 +1,25 @@
 window.SPEEDTEST_SERVERS = [  
     {
       name: "s1.turbod.iptv",
-      server: "https://tinyurl.com/3ek5ntbf",
+      server: "http://66.90.90.202:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
-	  serveropen: "YES"
+      serveropen: "YES"
     },
-	{
+    {
       name: "s2.turbod.iptv",
-      server: "https://tinyurl.com/2v6z3e3r",
+      server: "http://54.38.221.168:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
-	  serveropen: "YES"
+      serveropen: "YES"
     },
     {
       name: "s3.turbod.iptv",
-      server: "https://tinyurl.com/ynat4x5c/",
+      server: "http://51.83.174.109:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
@@ -28,7 +28,7 @@ window.SPEEDTEST_SERVERS = [
     },
     {
       name: "s4.turbod.iptv",
-      server: "https://tinyurl.com/mumhz5hk/",
+      server: "http://54.38.221.176:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
@@ -37,7 +37,7 @@ window.SPEEDTEST_SERVERS = [
     },
     {
       name: "s5.turbod.iptv",
-      server: "https://tinyurl.com/5n8m54pm",
+      server: "http://66.90.90.74:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
@@ -46,7 +46,7 @@ window.SPEEDTEST_SERVERS = [
     },
     {
       name: "s6.turbod.iptv",
-      server: "https://tinyurl.com/hrucsbwk",
+      server: "http://162.249.127.211:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
@@ -55,7 +55,7 @@ window.SPEEDTEST_SERVERS = [
     },
     {
       name: "s7.turbod.iptv",
-      server: "https://tinyurl.com/yc8zfv73/",
+      server: "http://76.164.202.126:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
@@ -64,7 +64,7 @@ window.SPEEDTEST_SERVERS = [
     },
     {
       name: "s8.turbod.iptv",
-      server: "https://tinyurl.com/n8d2hku2",
+      server: "http://66.90.90.235:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
@@ -73,7 +73,7 @@ window.SPEEDTEST_SERVERS = [
     },
     {
       name: "s9.turbod.iptv",
-      server: "https://tinyurl.com/3r5yjstm",
+      server: "http://203.25.108.101:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
@@ -82,7 +82,7 @@ window.SPEEDTEST_SERVERS = [
     },
     {
       name: "s10.turbod.iptv",
-      server: "https://tinyurl.com/2jrytvje/",
+      server: "http://89.36.95.29:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
@@ -91,7 +91,7 @@ window.SPEEDTEST_SERVERS = [
     },
     {
       name: "s11.turbod.iptv",
-      server: "https://tinyurl.com/mrte7e4h",
+      server: "http://66.90.92.82:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
@@ -100,7 +100,7 @@ window.SPEEDTEST_SERVERS = [
     },
     {
       name: "s12.turbod.iptv",
-      server: "https://tinyurl.com/4mrzzvz5/",
+      server: "http://76.164.202.125:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
@@ -109,7 +109,7 @@ window.SPEEDTEST_SERVERS = [
     },
     {
       name: "s13.turbod.iptv",
-      server: "https://tinyurl.com/3vdcweuv/",
+      server: "http://54.38.221.168:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
@@ -118,25 +118,25 @@ window.SPEEDTEST_SERVERS = [
     },
     {
       name: "s14.turbod.iptv",
-      server: "https://tinyurl.com/5n8r86zs/",
+      server: "http://76.164.202.121:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
       serveropen: "NO"
     },
-	{
+    {
       name: "s15.turbod.iptv",
-      server: "https://tinyurl.com/wj7mhkyy/",
+      server: "http://162.249.127.201:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
       serveropen: "NO"
     },
-	{
+    {
       name: "s16.turbod.iptv",
-      server: "https://tinyurl.com/4kw3fbb3",
+      server: "http://76.164.202.114:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
