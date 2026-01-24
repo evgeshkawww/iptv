@@ -4,21 +4,170 @@
 <head>
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
 <meta charset="UTF-8" />
+
 <link rel="stylesheet" href="style/theme.css">
+
 <script type="text/javascript" src="js/speedtest.js"></script>
-<script
-    src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/assets/index_HJFG7776G.js"
-    onload="initServers();">
+
+<script type="text/javascript">
+    function I(i) {
+        return document.getElementById(i);
+    }
 </script>
 <script type="text/javascript">
-function I(i){return document.getElementById(i);}
+    var SPEEDTEST_SERVERS = [
+  {
+    name: "s1.turbod.iptv",
+    server: "http://45.90.236.85:8083/",
+    dlURL: "backend/garbage.php",
+    ulURL: "backend/empty.php",
+    pingURL: "http://45.90.236.85:8083/st/ping",
+    getIpURL: "http://45.90.236.85:8083/st/ip",
+    serveropen: "YES"
+  },
+  {
+    name: "s2.turbod.iptv",
+    server: "http://45.90.236.85:8084/",
+    dlURL: "backend/garbage.php",
+    ulURL: "backend/empty.php",
+    pingURL: "http://45.90.236.85:8084/st/ping",
+    getIpURL: "http://45.90.236.85:8084/st/ip",
+    serveropen: "YES"
+  },
+  {
+    name: "s3.turbod.iptv",
+    server: "http://45.90.236.85:8085/",
+    dlURL: "backend/garbage.php",
+    ulURL: "backend/empty.php",
+    pingURL: "http://45.90.236.85:8085/st/ping",
+    getIpURL: "http://45.90.236.85:8085/st/ip",
+    serveropen: "NO"
+  },
+  {
+    name: "s4.turbod.iptv",
+    server: "http://45.90.236.85:8086/",
+    dlURL: "backend/garbage.php",
+    ulURL: "backend/empty.php",
+    pingURL: "http://45.90.236.85:8086/st/ping",
+    getIpURL: "http://45.90.236.85:8086/st/ip",
+    serveropen: "NO"
+  },
+  {
+    name: "s5.turbod.iptv",
+    server: "http://45.90.236.85:8087/",
+    dlURL: "backend/garbage.php",
+    ulURL: "backend/empty.php",
+    pingURL: "http://45.90.236.85:8087/st/ping",
+    getIpURL: "http://45.90.236.85:8087/st/ip",
+    serveropen: "YES"
+  },
+  {
+    name: "s6.turbod.iptv",
+    server: "http://45.90.236.85:8088/",
+    dlURL: "backend/garbage.php",
+    ulURL: "backend/empty.php",
+    pingURL: "http://45.90.236.85:8088/st/ping",
+    getIpURL: "http://45.90.236.85:8088/st/ip",
+    serveropen: "YES"
+  },
+  {
+    name: "s7.turbod.iptv",
+    server: "http://45.90.236.85:8089/",
+    dlURL: "backend/garbage.php",
+    ulURL: "backend/empty.php",
+    pingURL: "http://45.90.236.85:8089/st/ping",
+    getIpURL: "http://45.90.236.85:8089/st/ip",
+    serveropen: "NO"
+  },
+  {
+    name: "s8.turbod.iptv",
+    server: "http://45.90.236.85:8090/",
+    dlURL: "backend/garbage.php",
+    ulURL: "backend/empty.php",
+    pingURL: "http://45.90.236.85:8090/st/ping",
+    getIpURL: "http://45.90.236.85:8090/st/ip",
+    serveropen: "YES"
+  },
+  {
+    name: "s9.turbod.iptv",
+    server: "http://45.90.236.85:8091/",
+    dlURL: "backend/garbage.php",
+    ulURL: "backend/empty.php",
+    pingURL: "http://45.90.236.85:8091/st/ping",
+    getIpURL: "http://45.90.236.85:8091/st/ip",
+    serveropen: "YES"
+  },
+  {
+    name: "s10.turbod.iptv",
+    server: "http://45.90.236.85:8092/",
+    dlURL: "backend/garbage.php",
+    ulURL: "backend/empty.php",
+    pingURL: "http://45.90.236.85:8092/st/ping",
+    getIpURL: "http://45.90.236.85:8092/st/ip",
+    serveropen: "NO"
+  },
+  {
+    name: "s11.turbod.iptv",
+    server: "http://45.90.236.85:8093/",
+    dlURL: "backend/garbage.php",
+    ulURL: "backend/empty.php",
+    pingURL: "http://45.90.236.85:8093/st/ping",
+    getIpURL: "http://45.90.236.85:8093/st/ip",
+    serveropen: "YES"
+  },
+  {
+    name: "s12.turbod.iptv",
+    server: "http://45.90.236.85:8094/",
+    dlURL: "backend/garbage.php",
+    ulURL: "backend/empty.php",
+    pingURL: "http://45.90.236.85:8094/st/ping",
+    getIpURL: "http://45.90.236.85:8094/st/ip",
+    serveropen: "NO"
+  },
+  {
+    name: "s13.turbod.iptv",
+    server: "http://45.90.236.85:8095/",
+    dlURL: "backend/garbage.php",
+    ulURL: "backend/empty.php",
+    pingURL: "http://45.90.236.85:8095/st/ping",
+    getIpURL: "http://45.90.236.85:8095/st/ip",
+    serveropen: "NO"
+  },
+  {
+    name: "s14.turbod.iptv",
+    server: "http://45.90.236.85:8096/",
+    dlURL: "backend/garbage.php",
+    ulURL: "backend/empty.php",
+    pingURL: "http://45.90.236.85:8096/st/ping",
+    getIpURL: "http://45.90.236.85:8096/st/ip",
+    serveropen: "NO"
+  },
+  {
+    name: "s15.turbod.iptv",
+    server: "http://45.90.236.85:8097/",
+    dlURL: "backend/garbage.php",
+    ulURL: "backend/empty.php",
+    pingURL: "http://45.90.236.85:8097/st/ping",
+    getIpURL: "http://45.90.236.85:8097/st/ip",
+    serveropen: "NO"
+  },
+  {
+    name: "s16.turbod.iptv",
+    server: "http://45.90.236.85:8098/",
+    dlURL: "backend/garbage.php",
+    ulURL: "backend/empty.php",
+    pingURL: "http://45.90.236.85:8098/st/ping",
+    getIpURL: "http://45.90.236.85:8098/st/ip",
+    serveropen: "YES"
+  }
+];
+    // INITIALIZE SPEEDTEST
+    var s = new Speedtest();
+    s.setParameter("telemetry_level", "basic");
 
-
-//INITIALIZE SPEEDTEST
-var s=new Speedtest(); //create speedtest object
-s.setParameter("telemetry_level","basic"); //enable telemetry
 
 //SERVER AUTO SELECTION
 function initServers(){
@@ -302,39 +451,41 @@ function prepareMultiTest(groupType) {
         serversToTest.length +
         ")";
 
-    s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
     startMultiTest();
 }
 
 // Функция для тестирования всех серверов последовательно
 function startMultiTest() {
 
-    s.onupdate = function(data) {
+    var serverObj = SPEEDTEST_SERVERS[currentServer];
+
+    s = new Speedtest();
+    s.setParameter("telemetry_level", "basic");
+    s.addTestPoint(serverObj);
+
+    s.onupdate = function(data){
         uiData = data;
     };
 
-    s.onend = function(aborted) {
+    s.onend = function(aborted){
 
-        if (aborted) {
-            I("startStopBtn").className = "";
-            I("server").disabled = false;
-            document.getElementById("currentTest").innerHTML = "";
+        if(aborted){
+            I("startStopBtn").className="";
+            I("server").disabled=false;
             return;
         }
 
-        // сохраняем результат
         appendResult(
-            SPEEDTEST_SERVERS[currentServer].name,
-            SPEEDTEST_SERVERS[currentServer].serveropen,
+            serverObj.name,
+            serverObj.serveropen,
             uiData.dlStatus,
             uiData.pingStatus,
             uiData.jitterStatus
         );
 
         groupTestResults.push({
-            index: currentServer,
-            name: SPEEDTEST_SERVERS[currentServer].name,
-            serveropen: SPEEDTEST_SERVERS[currentServer].serveropen,
+            name: serverObj.name,
+            serveropen: serverObj.serveropen,
             dl: uiData.dlStatus,
             ping: uiData.pingStatus,
             jitter: uiData.jitterStatus,
@@ -343,34 +494,22 @@ function startMultiTest() {
 
         var pos = serversToTest.indexOf(currentServer);
 
-        if (pos + 1 < serversToTest.length) {
-
+        if(pos + 1 < serversToTest.length){
             currentServer = serversToTest[pos + 1];
 
             document.getElementById("currentTest").innerHTML =
-                "Тестируется: " +
-                SPEEDTEST_SERVERS[currentServer].name +
+                "Тестируется: " + serverObj.name +
                 " (" + (pos + 2) + " из " + serversToTest.length + ")";
 
-            setTimeout(function () {
-                s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
-                s.start();
-            }, 300);
-
+            setTimeout(startMultiTest, 500);
         } else {
+            I("startStopBtn").className="";
+            I("server").disabled=false;
 
-            I("startStopBtn").className = "";
-            I("server").disabled = false;
-
-            var bestServer = findBestServer(groupTestResults);
-
-            if (bestServer) {
-                document.getElementById("currentTest").innerHTML =
-                    "✅ Рекомендован: " + bestServer.name;
-            } else {
-                document.getElementById("currentTest").innerHTML =
-                    "⚠️ Нет подходящих серверов";
-            }
+            var best = findBestServer(groupTestResults);
+            document.getElementById("currentTest").innerHTML =
+                best ? "✅ Рекомендован: " + best.name
+                     : "⚠️ Нет подходящих серверов";
         }
     };
 
