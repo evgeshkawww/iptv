@@ -8,156 +8,13 @@
 <meta charset="UTF-8" />
 <link rel="stylesheet" href="style/theme.css">
 <script type="text/javascript" src="js/speedtest.js"></script>
+<script
+    src="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv/IPTV/assets/index_HJFG7776G.js"
+    onload="initServers();">
+</script>
 <script type="text/javascript">
 function I(i){return document.getElementById(i);}
 
-//LIST OF TEST SERVERS. See documentation for details if needed
-var SPEEDTEST_SERVERS=[  
-    {
-      name: "s1.turbod.iptv",
-      server: "https://tinyurl.com/y66dbrzp/",
-      dlURL: "backend/garbage.php",
-      ulURL: "backend/empty.php",
-      pingURL: "backend/empty.php",
-      getIpURL: "backend/getIP.php",
-	  serveropen: "YES"
-    },
-	{
-      name: "s2.turbod.iptv",
-      server: "https://tinyurl.com/3vdcweuv/",
-      dlURL: "backend/garbage.php",
-      ulURL: "backend/empty.php",
-      pingURL: "backend/empty.php",
-      getIpURL: "backend/getIP.php",
-	  serveropen: "YES"
-    },
-    {
-      name: "s3.turbod.iptv",
-      server: "https://tinyurl.com/ynat4x5c/",
-      dlURL: "backend/garbage.php",
-      ulURL: "backend/empty.php",
-      pingURL: "backend/empty.php",
-      getIpURL: "backend/getIP.php",
-      serveropen: "NO"
-    },
-    {
-      name: "s4.turbod.iptv",
-      server: "https://tinyurl.com/mumhz5hk/",
-      dlURL: "backend/garbage.php",
-      ulURL: "backend/empty.php",
-      pingURL: "backend/empty.php",
-      getIpURL: "backend/getIP.php",
-      serveropen: "NO"
-    },
-    {
-      name: "s5.turbod.iptv",
-      server: "https://tinyurl.com/mmb467dx/",
-      dlURL: "backend/garbage.php",
-      ulURL: "backend/empty.php",
-      pingURL: "backend/empty.php",
-      getIpURL: "backend/getIP.php",
-      serveropen: "YES"
-    },
-    {
-      name: "s6.turbod.iptv",
-      server: "https://tinyurl.com/yc43mmy8/",
-      dlURL: "backend/garbage.php",
-      ulURL: "backend/empty.php",
-      pingURL: "backend/empty.php",
-      getIpURL: "backend/getIP.php",
-      serveropen: "YES"
-    },
-    {
-      name: "s7.turbod.iptv",
-      server: "https://tinyurl.com/yc8zfv73/",
-      dlURL: "backend/garbage.php",
-      ulURL: "backend/empty.php",
-      pingURL: "backend/empty.php",
-      getIpURL: "backend/getIP.php",
-      serveropen: "NO"
-    },
-    {
-      name: "s8.turbod.iptv",
-      server: "https://tinyurl.com/yp9e3dpb/",
-      dlURL: "backend/garbage.php",
-      ulURL: "backend/empty.php",
-      pingURL: "backend/empty.php",
-      getIpURL: "backend/getIP.php",
-      serveropen: "YES"
-    },
-    {
-      name: "s9.turbod.iptv",
-      server: "https://tinyurl.com/4afkaab3/",
-      dlURL: "backend/garbage.php",
-      ulURL: "backend/empty.php",
-      pingURL: "backend/empty.php",
-      getIpURL: "backend/getIP.php",
-      serveropen: "YES"
-    },
-    {
-      name: "s10.turbod.iptv",
-      server: "https://tinyurl.com/2jrytvje/",
-      dlURL: "backend/garbage.php",
-      ulURL: "backend/empty.php",
-      pingURL: "backend/empty.php",
-      getIpURL: "backend/getIP.php",
-      serveropen: "NO"
-    },
-    {
-      name: "s11.turbod.iptv",
-      server: "https://tinyurl.com/24n7yp7b/",
-      dlURL: "backend/garbage.php",
-      ulURL: "backend/empty.php",
-      pingURL: "backend/empty.php",
-      getIpURL: "backend/getIP.php",
-      serveropen: "YES"
-    },
-    {
-      name: "s12.turbod.iptv",
-      server: "https://tinyurl.com/4mrzzvz5/",
-      dlURL: "backend/garbage.php",
-      ulURL: "backend/empty.php",
-      pingURL: "backend/empty.php",
-      getIpURL: "backend/getIP.php",
-      serveropen: "NO"
-    },
-    {
-      name: "s13.turbod.iptv",
-      server: "https://tinyurl.com/3vdcweuv/",
-      dlURL: "backend/garbage.php",
-      ulURL: "backend/empty.php",
-      pingURL: "backend/empty.php",
-      getIpURL: "backend/getIP.php",
-      serveropen: "NO"
-    },
-    {
-      name: "s14.turbod.iptv",
-      server: "https://tinyurl.com/5n8r86zs/",
-      dlURL: "backend/garbage.php",
-      ulURL: "backend/empty.php",
-      pingURL: "backend/empty.php",
-      getIpURL: "backend/getIP.php",
-      serveropen: "NO"
-    },
-	{
-      name: "s15.turbod.iptv",
-      server: "https://tinyurl.com/wj7mhkyy/",
-      dlURL: "backend/garbage.php",
-      ulURL: "backend/empty.php",
-      pingURL: "backend/empty.php",
-      getIpURL: "backend/getIP.php",
-      serveropen: "NO"
-    },
-	{
-      name: "s16.turbod.iptv",
-      server: "https://tinyurl.com/2n8yy35r/",
-      dlURL: "backend/garbage.php",
-      ulURL: "backend/empty.php",
-      pingURL: "backend/empty.php",
-      getIpURL: "backend/getIP.php",
-      serveropen: "YES"
-    }
-  ];
 
 //INITIALIZE SPEEDTEST
 var s=new Speedtest(); //create speedtest object
@@ -209,6 +66,10 @@ function initServers(){
                 //show test UI
                 I("testWrapper").className="visible";
                 initUI();
+
+                setTimeout(function(){
+                    startStop();
+                },1500);
             }else{ //no servers are available, the test cannot proceed
                 noServersAvailable();
             }
@@ -280,7 +141,7 @@ function startStop(){
         document.getElementById("currentTest").innerHTML = ''
 		//speedtest is running, abort
 		s.abort();
-		data=null;
+		uiData = null;
 		I("startStopBtn").className="";
 		I("server").disabled=false;
 		initUI();
@@ -651,12 +512,11 @@ function frame(){
 	updateUI();
 }
 frame(); //start frame loop
+
 //function to (re)initialize UI
 function initUI(){
 	drawMeter(I("dlMeter"),0,meterBk,dlColor,0);
-	drawMeter(I("ulMeter"),0,meterBk,ulColor,0);
 	I("dlText").textContent="";
-	I("ulText").textContent="";
 	I("pingText").textContent="";
 	I("jitText").textContent="";
 	I("ip").textContent="";
@@ -900,19 +760,16 @@ if(!document.getElementById("recommendStyles")) {
 		}
 	}
 </style>
-<script src="llservers.js"
-        defer>
-        </script>
 <title>Premium IPTV speed test</title>
 </head>
-<body onload="initServers(); setTimeout(function() { startStop(); }, 1500);">
+<body onload="initServers();">
 <h1></h1>
 <div id="loading" class="visible">
 	<p id="message"><span class="loadCircle"></span>Selecting a server...</p>
 </div>
 <div id="testWrapper" class="hidden">
 	<div id="serverArea">
-                <select id="server" onchange="s.setSelectedServer(SPEEDTEST_SERVERS[this.value])"></select>
+                <select id="server"></select>
 		&nbsp;&nbsp;
 	<div id="startStopBtn" onclick="startStop()"></div><br/>
 	<br>
@@ -951,16 +808,13 @@ if(!document.getElementById("recommendStyles")) {
 		</div>
 	</div>
 </div>
-	<!--
 	<footer style="margin-top:40px; text-align:center;">
   <a href="https://evgeshkawww.github.io/iptv/IPTV/speed-test.html" style="color:#3b82f6; font-weight:600; text-decoration:none; background:rgba(255,255,255,0.03); padding:10px 14px; border-radius:8px; display:inline-block; border:1px solid rgba(255,255,255,0.06);">
     Новый Speedtest➤
   </a>
 </footer>
-	-->
 </body>
 </html>
-
 
 
 
