@@ -76,7 +76,7 @@
 <body>
   <div class="wrap">
     <header>
-<!-- Подключаем Google Fonts в <head> -->
+<!-- Подключаем Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
 <div class="title">
@@ -91,14 +91,17 @@
 
 <style>
   .lampa-link {
-    color: red;
-    font-family: 'Poppins', sans-serif; /* красивый современный шрифт */
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     text-decoration: none;
-    letter-spacing: 0.5px;
+    color: red;
+    animation: blink 1s infinite; /* мигание */
   }
-  .lampa-link:hover {
-    text-shadow: 0 0 6px rgba(255,0,0,0.7); /* эффект при наведении */
+
+  @keyframes blink {
+    0%   { opacity: 1; }
+    50%  { opacity: 0; }
+    100% { opacity: 1; }
   }
 </style>
 
@@ -2271,6 +2274,7 @@ const groupsData = [
   </script>
 </body>
 </html>
+
 
 
 
