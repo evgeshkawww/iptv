@@ -76,15 +76,32 @@
 <body>
   <div class="wrap">
     <header>
-      <div class="title">
-       <h1>
-        Каналы🔞 по запросу в боте! 
-         <a href="https://evgeshkawww.github.io/iptv/IPTV/kino.html" 
-           style="color:red; font-weight:bold; text-decoration:none;">
-           ➕ ПЛАГИН LAMPA ONLINE
-          </a>
-       </h1>
-     </div>
+<!-- Подключаем Google Fonts в <head> -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+<div class="title">
+  <h1>
+    Каналы🔞 по запросу в боте! 
+    <a href="https://evgeshkawww.github.io/iptv/IPTV/kino.html" 
+       class="lampa-link">
+       ➕ ПЛАГИН LAMPA ONLINE
+    </a>
+  </h1>
+</div>
+
+<style>
+  .lampa-link {
+    color: red;
+    font-family: 'Poppins', sans-serif; /* красивый современный шрифт */
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+  .lampa-link:hover {
+    text-shadow: 0 0 6px rgba(255,0,0,0.7); /* эффект при наведении */
+  }
+</style>
+
       <div class="controls">
         <input class="search" id="search" placeholder="Поиск по каналам..." />
         <div class="total" id="total">Общее количество каналов: 0</div>
@@ -2254,6 +2271,7 @@ const groupsData = [
   </script>
 </body>
 </html>
+
 
 
 
