@@ -50,18 +50,19 @@ function initServers(){
                 I("server").appendChild(optionSeparator);
                 
                 //populate server list for manual selection
-                for(var i=0;i<SPEEDTEST_SERVERS.length;i++){
-                    if(SPEEDTEST_SERVERS[i].pingT==-1) continue;
-                    var option=document.createElement("option");
-                    option.value=i;
-                    option.textContent=SPEEDTEST_SERVERS[i].name;
-                    if(SPEEDTEST_SERVERS[i].serveropen === "NO") {
-                        option.textContent += " (OFF)";
-                    }
-                    // Убираем автоматическое выделение серверов, т.к. теперь всегда выбрана группа
-                    // if(SPEEDTEST_SERVERS[i]===server) option.selected=true;
-                    I("server").appendChild(option);
-                }
+				for (var i = 0; i < SPEEDTEST_SERVERS.length; i++) {
+
+					if (SPEEDTEST_SERVERS[i].pingT == -1) continue;
+
+					// 🚫 НЕ добавляем OFF-серверы в список
+					if (SPEEDTEST_SERVERS[i].serveropen !== "YES") continue;
+
+					var option = document.createElement("option");
+					option.value = i;
+					option.textContent = SPEEDTEST_SERVERS[i].name;
+
+					I("server").appendChild(option);
+				}
                 
                 //show test UI
                 I("testWrapper").className="visible";
@@ -817,7 +818,6 @@ if(!document.getElementById("recommendStyles")) {
 	-->
 </body>
 </html>
-
 
 
 
