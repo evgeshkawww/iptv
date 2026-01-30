@@ -762,9 +762,115 @@ if(!document.getElementById("recommendStyles")) {
 	}
 </style>
 <title>Premium IPTV speed test</title>
+<style>
+html, body{
+    background:
+        radial-gradient(circle at top,#0f172a,transparent 60%),
+        radial-gradient(circle at bottom,#020617,#000) !important;
+    color:#e5e7eb !important;
+    font-family: Inter, Roboto, system-ui, sans-serif !important;
+}
+
+/* Заголовки */
+h1, h3{
+    color:#38bdf8 !important;
+    text-shadow:0 0 12px rgba(56,189,248,.6);
+}
+	
+.footer{
+    margin-top:40px;
+    text-align:center;
+    font-size:12px;
+    opacity:.5;
+}
+
+/* Контейнер теста */
+#testWrapper{
+    background:rgba(15,23,42,.75);
+    backdrop-filter:blur(14px);
+    border-radius:22px;
+    padding:24px;
+    box-shadow:
+        0 0 50px rgba(56,189,248,.25),
+        inset 0 0 0 1px rgba(255,255,255,.06);
+}
+
+/* Кнопка старт / стоп */
+#startStopBtn{
+    border-color:#38bdf8 !important;
+    color:#38bdf8 !important;
+    border-radius:14px;
+    font-weight:600;
+    letter-spacing:.05em;
+    box-shadow:0 0 18px rgba(56,189,248,.35);
+}
+
+#startStopBtn:hover{
+    background:rgba(56,189,248,.15);
+}
+
+#startStopBtn.running{
+    background:#ef4444 !important;
+    border-color:#ef4444 !important;
+    color:#fff !important;
+    box-shadow:0 0 18px rgba(239,68,68,.6);
+}
+
+/* Select серверов */
+#server{
+    background:#020617;
+    color:#e5e7eb;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:10px;
+    padding:6px 10px;
+}
+
+/* Текущая информация */
+#currentTest{
+    margin-top:12px;
+    font-size:16px;
+}
+
+/* IP */
+#ip{
+    opacity:.6;
+    font-size:13px;
+}
+
+/* Таблица результатов */
+#multi_results{
+    background:rgba(2,6,23,.9);
+    border-radius:14px;
+    overflow:hidden;
+}
+
+#multi_results th{
+    background:rgba(56,189,248,.15);
+    color:#38bdf8;
+}
+
+#multi_results td{
+    color:#e5e7eb;
+}
+
+/* Рекомендации — под наш стиль */
+.recommended{
+    background:rgba(34,197,94,.15) !important;
+    border-color:#22c55e !important;
+    color:#22c55e !important;
+}
+
+.notRecommended{
+    background:rgba(239,68,68,.15) !important;
+    border-color:#ef4444 !important;
+    color:#ef4444 !important;
+}
+</style>
 </head>
 <body onload="initServers();">
-<h1></h1>
+<h1 style="text-align:center; margin-bottom:20px;">
+🚀 Premium IPTV Speed Test
+</h1>
 <div id="loading" class="visible">
 	<p id="message"><span class="loadCircle"></span>Selecting a server...</p>
 </div>
@@ -816,8 +922,10 @@ if(!document.getElementById("recommendStyles")) {
   </a>
 </footer>
 	-->
+<div class="footer">© E-IPTV</div>	
 </body>
 </html>
+
 
 
 
