@@ -84,11 +84,11 @@ body::before{
 .main-title{
     text-align:center;
     font-family:Orbitron,sans-serif;
-    font-size:46px;
-    letter-spacing:.18em;
+    font-size:34px;          /* было 46px */
+    letter-spacing:.14em;   /* было .18em */
     color:var(--accent);
     text-transform:uppercase;
-    text-shadow:0 0 25px rgba(56,189,248,.65);
+    text-shadow:0 0 20px rgba(56,189,248,.5);
 }
 
 /* секции */
@@ -159,6 +159,14 @@ iframe{
     font-size:12px;
     opacity:.45;
 }
+
+@media (max-width:600px){
+    .main-title{
+        font-size:26px;
+        letter-spacing:.12em;
+    }
+}
+
 </style>
 </head>
 
