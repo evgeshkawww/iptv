@@ -1,142 +1,230 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Premium каталог фильмов</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Catalog</title>
 
-  <!-- Favicons и соц. превью -->
-  <link rel="icon" type="image/svg+xml" href="/iptv/IPTV/favicon.ico" />
-  <link rel="apple-touch-icon" href="/iptv/IPTV/favicon.svg" />
-  <meta property="og:image" content="https://evgeshkawww.github.io/iptv/IPTV/favicon_black.png">
-  <meta name="twitter:image" content="https://evgeshkawww.github.io/iptv/IPTV/favicon_black.png">
+<link rel="icon" href="/iptv/IPTV/favicon.ico">
 
-  <!-- Красивый шрифт -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root{ --bg1:#071127; --bg2:#071a28; --accent:#36b37e; --muted:#9aa7b2; }
-    body{
-      margin:0;
-      font-family:"Playfair Display", serif;
-      background:linear-gradient(135deg,var(--bg1),var(--bg2));
-      color:#e6eef6;
-      min-height:100vh;
-      padding:20px;
-    }
-    h1{
-      text-align:center;
-      font-size:28px;
-      margin-bottom:24px;
-      font-weight:600;
-    }
-    h2{
-      font-size:22px;
-      margin:20px 0 10px;
-      font-weight:600;
-    }
-    img{
-      width:100%;
-      height:auto;
-      border-radius:12px;
-      display:block;
-    }
-    .section{
-      max-width:900px;
-      margin:0 auto 30px;
-      text-align:center;
-    }
-    .instruction-box{
-      max-width:900px;
-      margin:40px auto;
-      padding:20px;
-      border:2px solid var(--accent);
-      border-radius:12px;
-      background-color:rgba(255,255,255,0.05);
-      font-size:16px;
-      line-height:1.6;
-    }
-    .instruction-box a{
-      display:block;
-      margin:10px 0;
-      color:var(--accent);
-      font-weight:600;
-      text-decoration:none;
-    }
-    .instruction-box a:hover{
-      text-decoration:underline;
-    }
+<style>
+:root{
+    --bg:#020617;
+    --card:rgba(15,23,42,.75);
+    --accent:#38bdf8;
+    --accent2:#22c55e;
+    --text:#e5e7eb;
+}
 
-    /* Адаптивность */
-    @media (max-width:600px){
-      h1{ font-size:22px; }
-      h2{ font-size:18px; }
-      .instruction-box{ font-size:14px; }
-    }
-  </style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    min-height:100vh;
+    background:
+        radial-gradient(circle at top,#0f172a,transparent 60%),
+        radial-gradient(circle at bottom,#020617,#000);
+    font-family:Inter,system-ui,sans-serif;
+    color:var(--text);
+    padding:40px 20px;
+    display:flex;
+    justify-content:center;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:repeating-linear-gradient(
+        90deg,
+        rgba(255,255,255,.03) 0,
+        rgba(255,255,255,.03) 1px,
+        transparent 1px,
+        transparent 40px
+    );
+    pointer-events:none;
+}
+
+.wrapper{
+    max-width:980px;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:28px;
+}
+
+.card{
+    position:relative;
+    background:var(--card);
+    border-radius:22px;
+    padding:46px 38px 38px;
+    backdrop-filter:blur(14px);
+    box-shadow:
+        0 0 50px rgba(56,189,248,.25),
+        inset 0 0 0 1px rgba(255,255,255,.06);
+}
+
+/* бейдж */
+.badge{
+    position:absolute;
+    top:16px;
+    left:18px;
+    padding:6px 14px;
+    border-radius:999px;
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    background:rgba(56,189,248,.15);
+    color:var(--accent);
+}
+
+/* главный логотип */
+.main-title{
+    text-align:center;
+    font-family:Orbitron,sans-serif;
+    font-size:46px;
+    letter-spacing:.18em;
+    color:var(--accent);
+    text-transform:uppercase;
+    text-shadow:0 0 25px rgba(56,189,248,.65);
+}
+
+/* секции */
+.section{
+    text-align:center;
+}
+
+.section img{
+    width:100%;
+    border-radius:16px;
+    box-shadow:0 0 30px rgba(0,0,0,.6);
+}
+
+/* инструкция */
+.instruction{
+    line-height:1.65;
+    font-size:15px;
+}
+
+.instruction-title{
+    display:block;
+    margin-top:22px;
+    margin-bottom:12px;
+    font-size:16px;
+    font-weight:600;
+}
+
+/* код */
+pre{
+    background:#000;
+    color:#0f0;
+    padding:14px;
+    border-radius:10px;
+    overflow:auto;
+}
+
+/* кнопки */
+a.button{
+    display:block;
+    margin-top:14px;
+    padding:12px;
+    border-radius:14px;
+    text-align:center;
+    font-weight:600;
+    text-decoration:none;
+    color:#000;
+    background:var(--accent);
+}
+
+/* плагины */
+details summary{
+    cursor:pointer;
+    font-family:Orbitron,sans-serif;
+    color:var(--accent);
+    font-size:20px;
+}
+
+iframe{
+    width:100%;
+    height:800px;
+    margin-top:18px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.footer{
+    text-align:center;
+    font-size:12px;
+    opacity:.45;
+}
+</style>
 </head>
+
 <body>
-  <h1>Премиум каталог</h1>
+<div class="wrapper">
 
-  <div class="section">
-    <h2>Русские кинотеатры</h2>
-    <img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/img/russ.png" alt="Русские кинотеатры">
-  </div>
-
-  <div class="section">
-    <h2>Иностранные кинотеатры</h2>
-    <img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/img/import.png" alt="Иностранные кинотеатры">
-  </div>
-
-  <div class="section">
-    <h2>Общий каталог фильмов и сериалов (любое кино или сериал!)</h2>
-    <img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/img/Popcorn%20Time_145.png" alt="Коллаж фильмов и сериалов">
-  </div>
-
-<!-- Инструкция и ссылки -->
-<div class="instruction-box">
-  <h2>Инструкция по установке плагинов в Lampa (скаченной ниже)</h2>
-  <p>Все делайте строго по инструкции:</p>
-  <ul style="text-align:left;">
-    <li>Настройки → Плеер → в самый низ и меняем на <strong>2160P</strong>, выходите.</li>
-    <li>Настройки → Плагины → Интерфейс → ставим <strong>Зарубежные подборки</strong> и <strong>Русские новинки</strong>, выходите.</li>
-    <li>Настройки → Расширения → Добавить плагин → добавляете те ссылки, что дал Online Premium бот, выходите.</li>
-  </ul>
-  <p>Сбоку слева внизу в Lampa появятся русские и зарубежные кинотеатры.</p>
-
-  <p>Все делайте строго по инструкции:</p>
-  <p>Стартовый адрес:</p>
-<pre style="background-color:#000; color:#0f0; padding:10px; border-radius:5px;">
-<code>http://bylampa.online</code>
-</pre>
-
-  <a href="https://dl.dropbox.com/scl/fi/qh7h6nlyo1f749balpiw9/LAMPA-1.12.3-clone-un.apk?rlkey=5ad37kq51eel5drplikxxudlp&dl=0" target="_blank">📥 СКАЧАТЬ Lampa</a>
-  <a href="https://dl.dropbox.com/scl/fi/ekewcqwqlydbdldau2hg1/LAMPA-ATV-v1.12.3-Uncensored.apk?rlkey=8rhe4g20v67les3wv9diwoe1i&dl=0" target="_blank">📥 СКАЧАТЬ Lampa ATV</a>
+<!-- Главная карточка -->
+<div class="card">
+    <div class="main-title">premium catalog</div>
 </div>
-<!-- Спойлер с плагинами -->
-<div class="instruction-box">
-  <details>
-    <summary style="font-size:26px; font-weight:700; text-transform:uppercase; color:var(--accent);">
-      Плагины для LAMPA
-    </summary>
-    <div style="margin-top:15px; text-align:center;">
-      <iframe src="plugins.html" 
-              width="100%" 
-              height="800" 
-              style="border:2px solid var(--accent); border-radius:8px;">
-      </iframe>
-    </div>
-  </details>
+
+<!-- Русские -->
+<div class="card section">
+    <span class="badge">русские кинотеатры</span>
+    <img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/img/russ.png">
+</div>
+
+<!-- Иностранные -->
+<div class="card section">
+    <span class="badge">иностранные кинотеатры</span>
+    <img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/img/import.png">
+</div>
+
+<!-- Общий -->
+<div class="card section">
+    <span class="badge">общий каталог</span>
+    <img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/img/Popcorn%20Time_145.png">
+</div>
+
+<!-- Инструкция -->
+<div class="card instruction">
+    <span class="badge">instruction</span>
+
+    <strong class="instruction-title">
+        Инструкция по установке плагинов в Lampa (скаченной ниже)
+    </strong>
+
+    <p>Все делайте строго по инструкции:</p>
+
+    <ul>
+        <li>Настройки → Плеер → в самый низ и меняем на <strong>2160P</strong>, выходите.</li>
+        <li>Настройки → Плагины → Интерфейс → ставим <strong>Зарубежные подборки</strong> и <strong>Русские новинки</strong>, выходите.</li>
+        <li>Настройки → Расширения → Добавить плагин → добавляете те ссылки, что дал <strong>Online Premium бот</strong>, выходите.</li>
+    </ul>
+
+    <p>Сбоку слева внизу в Lampa появятся русские и зарубежные кинотеатры, а так же подборки E-Online</p>
+
+    <p><strong>Все делайте строго по инструкции:</strong></p>
+    <p>Стартовый адрес:</p>
+
+    <pre><code>http://bylampa.online</code></pre>
+
+    <a class="button" href="https://dl.dropbox.com/scl/fi/qh7h6nlyo1f749balpiw9/LAMPA-1.12.3-clone-un.apk" target="_blank">📥 Скачать Lampa</a>
+    <a class="button" href="https://dl.dropbox.com/scl/fi/ekewcqwqlydbdldau2hg1/LAMPA-ATV-v1.12.3-Uncensored.apk" target="_blank">📥 Скачать Lampa ATV</a>
+</div>
+
+<!-- Плагины -->
+<div class="card">
+    <details>
+        <summary>Плагины для LAMPA</summary>
+        <iframe src="plugins.html"></iframe>
+    </details>
+</div>
+
+<div class="footer">© E-Online</div>
+
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
