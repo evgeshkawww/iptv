@@ -1,130 +1,300 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<!-- Open Graph -->
-<meta property="og:title" content="IPTV Playlist">
-<meta property="og:description" content="Список каналов IPTV">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://evgeshkawww.github.io/iptv/IPTV/spisok.html">
-<meta property="og:image" content="https://evgeshkawww.github.io/iptv/IPTV/favicon_black.png">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-IPTV Catalog</title>
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="IPTV Playlist">
-<meta name="twitter:description" content="Список каналов IPTV">
-<meta name="twitter:image" content="https://evgeshkawww.github.io/iptv/IPTV/favicon_black.png">
+<link rel="icon" href="favicon.ico">
 
-
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <meta charset="utf-8" />
-  <title>E-IPTV Catalog</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <style>
-    :root{
-      --bg:#0f1724;
-      --card:#0b1220;
-      --accent:#06b6d4;
-      --muted:#9aa4b2;
-      --glass: rgba(255,255,255,0.03);
-      --radius:12px;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color-scheme: dark;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      background: linear-gradient(180deg,#071023 0%, #07182a 60%);
-      color:#e6eef6;
-      min-height:100vh;
-      padding:28px;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
-    .wrap{max-width:1100px;margin:0 auto;}
-    header{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:18px;}
-    .title{display:flex;gap:14px;align-items:baseline;}
-    h1{font-size:20px;margin:0;letter-spacing:0.2px;}
-    .sub{color:var(--muted);font-size:13px;}
-    .controls{display:flex;gap:10px;align-items:center;}
-    .search{background:var(--card);border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:10px;color:inherit;outline:none;min-width:220px;}
-    .total{background:linear-gradient(90deg, rgba(6,182,212,0.12), rgba(99,102,241,0.06));padding:8px 12px;border-radius:999px;color:var(--accent);font-weight:600;font-size:13px;}
-    .groups{margin-top:14px;display:grid;gap:12px;}
-    details.group{background:var(--glass);border-radius:var(--radius);padding:12px;border:1px solid rgba(255,255,255,0.03);transition:transform .15s ease;overflow:hidden;}
-    details[open]{transform:translateY(-2px);box-shadow:0 6px 18px rgba(2,6,23,0.6);}
-    summary{list-style:none;cursor:pointer;display:flex;gap:12px;align-items:center;outline:none;}
-    summary::-webkit-details-marker { display: none; }
-    .group-icon{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#0ea5a0,#6366f1);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;color:white;flex:0 0 44px;box-shadow:inset 0 -6px 18px rgba(0,0,0,0.2);}
-    .group-info{flex:1;display:flex;justify-content:space-between;gap:12px;align-items:center;}
-    .group-left{display:flex;gap:12px;align-items:center;}
-    .group-name{font-weight:700;font-size:15px;}
-    .group-meta{font-size:13px;color:var(--muted);}
-    .channels{margin-top:12px;display:grid;gap:8px;grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));}
-    .channel{display:flex;gap:12px;align-items:center;padding:10px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);}
-    .ch-icon{width:52px;height:36px;border-radius:6px;background:#071a2a;display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:14px;flex:0 0 52px;overflow:hidden;}
-    .ch-body{flex:1;display:flex;flex-direction:column;gap:4px;}
-    .ch-name{font-weight:600;font-size:14px;}
-    .ch-meta{font-size:12px;color:var(--muted);display:flex;gap:8px;align-items:center;}
-    .tag{background:rgba(255,255,255,0.03);padding:4px 8px;border-radius:999px;font-size:12px;color:var(--muted);border:1px solid rgba(255,255,255,0.02);}
-    @media (max-width:640px){.channels{grid-template-columns: 1fr;}header{flex-direction:column;align-items:flex-start;gap:10px}}
-    .hint{margin-top:18px;color:var(--muted);font-size:13px;background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;border:1px dashed rgba(255,255,255,0.02);}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <header>
-<!-- Подключаем Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-
-<div class="title">
-  <h1>
-    🔞 120+ Каналов!🔥 
-    <a href="https://evgeshkawww.github.io/iptv/IPTV/kino.html" 
-       class="lampa-link">
-       ➕ПЛАГИН LAMPA ONLINE🔗← жми
-    </a>
-  </h1>
-</div>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
-  .lampa-link {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    text-decoration: none;
-    color: red;
-    animation: blink 1s infinite; /* мигание */
-  }
+:root{
+    --bg:#020617;
+    --card:rgba(15,23,42,.75);
+    --accent:#38bdf8;
+    --text:#e5e7eb;
+    --muted:#9aa7b2;
+}
 
-  @keyframes blink {
-    0%   { opacity: 1; }
-    50%  { opacity: 0; }
-    100% { opacity: 1; }
-  }
+*{box-sizing:border-box}
+
+.promo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-top:10px;
+    flex-wrap:wrap;
+}
+
+.promo-badge{
+    padding:4px 10px;
+    border-radius:999px;
+    font-size:11px;
+    letter-spacing:.1em;
+    background:rgba(251,113,133,.15);
+    color:#fb7185;
+    font-weight:700;
+}
+
+.promo-text{
+    font-weight:600;
+    font-size:14px;
+    color:#e5e7eb;
+}
+
+.promo-link{
+    font-weight:600;
+    font-size:14px;
+    color:var(--accent);
+    text-decoration:none;
+    position:relative;
+}
+
+.promo-link::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-3px;
+    width:100%;
+    height:1px;
+    background:var(--accent);
+    opacity:.4;
+}
+
+.promo-link:hover{
+    text-shadow:0 0 12px rgba(56,189,248,.6);
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    background:
+        radial-gradient(circle at top,#0f172a,transparent 60%),
+        radial-gradient(circle at bottom,#020617,#000);
+    font-family:Inter,system-ui,sans-serif;
+    color:var(--text);
+    padding:32px 20px;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:repeating-linear-gradient(
+        90deg,
+        rgba(255,255,255,.03) 0,
+        rgba(255,255,255,.03) 1px,
+        transparent 1px,
+        transparent 40px
+    );
+    pointer-events:none;
+}
+
+.wrap{
+    max-width:1100px;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+/* HEADER */
+header{
+    background:var(--card);
+    border-radius:22px;
+    padding:26px 28px;
+    backdrop-filter:blur(14px);
+    box-shadow:
+        0 0 40px rgba(56,189,248,.25),
+        inset 0 0 0 1px rgba(255,255,255,.06);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+}
+
+.main-title{
+    font-family:Orbitron,sans-serif;
+    font-size:28px;
+    letter-spacing:.14em;
+    color:var(--accent);
+    text-transform:uppercase;
+}
+
+.controls{
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+
+.search{
+    background:rgba(0,0,0,.4);
+    border:1px solid rgba(255,255,255,.08);
+    padding:10px 14px;
+    border-radius:12px;
+    color:var(--text);
+    outline:none;
+}
+
+.total{
+    padding:8px 14px;
+    border-radius:999px;
+    background:rgba(56,189,248,.15);
+    color:var(--accent);
+    font-weight:600;
+    font-size:13px;
+}
+
+/* GROUPS */
+.groups{
+    display:grid;
+    gap:16px;
+}
+
+details.group{
+    background:var(--card);
+    border-radius:20px;
+    padding:16px;
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,.06);
+}
+
+summary{
+    list-style:none;
+    cursor:pointer;
+    display:flex;
+    gap:14px;
+    align-items:center;
+}
+summary::-webkit-details-marker{display:none}
+
+.group-icon{
+    width:48px;
+    height:48px;
+    border-radius:12px;
+    overflow:hidden;
+    flex:0 0 48px;
+    box-shadow:0 0 18px rgba(0,0,0,.6);
+}
+
+.group-icon img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.group-info{
+    flex:1;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.group-name{
+    font-weight:600;
+    font-size:15px;
+}
+
+.group-meta{
+    font-size:13px;
+    color:var(--muted);
+}
+
+/* CHANNELS */
+.channels{
+    margin-top:16px;
+    display:grid;
+    gap:10px;
+    grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+}
+
+.channel{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    padding:12px;
+    border-radius:14px;
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.04);
+}
+
+.ch-icon{
+    width:52px;
+    height:36px;
+    border-radius:8px;
+    overflow:hidden;
+    background:#000;
+    flex:0 0 52px;
+}
+
+.ch-icon img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.ch-body{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+
+.ch-name{
+    font-weight:600;
+    font-size:14px;
+}
+
+.ch-meta{
+    font-size:12px;
+    color:var(--muted);
+}
+
+@media(max-width:700px){
+    header{flex-direction:column;align-items:flex-start}
+    .channels{grid-template-columns:1fr}
+}
 </style>
+</head>
 
-      <div class="controls">
-        <input class="search" id="search" placeholder="Поиск по каналам..." />
+<body>
+<div class="wrap">
+
+<header>
+    <div class="main-title">e-iptv catalog</div>
+	<div class="promo">
+  <span class="promo-badge">18+</span>
+
+  <span class="promo-text">
+    120+ каналов
+  </span>
+
+  <a href="https://evgeshkawww.github.io/iptv/IPTV/kino.html"
+     class="promo-link">
+     ➕ ПЛАГИН LAMPA ONLINE →
+  </a>
+</div>
+
+
+    <div class="controls">
+        <input class="search" id="search" placeholder="Поиск по каналам...">
         <div class="total" id="total">Общее количество каналов: 0</div>
-      </div>
-    </header>
+    </div>
+</header>
 
-    <main>
-      <div class="groups" id="groupsContainer"></div>
-      <div class="hint">
-      </div>
-    </main>
-  </div>
+<main>
+    <div class="groups" id="groupsContainer"></div>
+</main>
 
-  <script>
+</div>
 
+<script>
 const groupsData = [
   {
-    id: 'group1',
-    name: 'Федеральные 🇷🇺',
-    icon: 'https://play-lh.googleusercontent.com/9NyXIJ1vgX9kwzaVxbuJIhaYo4eoVnvfE_SAuy17maI2xbUG3eUhJx3GP-gnrJ6TeQ=w240-h480-rw',
+    id:'group1',
+    name:'Федеральные 🇷🇺',
+    icon:'https://play-lh.googleusercontent.com/9NyXIJ1vgX9kwzaVxbuJIhaYo4eoVnvfE_SAuy17maI2xbUG3eUhJx3GP-gnrJ6TeQ=w240-h480-rw',
     channels: [
       { name: 'Первый HD', archive: '🕐 Архив - 6 дней', icon: 'https://tvtm.one/images/chIcons/1.png' },
       { name: 'Первый HD orig', archive: '🕐 Архив - 6 дней', icon: 'https://tvtm.one/images/chIcons/1089.png' },
@@ -2140,201 +2310,100 @@ const groupsData = [
   }
 ];
 
+const groupsContainer=document.getElementById('groupsContainer');
+const searchInput=document.getElementById('search');
+const totalBox=document.getElementById('total');
 
-    // ------------------------------------
-    // 
-    // ------------------------------------
-    const groupsContainer = document.getElementById('groupsContainer');
-    const searchInput = document.getElementById('search');
-    const totalBox = document.getElementById('total');
+function render(groups){
+  groupsContainer.innerHTML='';
+  let total=0;
 
-    // 
-    let totalChannels = groupsData.reduce((s, g) => s + (g.channels?.length || 0), 0);
-    // 
-    // 
-    totalBox.textContent = 'Общее количество каналов: ' + totalChannels;
+  groups.forEach((g,i)=>{
+    total+=g.channels.length;
+    const det=document.createElement('details');
+    det.className='group';
+    if(i===0) det.open=true;
 
-    function createGroupElement(group, first=false) {
-      const det = document.createElement('details');
-      det.className = 'group';
-      if (first) det.open = true;
+    const sum=document.createElement('summary');
 
-      const summ = document.createElement('summary');
+    const ic=document.createElement('div');
+    ic.className='group-icon';
+    const img=document.createElement('img');
+    img.src=g.icon;
+    ic.appendChild(img);
 
-      const gIcon = document.createElement('div');
-      gIcon.className = 'group-icon';
-      if (group.icon) {
-        const img = document.createElement('img');
-        img.src = group.icon;
-        img.alt = group.name;
-        img.style.width = '100%';
-        img.style.height = '100%';
-        img.style.objectFit = 'cover';
-        gIcon.textContent = '';
-        gIcon.appendChild(img);
-      } else {
-        const initials = group.name.split(' ').map(w => w[0]).slice(0,2).join('').toUpperCase();
-        gIcon.textContent = initials;
+    const info=document.createElement('div');
+    info.className='group-info';
+
+    const name=document.createElement('div');
+    name.className='group-name';
+    name.textContent=g.name;
+
+    const meta=document.createElement('div');
+    meta.className='group-meta';
+    meta.textContent=g.channels.length+' каналов';
+
+    info.appendChild(name);
+    info.appendChild(meta);
+
+    sum.appendChild(ic);
+    sum.appendChild(info);
+    det.appendChild(sum);
+
+    const chWrap=document.createElement('div');
+    chWrap.className='channels';
+
+    g.channels.forEach(ch=>{
+      const el=document.createElement('div');
+      el.className='channel';
+
+      const ci=document.createElement('div');
+      ci.className='ch-icon';
+      if(ch.icon){
+        const im=document.createElement('img');
+        im.src=ch.icon;
+        ci.appendChild(im);
       }
 
-      const gInfo = document.createElement('div');
-      gInfo.className = 'group-info';
+      const body=document.createElement('div');
+      body.className='ch-body';
 
-      const left = document.createElement('div');
-      left.className = 'group-left';
-      const name = document.createElement('div');
-      name.className = 'group-name';
-      name.textContent = group.name;
-      const meta = document.createElement('div');
-      meta.className = 'group-meta';
-      meta.textContent = (group.channels?.length || 0) + ' канал(ов)';
+      const n=document.createElement('div');
+      n.className='ch-name';
+      n.textContent=ch.name;
 
-      left.appendChild(name);
-      left.appendChild(meta);
+      const m=document.createElement('div');
+      m.className='ch-meta';
+      m.textContent=ch.archive||'Архив: -';
 
-      const right = document.createElement('div');
-      right.className = 'group-meta';
-      right.textContent = 'Нажмите, чтобы развернуть';
+      body.appendChild(n);
+      body.appendChild(m);
 
-      gInfo.appendChild(left);
-      gInfo.appendChild(right);
-
-      summ.appendChild(gIcon);
-      summ.appendChild(gInfo);
-      det.appendChild(summ);
-
-      const channelsWrap = document.createElement('div');
-      channelsWrap.className = 'channels';
-
-      (group.channels || []).forEach(ch => {
-        const chEl = document.createElement('div');
-        chEl.className = 'channel';
-
-        const chIcon = document.createElement('div');
-        chIcon.className = 'ch-icon';
-        if (ch.icon) {
-          const img = document.createElement('img');
-          img.src = ch.icon;
-          img.alt = ch.name;
-          img.style.width = '100%';
-          img.style.height = '100%';
-          img.style.objectFit = 'cover';
-          chIcon.textContent = '';
-          chIcon.appendChild(img);
-        } else {
-          const initials = ch.name.split(' ').map(w => w[0]).slice(0,2).join('').toUpperCase();
-          chIcon.textContent = initials;
-        }
-
-        const body = document.createElement('div');
-        body.className = 'ch-body';
-        const chName = document.createElement('div');
-        chName.className = 'ch-name';
-        chName.textContent = ch.name;
-        const chMeta = document.createElement('div');
-        chMeta.className = 'ch-meta';
-        const tagArchive = document.createElement('span');
-        tagArchive.className = 'tag';
-        tagArchive.textContent = ch.archive || 'Архив: -';
-        chMeta.appendChild(tagArchive);
-
-        body.appendChild(chName);
-        body.appendChild(chMeta);
-
-        chEl.appendChild(chIcon);
-        chEl.appendChild(body);
-
-        channelsWrap.appendChild(chEl);
-      });
-
-      det.appendChild(channelsWrap);
-      return det;
-    }
-
-    function render(groups) {
-      groupsContainer.innerHTML = '';
-      groups.forEach((g, i) => groupsContainer.appendChild(createGroupElement(g, i===0)));
-    }
-
-    render(groupsData);
-
-    searchInput.addEventListener('input', e => {
-      const q = e.target.value.trim().toLowerCase();
-      if (!q) { render(groupsData); return; }
-      const filtered = groupsData.map(g => {
-        const matched = (g.channels || []).filter(ch => ch.name.toLowerCase().includes(q));
-        return { ...g, channels: matched };
-      }).filter(g => g.channels.length > 0);
-      render(filtered);
+      el.appendChild(ci);
+      el.appendChild(body);
+      chWrap.appendChild(el);
     });
 
+    det.appendChild(chWrap);
+    groupsContainer.appendChild(det);
+  });
 
-  </script>
+  totalBox.textContent='Общее количество каналов: '+total;
+}
+
+render(groupsData);
+
+searchInput.addEventListener('input',e=>{
+  const q=e.target.value.toLowerCase();
+  if(!q){render(groupsData);return;}
+  render(
+    groupsData.map(g=>({
+      ...g,
+      channels:g.channels.filter(c=>c.name.toLowerCase().includes(q))
+    })).filter(g=>g.channels.length)
+  );
+});
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
