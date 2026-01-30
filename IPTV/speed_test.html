@@ -559,23 +559,27 @@ if(!document.getElementById("recommendStyles")) {
 }
 </script>
 <style type="text/css">
-	html,body{
-		border:none; padding:0; margin:0;
-		background:#FFFFFF;
-		color:#202020;
-	}
-	body{
-		text-align:center;
-		font-family:"Roboto",sans-serif;
-	}
+html, body{
+    border:none;
+    padding:0;
+    margin:0;
+    max-width:100%;
+    overflow-x:hidden;
+
+    background:
+        radial-gradient(circle at top,#0f172a,transparent 60%),
+        radial-gradient(circle at bottom,#020617,#000);
+    color:#e5e7eb;
+
+    font-family:Inter, Roboto, system-ui, sans-serif;
+    text-align:center;
+    }
+	*, *::before, *::after{
+    box-sizing:border-box;
+   }
 	h1{
-		color:#404040;
-	}
-	#loading{
-		background-color:#FFFFFF;
-		color:#404040;
-		text-align:center;
-	}
+    color:#404040;
+    }
 	span.loadCircle{
 		display:inline-block;
 		width:2em;
@@ -925,6 +929,7 @@ h1, h3{
 <div class="footer">© E-IPTV</div>	
 </body>
 </html>
+
 
 
 
