@@ -342,6 +342,15 @@ function startMultiTest() {
 
         clearTimeout(testTimeout);
 		if (stopAllTests) {
+
+			appendResult(
+				SPEEDTEST_SERVERS[currentServer].name,
+				SPEEDTEST_SERVERS[currentServer].serveropen,
+				"⛔ STOP",
+				"⛔ STOP",
+				"⛔ STOP"
+			);
+
 			I("startStopBtn").className = "";
 			I("server").disabled = false;
 			document.getElementById("currentTest").innerHTML = "⛔ Тест прерван";
