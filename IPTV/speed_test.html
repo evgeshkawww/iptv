@@ -138,14 +138,18 @@ function format(d){
 //UI CODE
 var uiData=null;
 function startStop(){
-    if(s.getState()==3){
-        document.getElementById("currentTest").innerHTML = ''
-		//speedtest is running, abort
+	if (s.getState() == 3) {
+
+		stopAllTests = true;
+		serversToTest = [];
 		s.abort();
+
+		document.getElementById("currentTest").innerHTML = "⛔ Тест прерван";
 		uiData = null;
-		I("startStopBtn").className="";
-		I("server").disabled=false;
+		I("startStopBtn").className = "";
+		I("server").disabled = false;
 		initUI();
+		return;
 	}else{
 		//test is not running, begin
 		I("startStopBtn").className="running";
@@ -278,7 +282,7 @@ function runSingleServerTest() {
 
 // Подготовка к тестированию группы серверов
 function prepareMultiTest(groupType) {
-    // Очищаем результаты предыдущих тестов
+    stopAllTests = false;
     groupTestResults = [];
     
     // Обновляем глобальную переменную currentServer и массив serversToTest
@@ -337,7 +341,13 @@ function startMultiTest() {
     s.onend = function (aborted) {
 
         clearTimeout(testTimeout);
-
+		if (stopAllTests) {
+			I("startStopBtn").className = "";
+			I("server").disabled = false;
+			document.getElementById("currentTest").innerHTML = "⛔ Тест прерван";
+			return;
+		}
+		
         if (!uiData) uiData = {
             dlStatus: 0,
             pingStatus: 999,
@@ -491,6 +501,7 @@ function findBestServer(results) {
 var groupTestResults = [];
 var serversToTest = [];
 var currentServer = 0;
+var stopAllTests = false;
 
 //this function reads the data sent back by the test and updates the UI
 function updateUI(forced){
@@ -947,7 +958,6 @@ h1, h3{
 <div class="footer">© E-IPTV</div>	
 </body>
 </html>
-
 
 
 
