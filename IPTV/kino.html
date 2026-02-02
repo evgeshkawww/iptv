@@ -17,6 +17,70 @@
     --accent2:#22c55e;
     --text:#e5e7eb;
 }
+/* HERO */
+.hero{
+    position:relative;
+    overflow:hidden;
+    padding:80px 40px;
+}
+
+/* динамическое свечение */
+.hero-glow{
+    position:absolute;
+    inset:-40%;
+    background:
+        radial-gradient(circle at 30% 30%, rgba(56,189,248,.35), transparent 40%),
+        radial-gradient(circle at 70% 60%, rgba(34,197,94,.25), transparent 45%);
+    animation: glowMove 12s linear infinite;
+    filter:blur(40px);
+}
+
+@keyframes glowMove{
+    0%{transform:translate(0,0)}
+    50%{transform:translate(6%, -4%)}
+    100%{transform:translate(0,0)}
+}
+
+/* световая скан-линия */
+.hero-scan{
+    position:absolute;
+    top:-100%;
+    left:0;
+    width:100%;
+    height:200%;
+    background:linear-gradient(
+        180deg,
+        transparent,
+        rgba(56,189,248,.12),
+        transparent
+    );
+    animation: scan 6s ease-in-out infinite;
+}
+
+@keyframes scan{
+    0%{transform:translateY(-60%)}
+    100%{transform:translateY(60%)}
+}
+
+/* текст */
+.hero-title{
+    position:relative;
+    z-index:2;
+    animation:titlePulse 4s ease-in-out infinite;
+}
+
+@keyframes titlePulse{
+    0%,100%{
+        text-shadow:
+            0 0 20px rgba(56,189,248,.5),
+            0 0 60px rgba(56,189,248,.25);
+    }
+    50%{
+        text-shadow:
+            0 0 35px rgba(56,189,248,.9),
+            0 0 90px rgba(56,189,248,.5);
+    }
+}
 
 *{box-sizing:border-box}
 
@@ -174,9 +238,15 @@ iframe{
 <div class="wrapper">
 
 <!-- Главная карточка -->
-<div class="card">
-    <div class="main-title">premium catalog</div>
+<div class="card hero">
+    <div class="hero-glow"></div>
+    <div class="hero-scan"></div>
+
+    <div class="main-title hero-title">
+        premium catalog
+    </div>
 </div>
+
 
 <!-- Русские -->
 <div class="card section">
@@ -236,4 +306,3 @@ iframe{
 </div>
 </body>
 </html>
-
