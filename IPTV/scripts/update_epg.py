@@ -10,10 +10,12 @@ OUT_EPG7 = "IPTV/epg7.xml.gz"
 
 def download(url, out_file, name):
     print(f"Скачиваю {name}...")
-    r = requests.get(url, stream=True, timeout=60)
-    r.raise_for_status()
-    with open(out_file, "wb") as f:
-        f.write(r.content)
+    with requests.get(url, stream=True, timeout=60) as r:
+        r.raise_for_status()
+        with open(out_file, "wb") as f:
+            for chunk in r.iter_content(chunk_size=1024 * 1024):  # 1 MB
+                if chunk:
+                    f.write(chunk)
     print(f"{name} обновлён: {out_file}")
 
 
