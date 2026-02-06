@@ -326,7 +326,16 @@ iframe{
 <div class="footer">© E-Online</div>
 
 </div>
+    <script>
+document.addEventListener('DOMContentLoaded', ()=>{
+  document.querySelectorAll('.details-full details').forEach(d=>{
+    d.removeAttribute('open');
+  });
+});
+</script>
+
 </body>
 </html>
+
 
 
