@@ -4,7 +4,7 @@ import requests
 URL_MAIN = "https://epg.team/5.5.xml.gz?pkg=582,722,262,1002,704,482,822,422,263,862,442,802,522,282,762,1022,63,41"
 OUT_MAIN = "IPTV/epg.xml.gz"
 
-URL_EPG7 = "http://epg.one/epg2.xml.gz"
+URL_EPG7 = "https://iptvx.one/EPG7"
 OUT_EPG7 = "IPTV/epg7.xml.gz"
 
 
