@@ -230,7 +230,18 @@ iframe{
         letter-spacing:.12em;
     }
 }
+/* iframe во всю ширину экрана */
+.details-full{
+    margin-left:calc(50% - 50vw);
+    margin-right:calc(50% - 50vw);
+}
 
+.details-full iframe{
+    width:100vw;
+    max-width:100vw;
+    height:90vh;
+    border-radius:0;
+}
 </style>
 </head>
 
@@ -294,8 +305,8 @@ iframe{
 </div>
 
 <!-- Плагины -->
-<div class="card">
-    <details>
+<div class="card details-full">
+    <details open>
         <summary>Плагины для LAMPA</summary>
         <iframe src="plugins.html"></iframe>
     </details>
@@ -306,3 +317,4 @@ iframe{
 </div>
 </body>
 </html>
+
