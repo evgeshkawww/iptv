@@ -328,7 +328,7 @@ iframe{
 
 <!-- Плагины -->
 <div class="card details-full">
-    <details open>
+    <details>
         <summary>Плагины для LAMPA</summary>
         <iframe src="plugins.html"></iframe>
     </details>
@@ -345,29 +345,51 @@ document.addEventListener('DOMContentLoaded', ()=>{
 });
 <script>
 document.addEventListener('DOMContentLoaded', ()=>{
+
+  /* гарантированно закрываем при загрузке */
   document.querySelectorAll('.details-full details').forEach(d=>{
     d.open = false;
   });
-});
-</script>
-<script>
-document.querySelectorAll('a[href^="#"]').forEach(link=>{
-  link.addEventListener('click', e=>{
-    const id = link.getAttribute('href').slice(1);
-    const target = document.getElementById(id);
-    if(!target) return;
 
-    e.preventDefault();
+  /* плавное открытие + скролл */
+  document.querySelectorAll('.details-full summary').forEach(summary=>{
+    summary.addEventListener('click', ()=>{
+      const details = summary.parentElement;
 
-    target.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
+      setTimeout(()=>{
+        if(details.open){
+          const top = details.getBoundingClientRect().top + window.pageYOffset - 20;
+          window.scrollTo({
+            top,
+            behavior:'smooth'
+          });
+        }
+      }, 300);
     });
   });
+
+  /* якоря */
+  document.querySelectorAll('a[href^="#"]').forEach(link=>{
+    link.addEventListener('click', e=>{
+      const id = link.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if(!target) return;
+
+      e.preventDefault();
+
+      const top = target.getBoundingClientRect().top + window.pageYOffset - 20;
+      window.scrollTo({
+        top,
+        behavior:'smooth'
+      });
+    });
+  });
+
 });
 </script>
 </body>
 </html>
+
 
 
 
