@@ -344,6 +344,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
   });
 });
 <script>
+document.addEventListener('DOMContentLoaded', ()=>{
+  document.querySelectorAll('.details-full details').forEach(d=>{
+    d.open = false;
+  });
+});
+</script>
+<script>
 document.querySelectorAll('a[href^="#"]').forEach(link=>{
   link.addEventListener('click', e=>{
     const id = link.getAttribute('href').slice(1);
@@ -352,15 +359,16 @@ document.querySelectorAll('a[href^="#"]').forEach(link=>{
 
     e.preventDefault();
 
-    window.scrollTo({
-      top: target.getBoundingClientRect().top + window.pageYOffset - 20,
-      behavior: 'smooth'
+    target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
     });
   });
 });
 </script>
 </body>
 </html>
+
 
 
 
