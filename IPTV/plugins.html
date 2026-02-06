@@ -1,39 +1,128 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Плагины Lampa — Полный каталог</title>
-  <style>
-    :root{
-      --bg:#071127;
-      --card:#0f1f3a;
-      --text:#e6eef6;
-      --muted:#9aa7b2;
-      --accent:#36b37e;
-    }
-    html,body{margin:0;padding:0;background:linear-gradient(135deg,var(--bg),#071a28);color:var(--text);font-family:system-ui,Roboto,Arial;}
-    main{max-width:1100px;margin:0 auto;padding:20px;}
-    h1{text-align:center;font-size:22px;margin:0 0 12px;font-weight:700;}
-    nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:8px 0 20px;}
-    nav a{padding:8px 12px;border:1px solid var(--accent);border-radius:8px;color:var(--accent);text-decoration:none;font-weight:700;font-size:14px;}
-    .section-title{font-size:14px;color:var(--muted);margin:18px 0 6px;font-weight:700;text-transform:uppercase;}
-    .list{display:flex;flex-direction:column;gap:18px;}
-    .item{background:var(--card);border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.04);}
-    .meta{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;}
-    .title{font-weight:800;font-size:16px;margin:0;color:var(--text);}
-    .link{color:var(--accent);font-weight:700;text-decoration:none;word-break:break-all;}
-    .desc{color:var(--muted);font-size:13px;margin:0;}
-    .thumbs{display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap;margin-top:8px;}
-    .main-thumb{flex:0 0 440px;max-width:440px;border-radius:8px;overflow:hidden;background:#000;}
-    .main-thumb img{display:block;width:100%;height:100%;object-fit:cover;}
-    .mini{width:120px;height:80px;border-radius:6px;overflow:hidden;background:#000;}
-    .mini img{width:100%;height:100%;object-fit:cover;display:block;}
-    @media (max-width:1100px){ .main-thumb{flex:0 0 100%;max-width:100%;} .mini{width:30%;} }
-    footer{margin-top:20px;color:var(--muted);font-size:13px;text-align:center;}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Плагины Lampa — Полный каталог</title>
+
+<style>
+:root{
+  --bg:#071127;
+  --card:#0f1f3a;
+  --text:#e6eef6;
+  --muted:#9aa7b2;
+  --accent:#36b37e;
+}
+
+html,body{
+  margin:0;
+  padding:0;
+  background:linear-gradient(135deg,var(--bg),#071a28);
+  color:var(--text);
+  font-family:system-ui,Roboto,Arial;
+}
+
+main{max-width:1100px;margin:0 auto;padding:20px;}
+h1{text-align:center;font-size:22px;margin:0 0 12px;font-weight:700;}
+
+nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  justify-content:center;
+  margin:8px 0 20px;
+}
+nav a{
+  padding:8px 12px;
+  border:1px solid var(--accent);
+  border-radius:8px;
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:700;
+  font-size:14px;
+}
+
+.section-title{
+  font-size:14px;
+  color:var(--muted);
+  margin:18px 0 6px;
+  font-weight:700;
+  text-transform:uppercase;
+}
+
+.list{display:flex;flex-direction:column;gap:18px;}
+
+.item{
+  background:var(--card);
+  border-radius:12px;
+  padding:14px;
+  border:1px solid rgba(255,255,255,0.04);
+}
+
+.meta{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;}
+.title{font-weight:800;font-size:16px;margin:0;}
+.link{color:var(--accent);font-weight:700;text-decoration:none;word-break:break-all;}
+.desc{color:var(--muted);font-size:13px;margin:0;}
+
+.thumbs{margin-top:8px;}
+.main-thumb{
+  width:100%;
+  border-radius:8px;
+  overflow:hidden;
+  background:#000;
+  cursor:zoom-in;
+}
+.main-thumb img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:cover;
+}
+
+/* ===== FULLSCREEN VIEWER ===== */
+
+.image-viewer{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.95);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .35s ease;
+  z-index:9999;
+}
+
+.image-viewer.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.image-viewer img{
+  width:100vw;       /* 100% ширины */
+  height:auto;
+  max-height:100vh;
+  object-fit:contain;
+  animation:imgIn .4s ease;
+}
+
+@keyframes imgIn{
+  from{opacity:0;transform:scale(.96);}
+  to{opacity:1;transform:scale(1);}
+}
+
+footer{
+  margin-top:20px;
+  color:var(--muted);
+  font-size:13px;
+  text-align:center;
+}
+</style>
 </head>
+
 <body>
+
   <main>
     <h1>Плагины для Lampa — Полный каталог</h1>
 
@@ -528,26 +617,43 @@
     <footer>© E-IPTV</footer>
   </main>
 
-  <script>
-    // fallback: если CDN не отдаёт картинку, подставляем GitHub Pages копию
-    function imgFallback(imgEl, localName){
-      try{
-        var gh = 'https://evgeshkawww.github.io/iptv/IPTV/img/' + localName;
-        if(imgEl.src === gh) return;
-        imgEl.onerror = null;
-        imgEl.src = gh;
-      }catch(e){}
-    }
+<!-- FULLSCREEN IMAGE -->
+<div class="image-viewer" id="imageViewer">
+  <img src="" alt="">
+</div>
 
-    // плавный скролл для навигации
-    document.querySelectorAll('nav a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', function(e){
-        e.preventDefault();
-        var id = this.getAttribute('href').slice(1);
-        var el = document.getElementById(id);
-        if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
-      });
-    });
-  </script>
+<script>
+// fullscreen viewer
+const viewer = document.getElementById('imageViewer');
+const viewerImg = viewer.querySelector('img');
+
+document.querySelectorAll('.main-thumb img').forEach(img=>{
+  img.addEventListener('click', ()=>{
+    viewerImg.src = img.src;
+    viewer.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closeViewer(){
+  viewer.classList.remove('show');
+  viewerImg.src = '';
+  document.body.style.overflow = '';
+}
+
+viewer.addEventListener('click', closeViewer);
+document.addEventListener('keydown', e=>{
+  if(e.key === 'Escape') closeViewer();
+});
+function imgFallback(imgEl, localName){
+  try{
+    var gh = 'https://evgeshkawww.github.io/iptv/IPTV/img/' + localName;
+    if(imgEl.src === gh) return;
+    imgEl.onerror = null;
+    imgEl.src = gh;
+  }catch(e){}
+}
+</script>
+
 </body>
 </html>
