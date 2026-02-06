@@ -40,6 +40,9 @@
     50%{transform:translate(6%, -4%)}
     100%{transform:translate(0,0)}
 }
+html{
+    scroll-behavior:smooth;
+}
 
 /* световая скан-линия */
 .hero-scan{
@@ -253,6 +256,14 @@ iframe{
     margin-right:calc(50% - 50vw);
     border-radius:0;
 }
+.details-full summary{
+    list-style:none;
+    text-align:center;
+}
+
+.details-full summary::-webkit-details-marker{
+    display:none;
+}
 </style>
 </head>
 
@@ -332,10 +343,25 @@ document.addEventListener('DOMContentLoaded', ()=>{
     d.removeAttribute('open');
   });
 });
-</script>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+  link.addEventListener('click', e=>{
+    const id = link.getAttribute('href').slice(1);
+    const target = document.getElementById(id);
+    if(!target) return;
 
+    e.preventDefault();
+
+    window.scrollTo({
+      top: target.getBoundingClientRect().top + window.pageYOffset - 20,
+      behavior: 'smooth'
+    });
+  });
+});
+</script>
 </body>
 </html>
+
 
 
 
