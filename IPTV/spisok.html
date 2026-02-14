@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium-IPTV Catalog</title>
+<title>PREMIUM-IPTV Catalog</title>
 
 <link rel="icon" href="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/favicon.ico">
 
@@ -11,28 +11,53 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/style/style_all.css">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv@main/IPTV/style/style_all.css">
-
+<!-- ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ТОЛЬКО ДЛЯ ЭТОЙ СТРАНИЦЫ -->
 <style>
-/* Базовые стили на случай если CDN не сработает */
+/* Специфичные стили для каталога */
+:root {
+  --bg: #020617;
+  --card: rgba(15,23,42,.75);
+  --accent: #38bdf8;
+  --text: #e5e7eb;
+  --muted: #9aa7b2;
+}
+
 body {
   margin: 0;
-  padding: 20px 14px;
+  min-height: 100svh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
   background: 
     radial-gradient(circle at top, #0f172a, transparent 60%),
     radial-gradient(circle at bottom, #020617, #000);
-  color: #e5e7eb;
-  font-family: 'Inter', sans-serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  color: var(--text);
+  padding: 20px 14px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,255,255,.03) 0,
+    rgba(255,255,255,.03) 1px,
+    transparent 1px,
+    transparent 40px
+  );
+  pointer-events: none;
 }
 
 .wrap {
   max-width: 1100px;
   margin: 0 auto;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   flex: 1;
 }
 
@@ -41,29 +66,117 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
+  margin-top: 10px;
   flex-wrap: wrap;
-  margin: 10px 0;
 }
 
 .promo-badge {
   font-size: 34px;
   font-weight: bold;
   color: #ff4444;
+  text-shadow: 0 0 12px rgba(255,68,68,.4);
 }
 
-/* ГРУППЫ И КАНАЛЫ */
+.promo-text {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.promo-link {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--accent);
+  text-decoration: none;
+  position: relative;
+  transition: 0.2s;
+}
+
+.promo-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  opacity: .4;
+}
+
+.promo-link:hover {
+  text-shadow: 0 0 12px var(--primary-glow, rgba(56,189,248,.6));
+}
+
+/* HEADER */
+header {
+  width: 100%;
+  background: var(--bg-overlay-soft, rgba(15,23,42,.75));
+  border-radius: 22px;
+  padding: 26px 28px;
+  backdrop-filter: blur(14px);
+  box-shadow: 
+    0 0 40px var(--primary-glow-soft, rgba(56,189,248,.25)),
+    inset 0 0 0 1px var(--border-light, rgba(255,255,255,.06));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.main-title {
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  text-shadow: 0 0 12px var(--primary-glow, rgba(56,189,248,.6));
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search {
+  background: rgba(0,0,0,.4);
+  border: 1px solid var(--border-strong, rgba(255,255,255,.08));
+  padding: 10px 14px;
+  border-radius: 12px;
+  color: var(--text);
+  outline: none;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+}
+
+.search:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-glow-soft);
+}
+
+.total {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--primary-glow-soft, rgba(56,189,248,.15));
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* GROUPS */
 .groups {
   display: grid;
   gap: 16px;
-  margin-top: 24px;
 }
 
-.group {
-  background: rgba(15,23,42,.75);
-  backdrop-filter: blur(12px);
-  border-radius: 18px;
+details.group {
+  background: var(--bg-overlay-soft, rgba(15,23,42,.75));
+  border-radius: 20px;
   padding: 16px;
-  border: 1px solid rgba(255,255,255,.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light, rgba(255,255,255,.06));
 }
 
 summary {
@@ -74,13 +187,17 @@ summary {
   align-items: center;
 }
 
+summary::-webkit-details-marker {
+  display: none;
+}
+
 .group-icon {
   width: 48px;
   height: 48px;
   border-radius: 12px;
   overflow: hidden;
-  flex-shrink: 0;
-  background: #000;
+  flex: 0 0 48px;
+  box-shadow: 0 0 18px rgba(0,0,0,.6);
 }
 
 .group-icon img {
@@ -100,14 +217,15 @@ summary {
 .group-name {
   font-weight: 600;
   font-size: 15px;
-  color: #e5e7eb;
+  color: var(--text);
 }
 
 .group-meta {
   font-size: 13px;
-  color: #9aa7b2;
+  color: var(--text-secondary, var(--muted));
 }
 
+/* CHANNELS */
 .channels {
   margin-top: 16px;
   display: grid;
@@ -120,18 +238,24 @@ summary {
   gap: 12px;
   align-items: center;
   padding: 12px;
-  border-radius: 12px;
+  border-radius: 14px;
   background: rgba(255,255,255,.03);
-  border: 1px solid rgba(255,255,255,.04);
+  border: 1px solid var(--border-medium, rgba(255,255,255,.04));
+  transition: 0.2s;
+}
+
+.channel:hover {
+  border-color: var(--primary);
+  box-shadow: 0 0 15px var(--primary-glow-soft);
 }
 
 .ch-icon {
   width: 52px;
   height: 36px;
-  border-radius: 6px;
+  border-radius: 8px;
   overflow: hidden;
   background: #000;
-  flex-shrink: 0;
+  flex: 0 0 52px;
 }
 
 .ch-icon img {
@@ -149,32 +273,54 @@ summary {
 .ch-name {
   font-weight: 600;
   font-size: 14px;
-  color: #e5e7eb;
+  color: var(--text);
 }
 
 .ch-meta {
   font-size: 12px;
-  color: #9aa7b2;
+  color: var(--text-secondary, var(--muted));
 }
 
+/* FOOTER */
 .footer {
-  margin-top: 40px;
-  padding: 20px 0;
+  margin-top: auto;
+  padding-top: 30px;
+  padding-bottom: 20px;
   text-align: center;
   font-size: 12px;
-  color: #6b7280;
-  border-top: 1px solid rgba(255,255,255,.04);
+  color: var(--text-muted, #6b7280);
+  opacity: .85;
+  border-top: 1px solid var(--border-medium);
 }
 
 /* АДАПТАЦИЯ */
 @media (max-width: 700px) {
-  header .controls {
+  header {
     flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .promo {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .controls {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .search {
     width: 100%;
   }
   
-  .search, .total {
+  .total {
     width: 100%;
+    text-align: center;
+  }
+  
+  .channels {
+    grid-template-columns: 1fr;
   }
   
   .group-info {
@@ -185,8 +331,17 @@ summary {
 }
 
 @media (max-width: 600px) {
-  .channels {
-    grid-template-columns: 1fr;
+  body {
+    padding: 10px;
+  }
+  
+  header {
+    padding: 20px 16px;
+  }
+  
+  .main-title {
+    font-size: 22px;
+    text-align: center;
   }
 }
 </style>
@@ -216,7 +371,7 @@ summary {
 
 </div>
 
-<div class="footer">© E-IPTV</div>
+<div class="footer">© Premium-IPTV</div>
 
 <script>
 // Данные каналов (вставьте ваш groupsData сюда)
@@ -2587,8 +2742,7 @@ function render(groups) {
     const ic = document.createElement('div');
     ic.className = 'group-icon';
     const img = document.createElement('img');
-    img.src = g.icon || 'https://via.placeholder.com/48x48?text=TV';
-    img.onerror = () => { img.src = 'https://via.placeholder.com/48x48?text=TV'; };
+    img.src = g.icon;
     ic.appendChild(img);
 
     const info = document.createElement('div');
@@ -2621,7 +2775,6 @@ function render(groups) {
       if (ch.icon) {
         const im = document.createElement('img');
         im.src = ch.icon;
-        im.onerror = () => { im.style.display = 'none'; };
         ci.appendChild(im);
       }
 
@@ -2670,6 +2823,6 @@ searchInput.addEventListener('input', e => {
   );
 });
 </script>
+
 </body>
 </html>
-
