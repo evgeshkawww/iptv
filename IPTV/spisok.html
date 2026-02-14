@@ -11,15 +11,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/style/style_all.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/evgeshkawww/iptv@main/IPTV/style/style_all.css">
 
 <style>
-/* ТОЛЬКО СТРУКТУРНЫЕ СТИЛИ КАТАЛОГА */
+/* Базовые стили на случай если CDN не сработает */
 body {
+  margin: 0;
+  padding: 20px 14px;
+  background: 
+    radial-gradient(circle at top, #0f172a, transparent 60%),
+    radial-gradient(circle at bottom, #020617, #000);
+  color: #e5e7eb;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  padding: 20px 14px;
 }
 
 .wrap {
@@ -52,11 +59,11 @@ body {
 }
 
 .group {
-  background: var(--bg-overlay-soft);
+  background: rgba(15,23,42,.75);
   backdrop-filter: blur(12px);
   border-radius: 18px;
   padding: 16px;
-  border: 1px solid var(--border-light);
+  border: 1px solid rgba(255,255,255,.06);
 }
 
 summary {
@@ -93,12 +100,12 @@ summary {
 .group-name {
   font-weight: 600;
   font-size: 15px;
-  color: var(--text-primary);
+  color: #e5e7eb;
 }
 
 .group-meta {
   font-size: 13px;
-  color: var(--text-secondary);
+  color: #9aa7b2;
 }
 
 .channels {
@@ -115,7 +122,7 @@ summary {
   padding: 12px;
   border-radius: 12px;
   background: rgba(255,255,255,.03);
-  border: 1px solid var(--border-medium);
+  border: 1px solid rgba(255,255,255,.04);
 }
 
 .ch-icon {
@@ -142,12 +149,12 @@ summary {
 .ch-name {
   font-weight: 600;
   font-size: 14px;
-  color: var(--text-primary);
+  color: #e5e7eb;
 }
 
 .ch-meta {
   font-size: 12px;
-  color: var(--text-secondary);
+  color: #9aa7b2;
 }
 
 .footer {
@@ -155,8 +162,8 @@ summary {
   padding: 20px 0;
   text-align: center;
   font-size: 12px;
-  color: var(--text-muted);
-  border-top: 1px solid var(--border-medium);
+  color: #6b7280;
+  border-top: 1px solid rgba(255,255,255,.04);
 }
 
 /* АДАПТАЦИЯ */
@@ -2581,6 +2588,7 @@ function render(groups) {
     ic.className = 'group-icon';
     const img = document.createElement('img');
     img.src = g.icon || 'https://via.placeholder.com/48x48?text=TV';
+    img.onerror = () => { img.src = 'https://via.placeholder.com/48x48?text=TV'; };
     ic.appendChild(img);
 
     const info = document.createElement('div');
@@ -2613,6 +2621,7 @@ function render(groups) {
       if (ch.icon) {
         const im = document.createElement('img');
         im.src = ch.icon;
+        im.onerror = () => { im.style.display = 'none'; };
         ci.appendChild(im);
       }
 
