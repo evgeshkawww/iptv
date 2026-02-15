@@ -9,8 +9,8 @@ window.SPEEDTEST_SERVERS = [
 	  serveropen: "YES"
 	},
 	{
-      name: "s8.turbod.iptv",
-      server: "https://ru3.tvtm.one:8080/",
+      name: "s2.turbod.iptv",
+      server: "https://9.tvtm.one:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
@@ -63,8 +63,8 @@ window.SPEEDTEST_SERVERS = [
       serveropen: "NO"
     },
     {
-      name: "s2.turbod.iptv",
-      server: "https://9.tvtm.one:8080/",
+      name: "s8.turbod.iptv",
+      server: "https://ru3.tvtm.one:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
