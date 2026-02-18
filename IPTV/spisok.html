@@ -142,18 +142,24 @@ header {
 }
 
 .search {
-  background: rgba(0,0,0,.4);
-  border: 1px solid var(--border-strong, rgba(255,255,255,.08));
+  background: #ffffff;  /* Белый фон */
+  border: 2px solid #1e293b;  /* Темная обводка для контраста */
   padding: 10px 14px;
   border-radius: 12px;
-  color: var(--text);
+  color: #0f172a;  /* Темный текст для читаемости */
   outline: none;
   font-family: var(--font-sans, 'Inter', sans-serif);
+  font-weight: 500;
+}
+
+.search::placeholder {
+  color: #64748b;  /* Серый плейсхолдер */
+  opacity: 0.8;
 }
 
 .search:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px var(--primary-glow-soft);
+  border-color: var(--primary, #38bdf8);
+  box-shadow: 0 0 0 3px rgba(56,189,248,.3);
 }
 
 .total {
