@@ -42,7 +42,7 @@ window.SPEEDTEST_SERVERS = [
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
-      serveropen: "YES"
+      serveropen: "NO"
     },
     {
       name: "s6.turbod.iptv",
