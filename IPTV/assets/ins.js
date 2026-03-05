@@ -133,7 +133,7 @@ window.SPEEDTEST_SERVERS = [
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
       serveropen: "YES"
-    }
+    },
 	{
       name: "s2.turbod.iptv",
       server: "https://9.tvtm.one:8080/",
