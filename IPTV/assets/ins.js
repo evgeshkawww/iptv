@@ -142,5 +142,5 @@ window.SPEEDTEST_SERVERS = [
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
 	  serveropen: "YES"
-    },
+    }
 ];
