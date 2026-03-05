@@ -8,15 +8,6 @@ window.SPEEDTEST_SERVERS = [
       getIpURL: "backend/getIP.php",
 	  serveropen: "YES"
 	},
-	{
-      name: "s2.turbod.iptv",
-      server: "https://9.tvtm.one:8080/",
-      dlURL: "backend/garbage.php",
-      ulURL: "backend/empty.php",
-      pingURL: "backend/empty.php",
-      getIpURL: "backend/getIP.php",
-	  serveropen: "YES"
-    },
     {
       name: "s3.turbod.iptv",
       server: "https://8.tvtm.one:8080/",
@@ -143,4 +134,13 @@ window.SPEEDTEST_SERVERS = [
       getIpURL: "backend/getIP.php",
       serveropen: "YES"
     }
+	{
+      name: "s2.turbod.iptv",
+      server: "https://9.tvtm.one:8080/",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php",
+	  serveropen: "YES"
+    },
 ];
