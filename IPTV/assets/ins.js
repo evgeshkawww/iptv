@@ -10,22 +10,13 @@ window.SPEEDTEST_SERVERS = [
 	},
     {
       name: "s3.turbod.iptv",
-      server: "https://8.tvtm.one:8080/",
+      server: "https://ru5.tvtm.one:8080/",
       dlURL: "backend/garbage.php",
       ulURL: "backend/empty.php",
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
-      serveropen: "NO"
+      serveropen: "YES"
 	},
-    {
-      name: "s4.turbod.iptv",
-      server: "https://15.tvtm.one:8080/",
-      dlURL: "backend/garbage.php",
-      ulURL: "backend/empty.php",
-      pingURL: "backend/empty.php",
-      getIpURL: "backend/getIP.php",
-      serveropen: "NO"
-    },
     {
       name: "s5.turbod.iptv",
       server: "http://ru.tvtm.one:8080/",
@@ -142,5 +133,14 @@ window.SPEEDTEST_SERVERS = [
       pingURL: "backend/empty.php",
       getIpURL: "backend/getIP.php",
 	  serveropen: "YES"
+    },
+	{
+      name: "s4.turbod.iptv",
+      server: "https://hk.tvtm.one:8080/",
+      dlURL: "backend/garbage.php",
+      ulURL: "backend/empty.php",
+      pingURL: "backend/empty.php",
+      getIpURL: "backend/getIP.php",
+      serveropen: "YES"
     }
 ];
