@@ -48,6 +48,35 @@ function initServers(){
             if(server!=null){ //at least 1 server is available
                 I("loading").className="hidden"; //hide loading message
                 
+                // =====================================================
+                // 1. СНАЧАЛА добавляем отдельные серверы (только YES)
+                // =====================================================
+                for (var i = 0; i < SPEEDTEST_SERVERS.length; i++) {
+
+                    if (SPEEDTEST_SERVERS[i].pingT == -1) continue;
+
+                    // ✅ Добавляем ТОЛЬКО серверы с serveropen = "YES"
+                    if (SPEEDTEST_SERVERS[i].serveropen === "YES") {
+                        var option = document.createElement("option");
+                        option.value = i;
+                        option.textContent = SPEEDTEST_SERVERS[i].name;
+                        I("server").appendChild(option);
+                    }
+                    
+                    // ❌ Серверы с serveropen = "NO" просто пропускаем
+                }
+                
+                // =====================================================
+                // 2. ПОТОМ добавляем разделитель
+                // =====================================================
+                var optionSeparator = document.createElement("option");
+                optionSeparator.disabled = true;
+                optionSeparator.textContent = "─────────────────";
+                I("server").appendChild(optionSeparator);
+                
+                // =====================================================
+                // 3. В САМОМ КОНЦЕ добавляем опции для группового теста
+                // =====================================================
                 // Добавляем опцию для тестирования всех доступных серверов
                 var optionAllAvailable = document.createElement("option");
                 optionAllAvailable.value = "all_available";
@@ -60,27 +89,6 @@ function initServers(){
                 optionAllFull.value = "all_with_filled";
                 optionAllFull.textContent = "Все сервера";
                 I("server").appendChild(optionAllFull);
-                
-                // Отделяем группы от отдельных серверов
-                var optionSeparator = document.createElement("option");
-                optionSeparator.disabled = true;
-                optionSeparator.textContent = "─────────────────";
-                I("server").appendChild(optionSeparator);
-                
-                //populate server list for manual selection
-				for (var i = 0; i < SPEEDTEST_SERVERS.length; i++) {
-
-					if (SPEEDTEST_SERVERS[i].pingT == -1) continue;
-
-					// 🚫 НЕ добавляем OFF-серверы в список
-					if (SPEEDTEST_SERVERS[i].serveropen !== "YES") continue;
-
-					var option = document.createElement("option");
-					option.value = i;
-					option.textContent = SPEEDTEST_SERVERS[i].name;
-
-					I("server").appendChild(option);
-				}
                 
                 //show test UI
                 I("testWrapper").className="visible";
