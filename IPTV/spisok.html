@@ -299,81 +299,87 @@ summary::-webkit-details-marker {
   border-top: 1px solid var(--border-medium);
 }
 
-/* АДАПТАЦИЯ */
-@media (max-width: 700px) {
-  header {
-    flex-direction: column;
-    align-items: stretch;
+/* Базовый мобильный — до ~500–600 px viewport (покрывает S25 Ultra и почти все современные флагманы) */
+@media (max-width: 600px) {   /* ← вместо 700px, чтобы сработало раньше */
+  body {
+    padding: 12px 8px;        /* чуть меньше отступов по бокам */
   }
-  
-  .promo {
+
+  .wrap {
+    max-width: 100%;          /* убираем ограничение 1100px */
     width: 100%;
-    justify-content: center;
+    padding: 0 4px;           /* минимальные боковые отступы */
+    align-items: center;      /* центрируем всё внутри flex */
+    margin: 0 auto;
   }
-  
+
+  header {
+    max-width: 420px;         /* ← ключевое: не даём растягиваться шире типичного мобильного */
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .promo {
+    flex-direction: row;      /* или column — как вам удобнее */
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
   .controls {
     width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
     flex-direction: column;
+    gap: 12px;
   }
-  
+
   .search {
     width: 100%;
-  }
-  
-  .total {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .channels {
-    grid-template-columns: 1fr;
-  }
-  
-  .group-info {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-  }
-}
-
-@media (max-width: 600px) {
-  body {
-    padding: 10px;
-  }
-  
-  header {
-    padding: 20px 16px;
-  }
-  
-  .main-title {
-    font-size: 22px;
-    text-align: center;
-  }
-}
-@media (max-width: 768px) {
-  .wrap {
-    align-items: center;
-    padding: 0 10px;
-  }
-
-  header,
-  .promo,
-  .controls {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: center;
+    box-sizing: border-box;
   }
 
   .groups {
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;         /* карточки групп не растягиваются на весь экран */
     margin: 0 auto;
   }
 
+  .channels {
+    grid-template-columns: 1fr;   /* одна колонка */
+    gap: 12px;
+  }
+
   .channel {
-    margin: 6px auto;
+    max-width: 380px;         /* карточка канала по центру */
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .ch-body {
+    text-align: center;
+  }
+
+  .group-info {
+    text-align: center;
+  }
+}
+
+/* Дополнительно — для очень узких (если пользователь уменьшил масштаб) */
+@media (max-width: 480px) {
+  header {
     max-width: 360px;
+  }
+  .groups,
+  .channel {
+    max-width: 340px;
   }
 }
 </style>
