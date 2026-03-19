@@ -299,42 +299,52 @@ summary::-webkit-details-marker {
   border-top: 1px solid var(--border-medium);
 }
 
-/* Базовый мобильный — до ~500–600 px viewport (покрывает S25 Ultra и почти все современные флагманы) */
-@media (max-width: 600px) {   /* ← вместо 700px, чтобы сработало раньше */
+/* Глобальный сброс для мобильных — убирает горизонтальный скролл и микро-сдвиги */
+@media (max-width: 600px) {
+  html,
   body {
-    padding: 12px 8px;        /* чуть меньше отступов по бокам */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;           /* режет всё, что пытается вылезти */
   }
+}
 
+/* Основной мобильный медиа-запрос (600px и меньше) */
+@media (max-width: 600px) {
   .wrap {
-    max-width: 100%;          /* убираем ограничение 1100px */
     width: 100%;
-    padding: 0 4px;           /* минимальные боковые отступы */
-    align-items: center;      /* центрируем всё внутри flex */
+    max-width: 100%;
     margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    align-items: center;
   }
 
   header {
-    max-width: 420px;         /* ← ключевое: не даём растягиваться шире типичного мобильного */
     width: 100%;
-    margin: 0 auto;
+    max-width: 400px;             /* лучше всего ложится на S25 Ultra */
+    margin: 16px auto;            /* небольшой отступ сверху и центрирование */
     padding: 16px;
     flex-direction: column;
     gap: 16px;
     text-align: center;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .promo {
-    flex-direction: row;      /* или column — как вам удобнее */
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
     gap: 12px;
     width: 100%;
-    max-width: 380px;
+    max-width: 360px;
     margin: 0 auto;
   }
 
   .controls {
     width: 100%;
-    max-width: 380px;
+    max-width: 360px;
     margin: 0 auto;
     flex-direction: column;
     gap: 12px;
@@ -347,20 +357,26 @@ summary::-webkit-details-marker {
 
   .groups {
     width: 100%;
-    max-width: 420px;         /* карточки групп не растягиваются на весь экран */
+    max-width: 400px;
     margin: 0 auto;
+    overflow-x: hidden;
   }
 
   .channels {
-    grid-template-columns: 1fr;   /* одна колонка */
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
     gap: 12px;
   }
 
   .channel {
-    max-width: 380px;         /* карточка канала по центру */
-    margin: 0 auto;
+    width: 100%;
+    max-width: 360px;
+    margin: 8px auto;
     justify-content: center;
     text-align: center;
+    box-sizing: border-box;
   }
 
   .ch-body {
@@ -372,11 +388,17 @@ summary::-webkit-details-marker {
   }
 }
 
-/* Дополнительно — для очень узких (если пользователь уменьшил масштаб) */
+/* Для очень узких экранов или сильного увеличения шрифта */
 @media (max-width: 480px) {
   header {
     max-width: 360px;
   }
+
+  .promo,
+  .controls {
+    max-width: 340px;
+  }
+
   .groups,
   .channel {
     max-width: 340px;
