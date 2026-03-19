@@ -26,15 +26,16 @@
 
 body {
   margin: 0;
-  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   background: 
     radial-gradient(circle at top, #0f172a, transparent 60%),
     radial-gradient(circle at bottom, #020617, #000);
   font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
   color: var(--text);
-  padding: 40px 20px;
+  padding: 20px 14px;
 }
 
 body::before {
@@ -53,11 +54,11 @@ body::before {
 
 .wrap {
   max-width: 1100px;
-  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  flex: 1;
 }
 
 /* ПРОМО-БЛОК */
@@ -141,18 +142,18 @@ header {
 }
 
 .search {
-  background: #ffffff;
-  border: 2px solid #1e293b;
+  background: #ffffff;  /* Белый фон */
+  border: 2px solid #1e293b;  /* Темная обводка для контраста */
   padding: 10px 14px;
   border-radius: 12px;
-  color: #0f172a;
+  color: #0f172a;  /* Темный текст для читаемости */
   outline: none;
   font-family: var(--font-sans, 'Inter', sans-serif);
   font-weight: 500;
 }
 
 .search::placeholder {
-  color: #64748b;
+  color: #64748b;  /* Серый плейсхолдер */
   opacity: 0.8;
 }
 
@@ -288,9 +289,6 @@ summary::-webkit-details-marker {
 
 /* FOOTER */
 .footer {
-  max-width: 1100px;
-  width: 100%;
-  margin: 0 auto;
   margin-top: auto;
   padding-top: 30px;
   padding-bottom: 20px;
@@ -303,10 +301,6 @@ summary::-webkit-details-marker {
 
 /* АДАПТАЦИЯ */
 @media (max-width: 700px) {
-  body {
-    padding: 20px 14px;
-  }
-  
   header {
     flex-direction: column;
     align-items: stretch;
@@ -386,7 +380,7 @@ summary::-webkit-details-marker {
 <div class="footer">© Premium-IPTV</div>
 
 <script>
-// ВСТАВЬТЕ ВАШИ ДАННЫЕ groupsData СЮДА:
+// Данные каналов (вставьте ваш groupsData сюда)
 const groupsData = [
   {
     id:'group1',
@@ -2826,3 +2820,5 @@ searchInput.addEventListener('input', e => {
 
 </body>
 </html>
+
+
