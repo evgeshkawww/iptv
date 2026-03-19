@@ -299,31 +299,37 @@ summary::-webkit-details-marker {
   border-top: 1px solid var(--border-medium);
 }
 
-/* Глобальный сброс для мобильных — убирает горизонтальный скролл и микро-сдвиги */
+/* ────────────────────────────────────────────────
+   Мобильная адаптация (600px и меньше)
+   ──────────────────────────────────────────────── */
+
+/* Глобальный сброс отступов и предотвращение горизонтального скролла */
 @media (max-width: 600px) {
   html,
   body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;           /* режет всё, что пытается вылезти */
+    overflow-x: hidden;
   }
 }
 
-/* Основной мобильный медиа-запрос (600px и меньше) */
+/* Основные контейнеры и элементы */
 @media (max-width: 600px) {
+  /* Обёртка всей страницы */
   .wrap {
     width: 100%;
     max-width: 100%;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     align-items: center;
   }
 
+  /* Шапка (заголовок + промо + поиск) */
   header {
     width: 100%;
-    max-width: 400px;             /* лучше всего ложится на S25 Ultra */
-    margin: 16px auto;            /* небольшой отступ сверху и центрирование */
+    max-width: 400px;
+    margin: 16px auto 0;
     padding: 16px;
     flex-direction: column;
     gap: 16px;
@@ -333,13 +339,13 @@ summary::-webkit-details-marker {
   }
 
   .promo {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 12px;
-    width: 100%;
-    max-width: 360px;
-    margin: 0 auto;
   }
 
   .controls {
@@ -355,17 +361,19 @@ summary::-webkit-details-marker {
     box-sizing: border-box;
   }
 
+  /* Список групп каналов */
   .groups {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
+    padding: 0;
     overflow-x: hidden;
   }
 
   .channels {
     width: 100%;
     max-width: 100%;
-    margin: 0 auto;
+    margin: 0;
     grid-template-columns: 1fr;
     gap: 12px;
   }
@@ -374,21 +382,21 @@ summary::-webkit-details-marker {
     width: 100%;
     max-width: 360px;
     margin: 8px auto;
+    padding: 12px;
     justify-content: center;
     text-align: center;
     box-sizing: border-box;
   }
 
-  .ch-body {
-    text-align: center;
-  }
-
+  /* Текст внутри карточек */
+  .ch-body,
   .group-info {
     text-align: center;
   }
 }
 
-/* Для очень узких экранов или сильного увеличения шрифта */
+/* Дополнительная подстройка для экранов < 480px 
+   (сильное увеличение шрифта, очень узкие viewports) */
 @media (max-width: 480px) {
   header {
     max-width: 360px;
@@ -402,6 +410,10 @@ summary::-webkit-details-marker {
   .groups,
   .channel {
     max-width: 340px;
+  }
+
+  .channel {
+    margin: 6px auto;
   }
 }
 </style>
