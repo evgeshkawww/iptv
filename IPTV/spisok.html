@@ -315,17 +315,15 @@ summary::-webkit-details-marker {
 
 /* Основные контейнеры и элементы */
 @media (max-width: 600px) {
-  /* Обёртка всей страницы */
+
   .wrap {
     width: 100%;
     max-width: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    align-items: center;
   }
 
-  /* Шапка (заголовок + промо + поиск) */
   header {
     width: 100%;
     max-width: 400px;
@@ -342,10 +340,9 @@ summary::-webkit-details-marker {
     width: 100%;
     max-width: 360px;
     margin: 0 auto;
-    flex-direction: row;
+    gap: 12px;
     justify-content: center;
     align-items: center;
-    gap: 12px;
   }
 
   .controls {
@@ -361,7 +358,6 @@ summary::-webkit-details-marker {
     box-sizing: border-box;
   }
 
-  /* Список групп каналов */
   .groups {
     width: 100%;
     max-width: 400px;
@@ -372,8 +368,6 @@ summary::-webkit-details-marker {
 
   .channels {
     width: 100%;
-    max-width: 100%;
-    margin: 0;
     grid-template-columns: 1fr;
     gap: 12px;
   }
@@ -383,21 +377,22 @@ summary::-webkit-details-marker {
     max-width: 360px;
     margin: 8px auto;
     padding: 12px;
-    justify-content: center;
-    text-align: center;
     box-sizing: border-box;
+
+    /* ВАЖНО: убираем центрирование */
+    justify-content: flex-start;
+    text-align: left;
   }
 
-  /* Текст внутри карточек */
   .ch-body,
   .group-info {
-    text-align: center;
+    text-align: left;
   }
 }
 
-/* Дополнительная подстройка для экранов < 480px 
-   (сильное увеличение шрифта, очень узкие viewports) */
+/* Подстройка для экранов < 480px */
 @media (max-width: 480px) {
+
   header {
     max-width: 360px;
   }
@@ -416,6 +411,7 @@ summary::-webkit-details-marker {
     margin: 6px auto;
   }
 }
+
 </style>
 </head>
 
