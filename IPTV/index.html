@@ -4,7 +4,7 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>E-IPTV — безопасные платежи</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -46,6 +46,63 @@
     .bottom-logos img{width:28px;height:28px;object-fit:cover;border-radius:6px}
     .bottom-logos .label{font-size:12px;color:var(--muted)}
     .full-number-hint{font-size:11px;color:var(--muted);margin-top:6px;background:rgba(0,0,0,0.2);padding:4px 8px;border-radius:8px;display:inline-block;}
+    
+    /* Модальное окно для QR на весь экран */
+    .qr-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.92);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    .qr-modal.active {
+      display: flex;
+    }
+    .qr-modal-content {
+      text-align: center;
+      padding: 20px;
+      max-width: 95vw;
+      max-height: 95vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .qr-modal-img {
+      width: 85vw;
+      height: auto;
+      max-width: 500px;
+      background: white;
+      padding: 16px;
+      border-radius: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .qr-modal-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+    }
+    .qr-modal-text {
+      color: white;
+      font-size: 16px;
+      background: rgba(0,0,0,0.6);
+      padding: 10px 20px;
+      border-radius: 40px;
+      font-weight: 500;
+    }
+    .close-modal-hint {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 8px;
+    }
     @media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr)} .header-buttons{margin-left:0;width:100%;justify-content:flex-start} }
     @media (max-width:480px){ .grid{grid-template-columns:repeat(1,1fr)} .logo{width:48px;height:48px} h1{font-size:18px} .bank-logo{width:32px;height:32px} .bottom-logos img{width:22px;height:22px} }
   </style>
@@ -67,7 +124,7 @@
     </header>
 
     <div class="grid">
-      <!-- КАРТА 1: МИР (Без комиссии) RUS BLR   номер: 9112 3880 3803 5577 -->
+      <!-- КАРТА 1: МИР (Без комиссии) RUS BLR   номер: 9112 3880 3803 5577 (без подсказки) -->
       <div class="card" data-card-id="1">
         <div class="title">
           <div class="bank">
@@ -85,10 +142,10 @@
           <button class="copy" data-number="9112388038035577">📋 Скопировать</button>
           <button class="toggle" data-full="9112388038035577" data-masked="**** **** **** 5577">👁️ Показать</button>
         </div>
-        <div class="full-number-hint">полный номер: 9112 3880 3803 5577</div>
+        <!-- полный номер внизу УДАЛЕН -->
       </div>
 
-      <!-- КАРТА 2: MasterCard KZ UZ TJ USA   номер: 5185 9749 0681 0892 -->
+      <!-- КАРТА 2: MasterCard KZ UZ TJ USA   номер: 5185 9749 0681 0892 (без подсказки) -->
       <div class="card" data-card-id="2">
         <div class="title">
           <div class="bank">
@@ -106,10 +163,9 @@
           <button class="copy" data-number="5185974906810892">📋 Скопировать</button>
           <button class="toggle" data-full="5185974906810892" data-masked="**** **** **** 0892">👁️ Показать</button>
         </div>
-        <div class="full-number-hint">полный номер: 5185 9749 0681 0892</div>
       </div>     
 
-      <!-- КАРТА 3: MasterCard (логотип мир) номер: 5599 0021 1722 2853 -->
+      <!-- КАРТА 3: MasterCard (логотип мир) номер: 5599 0021 1722 2853 (без подсказки) -->
       <div class="card" data-card-id="3">
         <div class="title">
           <div class="bank">
@@ -127,10 +183,9 @@
           <button class="copy" data-number="5599002117222853">📋 Скопировать</button>
           <button class="toggle" data-full="5599002117222853" data-masked="**** **** **** 2853">👁️ Показать</button>
         </div>
-        <div class="full-number-hint">полный номер: 5599 0021 1722 2853</div>
       </div>
 
-      <!-- КАРТА 4: МИР  номер: 2204 1201 2935 8848 -->
+      <!-- КАРТА 4: МИР  номер: 2204 1201 2935 8848 (без подсказки) -->
       <div class="card" data-card-id="4">
         <div class="title">
           <div class="bank">
@@ -148,10 +203,9 @@
           <button class="copy" data-number="2204120129358848">📋 Скопировать</button>
           <button class="toggle" data-full="2204120129358848" data-masked="**** **** **** 8848">👁️ Показать</button>
         </div>
-        <div class="full-number-hint">полный номер: 2204 1201 2935 8848</div>
       </div>
 
-      <!-- КАРТА 5: Белинвестбанк МИР  номер: 9112 3930 4021 9532 -->
+      <!-- КАРТА 5: Белинвестбанк МИР  номер: 9112 3930 4021 9532 (без подсказки) -->
       <div class="card" data-card-id="5">
         <div class="title">
           <div class="bank">
@@ -169,10 +223,9 @@
           <button class="copy" data-number="9112393040219532">📋 Скопировать</button>
           <button class="toggle" data-full="9112393040219532" data-masked="**** **** **** 9532">👁️ Показать</button>
         </div>
-        <div class="full-number-hint">полный номер: 9112 3930 4021 9532</div>
       </div>
 
-      <!-- КАРТА 6: Юмани (YooMoney) с QR, ссылка на донат, номер кошелька показан отдельно -->
+      <!-- КАРТА 6: Юмани (YooMoney) — здесь оставлен полный номер внизу, и QR открывается на весь экран -->
       <div class="card" data-card-id="6">
         <div class="title">
           <div class="bank">
@@ -191,12 +244,13 @@
           <a class="donate" href="https://yoomoney.ru/to/4100119260753027" target="_blank" rel="noopener noreferrer">💰 Перейти на донат</a>
         </div>
         <div style="margin-top:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-          <div class="qr-wrap" title="QR для перевода в YooMoney">
-            <img id="yoom-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://yoomoney.ru/to/4100119260753027" alt="QR ЮMoney">
+          <div class="qr-wrap" title="Нажмите, чтобы увеличить QR-код">
+            <img id="yoom-qr-fullscreen" src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://yoomoney.ru/to/4100119260753027" alt="QR ЮMoney для оплаты">
           </div>
-          <div style="color:var(--muted);font-size:13px">QR код для быстрой оплаты через приложение</div>
+          <div style="color:var(--muted);font-size:13px">Нажмите на QR, чтобы открыть на весь экран</div>
         </div>
-        <div class="full-number-hint">кошелек: 4100119260753027</div>
+        <!-- ТОЛЬКО У ЮМАНИ оставлен полный номер внизу -->
+        <div class="full-number-hint">💰 Кошелек ЮMoney: 4100119260753027</div>
       </div>
     </div>
 
@@ -222,9 +276,20 @@
     </footer>
   </div>
 
+  <!-- Модальное окно для QR на весь экран -->
+  <div id="qrModal" class="qr-modal">
+    <div class="qr-modal-content">
+      <div class="qr-modal-img">
+        <img id="modalQrImage" src="" alt="QR код увеличенный">
+      </div>
+      <div class="qr-modal-text">📱 Отсканируйте для оплаты</div>
+      <div class="close-modal-hint">✖ Нажмите в любом месте, чтобы закрыть</div>
+    </div>
+  </div>
+
   <script>
     (function() {
-      // Функция показа временного уведомления
+      // ----- Функция показа уведомлений -----
       function showToast(message, isError = false) {
         const existingToast = document.querySelector('.toast-msg');
         if(existingToast) existingToast.remove();
@@ -244,25 +309,24 @@
         }, 2200);
       }
 
-      // Универсальное копирование текста в буфер
+      // ----- Копирование в буфер -----
       async function copyToClipboard(text, friendlyName = 'номер') {
         try {
           await navigator.clipboard.writeText(text);
           showToast(`✅ ${friendlyName} скопирован: ${text.slice(-4)}...`, false);
         } catch (err) {
-          // fallback
           const textarea = document.createElement('textarea');
           textarea.value = text;
           document.body.appendChild(textarea);
           textarea.select();
           const success = document.execCommand('copy');
           document.body.removeChild(textarea);
-          if(success) showToast(`📋 ${friendlyName} скопирован (резервный способ)`, false);
+          if(success) showToast(`📋 ${friendlyName} скопирован`, false);
           else showToast(`❌ Не удалось скопировать`, true);
         }
       }
 
-      // Находим все кнопки "Скопировать"
+      // ----- Кнопки "Скопировать" -----
       const copyButtons = document.querySelectorAll('.copy');
       copyButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -270,7 +334,6 @@
           const fullNumber = btn.getAttribute('data-number');
           if(fullNumber) {
             let label = 'номер карты';
-            // если карта Юмани (внутри карты с Юмани) можно подписать
             const parentCard = btn.closest('.card');
             if(parentCard && parentCard.querySelector('.bank span:first-child')?.innerText.includes('Юмани')) {
               label = 'кошелек ЮMoney';
@@ -282,11 +345,9 @@
         });
       });
 
-      // Логика показать/скрыть номер
+      // ----- Логика Показать/Скрыть номер (для всех карт) -----
       const toggleButtons = document.querySelectorAll('.toggle');
-      
-      // Для каждого toggle храним состояние: true = показан полный номер, false = скрыт
-      const cardStates = new Map(); // key = карта, value = boolean (true - открыт)
+      const cardStates = new Map();
       
       toggleButtons.forEach(btn => {
         const full = btn.getAttribute('data-full');
@@ -296,11 +357,9 @@
         const numberSpan = btn.closest('.card')?.querySelector('.number-display');
         if(!numberSpan) return;
         
-        // начальное состояние всегда скрыто (false)
         let isRevealed = false;
         cardStates.set(btn, false);
         
-        // Обновляем текст кнопки
         const updateButtonText = () => {
           if(isRevealed) {
             btn.innerHTML = '🙈 Скрыть';
@@ -309,16 +368,11 @@
           }
         };
         
-        // обновляем отображение номера
         const updateDisplay = () => {
           if(isRevealed) {
-            // форматируем полный номер для красоты: группируем по 4 цифры
             let formattedFull = full;
             if(full.length === 16) {
               formattedFull = full.match(/.{1,4}/g).join(' ');
-            } else if(full.length === 13 && full.startsWith('410')) {
-              // для Юмани кошелек 4100119260753027 - 16 цифр, но если 16 то форматируем стандартно
-              formattedFull = full;
             }
             numberSpan.textContent = formattedFull;
           } else {
@@ -335,65 +389,84 @@
           cardStates.set(btn, isRevealed);
           updateButtonText();
           updateDisplay();
-          
-          // дополнительный визуальный фидбек
           showToast(isRevealed ? '🔓 Номер карты открыт' : '🔒 Номер скрыт', false);
         });
       });
+
+      // ----- QR-код: открытие на весь экран (модальное окно) -----
+      const qrModal = document.getElementById('qrModal');
+      const modalQrImage = document.getElementById('modalQrImage');
+      // Обрабатываем клик по QR изображению внутри карты Юмани
+      const yoomQrImage = document.getElementById('yoom-qr-fullscreen');
       
-      // Дополнительно для Юмани карты (кошелек), если кто-то захочет скопировать по кнопке внутри — уже реализовано через data-number
-      // Добавляем для QR код клик по изображению - копирование ссылки на оплату (опционально)
-      const yoomQr = document.getElementById('yoom-qr');
-      if(yoomQr) {
-        yoomQr.style.cursor = 'pointer';
-        yoomQr.addEventListener('click', () => {
-          const walletLink = "https://yoomoney.ru/to/4100119260753027";
-          copyToClipboard(walletLink, 'ссылка на перевод ЮMoney');
+      if(yoomQrImage && qrModal) {
+        // Получаем актуальный src QR-кода (можно тот же, но лучше использовать более качественный)
+        const qrSource = yoomQrImage.src;
+        
+        // Функция открытия модального окна
+        const openQrModal = () => {
+          modalQrImage.src = qrSource; // тот же QR, но можно с большим размером, но у нас и так 400x400
+          qrModal.classList.add('active');
+          document.body.style.overflow = 'hidden'; // блокируем прокрутку страницы
+        };
+        
+        // Закрытие модального окна
+        const closeQrModal = () => {
+          qrModal.classList.remove('active');
+          document.body.style.overflow = '';
+          // опционально очищаем src, чтобы не грузить лишний раз
+          // modalQrImage.src = '';
+        };
+        
+        // Открываем по клику на QR
+        yoomQrImage.addEventListener('click', (e) => {
+          e.stopPropagation();
+          openQrModal();
+        });
+        
+        // Закрываем по клику на фон (модальное окно)
+        qrModal.addEventListener('click', (e) => {
+          if(e.target === qrModal || e.target.classList.contains('close-modal-hint') || e.target.closest('.close-modal-hint')) {
+            closeQrModal();
+          }
+        });
+        
+        // Закрытие по Escape
+        document.addEventListener('keydown', (e) => {
+          if(e.key === 'Escape' && qrModal.classList.contains('active')) {
+            closeQrModal();
+          }
         });
       }
       
-      // Предотвращаем любые ошибки с безопасностью: все обработчики только пользовательские
-      // Добавляем небольшую анимацию обратной связи при копировании
-      const allCopyBtns = document.querySelectorAll('.copy');
-      allCopyBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-          // просто добавим легкий эффект нажатия
+      // Добавляем легкий эффект нажатия для кнопок
+      const allActionBtns = document.querySelectorAll('.copy, .toggle');
+      allActionBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
           this.style.transform = 'scale(0.97)';
           setTimeout(() => { if(this) this.style.transform = ''; }, 120);
         });
       });
       
-      const allToggleBtns = document.querySelectorAll('.toggle');
-      allToggleBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-          this.style.transform = 'scale(0.97)';
-          setTimeout(() => { if(this) this.style.transform = ''; }, 100);
+      // Также для юмани можно сделать клик по подсказке копированием (опционально, но не мешает)
+      const yoomHint = document.querySelector('.card:has(.bank span:first-child:contains("Юмани")) .full-number-hint');
+      // если есть hint с кошельком, можно сделать по нему копирование для удобства
+      const yoomFullHint = document.querySelector('.full-number-hint');
+      if(yoomFullHint && yoomFullHint.closest('.card')?.querySelector('.bank')?.innerText.includes('Юмани')) {
+        yoomFullHint.style.cursor = 'pointer';
+        yoomFullHint.addEventListener('click', () => {
+          const walletNumber = '4100119260753027';
+          copyToClipboard(walletNumber, 'кошелек ЮMoney');
         });
-      });
+        yoomFullHint.title = 'Нажмите, чтобы скопировать номер кошелька';
+      }
       
-      // Также добавляем возможность копирования полного номера при клике на подсказку (full-number-hint) для удобства
-      const hints = document.querySelectorAll('.full-number-hint');
-      hints.forEach(hint => {
-        hint.style.cursor = 'pointer';
-        hint.addEventListener('click', (e) => {
-          let rawNumber = '';
-          const text = hint.innerText;
-          const match = text.match(/\d+/g);
-          if(match) rawNumber = match.join('');
-          if(rawNumber && rawNumber.length >= 13) {
-            copyToClipboard(rawNumber, 'номер карты из подсказки');
-          } else {
-            showToast('Не удалось распознать номер', true);
-          }
-        });
-      });
+      // Добавим небольшую стилизацию для подсказки, чтобы выглядела кликабельной
+      const styleExtra = document.createElement('style');
+      styleExtra.textContent = `.full-number-hint { transition: 0.1s; } .full-number-hint:hover { background: rgba(54,179,126,0.2); text-decoration: underline; cursor: pointer; }`;
+      document.head.appendChild(styleExtra);
       
-      // небольшой фикс: чтобы при наведении подсказка выглядела кликабельной
-      const styleHint = document.createElement('style');
-      styleHint.textContent = `.full-number-hint { transition: 0.1s; } .full-number-hint:hover { background: rgba(54,179,126,0.2); text-decoration: underline; }`;
-      document.head.appendChild(styleHint);
-      
-      console.log('Скрипты активны: копирование и показ/скрытие работают корректно');
+      console.log('Скрипты активны: копирование, показ/скрытие, QR на весь экран (без копирования)');
     })();
   </script>
 </body>
