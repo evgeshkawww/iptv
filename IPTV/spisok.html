@@ -64,6 +64,45 @@ body::before {
   flex-direction: column;
   gap: 24px;
   flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* HEADER — фиксированная ширина, как у контейнера с каналами */
+header {
+  width: 100%;
+  background: var(--bg-overlay-soft);
+  border-radius: 22px;
+  padding: 26px 28px;
+  backdrop-filter: blur(14px);
+  box-shadow: 
+    0 0 40px var(--primary-glow-soft),
+    inset 0 0 0 1px var(--border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+/* Левая часть хедера */
+.header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.main-title {
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  text-shadow: 0 0 12px var(--primary-glow);
 }
 
 /* ПРОМО-БЛОК */
@@ -130,6 +169,7 @@ body::before {
   cursor: pointer;
   backdrop-filter: blur(4px);
   letter-spacing: 0.3px;
+  white-space: nowrap;
 }
 
 .btn-int:hover {
@@ -143,39 +183,7 @@ body::before {
   transform: translateY(1px);
 }
 
-/* HEADER */
-header {
-  width: 100%;
-  background: var(--bg-overlay-soft);
-  border-radius: 22px;
-  padding: 26px 28px;
-  backdrop-filter: blur(14px);
-  box-shadow: 
-    0 0 40px var(--primary-glow-soft),
-    inset 0 0 0 1px var(--border-light);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.header-left {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.main-title {
-  font-family: var(--font-serif, 'Playfair Display', serif);
-  font-size: 28px;
-  font-weight: 900;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: .14em;
-  text-shadow: 0 0 12px var(--primary-glow);
-}
-
+/* ПРАВАЯ ЧАСТЬ: controls */
 .controls {
   display: flex;
   gap: 12px;
@@ -215,10 +223,12 @@ header {
   white-space: nowrap;
 }
 
-/* GROUPS */
+/* GROUPS — контейнер с каналами (такой же ширины как header) */
 .groups {
   display: grid;
   gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 details.group {
@@ -227,6 +237,8 @@ details.group {
   padding: 16px;
   backdrop-filter: blur(12px);
   border: 1px solid var(--border-light);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 summary {
@@ -263,6 +275,7 @@ summary::-webkit-details-marker {
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .group-name {
@@ -344,105 +357,101 @@ summary::-webkit-details-marker {
   border-top: 1px solid var(--border-medium);
 }
 
-/* МОБИЛЬНАЯ АДАПТАЦИЯ */
-@media (max-width: 768px) {
+/* ========= МОБИЛЬНАЯ АДАПТАЦИЯ ========= */
+@media (max-width: 900px) {
   header {
     flex-direction: column;
     align-items: stretch;
-    text-align: center;
+    padding: 20px;
   }
   
   .header-left {
     align-items: center;
+    text-align: center;
+  }
+  
+  .promo {
+    justify-content: center;
+  }
+  
+  .btn-int {
+    align-self: center;
+    white-space: nowrap;
   }
   
   .controls {
     justify-content: center;
+    margin-top: 8px;
   }
 }
 
 @media (max-width: 600px) {
-  html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+  body {
+    padding: 12px;
   }
-
+  
   .wrap {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  header {
-    width: 100%;
-    max-width: 400px;
-    margin: 16px auto 0;
-    padding: 18px;
-    flex-direction: column;
     gap: 16px;
-    text-align: center;
-    box-sizing: border-box;
   }
-
-  .promo {
-    justify-content: center;
+  
+  header {
+    padding: 18px;
   }
-
+  
+  .main-title {
+    font-size: 22px;
+  }
+  
+  .promo-badge {
+    font-size: 28px;
+  }
+  
+  .promo-text, 
+  .promo-link {
+    font-size: 12px;
+  }
+  
+  .btn-int {
+    padding: 8px 18px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  
   .controls {
     width: 100%;
-    max-width: 360px;
-    margin: 0 auto;
     flex-direction: column;
-    gap: 12px;
   }
-
+  
   .search {
     width: 100%;
-    box-sizing: border-box;
+    min-width: auto;
   }
-
-  .groups {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 0;
+  
+  .total {
+    width: auto;
   }
-
+  
   .channels {
-    width: 100%;
     grid-template-columns: 1fr;
-    gap: 12px;
   }
-
-  .channel {
-    width: 100%;
-    max-width: 360px;
-    margin: 8px auto;
-    padding: 12px;
-    box-sizing: border-box;
-    justify-content: flex-start;
-    text-align: left;
-  }
-
-  .ch-body,
+  
   .group-info {
-    text-align: left;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
   }
 }
 
 @media (max-width: 480px) {
-  header {
-    max-width: 360px;
+  .promo {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
-  .controls {
-    max-width: 340px;
-  }
-  .groups,
-  .channel {
-    max-width: 340px;
+  
+  .btn-int {
+    font-size: 12px;
+    padding: 6px 14px;
   }
 }
 </style>
@@ -463,7 +472,7 @@ summary::-webkit-details-marker {
     </div>
   </div>
   
-  <!-- КНОПКА INTERNATIONAL CHANNELS (исправленная ссылка) -->
+  <!-- КНОПКА INTERNATIONAL CHANNELS -->
   <a href="https://evgeshkawww.github.io/iptv/IPTV/spisok_int.html" class="btn-int" target="_self">
     🌍 International channels
   </a>
@@ -3322,7 +3331,7 @@ const groupsData = [
 ];
 
 // =============================================
-// КОД ДЛЯ ОТОБРАЖЕНИЯ (НЕ ТРОГАТЬ)
+// КОД ДЛЯ ОТОБРАЖЕНИЯ
 // =============================================
 const groupsContainer = document.getElementById('groupsContainer');
 const searchInput = document.getElementById('search');
@@ -3407,7 +3416,6 @@ function render(groups) {
   totalBox.textContent = 'Общее количество каналов: ' + total;
 }
 
-// Проверка, что данные существуют, и рендеринг
 if (groupsData && groupsData.length > 0) {
   render(groupsData);
 } else {
@@ -3415,7 +3423,6 @@ if (groupsData && groupsData.length > 0) {
   totalBox.textContent = 'Общее количество каналов: 0';
 }
 
-// Поиск
 searchInput.addEventListener('input', e => {
   const q = e.target.value.toLowerCase().trim();
   if (!q) {
