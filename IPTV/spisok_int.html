@@ -1,0 +1,2186 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PREMIUM-IPTV Catalog</title>
+
+<link rel="icon" href="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/favicon.ico">
+
+<!-- ШРИФТЫ -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/style/style_all.css">
+
+<!-- ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ТОЛЬКО ДЛЯ ЭТОЙ СТРАНИЦЫ -->
+<style>
+/* Специфичные стили для каталога */
+:root {
+  --bg: #020617;
+  --card: rgba(15,23,42,.75);
+  --accent: #38bdf8;
+  --text: #e5e7eb;
+  --muted: #9aa7b2;
+  --bg-overlay-soft: rgba(15,23,42,.75);
+  --border-light: rgba(255,255,255,.06);
+  --border-medium: rgba(255,255,255,.04);
+  --primary-glow: rgba(56,189,248,.6);
+  --primary-glow-soft: rgba(56,189,248,.15);
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: 
+    radial-gradient(circle at top, #0f172a, transparent 60%),
+    radial-gradient(circle at bottom, #020617, #000);
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  color: var(--text);
+  padding: 20px 14px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,255,255,.03) 0,
+    rgba(255,255,255,.03) 1px,
+    transparent 1px,
+    transparent 40px
+  );
+  pointer-events: none;
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+}
+
+/* HEADER - обновлен: промо-блок заменен на кнопку */
+header {
+  width: 100%;
+  background: var(--bg-overlay-soft);
+  border-radius: 22px;
+  padding: 26px 28px;
+  backdrop-filter: blur(14px);
+  box-shadow: 
+    0 0 40px var(--primary-glow-soft),
+    inset 0 0 0 1px var(--border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.main-title {
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  text-shadow: 0 0 12px var(--primary-glow);
+}
+
+/* НОВАЯ КНОПКА "ВЕРНУТЬСЯ К СПИСКУ КАНАЛОВ" */
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  padding: 10px 20px;
+  border-radius: 40px;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+}
+
+.btn-back:hover {
+  background: rgba(56, 189, 248, 0.25);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(56,189,248,0.2);
+}
+
+.btn-back:active {
+  transform: translateY(1px);
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search {
+  background: #ffffff;
+  border: 2px solid #1e293b;
+  padding: 10px 14px;
+  border-radius: 12px;
+  color: #0f172a;
+  outline: none;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-weight: 500;
+  min-width: 200px;
+}
+
+.search::placeholder {
+  color: #64748b;
+  opacity: 0.8;
+}
+
+.search:focus {
+  border-color: var(--accent, #38bdf8);
+  box-shadow: 0 0 0 3px rgba(56,189,248,.3);
+}
+
+.total {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--primary-glow-soft);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* GROUPS */
+.groups {
+  display: grid;
+  gap: 16px;
+}
+
+details.group {
+  background: var(--bg-overlay-soft);
+  border-radius: 20px;
+  padding: 16px;
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+}
+
+summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.group-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex: 0 0 48px;
+  box-shadow: 0 0 18px rgba(0,0,0,.6);
+  background: #0a0a1a;
+}
+
+.group-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.group-info {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.group-name {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.group-meta {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* CHANNELS */
+.channels {
+  margin-top: 16px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.channel {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border-medium);
+  transition: 0.2s;
+}
+
+.channel:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 15px var(--primary-glow-soft);
+}
+
+.ch-icon {
+  width: 52px;
+  height: 36px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+  flex: 0 0 52px;
+}
+
+.ch-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ch-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ch-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.ch-meta {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* FOOTER */
+.footer {
+  margin-top: auto;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: #6b7280;
+  opacity: .85;
+  border-top: 1px solid var(--border-medium);
+}
+
+/* МОБИЛЬНАЯ АДАПТАЦИЯ */
+@media (max-width: 600px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  header {
+    width: 100%;
+    max-width: 400px;
+    margin: 16px auto 0;
+    padding: 18px;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .controls {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .search {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .groups {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .channels {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .channel {
+    width: 100%;
+    max-width: 360px;
+    margin: 8px auto;
+    padding: 12px;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .ch-body,
+  .group-info {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    max-width: 360px;
+  }
+  .controls {
+    max-width: 340px;
+  }
+  .groups,
+  .channel {
+    max-width: 340px;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<header>
+  <div class="main-title">Premium-iptv catalog</div>
+  
+  <!-- КНОПКА "Вернуться к списку каналов" вместо удаленного промо-блока -->
+  <a href="https://evgeshkawww.github.io/iptv/IPTV/spisok.html" class="btn-back" target="_self">
+    ← Вернуться к списку каналов
+  </a>
+
+  <div class="controls">
+    <input class="search" id="search" placeholder="Поиск по каналам...">
+    <div class="total" id="total">Общее количество каналов: 0</div>
+  </div>
+</header>
+
+<main>
+  <div class="groups" id="groupsContainer"></div>
+</main>
+
+</div>
+
+<div class="footer">© Premium-IPTV</div>
+
+<script>
+// =============================================
+// ВАШИ ДАННЫЕ КАНАЛОВ (groupsData)
+// Вставьте сюда ваш оригинальный groupsData
+// =============================================
+const groupsData = [
+{
+  id:'Europe',
+  name:'Европа | Europe',
+  icon:'https://tse3.mm.bing.net/th/id/OIP.XCwXQwalhz6E31mPuXFdsAHaFS?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'beIN Movies Action 2 HD TR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3081.png' },
+    { name: 'BBC World News UK', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/828.png' },
+    { name: 'RT News', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2269.png' },
+    { name: 'RT Documentary', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2295.png' },
+    { name: 'CNN International Europe', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2270.png' },
+  ]
+},
+{
+  id:'Australia',
+  name:'Австралия | Australia',
+  icon:'https://tse3.mm.bing.net/th/id/OIP.gTUnfwZ8YzqNenRJv570ZQHaDt?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'ABC News AU', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2976.png' },
+    { name: 'Sky 1 AU', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11026.png' },
+  ]
+},
+{
+  id:'',
+  name:'Арабские | عربي',
+  icon:'https://th.bing.com/th/id/OIP.59CR2_67txzeAj6EzTnx_QHaDt?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'Al Jazeera QA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2131.png' },
+    { name: 'beIN Sports 1 HD QA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3047.png' },
+    { name: 'beIN Sports 3 HD QA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3048.png' },
+    { name: 'beIN Sports 4 HD QA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3049.png' },
+    { name: 'beIN Sports 5 HD QA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3050.png' },
+    { name: 'beIN Sports 6 HD QA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3051.png' },
+    { name: 'beIN Sports 7 HD QA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3052.png' },
+  ]
+},
+{
+  id:'',
+  name:'Армения | Հայկական',
+  icon:'https://tse1.mm.bing.net/th/id/OIP.19xxXSGkHwBp4dBDAs1p_wHaFj?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'H1 HD AM', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2060.png' },
+    { name: '21TV HD AM', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2061.png' },
+    { name: 'Delta TV AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7866.png' },
+    { name: 'H2 HD AM', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2062.png' },
+    { name: 'Armenia TV HD AM', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2064.png' },
+    { name: 'Yerkir Media HD AM', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/5921.png' },
+    { name: 'ATV FHD AM', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2067.png' },
+    { name: 'Armenia Premium HD AM', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2384.png' },
+    { name: 'Azatutyun TV HD AM', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2385.png' },
+    { name: 'ATV LifeHack HD AM', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2386.png' },
+    { name: 'ATV Xaxaliq HD AM', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2387.png' },
+    { name: 'Comedy AM', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2388.png' },
+    { name: 'Tuntunik AM', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2390.png' },
+    { name: 'ATV Hay TV HD AM', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2391.png' },
+    { name: 'ATV Tava HD AM', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/7765.png' },
+    { name: 'ATV Kinoman HD AM', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2393.png' },
+    { name: 'Cineman HD AM', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2394.png' },
+    { name: 'Jan TV AM', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2396.png' },
+    { name: 'Hay Kino AM', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2397.png' },
+    { name: 'ATV Fitness HD AM', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2624.png' },
+    { name: 'ATV Muzzone HD AM', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2625.png' },
+    { name: 'ATV Bazmoc TV HD AM', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2626.png' },
+    { name: 'Fresh HD AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5606.png' },
+    { name: 'H2 AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2062.png' },
+    { name: 'Kentron HD AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5917.png' },
+    { name: 'ATV HD AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2067.png' },
+    { name: '5TV AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2372.png' },
+    { name: 'Yerkir Media AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5921.png' },
+    { name: 'Nor Hayastan AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7084.png' },
+    { name: '21TV AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2061.png' },
+    { name: 'FreeNews AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5940.png' },
+    { name: 'Arma TV AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7082.png' },
+    { name: '5TV Plus HD AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5927.png' },
+    { name: 'Nur TV HD AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5928.png' },
+    { name: 'Armenian Business News HD AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5919.png' },
+    { name: '1 Lurer HD AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5930.png' },
+    { name: 'Kotayk TV AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5937.png' },
+    { name: 'Tsayg TV HD AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5938.png' },
+    { name: 'Lori TV HD AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5939.png' },
+    { name: 'FreeNews HD AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5940.png' },
+    { name: 'Armount TV HD AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5941.png' },
+    { name: 'Fortuna TV HD AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5942.png' },
+    { name: 'ArmToon HD AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5943.png' },
+    { name: 'Fast Sports HD AM', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7089.png' },
+  ]
+},
+{
+  id:'Azrbaycan',
+  name:'Азербайджан | Azərbaycan',
+  icon:'https://th.bing.com/th/id/R.e1ecc3f7e05e5726d97ccfba91975509?rik=XTH7d420U5vcKg&riu=http%3a%2f%2fmasterflag.ru%2fimg%2finfo-flagi%2fworld%2fazer.png&ehk=APTNlRO4C3%2flUOSrhLv1legwdF46aLVYSvSUzH%2bLseA%3d&risl=&pid=ImgRaw&r=0',
+  channels: [
+    { name: 'Muz TV AZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/9147.png' },
+    { name: 'ARB TV HD AZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2635.png' },
+    { name: 'ATV Cinema AZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/9128.png' },
+    { name: 'Premier Sports 2 HD UK', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/9764.png' },
+    { name: 'ATV Vivace AZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9130.png' },
+    { name: 'Show Plus TV AZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9131.png' },
+    { name: 'VIP TV AZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9132.png' },
+    { name: 'Baku TV AZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9144.png' },
+    { name: 'MCJ Shopping AZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9133.png' },
+    { name: 'ATV HD AZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2559.png' },
+    { name: 'Idman TV HD AZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2637.png' },
+    { name: 'KATV1 AZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9136.png' },
+    { name: 'ARB 24 HD AZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2551.png' },
+    { name: 'ARB Gunes HD AZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2552.png' },
+    { name: 'Space TV AZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2553.png' },
+    { name: 'Dunya TV AZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2435.png' },
+    { name: 'CBC Sport AZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2636.png' },
+    { name: 'Ictimai TV AZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2555.png' },
+    { name: 'CBC AZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2158.png' },
+    { name: 'Mədəniyyət TV AZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2557.png' },
+    { name: 'Idman TV AZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2637.png' },
+    { name: 'Xəzər TV AZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2558.png' },
+    { name: 'ATV AZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2559.png' },
+    { name: 'AzTV AZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2134.png' },
+    { name: 'CBC HD AZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2158.png' },
+  ]
+},
+{
+  id:'Bulgaria',
+  name:'Болгария | Bulgaria',
+  icon:'https://mario.wiki.gallery/images/thumb/8/8a/Flag_of_Bulgaria.png/1200px-Flag_of_Bulgaria.png',
+  channels: [
+    { name: 'Planeta BG', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9016.png' },
+    { name: 'Wness TV HD BG', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2366.png' },
+  ]
+},
+{
+  id:'UnitedKingdom',
+  name:'Великобритания | United Kingdom',
+  icon:'https://tse3.mm.bing.net/th/id/OIP.sBXTHAijKIZjOwuHzbiC0AHaDt?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'TNT Sports 1 FHD UK', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2889.png' },
+    { name: 'Sky Sports Racing HD 50 UK', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4575.png' },
+    { name: 'Sky Sports Premier League HD 50 UK', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4569.png' },
+    { name: 'Sky Sports News HD 50 UK', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/9051.png' },
+    { name: 'Sky Sports Mix HD 50 UK', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4573.png' },
+    { name: 'Sky Sports Main Event HD 50 UK', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4571.png' },
+    { name: 'Sky Sports Golf HD 50 UK', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4578.png' },
+    { name: 'Sky Sports Football HD 50 UK', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4570.png' },
+    { name: 'Sky Sports F1 HD 50 UK', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4576.png' },
+    { name: 'Sky Sports Cricket HD 50 UK', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4577.png' },
+    { name: 'Sky Sports+ HD UK', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4572.png' },
+    { name: 'Sky Sports Action HD 50 UK', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4579.png' },
+    { name: 'Premier Sports 1 HD 50 UK', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3553.png' },
+    { name: 'Sky History HD UK', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9081.png' },
+    { name: 'TNT Sports 2 HD UK', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2890.png' },
+    { name: 'Premier Sports 1 HD UK', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3553.png' },
+    { name: 'Eurosport 2 HD UK', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3554.png' },
+    { name: 'TNT Sports 3 HD UK', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3560.png' },
+    { name: 'TNT Sports 1 HD UK', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2889.png' },
+    { name: 'Sky Sports Premier League HD UK', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4569.png' },
+    { name: 'Sky Sports Football HD UK', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4570.png' },
+    { name: 'Sky Sports Main Event HD UK', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4571.png' },
+    { name: 'Sky Sports Mix HD UK', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4573.png' },
+    { name: 'Sky Sports Action HD UK', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4579.png' },
+    { name: 'Sky Sports Racing HD UK', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4575.png' },
+    { name: 'Sky Sports F1 HD UK', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4576.png' },
+    { name: 'Sky Sports Cricket HD UK', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4577.png' },
+    { name: 'Sky Sports Golf HD UK', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4578.png' },
+    { name: 'ITV1 UK', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6647.png' },
+    { name: 'ITV2 HD UK', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6648.png' },
+    { name: 'ITV3 +1 UK', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6649.png' },
+    { name: 'ITV4 +1 UK', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6650.png' },
+    { name: 'ITV4 UK', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6651.png' },
+  ]
+},
+{
+  id:'Brasil',
+  name:'Бразилия | Brasil',
+  icon:'https://images.seeklogo.com/logo-png/2/1/brasil-logo-png_seeklogo-22149.png',
+  channels: [
+    { name: 'Band News BR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2977.png' },
+    { name: 'Band Sports BR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3075.png' },
+    { name: 'Band Sports HD BR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3075.png' },
+    { name: 'HBO 2 HD BR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6450.png' },
+    { name: 'HBO HD BR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6451.png' },
+    { name: 'HBO Mundi HD BR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6452.png' },
+    { name: 'HBO+ BR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6453.png' },
+    { name: 'HBO Pop BR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6454.png' },
+    { name: 'HBO Signature HD BR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6455.png' },
+    { name: 'ESPN HD BR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6513.png' },
+    { name: 'ESPN 6 HD BR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6510.png' },
+    { name: 'ESPN 6 HD BR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6510.png' },
+    { name: 'ESPN BR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6513.png' },
+    { name: 'ESPN 2 HD BR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6509.png' },
+  ]
+},
+{
+  id:'',
+  name:'Грузия | ქართული',
+  icon:'https://tse4.mm.bing.net/th/id/OIP.6aGKrrHL29lRE6rpmwXKcAHaE7?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'GDS GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2561.png' },
+    { name: 'Maestro GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2562.png' },
+    { name: 'Imedi HD GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2563.png' },
+    { name: 'TV25 GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2564.png' },
+    { name: 'TV Pirveli GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2565.png' },
+    { name: 'Obiektivi TV GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2566.png' },
+    { name: 'Adjara TV GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2567.png' },
+    { name: 'Setanta Sports 3 HD GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/7783.png' },
+    { name: '1TV GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2560.png' },
+    { name: '1TV HD GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2560.png' },
+    { name: 'Voice of Abkhazia GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/7785.png' },
+    { name: 'Agrogaremo TV HD GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/7786.png' },
+    { name: 'Starvision HD GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/6796.png' },
+    { name: 'Comedy Arxi GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4269.png' },
+    { name: 'Pos TV HD GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4286.png' },
+    { name: 'Enki Benki GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4271.png' },
+    { name: 'Ertsulovneba HD GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4272.png' },
+    { name: 'Formula HD GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4273.png' },
+    { name: 'Girchi TV HD GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/6798.png' },
+    { name: 'MusicBox GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/6799.png' },
+    { name: 'Imedi FHD GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2563.png' },
+    { name: 'Pulsi TV GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/6800.png' },
+    { name: 'Trialeti HD GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/6801.png' },
+    { name: 'Marao HD GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4281.png' },
+    { name: 'Guria TV HD GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/6802.png' },
+    { name: 'Palitra News HD GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2568.png' },
+    { name: 'Royal Channel HD GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/7788.png' },
+    { name: 'Setanta Sports 2 HD GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/6805.png' },
+    { name: 'Setanta Sports 1 HD GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/6806.png' },
+    { name: 'Rustavi 2 HD GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4291.png' },
+    { name: 'Qartuli Arxi GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/7789.png' },
+    { name: 'TV Pirveli HD GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2565.png' },
+    { name: 'TV25 HD GE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2564.png' },
+    { name: 'Odishi HD GE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6811.png' },
+    { name: 'Euronews Georgia HD GE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6812.png' },
+    { name: 'Silk Sport 1 HD GE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6795.png' },
+    { name: 'Silk Sport 2 HD GE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6815.png' },
+    { name: 'Silk Sport 3 HD GE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6816.png' },
+    { name: 'Silk Hollywood Movies GE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6819.png' },
+    { name: 'Silk Kids GE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6820.png' },
+    { name: 'Agro TV GE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6822.png' },
+    { name: 'Artarea GE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7227.png' },
+    { name: 'Prime TV GE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7228.png' },
+    { name: 'Silk Sport 1 FHD GE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6795.png' },
+    { name: 'Silk Sport 2 FHD GE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6815.png' },
+    { name: 'Silk Sport 3 FHD GE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6816.png' },
+    { name: 'Silk Universal HD GE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7794.png' },
+    { name: 'Silk Documentary HD GE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7795.png' },
+    { name: 'Silk Kids HD GE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6820.png' },
+    { name: 'Silk Hollywood Movies HD GE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6819.png' },
+    { name: 'Silk Movie Collection GE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7798.png' },
+  ]
+},
+{
+  id:'Denmark',
+  name:'Дания | Denmark',
+  icon:'https://tse2.mm.bing.net/th/id/OIP.eMacOVoqq_92vwQI2Q-fMwAAAA?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'DR1 HD DK', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4518.png' },
+    { name: 'TV 2 Sport HD DK', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2921.png' },
+    { name: 'Kanal 4 HD DK', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4521.png' },
+  ]
+},
+{
+  id:'Egypt',
+  name:'Египет | Egypt',
+  icon:'https://tse3.mm.bing.net/th/id/OIP.wYNMKubAU3EtkOdrVOFlAwHaE8?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'ON Sport 1 HD EG', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/88055.png' },
+  ]
+},
+{
+  id:'',
+  name:'Израиль | ישראלי',
+  icon:'https://tse3.mm.bing.net/th/id/OIP.1qFKDEbZckbv5hc_I1_NoQHaFY?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'Keshet 12 HD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2670.png' },
+    { name: 'HOT Cinema Family HD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/9056.png' },
+    { name: '5Sport 4K IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9035.png' },
+    { name: 'Turkish Dramas 3 HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4031.png' },
+    { name: 'Turkish Dramas 2 HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9075.png' },
+    { name: 'Turkish Dramas Plus HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9076.png' },
+    { name: 'Reshet 13 HD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2671.png' },
+    { name: 'Channel 9 FHD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2672.png' },
+    { name: 'Kan 11 HD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2673.png' },
+    { name: 'Disney Jr. IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2674.png' },
+    { name: 'TeenNick IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2675.png' },
+    { name: 'Nick Jr. IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2678.png' },
+    { name: 'Hop! IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2679.png' },
+    { name: 'Home Plus IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2680.png' },
+    { name: 'One HD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2681.png' },
+    { name: '5Sport FHD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2682.png' },
+    { name: 'Yes Israeli IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2974.png' },
+    { name: 'Yes TV Drama HD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4007.png' },
+    { name: 'Yes TV Comedy HD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4021.png' },
+    { name: 'Yes TV Action HD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3999.png' },
+    { name: 'Yes Movies Comedy IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2968.png' },
+    { name: 'Keshet 12 FHD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2670.png' },
+    { name: 'Yes Movies Action IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2966.png' },
+    { name: 'Yes Movies Drama IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2965.png' },
+    { name: 'HOT HBO HD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2685.png' },
+    { name: 'Good Life IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2686.png' },
+    { name: 'HOT Cinema 4 HD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2687.png' },
+    { name: 'HOT Cinema 1 FHD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2688.png' },
+    { name: 'Discovery Channel FHD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/325.png' },
+    { name: 'Zoom IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2690.png' },
+    { name: 'HOT Zone HD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2691.png' },
+    { name: '5Sport Live FHD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3993.png' },
+    { name: 'Turkish Dramas Plus IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/9076.png' },
+    { name: 'Luli IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2695.png' },
+    { name: 'Yes Movies Kids IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2967.png' },
+    { name: 'Junior HD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2697.png' },
+    { name: 'HOT 3 FHD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2698.png' },
+    { name: 'Channel 98 IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2700.png' },
+    { name: 'Baby TV IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2701.png' },
+    { name: 'HOT Cinema 3 FHD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2703.png' },
+    { name: 'One 2 IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2704.png' },
+    { name: 'Channel 9 HD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2672.png' },
+    { name: 'Food Network IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2708.png' },
+    { name: 'Health IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2709.png' },
+    { name: 'Kan Educational IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2711.png' },
+    { name: 'Makan 33 IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2712.png' },
+    { name: 'Disney Channel IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4307.png' },
+    { name: 'i24 News IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2717.png' },
+    { name: 'National Geographic IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2677.png' },
+    { name: 'Sport 4 HD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2720.png' },
+    { name: 'Yam Tichoni IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4011.png' },
+    { name: '5Sport HD IL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2682.png' },
+    { name: 'Eurosport 2 orig', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4313.png' },
+    { name: 'Viva Istanbul IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/88006.png' },
+    { name: 'Food Network HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2708.png' },
+    { name: 'Yam Tichoni HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4011.png' },
+    { name: 'HOT 3 HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2698.png' },
+    { name: 'HOT Cinema 2 HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2702.png' },
+    { name: 'HOT 8 IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5023.png' },
+    { name: 'HOT Comedy HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5024.png' },
+    { name: 'HOT Bidur HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11501.png' },
+    { name: 'HOT Cinema 3 HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2703.png' },
+    { name: 'History HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4014.png' },
+    { name: 'Yam Tichoni+ HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4029.png' },
+    { name: 'Viva Premium HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9055.png' },
+    { name: 'One 2 HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2704.png' },
+    { name: '5Sport Stars HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3994.png' },
+    { name: 'Channel 24 HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9049.png' },
+    { name: 'Channel 14 HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4296.png' },
+    { name: 'Junior IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2697.png' },
+    { name: 'Discovery Channel HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/325.png' },
+    { name: 'Channel 14 FHD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4296.png' },
+    { name: 'E! HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4005.png' },
+    { name: 'HOT Cinema 1 HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2688.png' },
+    { name: 'Hop! HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2679.png' },
+    { name: 'National Geographic HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2677.png' },
+    { name: 'National Geographic Wild FHD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4311.png' },
+    { name: 'Sport 1 HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2684.png' },
+    { name: 'Sport 2 HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2683.png' },
+    { name: 'Sport 3 HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2719.png' },
+    { name: 'Sport 4 FHD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2720.png' },
+    { name: '5Sport Gold HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3992.png' },
+    { name: '5Sport Live HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3993.png' },
+    { name: 'Turkish Dramas Plus FHD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9076.png' },
+    { name: 'Yes Docu HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2972.png' },
+    { name: 'National Geographic Wild HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4311.png' },
+    { name: 'Turkish Dramas 2 FHD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9075.png' },
+    { name: 'Turkish Dramas 3 FHD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4031.png' },
+    { name: 'History FHD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4014.png' },
+    { name: 'Bollywood HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5071.png' },
+    { name: 'Knesset Channel IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4306.png' },
+    { name: 'Yes Movies Action FHD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2966.png' },
+    { name: 'Yes Movies Comedy FHD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2968.png' },
+    { name: 'Yes Movies Drama FHD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2965.png' },
+    { name: 'Yes Movies Kids FHD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2967.png' },
+    { name: 'HOT Real HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4023.png' },
+    { name: '5Sport Stars FHD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3994.png' },
+    { name: 'Yes Movies Action HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2966.png' },
+    { name: 'Yes Movies Comedy HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2968.png' },
+    { name: 'Yes Movies Drama HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2965.png' },
+    { name: 'WIZ HD IL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5087.png' },
+  ]
+},
+{
+  id:'India',
+  name:'Индия | India',
+  icon:'https://th.bing.com/th/id/R.0e488c76e46334809989cd4e83a6e8e2?rik=X5hFfYbfk%2f8YYg&riu=http%3a%2f%2fvignette3.wikia.nocookie.net%2fkinnikuman%2fimages%2f4%2f41%2fFlag_of_India.svg%2frevision%2flatest%3fcb%3d20080418213251&ehk=7%2bjuZh8AytveVipnBBo0jkAUwOSn4uYCpGKn8X%2b9LDU%3d&risl=&pid=ImgRaw&r=0',
+  channels: [
+    { name: 'Star Sports 1 IN', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2892.png' },
+    { name: 'Star Sports 2 IN', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2891.png' },
+    { name: 'Aaj Tak IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3385.png' },
+    { name: 'B4U Movies IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3387.png' },
+    { name: 'Sony SAB IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3389.png' },
+    { name: 'Swamiji TV IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/88031.png' },
+    { name: 'Zee TV HD IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3394.png' },
+    { name: 'Zee Cinema IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3395.png' },
+    { name: 'Times Now IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3398.png' },
+    { name: 'Aastha TV IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3399.png' },
+    { name: 'MTV India IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3400.png' },
+    { name: 'Food Food IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3401.png' },
+    { name: 'Colors Rishtey IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3404.png' },
+    { name: 'Zing IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3407.png' },
+    { name: 'Zee News IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3409.png' },
+    { name: 'Colors Cineplex IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3410.png' },
+    { name: 'Zee Classic IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3414.png' },
+    { name: 'Zee Anmol IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3415.png' },
+    { name: 'Zee Business IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3417.png' },
+    { name: 'Sadhna Plus News IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3421.png' },
+    { name: 'Sadhna TV IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3424.png' },
+    { name: 'NDTV 24x7 IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3396.png' },
+    { name: 'Shubhsandesh IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3439.png' },
+    { name: 'Sony Max 2 IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3441.png' },
+    { name: 'Sony Pal IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3442.png' },
+    { name: 'Channel I IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3449.png' },
+    { name: 'Zee Bangla IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3452.png' },
+    { name: 'Zee Bangla Cinema IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3453.png' },
+    { name: 'ZEE News 18 IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3455.png' },
+    { name: 'ATN Bangla IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3456.png' },
+    { name: 'Sony AATH IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3457.png' },
+    { name: 'Zee Bihar Jharkhand IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3458.png' },
+    { name: 'TV9 Gujarati IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3459.png' },
+    { name: 'News7 Tamil IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/88032.png' },
+    { name: 'Pitaara IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3466.png' },
+    { name: 'Surya TV IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3471.png' },
+    { name: 'Zee Talkies IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3475.png' },
+    { name: 'News18 Lokmat IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3476.png' },
+    { name: 'PTC Punjabi IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3484.png' },
+    { name: '9X Tashan IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3486.png' },
+    { name: 'PTC Chak De IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3487.png' },
+    { name: 'Zee Punjabi IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3490.png' },
+    { name: 'Desi Channel IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3495.png' },
+    { name: 'Sanjha TV IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3496.png' },
+    { name: 'Fateh TV IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3499.png' },
+    { name: 'PTC Simran IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3501.png' },
+    { name: 'Chak de Dholia IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/88033.png' },
+    { name: 'SUN TV IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3506.png' },
+    { name: 'Jaya TV IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3510.png' },
+    { name: 'Jaya Max IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3511.png' },
+    { name: 'Raj Musix IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3515.png' },
+    { name: 'Raj News IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3516.png' },
+    { name: 'News18 Tamil IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3519.png' },
+    { name: 'Gemini Movies IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3523.png' },
+    { name: 'SVBC IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3527.png' },
+    { name: 'HMTV IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3529.png' },
+    { name: 'ARY News IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3533.png' },
+    { name: 'Express News IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3534.png' },
+    { name: 'GEO News IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3535.png' },
+    { name: 'Express Entertainment IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3540.png' },
+    { name: 'HUM TV IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3543.png' },
+    { name: 'HUM Sitaray IN', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3544.png' },
+  ]
+},
+{
+  id:'Spain',
+  name:'Испания | Spain',
+  icon:'https://tse4.mm.bing.net/th/id/OIP.Hupo_5BQugE89VTqT29_oQHaE7?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'M+ Deportes ES', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3101.png' },
+    { name: 'M+ Estrenos ES', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3103.png' },
+    { name: 'DAZN F1 ES', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/5088.png' },
+    { name: 'M+ Golf ES', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3104.png' },
+    { name: 'M+ LaLiga ES', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3105.png' },
+    { name: 'M+ Liga de Campeones ES', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3106.png' },
+    { name: 'Caza y Pesca HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4512.png' },
+    { name: 'Onetoro HD ES', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/9593.png' },
+    { name: 'M+ Acción ES', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3382.png' },
+    { name: 'M+ Comedia ES', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3383.png' },
+    { name: 'M+ Drama ES', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3384.png' },
+    { name: 'DKISS ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5696.png' },
+    { name: 'Canal SUR HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5697.png' },
+    { name: 'Divinity ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9618.png' },
+    { name: 'Sundance TV HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9619.png' },
+    { name: 'Real Madrid TV HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5700.png' },
+    { name: 'TEN ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5701.png' },
+    { name: 'Nova ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9620.png' },
+    { name: '24 Horas ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11318.png' },
+    { name: 'Be Mad HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11362.png' },
+    { name: 'M+ Liga de Campeones 3 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11394.png' },
+    { name: 'M+ Liga de Campeones 5 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11395.png' },
+    { name: 'M+ LaLiga 4 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11396.png' },
+    { name: 'LaLiga TV Hypermotion HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11397.png' },
+    { name: 'TVE Internacional ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11457.png' },
+    { name: 'Antena 3 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11458.png' },
+    { name: 'La 1 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11459.png' },
+    { name: 'Cuatro HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5694.png' },
+    { name: 'Telecinco HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5695.png' },
+    { name: 'La 2 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11460.png' },
+    { name: 'M+ Deportes HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3101.png' },
+    { name: 'DAZN 1 Bar HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11398.png' },
+    { name: 'DAZN 2 Bar HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11399.png' },
+    { name: 'LaSexta HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11461.png' },
+    { name: 'DAZN F1 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5088.png' },
+    { name: 'M+ Deportes 2 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11401.png' },
+    { name: 'Calle 13 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11330.png' },
+    { name: 'Nova HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9620.png' },
+    { name: 'Baby TV ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11355.png' },
+    { name: 'Boing HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11356.png' },
+    { name: 'Disney Jr. HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11357.png' },
+    { name: 'MTV HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11348.png' },
+    { name: 'M+ Liga de Campeones HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3106.png' },
+    { name: 'Comedy Central HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5682.png' },
+    { name: 'M+ Golf HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3104.png' },
+    { name: 'Eurosport 1 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11404.png' },
+    { name: 'Nickelodeon HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11358.png' },
+    { name: 'Real Madrid TV FHD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5700.png' },
+    { name: 'Eurosport 2 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11406.png' },
+    { name: 'M+ Deportes 3 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11407.png' },
+    { name: 'M+ Deportes 4 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11408.png' },
+    { name: 'M+ Deportes 5 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11409.png' },
+    { name: 'Nick Jr. HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11359.png' },
+    { name: 'M+ LaLiga HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3105.png' },
+    { name: 'M+ LaLiga 2 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11411.png' },
+    { name: 'DAZN LaLiga 2 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11412.png' },
+    { name: 'DAZN LaLiga HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11413.png' },
+    { name: 'Teledeporte HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11414.png' },
+    { name: 'M+ LaLiga 3 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11415.png' },
+    { name: 'LaLiga TV Hypermotion 2 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11416.png' },
+    { name: 'M+ Liga de Campeones 2 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11417.png' },
+    { name: 'DAZN 3 Bar HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11418.png' },
+    { name: 'DAZN 4 Bar HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11419.png' },
+    { name: 'Gol HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11420.png' },
+    { name: 'M+ Liga de Campeones 4 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11421.png' },
+    { name: 'LaLiga TV Hypermotion 3 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11422.png' },
+    { name: 'M+ Drama HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3384.png' },
+    { name: 'M+ Vamos HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11423.png' },
+    { name: 'M+ Acción HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3382.png' },
+    { name: 'M+ Comedia HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3383.png' },
+    { name: 'M+ Cine Español HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11334.png' },
+    { name: 'Cosmo HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9615.png' },
+    { name: 'M+ Estrenos HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3103.png' },
+    { name: 'Warner TV HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11336.png' },
+    { name: 'M+ Deportes 6 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11424.png' },
+    { name: 'M+ Ellas Vamos HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11364.png' },
+    { name: 'Ubeat HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11365.png' },
+    { name: 'AXN HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11337.png' },
+    { name: 'M+ Golf 2 HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11425.png' },
+    { name: 'Energy HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11366.png' },
+    { name: 'SYFY HD ES', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11338.png' },
+  ]
+},
+{
+  id:'Italy',
+  name:'Италия | Italy',
+  icon:'https://tse3.mm.bing.net/th/id/OIP.nWBh7fLXqSVuxc8a-FNbGwHaFG?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'Rai 1 HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6457.png' },
+    { name: 'Rai 2 HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6458.png' },
+    { name: 'Rai 3 HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6459.png' },
+    { name: 'Rai 4 HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6460.png' },
+    { name: 'Rai 5 IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6461.png' },
+    { name: 'Rai Movie HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6462.png' },
+    { name: 'Rai Premium IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6463.png' },
+    { name: 'Rai Storia IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6464.png' },
+    { name: 'UniNettuno University TV IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6465.png' },
+    { name: 'Rai Scuola HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6466.png' },
+    { name: 'Rai 4K IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5120.png' },
+    { name: 'Rai Gulp HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6468.png' },
+    { name: 'Rai Italia IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6469.png' },
+    { name: 'Rai News 24 HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6470.png' },
+    { name: 'Sky Cinema Uno HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6471.png' },
+    { name: 'Sky Cinema Due HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6472.png' },
+    { name: 'Sky Cinema Comedy HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6473.png' },
+    { name: 'Sky Cinema Action HD DE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6474.png' },
+    { name: 'Sky Cinema Suspense HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6476.png' },
+    { name: 'Sky Atlantic HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6478.png' },
+    { name: 'Sky Sport F1 HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6533.png' },
+    { name: 'Rai Sport HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6534.png' },
+    { name: 'Sky Sport 24 FHD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6555.png' },
+    { name: 'Sportitalia Plus HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6536.png' },
+    { name: 'Super Tennis HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3117.png' },
+    { name: 'Sky Sport Calcio HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6557.png' },
+    { name: 'Eurosport 2 HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6544.png' },
+    { name: 'Sky Primafila 1 HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6546.png' },
+    { name: 'Sky Primafila 2 HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6547.png' },
+    { name: 'Sky Primafila 3 HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6548.png' },
+    { name: 'Sky Primafila 4 HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6549.png' },
+    { name: 'Sky Primafila 5 HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6550.png' },
+    { name: 'Sky Primafila 6 HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6551.png' },
+    { name: 'Sky Primafila 7 HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6552.png' },
+    { name: 'Sky Primafila 8 HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6553.png' },
+    { name: 'Sky Primafila 9 HD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6554.png' },
+    { name: 'Rai 1 FHD IT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6457.png' },
+  ]
+},
+{
+  id:'',
+  name:'Казахстан | Қазақстан',
+  icon:'https://tse2.mm.bing.net/th/id/OIP.XXH8fZKC--2JvddfaIJovwHaDt?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'Qazaqstan KZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2569.png' },
+    { name: 'Qadam TV KZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9165.png' },
+    { name: 'Ассамблея ТВ KZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9166.png' },
+    { name: 'Айгак KZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9168.png' },
+    { name: 'Ontustik KZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9169.png' },
+    { name: 'Otyrar KZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9170.png' },
+    { name: 'Qyzylorda KZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9171.png' },
+    { name: 'Jambyl KZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9172.png' },
+    { name: 'Ulytau KZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9173.png' },
+    { name: 'Aqsham TV KZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9174.png' },
+    { name: 'КТК HD KZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2570.png' },
+    { name: 'Первый канал Евразия KZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2571.png' },
+    { name: 'Седьмой канал KZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2572.png' },
+    { name: 'Astana TV KZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2573.png' },
+    { name: 'Jibek Joly TV KZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/7091.png' },
+    { name: '31 канал KZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2639.png' },
+    { name: 'НТК KZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2640.png' },
+    { name: 'Alatau TV KZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/9768.png' },
+    { name: 'Туран ТВ KZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/7093.png' },
+    { name: '5 канал KZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2643.png' },
+    { name: 'Saryarqa KZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/7802.png' },
+    { name: 'Хабар HD KZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2576.png' },
+    { name: '24 KZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2578.png' },
+  ]
+},
+{
+  id:'Canada',
+  name:'Канада | Canada',
+  icon:'https://tse1.mm.bing.net/th/id/OIP.GAwr1dd8G1c4Jy8U7SBJsQHaDt?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'A&E CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2347.png' },
+    { name: 'CBC Gem (St. John\'s) CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3566.png' },
+    { name: 'CTV 2 CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3567.png' },
+    { name: 'NFL Network CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3568.png' },
+    { name: 'ICI RDI HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3569.png' },
+    { name: 'Global Toronto HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3571.png' },
+    { name: 'OMNI.1 HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3572.png' },
+    { name: 'City TV Toronto HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3573.png' },
+    { name: 'Yes TV HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3574.png' },
+    { name: 'CHCH HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3575.png' },
+    { name: 'TFO HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3576.png' },
+    { name: 'OMNI.2 HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3577.png' },
+    { name: 'FX HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3578.png' },
+    { name: 'CTV 2 HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3567.png' },
+    { name: 'Sportsnet ONE HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3581.png' },
+    { name: 'Sportsnet Ontario HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3582.png' },
+    { name: 'YTV HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3584.png' },
+    { name: 'CBC News Network HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3585.png' },
+    { name: 'W Network HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3586.png' },
+    { name: 'TSN 4 HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3588.png' },
+    { name: 'TLC HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3666.png' },
+    { name: 'OLN HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3590.png' },
+    { name: 'CMT Canada CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3591.png' },
+    { name: 'Showcase HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3592.png' },
+    { name: 'CTV Drama HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3593.png' },
+    { name: 'Slice HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3594.png' },
+    { name: 'Discovery Channel HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/325.png' },
+    { name: 'History HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3596.png' },
+    { name: 'CTV Comedy HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3597.png' },
+    { name: 'Teletoon HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3598.png' },
+    { name: 'Peachtree TV HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3600.png' },
+    { name: 'TCM HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3601.png' },
+    { name: 'CTV SCI-FI HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3602.png' },
+    { name: 'Family HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3603.png' },
+    { name: 'MTV HD UK', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6623.png' },
+    { name: 'Sportsnet 360 HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3605.png' },
+    { name: 'Food Network HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3607.png' },
+    { name: 'BNN Bloomberg HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3608.png' },
+    { name: 'ABC Spark CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3609.png' },
+    { name: 'Vision TV CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3610.png' },
+    { name: 'CTV News Channel HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3611.png' },
+    { name: 'E! HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3612.png' },
+    { name: 'FXX HDTV CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3613.png' },
+    { name: 'Treehouse HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3614.png' },
+    { name: 'Family Jr. HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3617.png' },
+    { name: 'OWN HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3618.png' },
+    { name: 'Game TV CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3619.png' },
+    { name: 'Sportsnet East HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3620.png' },
+    { name: 'Sportsnet West HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3621.png' },
+    { name: 'Sportsnet Pacific HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3622.png' },
+    { name: 'Golf Channel HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3624.png' },
+    { name: 'CNBC Canada CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3625.png' },
+    { name: 'Lifetime HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3627.png' },
+    { name: 'MovieTime HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3629.png' },
+    { name: 'Magnolia Network CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8457.png' },
+    { name: 'Disney Jr. CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3632.png' },
+    { name: 'Disney Channel HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3633.png' },
+    { name: 'NBA TV Canada CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3634.png' },
+    { name: 'TSN 2 HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3635.png' },
+    { name: 'CPAC English CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3637.png' },
+    { name: 'Makeful CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3638.png' },
+    { name: 'CTV Toronto CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3639.png' },
+    { name: 'CBC Toronto CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3640.png' },
+    { name: 'CNN CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3641.png' },
+    { name: 'HLN CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3642.png' },
+    { name: 'CP 24 CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3643.png' },
+    { name: 'Treehouse TV CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3644.png' },
+    { name: 'Disney XD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3645.png' },
+    { name: 'Nickelodeon CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3646.png' },
+    { name: 'NBC Buffalo CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3647.png' },
+    { name: 'ABC Buffalo CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3649.png' },
+    { name: 'Crime + Investigation CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3648.png' },
+    { name: 'Cartoon Network CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3650.png' },
+    { name: 'AMC CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3652.png' },
+    { name: 'TCM CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3651.png' },
+    { name: 'MLB Network HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3654.png' },
+    { name: 'CBC Toronto HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3640.png' },
+    { name: 'ICI Radio-Canada Télé CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3657.png' },
+    { name: 'FX', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/1031.png' },
+    { name: 'TSN 5 HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/88030.png' },
+    { name: 'History CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3662.png' },
+    { name: 'TSN 1 HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3663.png' },
+    { name: 'TSN 3 HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3664.png' },
+    { name: 'CPAC French CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3665.png' },
+    { name: 'TLC CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3666.png' },
+    { name: 'Showcase CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3668.png' },
+    { name: 'Unis TV HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3674.png' },
+    { name: 'CBS Buffalo HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3676.png' },
+    { name: 'NBC Buffalo HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3677.png' },
+    { name: 'FOX Buffalo HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3679.png' },
+    { name: 'CNN HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3641.png' },
+  ]
+},
+{
+  id:'Latvia',
+  name:'Латвия | Latvia',
+  icon:'https://th.bing.com/th/id/OIP.6xPr5CqUk6fizeJ2D0E5jQHaDt?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'TV3 HD EE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4238.png' },
+    { name: 'Go3 Films HD LV', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4821.png' },
+    { name: 'TV3 Plus LV', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3271.png' },
+    { name: 'LNK LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3370.png' },
+    { name: 'ReTV HD LV', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3371.png' },
+    { name: 'STV Pirmā! LV', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3372.png' },
+    { name: 'Go3 Sport 3 HD LV', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/7007.png' },
+    { name: 'TV24 LV', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3375.png' },
+    { name: 'TV3 FHD LV', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3270.png' },
+    { name: 'TV3 HD LV', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3376.png' },
+    { name: 'TV3 Mini HD LV', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3378.png' },
+    { name: 'TV6 HD EE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4239.png' },
+    { name: 'TV6 HD LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3274.png' },
+    { name: 'Go3 Sport 1 HD LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3380.png' },
+    { name: 'Go3 Sport 2 HD LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3381.png' },
+    { name: 'LTV1 LV', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3276.png' },
+    { name: 'Go3 Films HD LT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6292.png' },
+    { name: 'ETV+ HD EE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/5343.png' },
+    { name: 'Viasat History CEE HD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8940.png' },
+    { name: 'Первый Канал Европа', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4830.png' },
+    { name: 'Viasat Kino Action', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7944.png' },
+    { name: 'Viasat Kino', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8881.png' },
+    { name: 'TV24 HD LV', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3375.png' },
+    { name: 'Go3 Sport 1 HD LV', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3380.png' },
+    { name: 'Go3 Sport 2 HD LV', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3381.png' },
+    { name: '360TV HD LV', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6295.png' },
+    { name: '8TV HD LV', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6296.png' },
+    { name: 'Best4Sport 2 HD LV', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6313.png' },
+    { name: 'Best4Sport HD LV', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6312.png' },
+    { name: 'Duo 3 HD LV', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5340.png' },
+    { name: 'Duo 6 HD LV', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5341.png' },
+    { name: 'KidZone Max HD LV', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/88008.png' },
+    { name: 'LTV1 HD LV', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3276.png' },
+    { name: 'STV Pirmā! HD LV', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3372.png' },
+    { name: 'TV3 Life HD LV', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3377.png' },
+    { name: 'TV3 Plus HD LV', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3271.png' },
+    { name: 'Go3 Sport Open HD LV', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6314.png' },
+    { name: 'TV4 HD LV', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6304.png' },
+    { name: 'TV6 LV', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3272.png' },
+  ]
+},
+{
+  id:'Lithuania',
+  name:'Литва | Lithuania',
+  icon:'https://tse4.mm.bing.net/th/id/OIP.RqItI8eV3Szc5duVJYCWgwHaEc?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'Duo 3 HD LT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9152.png' },
+    { name: 'Sport 1 LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2932.png' },
+    { name: 'BTV LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3268.png' },
+    { name: 'TV3 LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3273.png' },
+    { name: 'TV6 LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3274.png' },
+    { name: 'LTV1 FHD LV', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3276.png' },
+    { name: 'LTV7 HD LV', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3277.png' },
+    { name: 'TV8 LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3278.png' },
+    { name: 'LRT TV LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3279.png' },
+    { name: 'TV1 LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3280.png' },
+    { name: 'Lietuvos Rytas LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3282.png' },
+    { name: 'LRT TV HD LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3279.png' },
+    { name: 'LRT Plius LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3284.png' },
+    { name: 'LRT Plius HD LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3284.png' },
+    { name: 'INFO TV LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3286.png' },
+    { name: '2TV LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3287.png' },
+    { name: 'Etaplius TV LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/88029.png' },
+    { name: 'Sport 1 HD LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2933.png' },
+    { name: 'Pingviniukas LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3289.png' },
+    { name: 'BTV HD LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3268.png' },
+    { name: 'Balticum LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3364.png' },
+    { name: 'Delfi TV HD LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3365.png' },
+    { name: 'LNK HD LT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3370.png' },
+    { name: 'Balticum Platinum HD LT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4807.png' },
+    { name: 'TV3 Plus HD LT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4808.png' },
+    { name: 'Balticum Auksinis LT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4809.png' },
+    { name: 'Lietuvos Rytas HD LT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3282.png' },
+    { name: 'TV1 HD LT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3280.png' },
+    { name: 'TV8 HD LT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3278.png' },
+    { name: 'KidZone Mini HD LV', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6283.png' },
+    { name: 'TV3 HD LT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3273.png' },
+    { name: 'LTV7 LV', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3277.png' },
+  ]
+},
+{
+  id:'Moldoveneasc',
+  name:'Молдавия | Moldovenească',
+  icon:'https://tse2.mm.bing.net/th/id/OIP.xzLC31pORqPZnrGV1t-i4QHaEc?w=1200&h=720&rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: '7TV MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/9772.png' },
+    { name: 'One TV MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2844.png' },
+    { name: 'Moldova TV MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/9773.png' },
+    { name: 'Vocea Basarabiei MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/9774.png' },
+    { name: 'Moldova 1 MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2763.png' },
+    { name: 'Moldova 2 MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2787.png' },
+    { name: 'Cinema 1 MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/7165.png' },
+    { name: 'N4 MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2789.png' },
+    { name: 'GRT MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/9777.png' },
+    { name: 'Agro TV MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/9778.png' },
+    { name: 'TV Nord HD MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/88054.png' },
+    { name: 'Busuioc TV MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/9779.png' },
+    { name: 'Euronews Romania MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/9780.png' },
+    { name: 'TVR 1 MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2795.png' },
+    { name: 'Star TV MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/9781.png' },
+    { name: 'Tezaur MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/7821.png' },
+    { name: 'Noroc TV MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2798.png' },
+    { name: 'Realitatea Live MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/9783.png' },
+    { name: 'Jurnal TV MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2843.png' },
+    { name: 'NTS TV MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/9786.png' },
+    { name: 'TV8 MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2846.png' },
+    { name: 'Pro TV Chisinau MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2847.png' },
+    { name: 'Global 24 MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/7823.png' },
+    { name: 'TVC 21 MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2849.png' },
+    { name: 'Exclusiv TV MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2850.png' },
+    { name: 'TVR Moldova MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/7824.png' },
+    { name: 'ТСВ MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/7825.png' },
+    { name: 'Disney Channel MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/7826.png' },
+    { name: 'Gurinel TV MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2854.png' },
+    { name: 'Zona M MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2855.png' },
+    { name: 'We Sport TV MD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/9396.png' },
+    { name: 'Moldova 1 HD MD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2763.png' },
+    { name: 'Moldova 2 HD MD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2787.png' },
+    { name: 'Tezaur HD MD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7821.png' },
+    { name: 'Setanta Moldova HD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7244.png' },
+    { name: 'Jurnal TV HD MD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2843.png' },
+    { name: 'Vocea Basarabiei HD MD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9774.png' },
+    { name: 'Cinema 1 HD MD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7165.png' },
+    { name: 'One TV HD MD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2844.png' },
+    { name: 'Agro TV HD MD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9778.png' },
+    { name: 'TV8 HD MD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2846.png' },
+    { name: 'Global 24 HD MD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7823.png' },
+    { name: 'Pro TV Chisinau HD MD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2847.png' },
+    { name: 'Realitatea Live HD MD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9783.png' },
+    { name: 'Premiera TV MD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11491.png' },
+    { name: 'NTS MD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9786.png' },
+    { name: 'Popas TV MD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11493.png' },
+    { name: 'Regional TV MD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11494.png' },
+    { name: 'Sor TV MD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11495.png' },
+    { name: 'Star TV HD MD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9781.png' },
+    { name: 'Studio-L MD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11497.png' },
+    { name: 'We Sport TV HD MD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9396.png' },
+  ]
+},
+{
+  id:'Netherlands',
+  name:'Нидерланды | Netherlands',
+  icon:'https://tse1.mm.bing.net/th/id/OIP.4-Vsodu-rqxT52OET2OGJQHaE8?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'Ziggo Sport 3 HD NL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2943.png' },
+    { name: 'Ziggo Sport HD NL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2944.png' },
+    { name: 'Ziggo Sport 2 HD NL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2945.png' },
+  ]
+},
+{
+  id:'Norway',
+  name:'Норвегия | Norway',
+  icon:'https://tse3.mm.bing.net/th/id/OIP.169x6Hbg_o2CTthrilH--QHaFY?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'TV 2 Sport 2 HD NO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2924.png' },
+    { name: 'FEM HD NO', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4519.png' },
+  ]
+},
+{
+  id:'Poland',
+  name:'Польша | Poland',
+  icon:'https://th.bing.com/th/id/OIP.BF2reDVqWzqLxCdX28f2agHaEo?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'Eurosport 1 HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9378.png' },
+    { name: 'Eurosport 2 HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9379.png' },
+    { name: 'Polsat Rodzina HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4501.png' },
+    { name: 'Canal+ Kuchnia PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4502.png' },
+    { name: 'Polsat Sport 3 HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4549.png' },
+    { name: 'Polsat Sport Premium 1 HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4550.png' },
+    { name: 'Polsat Sport Premium 2 HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4551.png' },
+    { name: 'Polsat Sport Extra 3 HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4552.png' },
+    { name: 'Polsat Sport Extra 4 HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4553.png' },
+    { name: 'Polsat Sport Extra 1 HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/88034.png' },
+    { name: 'Polsat Sport Extra 2 HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/88035.png' },
+    { name: 'Polsat Sport 2 HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4556.png' },
+    { name: 'Polsat Sport Fight HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4557.png' },
+    { name: 'FX Comedy HD PL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3091.png' },
+    { name: 'Canal+ Sport HD PL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3129.png' },
+    { name: 'Canal+ Sport 2 HD PL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3058.png' },
+    { name: 'Canal+ Film HD PL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3080.png' },
+    { name: 'BBC Earth HD PL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/5089.png' },
+    { name: 'Canal+ 360 HD PL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3079.png' },
+    { name: 'Canal+ Seriale HD PL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3131.png' },
+    { name: 'Discovery Historia PL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/88027.png' },
+    { name: 'Discovery Channel HD PT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3132.png' },
+    { name: 'Super Polsat HD PL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3115.png' },
+    { name: 'Kino Polska HD PL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/4469.png' },
+    { name: 'FX HD PL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3092.png' },
+    { name: 'Eleven Sports 2 HD PL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2901.png' },
+    { name: 'Eleven Sports 1 HD PL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2902.png' },
+    { name: 'Canal+ Sport 5 HD PL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2903.png' },
+    { name: 'TVP Sport HD PL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2904.png' },
+    { name: 'TVP Info HD PL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2132.png' },
+    { name: 'Polsat Play HD PL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3111.png' },
+    { name: 'Polsat Film HD PL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3110.png' },
+    { name: 'Polsat Cafe HD PL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3109.png' },
+    { name: 'Polsat 2 HD PL', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3108.png' },
+    { name: 'TVN 7 HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4486.png' },
+    { name: 'TVP Seriale HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4468.png' },
+    { name: 'TVP Polonia HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4487.png' },
+    { name: 'TVP Historia PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4488.png' },
+    { name: 'TVP 3 Warszawa HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4489.png' },
+    { name: 'TVN Style HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4490.png' },
+    { name: 'TVN HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4491.png' },
+    { name: 'TVN Fabula HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4492.png' },
+    { name: 'TV6 HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4494.png' },
+    { name: 'TV4 HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4495.png' },
+    { name: 'TVP 1 HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4496.png' },
+    { name: 'TVP 2 HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4497.png' },
+    { name: 'MTV HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4473.png' },
+    { name: 'Polsat Games HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4547.png' },
+    { name: 'Polsat Sport 1 HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4548.png' },
+    { name: 'Polsat News 2 PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4498.png' },
+    { name: 'Polsat JimJam PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4479.png' },
+    { name: 'Polsat HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4499.png' },
+    { name: 'Stars TV PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6615.png' },
+    { name: 'Disco Polo Music HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6616.png' },
+    { name: 'Polo TV HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6617.png' },
+    { name: 'Vox Music TV HD PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6618.png' },
+    { name: 'Eska Rock TV PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6619.png' },
+    { name: 'Eska TV Extra PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6620.png' },
+    { name: 'Eska TV PL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6621.png' },
+  ]
+},
+{
+  id:'Portugal',
+  name:'Португалия | Portugal',
+  icon:'https://tse2.mm.bing.net/th/id/OIP.-KAphwuP9UrSXC6QlxB4GwHaDt?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'Sport TV 1 HD PT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2909.png' },
+    { name: 'Sport TV 2 HD PT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2910.png' },
+    { name: 'Sport TV 3 HD PT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2911.png' },
+    { name: 'Sport TV 4 HD PT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2912.png' },
+    { name: 'Sport TV 5 HD PT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2913.png' },
+    { name: 'Sporting TV FHD PT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2914.png' },
+    { name: 'DAZN 1 HD PT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2915.png' },
+    { name: 'DAZN 2 FHD PT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2916.png' },
+    { name: 'DAZN 4 FHD PT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2918.png' },
+    { name: 'DAZN 5 FHD PT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2919.png' },
+    { name: 'DAZN 6 FHD PT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2920.png' },
+    { name: 'DAZN 3 FHD PT', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2917.png' },
+    { name: 'Sport TV+ FHD PT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9262.png' },
+    { name: 'Sport TV 1 FHD PT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2909.png' },
+    { name: 'Sport TV 2 FHD PT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2910.png' },
+    { name: 'Sport TV 3 FHD PT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2911.png' },
+    { name: 'Sport TV 4 FHD PT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2912.png' },
+    { name: 'Sport TV 5 FHD PT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2913.png' },
+    { name: 'Sport TV 6 FHD PT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11435.png' },
+    { name: 'Sport TV 7 FHD PT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11436.png' },
+    { name: 'Eurosport 1 HD PT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11437.png' },
+    { name: 'Eurosport 2 HD PT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11438.png' },
+    { name: 'A Bola TV HD PT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11439.png' },
+    { name: 'Benfica TV HD PT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6584.png' },
+    { name: 'Sporting TV HD PT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2914.png' },
+    { name: 'DAZN 1 PT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2915.png' },
+    { name: 'DAZN 2 HD PT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2916.png' },
+    { name: 'DAZN 3 HD PT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2917.png' },
+    { name: 'DAZN 4 HD PT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2918.png' },
+    { name: 'DAZN 5 HD PT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2919.png' },
+    { name: 'W-Sport HD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11440.png' },
+    { name: 'Fight Network HD CA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11441.png' },
+    { name: 'FightBox HD PT', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/11442.png' },
+  ]
+},
+{
+  id:'Romania',
+  name:'Румыния | Romania',
+  icon:'https://tse3.mm.bing.net/th/id/OIP.jql0Vfq9D-fGy-aln5Qu1AHaE7?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'E! HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3090.png' },
+    { name: 'Cinethronix RO', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5703.png' },
+    { name: 'DIGI Sport 1 HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2907.png' },
+    { name: 'DIGI Sport 2 HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2906.png' },
+    { name: 'DIGI Sport 3 HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2908.png' },
+    { name: 'DIGI Sport 4 HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2922.png' },
+    { name: 'TVR 1 RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3683.png' },
+    { name: 'TVR 2 RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3684.png' },
+    { name: 'TVR 3 RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3685.png' },
+    { name: 'TV1000 RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3686.png' },
+    { name: 'Acasă Gold RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/7833.png' },
+    { name: 'Alfa Omega TV RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3688.png' },
+    { name: 'National 24 Plus RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3689.png' },
+    { name: 'FilmBox RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3690.png' },
+    { name: 'AMC RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3691.png' },
+    { name: 'AXN White RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3692.png' },
+    { name: 'Pro Cinema RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3693.png' },
+    { name: 'AXN Black RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3694.png' },
+    { name: 'Film Cafe RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3695.png' },
+    { name: 'Travel Mix HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3696.png' },
+    { name: 'TV Paprika RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3697.png' },
+    { name: 'Investigation Discovery RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3699.png' },
+    { name: 'Realitatea Plus RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3700.png' },
+    { name: 'Romania TV RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3701.png' },
+    { name: 'Minimax RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3702.png' },
+    { name: 'JimJam RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3703.png' },
+    { name: 'Kiss TV RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3704.png' },
+    { name: 'Music Channel RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3705.png' },
+    { name: 'Disney Channel RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3707.png' },
+    { name: 'Cartoon Network RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3708.png' },
+    { name: 'Disney Jr. RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3709.png' },
+    { name: 'Discovery Channel RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/325.png' },
+    { name: 'TLC RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3711.png' },
+    { name: 'TeenNick RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/5095.png' },
+    { name: 'Nickelodeon RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3714.png' },
+    { name: 'ZU TV RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3715.png' },
+    { name: 'Cartoonito RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3716.png' },
+    { name: 'Mooz RO! RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/88049.png' },
+    { name: 'Favorit TV RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3721.png' },
+    { name: 'Viasat History RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3722.png' },
+    { name: 'Viasat Explore RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3723.png' },
+    { name: 'CineMax 2 RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3724.png' },
+    { name: 'National TV RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3725.png' },
+    { name: 'Kanal D HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3726.png' },
+    { name: 'CineMax HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3727.png' },
+    { name: 'HBO HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3728.png' },
+    { name: 'HBO 3 HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3729.png' },
+    { name: 'Acasă TV HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/7835.png' },
+    { name: 'Animal Planet HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/365.png' },
+    { name: 'Pro Arena HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/7836.png' },
+    { name: 'National Geographic HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3760.png' },
+    { name: 'Eurosport 1 HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3734.png' },
+    { name: 'Bucuresti 1 TV RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3736.png' },
+    { name: 'Prima TV RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3737.png' },
+    { name: 'FilmBox Extra HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3738.png' },
+    { name: 'Pro TV RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3739.png' },
+    { name: 'TVR 1 HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3740.png' },
+    { name: 'Film Now HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3741.png' },
+    { name: 'TVR International HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3742.png' },
+    { name: 'Antena 1 HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3744.png' },
+    { name: 'Antena 3 CNN HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3745.png' },
+    { name: 'Antena Stars HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3746.png' },
+    { name: 'HBO 2 HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3747.png' },
+    { name: 'History HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3748.png' },
+    { name: 'AXN RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/10842.png' },
+    { name: 'AXN HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/10842.png' },
+    { name: 'DIGI 24 HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3751.png' },
+    { name: 'National Geographic Wild HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3763.png' },
+    { name: 'Mezzo RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3753.png' },
+    { name: 'AXN Spin RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3754.png' },
+    { name: 'HBO 3 RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3755.png' },
+    { name: 'HBO RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3756.png' },
+    { name: 'Diva RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3758.png' },
+    { name: 'UTV RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2856.png' },
+    { name: 'National Geographic RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3760.png' },
+    { name: 'National Geographic Wild RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3763.png' },
+    { name: 'Taraf TV RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3764.png' },
+    { name: 'Agro TV RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3765.png' },
+    { name: 'Hora TV RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3766.png' },
+    { name: 'Comedy Central RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3767.png' },
+    { name: 'Mooz Hits RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/88057.png' },
+    { name: 'Etno RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3769.png' },
+    { name: 'HBO 2 RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3771.png' },
+    { name: 'MTV RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3773.png' },
+    { name: 'BBC Earth HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3800.png' },
+    { name: 'Warner TV RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3775.png' },
+    { name: 'ZU TV HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3715.png' },
+    { name: 'Happy Channel HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3777.png' },
+    { name: 'UTV HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2856.png' },
+    { name: 'Viasat Nature HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3779.png' },
+    { name: 'DIGI Animal World HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3780.png' },
+    { name: 'DIGI Life HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3781.png' },
+    { name: 'DIGI World HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3782.png' },
+    { name: 'Nick Jr. RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3784.png' },
+    { name: 'FilmBox Premium HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3785.png' },
+    { name: 'FilmBox Family HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3786.png' },
+    { name: 'Food Network RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3788.png' },
+    { name: 'Trinitas TV RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3789.png' },
+    { name: 'DocuBox HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3791.png' },
+    { name: 'Fashion TV RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3793.png' },
+    { name: 'Credo TV RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3794.png' },
+    { name: 'CBS Reality RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3795.png' },
+    { name: 'Bollywood RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3796.png' },
+    { name: 'Pro TV International RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3797.png' },
+    { name: 'Epic Drama RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3799.png' },
+    { name: 'BBC Earth RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3800.png' },
+    { name: 'Prima Sport 1 HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/7840.png' },
+    { name: 'Prima Sport 2 HD RO', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/7841.png' },
+  ]
+},
+{
+  id:'Slovakia',
+  name:'Словакия | Slovakia',
+  icon:'https://tse2.mm.bing.net/th/id/OIP.RPWNQaNkPqIgDbllEa2C5wHaDZ?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'NickToons SE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2994.png' },
+    { name: 'Arena Sport 1 HD SK', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2934.png' },
+  ]
+},
+{
+  id:'',
+  name:'Таджикистан | Точик',
+  icon:'https://tse1.mm.bing.net/th/id/OIP.Fe2VZ1aTYBGNZP8lEiVxCwHaDt?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'ТВ Синамо TJ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2581.png' },
+    { name: 'Тоҷикистон HD TJ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2582.png' },
+    { name: 'Сафина HD TJ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2583.png' },
+    { name: 'Баҳористон TJ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2584.png' },
+    { name: 'Чахоннамо TJ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2585.png' },
+  ]
+},
+{
+  id:'Trk',
+  name:'Турция | Türk',
+  icon:'https://tse1.explicit.bing.net/th/id/OIP.Euobbbjd1kVgeXQsUQf6XAHaFB?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'TRT 4K TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2744.png' },
+    { name: 'TRT Spor Yildiz HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/88014.png' },
+    { name: 'TRT Turk HD TR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2951.png' },
+    { name: 'A Haber TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2589.png' },
+    { name: 'A2 TV HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3961.png' },
+    { name: 'ATV TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2600.png' },
+    { name: 'Minika Go HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2591.png' },
+    { name: 'NR1 Turk HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2592.png' },
+    { name: 'Star TV TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2593.png' },
+    { name: 'TV8 HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2596.png' },
+    { name: 'DMAX FHD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2602.png' },
+    { name: 'TRT 1 HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2598.png' },
+    { name: 'A Haber HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2589.png' },
+    { name: 'ATV HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2600.png' },
+    { name: 'Power HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2665.png' },
+    { name: 'Power Turk HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2666.png' },
+    { name: 'NTV HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2601.png' },
+    { name: 'DMAX HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2602.png' },
+    { name: 'Star TV HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2593.png' },
+    { name: 'NTV TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2601.png' },
+    { name: 'Kanal D TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2605.png' },
+    { name: 'CNN Turk HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2606.png' },
+    { name: 'Teve2 FHD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2607.png' },
+    { name: 'Show TV HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2608.png' },
+    { name: 'Haber Turk FHD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3979.png' },
+    { name: 'NOW HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/9801.png' },
+    { name: 'Beyaz TV HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2668.png' },
+    { name: 'Ulke TV HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3986.png' },
+    { name: 'Bloomberg HT TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2613.png' },
+    { name: '24 TV HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2615.png' },
+    { name: 'TV4 HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3819.png' },
+    { name: 'Kanal D HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2605.png' },
+    { name: 'TV100 HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2622.png' },
+    { name: '360 TV HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3964.png' },
+    { name: 'beIN Box Office 3 HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3810.png' },
+    { name: 'beIN Box Office 1 HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3811.png' },
+    { name: 'beIN Box Office 2 HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3812.png' },
+    { name: 'TV5 TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3817.png' },
+    { name: 'TV 41 TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3818.png' },
+    { name: 'TV4 TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3819.png' },
+    { name: 'Line TV Bursa TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3822.png' },
+    { name: 'Kibris Genc TV TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3824.png' },
+    { name: 'Kardelen TV TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3825.png' },
+    { name: 'Kanal Avrupa TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3828.png' },
+    { name: 'ER TV TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3829.png' },
+    { name: 'DeHa TV TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3831.png' },
+    { name: 'Ciftci TV TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3832.png' },
+    { name: 'BRTV TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3835.png' },
+    { name: 'AS TV Bursa TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3836.png' },
+    { name: 'Anadolu Dernek TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3837.png' },
+    { name: 'Akit TV TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3839.png' },
+    { name: 'beIN Sports 1 HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3873.png' },
+    { name: 'TV Kayseri TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3845.png' },
+    { name: 'Yaban HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3846.png' },
+    { name: 'FM TV TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3848.png' },
+    { name: 'Lalegul TV TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3849.png' },
+    { name: 'TV 2000 TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3850.png' },
+    { name: 'Meltem TV TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3851.png' },
+    { name: 'Dost TV TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3852.png' },
+    { name: 'TGRT Haber HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3855.png' },
+    { name: 'TRT Turk TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2951.png' },
+    { name: 'TRT Avaz TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3858.png' },
+    { name: 'DiziSmart Premium HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3860.png' },
+    { name: 'beIN Gurme HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3862.png' },
+    { name: 'Sinema TV HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3864.png' },
+    { name: 'Movie Smart Turk TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3865.png' },
+    { name: 'Sinema Aksiyon 2 TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/8697.png' },
+    { name: 'beIN Series 2 HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3870.png' },
+    { name: 'Tivibu Spor 2 HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3872.png' },
+    { name: 'beIN Sports 1 FHD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3873.png' },
+    { name: 'beIN Sports 2 HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3874.png' },
+    { name: 'beIN Sports 2 FHD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3874.png' },
+    { name: 'beIN Sports 3 HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3876.png' },
+    { name: 'beIN Sports 3 FHD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3876.png' },
+    { name: 'beIN Sports 4 HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3878.png' },
+    { name: 'beIN Sports 4 FHD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3878.png' },
+    { name: 'beIN Sports Max 1 HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3880.png' },
+    { name: 'S Sport HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3881.png' },
+    { name: 'Sports TV HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3884.png' },
+    { name: 'Eurosport 1 HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3885.png' },
+    { name: 'A Spor TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2587.png' },
+    { name: 'TJK TV HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3893.png' },
+    { name: 'NBA TV HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3894.png' },
+    { name: 'Idman TV HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3895.png' },
+    { name: 'TRT Cocuk HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3896.png' },
+    { name: 'Disney Jr. HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3897.png' },
+    { name: 'Disney Jr. TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3897.png' },
+    { name: 'Baby TV HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3900.png' },
+    { name: 'Cartoon Network TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2620.png' },
+    { name: 'Nickelodeon HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3903.png' },
+    { name: 'Minika Cocuk TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2604.png' },
+    { name: 'Cartoonito HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3905.png' },
+    { name: 'Minika Go TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2591.png' },
+    { name: 'TRT Belgesel TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3907.png' },
+    { name: '24 Kitchen HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3908.png' },
+    { name: 'BBC Earth HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3910.png' },
+    { name: 'BBC Earth TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3910.png' },
+    { name: 'History HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3911.png' },
+    { name: 'Da Vinci HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3912.png' },
+    { name: 'Animal Planet HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/365.png' },
+    { name: 'Animal Planet TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/365.png' },
+    { name: 'TGRT Belgesel TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3915.png' },
+    { name: 'Discovery Channel HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/325.png' },
+    { name: 'Discovery Channel TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/325.png' },
+    { name: 'Love Nature HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3919.png' },
+    { name: 'National Geographic HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3922.png' },
+    { name: 'National Geographic FHD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3922.png' },
+    { name: 'Yaban TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3846.png' },
+    { name: 'TRT Muzik TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3924.png' },
+    { name: 'TRT Muzik HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3924.png' },
+    { name: 'Uzman Filmcilik HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/88056.png' },
+    { name: 'Dream Turk HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3928.png' },
+    { name: 'NR1 HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3929.png' },
+    { name: 'beIN Movies Family HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3933.png' },
+    { name: 'beIN Movies Premiere 2 HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3934.png' },
+    { name: 'beIN Movies Premiere HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3935.png' },
+    { name: 'beIN Series Drama HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3937.png' },
+    { name: 'TRT 1 FHD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2598.png' },
+    { name: 'TRT 2 HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3939.png' },
+    { name: 'ATV Avrupa TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3941.png' },
+    { name: 'Show TV TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2608.png' },
+    { name: 'Show Max TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3943.png' },
+    { name: 'Euro D TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3945.png' },
+    { name: 'Star TV FHD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2593.png' },
+    { name: 'Eurostar TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3947.png' },
+    { name: 'TV8 FHD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2596.png' },
+    { name: 'TV8 Int HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3950.png' },
+    { name: 'TV 8.5 HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2614.png' },
+    { name: 'TV 8.5 FHD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2614.png' },
+    { name: 'Kanal 7 FHD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3956.png' },
+    { name: 'Kanal 7 HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3957.png' },
+    { name: 'Kanal 7 Avrupa HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3958.png' },
+    { name: 'Beyaz TV FHD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2668.png' },
+    { name: 'Beyaz TV TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2668.png' },
+    { name: 'A2 TV TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3961.png' },
+    { name: 'A Para HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3962.png' },
+    { name: 'Teve2 HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2607.png' },
+    { name: 'TLC HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3968.png' },
+    { name: 'TLC TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3968.png' },
+    { name: 'TRT Eba TV Ilkokul HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3970.png' },
+    { name: 'TRT Eba TV Ilkokul TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3970.png' },
+    { name: 'TRT Eba TV Lise HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3972.png' },
+    { name: 'TRT Eba TV Lise TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3972.png' },
+    { name: 'TRT Eba TV Ortaokul HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3973.png' },
+    { name: 'TRT Haber HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3974.png' },
+    { name: 'A Haber FHD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2589.png' },
+    { name: 'NTV FHD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2601.png' },
+    { name: 'CNN Turk FHD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2606.png' },
+    { name: 'Haber Turk HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3979.png' },
+    { name: 'Haber Global TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3980.png' },
+    { name: 'Tele1 HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3982.png' },
+    { name: 'Ulusal Kanal TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3983.png' },
+    { name: 'TGRT Haber FHD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3985.png' },
+    { name: 'Ulke TV FHD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3986.png' },
+    { name: 'TVNET HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3987.png' },
+    { name: 'A News HD TR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3988.png' },
+    { name: 'Kanal V TR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5969.png' },
+    { name: 'Kocaeli TV TR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5970.png' },
+    { name: 'KRT TV HD TR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5972.png' },
+    { name: 'Rumeli TV TR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5973.png' },
+    { name: 'Cay TV HD TR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5974.png' },
+    { name: 'beIN IZ TV HD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6531.png' },
+    { name: 'NBA TV USA HD TR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3894.png' },
+  ]
+},
+{
+  id:'Ozbek',
+  name:'Узбекистан | O\'zbek',
+  icon:'https://tse3.mm.bing.net/th/id/OIP.6o3ZAJKcUNpMhLXzBOgDywHaDt?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'O\'zbekiston 1 UZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2644.png' },
+    { name: 'Yoshlar UZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2645.png' },
+    { name: 'Sport UZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2647.png' },
+    { name: 'Dunyo Bo\'ylab UZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2649.png' },
+    { name: 'Bolajon UZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2650.png' },
+    { name: 'Navo UZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2651.png' },
+    { name: 'Kinoteatr UZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2652.png' },
+    { name: 'O\'zbekiston 24 FHD UZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2654.png' },
+    { name: 'Aqlvoy TV UZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7912.png' },
+    { name: 'Dasturxon TV UZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7917.png' },
+    { name: 'Dunyo Bo\'ylab HD UZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2649.png' },
+    { name: 'Futbol TV UZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/88013.png' },
+    { name: 'Kinoteatr HD UZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2652.png' },
+    { name: 'Madaniyat va Ma\'rifat UZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2648.png' },
+    { name: 'Mahalla UZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7924.png' },
+    { name: 'My5 HD UZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7928.png' },
+    { name: 'Milliy TV UZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7926.png' },
+    { name: 'Milliy TV HD UZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7926.png' },
+    { name: 'My5 UZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7928.png' },
+    { name: 'Nurafshon TV UZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7930.png' },
+    { name: 'O\'zbekiston 24 HD UZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2654.png' },
+    { name: 'O\'zbekiston Tarixi HD UZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7932.png' },
+    { name: 'Renessans TV UZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7933.png' },
+    { name: 'Ruxsor TV UZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7934.png' },
+    { name: 'Sport HD UZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2647.png' },
+    { name: 'Taraqqiyot TV UZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7936.png' },
+    { name: 'Zo\'r TV HD UZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7937.png' },
+    { name: 'Toshkent UZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7938.png' },
+  ]
+},
+{
+  id:'',
+  name:'Украина | Українські',
+  icon:'https://tse1.mm.bing.net/th/id/OIP.bvfPd9aQkprLgOSyXAnmbAHaE7?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'ICTV 2 HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7843.png' },
+    { name: 'НТН HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2105.png' },
+    { name: 'Сфера ТВ HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9160.png' },
+    { name: 'Наше Улюблене Кіно HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9126.png' },
+    { name: '5 Канал UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2079.png' },
+    { name: 'FilmBox orig', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2181.png' },
+    { name: '24 Канал FHD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2084.png' },
+    { name: 'Надiя ТВ UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2087.png' },
+    { name: 'EU Music HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2094.png' },
+    { name: 'Мега UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2098.png' },
+    { name: 'Мега HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2098.png' },
+    { name: 'К2 UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2099.png' },
+    { name: 'К2 HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2099.png' },
+    { name: 'К1 HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2100.png' },
+    { name: 'Kvartal TV UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2101.png' },
+    { name: 'Новий Канал UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2104.png' },
+    { name: 'Новий Канал HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2104.png' },
+    { name: 'НТН UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2105.png' },
+    { name: '4ever Music HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2379.png' },
+    { name: 'Тернопіль 1 HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2355.png' },
+    { name: 'Рада FHD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2118.png' },
+    { name: 'Перший Міський HD (Одеса) UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/8860.png' },
+    { name: 'СК1 UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2123.png' },
+    { name: '1+1 Україна FHD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/8897.png' },
+    { name: 'Bolt FHD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2138.png' },
+    { name: 'Star Cinema HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2145.png' },
+    { name: 'Чернiвецький Промiнь UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2146.png' },
+    { name: 'Перший UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2147.png' },
+    { name: 'Суспільне Крим HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2148.png' },
+    { name: 'Obozrevatel TV HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2150.png' },
+    { name: '5 Канал HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2079.png' },
+    { name: 'Інтер HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2106.png' },
+    { name: 'Рибалка FHD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2950.png' },
+    { name: '1+1 Марафон UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2194.png' },
+    { name: '2+2 UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2195.png' },
+    { name: 'ТВА HD (Чернівці) UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2199.png' },
+    { name: 'Zoom UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2201.png' },
+    { name: 'Zoom HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2201.png' },
+    { name: 'ПлюсПлюс UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2202.png' },
+    { name: 'Eco TV HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2205.png' },
+    { name: 'ТЕТ UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2171.png' },
+    { name: 'Сонце UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2210.png' },
+    { name: 'Прямий HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2212.png' },
+    { name: 'Уніaн Серіал HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2217.png' },
+    { name: 'Київ UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2227.png' },
+    { name: '8 Канал HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2859.png' },
+    { name: 'ТВА (Чернівці) UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2199.png' },
+    { name: '24 Канал HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2084.png' },
+    { name: 'Тернопіль 1 UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2355.png' },
+    { name: 'ICTV HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3307.png' },
+    { name: 'СТБ UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3309.png' },
+    { name: 'СТБ HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3309.png' },
+    { name: 'Інтер UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2106.png' },
+    { name: 'Xsport UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2243.png' },
+    { name: 'Еспресо UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2096.png' },
+    { name: 'Sport 1 UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3317.png' },
+    { name: 'Sport 2 UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3318.png' },
+    { name: '1+1 Марафон HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2194.png' },
+    { name: 'Еспресо HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2096.png' },
+    { name: 'Bolt Россия HD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2138.png' },
+    { name: 'Пiксель TV HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2107.png' },
+    { name: 'Star Cinema Россия HD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3328.png' },
+    { name: 'Star Family Россия HD', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/9162.png' },
+    { name: '8 Канал FHD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2859.png' },
+    { name: 'Бігуді UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2197.png' },
+    { name: 'NIKI Kids HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3333.png' },
+    { name: 'NIKI Junior HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3334.png' },
+    { name: 'М1 HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3335.png' },
+    { name: 'М2 HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3336.png' },
+    { name: 'ICTV UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3307.png' },
+    { name: 'Апостроф TV HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3290.png' },
+    { name: 'Оце HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3351.png' },
+    { name: 'Перший HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2147.png' },
+    { name: 'ТЕТ HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2171.png' },
+    { name: '2+2 HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2195.png' },
+    { name: 'ПлюсПлюс HD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2202.png' },
+    { name: 'Оце UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3351.png' },
+    { name: 'Еспресо FHD UA', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2096.png' },
+    { name: 'Перший Автомобільний HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4585.png' },
+    { name: 'Xsport+ HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5951.png' },
+    { name: 'Star Cinema FHD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2145.png' },
+    { name: 'FilmBox ArtHouse', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2182.png' },
+    { name: 'FilmBox UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2181.png' },
+    { name: 'Enter-фільм HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5611.png' },
+    { name: 'Eco TV UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2205.png' },
+    { name: 'EU Music FHD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2094.png' },
+    { name: '4ever Music UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2379.png' },
+    { name: 'Українське радіо 1 UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8850.png' },
+    { name: 'Українське радіо 3 UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8851.png' },
+    { name: 'Уніaн Серіал UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2217.png' },
+    { name: 'Фауна UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8853.png' },
+    { name: 'Масон ТВ HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8854.png' },
+    { name: 'Ми Україна UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8855.png' },
+    { name: 'НТА HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2198.png' },
+    { name: 'Наука UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/723.png' },
+    { name: 'Obozrevatel TV FHD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2150.png' },
+    { name: 'Перший Міський HD (Кривий Ріг) UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8859.png' },
+    { name: 'Перший Міський FHD (Одеса) UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8860.png' },
+    { name: 'Рада HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2118.png' },
+    { name: 'Радіо ТВА (Чернівці) UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8862.png' },
+    { name: 'Радіо Закарпаття FM UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8863.png' },
+    { name: 'Радіо Промінь UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8864.png' },
+    { name: 'Рибалка HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2950.png' },
+    { name: 'Світло HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8866.png' },
+    { name: 'Суспільне Київ HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8867.png' },
+    { name: 'Суспільне Крим FHD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2148.png' },
+    { name: 'Суспільне Культура HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8869.png' },
+    { name: 'Суспільне Спорт HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8872.png' },
+    { name: 'Суспільне Спорт FHD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8872.png' },
+    { name: 'Перший Західний HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8874.png' },
+    { name: 'Терра UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5950.png' },
+    { name: 'UTravel HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8878.png' },
+    { name: 'Viasat Kino Action HD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7944.png' },
+    { name: 'Viasat Kino Comedy HD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8880.png' },
+    { name: 'Viasat Kino HD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8881.png' },
+    { name: 'Viasat Nature CEE HD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7876.png' },
+    { name: 'Viasat Kino World', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8883.png' },
+    { name: 'Ісландія HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8884.png' },
+    { name: 'Аверс UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8885.png' },
+    { name: 'Армія TV HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8886.png' },
+    { name: 'Галичина HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2204.png' },
+    { name: 'Дача UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8890.png' },
+    { name: 'Дім UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8891.png' },
+    { name: 'ЕТНО Канал HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8892.png' },
+    { name: 'Закон ТВ HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8893.png' },
+    { name: 'Kvartal TV HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2101.png' },
+    { name: 'Київ HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2227.png' },
+    { name: '1+1 Україна HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8897.png' },
+    { name: '11 Канал HD (Дніпро) UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8898.png' },
+    { name: '36.6 TV UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2351.png' },
+    { name: '4ever Cinema HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8900.png' },
+    { name: '6 Соток UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8902.png' },
+    { name: 'AMC UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8288.png' },
+    { name: 'Bolt HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2138.png' },
+    { name: 'Cine+ HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8904.png' },
+    { name: 'Cine+ Hit HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8905.png' },
+    { name: 'Cine+ Kids HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8906.png' },
+    { name: 'Cine+ Legend HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8907.png' },
+    { name: 'D1 HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2358.png' },
+    { name: 'Da Vinci HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2223.png' },
+    { name: 'Divi Sport HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8909.png' },
+    { name: 'Equalympic HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8910.png' },
+    { name: 'Fashion TV HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2491.png' },
+    { name: 'FilmUA Drama UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8911.png' },
+    { name: 'FilmBox ArtHouse HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9754.png' },
+    { name: 'FilmUA Live HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8913.png' },
+    { name: 'FreeДом UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8915.png' },
+    { name: 'К1 UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/2100.png' },
+    { name: 'Kino Action HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8917.png' },
+    { name: 'Kino Comedy HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8918.png' },
+    { name: 'Kino Premiere HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8919.png' },
+    { name: 'Kinosweet HD UA', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8920.png' },
+    { name: 'Kinowood HD', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8921.png' },
+  ]
+},
+{
+  id:'Finland',
+  name:'Финляндия | Finland',
+  icon:'https://tse3.mm.bing.net/th/id/OIP.ajE-5Bvp4D7JnKspJGDDCgHaEh?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'MTV Viihde HD FI', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/9504.png' },
+  ]
+},
+{
+  id:'France',
+  name:'Франция | France',
+  icon:'https://tse2.mm.bing.net/th/id/OIP.-1qjYLwOqfGAWPF3MmISJwHaE7?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'beIN Sports 1 HD FR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2884.png' },
+    { name: 'Cine+ Frisson HD FR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2981.png' },
+    { name: 'Cine+ Classic HD FR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6167.png' },
+    { name: 'France 2 HD FR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3093.png' },
+    { name: 'France 3 HD FR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3094.png' },
+    { name: 'France 4 HD FR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3095.png' },
+    { name: 'France 5 HD FR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3096.png' },
+    { name: 'France Info HD FR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9661.png' },
+    { name: 'Paris Premiere HD FR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3042.png' },
+    { name: 'beIN Sports 2 HD FR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2885.png' },
+    { name: 'beIN Sports 3 HD FR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2886.png' },
+    { name: 'Canal+ Sport HD FR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2887.png' },
+    { name: 'Infosport+ HD FR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2928.png' },
+    { name: 'RMC Sport 1 HD FR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2929.png' },
+    { name: 'RMC Sport 2 HD FR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2930.png' },
+    { name: 'RMC Sport 3 HD FR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2931.png' },
+    { name: 'France 24 HD FR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2133.png' },
+    { name: 'Canal+ Cinema HD FR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3088.png' },
+    { name: 'Canal+ FR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3087.png' },
+    { name: 'Canal+ Kids HD FR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2983.png' },
+    { name: 'Canal+ HD FR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3087.png' },
+    { name: 'Canal+ Series HD FR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2984.png' },
+    { name: 'TF1 HD FR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4485.png' },
+    { name: 'Disney Channel HD FR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5644.png' },
+    { name: 'RMC Life HD FR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/88007.png' },
+    { name: 'TF1 Series Films HD FR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5667.png' },
+    { name: 'LCI FR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5668.png' },
+    { name: 'Science & Vie HD FR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5670.png' },
+    { name: 'Toute L\'Histoire HD FR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6172.png' },
+    { name: 'Histoire TV HD FR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/6173.png' },
+  ]
+},
+{
+  id:'Croatia',
+  name:'Хорватия | Croatia',
+  icon:'https://tse1.mm.bing.net/th/id/OIP.jy28-mW3Ji0Xt9D0VYKiZwHaDt?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'Arena Sport 1 FHD HR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4563.png' },
+    { name: 'Arena Sport 2 FHD HR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4564.png' },
+    { name: 'Arena Sport 3 FHD HR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4565.png' },
+    { name: 'Arena Sport 4 FHD HR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4566.png' },
+    { name: 'Arena Sport 5 FHD HR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4567.png' },
+    { name: 'Arena Sport 6 FHD HR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4568.png' },
+    { name: 'Arena Sport 1 HD HR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4563.png' },
+    { name: 'Arena Sport 2 HD HR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4564.png' },
+    { name: 'Arena Sport 3 HD HR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4565.png' },
+    { name: 'Arena Sport 4 HD HR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4566.png' },
+    { name: 'Arena Sport 5 HD HR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4567.png' },
+    { name: 'Arena Sport 6 HD HR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4568.png' },
+    { name: 'Sport Klub 1 HD HR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4536.png' },
+    { name: 'Sport Klub 2 HD HR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4537.png' },
+    { name: 'Sport Klub 3 HD HR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4538.png' },
+    { name: 'Sport Klub 4 HD HR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4539.png' },
+    { name: 'Sport Klub 5 HD HR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4540.png' },
+    { name: 'Sport Klub 6 HD HR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4541.png' },
+    { name: 'Sport Klub 7 HD HR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4542.png' },
+    { name: 'Sport Klub 8 HD HR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4543.png' },
+    { name: 'Sport Klub Golf HR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4544.png' },
+    { name: 'Sport Klub Fight HD HR', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4545.png' },
+  ]
+},
+{
+  id:'CzechRepublic',
+  name:'Чехия | Czech Republic',
+  icon:'https://th.bing.com/th/id/OIP.X2dgsu-9D4C6_J_jASeDaQHaE8?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'ČT sport HD CZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2935.png' },
+    { name: 'Nova Sport 1 HD CZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2939.png' },
+    { name: 'Nova Sport 2 HD CZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2940.png' },
+    { name: 'Sport 2 HD CZ', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2941.png' },
+    { name: 'AXN CZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8192.png' },
+    { name: 'M4 Sport HD HU', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8246.png' },
+    { name: 'Animal Planet CZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9645.png' },
+    { name: 'AMC CZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9646.png' },
+    { name: 'AXN Black CZ', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/8299.png' },
+  ]
+},
+{
+  id:'Sweden',
+  name:'Швеция | Sweden',
+  icon:'https://us.mannatech.com/welcome/img/flags/flag-sv.jpg',
+  channels: [
+    { name: 'Kanal 11 HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4520.png' },
+    { name: 'SVT1 HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4514.png' },
+    { name: 'SVT2 HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4515.png' },
+    { name: 'TV12 HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4517.png' },
+    { name: 'V Sport Football SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4796.png' },
+    { name: 'V Sport Vinter SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4797.png' },
+    { name: 'V Sport Football HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4796.png' },
+    { name: 'V Sport Motor HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4896.png' },
+    { name: 'TV4 Hits HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4899.png' },
+    { name: 'TV4 Sportkanalen HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/88003.png' },
+    { name: 'TV4 Sport Live 1 HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4839.png' },
+    { name: 'TV4 Sport Live 2 HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4840.png' },
+    { name: 'TV4 Sport Live 4 HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4842.png' },
+    { name: 'Godare SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4849.png' },
+    { name: 'TV4 Stars HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4901.png' },
+    { name: 'Eurosport 1 HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4902.png' },
+    { name: 'Eurosport 2 HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4903.png' },
+    { name: 'Horse & Country HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4850.png' },
+    { name: 'Investigation Discovery SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4851.png' },
+    { name: 'Kanal 5 HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4852.png' },
+    { name: 'Kanal 9 HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4853.png' },
+    { name: 'Kunskapskanalen HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4854.png' },
+    { name: 'MTV SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4806.png' },
+    { name: 'National Geographics HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4855.png' },
+    { name: 'Nick Jr. SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4856.png' },
+    { name: 'Nickelodeon SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4857.png' },
+    { name: 'NickToons DK', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4858.png' },
+    { name: 'Paramount Network HD NL', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4859.png' },
+    { name: 'Sjuan HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4861.png' },
+    { name: 'SVT Barn/STV24 HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4516.png' },
+    { name: 'TLC HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4864.png' },
+    { name: 'TV3 HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4865.png' },
+    { name: 'TV4 Guld HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4866.png' },
+    { name: 'TV6 HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4867.png' },
+    { name: 'TV4 Film HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4868.png' },
+    { name: 'TV4 Fakta SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4869.png' },
+    { name: 'TV4 HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4870.png' },
+    { name: 'V Film Hits HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4871.png' },
+    { name: 'V Series HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4872.png' },
+    { name: 'V Sport Extra SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4904.png' },
+    { name: 'Sport Live HD DK', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9261.png' },
+    { name: 'V Sport Golf SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4907.png' },
+    { name: 'V Sport Vinter HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4797.png' },
+    { name: 'V Sport Premium SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4909.png' },
+    { name: 'V Film Action HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4874.png' },
+    { name: 'V Film Premiere HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4875.png' },
+    { name: 'V Film Family HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4876.png' },
+    { name: 'Viasat Nature HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4877.png' },
+    { name: 'Viasat Explore HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4878.png' },
+    { name: 'ATG Live SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4879.png' },
+    { name: 'SkyShowtime 1 HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/88004.png' },
+    { name: 'Expressen TV HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4882.png' },
+    { name: 'History 2 HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4888.png' },
+    { name: 'History HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4889.png' },
+    { name: 'SkyShowtime 2 HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/88005.png' },
+    { name: 'National Geographic Wild HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4892.png' },
+    { name: 'TV3 Sport SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4910.png' },
+    { name: 'Viasat History HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4893.png' },
+    { name: 'TV8 HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4894.png' },
+    { name: 'TV10 HD SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4895.png' },
+    { name: 'V Sport Motor SE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4896.png' },
+  ]
+},
+{
+  id:'Estonia',
+  name:'Эстония | Estonia',
+  icon:'https://freepngdesign.com/content/uploads/images/estonia-large-flag-2806.png',
+  channels: [
+    { name: 'ETV EE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3367.png' },
+    { name: 'FilmZone EE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/9094.png' },
+    { name: 'ETV2 EE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3368.png' },
+    { name: 'Kanal 2 EE', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/3369.png' },
+    { name: 'ETV HD EE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3367.png' },
+    { name: 'Duo 3 HD EE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5340.png' },
+    { name: 'Duo 6 HD EE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5341.png' },
+    { name: 'ETV2 HD EE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3368.png' },
+    { name: 'ETV+ EE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/5343.png' },
+    { name: 'Go3 Sport 1 HD EE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3380.png' },
+    { name: 'Go3 Sport 2 HD EE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3381.png' },
+    { name: 'Kanal 2 HD EE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/3369.png' },
+    { name: 'TV3 EE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4238.png' },
+    { name: 'TV6 EE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/4239.png' },
+    { name: 'Kanal 7 HD EE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7231.png' },
+    { name: '1+2 EE', archive: 'Live 🌏', icon: 'https://premium-iptv.ru/ico_r/7232.png' },
+  ]
+},
+{
+  id:'Korea',
+  name:'Южная Корея | Korea',
+  icon:'https://tse1.mm.bing.net/th/id/OIP.YrEPPyNbkzjWEaD8zGOoTAHaE7?rs=1&pid=ImgDetMain&o=7&rm=3',
+  channels: [
+    { name: 'Arirang KR', archive: '🕐 Архив - 3 дня', icon: 'https://premium-iptv.ru/ico_r/2461.png' },
+  ]
+}
+];
+
+// =============================================
+// КОД ДЛЯ ОТОБРАЖЕНИЯ (НЕ ТРОГАТЬ)
+// =============================================
+const groupsContainer = document.getElementById('groupsContainer');
+const searchInput = document.getElementById('search');
+const totalBox = document.getElementById('total');
+
+function render(groups) {
+  groupsContainer.innerHTML = '';
+  let total = 0;
+
+  groups.forEach((g, i) => {
+    total += g.channels.length;
+    const det = document.createElement('details');
+    det.className = 'group';
+    if (i === 0) det.open = true;
+
+    const sum = document.createElement('summary');
+
+    const ic = document.createElement('div');
+    ic.className = 'group-icon';
+    const img = document.createElement('img');
+    img.src = g.icon;
+    img.onerror = function() { this.style.display = 'none'; };
+    ic.appendChild(img);
+
+    const info = document.createElement('div');
+    info.className = 'group-info';
+
+    const name = document.createElement('div');
+    name.className = 'group-name';
+    name.textContent = g.name;
+
+    const meta = document.createElement('div');
+    meta.className = 'group-meta';
+    meta.textContent = g.channels.length + ' каналов';
+
+    info.appendChild(name);
+    info.appendChild(meta);
+
+    sum.appendChild(ic);
+    sum.appendChild(info);
+    det.appendChild(sum);
+
+    const chWrap = document.createElement('div');
+    chWrap.className = 'channels';
+
+    g.channels.forEach(ch => {
+      const el = document.createElement('div');
+      el.className = 'channel';
+
+      const ci = document.createElement('div');
+      ci.className = 'ch-icon';
+      if (ch.icon) {
+        const im = document.createElement('img');
+        im.src = ch.icon;
+        im.onerror = function() { this.style.display = 'none'; };
+        ci.appendChild(im);
+      }
+
+      const body = document.createElement('div');
+      body.className = 'ch-body';
+
+      const n = document.createElement('div');
+      n.className = 'ch-name';
+      n.textContent = ch.name;
+
+      const m = document.createElement('div');
+      m.className = 'ch-meta';
+      m.textContent = ch.archive || 'Архив: -';
+
+      body.appendChild(n);
+      body.appendChild(m);
+
+      el.appendChild(ci);
+      el.appendChild(body);
+      chWrap.appendChild(el);
+    });
+
+    det.appendChild(chWrap);
+    groupsContainer.appendChild(det);
+  });
+
+  totalBox.textContent = 'Общее количество каналов: ' + total;
+}
+
+// Проверка, что данные существуют, и рендеринг
+if (groupsData && groupsData.length > 0) {
+  render(groupsData);
+} else {
+  groupsContainer.innerHTML = '<div style="text-align:center; padding:40px; color:#9aa7b2;">📺 Данные каналов отсутствуют. Пожалуйста, вставьте ваш groupsData в код.</div>';
+  totalBox.textContent = 'Общее количество каналов: 0';
+}
+
+// Поиск
+searchInput.addEventListener('input', e => {
+  const q = e.target.value.toLowerCase().trim();
+  if (!q) {
+    if (groupsData && groupsData.length) render(groupsData);
+    return;
+  }
+  
+  if (groupsData && groupsData.length) {
+    render(
+      groupsData.map(g => ({
+        ...g,
+        channels: g.channels.filter(c => c.name.toLowerCase().includes(q))
+      })).filter(g => g.channels.length)
+    );
+  }
+});
+</script>
+
+</body>
+</html>
