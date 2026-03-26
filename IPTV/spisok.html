@@ -22,6 +22,11 @@
   --accent: #38bdf8;
   --text: #e5e7eb;
   --muted: #9aa7b2;
+  --bg-overlay-soft: rgba(15,23,42,.75);
+  --border-light: rgba(255,255,255,.06);
+  --border-medium: rgba(255,255,255,.04);
+  --primary-glow: rgba(56,189,248,.6);
+  --primary-glow-soft: rgba(56,189,248,.15);
 }
 
 body {
@@ -66,7 +71,6 @@ body::before {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-top: 10px;
   flex-wrap: wrap;
 }
 
@@ -104,24 +108,62 @@ body::before {
 }
 
 .promo-link:hover {
-  text-shadow: 0 0 12px var(--primary-glow, rgba(56,189,248,.6));
+  text-shadow: 0 0 12px var(--primary-glow);
+}
+
+/* КНОПКА INTERNATIONAL CHANNELS */
+.btn-int {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  padding: 10px 24px;
+  border-radius: 40px;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  letter-spacing: 0.3px;
+}
+
+.btn-int:hover {
+  background: rgba(56, 189, 248, 0.25);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(56,189,248,0.2);
+}
+
+.btn-int:active {
+  transform: translateY(1px);
 }
 
 /* HEADER */
 header {
   width: 100%;
-  background: var(--bg-overlay-soft, rgba(15,23,42,.75));
+  background: var(--bg-overlay-soft);
   border-radius: 22px;
   padding: 26px 28px;
   backdrop-filter: blur(14px);
   box-shadow: 
-    0 0 40px var(--primary-glow-soft, rgba(56,189,248,.25)),
-    inset 0 0 0 1px var(--border-light, rgba(255,255,255,.06));
+    0 0 40px var(--primary-glow-soft),
+    inset 0 0 0 1px var(--border-light);
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .main-title {
@@ -131,7 +173,7 @@ header {
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: .14em;
-  text-shadow: 0 0 12px var(--primary-glow, rgba(56,189,248,.6));
+  text-shadow: 0 0 12px var(--primary-glow);
 }
 
 .controls {
@@ -142,33 +184,35 @@ header {
 }
 
 .search {
-  background: #ffffff;  /* Белый фон */
-  border: 2px solid #1e293b;  /* Темная обводка для контраста */
+  background: #ffffff;
+  border: 2px solid #1e293b;
   padding: 10px 14px;
   border-radius: 12px;
-  color: #0f172a;  /* Темный текст для читаемости */
+  color: #0f172a;
   outline: none;
   font-family: var(--font-sans, 'Inter', sans-serif);
   font-weight: 500;
+  min-width: 200px;
 }
 
 .search::placeholder {
-  color: #64748b;  /* Серый плейсхолдер */
+  color: #64748b;
   opacity: 0.8;
 }
 
 .search:focus {
-  border-color: var(--primary, #38bdf8);
+  border-color: var(--accent, #38bdf8);
   box-shadow: 0 0 0 3px rgba(56,189,248,.3);
 }
 
 .total {
   padding: 8px 14px;
   border-radius: 999px;
-  background: var(--primary-glow-soft, rgba(56,189,248,.15));
+  background: var(--primary-glow-soft);
   color: var(--accent);
   font-weight: 600;
   font-size: 13px;
+  white-space: nowrap;
 }
 
 /* GROUPS */
@@ -178,11 +222,11 @@ header {
 }
 
 details.group {
-  background: var(--bg-overlay-soft, rgba(15,23,42,.75));
+  background: var(--bg-overlay-soft);
   border-radius: 20px;
   padding: 16px;
   backdrop-filter: blur(12px);
-  border: 1px solid var(--border-light, rgba(255,255,255,.06));
+  border: 1px solid var(--border-light);
 }
 
 summary {
@@ -204,6 +248,7 @@ summary::-webkit-details-marker {
   overflow: hidden;
   flex: 0 0 48px;
   box-shadow: 0 0 18px rgba(0,0,0,.6);
+  background: #0a0a1a;
 }
 
 .group-icon img {
@@ -228,7 +273,7 @@ summary::-webkit-details-marker {
 
 .group-meta {
   font-size: 13px;
-  color: var(--text-secondary, var(--muted));
+  color: var(--muted);
 }
 
 /* CHANNELS */
@@ -246,12 +291,12 @@ summary::-webkit-details-marker {
   padding: 12px;
   border-radius: 14px;
   background: rgba(255,255,255,.03);
-  border: 1px solid var(--border-medium, rgba(255,255,255,.04));
+  border: 1px solid var(--border-medium);
   transition: 0.2s;
 }
 
 .channel:hover {
-  border-color: var(--primary);
+  border-color: var(--accent);
   box-shadow: 0 0 15px var(--primary-glow-soft);
 }
 
@@ -284,7 +329,7 @@ summary::-webkit-details-marker {
 
 .ch-meta {
   font-size: 12px;
-  color: var(--text-secondary, var(--muted));
+  color: var(--muted);
 }
 
 /* FOOTER */
@@ -294,27 +339,34 @@ summary::-webkit-details-marker {
   padding-bottom: 20px;
   text-align: center;
   font-size: 12px;
-  color: var(--text-muted, #6b7280);
+  color: #6b7280;
   opacity: .85;
   border-top: 1px solid var(--border-medium);
 }
 
-/* ────────────────────────────────────────────────
-   Мобильная адаптация (600px и меньше)
-   ──────────────────────────────────────────────── */
+/* МОБИЛЬНАЯ АДАПТАЦИЯ */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  
+  .header-left {
+    align-items: center;
+  }
+  
+  .controls {
+    justify-content: center;
+  }
+}
 
-/* Глобальный сброс отступов и предотвращение горизонтального скролла */
 @media (max-width: 600px) {
-  html,
-  body {
+  html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
   }
-}
-
-/* Основные контейнеры и элементы */
-@media (max-width: 600px) {
 
   .wrap {
     width: 100%;
@@ -328,21 +380,15 @@ summary::-webkit-details-marker {
     width: 100%;
     max-width: 400px;
     margin: 16px auto 0;
-    padding: 16px;
+    padding: 18px;
     flex-direction: column;
     gap: 16px;
     text-align: center;
     box-sizing: border-box;
-    overflow-x: hidden;
   }
 
   .promo {
-    width: 100%;
-    max-width: 360px;
-    margin: 0 auto;
-    gap: 12px;
     justify-content: center;
-    align-items: center;
   }
 
   .controls {
@@ -363,7 +409,6 @@ summary::-webkit-details-marker {
     max-width: 400px;
     margin: 0 auto;
     padding: 0;
-    overflow-x: hidden;
   }
 
   .channels {
@@ -378,8 +423,6 @@ summary::-webkit-details-marker {
     margin: 8px auto;
     padding: 12px;
     box-sizing: border-box;
-
-    /* ВАЖНО: убираем центрирование */
     justify-content: flex-start;
     text-align: left;
   }
@@ -390,28 +433,18 @@ summary::-webkit-details-marker {
   }
 }
 
-/* Подстройка для экранов < 480px */
 @media (max-width: 480px) {
-
   header {
     max-width: 360px;
   }
-
-  .promo,
   .controls {
     max-width: 340px;
   }
-
   .groups,
   .channel {
     max-width: 340px;
   }
-
-  .channel {
-    margin: 6px auto;
-  }
 }
-
 </style>
 </head>
 
@@ -419,13 +452,21 @@ summary::-webkit-details-marker {
 <div class="wrap">
 
 <header>
-  <div class="main-title">Premium-iptv catalog</div>
-  
-  <div class="promo">
-    <div class="promo-badge">18+</div>
-    <div class="promo-text">120 каналов</div>
-    <a href="https://evgeshkawww.github.io/iptv/IPTV/kino.html" class="promo-link">➕ ПЛАГИН LAMPA ONLINE 🔗</a>
+  <div class="header-left">
+    <div class="main-title">Premium-iptv catalog</div>
+    
+    <!-- ПРОМО-БЛОК -->
+    <div class="promo">
+      <div class="promo-badge">18+</div>
+      <div class="promo-text">120 каналов</div>
+      <a href="https://evgeshkawww.github.io/iptv/IPTV/kino.html" class="promo-link">➕ ПЛАГИН LAMPA ONLINE 🔗</a>
+    </div>
   </div>
+  
+  <!-- КНОПКА INTERNATIONAL CHANNELS (исправленная ссылка) -->
+  <a href="https://evgeshkawww.github.io/iptv/IPTV/spisok_int.html" class="btn-int" target="_self">
+    🌍 International channels
+  </a>
 
   <div class="controls">
     <input class="search" id="search" placeholder="Поиск по каналам...">
@@ -442,7 +483,10 @@ summary::-webkit-details-marker {
 <div class="footer">© Premium-IPTV</div>
 
 <script>
-// Данные каналов (вставьте ваш groupsData сюда)
+// =============================================
+// ВАШИ ДАННЫЕ КАНАЛОВ (groupsData)
+// Вставьте сюда ваш оригинальный groupsData
+// =============================================
 const groupsData = [
   {
     id:'group1',
@@ -3277,6 +3321,9 @@ const groupsData = [
   }
 ];
 
+// =============================================
+// КОД ДЛЯ ОТОБРАЖЕНИЯ (НЕ ТРОГАТЬ)
+// =============================================
 const groupsContainer = document.getElementById('groupsContainer');
 const searchInput = document.getElementById('search');
 const totalBox = document.getElementById('total');
@@ -3297,6 +3344,7 @@ function render(groups) {
     ic.className = 'group-icon';
     const img = document.createElement('img');
     img.src = g.icon;
+    img.onerror = function() { this.style.display = 'none'; };
     ic.appendChild(img);
 
     const info = document.createElement('div');
@@ -3329,6 +3377,7 @@ function render(groups) {
       if (ch.icon) {
         const im = document.createElement('img');
         im.src = ch.icon;
+        im.onerror = function() { this.style.display = 'none'; };
         ci.appendChild(im);
       }
 
@@ -3358,27 +3407,32 @@ function render(groups) {
   totalBox.textContent = 'Общее количество каналов: ' + total;
 }
 
-// Рендерим данные
-render(groupsData);
+// Проверка, что данные существуют, и рендеринг
+if (groupsData && groupsData.length > 0) {
+  render(groupsData);
+} else {
+  groupsContainer.innerHTML = '<div style="text-align:center; padding:40px; color:#9aa7b2;">📺 Данные каналов отсутствуют. Пожалуйста, вставьте ваш groupsData в код.</div>';
+  totalBox.textContent = 'Общее количество каналов: 0';
+}
 
 // Поиск
 searchInput.addEventListener('input', e => {
-  const q = e.target.value.toLowerCase();
+  const q = e.target.value.toLowerCase().trim();
   if (!q) {
-    render(groupsData);
+    if (groupsData && groupsData.length) render(groupsData);
     return;
   }
   
-  render(
-    groupsData.map(g => ({
-      ...g,
-      channels: g.channels.filter(c => c.name.toLowerCase().includes(q))
-    })).filter(g => g.channels.length)
-  );
+  if (groupsData && groupsData.length) {
+    render(
+      groupsData.map(g => ({
+        ...g,
+        channels: g.channels.filter(c => c.name.toLowerCase().includes(q))
+      })).filter(g => g.channels.length)
+    );
+  }
 });
 </script>
 
 </body>
 </html>
-
-
