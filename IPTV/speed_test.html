@@ -1,87 +1,43 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-<link rel="shortcut icon" href="favicon.ico">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
-<meta charset="UTF-8" />
-<script type="text/javascript" src="js/speedtest.js"></script>
-<script type="text/javascript">
-function I(i){return document.getElementById(i);}
+  <meta charset="UTF-8" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
 
-var SPEEDTEST_SERVERS = [
-    {   name:"s1.turbod.iptv",
-        server:"https://ru2.tvtm.one:8080/",   
-        dlURL:"backend/garbage.php",
-        ulURL:"backend/empty.php",
-        pingURL:"backend/empty.php",
-        getIpURL:"backend/getIP.php"
-    },
-    {   name:"s3.turbod.iptv",
-        server:"https://ru5.tvtm.one:8080/",
-        dlURL:"backend/garbage.php",
-        ulURL:"backend/empty.php",
-        pingURL:"backend/empty.php",
-        getIpURL:"backend/getIP.php"
-    },
-    {   name:"s5.turbod.iptv",
-        server:"https://ru6.tvtm.one:8080/",  
-        dlURL:"backend/garbage.php",
-        ulURL:"backend/empty.php",
-        pingURL:"backend/empty.php",
-        getIpURL:"backend/getIP.php"
-    },
-    {   name:"s8.turbod.iptv",
-        server:"https://ru3.tvtm.one:8080/", 
-        dlURL:"backend/garbage.php",
-        ulURL:"backend/empty.php",
-        pingURL:"backend/empty.php",
-        getIpURL:"backend/getIP.php"
-    },
-    {   name:"s9.turbod.iptv",
-        server:"https://nl.tvtm.one:8080/", 
-        dlURL:"backend/garbage.php",
-        ulURL:"backend/empty.php",
-        pingURL:"backend/empty.php",
-        getIpURL:"backend/getIP.php"
-    },
-    {   name:"s11.turbod.iptv",
-        server:"https://ru.tvtm.one:8080/",  
-        dlURL:"backend/garbage.php",
-        ulURL:"backend/empty.php",
-        pingURL:"backend/empty.php",
-        getIpURL:"backend/getIP.php"
-    },
-    {   name:"s16.turbod.iptv",
-        server:"https://6.tvtm.one:8080/", 
-        dlURL:"backend/garbage.php",
-        ulURL:"backend/empty.php",
-        pingURL:"backend/empty.php",
-        getIpURL:"backend/getIP.php"
-    },
-    {   name:"s2.turbod.iptv",
-        server:"https://9.tvtm.one:8080/", 
-        dlURL:"backend/garbage.php",
-        ulURL:"backend/empty.php",
-        pingURL:"backend/empty.php",
-        getIpURL:"backend/getIP.php"
-    },
-    {   name:"s4.turbod.iptv",
-        server:"https://hk.tvtm.one:8080/",    
-        dlURL:"backend/garbage.php",
-        ulURL:"backend/empty.php",
-        pingURL:"backend/empty.php",
-        serveropen:"YES",
-        getIpURL:"backend/getIP.php"
-    }
-];
+  <!-- Основные мета-теги -->
+  <title>Premium IPTV Speed Test</title>
+  <meta name="description" content="Тест скорости Premium IPTV" />
+  <meta name="theme-color" content="#0b0b12" />
 
+  <!-- Open Graph для соцсетей -->
+  <meta property="og:title" content="Premium IPTV Speed Test" />
+  <meta property="og:description" content="Тест скорости Premium IPTV" />
+  <meta property="og:image" content="https://evgeshkawww.github.io/iptv/IPTV/favicon_black.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://evgeshkawww.github.io/iptv/IPTV/speed_test.html" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Premium IPTV Speed Test" />
+  <meta name="twitter:description" content="Тест скорости Premium IPTV" />
+  <meta name="twitter:image" content="https://evgeshkawww.github.io/iptv/IPTV/favicon_black.png" />
+
+  <!-- Стили и скрипты -->
+  <link rel="stylesheet" href="style/theme.css">
+  <script type="text/javascript" src="js/speedtest.js"></script>
+  <script
+      src="https://premium-iptv.ru/instt.js"
+      onload="initServers();">
+  </script>
+  <script type="text/javascript">
+    function I(i){return document.getElementById(i);}
 
 //INITIALIZE SPEEDTEST
 var s=new Speedtest(); //create speedtest object
-s.setParameter("telemetry_level","none");
-s.setParameter("test_order","pD");
-var isInitialized = false;
+s.setParameter("telemetry_level","basic"); //enable telemetry
+
 //SERVER AUTO SELECTION
 function initServers(){
     var noServersAvailable=function(){
@@ -91,36 +47,56 @@ function initServers(){
         s.selectServer(function(server){
             if(server!=null){ //at least 1 server is available
                 I("loading").className="hidden"; //hide loading message
+                
+                // =====================================================
+                // 1. СНАЧАЛА добавляем отдельные серверы (только YES)
+                // =====================================================
+                for (var i = 0; i < SPEEDTEST_SERVERS.length; i++) {
 
+                    if (SPEEDTEST_SERVERS[i].pingT == -1) continue;
+
+                    // ✅ Добавляем ТОЛЬКО серверы с serveropen = "YES"
+                    if (SPEEDTEST_SERVERS[i].serveropen === "YES") {
+                        var option = document.createElement("option");
+                        option.value = i;
+                        option.textContent = SPEEDTEST_SERVERS[i].name;
+                        I("server").appendChild(option);
+                    }
+                    
+                    // ❌ Серверы с serveropen = "NO" просто пропускаем
+                }
                 
-                // Добавляем опцию для тестирования всех серверов, включая заполненные
-                var optionAllFull = document.createElement("option");
-                optionAllFull.value = "all_with_filled";
-                optionAllFull.textContent = "Все сервера";
-				optionAllFull.selected = true;
-                I("server").appendChild(optionAllFull);
-                
-                // Отделяем группы от отдельных серверов
+                // =====================================================
+                // 2. ПОТОМ добавляем разделитель
+                // =====================================================
                 var optionSeparator = document.createElement("option");
                 optionSeparator.disabled = true;
                 optionSeparator.textContent = "─────────────────";
                 I("server").appendChild(optionSeparator);
                 
-                //populate server list for manual selection
-                for(var i=0;i<SPEEDTEST_SERVERS.length;i++){
-                    if(SPEEDTEST_SERVERS[i].pingT==-1) continue;
-                    var option=document.createElement("option");
-                    option.value=i;
-                    option.textContent=SPEEDTEST_SERVERS[i].name;
-                    // Убираем автоматическое выделение серверов, т.к. теперь всегда выбрана группа
-                    // if(SPEEDTEST_SERVERS[i]===server) option.selected=true;
-                    I("server").appendChild(option);
-                }
+                // =====================================================
+                // 3. В САМОМ КОНЦЕ добавляем опции для группового теста
+                // =====================================================
+                // Добавляем опцию для тестирования всех доступных серверов
+                var optionAllAvailable = document.createElement("option");
+                optionAllAvailable.value = "all_available";
+                optionAllAvailable.textContent = "Все доступные сервера";
+                optionAllAvailable.selected = true; // Устанавливаем эту опцию как выбранную по умолчанию
+                I("server").appendChild(optionAllAvailable);
+                
+                // Добавляем опцию для тестирования всех серверов, включая заполненные
+                var optionAllFull = document.createElement("option");
+                optionAllFull.value = "all_with_filled";
+                optionAllFull.textContent = "Все сервера";
+                I("server").appendChild(optionAllFull);
                 
                 //show test UI
                 I("testWrapper").className="visible";
                 initUI();
-			
+
+                setTimeout(function(){
+                    startStop();
+                },1500);
             }else{ //no servers are available, the test cannot proceed
                 noServersAvailable();
             }
@@ -141,8 +117,8 @@ function initServers(){
         s.addTestPoints(SPEEDTEST_SERVERS);
         runServerSelect();
     }
-	
 }
+
 var meterBk=/Trident.*rv:(\d+\.\d+)/i.test(navigator.userAgent)?"#EAEAEA":"#80808040";
 var dlColor="#6060AA",
 	ulColor="#616161";
@@ -188,14 +164,18 @@ function format(d){
 //UI CODE
 var uiData=null;
 function startStop(){
-    if(s.getState()==3){
-        document.getElementById("currentTest").innerHTML = ''
-		//speedtest is running, abort
+	if (s.getState() == 3) {
+
+		stopAllTests = true;
+		serversToTest = [];
 		s.abort();
-		data=null;
-		I("startStopBtn").className="";
-		I("server").disabled=false;
+
+		document.getElementById("currentTest").innerHTML = "⛔ Тест прерван";
+		uiData = null;
+		I("startStopBtn").className = "";
+		I("server").disabled = false;
 		initUI();
+		return;
 	}else{
 		//test is not running, begin
 		I("startStopBtn").className="running";
@@ -266,9 +246,9 @@ function prepareResultTable() {
     // Очищаем и инициализируем таблицу
     document.getElementById("multi_results").getElementsByTagName('tbody')[0].innerHTML = '<tr>' +
         '<th>Сервер</th>' +
-		'<th>Пинг, мс</th>' +
-        '<th>Джиттер, мс</th>' +
-        '<th>Скорость, Мбит/с</th>' +
+        '<th>Статус</th>' +
+        '<th title="Джиттер, мс">Jit</th>' +
+        '<th title="Скорость, Мбит/с">DL</th>' +
         '<th>Оценка</th>' +
         '</tr>';
 }
@@ -292,6 +272,7 @@ function runSingleServerTest() {
             // Добавляем результат единичного теста в таблицу
             appendResult(
                 serverObj.name,
+                serverObj.serveropen,
                 uiData.dlStatus,
                 uiData.pingStatus,
                 uiData.jitterStatus
@@ -301,11 +282,11 @@ function runSingleServerTest() {
             var recommended = isServerRecommended(uiData.jitterStatus, uiData.dlStatus);
             if(recommended) {
                 document.getElementById("currentTest").innerHTML = 
-                    '<div class="recommendationBox recommended"><span class="recommendIcon">✅</span> ' +
+                    '<div class="recommendationBox recommended"><span class="recommendIcon">👍</span> ' +
                     'Рекомендован: <strong>' + serverObj.name + '</strong></div>';
             } else {
                 document.getElementById("currentTest").innerHTML = 
-                    '<div class="recommendationBox notRecommended"><span class="recommendIcon">⚠️</span> ' +
+                    '<div class="recommendationBox notRecommended"><span class="recommendIcon">👎</span> ' +
                     'Не рекомендован</div>';
             }
             
@@ -327,7 +308,7 @@ function runSingleServerTest() {
 
 // Подготовка к тестированию группы серверов
 function prepareMultiTest(groupType) {
-    // Очищаем результаты предыдущих тестов
+    stopAllTests = false;
     groupTestResults = [];
     
     // Обновляем глобальную переменную currentServer и массив serversToTest
@@ -362,100 +343,118 @@ function prepareMultiTest(groupType) {
 
 // Функция для тестирования всех серверов последовательно
 function startMultiTest() {
-    if(s.getState() == 3) {
-        // Если тест уже запущен, прерываем его
+
+    if (s.getState() == 3) {
         s.abort();
-        I("startStopBtn").className="";
-        I("server").disabled=false;
+        I("startStopBtn").className = "";
+        I("server").disabled = false;
         document.getElementById("currentTest").innerHTML = '';
         return;
     }
-    
-    s.onupdate = function(data) {
+
+    var testTimeout = null;
+
+    // ⏱ ТАЙМ-АУТ 15 СЕКУНД
+    testTimeout = setTimeout(function () {
+        console.warn("Timeout >15s, skip server:", SPEEDTEST_SERVERS[currentServer].name);
+        s.abort();
+    }, 20000);
+
+    s.onupdate = function (data) {
         uiData = data;
     };
-    
-    s.onend = function(aborted) {
-        if(!aborted) {
-            // Добавляем результат в таблицу
-            appendResult(
-                SPEEDTEST_SERVERS[currentServer].name,
-                uiData.dlStatus,
-                uiData.pingStatus,
-                uiData.jitterStatus
-            );
-            
-            // Сохраняем результат для последующего анализа
-            var result = {
-                index: currentServer,
-                name: SPEEDTEST_SERVERS[currentServer].name,
-                dl: uiData.dlStatus,
-                ping: uiData.pingStatus,
-                jitter: uiData.jitterStatus,
-                recommended: isServerRecommended(uiData.jitterStatus, uiData.dlStatus)
-            };
-            
-            groupTestResults.push(result);
-            
-            // Находим индекс текущего сервера в массиве и переходим к следующему
-            var currentIndex = serversToTest.indexOf(currentServer);
-            if(currentIndex < serversToTest.length - 1) {
-                currentServer = serversToTest[currentIndex + 1];
-                document.getElementById("currentTest").innerHTML = "Тестируется: " + 
-                    SPEEDTEST_SERVERS[currentServer].name + 
-                    " (" + (currentIndex + 2) + " из " + serversToTest.length + ")";
-                
-                s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
-                
-                // Запускаем тест для следующего сервера
-                s.start();
-            } else {
-                // Все серверы протестированы
-                I("startStopBtn").className="";
-                I("server").disabled=false;
-                
-                // Находим лучший рекомендуемый сервер
-                var bestServer = findBestServer(groupTestResults);
-                if(bestServer) {
-                    document.getElementById("currentTest").innerHTML = 
-                        '<div class="recommendationBox recommended"><span class="recommendIcon">✅</span> ' +
-                        'Рекомендован: <strong>' + bestServer.name + '</strong></div>';
-                } else {
-                    document.getElementById("currentTest").innerHTML = 
-                        '<div class="recommendationBox notRecommended"><span class="recommendIcon">⚠️</span> ' +
-                        'Нет подходящих серверов</div>';
-                }
-            }
+
+    s.onend = function (aborted) {
+
+        clearTimeout(testTimeout);
+		if (stopAllTests) {
+
+			appendResult(
+				SPEEDTEST_SERVERS[currentServer].name,
+				SPEEDTEST_SERVERS[currentServer].serveropen,
+				"⛔ STOP",
+				"⛔ STOP",
+				"⛔ STOP"
+			);
+
+			I("startStopBtn").className = "";
+			I("server").disabled = false;
+			document.getElementById("currentTest").innerHTML = "⛔ Тест прерван";
+			return;
+		}
+		
+        if (!uiData) uiData = {
+            dlStatus: 0,
+            pingStatus: 999,
+            jitterStatus: 999
+        };
+
+        appendResult(
+            SPEEDTEST_SERVERS[currentServer].name,
+            SPEEDTEST_SERVERS[currentServer].serveropen,
+            uiData.dlStatus,
+            uiData.pingStatus,
+            uiData.jitterStatus
+        );
+
+        groupTestResults.push({
+            index: currentServer,
+            name: SPEEDTEST_SERVERS[currentServer].name,
+            serveropen: SPEEDTEST_SERVERS[currentServer].serveropen,
+            dl: uiData.dlStatus,
+            ping: uiData.pingStatus,
+            jitter: uiData.jitterStatus,
+            recommended: isServerRecommended(uiData.jitterStatus, uiData.dlStatus)
+        });
+
+        var currentIndex = serversToTest.indexOf(currentServer);
+
+        // ▶️ ПЕРЕХОД К СЛЕДУЮЩЕМУ
+        if (currentIndex < serversToTest.length - 1) {
+
+            currentServer = serversToTest[currentIndex + 1];
+
+            document.getElementById("currentTest").innerHTML =
+                "Тестируется: " + SPEEDTEST_SERVERS[currentServer].name +
+                " (" + (currentIndex + 2) + " из " + serversToTest.length + ")";
+
+            s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
+            s.start();
+
         } else {
-            // Тест был прерван
-            I("startStopBtn").className="";
-            I("server").disabled=false;
+            // 🏁 ВСЕ СЕРВЕРА ПРОЙДЕНЫ
+            I("startStopBtn").className = "";
+            I("server").disabled = false;
+
+            var bestServer = findBestServer(groupTestResults);
+
+            if (bestServer) {
+                document.getElementById("currentTest").innerHTML =
+                    '<div class="recommendationBox recommended">👍 Рекомендован: <strong>' +
+                    bestServer.name + '</strong></div>';
+            } else {
+                document.getElementById("currentTest").innerHTML =
+                    '<div class="recommendationBox notRecommended">👎 Нет подходящих серверов</div>';
+            }
         }
     };
-    
+
     s.start();
 }
 
 // Функция для добавления результата в таблицу
-function appendResult(server, dl, ping, jitter) {
+function appendResult(server, serveropen, dl, ping, jitter) {
     // Определяем иконку статуса на основе джиттера и скорости загрузки
-    let statusIcon;
-    if (jitter < 3 && dl > 100) {
-        statusIcon = '👍🏻👍🏻👍🏻';
-    } else if (jitter < 5 && dl > 50) {
-        statusIcon = '👍🏻👍🏻';
-    } else if (jitter < 50 && dl > 38) {
-        statusIcon = '👍🏻';
-    } else {
-        statusIcon = '❌';
-    }
+    let statusIcon = getServerRating(jitter, dl);
     
+    // Определяем символ статуса на основе значения serveropen
+    let isopen = serveropen === "YES" ? "Online 🌎" : "OFF ❌";
     
     // Добавляем строку с результатом в таблицу
     document.getElementById("multi_results").getElementsByTagName('tbody')[0].innerHTML +=
         '<tr><td>' +
         server + "</td><td>" +
-		ping + "</td><td>" +
+        isopen + "</td><td>" +
         jitter + "</td><td>" +
         dl + "</td><td>" +
         statusIcon + "</td></tr>";
@@ -463,51 +462,88 @@ function appendResult(server, dl, ping, jitter) {
 
 // Функция для определения, рекомендуется ли сервер
 function isServerRecommended(jitter, dl) {
-    return (jitter < 10 && dl > 30);
+    return getServerRating(jitter, dl) !== "💀";
+}
+
+function getServerRating(jitter, dl) {
+
+    // ❌ жёсткие стоп-условия
+    if (dl < 30 || jitter >= 15) {
+        return "💀";
+    }
+
+    // ⭐⭐⭐
+    if (dl >= 80 && jitter < 5) {
+        return "⭐⭐⭐";
+    }
+
+    // ⭐⭐
+    if (dl >= 50 && jitter < 10) {
+        return "⭐⭐";
+    }
+
+    // ⭐
+    if (dl >= 30) {
+        return "⭐";
+    }
+
+    return "💀";
 }
 
 // Функция для поиска лучшего сервера среди протестированных
+// Функция для поиска лучшего сервера среди протестированных
 function findBestServer(results) {
-    if(!results || results.length === 0) {
+    if (!results || results.length === 0) {
         return null;
     }
-    
-    // Фильтруем серверы, которые рекомендованы и не имеют признака заполнен
-    var recommendedServers = results.filter(function(server) {
-        return server.recommended;
+
+    // Оставляем только рекомендованные серверы
+    var recommendedServers = results.filter(function (server) {
+        return server.recommended === true;
     });
-    
-    if(recommendedServers.length === 0) {
-        // Если нет рекомендованных серверов с serveropen=YES, пробуем найти хотя бы любой рекомендованный
-        recommendedServers = results.filter(function(server) {
-            return server.recommended;
-        });
-        
-        if(recommendedServers.length === 0) {
-            return null; // Нет подходящих серверов
-        }
+
+    if (recommendedServers.length === 0) {
+        return null;
     }
-    
-    // Сортируем рекомендованные серверы по скорости загрузки (от высокой к низкой)
-    recommendedServers.sort(function(a, b) {
-        return b.dl - a.dl;
+
+    // ✅ СОРТИРОВКА: SMART (jitter < 3 → SPEED, иначе jitter)
+    recommendedServers.sort(function (a, b) {
+
+        var jitterA = Number(a.jitter);
+        var jitterB = Number(b.jitter);
+
+        var speedA = Number(a.dl);
+        var speedB = Number(b.dl);
+
+        // 🔥 ЕСЛИ У ОБОИХ jitter < 3 → РЕШАЕТ СКОРОСТЬ
+        if (jitterA < 3 && jitterB < 3) {
+            return speedB - speedA;
+        }
+
+        // 🔁 ИНАЧЕ → РЕШАЕТ JITTER
+        if (jitterA !== jitterB) {
+            return jitterA - jitterB;
+        }
+
+        // ⚖️ ЗАПАСНОЙ ВАРИАНТ → СКОРОСТЬ
+        return speedB - speedA;
     });
-    
-    // Возвращаем лучший сервер
+
+    // Лучший сервер
     return recommendedServers[0];
 }
-
 // Массив для хранения результатов тестов для группы серверов
 var groupTestResults = [];
 var serversToTest = [];
 var currentServer = 0;
+var stopAllTests = false;
 
 //this function reads the data sent back by the test and updates the UI
 function updateUI(forced){
 	if(!forced&&s.getState()!=3) return;
 	if(uiData==null) return;
 	var status=uiData.testState;
-	//I("ip").textContent=uiData.clientIp;
+	I("ip").textContent=uiData.clientIp;
 	I("dlText").textContent=(status==1&&uiData.dlStatus==0)?"...":format(uiData.dlStatus);
 	drawMeter(I("dlMeter"),mbpsToAmount(Number(uiData.dlStatus*(status==1?oscillate():1))),meterBk,dlColor,Number(uiData.dlProgress),progColor);
 	I("pingText").textContent=format(uiData.pingStatus);
@@ -523,15 +559,14 @@ function frame(){
 	updateUI();
 }
 frame(); //start frame loop
+
 //function to (re)initialize UI
 function initUI(){
 	drawMeter(I("dlMeter"),0,meterBk,dlColor,0);
-	drawMeter(I("ulMeter"),0,meterBk,ulColor,0);
 	I("dlText").textContent="";
-	I("ulText").textContent="";
 	I("pingText").textContent="";
 	I("jitText").textContent="";
-	//I("ip").textContent="";
+	I("ip").textContent="";
 }
 
 // Добавим стили для рекомендаций
@@ -570,23 +605,27 @@ if(!document.getElementById("recommendStyles")) {
 }
 </script>
 <style type="text/css">
-	html,body{
-		border:none; padding:0; margin:0;
-		background:#FFFFFF;
-		color:#202020;
-	}
-	body{
-		text-align:center;
-		font-family:"Roboto",sans-serif;
-	}
+html, body{
+    border:none;
+    padding:0;
+    margin:0;
+    max-width:100%;
+    overflow-x:hidden;
+
+    background:
+        radial-gradient(circle at top,#0f172a,transparent 60%),
+        radial-gradient(circle at bottom,#020617,#000);
+    color:#e5e7eb;
+
+    font-family:Inter, Roboto, system-ui, sans-serif;
+    text-align:center;
+    }
+	*, *::before, *::after{
+    box-sizing:border-box;
+   }
 	h1{
-		color:#404040;
-	}
-	#loading{
-		background-color:#FFFFFF;
-		color:#404040;
-		text-align:center;
-	}
+    color:#404040;
+    }
 	span.loadCircle{
 		display:inline-block;
 		width:2em;
@@ -771,21 +810,142 @@ if(!document.getElementById("recommendStyles")) {
 			opacity:0;
 		}
 	}
+	
+#multi_results{
+    width:100% !important;
+    max-width:100% !important;
+    table-layout:fixed;
+}
+
+#multi_results th,
+#multi_results td{
+    word-break:break-word;
+    overflow-wrap:anywhere;
+    white-space:normal;
+}
+
+canvas{
+    max-width:100%;
+}
+
 </style>
-<script src="allservers.js"
-        defer>
-        </script>
-<title>skaz.tv SpeedTest</title>
+<title>Premium IPTV speed test</title>
+<style>
+html, body{
+    background:
+        radial-gradient(circle at top,#0f172a,transparent 60%),
+        radial-gradient(circle at bottom,#020617,#000) !important;
+    color:#e5e7eb !important;
+    font-family: Inter, Roboto, system-ui, sans-serif !important;
+}
+
+/* Заголовки */
+h1, h3{
+    color:#38bdf8 !important;
+    text-shadow:0 0 12px rgba(56,189,248,.6);
+}
+	
+.footer{
+    margin-top:40px;
+    text-align:center;
+    font-size:12px;
+    opacity:.5;
+}
+
+/* Контейнер теста */
+#testWrapper{
+    background:rgba(15,23,42,.75);
+    backdrop-filter:blur(14px);
+    border-radius:22px;
+    padding:24px;
+    box-shadow:
+        0 0 50px rgba(56,189,248,.25),
+        inset 0 0 0 1px rgba(255,255,255,.06);
+}
+
+/* Кнопка старт / стоп */
+#startStopBtn{
+    border-color:#38bdf8 !important;
+    color:#38bdf8 !important;
+    border-radius:14px;
+    font-weight:600;
+    letter-spacing:.05em;
+    box-shadow:0 0 18px rgba(56,189,248,.35);
+}
+
+#startStopBtn:hover{
+    background:rgba(56,189,248,.15);
+}
+
+#startStopBtn.running{
+    background:#ef4444 !important;
+    border-color:#ef4444 !important;
+    color:#fff !important;
+    box-shadow:0 0 18px rgba(239,68,68,.6);
+}
+
+/* Select серверов */
+#server{
+    background:#020617;
+    color:#e5e7eb;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:10px;
+    padding:6px 10px;
+}
+
+/* Текущая информация */
+#currentTest{
+    margin-top:12px;
+    font-size:16px;
+}
+
+/* IP */
+#ip{
+    opacity:.6;
+    font-size:13px;
+}
+
+/* Таблица результатов */
+#multi_results{
+    background:rgba(2,6,23,.9);
+    border-radius:14px;
+    overflow:hidden;
+}
+
+#multi_results th{
+    background:rgba(56,189,248,.15);
+    color:#38bdf8;
+}
+
+#multi_results td{
+    color:#e5e7eb;
+}
+
+/* Рекомендации — под наш стиль */
+.recommended{
+    background:rgba(34,197,94,.15) !important;
+    border-color:#22c55e !important;
+    color:#22c55e !important;
+}
+
+.notRecommended{
+    background:rgba(239,68,68,.15) !important;
+    border-color:#ef4444 !important;
+    color:#ef4444 !important;
+}
+</style>
 </head>
-<body onload="initServers();setTimeout(function(){startStop()},5000);">
-<h1></h1>
+<body onload="initServers();">
+<h1 style="text-align:center; margin-bottom:20px;">
+🚀 Premium IPTV Speed Test
+</h1>
 <div id="loading" class="visible">
-	<p id="message"><span class="loadCircle"></span>Selecting a server...</p>
+	<p id="message"><span class="loadCircle"></span>Секундочку...</p>
 </div>
 <div id="testWrapper" class="hidden">
 	<div id="serverArea">
-                <select id="server" onchange="s.setSelectedServer(SPEEDTEST_SERVERS[this.value])"></select>
-	&nbsp;&nbsp;
+                <select id="server"></select>
+		&nbsp;&nbsp;
 	<div id="startStopBtn" onclick="startStop()"></div><br/>
 	<br>
 	<h3 id="currentTest"></h3>
@@ -813,7 +973,7 @@ if(!document.getElementById("recommendStyles")) {
 			</div>
 		</div>
 		<div id="ipArea">
-			<span id="ip">178.121.29.61</span>
+			<span id="ip"></span>
 		</div>
 		<div id="shareArea" style="display:none">
 			<h3>Share results</h3>
@@ -823,5 +983,33 @@ if(!document.getElementById("recommendStyles")) {
 		</div>
 	</div>
 </div>
+	<!--
+	<footer style="margin-top:40px; text-align:center;">
+  <a href="https://evgeshkawww.github.io/iptv/IPTV/speed-test.html" style="color:#3b82f6; font-weight:600; text-decoration:none; background:rgba(255,255,255,0.03); padding:10px 14px; border-radius:8px; display:inline-block; border:1px solid rgba(255,255,255,0.06);">
+    Новый Speedtest➤
+  </a>
+</footer>
+	-->
+<div class="footer">© E-IPTV</div>	
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
