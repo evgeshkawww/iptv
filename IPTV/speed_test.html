@@ -243,10 +243,10 @@ function prepareResultTable() {
         document.head.appendChild(styleSheet);
     }
     
-    // Очищаем и инициализируем таблицу
+    // Очищаем и инициализируем таблицу - изменены заголовки
     document.getElementById("multi_results").getElementsByTagName('tbody')[0].innerHTML = '<tr>' +
         '<th>Сервер</th>' +
-        '<th>Статус</th>' +
+        '<th title="Пинг, мс">Ping</th>' +  // Изменено с "Статус" на "Ping"
         '<th title="Джиттер, мс">Jit</th>' +
         '<th title="Скорость, Мбит/с">DL</th>' +
         '<th>Оценка</th>' +
@@ -520,14 +520,19 @@ function appendResult(server, serveropen, dl, ping, jitter) {
     // Определяем иконку статуса на основе джиттера и скорости загрузки
     let statusIcon = getServerRating(jitter, dl);
     
-    // Определяем символ статуса на основе значения serveropen
-    let isopen = serveropen === "YES" ? "Online 🌎" : "OFF ❌";
+    // Вместо статуса Online/OFF показываем ping
+    let pingDisplay = ping;
+    if (ping === "Таймаут" || ping === "⛔ STOP") {
+        pingDisplay = ping; // Оставляем как есть
+    } else if (typeof ping === 'number') {
+        pingDisplay = format(ping) + " ms"; // Форматируем ping
+    }
     
     // Добавляем строку с результатом в таблицу
     document.getElementById("multi_results").getElementsByTagName('tbody')[0].innerHTML +=
         '<tr><td>' +
         server + "</td><td>" +
-        isopen + "</td><td>" +
+        pingDisplay + "</td><td>" +  // Здесь теперь ping вместо статуса
         jitter + "</td><td>" +
         dl + "</td><td>" +
         statusIcon + "</td></tr>";
