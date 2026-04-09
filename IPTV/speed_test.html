@@ -353,46 +353,82 @@ function startMultiTest() {
     }
 
     var testTimeout = null;
+    var timeoutTriggered = false; // Флаг для отслеживания таймаута
 
-    // ⏱ ТАЙМ-АУТ 15 СЕКУНД
-testTimeout = setTimeout(function () {
-    console.warn("Timeout >20s, skip server:", SPEEDTEST_SERVERS[currentServer].name);
-    
-    // Сохраняем результат как "Таймаут"
-    appendResult(
-        SPEEDTEST_SERVERS[currentServer].name,
-        SPEEDTEST_SERVERS[currentServer].serveropen,
-        "Таймаут",
-        "Таймаут",
-        "Таймаут"
-    );
-    
-    s.abort(); // Прерываем тест
-}, 20000);
+    // ⏱ ТАЙМ-АУТ 20 СЕКУНД
+    testTimeout = setTimeout(function () {
+        console.warn("Timeout >20s, skip server:", SPEEDTEST_SERVERS[currentServer].name);
+        
+        timeoutTriggered = true; // Устанавливаем флаг
+        
+        // Сохраняем результат как "Таймаут"
+        appendResult(
+            SPEEDTEST_SERVERS[currentServer].name,
+            SPEEDTEST_SERVERS[currentServer].serveropen,
+            "Таймаут",
+            "Таймаут",
+            "Таймаут"
+        );
+        
+        s.abort(); // Прерываем тест
+    }, 20000);
 
     s.onupdate = function (data) {
         uiData = data;
     };
 
     s.onend = function (aborted) {
-
         clearTimeout(testTimeout);
-		if (stopAllTests) {
+        
+        // Если сработал таймаут - не добавляем результат повторно
+        if (timeoutTriggered) {
+            console.log("Таймаут уже обработан, пропускаем повторное добавление");
+            
+            // Переходим к следующему серверу
+            var currentIndex = serversToTest.indexOf(currentServer);
+            if (currentIndex < serversToTest.length - 1) {
+                currentServer = serversToTest[currentIndex + 1];
+                document.getElementById("currentTest").innerHTML =
+                    "Тестируется: " + SPEEDTEST_SERVERS[currentServer].name +
+                    " (" + (currentIndex + 2) + " из " + serversToTest.length + ")";
+                s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
+                
+                // Запускаем тест для следующего сервера
+                setTimeout(function() {
+                    startMultiTest();
+                }, 500);
+            } else {
+                // Все сервера пройдены
+                I("startStopBtn").className = "";
+                I("server").disabled = false;
+                var bestServer = findBestServer(groupTestResults);
+                if (bestServer) {
+                    document.getElementById("currentTest").innerHTML =
+                        '<div class="recommendationBox recommended">👍 Рекомендован: <strong>' +
+                        bestServer.name + '</strong></div>';
+                } else {
+                    document.getElementById("currentTest").innerHTML =
+                        '<div class="recommendationBox notRecommended">👎 Нет подходящих серверов</div>';
+                }
+            }
+            return; // Выходим, не добавляем результат повторно
+        }
+        
+        if (stopAllTests) {
+            appendResult(
+                SPEEDTEST_SERVERS[currentServer].name,
+                SPEEDTEST_SERVERS[currentServer].serveropen,
+                "⛔ STOP",
+                "⛔ STOP",
+                "⛔ STOP"
+            );
 
-			appendResult(
-				SPEEDTEST_SERVERS[currentServer].name,
-				SPEEDTEST_SERVERS[currentServer].serveropen,
-				"⛔ STOP",
-				"⛔ STOP",
-				"⛔ STOP"
-			);
-
-			I("startStopBtn").className = "";
-			I("server").disabled = false;
-			document.getElementById("currentTest").innerHTML = "⛔ Тест прерван";
-			return;
-		}
-		
+            I("startStopBtn").className = "";
+            I("server").disabled = false;
+            document.getElementById("currentTest").innerHTML = "⛔ Тест прерван";
+            return;
+        }
+        
         if (!uiData) uiData = {
             dlStatus: 0,
             pingStatus: 999,
@@ -421,16 +457,12 @@ testTimeout = setTimeout(function () {
 
         // ▶️ ПЕРЕХОД К СЛЕДУЮЩЕМУ
         if (currentIndex < serversToTest.length - 1) {
-
             currentServer = serversToTest[currentIndex + 1];
-
             document.getElementById("currentTest").innerHTML =
                 "Тестируется: " + SPEEDTEST_SERVERS[currentServer].name +
                 " (" + (currentIndex + 2) + " из " + serversToTest.length + ")";
-
             s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
             s.start();
-
         } else {
             // 🏁 ВСЕ СЕРВЕРА ПРОЙДЕНЫ
             I("startStopBtn").className = "";
