@@ -279,7 +279,7 @@ function runSingleServerTest() {
             );
             
             // Проверяем, рекомендован ли сервер
-            var recommended = isServerRecommended(uiData.jitterStatus, uiData.dlStatus);
+            var recommended = isServerRecommended(uiData.jitterStatus, uiData.dlStatus, uiData.pingStatus);
             if(recommended) {
                 document.getElementById("currentTest").innerHTML = 
                     '<div class="recommendationBox recommended"><span class="recommendIcon">👍</span> ' +
@@ -465,15 +465,15 @@ function startMultiTest() {
                 jitterValue
             );
 
-            groupTestResults.push({
-                index: currentServer,
-                name: SPEEDTEST_SERVERS[currentServer].name,
-                serveropen: SPEEDTEST_SERVERS[currentServer].serveropen,
-                dl: dlValue,
-                ping: pingValue,
-                jitter: jitterValue,
-                recommended: isServerRecommended(jitterValue, dlValue)
-            });
+			groupTestResults.push({
+				index: currentServer,
+				name: SPEEDTEST_SERVERS[currentServer].name,
+				serveropen: SPEEDTEST_SERVERS[currentServer].serveropen,
+				dl: dlValue,
+				ping: pingValue,
+				jitter: jitterValue,
+				recommended: isServerRecommended(jitterValue, dlValue, pingValue)  // ДОБАВЛЕН pingValue
+			});
         }
 
         // Переходим к следующему серверу
@@ -518,7 +518,7 @@ function startMultiTest() {
 // Функция для добавления результата в таблицу
 function appendResult(server, serveropen, dl, ping, jitter) {
     // Определяем иконку статуса на основе джиттера и скорости загрузки
-    let statusIcon = getServerRating(jitter, dl);
+    let statusIcon = getServerRating(jitter, dl, ping);
     
     // Вместо статуса Online/OFF показываем ping
     let pingDisplay = ping;
@@ -539,44 +539,91 @@ function appendResult(server, serveropen, dl, ping, jitter) {
 }
 
 // Функция для определения, рекомендуется ли сервер
-function isServerRecommended(jitter, dl) {
-    return getServerRating(jitter, dl) !== "💀";
+function isServerRecommended(jitter, dl, ping) {
+    // Проверяем, что это не специальные значения
+    if (jitter === "Таймаут" || dl === "Таймаут" || ping === "Таймаут") {
+        return false;
+    }
+    if (jitter === "⛔ STOP" || dl === "⛔ STOP" || ping === "⛔ STOP") {
+        return false;
+    }
+    
+    // Преобразуем в числа
+    var jitterNum = Number(jitter);
+    var dlNum = Number(dl);
+    var pingNum = Number(ping);
+    
+    // Новые критерии рекомендации
+    if (dlNum > 100 && jitterNum < 4 && pingNum > 0 && pingNum < 999) {
+        return true;
+    }
+    
+    // Старые критерии (для обратной совместимости)
+    return getServerRating(jitterNum, dlNum) !== "💀";
 }
-
-function getServerRating(jitter, dl) {
-
+function getServerRating(jitter, dl, ping) {
+    // Преобразуем в числа, если переданы как строки
+    var jitterNum = Number(jitter);
+    var dlNum = Number(dl);
+    var pingNum = Number(ping);
+    
     // ❌ жёсткие стоп-условия
-    if (dl < 30 || jitter >= 15) {
+    if (dlNum < 30 || jitterNum >= 15) {
         return "💀";
     }
-
-    // ⭐⭐⭐
-    if (dl >= 80 && jitter < 5) {
+    
+    // 🏆 ОТЛИЧНО: джиттер < 4, скорость > 100, пинг < 50
+    if (dlNum >= 100 && jitterNum < 4 && pingNum < 50) {
+        return "🏆🏆🏆";
+    }
+    
+    // ⭐⭐⭐ ОЧЕНЬ ХОРОШО: джиттер < 4, скорость > 100
+    if (dlNum >= 100 && jitterNum < 4) {
         return "⭐⭐⭐";
     }
-
-    // ⭐⭐
-    if (dl >= 50 && jitter < 10) {
+    
+    // ⭐⭐⭐ ХОРОШО: стандартные критерии
+    if (dlNum >= 80 && jitterNum < 5) {
+        return "⭐⭐⭐";
+    }
+    
+    // ⭐⭐ НОРМАЛЬНО
+    if (dlNum >= 50 && jitterNum < 10) {
         return "⭐⭐";
     }
-
-    // ⭐
-    if (dl >= 30) {
+    
+    // ⭐ ПРИЕМЛЕМО
+    if (dlNum >= 30) {
         return "⭐";
     }
-
+    
     return "💀";
 }
 
-// Функция для поиска лучшего сервера среди протестированных
 // Функция для поиска лучшего сервера среди протестированных
 function findBestServer(results) {
     if (!results || results.length === 0) {
         return null;
     }
 
-    // Оставляем только рекомендованные серверы
+    // Оставляем только рекомендованные серверы (с новыми критериями)
     var recommendedServers = results.filter(function (server) {
+        // Проверяем, что это не таймаут и не прерванный тест
+        if (server.dl === "Таймаут" || server.dl === "⛔ STOP") {
+            return false;
+        }
+        
+        var dl = Number(server.dl);
+        var jitter = Number(server.jitter);
+        var ping = Number(server.ping);
+        
+        // Новые критерии рекомендации:
+        // Джиттер < 4, скорость > 100, пинг валидный
+        if (dl > 100 && jitter < 4 && ping > 0 && ping < 999) {
+            return true;
+        }
+        
+        // Также оставляем серверы, которые были рекомендованы по старым критериям
         return server.recommended === true;
     });
 
@@ -584,26 +631,26 @@ function findBestServer(results) {
         return null;
     }
 
-    // ✅ СОРТИРОВКА: SMART (jitter < 3 → SPEED, иначе jitter)
+    // ✅ СОРТИРОВКА: Приоритет - минимальный пинг
     recommendedServers.sort(function (a, b) {
-
+        var pingA = Number(a.ping);
+        var pingB = Number(b.ping);
         var jitterA = Number(a.jitter);
         var jitterB = Number(b.jitter);
-
         var speedA = Number(a.dl);
         var speedB = Number(b.dl);
-
-        // 🔥 ЕСЛИ У ОБОИХ jitter < 3 → РЕШАЕТ СКОРОСТЬ
-        if (jitterA < 3 && jitterB < 3) {
-            return speedB - speedA;
+        
+        // 🔥 ГЛАВНЫЙ КРИТЕРИЙ - ПИНГ (чем меньше, тем лучше)
+        if (pingA !== pingB) {
+            return pingA - pingB;
         }
-
-        // 🔁 ИНАЧЕ → РЕШАЕТ JITTER
+        
+        // Если пинг одинаковый - сравниваем джиттер
         if (jitterA !== jitterB) {
             return jitterA - jitterB;
         }
-
-        // ⚖️ ЗАПАСНОЙ ВАРИАНТ → СКОРОСТЬ
+        
+        // Если всё одинаково - выбираем по скорости
         return speedB - speedA;
     });
 
