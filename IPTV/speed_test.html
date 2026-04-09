@@ -355,10 +355,20 @@ function startMultiTest() {
     var testTimeout = null;
 
     // ⏱ ТАЙМ-АУТ 15 СЕКУНД
-    testTimeout = setTimeout(function () {
-        console.warn("Timeout >15s, skip server:", SPEEDTEST_SERVERS[currentServer].name);
-        s.abort();
-    }, 20000);
+testTimeout = setTimeout(function () {
+    console.warn("Timeout >20s, skip server:", SPEEDTEST_SERVERS[currentServer].name);
+    
+    // Сохраняем результат как "Таймаут"
+    appendResult(
+        SPEEDTEST_SERVERS[currentServer].name,
+        SPEEDTEST_SERVERS[currentServer].serveropen,
+        "Таймаут",
+        "Таймаут",
+        "Таймаут"
+    );
+    
+    s.abort(); // Прерываем тест
+}, 20000);
 
     s.onupdate = function (data) {
         uiData = data;
