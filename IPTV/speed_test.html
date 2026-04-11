@@ -222,7 +222,7 @@ function prepareResultTable() {
     // Подготавливаем таблицу результатов
     if (!document.getElementById("multi_results")) {
         document.getElementById("test").innerHTML +=
-            '<table id="multi_results"><tbody></tbody></table>';
+            '<table id="multi_results"><tbody></tbody></tr>';
         
         // Добавляем стили для таблицы, если они еще не добавлены
         var styles = `
@@ -246,7 +246,7 @@ function prepareResultTable() {
     // Очищаем и инициализируем таблицу - изменены заголовки
     document.getElementById("multi_results").getElementsByTagName('tbody')[0].innerHTML = '<tr>' +
         '<th>Сервер</th>' +
-        '<th title="Пинг, мс">Ping</th>' +  // Изменено с "Статус" на "Ping"
+        '<th title="Пинг, мс">Ping</th>' +
         '<th title="Джиттер, мс">Jit</th>' +
         '<th title="Скорость, Мбит/с">DL</th>' +
         '<th>Оценка</th>' +
@@ -279,7 +279,9 @@ function runSingleServerTest() {
             );
             
             // Проверяем, рекомендован ли сервер
-            var recommended = isServerRecommended(uiData.jitterStatus, uiData.dlStatus, uiData.pingStatus);
+            var rating = getServerRating(uiData.jitterStatus, uiData.dlStatus, uiData.pingStatus);
+            var recommended = (rating === "💎" || rating === "⭐⭐⭐");
+            
             if(recommended) {
                 document.getElementById("currentTest").innerHTML = 
                     '<div class="recommendationBox recommended"><span class="recommendIcon">👍</span> ' +
@@ -380,7 +382,7 @@ function startMultiTest() {
                 dl: "Таймаут",
                 ping: "Таймаут",
                 jitter: "Таймаут",
-                recommended: false
+                rating: "💀"
             });
             
             s.abort(); // Прерываем тест
@@ -388,13 +390,12 @@ function startMultiTest() {
             // Переходим к следующему серверу
             moveToNextServer();
         }
-    }, 30000); // 30 секунд вместо 20
+    }, 30000); // 30 секунд
 
     s.onupdate = function (data) {
         uiData = data;
         // Если получили данные, значит сервер отвечает
         if (data && data.dlStatus > 0) {
-            // Продлевать таймаут не будем, но отметим что сервер живой
             console.log("Получены данные от сервера:", SPEEDTEST_SERVERS[currentServer].name);
         }
     };
@@ -453,9 +454,11 @@ function startMultiTest() {
                 dl: "Таймаут",
                 ping: "Таймаут",
                 jitter: "Таймаут",
-                recommended: false
+                rating: "💀"
             });
         } else {
+            var rating = getServerRating(jitterValue, dlValue, pingValue);
+            
             // Нормальное завершение
             appendResult(
                 SPEEDTEST_SERVERS[currentServer].name,
@@ -465,15 +468,15 @@ function startMultiTest() {
                 jitterValue
             );
 
-			groupTestResults.push({
-				index: currentServer,
-				name: SPEEDTEST_SERVERS[currentServer].name,
-				serveropen: SPEEDTEST_SERVERS[currentServer].serveropen,
-				dl: dlValue,
-				ping: pingValue,
-				jitter: jitterValue,
-				recommended: isServerRecommended(jitterValue, dlValue, pingValue)  // ДОБАВЛЕН pingValue
-			});
+            groupTestResults.push({
+                index: currentServer,
+                name: SPEEDTEST_SERVERS[currentServer].name,
+                serveropen: SPEEDTEST_SERVERS[currentServer].serveropen,
+                dl: dlValue,
+                ping: pingValue,
+                jitter: jitterValue,
+                rating: rating
+            });
         }
 
         // Переходим к следующему серверу
@@ -503,9 +506,17 @@ function startMultiTest() {
             var bestServer = findBestServer(groupTestResults);
 
             if (bestServer) {
+                var ratingSymbol = bestServer.rating || getServerRating(bestServer.jitter, bestServer.dl, bestServer.ping);
+                var ratingText = "";
+                if (ratingSymbol === "💎") ratingText = "💎 АЛМАЗНЫЙ СЕРВЕР 💎";
+                else if (ratingSymbol === "⭐⭐⭐") ratingText = "⭐⭐⭐ ОТЛИЧНЫЙ СЕРВЕР";
+                else if (ratingSymbol === "⭐⭐") ratingText = "⭐⭐ ХОРОШИЙ СЕРВЕР";
+                else if (ratingSymbol === "⭐") ratingText = "⭐ ПРИЕМЛЕМЫЙ СЕРВЕР";
+                else ratingText = "РЕКОМЕНДОВАН";
+                
                 document.getElementById("currentTest").innerHTML =
                     '<div class="recommendationBox recommended">👍 Рекомендован: <strong>' +
-                    bestServer.name + '</strong></div>';
+                    bestServer.name + '</strong> ' + ratingText + '</div>';
             } else {
                 document.getElementById("currentTest").innerHTML =
                     '<div class="recommendationBox notRecommended">👎 Нет подходящих серверов</div>';
@@ -515,6 +526,7 @@ function startMultiTest() {
 
     s.start();
 }
+
 // Функция для добавления результата в таблицу
 function appendResult(server, serveropen, dl, ping, jitter) {
     // Определяем иконку статуса на основе джиттера и скорости загрузки
@@ -528,56 +540,52 @@ function appendResult(server, serveropen, dl, ping, jitter) {
         pingDisplay = format(ping) + " ms"; // Форматируем ping
     }
     
+    let dlDisplay = dl;
+    if (typeof dl === 'number') {
+        dlDisplay = format(dl) + " Mbps";
+    }
+    
+    let jitterDisplay = jitter;
+    if (typeof jitter === 'number') {
+        jitterDisplay = format(jitter) + " ms";
+    }
+    
     // Добавляем строку с результатом в таблицу
     document.getElementById("multi_results").getElementsByTagName('tbody')[0].innerHTML +=
         '<tr><td>' +
-        server + "</td><td>" +
-        pingDisplay + "</td><td>" +  // Здесь теперь ping вместо статуса
-        jitter + "</td><td>" +
-        dl + "</td><td>" +
-        statusIcon + "</td></tr>";
+        server + '</td><td>' +
+        pingDisplay + '</td><td>' +
+        jitterDisplay + '</td><td>' +
+        dlDisplay + '</td><td>' +
+        statusIcon + '</td></tr>';
 }
 
-// Функция для определения, рекомендуется ли сервер
-function isServerRecommended(jitter, dl, ping) {
-    // Проверяем, что это не специальные значения
-    if (jitter === "Таймаут" || dl === "Таймаут" || ping === "Таймаут") {
-        return false;
-    }
-    if (jitter === "⛔ STOP" || dl === "⛔ STOP" || ping === "⛔ STOP") {
-        return false;
-    }
-    
-    // Преобразуем в числа
-    var jitterNum = Number(jitter);
-    var dlNum = Number(dl);
-    var pingNum = Number(ping);
-    
-    // Новые критерии рекомендации
-    if (dlNum > 100 && jitterNum < 4 && pingNum > 0 && pingNum < 999) {
-        return true;
-    }
-    
-    // Старые критерии (для обратной совместимости)
-    return getServerRating(jitterNum, dlNum) !== "💀";
-}
+// Функция определения рейтинга сервера
 function getServerRating(jitter, dl, ping) {
     // Преобразуем в числа, если переданы как строки
     var jitterNum = Number(jitter);
     var dlNum = Number(dl);
     var pingNum = Number(ping);
     
+    // Проверка на невалидные данные
+    if (isNaN(jitterNum) || isNaN(dlNum) || isNaN(pingNum)) {
+        return "💀";
+    }
+    if (dlNum <= 0 || pingNum <= 0 || pingNum >= 999) {
+        return "💀";
+    }
+    
     // ❌ жёсткие стоп-условия
     if (dlNum < 30 || jitterNum >= 15) {
         return "💀";
     }
     
-    // 🏆 ОТЛИЧНО: джиттер < 4, скорость > 100, пинг < 50
+    // 🏆 АЛМАЗ: джиттер < 4, скорость > 100, пинг < 50
     if (dlNum >= 100 && jitterNum < 4 && pingNum < 50) {
         return "💎";
     }
     
-    // ⭐⭐⭐ ОЧЕНЬ ХОРОШО: джиттер < 4, скорость > 100
+    // ⭐⭐⭐ ОТЛИЧНО: джиттер < 4, скорость > 100
     if (dlNum >= 100 && jitterNum < 4) {
         return "⭐⭐⭐";
     }
@@ -605,58 +613,80 @@ function findBestServer(results) {
     if (!results || results.length === 0) {
         return null;
     }
-
-    // Оставляем только рекомендованные серверы (с новыми критериями)
-    var recommendedServers = results.filter(function (server) {
-        // Проверяем, что это не таймаут и не прерванный тест
-        if (server.dl === "Таймаут" || server.dl === "⛔ STOP") {
-            return false;
-        }
-        
-        var dl = Number(server.dl);
-        var jitter = Number(server.jitter);
-        var ping = Number(server.ping);
-        
-        // Новые критерии рекомендации:
-        // Джиттер < 4, скорость > 100, пинг валидный
-        if (dl > 100 && jitter < 4 && ping > 0 && ping < 999) {
-            return true;
-        }
-        
-        // Также оставляем серверы, которые были рекомендованы по старым критериям
-        return server.recommended === true;
+    
+    // Фильтруем только серверы с валидными данными (не таймаут)
+    var validServers = results.filter(function(server) {
+        if (server.dl === "Таймаут" || server.dl === "⛔ STOP") return false;
+        if (typeof server.dl !== 'number') return false;
+        return server.dl > 0 && server.ping > 0 && server.ping < 999;
     });
-
-    if (recommendedServers.length === 0) {
-        return null;
+    
+    if (validServers.length === 0) return null;
+    
+    // =====================================================
+    // 🔥 ГЛАВНОЕ ПРАВИЛО: ЕСЛИ ЕСТЬ ХОТЯ БЫ ОДИН 💎 - ВЫБИРАЕМ ТОЛЬКО ИЗ НИХ
+    // =====================================================
+    var diamondServers = validServers.filter(function(server) {
+        var rating = server.rating || getServerRating(server.jitter, server.dl, server.ping);
+        return rating === "💎";
+    });
+    
+    var candidateServers;
+    if (diamondServers.length > 0) {
+        // Есть алмазные серверы - выбираем лучший среди них
+        candidateServers = diamondServers;
+        console.log("Найдены 💎 серверы, выбираем лучший из них");
+    } else {
+        // Нет алмазных - берем все валидные серверы
+        candidateServers = validServers;
+        console.log("Нет 💎 серверов, выбираем лучший из доступных");
     }
-
-    // ✅ СОРТИРОВКА: Приоритет - минимальный пинг
-    recommendedServers.sort(function (a, b) {
+    
+    // ✅ СОРТИРОВКА: Приоритеты
+    candidateServers.sort(function(a, b) {
+        var ratingA = a.rating || getServerRating(a.jitter, a.dl, a.ping);
+        var ratingB = b.rating || getServerRating(b.jitter, b.dl, b.ping);
+        
+        // Приоритет по рейтингу (цифровое значение для сравнения)
+        function ratingValue(rating) {
+            if (rating === "💎") return 5;
+            if (rating === "⭐⭐⭐") return 4;
+            if (rating === "⭐⭐") return 3;
+            if (rating === "⭐") return 2;
+            return 1;
+        }
+        
+        var ratingValA = ratingValue(ratingA);
+        var ratingValB = ratingValue(ratingB);
+        
+        if (ratingValA !== ratingValB) {
+            return ratingValB - ratingValA; // Сначала выше рейтинг
+        }
+        
+        // Если рейтинг одинаковый - сравниваем по пингу (чем меньше, тем лучше)
         var pingA = Number(a.ping);
         var pingB = Number(b.ping);
-        var jitterA = Number(a.jitter);
-        var jitterB = Number(b.jitter);
-        var speedA = Number(a.dl);
-        var speedB = Number(b.dl);
-        
-        // 🔥 ГЛАВНЫЙ КРИТЕРИЙ - ПИНГ (чем меньше, тем лучше)
         if (pingA !== pingB) {
             return pingA - pingB;
         }
         
-        // Если пинг одинаковый - сравниваем джиттер
+        // Если пинг одинаковый - сравниваем по джиттеру
+        var jitterA = Number(a.jitter);
+        var jitterB = Number(b.jitter);
         if (jitterA !== jitterB) {
             return jitterA - jitterB;
         }
         
-        // Если всё одинаково - выбираем по скорости
+        // Если всё одинаково - выбираем по скорости (выше лучше)
+        var speedA = Number(a.dl);
+        var speedB = Number(b.dl);
         return speedB - speedA;
     });
-
-    // Лучший сервер
-    return recommendedServers[0];
+    
+    // Возвращаем лучший сервер
+    return candidateServers[0];
 }
+
 // Массив для хранения результатов тестов для группы серверов
 var groupTestResults = [];
 var serversToTest = [];
@@ -1108,33 +1138,6 @@ h1, h3{
 		</div>
 	</div>
 </div>
-	<!--
-	<footer style="margin-top:40px; text-align:center;">
-  <a href="https://evgeshkawww.github.io/iptv/IPTV/speed-test.html" style="color:#3b82f6; font-weight:600; text-decoration:none; background:rgba(255,255,255,0.03); padding:10px 14px; border-radius:8px; display:inline-block; border:1px solid rgba(255,255,255,0.06);">
-    Новый Speedtest➤
-  </a>
-</footer>
-	-->
 <div class="footer">© E-IPTV</div>	
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
