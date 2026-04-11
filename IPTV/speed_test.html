@@ -525,7 +525,7 @@ function startMultiTest() {
 			} else {
 
 				document.getElementById("currentTest").innerHTML =
-					'<div class="recommendationBox notRecommended">☠︎ Нет подходящих серверов</div>';
+					'<div class="recommendationBox notRecommended">✖︎ Нет подходящих серверов</div>';
 			}
         }
     }
@@ -576,7 +576,7 @@ function isServerRecommended(jitter, dl, ping) {
     }
     
     // Старые критерии (для обратной совместимости)
-    return getServerRating(jitterNum, dlNum) !== "☠︎";
+    return getServerRating(jitterNum, dlNum) !== "✖︎";
 }
 function getServerRating(jitter, dl, ping) {
     // Преобразуем в числа, если переданы как строки
@@ -586,7 +586,7 @@ function getServerRating(jitter, dl, ping) {
     
     // ❌ жёсткие стоп-условия
     if (dlNum < 30 || jitterNum >= 15) {
-        return "☠︎";
+        return "✖︎";
     }
     
     // 🏆 ОТЛИЧНО: джиттер < 4, скорость > 100, пинг < 50
@@ -595,26 +595,26 @@ function getServerRating(jitter, dl, ping) {
     }
     
     // ✔︎✔︎✔︎ ОЧЕНЬ ХОРОШО: джиттер < 4, скорость > 100
-    if (dlNum >= 100 && jitterNum < 4) {
+    if (dlNum >= 100 && jitterNum < 4 && pingNum > 50) {
         return "✔︎✔︎✔︎";
     }
     
     // ✔︎✔︎✔︎ ХОРОШО: стандартные критерии
-    if (dlNum >= 80 && jitterNum < 5) {
+    if (dlNum >= 80 && jitterNum < 5 && pingNum > 50) {
         return "✔︎✔︎✔︎";
     }
     
     // ✔︎✔︎ НОРМАЛЬНО
-    if (dlNum >= 50 && jitterNum < 10) {
+    if (dlNum >= 50 && jitterNum < 10 && pingNum < 100) {
         return "✔︎✔︎";
     }
     
     // ✔︎ ПРИЕМЛЕМО
-    if (dlNum >= 30) {
+    if (dlNum >= 30 && jitterNum < 12) {
         return "✔︎";
     }
     
-    return "☠︎";
+    return "✖︎";
 }
 
 // Функция для поиска лучшего сервера среди протестированных
