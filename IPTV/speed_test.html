@@ -502,14 +502,31 @@ function startMultiTest() {
 
             var bestServer = findBestServer(groupTestResults);
 
-            if (bestServer) {
-                document.getElementById("currentTest").innerHTML =
-                    '<div class="recommendationBox recommended">👍 Рекомендован: <strong>' +
-                    bestServer.name + '</strong></div>';
-            } else {
-                document.getElementById("currentTest").innerHTML =
-                    '<div class="recommendationBox notRecommended">👎 Нет подходящих серверов</div>';
-            }
+			if (bestServer) {
+
+				var explanation = "";
+
+				if (bestServer.rating === "💎") {
+					explanation = "Минимальный джиттер (" + bestServer.jitter + " ms), ping " + bestServer.ping + " ms, скорость " + bestServer.dl + " Mbps";
+				} else if (bestServer.rating === "✔︎✔︎✔︎") {
+					explanation = "Хороший баланс: джиттер " + bestServer.jitter + " ms, ping " + bestServer.ping + " ms";
+				} else if (bestServer.rating === "✔︎✔︎") {
+					explanation = "Среднее качество: возможны задержки";
+				} else if (bestServer.rating === "✔︎") {
+					explanation = "Минимально пригодный сервер";
+				}
+
+				document.getElementById("currentTest").innerHTML =
+					'<div class="recommendationBox recommended">😊 Рекомендован: <strong>' +
+					bestServer.name + '</strong><br><small>' +
+					explanation +
+					'</small></div>';
+
+			} else {
+
+				document.getElementById("currentTest").innerHTML =
+					'<div class="recommendationBox notRecommended">🤔 Нет подходящих серверов</div>';
+			}
         }
     }
 
@@ -559,7 +576,7 @@ function isServerRecommended(jitter, dl, ping) {
     }
     
     // Старые критерии (для обратной совместимости)
-    return getServerRating(jitterNum, dlNum) !== "💀";
+    return getServerRating(jitterNum, dlNum) !== "☠︎";
 }
 function getServerRating(jitter, dl, ping) {
     // Преобразуем в числа, если переданы как строки
@@ -569,7 +586,7 @@ function getServerRating(jitter, dl, ping) {
     
     // ❌ жёсткие стоп-условия
     if (dlNum < 30 || jitterNum >= 15) {
-        return "💀";
+        return "☠︎";
     }
     
     // 🏆 ОТЛИЧНО: джиттер < 4, скорость > 100, пинг < 50
@@ -577,27 +594,27 @@ function getServerRating(jitter, dl, ping) {
         return "💎";
     }
     
-    // ⭐⭐⭐ ОЧЕНЬ ХОРОШО: джиттер < 4, скорость > 100
+    // ✔︎✔︎✔︎ ОЧЕНЬ ХОРОШО: джиттер < 4, скорость > 100
     if (dlNum >= 100 && jitterNum < 4) {
-        return "⭐⭐⭐";
+        return "✔︎✔︎✔︎";
     }
     
-    // ⭐⭐⭐ ХОРОШО: стандартные критерии
+    // ✔︎✔︎✔︎ ХОРОШО: стандартные критерии
     if (dlNum >= 80 && jitterNum < 5) {
-        return "⭐⭐⭐";
+        return "✔︎✔︎✔︎";
     }
     
-    // ⭐⭐ НОРМАЛЬНО
+    // ✔︎✔︎ НОРМАЛЬНО
     if (dlNum >= 50 && jitterNum < 10) {
-        return "⭐⭐";
+        return "✔︎✔︎";
     }
     
-    // ⭐ ПРИЕМЛЕМО
+    // ✔︎ ПРИЕМЛЕМО
     if (dlNum >= 30) {
-        return "⭐";
+        return "✔︎";
     }
     
-    return "💀";
+    return "☠︎";
 }
 
 // Функция для поиска лучшего сервера среди протестированных
