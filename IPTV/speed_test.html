@@ -356,11 +356,11 @@ function startMultiTest() {
     var testCompleted = false; // Флаг завершения теста
     var testStarted = Date.now(); // Время начала теста
 
-    // ⏱ ТАЙМ-АУТ 30 СЕКУНД (увеличили время)
+    // ⏱ ТАЙМ-АУТ 20 СЕКУНД
     testTimeout = setTimeout(function () {
         // Проверяем, не завершился ли тест уже
         if (!testCompleted) {
-            console.warn("Timeout >30s, skip server:", SPEEDTEST_SERVERS[currentServer].name);
+            console.warn("Timeout >20s, skip server:", SPEEDTEST_SERVERS[currentServer].name);
             
             testCompleted = true; // Помечаем как завершенный
             
