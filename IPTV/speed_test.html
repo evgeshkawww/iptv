@@ -590,22 +590,27 @@ function getServerRating(jitter, dl, ping) {
     }
     
     // 🏆 ОТЛИЧНО: джиттер < 4, скорость > 100, пинг < 50
-    if (dlNum >= 80 && jitterNum < 4 && pingNum < 50) {
+    if (dlNum >= 100 && jitterNum < 4 && pingNum < 50) {
         return "❤︎";
     }
     
     // ✔︎✔︎✔︎ ОЧЕНЬ ХОРОШО: джиттер < 4, скорость > 100
-    if (dlNum >= 80 && jitterNum > 4 && pingNum > 50) {
+    if (dlNum >= 100 && jitterNum < 4) {
+        return "✔︎✔︎✔︎";
+    }
+    
+    // ✔︎✔︎✔︎ ХОРОШО: стандартные критерии
+    if (dlNum >= 80 && jitterNum < 5) {
         return "✔︎✔︎✔︎";
     }
     
     // ✔︎✔︎ НОРМАЛЬНО
-    if (dlNum >= 50 && jitterNum < 10 && pingNum < 100) {
+    if (dlNum >= 50 && jitterNum < 10) {
         return "✔︎✔︎";
     }
     
     // ✔︎ ПРИЕМЛЕМО
-    if (dlNum >= 30 && jitterNum < 12) {
+    if (dlNum >= 30) {
         return "✔︎";
     }
     
