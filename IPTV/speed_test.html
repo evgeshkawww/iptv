@@ -506,7 +506,7 @@ function startMultiTest() {
 
 				var explanation = "";
 
-				if (bestServer.rating === "💎") {
+				if (bestServer.rating === "❤︎") {
 					explanation = "Минимальный джиттер (" + bestServer.jitter + " ms), ping " + bestServer.ping + " ms, скорость " + bestServer.dl + " Mbps";
 				} else if (bestServer.rating === "✔︎✔︎✔︎") {
 					explanation = "Хороший баланс: джиттер " + bestServer.jitter + " ms, ping " + bestServer.ping + " ms";
@@ -517,7 +517,7 @@ function startMultiTest() {
 				}
 
 				document.getElementById("currentTest").innerHTML =
-					'<div class="recommendationBox recommended">😊 Рекомендован: <strong>' +
+					'<div class="recommendationBox recommended">➡︎ Рекомендован: <strong>' +
 					bestServer.name + '</strong><br><small>' +
 					explanation +
 					'</small></div>';
@@ -525,7 +525,7 @@ function startMultiTest() {
 			} else {
 
 				document.getElementById("currentTest").innerHTML =
-					'<div class="recommendationBox notRecommended">🤔 Нет подходящих серверов</div>';
+					'<div class="recommendationBox notRecommended">☠︎ Нет подходящих серверов</div>';
 			}
         }
     }
@@ -591,7 +591,7 @@ function getServerRating(jitter, dl, ping) {
     
     // 🏆 ОТЛИЧНО: джиттер < 4, скорость > 100, пинг < 50
     if (dlNum >= 100 && jitterNum < 4 && pingNum < 50) {
-        return "💎";
+        return "❤︎";
     }
     
     // ✔︎✔︎✔︎ ОЧЕНЬ ХОРОШО: джиттер < 4, скорость > 100
