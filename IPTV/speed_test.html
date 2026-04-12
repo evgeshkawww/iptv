@@ -168,43 +168,50 @@ function format(d){
 }
 
 //UI CODE
-var uiData=null;
-function startStop(){
-	if (s.getState() == 3) {
+var uiData = null;
 
-		stopAllTests = true;
-		serversToTest = [];
-		s.abort();
+function startStop() {
+    if (s.getState() == 3) {
+        // === ТЕСТ УЖЕ ЗАПУЩЕН — ПРЕРЫВАЕМ ===
+        stopAllTests = true;
+        serversToTest = [];
+        
+        s.abort();
+        
+        // Важно: очищаем обработчики событий после abort
+        s.onupdate = null;
+        s.onend = null;
 
-		document.getElementById("currentTest").innerHTML = "⛔ Тест прерван";
-		uiData = null;
-		I("startStopBtn").className = "";
-		I("server").disabled = false;
-		initUI();
-		return;
-	}else{
-		//test is not running, begin
-		I("startStopBtn").className="running";
-		I("shareArea").style.display="none";
-		I("server").disabled=true;
+        document.getElementById("currentTest").innerHTML = "⛔ Тест прерван";
+        uiData = null;
         
-        // Подготавливаем таблицу результатов для любого типа теста
-        prepareResultTable();
+        I("startStopBtn").className = "";
+        I("server").disabled = false;
         
-        // Проверяем, выбрана ли группа серверов
-        var serverSelect = I("server");
-        var selectedValue = serverSelect.value;
-        
-        if (selectedValue === "all_available" || selectedValue === "all_with_filled") {
-            // Запускаем тестирование группы серверов с использованием существующего функционала
-            prepareMultiTest(selectedValue);
-        } else {
-            // Обычное тестирование одного сервера
-            runSingleServerTest();
-        }
-	}
+        initUI();
+        return;
+    }
+    
+    // === ЗАПУСК ТЕСТА ===
+    I("startStopBtn").className = "running";
+    I("shareArea").style.display = "none";
+    I("server").disabled = true;
+    
+    // Подготавливаем таблицу результатов
+    prepareResultTable();
+    
+    // Проверяем, что выбрано — группа или один сервер
+    var serverSelect = I("server");
+    var selectedValue = serverSelect.value;
+
+    if (selectedValue === "all_available" || selectedValue === "all_with_filled") {
+        // Групповое тестирование
+        prepareMultiTest(selectedValue);
+    } else {
+        // Одиночное тестирование выбранного сервера
+        runSingleServerTest();
+    }
 }
-
 // Функция для подготовки таблицы результатов
 function prepareResultTable() {
     // Получаем текущую дату и время
@@ -261,20 +268,31 @@ function prepareResultTable() {
 
 // Функция для запуска теста на одном сервере
 function runSingleServerTest() {
-    // Выбираем текущий сервер
-    var serverIndex = I("server").value;
-    var serverObj = SPEEDTEST_SERVERS[serverIndex];
-    document.getElementById("currentTest").innerHTML = "Тестируется: " + serverObj.name;
+    var serverIndex = parseInt(I("server").value);   // важно: parseInt
     
-    s.onupdate=function(data){
-        uiData=data;
+    if (isNaN(serverIndex)) {
+        console.error("Не выбран сервер");
+        return;
+    }
+
+    var serverObj = SPEEDTEST_SERVERS[serverIndex];
+
+    document.getElementById("currentTest").innerHTML = "Тестируется: " + serverObj.name;
+
+    // ← КРИТИЧНО: явно устанавливаем выбранный сервер перед каждым запуском
+    s.setSelectedServer(serverObj);
+
+    // Сбрасываем обработчики, чтобы не накапливались старые
+    s.onupdate = function(data){
+        uiData = data;
     };
-    s.onend=function(aborted){
-        I("startStopBtn").className="";
-        I("server").disabled=false;
+
+    s.onend = function(aborted){
+        I("startStopBtn").className = "";
+        I("server").disabled = false;
         updateUI(true);
         
-        if(!aborted){
+        if (!aborted) {
             // Добавляем результат единичного теста в таблицу
             appendResult(
                 serverObj.name,
@@ -284,9 +302,9 @@ function runSingleServerTest() {
                 uiData.jitterStatus
             );
             
-            // Проверяем, рекомендован ли сервер
+            // Проверяем рекомендацию
             var recommended = isServerRecommended(uiData.jitterStatus, uiData.dlStatus, uiData.pingStatus);
-            if(recommended) {
+            if (recommended) {
                 document.getElementById("currentTest").innerHTML = 
                     '<div class="recommendationBox recommended"><span class="recommendIcon">👍</span> ' +
                     'Рекомендован: <strong>' + serverObj.name + '</strong></div>';
@@ -296,22 +314,21 @@ function runSingleServerTest() {
                     'Не рекомендован</div>';
             }
             
-            //if testId is present, show sharing panel, otherwise do nothing
             try{
-                var testId=uiData.testId;
-                if(testId!=null){
-                    var shareURL=window.location.href.substring(0,window.location.href.lastIndexOf("/"))+"/results/?id="+testId;
-                    I("resultsImg").src=shareURL;
-                    I("resultsURL").value=shareURL;
-                    I("testId").innerHTML=testId;
-                    I("shareArea").style.display="";
+                var testId = uiData.testId;
+                if (testId != null){
+                    var shareURL = window.location.href.substring(0, window.location.href.lastIndexOf("/")) + "/results/?id=" + testId;
+                    I("resultsImg").src = shareURL;
+                    I("resultsURL").value = shareURL;
+                    I("testId").innerHTML = testId;
+                    I("shareArea").style.display = "";
                 }
             }catch(e){}
         }
     };
+
     s.start();
 }
-
 // Подготовка к тестированию группы серверов
 function prepareMultiTest(groupType) {
     stopAllTests = false;
