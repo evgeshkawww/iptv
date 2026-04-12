@@ -508,52 +508,6 @@ function startMultiTest() {
         moveToNextServer();
     };
 
-    // Функция перехода к следующему серверу + показ финальной рекомендации
-    function moveToNextServer() {
-        var currentIndex = serversToTest.indexOf(currentServer);
-
-        if (currentIndex < serversToTest.length - 1) {
-            // Переходим к следующему серверу
-            currentServer = serversToTest[currentIndex + 1];
-            document.getElementById("currentTest").innerHTML =
-                "Тестируется: " + SPEEDTEST_SERVERS[currentServer].name +
-                " (" + (currentIndex + 2) + " из " + serversToTest.length + ")";
-            s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
-            setTimeout(function() {
-                startMultiTest();
-            }, 500);
-        } else {
-            // === ВСЕ СЕРВЕРА ПРОТЕСТИРОВАНЫ ===
-            I("startStopBtn").className = "";
-            I("server").disabled = false;
-
-            var bestServer = findBestServer(groupTestResults);
-
-            if (bestServer) {
-                var explanation = "";
-                var rating = bestServer.rating || getServerRating(bestServer.jitter, bestServer.dl, bestServer.ping);
-
-                if (rating === "❤︎") {
-                    explanation = "Минимальный джиттер (" + bestServer.jitter + " ms), ping " + bestServer.ping + " ms, скорость " + bestServer.dl + " Mbps";
-                } else if (rating === "✔︎✔︎✔︎") {
-                    explanation = "Хороший баланс: джиттер " + bestServer.jitter + " ms, ping " + bestServer.ping + " ms, скорость " + bestServer.dl + " Mbps";
-                } else if (rating === "✔︎✔︎") {
-                    explanation = "Среднее качество: джиттер " + bestServer.jitter + " ms, возможны небольшие задержки";
-                } else if (rating === "✔︎") {
-                    explanation = "Минимально пригодный сервер (скорость " + bestServer.dl + " Mbps)";
-                }
-
-                document.getElementById("currentTest").innerHTML =
-                    '<div class="recommendationBox recommended">➡︎ Рекомендован: <strong>' +
-                    bestServer.name + '</strong><br><small>' +
-                    explanation + '</small></div>';
-            } else {
-                document.getElementById("currentTest").innerHTML =
-                    '<div class="recommendationBox notRecommended">✖︎ Нет подходящих серверов</div>';
-            }
-        }
-    }
-
     s.start();
 }
 // Функция для добавления результата в таблицу
@@ -626,49 +580,101 @@ function getServerRating(jitter, dl, ping) {
  
     return "✖︎";
 }
-// Функция для поиска лучшего сервера
+// Функция для поиска лучшего сервера (улучшенная версия)
 function findBestServer(results) {
     if (!results || results.length === 0) {
         return null;
     }
 
-    var recommendedServers = results.filter(function (server) {
+    // Берем все серверы, которые не таймаут и не стоп
+    var goodServers = results.filter(function (server) {
         if (server.dl === "Таймаут" || server.dl === "⛔ STOP") {
             return false;
         }
-      
         var dl = Number(server.dl);
         var jitter = Number(server.jitter);
-        var ping = Number(server.ping);
-      
-        if (dl > 100 && jitter < 4 && ping > 0 && ping < 999) {
-            return true;
-        }
-      
-        return server.recommended === true;
+        return dl >= 30 && jitter < 15;   // только приемлемые серверы
     });
 
-    if (recommendedServers.length === 0) {
+    if (goodServers.length === 0) {
         return null;
     }
 
-    recommendedServers.sort(function (a, b) {
+    // Сортируем по качеству
+    goodServers.sort(function (a, b) {
+        var ratingA = getServerRating(a.jitter, a.dl, a.ping);
+        var ratingB = getServerRating(b.jitter, b.dl, b.ping);
+
+        // Приоритет рейтинга: ❤︎ самый лучший
+        var ratingOrder = { "❤︎": 4, "✔︎✔︎✔︎": 3, "✔︎✔︎": 2, "✔︎": 1, "✖︎": 0 };
+        if (ratingOrder[ratingA] !== ratingOrder[ratingB]) {
+            return ratingOrder[ratingB] - ratingOrder[ratingA];   // выше рейтинг = лучше
+        }
+
+        // Если рейтинг одинаковый — меньший пинг лучше
         var pingA = Number(a.ping);
         var pingB = Number(b.ping);
+        if (pingA !== pingB) return pingA - pingB;
+
+        // Затем меньший джиттер
         var jitterA = Number(a.jitter);
         var jitterB = Number(b.jitter);
-        var speedA = Number(a.dl);
-        var speedB = Number(b.dl);
-      
-        if (pingA !== pingB) return pingA - pingB;
         if (jitterA !== jitterB) return jitterA - jitterB;
-        return speedB - speedA;
+
+        // В конце — большая скорость
+        return Number(b.dl) - Number(a.dl);
     });
 
-    var best = recommendedServers[0];
+    var best = goodServers[0];
     best.rating = getServerRating(best.jitter, best.dl, best.ping);
 
     return best;
+}
+
+// Функция перехода к следующему серверу + показ финальной рекомендации
+function moveToNextServer() {
+    var currentIndex = serversToTest.indexOf(currentServer);
+
+    if (currentIndex < serversToTest.length - 1) {
+        currentServer = serversToTest[currentIndex + 1];
+        document.getElementById("currentTest").innerHTML =
+            "Тестируется: " + SPEEDTEST_SERVERS[currentServer].name +
+            " (" + (currentIndex + 2) + " из " + serversToTest.length + ")";
+        s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
+        setTimeout(function() {
+            startMultiTest();
+        }, 500);
+    } else {
+        // === ВСЕ СЕРВЕРА ПРОТЕСТИРОВАНЫ ===
+        I("startStopBtn").className = "";
+        I("server").disabled = false;
+
+        var bestServer = findBestServer(groupTestResults);
+
+        if (bestServer) {
+            var explanation = "";
+            var rating = bestServer.rating;
+
+            if (rating === "❤︎") {
+                explanation = `Отличный сервер: минимальный джиттер (${bestServer.jitter} ms), ping ${bestServer.ping} ms, скорость ${bestServer.dl} Mbps`;
+            } else if (rating === "✔︎✔︎✔︎") {
+                explanation = `Хороший баланс: джиттер ${bestServer.jitter} ms, ping ${bestServer.ping} ms, скорость ${bestServer.dl} Mbps`;
+            } else if (rating === "✔︎✔︎") {
+                explanation = `Среднее качество: джиттер ${bestServer.jitter} ms, возможны небольшие задержки`;
+            } else if (rating === "✔︎") {
+                explanation = `Минимально пригодный сервер (скорость ${bestServer.dl} Mbps)`;
+            }
+
+            document.getElementById("currentTest").innerHTML =
+                `<div class="recommendationBox recommended">
+                    ➡︎ Рекомендован: <strong>${bestServer.name}</strong><br>
+                    <small>${explanation}</small>
+                 </div>`;
+        } else {
+            document.getElementById("currentTest").innerHTML =
+                '<div class="recommendationBox notRecommended">✖︎ Нет подходящих серверов</div>';
+        }
+    }
 }
 
 // Массив для хранения результатов тестов для группы серверов
