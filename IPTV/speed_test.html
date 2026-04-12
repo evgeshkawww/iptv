@@ -175,40 +175,37 @@ function startStop() {
         // === ТЕСТ УЖЕ ЗАПУЩЕН — ПРЕРЫВАЕМ ===
         stopAllTests = true;
         serversToTest = [];
-        
+       
         s.abort();
-        
-        // Важно: очищаем обработчики событий после abort
         s.onupdate = null;
         s.onend = null;
-
+        
         document.getElementById("currentTest").innerHTML = "⛔ Тест прерван";
         uiData = null;
-        
+       
         I("startStopBtn").className = "";
+        document.querySelector("#startStopBtn .btn-text").textContent = "Запустить тест";
         I("server").disabled = false;
-        
+       
         initUI();
         return;
     }
-    
+   
     // === ЗАПУСК ТЕСТА ===
     I("startStopBtn").className = "running";
+    document.querySelector("#startStopBtn .btn-text").textContent = "Прервать";
+    
     I("shareArea").style.display = "none";
     I("server").disabled = true;
-    
-    // Подготавливаем таблицу результатов
+   
     prepareResultTable();
-    
-    // Проверяем, что выбрано — группа или один сервер
+   
     var serverSelect = I("server");
     var selectedValue = serverSelect.value;
-
+    
     if (selectedValue === "all_available" || selectedValue === "all_with_filled") {
-        // Групповое тестирование
         prepareMultiTest(selectedValue);
     } else {
-        // Одиночное тестирование выбранного сервера
         runSingleServerTest();
     }
 }
@@ -1078,64 +1075,187 @@ h1, h3{
     border-color:#ef4444 !important;
     color:#ef4444 !important;
 }
+.header-container {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+}
+
+.neon-title {
+    font-size: 2.8em;
+    font-weight: 700;
+    background: linear-gradient(90deg, #38bdf8, #a855f7, #38bdf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 
+        0 0 10px rgba(56, 189, 248, 0.8),
+        0 0 20px rgba(168, 85, 247, 0.6),
+        0 0 40px rgba(56, 189, 248, 0.4);
+    margin: 0 0 25px 0;
+    letter-spacing: 2px;
+}
+
+.control-card {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 20px;
+    padding: 18px 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.4),
+        inset 0 0 20px rgba(56, 189, 248, 0.1);
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.select-wrapper {
+    display: flex;
+    align-items: center;
+    background: rgba(2, 6, 23, 0.8);
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    border-radius: 14px;
+    padding: 8px 14px;
+    min-width: 260px;
+}
+
+.select-wrapper .icon {
+    margin-right: 10px;
+    font-size: 1.4em;
+}
+
+#server {
+    background: transparent;
+    border: none;
+    color: #e0f2fe;
+    font-size: 1.05em;
+    padding: 6px 10px;
+    width: 100%;
+    outline: none;
+}
+
+#startStopBtn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #38bdf8, #6366f1);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 14px 28px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.4);
+}
+
+#startStopBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(56, 189, 248, 0.6);
+}
+
+#startStopBtn.running {
+    background: linear-gradient(135deg, #ef4444, #f97316);
+    box-shadow: 0 8px 25px rgba(239, 68, 68, 0.5);
+}
+
+.btn-icon {
+    font-size: 1.3em;
+}
+
+@media (max-width: 480px) {
+    .neon-title { font-size: 2.2em; }
+    .control-card { 
+        flex-direction: column; 
+        padding: 16px; 
+        gap: 15px; 
+    }
+    .select-wrapper { width: 100%; }
+}
+#startStopBtn.running .btn-text {
+    content: "Прервать";   /*  */
+}
+#startStopBtn.running .btn-icon {
+    content: "⏹️";
+}
+
+.control-card {
+    transition: all 0.3s ease;
+}
+
+.neon-title {
+    animation: neon-pulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes neon-pulse {
+    from { text-shadow: 0 0 10px rgba(56,189,248,0.8), 0 0 20px rgba(168,85,247,0.6); }
+    to   { text-shadow: 0 0 20px rgba(56,189,248,1), 0 0 40px rgba(168,85,247,0.8), 0 0 60px rgba(56,189,248,0.6); }
+}
 </style>
 </head>
 <body>
-<h1 style="text-align:center; margin-bottom:20px;">
-🚀 Premium IPTV Speed Test
-</h1>
-<div id="loading" class="visible">
-	<p id="message"><span class="loadCircle"></span>Секундочку...</p>
-</div>
-<div id="testWrapper" class="hidden">
-	<div id="serverArea">
+    <div class="header-container">
+        <h1 class="neon-title">
+            🚀 Premium IPTV Speed Test
+        </h1>
+        
+        <div class="control-card">
+            <div class="select-wrapper">
+                <span class="icon">🌐</span>
                 <select id="server"></select>
-		&nbsp;&nbsp;
-	<div id="startStopBtn" onclick="startStop()"></div><br/>
-	<br>
-	<h3 id="currentTest"></h3>
+            </div>
+            
+            <div id="startStopBtn" onclick="startStop()">
+                <span class="btn-icon">▶️</span>
+                <span class="btn-text">Запустить тест</span>
+            </div>
+        </div>
+    </div>
 
-	</div>
-	<div id="test">
-		<div class="testGroup">
+    <div id="testWrapper" class="hidden">
+        <h3 id="currentTest"></h3>
+    </div>
+
+    <div id="test">
+        <div class="testGroup">
             <div class="testArea2">
-				<div class="testName">Ping</div>
-				<div id="pingText" class="meterText" style="color:#AA6060"></div>
-				<div class="unit">ms</div>
-			</div>
-			<div class="testArea2">
-				<div class="testName">Jitter</div>
-				<div id="jitText" class="meterText" style="color:#AA6060"></div>
-				<div class="unit">ms</div>
-			</div>
-		</div>
-		<div class="testGroup">
-			<div class="testArea">
-				<div class="testName">Download</div>
-				<canvas id="dlMeter" class="meter"></canvas>
-				<div id="dlText" class="meterText"></div>
-				<div class="unit">Mbps</div>
-			</div>
-		</div>
-		<div id="ipArea">
-			<span id="ip"></span>
-		</div>
-		<div id="shareArea" style="display:none">
-			<h3>Share results</h3>
-			<p>Test ID: <span id="testId"></span></p>
-			<input type="text" value="" id="resultsURL" readonly="readonly" onclick="this.select();this.focus();this.select();document.execCommand('copy');alert('Link copied')"/>
-			<img src="" id="resultsImg" />
-		</div>
-	</div>
-</div>
-	<!--
-	<footer style="margin-top:40px; text-align:center;">
-  <a href="https://evgeshkawww.github.io/iptv/IPTV/speed-test.html" style="color:#3b82f6; font-weight:600; text-decoration:none; background:rgba(255,255,255,0.03); padding:10px 14px; border-radius:8px; display:inline-block; border:1px solid rgba(255,255,255,0.06);">
-    Новый Speedtest➤
-  </a>
-</footer>
-	-->
-<div class="footer">© E-IPTV</div>	
+                <div class="testName">Ping</div>
+                <div id="pingText" class="meterText" style="color:#AA6060"></div>
+                <div class="unit">ms</div>
+            </div>
+            <div class="testArea2">
+                <div class="testName">Jitter</div>
+                <div id="jitText" class="meterText" style="color:#AA6060"></div>
+                <div class="unit">ms</div>
+            </div>
+        </div>
+
+        <div class="testGroup">
+            <div class="testArea">
+                <div class="testName">Download</div>
+                <canvas id="dlMeter" class="meter"></canvas>
+                <div id="dlText" class="meterText"></div>
+                <div class="unit">Mbps</div>
+            </div>
+        </div>
+
+        <div id="ipArea">
+            <span id="ip"></span>
+        </div>
+
+        <div id="shareArea" style="display:none">
+            <h3>Share results</h3>
+            <p>Test ID: <span id="testId"></span></p>
+            <input type="text" value="" id="resultsURL" readonly="readonly" 
+                   onclick="this.select();this.focus();this.select();document.execCommand('copy');alert('Link copied')"/>
+            <img src="" id="resultsImg" />
+        </div>
+    </div>
+
+    <div class="footer">© E-IPTV</div>
 </body>
 </html>
 
