@@ -13,7 +13,7 @@
 
 <link rel="stylesheet" href="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/style/style_all.css">
 
-<!-- ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ТОЛЬКО ДЛЯ ЭТОЙ СТРАНИЦЫ -->
+<!-- ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ТОЛЬКО ДЛЯ ЭТОЙ СТРАНИЦЫ (ЗОЛОТЫЕ АКЦЕНТЫ) -->
 <style>
 /* Специфичные стили для каталога */
 :root {
@@ -27,6 +27,8 @@
   --border-medium: rgba(255,255,255,.04);
   --primary-glow: rgba(56,189,248,.6);
   --primary-glow-soft: rgba(56,189,248,.15);
+  --gold: #F5D76E;
+  --gold-glow: rgba(245, 215, 110, 0.5);
 }
 
 body {
@@ -68,7 +70,7 @@ body::before {
   box-sizing: border-box;
 }
 
-/* HEADER - фиксированная ширина, как у контейнера с каналами */
+/* HEADER */
 header {
   width: 100%;
   background: var(--bg-overlay-soft);
@@ -86,30 +88,31 @@ header {
   box-sizing: border-box;
 }
 
+/* ЗОЛОТОЙ ЗАГОЛОВОК */
 .main-title {
   font-family: var(--font-serif, 'Playfair Display', serif);
   font-size: 28px;
   font-weight: 900;
-  color: var(--accent);
+  color: var(--gold);
   text-transform: uppercase;
   letter-spacing: .14em;
-  text-shadow: 0 0 12px var(--primary-glow);
+  text-shadow: 0 0 12px var(--gold-glow);
 }
 
-/* КНОПКА "ВЕРНУТЬСЯ К СПИСКУ КАНАЛОВ" */
+/* КНОПКА "ВЕРНУТЬСЯ К СПИСКУ КАНАЛОВ" — ЗОЛОТАЯ */
 .btn-back {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: rgba(56, 189, 248, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.4);
+  background: rgba(245, 215, 110, 0.1);
+  border: 1px solid rgba(245, 215, 110, 0.5);
   padding: 10px 20px;
   border-radius: 40px;
   font-family: var(--font-sans, 'Inter', sans-serif);
   font-weight: 600;
   font-size: 14px;
-  color: var(--accent);
+  color: var(--gold);
   text-decoration: none;
   transition: all 0.2s ease;
   cursor: pointer;
@@ -118,16 +121,17 @@ header {
 }
 
 .btn-back:hover {
-  background: rgba(56, 189, 248, 0.25);
-  border-color: var(--accent);
+  background: rgba(245, 215, 110, 0.25);
+  border-color: var(--gold);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(56,189,248,0.2);
+  box-shadow: 0 4px 12px rgba(245,215,110,0.2);
 }
 
 .btn-back:active {
   transform: translateY(1px);
 }
 
+/* ПОИСК */
 .controls {
   display: flex;
   gap: 12px;
@@ -153,21 +157,23 @@ header {
 }
 
 .search:focus {
-  border-color: var(--accent, #38bdf8);
-  box-shadow: 0 0 0 3px rgba(56,189,248,.3);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(245,215,110,0.3);
 }
 
+/* ОБЩЕЕ КОЛИЧЕСТВО КАНАЛОВ — ЗОЛОТОЕ, БЕЗ ФОНА */
 .total {
   padding: 8px 14px;
   border-radius: 999px;
-  background: var(--primary-glow-soft);
-  color: var(--accent);
+  background: transparent;
+  color: var(--gold);
   font-weight: 600;
   font-size: 13px;
   white-space: nowrap;
+  text-shadow: 0 0 4px var(--gold-glow);
 }
 
-/* GROUPS - теперь такой же ширины как header */
+/* GROUPS */
 .groups {
   display: grid;
   gap: 16px;
@@ -222,10 +228,12 @@ summary::-webkit-details-marker {
   flex-wrap: wrap;
 }
 
+/* ЗОЛОТЫЕ НАЗВАНИЯ ГРУПП */
 .group-name {
   font-weight: 600;
   font-size: 15px;
-  color: var(--text);
+  color: var(--gold);
+  text-shadow: 0 0 4px var(--gold-glow);
 }
 
 .group-meta {
@@ -233,7 +241,7 @@ summary::-webkit-details-marker {
   color: var(--muted);
 }
 
-/* CHANNELS */
+/* КАНАЛЫ */
 .channels {
   margin-top: 16px;
   display: grid;
@@ -253,8 +261,8 @@ summary::-webkit-details-marker {
 }
 
 .channel:hover {
-  border-color: var(--accent);
-  box-shadow: 0 0 15px var(--primary-glow-soft);
+  border-color: var(--gold);
+  box-shadow: 0 0 15px rgba(245,215,110,0.2);
 }
 
 .ch-icon {
@@ -301,7 +309,7 @@ summary::-webkit-details-marker {
   border-top: 1px solid var(--border-medium);
 }
 
-/* МОБИЛЬНАЯ АДАПТАЦИЯ - все блоки одной ширины */
+/* МОБИЛЬНАЯ АДАПТАЦИЯ */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
