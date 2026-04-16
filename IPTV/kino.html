@@ -4,114 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Premium Catalog</title>
-
-<link rel="icon" href="/iptv/IPTV/favicon.ico">
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-
 <style>
 :root{
     --bg:#020617;
     --card:rgba(15,23,42,.75);
     --accent:#38bdf8;
-    --accent2:#22c55e;
     --text:#e5e7eb;
 }
-/* HERO */
-.hero{
-    position:relative;
-    overflow:hidden;
-    padding:80px 40px;
-}
-
-/* динамическое свечение */
-.hero-glow{
-    position:absolute;
-    inset:-40%;
-    background:
-        radial-gradient(circle at 30% 30%, rgba(56,189,248,.35), transparent 40%),
-        radial-gradient(circle at 70% 60%, rgba(34,197,94,.25), transparent 45%);
-    animation: glowMove 12s linear infinite;
-    filter:blur(40px);
-}
-
-@keyframes glowMove{
-    0%{transform:translate(0,0)}
-    50%{transform:translate(6%, -4%)}
-    100%{transform:translate(0,0)}
-}
-html{
-    scroll-behavior:smooth;
-}
-
-/* световая скан-линия */
-.hero-scan{
-    position:absolute;
-    top:-100%;
-    left:0;
-    width:100%;
-    height:200%;
-    background:linear-gradient(
-        180deg,
-        transparent,
-        rgba(56,189,248,.12),
-        transparent
-    );
-    animation: scan 6s ease-in-out infinite;
-}
-
-@keyframes scan{
-    0%{transform:translateY(-60%)}
-    100%{transform:translateY(60%)}
-}
-
-/* текст */
-.hero-title{
-    position:relative;
-    z-index:2;
-    animation:titlePulse 4s ease-in-out infinite;
-}
-
-@keyframes titlePulse{
-    0%,100%{
-        text-shadow:
-            0 0 20px rgba(56,189,248,.5),
-            0 0 60px rgba(56,189,248,.25);
-    }
-    50%{
-        text-shadow:
-            0 0 35px rgba(56,189,248,.9),
-            0 0 90px rgba(56,189,248,.5);
-    }
-}
-
 *{box-sizing:border-box}
 
 body{
     margin:0;
     min-height:100vh;
-    background:
-        radial-gradient(circle at top,#0f172a,transparent 60%),
-        radial-gradient(circle at bottom,#020617,#000);
+    background:radial-gradient(circle at top,#0f172a,transparent 60%),radial-gradient(circle at bottom,#020617,#000);
     font-family:Inter,system-ui,sans-serif;
     color:var(--text);
     padding:40px 20px;
     display:flex;
     justify-content:center;
-}
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:repeating-linear-gradient(
-        90deg,
-        rgba(255,255,255,.03) 0,
-        rgba(255,255,255,.03) 1px,
-        transparent 1px,
-        transparent 40px
-    );
-    pointer-events:none;
 }
 
 .wrapper{
@@ -124,30 +35,35 @@ body::before{
 
 .card{
     position:relative;
-    background:var(--card);
+    background:rgba(15,23,42,.75);
     border-radius:22px;
     padding:46px 38px 38px;
     backdrop-filter:blur(14px);
-    box-shadow:
-        0 0 50px rgba(56,189,248,.25),
-        inset 0 0 0 1px rgba(255,255,255,.06);
+    box-shadow:0 0 50px rgba(56,189,248,.25),inset 0 0 0 1px rgba(255,255,255,.06);
 }
 
-/* бейдж */
-.badge{
+.hero{
+    position:relative;
+    overflow:hidden;
+    padding:80px 40px;
+}
+.hero-glow{
     position:absolute;
-    top:16px;
-    left:18px;
-    padding:6px 14px;
-    border-radius:999px;
-    font-size:11px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    background:rgba(56,189,248,.15);
-    color:var(--accent);
+    inset:-40%;
+    background:radial-gradient(circle at 30% 30%,rgba(56,189,248,.35),transparent 40%),radial-gradient(circle at 70% 60%,rgba(34,197,94,.25),transparent 45%);
+    animation:glowMove 12s linear infinite;
+    filter:blur(40px);
 }
+@keyframes glowMove{0%{transform:translate(0,0)}50%{transform:translate(6%,-4%)}100%{transform:translate(0,0)}}
 
-/* главный логотип */
+.hero-scan{
+    position:absolute;
+    top:-100%;left:0;width:100%;height:200%;
+    background:linear-gradient(180deg,transparent,rgba(56,189,248,.12),transparent);
+    animation:scan 6s ease-in-out infinite;
+}
+@keyframes scan{0%{transform:translateY(-60%)}100%{transform:translateY(60%)}}
+
 .main-title{
     text-align:center;
     font-family:Orbitron,sans-serif;
@@ -156,88 +72,182 @@ body::before{
     color:var(--accent);
     text-transform:uppercase;
     text-shadow:0 0 20px rgba(56,189,248,.5);
+    position:relative;
+    z-index:2;
+    animation:titlePulse 4s ease-in-out infinite;
+}
+@keyframes titlePulse{0%,100%{text-shadow:0 0 20px rgba(56,189,248,.5),0 0 60px rgba(56,189,248,.25)}50%{text-shadow:0 0 35px rgba(56,189,248,.9),0 0 90px rgba(56,189,248,.5)}}
+
+.services-section{text-align:center}
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+    gap:20px;
+    margin-top:28px;
 }
 
-/* секции */
-.section{
+.service-card{
+    background:rgba(0,0,0,0.45);
+    border-radius:18px;
+    padding:20px 16px;
     text-align:center;
+    cursor:pointer;
+    transition:all 0.3s ease;
+    backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,0.06);
+    height:130px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
-
-.section img{
+.service-card:hover{
+    transform:translateY(-8px) scale(1.04);
+    background:rgba(56,189,248,0.15);
+    border-color:rgba(56,189,248,0.4);
+    box-shadow:0 15px 35px rgba(56,189,248,0.3);
+}
+.service-logo{
     width:100%;
-    border-radius:16px;
-    box-shadow:0 0 30px rgba(0,0,0,.6);
+    max-height:58px;
+    object-fit:contain;
+    margin-bottom:8px;
 }
+.service-name{font-size:14px;font-weight:600}
 
-/* инструкция */
-.instruction{
-    line-height:1.65;
-    font-size:15px;
+.movies-sec{width:100%}
+.movies-top{margin-bottom:24px}
+.sec-tag{
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:var(--accent);
+    margin-bottom:8px;
 }
+.sec-h{
+    font-family:Orbitron,sans-serif;
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:8px;
+}
+.sec-p{font-size:14px;opacity:0.7;margin:0}
 
-.instruction-title{
+.movies-scroll{
+    overflow-x:auto;
+    overflow-y:hidden;
+    white-space:nowrap;
+    scrollbar-width:thin;
+    scrollbar-color:var(--accent) rgba(255,255,255,0.1);
+    padding-bottom:16px;
+    margin-bottom:-16px;
+}
+.movies-scroll::-webkit-scrollbar{height:6px}
+.movies-scroll::-webkit-scrollbar-track{background:rgba(255,255,255,0.1);border-radius:3px}
+.movies-scroll::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
+
+.mv{
+    display:inline-block;
+    width:180px;
+    margin-right:16px;
+    background:rgba(0,0,0,0.5);
+    border-radius:12px;
+    overflow:hidden;
+    transition:transform 0.2s,box-shadow 0.2s;
+    cursor:pointer;
+    white-space:normal;
+    vertical-align:top;
+    backdrop-filter:blur(4px);
+}
+.mv:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(56,189,248,0.4);
+}
+.mv-poster{position:relative}
+.mv-poster img{
+    width:100%;
+    aspect-ratio:2/3;
+    object-fit:cover;
     display:block;
-    margin-top:22px;
-    margin-bottom:12px;
+}
+.mv-badge{
+    position:absolute;
+    top:8px;
+    right:8px;
+    background:rgba(0,0,0,0.7);
+    color:#ffc107;
+    font-size:10px;
+    padding:2px 6px;
+    border-radius:4px;
+    font-weight:bold;
+    z-index:2;
+}
+.mv-badge.mv-4k{background:rgba(34,197,94,0.8);color:#fff}
+.mv-info{padding:12px}
+.mv-title{
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:4px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.mv-meta{font-size:12px;color:rgba(255,255,255,0.6)}
+.mv-star{color:#ffc107}
+
+.badge{
+    position:absolute;top:16px;left:18px;
+    padding:6px 14px;border-radius:999px;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    background:rgba(56,189,248,.15);color:var(--accent);
+}
+
+.instruction{line-height:1.65;font-size:15px}
+.instruction-title{display:block;margin:22px 0 12px;font-size:16px;font-weight:600}
+
+.instruction-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:16px 0 20px;
+    background:rgba(0,0,0,0.3);
+    border-radius:10px;
+    overflow:hidden;
+}
+.instruction-table td{
+    padding:14px 16px;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    vertical-align:top;
+}
+.instruction-table tr:last-child td{border-bottom:none}
+.instruction-table td:first-child{
+    width:40px;
+    color:var(--accent);
+    font-weight:700;
+    text-align:center;
+    background:rgba(56,189,248,0.1);
+}
+
+.terminal{
+    background:#fff;
+    color:#0f0;
+    padding:16px 20px;
+    border-radius:10px;
+    font-family:monospace;
     font-size:16px;
     font-weight:600;
+    letter-spacing:1.5px;
+    display:inline-block;
+    margin:12px 0;
+    box-shadow:0 4px 15px rgba(0,0,0,0.3);
 }
 
-/* код */
-pre{
-    background:#000;
-    color:#0f0;
-    padding:14px;
-    border-radius:10px;
-    overflow:auto;
-}
-
-/* кнопки */
 a.button{
-    display:block;
-    margin-top:14px;
-    padding:12px;
-    border-radius:14px;
-    text-align:center;
-    font-weight:600;
-    text-decoration:none;
-    color:#000;
-    background:var(--accent);
+    display:block;margin-top:14px;padding:14px;
+    border-radius:14px;text-align:center;font-weight:600;
+    text-decoration:none;color:#000;background:var(--accent);
 }
+a.button:hover{background:#22d3ee;transform:translateY(-2px)}
 
-/* плагины */
-details summary{
-    cursor:pointer;
-    font-family:Orbitron,sans-serif;
-    color:var(--accent);
-    font-size:20px;
-}
-
-iframe{
-    width:100%;
-    height:800px;
-    margin-top:18px;
-    border-radius:14px;
-    border:1px solid rgba(255,255,255,.15);
-}
-
-.footer{
-    text-align:center;
-    font-size:12px;
-    opacity:.45;
-}
-
-@media (max-width:600px){
-    .main-title{
-        font-size:26px;
-        letter-spacing:.12em;
-    }
-}
-/* FULLWIDTH iframe — корректно */
-.details-full details{
-    position:relative;
-}
-
+.details-full details{position:relative}
 .details-full iframe{
     display:block;
     width:100%;
@@ -246,8 +256,6 @@ iframe{
     border:1px solid rgba(255,255,255,.15);
     transition:height .35s ease;
 }
-
-/* когда details открыт */
 .details-full details[open] iframe{
     height:90vh;
     width:100vw;
@@ -259,161 +267,33 @@ iframe{
 .details-full summary{
     list-style:none;
     text-align:center;
+    cursor:pointer;
+    font-family:Orbitron,sans-serif;
+    color:var(--accent);
+    font-size:20px;
 }
+.details-full summary::-webkit-details-marker{display:none}
 
-.details-full summary::-webkit-details-marker{
-    display:none;
-}
+.footer{text-align:center;font-size:12px;opacity:.45}
 
-/* ===== СТИЛИ ДЛЯ БЛОКА КИНОТЕАТРА ===== */
-.movies-sec {
-    width: 100%;
-}
-
-.movies-top {
-    margin-bottom: 24px;
-}
-
-.sec-tag {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--accent);
-    margin-bottom: 8px;
-}
-
-.sec-h {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.sec-p {
-    font-size: 14px;
-    opacity: 0.7;
-    margin: 0;
-}
-
-.movies-scroll {
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    scrollbar-width: thin;
-    scrollbar-color: var(--accent) rgba(255,255,255,0.1);
-    padding-bottom: 16px;
-    margin-bottom: -16px;
-}
-
-.movies-scroll::-webkit-scrollbar {
-    height: 6px;
-}
-
-.movies-scroll::-webkit-scrollbar-track {
-    background: rgba(255,255,255,0.1);
-    border-radius: 3px;
-}
-
-.movies-scroll::-webkit-scrollbar-thumb {
-    background: var(--accent);
-    border-radius: 3px;
-}
-
-.movie-card {
-    display: inline-block;
-    width: 180px;
-    margin-right: 16px;
-    background: rgba(0,0,0,0.5);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
-    cursor: pointer;
-    white-space: normal;
-    vertical-align: top;
-    backdrop-filter: blur(4px);
-}
-
-.movie-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(56,189,248,0.4);
-}
-
-.movie-poster {
-    width: 100%;
-    aspect-ratio: 2/3;
-    object-fit: cover;
-    display: block;
-}
-
-.movie-info {
-    padding: 12px;
-}
-
-.movie-title {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 4px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.movie-original-title {
-    font-size: 11px;
-    color: rgba(255,255,255,0.5);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-bottom: 6px;
-}
-
-.movie-details {
-    font-size: 11px;
-    line-height: 1.5;
-}
-
-.movie-rating {
-    color: #ffc107;
-}
-
-.movie-year {
-    color: rgba(255,255,255,0.5);
-    margin-left: 6px;
-}
-
-.movie-quality {
-    display: inline-block;
-    background: linear-gradient(135deg, rgba(56,189,248,0.2), rgba(34,197,94,0.2));
-    color: var(--accent);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 10px;
-    font-weight: 600;
-    margin-top: 5px;
-    border: 1px solid rgba(56,189,248,0.3);
-}
-
-.loading-placeholder {
-    color: rgba(255,255,255,0.3);
-    font-size: 13px;
-    padding: 40px;
-    text-align: center;
+@media (max-width:600px){
+    .main-title{font-size:26px}
+    .services-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:16px}
+    .service-card{height:118px}
+    .service-logo{max-height:48px}
 }
 </style>
 </head>
-
 <body>
 <div class="wrapper">
 
-<!-- Главная карточка -->
 <div class="card hero">
     <div class="hero-glow"></div>
     <div class="hero-scan"></div>
-    <div class="main-title hero-title">premium catalog</div>
+    <div class="main-title hero-title">PREMIUM CATALOG</div>
 </div>
 
-<!-- ===== БЛОК КИНОТЕАТРА ===== -->
-<div class="card movies-sec" id="movies">
+<div class="card movies-sec">
     <div class="movies-top">
         <div>
             <div class="sec-tag">Кинотеатр</div>
@@ -422,42 +302,36 @@ iframe{
         </div>
     </div>
     <div class="movies-scroll" id="mv-list">
-        <div class="loading-placeholder">🎬 Загрузка фильмов...</div>
+        <div style="color:rgba(255,255,255,.3);font-size:13px;padding:40px;text-align:center">🎬 Загрузка...</div>
     </div>
 </div>
 
-<!-- Русские -->
-<div class="card section">
+<div class="card services-section">
     <span class="badge">русские кинотеатры</span>
-    <img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/img/russ.png">
+    <div class="services-grid" id="russian-services"></div>
 </div>
 
-<!-- Иностранные -->
-<div class="card section">
+<div class="card services-section">
     <span class="badge">иностранные кинотеатры</span>
-    <img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/img/import.png">
+    <div class="services-grid" id="foreign-services"></div>
 </div>
 
-<!-- Инструкция -->
 <div class="card instruction">
     <span class="badge">instruction</span>
-    <strong class="instruction-title">Инструкция по установке плагинов в Lampa (скаченной ниже)</strong>
-    <p>Все делайте строго по инструкции:</p>
-    <ul>
-        <li>Настройки → Плеер → в самый низ и меняем на <strong>2160P</strong>, выходите.</li>
-        <li>Настройки → Плагины → Интерфейс → ставим <strong>Зарубежные подборки</strong>, <strong>Русские новинки</strong> и <strong>Start</strong>, выходите.</li>
-        <li>Настройки → Расширения → Добавить плагин → добавляете те ссылки, что дал <strong>Online Premium бот</strong>, выходите.</li>
-    </ul>
-    <p>Сбоку слева внизу в Lampa появятся русские и зарубежные кинотеатры, а так же подборки E-Online</p>
+    <strong class="instruction-title">Инструкция по установке плагинов в Lampa</strong>
     <p><strong>Все делайте строго по инструкции:</strong></p>
-    <p>Стартовый адрес:</p>
-    <pre><code>http://bylampa.online</code></pre>
+    <table class="instruction-table">
+        <tr><td>1</td><td>Настройки → Плеер → меняем на <strong>2160P</strong></td></tr>
+        <tr><td>2</td><td>Настройки → Плагины → Интерфейс → ставим Зарубежные подборки, Русские новинки и Start</td></tr>
+        <tr><td>3</td><td>Настройки → Расширения → Добавить плагин → добавляете ссылки от бота</td></tr>
+    </table>
+    <p><strong>Стартовый адрес:</strong></p>
+    <div class="terminal">http://bylampa.online</div>
     <a class="button" href="https://dl.dropbox.com/scl/fi/4nv1qiforjaapuaie7kk7/LAMPA-1.12.4-clone-un.apk?rlkey=ozisntppiapb7ehljbwklhach&dl=0" target="_blank">📥 Скачать Lampa</a>
     <a class="button" href="https://dl.dropbox.com/scl/fi/8puxrkv46zm8bqv0fsovt/LAMPA-ATV-v1.12.4-Uncensored.apk?rlkey=7xd0lyfsopduqqd87t71dohp6&dl=0" target="_blank">📥 Скачать Lampa ATV</a>
     <a class="button" href="https://dl.dropbox.com/scl/fi/xknj7vunp90wxe3bom9ot/MX_Player_v2_6_3_Offline_arm7-arm64.apk?rlkey=y6ogo45cn8v0fdg21lfcz77z7" target="_blank">📥 Скачать MX Player для Lampa Android</a>
 </div>
 
-<!-- Плагины -->
 <div class="card details-full">
     <details>
         <summary>Плагины для LAMPA</summary>
@@ -466,140 +340,67 @@ iframe{
 </div>
 
 <div class="footer">© E-Online</div>
-
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', ()=>{
-  // Закрываем details при загрузке
-  document.querySelectorAll('.details-full details').forEach(d=>{
-    d.removeAttribute('open');
-    d.open = false;
-  });
+const russianServices=[
+    {name:'Start',url:'https://start.ru',logo:'https://upload.wikimedia.org/wikipedia/commons/6/67/START_logo.svg'},
+    {name:'Premier',url:'https://premier.one',logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PREMIER_logo.svg/1280px-PREMIER_logo.svg.png'},
+    {name:'KION',url:'https://kion.ru',logo:'https://upload.wikimedia.org/wikipedia/commons/d/dd/Kion_Group_logo.svg'},
+    {name:'ИВИ',url:'https://ivi.ru',logo:'https://upload.wikimedia.org/wikipedia/commons/5/55/Ivi_logo.svg'},
+    {name:'Okko',url:'https://okko.tv',logo:'https://static.tildacdn.com/tild3535-6436-4834-a230-353339643333/Logo.png'},
+    {name:'Wink',url:'https://wink.ru',logo:'https://upload.wikimedia.org/wikipedia/commons/8/85/Wink_Logo.svg'},
+    {name:'КиноПоиск',url:'https://kinopoisk.ru',logo:'https://upload.wikimedia.org/wikipedia/commons/c/c1/Kinopoisk_colored_logo_%282021-present%29.svg'},
+    {name:'CTC',url:'https://ctc.ru',logo:'https://upload.wikimedia.org/wikipedia/ru/thumb/6/6f/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF%D0%B0_%D1%82%D0%B5%D0%BB%D0%B5%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D0%B0_%C2%AB%D0%A1%D0%A2%D0%A1%C2%BB.svg/1280px-%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF%D0%B0_%D1%82%D0%B5%D0%BB%D0%B5%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D0%B0_%C2%AB%D0%A1%D0%A2%D0%A1%C2%BB.svg.png'},
+    {name:'ТНТ',url:'https://tnt-online.ru',logo:'https://static.wikia.nocookie.net/logopedia/images/f/f8/TNT%282018%29.png/revision/latest?cb=20200419164129'}
+];
+const foreignServices=[
+    {name:'Netflix',url:'https://netflix.com',logo:'https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg'},
+    {name:'Apple TV+',url:'https://tv.apple.com',logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Apple_TV_Plus_logo.svg/512px-Apple_TV_Plus_logo.svg.png'},
+    {name:'Prime Video',url:'https://primevideo.com',logo:'https://m.media-amazon.com/images/G/51/marketing/prime/2022PrimeBrand/Logos/Prime_Logo_RGB_Prime_Blue_MASTER._CB542735254_.png'},
+    {name:'Disney+',url:'https://disneyplus.com',logo:'https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg'},
+    {name:'HBO Max',url:'https://max.com',logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Max_logo.svg/1280px-Max_logo.svg.png'},
+    {name:'Paramount+',url:'https://paramountplus.com',logo:'https://www.getwizer.com/wp-content/uploads/2024/01/Paramount-Logo-2048x1868.png'},
+    {name:'MGM+',url:'https://mgmplus.com',logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/MGM%2B_logo.svg/1280px-MGM%2B_logo.svg.png'}
+];
 
-  // Плавное открытие + скролл
-  document.querySelectorAll('.details-full summary').forEach(summary=>{
-    summary.addEventListener('click', ()=>{
-      const details = summary.parentElement;
-      setTimeout(()=>{
-        if(details.open){
-          const top = details.getBoundingClientRect().top + window.pageYOffset - 20;
-          window.scrollTo({ top, behavior:'smooth' });
-        }
-      }, 300);
-    });
-  });
+function renderServices(s,c){
+    const cont=document.getElementById(c);
+    if(!cont)return;
+    let h='';
+    s.forEach(service=>{h+=`<div class="service-card" onclick="window.open('${service.url}','_blank')"><img class="service-logo" src="${service.logo}" alt="${service.name}"><div class="service-name">${service.name}</div></div>`;});
+    cont.innerHTML=h;
+}
 
-  // Якоря
-  document.querySelectorAll('a[href^="#"]').forEach(link=>{
-    link.addEventListener('click', e=>{
-      const id = link.getAttribute('href').slice(1);
-      const target = document.getElementById(id);
-      if(!target) return;
-      e.preventDefault();
-      const top = target.getBoundingClientRect().top + window.pageYOffset - 20;
-      window.scrollTo({ top, behavior:'smooth' });
-    });
-  });
-
-  // ===== ЗАГРУЗКА ФИЛЬМОВ С РЕАЛЬНЫМИ РЕЙТИНГАМИ И 4K =====
-  async function loadMovies() {
-    const container = document.getElementById('mv-list');
-    if (!container) return;
-
-    try {
-      const API_KEY = '752a4bb1-c0f7-4729-a8e0-dd792704f1d8';
-      
-      // 1. Получаем список топ-100 фильмов
-      const response = await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_100_POPULAR_FILMS&page=1', {
-        headers: {
-          'X-API-KEY': API_KEY,
-          'Content-Type': 'application/json'
-        }
-      });
-      
-      if (!response.ok) throw new Error('Ошибка API');
-      
-      const data = await response.json();
-      const moviesBatch = data.films.slice(0, 15);
-      
-      // 2. Для каждого фильма получаем ДЕТАЛЬНУЮ информацию (с реальным рейтингом)
-      container.innerHTML = '<div class="loading-placeholder">🎬 Загрузка фильмов (получаем рейтинги)...</div>';
-      
-      const moviesWithDetails = await Promise.all(
-        moviesBatch.map(async (movie) => {
-          try {
-            const detailResponse = await fetch(`https://kinopoiskapiunofficial.tech/api/v2.2/films/${movie.filmId}`, {
-              headers: {
-                'X-API-KEY': API_KEY,
-                'Content-Type': 'application/json'
-              }
-            });
-            if (detailResponse.ok) {
-              const detail = await detailResponse.json();
-              return {
-                ...movie,
-                ratingKinopoisk: detail.ratingKinopoisk,
-                ratingKinopoiskVoteCount: detail.ratingKinopoiskVoteCount,
-                nameOriginal: detail.nameOriginal
-              };
-            }
-          } catch (e) {
-            console.warn(`Не удалось загрузить детали для ${movie.filmId}`);
-          }
-          return movie;
-        })
-      );
-      
-      renderMovies(moviesWithDetails, container);
-      
-    } catch (error) {
-      console.error('Ошибка загрузки:', error);
-      container.innerHTML = '<div class="loading-placeholder">⚠️ Не удалось загрузить фильмы. Проверьте подключение к интернету.</div>';
-    }
-  }
-  
-  function renderMovies(movies, container) {
-    let html = '';
-    movies.forEach(movie => {
-      const titleRu = movie.nameRu || '';
-      const titleOriginal = movie.nameOriginal || movie.nameEn || '';
-      const year = movie.year || 'N/A';
-      const posterUrl = movie.posterUrlPreview || 'https://via.placeholder.com/300x450?text=No+Poster';
-      const filmId = movie.filmId;
-      
-      // Рейтинг из детального API
-      let ratingDisplay = '★ ?';
-      const rating = movie.ratingKinopoisk;
-      if (rating && typeof rating === 'number' && rating > 0) {
-        ratingDisplay = `★ ${rating.toFixed(1)}`;
-      }
-      
-      // ВСЕГДА 4K
-      const quality = '4К';
-      
-      html += `
-        <div class="movie-card" onclick="window.open('https://www.kinopoisk.ru/film/${filmId}/', '_blank')">
-          <img class="movie-poster" src="${posterUrl}" alt="${titleRu}" loading="lazy" 
-               onerror="this.src='https://via.placeholder.com/300x450?text=${encodeURIComponent(titleRu || titleOriginal)}'">
-          <div class="movie-info">
-            <div class="movie-title" title="${titleRu}">${titleRu || titleOriginal}</div>
-            <div class="movie-original-title" title="${titleOriginal}">${titleOriginal ? titleOriginal : ''}</div>
-            <div class="movie-details">
-              <span class="movie-rating">${ratingDisplay}</span>
-              <span class="movie-year">${year}</span>
-              <div class="movie-quality">${quality}</div>
-            </div>
-          </div>
-        </div>
-      `;
-    });
+document.addEventListener('DOMContentLoaded',()=>{
+    renderServices(russianServices,'russian-services');
+    renderServices(foreignServices,'foreign-services');
+    document.querySelectorAll('.details-full details').forEach(d=>{d.removeAttribute('open');d.open=false;});
+    document.querySelectorAll('.details-full summary').forEach(s=>{s.addEventListener('click',()=>{setTimeout(()=>{if(s.parentElement.open){const top=s.parentElement.getBoundingClientRect().top+window.pageYOffset-20;window.scrollTo({top,behavior:'smooth'});}},300);});});
+    document.querySelectorAll('a[href^="#"]').forEach(link=>{link.addEventListener('click',e=>{const id=link.getAttribute('href').slice(1);const target=document.getElementById(id);if(!target)return;e.preventDefault();const top=target.getBoundingClientRect().top+window.pageYOffset-20;window.scrollTo({top,behavior:'smooth'});});});
     
-    container.innerHTML = html;
-  }
-  
-  // Запускаем загрузку
-  loadMovies();
+    const container=document.getElementById('mv-list');
+    const proxy='https://api.allorigins.win/raw?url=';
+    const target='https://skaz.tv/';
+    
+    fetch(proxy+encodeURIComponent(target))
+        .then(r=>r.text())
+        .then(html=>{
+            const parser=new DOMParser();
+            const doc=parser.parseFromString(html,'text/html');
+            const moviesBlock=doc.querySelector('#mv-list');
+            if(moviesBlock&&moviesBlock.innerHTML){
+                container.innerHTML=moviesBlock.innerHTML;
+                document.querySelectorAll('.mv').forEach(card=>{
+                    card.style.cursor='pointer';
+                    card.addEventListener('click',()=>{
+                        const title=card.querySelector('.mv-title')?.innerText;
+                        if(title)window.open(`https://www.kinopoisk.ru/index.php?kp_query=${encodeURIComponent(title)}`,'_blank');
+                    });
+                });
+            }else container.innerHTML='<div style="color:rgba(255,255,255,.3);font-size:13px;padding:40px;text-align:center">⚠️ Ошибка загрузки</div>';
+        })
+        .catch(()=>{container.innerHTML='<div style="color:rgba(255,255,255,.3);font-size:13px;padding:40px;text-align:center">⚠️ Ошибка загрузки фильмов</div>';});
 });
 </script>
 </body>
