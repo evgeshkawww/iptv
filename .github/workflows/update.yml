@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0     # Забираем всю историю для безопасного pull
 
       - name: Install Python
         uses: actions/setup-python@v4
@@ -20,10 +22,19 @@ jobs:
       - name: Run update script
         run: python IPTV/scripts/update_epg.py
 
-      - name: Commit changes
+      - name: Commit and push changes
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
+          
+          # Забираем последние изменения с GitHub
+          git pull origin main --no-rebase
+          
+          # Добавляем файлы
           git add IPTV/epg.xml.gz IPTV/epg7.xml.gz
-          git commit -m "Daily EPG update" || echo "No changes"
-          git push
+          
+          # Коммитим (если есть изменения)
+          git commit -m "Daily EPG update" || echo "No changes to commit"
+          
+          # Пушим
+          git push origin main
