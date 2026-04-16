@@ -284,6 +284,33 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
         width:200px;
     }
 }
+ /* Цвет #F5D76E для нужных заголовков и бейджей */
+.sec-tag,
+.badge,
+.instruction-title,
+.details-full summary {
+    color: #F5D76E !important;
+    text-shadow: 0 0 8px rgba(245, 215, 110, 0.5) !important;
+}
+
+/* Дополнительно для .sec-tag (Кинотеатр) — делаем чуть ярче и ближе к main-title */
+.sec-tag {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 12px rgba(245, 215, 110, 0.7), 
+                 0 0 20px rgba(245, 215, 110, 0.4);
+}
+
+/* Для бейджей (русские кинотеатры, иностранные кинотеатры, instruction) */
+.badge {
+    text-shadow: 0 0 10px rgba(245, 215, 110, 0.8);
+}
+
+/* Для заголовка "Плагины для LAMPA" */
+.details-full summary {
+    text-shadow: 0 0 12px rgba(245, 215, 110, 0.7);
+    font-size: 21px;
+}   
 </style>
 </head>
 <body>
