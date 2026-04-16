@@ -13,7 +13,7 @@
 
 <link rel="stylesheet" href="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/style/style_all.css">
 
-<!-- ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ТОЛЬКО ДЛЯ ЭТОЙ СТРАНИЦЫ -->
+<!-- ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ТОЛЬКО ДЛЯ ЭТОЙ СТРАНИЦЫ (с золотыми акцентами) -->
 <style>
 /* Специфичные стили для каталога */
 :root {
@@ -27,6 +27,9 @@
   --border-medium: rgba(255,255,255,.04);
   --primary-glow: rgba(56,189,248,.6);
   --primary-glow-soft: rgba(56,189,248,.15);
+  --gold: #F5D76E;
+  --gold-glow: rgba(245, 215, 110, 0.5);
+  --red-accent: #ff3333;
 }
 
 body {
@@ -68,7 +71,7 @@ body::before {
   box-sizing: border-box;
 }
 
-/* HEADER — фиксированная ширина, как у контейнера с каналами */
+/* HEADER */
 header {
   width: 100%;
   background: var(--bg-overlay-soft);
@@ -86,7 +89,6 @@ header {
   box-sizing: border-box;
 }
 
-/* Левая часть хедера */
 .header-left {
   display: flex;
   flex-direction: column;
@@ -95,14 +97,15 @@ header {
   min-width: 200px;
 }
 
+/* ЗОЛОТОЙ ЗАГОЛОВОК */
 .main-title {
   font-family: var(--font-serif, 'Playfair Display', serif);
   font-size: 28px;
   font-weight: 900;
-  color: var(--accent);
+  color: var(--gold);
   text-transform: uppercase;
   letter-spacing: .14em;
-  text-shadow: 0 0 12px var(--primary-glow);
+  text-shadow: 0 0 12px var(--gold-glow);
 }
 
 /* ПРОМО-БЛОК */
@@ -116,7 +119,7 @@ header {
 .promo-badge {
   font-size: 34px;
   font-weight: bold;
-  color: #ff4444;
+  color: var(--red-accent);
   text-shadow: 0 0 12px rgba(255,68,68,.4);
 }
 
@@ -126,13 +129,15 @@ header {
   color: var(--text);
 }
 
+/* ЗОЛОТАЯ ССЫЛКА ПЛАГИНА */
 .promo-link {
   font-weight: 600;
   font-size: 14px;
-  color: var(--accent);
+  color: var(--gold);
   text-decoration: none;
   position: relative;
   transition: 0.2s;
+  text-shadow: 0 0 4px var(--gold-glow);
 }
 
 .promo-link::after {
@@ -142,28 +147,28 @@ header {
   bottom: -3px;
   width: 100%;
   height: 1px;
-  background: var(--accent);
-  opacity: .4;
+  background: var(--gold);
+  opacity: .6;
 }
 
 .promo-link:hover {
-  text-shadow: 0 0 12px var(--primary-glow);
+  text-shadow: 0 0 12px var(--gold);
 }
 
-/* КНОПКА INTERNATIONAL CHANNELS */
+/* КНОПКА INTERNATIONAL CHANNELS — ЗОЛОТАЯ */
 .btn-int {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: rgba(56, 189, 248, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.4);
+  background: rgba(245, 215, 110, 0.1);
+  border: 1px solid rgba(245, 215, 110, 0.5);
   padding: 10px 24px;
   border-radius: 40px;
   font-family: var(--font-sans, 'Inter', sans-serif);
   font-weight: 600;
   font-size: 14px;
-  color: var(--accent);
+  color: var(--gold);
   text-decoration: none;
   transition: all 0.2s ease;
   cursor: pointer;
@@ -173,17 +178,17 @@ header {
 }
 
 .btn-int:hover {
-  background: rgba(56, 189, 248, 0.25);
-  border-color: var(--accent);
+  background: rgba(245, 215, 110, 0.25);
+  border-color: var(--gold);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(56,189,248,0.2);
+  box-shadow: 0 4px 12px rgba(245,215,110,0.2);
 }
 
 .btn-int:active {
   transform: translateY(1px);
 }
 
-/* ПРАВАЯ ЧАСТЬ: controls */
+/* ПОИСК */
 .controls {
   display: flex;
   gap: 12px;
@@ -213,17 +218,19 @@ header {
   box-shadow: 0 0 0 3px rgba(56,189,248,.3);
 }
 
+/* ОБЩЕЕ КОЛИЧЕСТВО КАНАЛОВ — ЗОЛОТОЕ, ПРОЗРАЧНЫЙ ФОН */
 .total {
   padding: 8px 14px;
   border-radius: 999px;
-  background: var(--primary-glow-soft);
-  color: var(--accent);
+  background: transparent;
+  color: var(--gold);
   font-weight: 600;
   font-size: 13px;
   white-space: nowrap;
+  text-shadow: 0 0 4px var(--gold-glow);
 }
 
-/* GROUPS — контейнер с каналами (такой же ширины как header) */
+/* GROUPS */
 .groups {
   display: grid;
   gap: 16px;
@@ -278,10 +285,12 @@ summary::-webkit-details-marker {
   flex-wrap: wrap;
 }
 
+/* ЗОЛОТЫЕ НАЗВАНИЯ ГРУПП */
 .group-name {
   font-weight: 600;
   font-size: 15px;
-  color: var(--text);
+  color: var(--gold);
+  text-shadow: 0 0 4px var(--gold-glow);
 }
 
 .group-meta {
@@ -289,7 +298,7 @@ summary::-webkit-details-marker {
   color: var(--muted);
 }
 
-/* CHANNELS */
+/* КАНАЛЫ */
 .channels {
   margin-top: 16px;
   display: grid;
@@ -309,8 +318,8 @@ summary::-webkit-details-marker {
 }
 
 .channel:hover {
-  border-color: var(--accent);
-  box-shadow: 0 0 15px var(--primary-glow-soft);
+  border-color: var(--gold);
+  box-shadow: 0 0 15px rgba(245,215,110,0.2);
 }
 
 .ch-icon {
