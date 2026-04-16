@@ -42,7 +42,6 @@ body{
     box-shadow:0 0 50px rgba(56,189,248,.25),inset 0 0 0 1px rgba(255,255,255,.06);
 }
 
-/* Упрощённый заголовок без анимаций */
 .simple-header {
     text-align: center;
     padding: 30px 20px;
@@ -267,8 +266,7 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
     .service-logo{max-height:48px}
     
     .mv{
-        width:calc(50% - 6px);
-        min-width:140px;
+        width:140px;
     }
     .mv-title{
         font-size:12px;
@@ -287,8 +285,7 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
 
 @media (max-width:480px){
     .mv{
-        width:calc(50% - 6px);
-        min-width:130px;
+        width:130px;
     }
 }
 </style>
@@ -296,10 +293,9 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
 <body>
 <div class="wrapper">
 
-<!-- Упрощённый заголовок без анимаций -->
 <div class="card simple-header">
-    <div class="main-title">PREMIUM CATALOG</div>
-    <div class="sub">E-Online</div>
+    <div class="main-title">E-ONLINE Catalog</div>
+    <div class="sub">Premium</div>
 </div>
 
 <div class="card movies-sec">
@@ -307,7 +303,7 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
         <div>
             <div class="sec-tag">Кинотеатр</div>
             <div class="sec-h">Сейчас у нас</div>
-            <p class="sec-p">Новинки в отличном качестве.</p>
+            <p class="sec-p">новинки в отличном качестве!</p>
         </div>
     </div>
     <div class="movies-scroll" id="mv-list">
