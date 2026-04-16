@@ -122,23 +122,22 @@ body{
     scrollbar-color:var(--accent) rgba(255,255,255,0.1);
     padding-bottom:16px;
     margin-bottom:-16px;
-    display:flex;
-    flex-wrap:nowrap;
-    gap:12px;
 }
 .movies-scroll::-webkit-scrollbar{height:6px}
 .movies-scroll::-webkit-scrollbar-track{background:rgba(255,255,255,0.1);border-radius:3px}
 .movies-scroll::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
 
 .mv{
-    flex:0 0 auto;
-    width:180px;
+    display:inline-block;
+    width:200px;
+    margin-right:16px;
     background:rgba(0,0,0,0.5);
     border-radius:12px;
     overflow:hidden;
     transition:transform 0.2s,box-shadow 0.2s;
     cursor:pointer;
     white-space:normal;
+    vertical-align:top;
     backdrop-filter:blur(4px);
 }
 .mv:hover{
@@ -264,28 +263,8 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
     .services-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:16px}
     .service-card{height:118px}
     .service-logo{max-height:48px}
-    
     .mv{
-        width:140px;
-    }
-    .mv-title{
-        font-size:12px;
-    }
-    .mv-meta{
-        font-size:10px;
-    }
-    .mv-badge{
-        font-size:9px;
-        padding:2px 5px;
-    }
-    .mv-info{
-        padding:8px;
-    }
-}
-
-@media (max-width:480px){
-    .mv{
-        width:130px;
+        width:200px;
     }
 }
 </style>
@@ -326,8 +305,8 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
     <strong class="instruction-title">Инструкция по установке плагинов в Lampa</strong>
     <p><strong>Все делайте строго по инструкции:</strong></p>
     <table class="instruction-table">
-        <tr><td>1</td><td>Настройки → Расширения → Добавить плагин → добавляете ссылки от бота</strong></td></tr>
-        <tr><td>2</td><td>Настройки → Плеер → меняем на <strong>2160P</td></tr>
+        <tr><td>1</td><td>Настройки → Расширения → Добавить плагин → добавляете ссылки от бота</td></tr>
+        <tr><td>2</td><td>Настройки → Плеер → меняем на <strong>2160P</strong></td></tr>
         <tr><td>3</td><td>Настройки → Плагины → Интерфейс → ставим Зарубежные подборки, Русские новинки и Start</td></tr>
     </table>
     <p><strong>Стартовый адрес:</strong></p>
