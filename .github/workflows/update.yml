@@ -1,18 +1,22 @@
 name: Update EPG
+
 on:
   schedule:
-    - cron: "0 */3 * * *"   # каждые 3 часа (UTC)
-  workflow_dispatch:        # запуск вручную
+    - cron: "0 */3 * * *"     # каждые 3 часа (UTC)
+  workflow_dispatch:          # возможность запустить вручную
+
 jobs:
   update:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0     # Забираем всю историю для безопасного pull
 
-      - name: Install Python
-        uses: actions/setup-python@v4
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0        # важно для корректного pull
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
@@ -26,15 +30,15 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          
-          # Забираем последние изменения с GitHub
-          git pull origin main --no-rebase
-          
+
+          # Подтягиваем последние изменения перед коммитом
+          git pull origin main --no-rebase || true
+
           # Добавляем файлы
           git add IPTV/epg.xml.gz IPTV/epg7.xml.gz
-          
-          # Коммитим (если есть изменения)
+
+          # Коммитим только если есть изменения
           git commit -m "Daily EPG update" || echo "No changes to commit"
-          
-          # Пушим
+
+          # Пушим изменения
           git push origin main
