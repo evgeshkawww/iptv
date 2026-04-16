@@ -429,15 +429,20 @@ summary::-webkit-details-marker {
   .controls {
     width: 100%;
     flex-direction: column;
+    align-items: center;   /* ← добавляем центрирование по горизонтали */
+    gap: 10px;
   }
   
   .search {
     width: 100%;
     min-width: auto;
+    box-sizing: border-box;
   }
   
   .total {
     width: auto;
+    display: inline-block;
+    text-align: center;
   }
   
   .channels {
