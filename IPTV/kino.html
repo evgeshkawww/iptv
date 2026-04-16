@@ -178,29 +178,60 @@ body{
 .mv-meta{font-size:12px;color:rgba(255,255,255,0.6)}
 .mv-star{color:#ffc107}
 
-.badge{
-    position:absolute;
-    top:16px;
-    left:18px;
-    padding:6px 14px;
-    border-radius:999px;
-    font-size:11px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    background:rgba(56,189,248,.15);
-    color: #F5D76E;
+/* ===== ЗОЛОТЫЕ ЭЛЕМЕНТЫ ===== */
+.badge {
+    position: absolute;
+    top: 16px;
+    left: 18px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    background: transparent;
+    border: none;
+    color: #F5D76E !important;
     text-shadow: 0 0 8px rgba(245, 215, 110, 0.5);
 }
 
-.instruction{line-height:1.65;font-size:15px}
-.instruction-title{
-    display:block;
-    margin:22px 0 12px;
-    font-size:16px;
-    font-weight:600;
-    color: #F5D76E;
-    text-shadow: 0 0 8px rgba(245, 215, 110, 0.5);
+/* Заголовок инструкции — НЕ золотой */
+.instruction-title {
+    display: block;
+    margin: 22px 0 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    text-shadow: none;
 }
+
+/* Плагины для LAMPA — золотой */
+.details-full summary {
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    color: #F5D76E !important;
+    text-shadow: 0 0 8px rgba(245, 215, 110, 0.5);
+    font-size: 20px;
+}
+.details-full summary::-webkit-details-marker { display: none; }
+
+/* Цифры 1,2,3 в инструкции — золотые */
+.instruction-table td:first-child {
+    width: 40px;
+    color: #F5D76E !important;
+    font-weight: 700;
+    text-align: center;
+    background: rgba(245, 215, 110, 0.1);
+}
+
+/* Фраза "Все делайте строго по инструкции:" — красная */
+.instruction p strong {
+    color: #ff3333 !important;
+    text-shadow: none;
+}
+
+.instruction{line-height:1.65;font-size:15px}
 
 .instruction-table{
     width:100%;
@@ -216,13 +247,6 @@ body{
     vertical-align:top;
 }
 .instruction-table tr:last-child td{border-bottom:none}
-.instruction-table td:first-child{
-    width:40px;
-    color: #F5D76E;
-    font-weight:700;
-    text-align:center;
-    background:rgba(245, 215, 110, 0.1);
-}
 
 .terminal{
     background:#fff;
@@ -262,16 +286,6 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
     margin-right:calc(50% - 50vw);
     border-radius:0;
 }
-.details-full summary{
-    list-style:none;
-    text-align:center;
-    cursor:pointer;
-    font-family:Orbitron,sans-serif;
-    color: #F5D76E;
-    text-shadow: 0 0 8px rgba(245, 215, 110, 0.5);
-    font-size:20px;
-}
-.details-full summary::-webkit-details-marker{display:none}
 
 .footer{text-align:center;font-size:12px;opacity:.45}
 
@@ -280,37 +294,8 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
     .services-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:16px}
     .service-card{height:118px}
     .service-logo{max-height:48px}
-    .mv{
-        width:200px;
-    }
+    .mv{width:200px}
 }
- /* Цвет #F5D76E для нужных заголовков и бейджей */
-.sec-tag,
-.badge,
-.instruction-title,
-.details-full summary {
-    color: #F5D76E !important;
-    text-shadow: 0 0 8px rgba(245, 215, 110, 0.5) !important;
-}
-
-/* Дополнительно для .sec-tag (Кинотеатр) — делаем чуть ярче и ближе к main-title */
-.sec-tag {
-    font-size: 13px;
-    letter-spacing: 3px;
-    text-shadow: 0 0 12px rgba(245, 215, 110, 0.7), 
-                 0 0 20px rgba(245, 215, 110, 0.4);
-}
-
-/* Для бейджей (русские кинотеатры, иностранные кинотеатры, instruction) */
-.badge {
-    text-shadow: 0 0 10px rgba(245, 215, 110, 0.8);
-}
-
-/* Для заголовка "Плагины для LAMPA" */
-.details-full summary {
-    text-shadow: 0 0 12px rgba(245, 215, 110, 0.7);
-    font-size: 21px;
-}   
 </style>
 </head>
 <body>
