@@ -345,8 +345,17 @@ summary::-webkit-details-marker {
     font-size: 22px;
   }
   
-  .btn-back {
-    padding: 8px 16px;
+  .promo-badge {
+    font-size: 28px;
+  }
+  
+  .promo-text, 
+  .promo-link {
+    font-size: 12px;
+  }
+  
+  .btn-int {
+    padding: 8px 18px;
     font-size: 13px;
     white-space: nowrap;
   }
@@ -354,14 +363,20 @@ summary::-webkit-details-marker {
   .controls {
     width: 100%;
     flex-direction: column;
+    align-items: center;   /* ← добавляем центрирование по горизонтали */
+    gap: 10px;
   }
   
   .search {
     width: 100%;
+    min-width: auto;
+    box-sizing: border-box;
   }
   
   .total {
     width: auto;
+    display: inline-block;
+    text-align: center;
   }
   
   .channels {
