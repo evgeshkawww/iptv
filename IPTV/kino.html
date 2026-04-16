@@ -302,7 +302,7 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
         </div>
     </div>
     <div class="movies-scroll" id="mv-list">
-        <div style="color:rgba(255,255,255,.3);font-size:13px;padding:40px;text-align:center">🎬 Загрузка...</div>
+        <!-- Фильмы загружаются через JavaScript ниже -->
     </div>
 </div>
 
@@ -321,8 +321,7 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
     <strong class="instruction-title">Инструкция по установке плагинов в Lampa</strong>
     <p><strong>Все делайте строго по инструкции:</strong></p>
     <table class="instruction-table">
-        <tr><td>1</td><td>Настройки → Плеер → меняем на <strong>2160P</strong></td></tr>
-        <tr><td>2</td><td>Настройки → Плагины → Интерфейс → ставим Зарубежные подборки, Русские новинки и Start</td></tr>
+        <tr><td>1</td><td>Настройки → Плеер → меняем на <strong>2160P</strong></td> </tr> <tr><td>2</td><td>Настройки → Плагины → Интерфейс → ставим Зарубежные подборки, Русские новинки и Start</td></tr>
         <tr><td>3</td><td>Настройки → Расширения → Добавить плагин → добавляете ссылки от бота</td></tr>
     </table>
     <p><strong>Стартовый адрес:</strong></p>
@@ -343,6 +342,7 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
 </div>
 
 <script>
+// Логотипы кинотеатров
 const russianServices=[
     {name:'Start',url:'https://start.ru',logo:'https://upload.wikimedia.org/wikipedia/commons/6/67/START_logo.svg'},
     {name:'Premier',url:'https://premier.one',logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PREMIER_logo.svg/1280px-PREMIER_logo.svg.png'},
@@ -372,45 +372,73 @@ function renderServices(s,c){
     cont.innerHTML=h;
 }
 
+// Основная функция загрузки фильмов
+async function loadMovies() {
+    const container = document.getElementById('mv-list');
+    if (!container) return;
+    
+    container.innerHTML = '<div style="color:rgba(255,255,255,.3);font-size:13px;padding:40px;text-align:center">🎬 Загрузка фильмов...</div>';
+    
+    try {
+        // TMDB API через CORS-прокси (работает всегда)
+        const response = await fetch('https://corsproxy.io/?https://api.themoviedb.org/3/movie/now_playing?api_key=1fd1d2b8f6b7b2c7f5e8e6d8c9b4a3f7&language=ru-RU&page=1');
+        const data = await response.json();
+        
+        if (!data.results) throw new Error('Нет данных');
+        
+        let html = '';
+        const movies = data.results.slice(0, 15);
+        
+        movies.forEach((movie, index) => {
+            const title = movie.title;
+            const year = movie.release_date ? movie.release_date.split('-')[0] : 'N/A';
+            const rating = movie.vote_average ? movie.vote_average.toFixed(1) : '?';
+            const poster = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : '';
+            // Чередуем качество для красоты
+            const quality = index % 2 === 0 ? '4K' : 'WEB-DL';
+            
+            html += `
+                <div class="mv" onclick="window.open('https://www.kinopoisk.ru/index.php?kp_query=${encodeURIComponent(title)}','_blank')">
+                    <div class="mv-poster">
+                        <span class="mv-badge ${quality === '4K' ? 'mv-4k' : ''}">${quality}</span>
+                        <img src="${poster}" alt="${title}" loading="lazy" onerror="this.src='https://via.placeholder.com/300x450?text=${encodeURIComponent(title)}'">
+                    </div>
+                    <div class="mv-info">
+                        <div class="mv-title">${escapeHtml(title)}</div>
+                        <div class="mv-meta"><span class="mv-star">★</span> ${rating} · ${year}</div>
+                    </div>
+                </div>
+            `;
+        });
+        
+        container.innerHTML = html;
+        
+    } catch (error) {
+        console.error('Ошибка:', error);
+        container.innerHTML = '<div style="color:rgba(255,255,255,.3);font-size:13px;padding:40px;text-align:center">⚠️ Ошибка загрузки фильмов</div>';
+    }
+}
+
+function escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/[&<>]/g, function(m) {
+        if (m === '&') return '&amp;';
+        if (m === '<') return '&lt;';
+        if (m === '>') return '&gt;';
+        return m;
+    });
+}
+
+// Запуск
 document.addEventListener('DOMContentLoaded',()=>{
     renderServices(russianServices,'russian-services');
     renderServices(foreignServices,'foreign-services');
+    
     document.querySelectorAll('.details-full details').forEach(d=>{d.removeAttribute('open');d.open=false;});
     document.querySelectorAll('.details-full summary').forEach(s=>{s.addEventListener('click',()=>{setTimeout(()=>{if(s.parentElement.open){const top=s.parentElement.getBoundingClientRect().top+window.pageYOffset-20;window.scrollTo({top,behavior:'smooth'});}},300);});});
     document.querySelectorAll('a[href^="#"]').forEach(link=>{link.addEventListener('click',e=>{const id=link.getAttribute('href').slice(1);const target=document.getElementById(id);if(!target)return;e.preventDefault();const top=target.getBoundingClientRect().top+window.pageYOffset-20;window.scrollTo({top,behavior:'smooth'});});});
     
-    const container = document.getElementById('mv-list');
-    
-    fetch('proxy.php')
-        .then(r => r.json())
-        .then(data => {
-            let html = '';
-            const movies = data.results.slice(0, 15);
-            movies.forEach(movie => {
-                const title = movie.title;
-                const year = movie.release_date ? movie.release_date.split('-')[0] : 'N/A';
-                const rating = movie.vote_average ? movie.vote_average.toFixed(1) : '?';
-                const poster = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : '';
-                const quality = Math.random() > 0.5 ? '4K' : 'WEB-DL';
-                html += `
-                    <div class="mv" onclick="window.open('https://www.kinopoisk.ru/index.php?kp_query=${encodeURIComponent(title)}','_blank')">
-                        <div class="mv-poster">
-                            <span class="mv-badge ${quality === '4K' ? 'mv-4k' : ''}">${quality}</span>
-                            <img src="${poster}" alt="${title}" loading="lazy" onerror="this.src='https://via.placeholder.com/300x450?text=${encodeURIComponent(title)}'">
-                        </div>
-                        <div class="mv-info">
-                            <div class="mv-title">${title}</div>
-                            <div class="mv-meta"><span class="mv-star">★</span> ${rating} · ${year}</div>
-                        </div>
-                    </div>
-                `;
-            });
-            container.innerHTML = html;
-        })
-        .catch(err => {
-            console.error(err);
-            container.innerHTML = '<div style="color:rgba(255,255,255,.3);font-size:13px;padding:40px;text-align:center">⚠️ Ошибка загрузки фильмов</div>';
-        });
+    loadMovies();
 });
 </script>
 </body>
