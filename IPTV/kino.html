@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Premium Catalog</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 <style>
@@ -140,22 +140,23 @@ body{
     scrollbar-color:var(--accent) rgba(255,255,255,0.1);
     padding-bottom:16px;
     margin-bottom:-16px;
+    display:flex;
+    flex-wrap:nowrap;
+    gap:12px;
 }
 .movies-scroll::-webkit-scrollbar{height:6px}
 .movies-scroll::-webkit-scrollbar-track{background:rgba(255,255,255,0.1);border-radius:3px}
 .movies-scroll::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
 
 .mv{
-    display:inline-block;
+    flex:0 0 auto;
     width:180px;
-    margin-right:16px;
     background:rgba(0,0,0,0.5);
     border-radius:12px;
     overflow:hidden;
     transition:transform 0.2s,box-shadow 0.2s;
     cursor:pointer;
     white-space:normal;
-    vertical-align:top;
     backdrop-filter:blur(4px);
 }
 .mv:hover{
@@ -281,6 +282,31 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
     .services-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:16px}
     .service-card{height:118px}
     .service-logo{max-height:48px}
+    
+    .mv{
+        width:calc(50% - 6px);
+        min-width:140px;
+    }
+    .mv-title{
+        font-size:12px;
+    }
+    .mv-meta{
+        font-size:10px;
+    }
+    .mv-badge{
+        font-size:9px;
+        padding:2px 5px;
+    }
+    .mv-info{
+        padding:8px;
+    }
+}
+
+@media (max-width:480px){
+    .mv{
+        width:calc(50% - 6px);
+        min-width:130px;
+    }
 }
 </style>
 </head>
@@ -297,7 +323,7 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
     <div class="movies-top">
         <div>
             <div class="sec-tag">Кинотеатр</div>
-            <div class="sec-h">E-IPTV</div>
+            <div class="sec-h">Сейчас в кино</div>
             <p class="sec-p">Фильмы и сериалы через плагин Lampa — прямо на вашем ТВ.</p>
         </div>
     </div>
