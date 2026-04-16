@@ -151,8 +151,8 @@ body::before{
 .main-title{
     text-align:center;
     font-family:Orbitron,sans-serif;
-    font-size:34px;          /* было 46px */
-    letter-spacing:.14em;   /* было .18em */
+    font-size:34px;
+    letter-spacing:.14em;
     color:var(--accent);
     text-transform:uppercase;
     text-shadow:0 0 20px rgba(56,189,248,.5);
@@ -264,6 +264,141 @@ iframe{
 .details-full summary::-webkit-details-marker{
     display:none;
 }
+
+/* ===== СТИЛИ ДЛЯ БЛОКА КИНОТЕАТРА ===== */
+.movies-sec {
+    width: 100%;
+}
+
+.movies-top {
+    margin-bottom: 24px;
+}
+
+.sec-tag {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+
+.sec-h {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.sec-p {
+    font-size: 14px;
+    opacity: 0.7;
+    margin: 0;
+}
+
+.movies-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) rgba(255,255,255,0.1);
+    padding-bottom: 16px;
+    margin-bottom: -16px;
+}
+
+.movies-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.movies-scroll::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1);
+    border-radius: 3px;
+}
+
+.movies-scroll::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 3px;
+}
+
+.movie-card {
+    display: inline-block;
+    width: 180px;
+    margin-right: 16px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    white-space: normal;
+    vertical-align: top;
+    backdrop-filter: blur(4px);
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(56,189,248,0.4);
+}
+
+.movie-poster {
+    width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    display: block;
+}
+
+.movie-info {
+    padding: 12px;
+}
+
+.movie-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-original-title {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 6px;
+}
+
+.movie-details {
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.movie-rating {
+    color: #ffc107;
+}
+
+.movie-year {
+    color: rgba(255,255,255,0.5);
+    margin-left: 6px;
+}
+
+.movie-quality {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(56,189,248,0.2), rgba(34,197,94,0.2));
+    color: var(--accent);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    margin-top: 5px;
+    border: 1px solid rgba(56,189,248,0.3);
+}
+
+.loading-placeholder {
+    color: rgba(255,255,255,0.3);
+    font-size: 13px;
+    padding: 40px;
+    text-align: center;
+}
 </style>
 </head>
 
@@ -274,12 +409,22 @@ iframe{
 <div class="card hero">
     <div class="hero-glow"></div>
     <div class="hero-scan"></div>
-
-    <div class="main-title hero-title">
-        premium catalog
-    </div>
+    <div class="main-title hero-title">premium catalog</div>
 </div>
 
+<!-- ===== БЛОК КИНОТЕАТРА ===== -->
+<div class="card movies-sec" id="movies">
+    <div class="movies-top">
+        <div>
+            <div class="sec-tag">Кинотеатр</div>
+            <div class="sec-h">Сейчас в кино</div>
+            <p class="sec-p">Фильмы и сериалы через плагин Lampa — прямо на вашем ТВ.</p>
+        </div>
+    </div>
+    <div class="movies-scroll" id="mv-list">
+        <div class="loading-placeholder">🎬 Загрузка фильмов...</div>
+    </div>
+</div>
 
 <!-- Русские -->
 <div class="card section">
@@ -293,35 +438,20 @@ iframe{
     <img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/img/import.png">
 </div>
 
-<!-- Общий -->
-<div class="card section">
-    <span class="badge">общий каталог</span>
-    <img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/img/Popcorn%20Time_145.png">
-</div>
-
 <!-- Инструкция -->
 <div class="card instruction">
     <span class="badge">instruction</span>
-
-    <strong class="instruction-title">
-        Инструкция по установке плагинов в Lampa (скаченной ниже)
-    </strong>
-
+    <strong class="instruction-title">Инструкция по установке плагинов в Lampa (скаченной ниже)</strong>
     <p>Все делайте строго по инструкции:</p>
-
     <ul>
         <li>Настройки → Плеер → в самый низ и меняем на <strong>2160P</strong>, выходите.</li>
         <li>Настройки → Плагины → Интерфейс → ставим <strong>Зарубежные подборки</strong>, <strong>Русские новинки</strong> и <strong>Start</strong>, выходите.</li>
         <li>Настройки → Расширения → Добавить плагин → добавляете те ссылки, что дал <strong>Online Premium бот</strong>, выходите.</li>
     </ul>
-
     <p>Сбоку слева внизу в Lampa появятся русские и зарубежные кинотеатры, а так же подборки E-Online</p>
-
     <p><strong>Все делайте строго по инструкции:</strong></p>
     <p>Стартовый адрес:</p>
-
     <pre><code>http://bylampa.online</code></pre>
-
     <a class="button" href="https://dl.dropbox.com/scl/fi/4nv1qiforjaapuaie7kk7/LAMPA-1.12.4-clone-un.apk?rlkey=ozisntppiapb7ehljbwklhach&dl=0" target="_blank">📥 Скачать Lampa</a>
     <a class="button" href="https://dl.dropbox.com/scl/fi/8puxrkv46zm8bqv0fsovt/LAMPA-ATV-v1.12.4-Uncensored.apk?rlkey=7xd0lyfsopduqqd87t71dohp6&dl=0" target="_blank">📥 Скачать Lampa ATV</a>
     <a class="button" href="https://dl.dropbox.com/scl/fi/xknj7vunp90wxe3bom9ot/MX_Player_v2_6_3_Offline_arm7-arm64.apk?rlkey=y6ogo45cn8v0fdg21lfcz77z7" target="_blank">📥 Скачать MX Player для Lampa Android</a>
@@ -338,63 +468,139 @@ iframe{
 <div class="footer">© E-Online</div>
 
 </div>
-    <script>
-document.addEventListener('DOMContentLoaded', ()=>{
-  document.querySelectorAll('.details-full details').forEach(d=>{
-    d.removeAttribute('open');
-  });
-});
+
 <script>
 document.addEventListener('DOMContentLoaded', ()=>{
-
-  /* гарантированно закрываем при загрузке */
+  // Закрываем details при загрузке
   document.querySelectorAll('.details-full details').forEach(d=>{
+    d.removeAttribute('open');
     d.open = false;
   });
 
-  /* плавное открытие + скролл */
+  // Плавное открытие + скролл
   document.querySelectorAll('.details-full summary').forEach(summary=>{
     summary.addEventListener('click', ()=>{
       const details = summary.parentElement;
-
       setTimeout(()=>{
         if(details.open){
           const top = details.getBoundingClientRect().top + window.pageYOffset - 20;
-          window.scrollTo({
-            top,
-            behavior:'smooth'
-          });
+          window.scrollTo({ top, behavior:'smooth' });
         }
       }, 300);
     });
   });
 
-  /* якоря */
+  // Якоря
   document.querySelectorAll('a[href^="#"]').forEach(link=>{
     link.addEventListener('click', e=>{
       const id = link.getAttribute('href').slice(1);
       const target = document.getElementById(id);
       if(!target) return;
-
       e.preventDefault();
-
       const top = target.getBoundingClientRect().top + window.pageYOffset - 20;
-      window.scrollTo({
-        top,
-        behavior:'smooth'
-      });
+      window.scrollTo({ top, behavior:'smooth' });
     });
   });
 
+  // ===== ЗАГРУЗКА ФИЛЬМОВ С РЕАЛЬНЫМИ РЕЙТИНГАМИ И 4K =====
+  async function loadMovies() {
+    const container = document.getElementById('mv-list');
+    if (!container) return;
+
+    try {
+      const API_KEY = '752a4bb1-c0f7-4729-a8e0-dd792704f1d8';
+      
+      // 1. Получаем список топ-100 фильмов
+      const response = await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_100_POPULAR_FILMS&page=1', {
+        headers: {
+          'X-API-KEY': API_KEY,
+          'Content-Type': 'application/json'
+        }
+      });
+      
+      if (!response.ok) throw new Error('Ошибка API');
+      
+      const data = await response.json();
+      const moviesBatch = data.films.slice(0, 15);
+      
+      // 2. Для каждого фильма получаем ДЕТАЛЬНУЮ информацию (с реальным рейтингом)
+      container.innerHTML = '<div class="loading-placeholder">🎬 Загрузка фильмов (получаем рейтинги)...</div>';
+      
+      const moviesWithDetails = await Promise.all(
+        moviesBatch.map(async (movie) => {
+          try {
+            const detailResponse = await fetch(`https://kinopoiskapiunofficial.tech/api/v2.2/films/${movie.filmId}`, {
+              headers: {
+                'X-API-KEY': API_KEY,
+                'Content-Type': 'application/json'
+              }
+            });
+            if (detailResponse.ok) {
+              const detail = await detailResponse.json();
+              return {
+                ...movie,
+                ratingKinopoisk: detail.ratingKinopoisk,
+                ratingKinopoiskVoteCount: detail.ratingKinopoiskVoteCount,
+                nameOriginal: detail.nameOriginal
+              };
+            }
+          } catch (e) {
+            console.warn(`Не удалось загрузить детали для ${movie.filmId}`);
+          }
+          return movie;
+        })
+      );
+      
+      renderMovies(moviesWithDetails, container);
+      
+    } catch (error) {
+      console.error('Ошибка загрузки:', error);
+      container.innerHTML = '<div class="loading-placeholder">⚠️ Не удалось загрузить фильмы. Проверьте подключение к интернету.</div>';
+    }
+  }
+  
+  function renderMovies(movies, container) {
+    let html = '';
+    movies.forEach(movie => {
+      const titleRu = movie.nameRu || '';
+      const titleOriginal = movie.nameOriginal || movie.nameEn || '';
+      const year = movie.year || 'N/A';
+      const posterUrl = movie.posterUrlPreview || 'https://via.placeholder.com/300x450?text=No+Poster';
+      const filmId = movie.filmId;
+      
+      // Рейтинг из детального API
+      let ratingDisplay = '★ ?';
+      const rating = movie.ratingKinopoisk;
+      if (rating && typeof rating === 'number' && rating > 0) {
+        ratingDisplay = `★ ${rating.toFixed(1)}`;
+      }
+      
+      // ВСЕГДА 4K
+      const quality = '4К';
+      
+      html += `
+        <div class="movie-card" onclick="window.open('https://www.kinopoisk.ru/film/${filmId}/', '_blank')">
+          <img class="movie-poster" src="${posterUrl}" alt="${titleRu}" loading="lazy" 
+               onerror="this.src='https://via.placeholder.com/300x450?text=${encodeURIComponent(titleRu || titleOriginal)}'">
+          <div class="movie-info">
+            <div class="movie-title" title="${titleRu}">${titleRu || titleOriginal}</div>
+            <div class="movie-original-title" title="${titleOriginal}">${titleOriginal ? titleOriginal : ''}</div>
+            <div class="movie-details">
+              <span class="movie-rating">${ratingDisplay}</span>
+              <span class="movie-year">${year}</span>
+              <div class="movie-quality">${quality}</div>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+    
+    container.innerHTML = html;
+  }
+  
+  // Запускаем загрузку
+  loadMovies();
 });
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
