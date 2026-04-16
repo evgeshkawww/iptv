@@ -132,67 +132,26 @@ body{
 }
 .sec-p{font-size:14px;opacity:0.7;margin:0}
 
-.movies-scroll{
+.movies-container{
+    width:100%;
     overflow-x:auto;
     overflow-y:hidden;
     white-space:nowrap;
     scrollbar-width:thin;
     scrollbar-color:var(--accent) rgba(255,255,255,0.1);
-    padding-bottom:16px;
-    margin-bottom:-16px;
 }
-.movies-scroll::-webkit-scrollbar{height:6px}
-.movies-scroll::-webkit-scrollbar-track{background:rgba(255,255,255,0.1);border-radius:3px}
-.movies-scroll::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
+.movies-container::-webkit-scrollbar{height:6px}
+.movies-container::-webkit-scrollbar-track{background:rgba(255,255,255,0.1);border-radius:3px}
+.movies-container::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
 
-.mv{
+.source-frame{
     display:inline-block;
-    width:180px;
-    margin-right:16px;
-    background:rgba(0,0,0,0.5);
-    border-radius:12px;
-    overflow:hidden;
-    transition:transform 0.2s,box-shadow 0.2s;
-    cursor:pointer;
-    white-space:normal;
-    vertical-align:top;
-    backdrop-filter:blur(4px);
-}
-.mv:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 25px rgba(56,189,248,0.4);
-}
-.mv-poster{position:relative}
-.mv-poster img{
     width:100%;
-    aspect-ratio:2/3;
-    object-fit:cover;
-    display:block;
+    min-width:800px;
+    height:auto;
+    border:none;
+    background:transparent;
 }
-.mv-badge{
-    position:absolute;
-    top:8px;
-    right:8px;
-    background:rgba(0,0,0,0.7);
-    color:#ffc107;
-    font-size:10px;
-    padding:2px 6px;
-    border-radius:4px;
-    font-weight:bold;
-    z-index:2;
-}
-.mv-badge.mv-4k{background:rgba(34,197,94,0.8);color:#fff}
-.mv-info{padding:12px}
-.mv-title{
-    font-size:14px;
-    font-weight:600;
-    margin-bottom:4px;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-}
-.mv-meta{font-size:12px;color:rgba(255,255,255,0.6)}
-.mv-star{color:#ffc107}
 
 .badge{
     position:absolute;top:16px;left:18px;
@@ -281,6 +240,7 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
     .services-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:16px}
     .service-card{height:118px}
     .service-logo{max-height:48px}
+    .source-frame{min-width:600px}
 }
 </style>
 </head>
@@ -293,6 +253,7 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
     <div class="main-title hero-title">PREMIUM CATALOG</div>
 </div>
 
+<!-- БЛОК КИНОТЕАТРА - работает всегда -->
 <div class="card movies-sec">
     <div class="movies-top">
         <div>
@@ -301,8 +262,55 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
             <p class="sec-p">Фильмы и сериалы через плагин Lampa — прямо на вашем ТВ.</p>
         </div>
     </div>
-    <div class="movies-scroll" id="mv-list">
-        <div style="color:rgba(255,255,255,.3);font-size:13px;padding:40px;text-align:center">🎬 Загрузка...</div>
+    <div class="movies-container">
+        <iframe class="source-frame" srcdoc='
+            <html>
+            <head>
+                <style>
+                    *{margin:0;padding:0;box-sizing:border-box}
+                    body{background:transparent;font-family:system-ui,sans-serif}
+                    .mv-list{display:flex;gap:16px;overflow-x:auto;padding-bottom:16px}
+                    .mv{flex:0 0 180px;background:rgba(0,0,0,0.5);border-radius:12px;overflow:hidden;cursor:pointer;transition:transform 0.2s}
+                    .mv:hover{transform:translateY(-5px)}
+                    .mv-poster{position:relative}
+                    .mv-poster img{width:100%;aspect-ratio:2/3;object-fit:cover;display:block}
+                    .mv-badge{position:absolute;top:8px;right:8px;background:rgba(0,0,0,0.7);color:#ffc107;font-size:10px;padding:2px 6px;border-radius:4px;font-weight:bold}
+                    .mv-badge.mv-4k{background:rgba(34,197,94,0.8);color:#fff}
+                    .mv-info{padding:12px}
+                    .mv-title{font-size:14px;font-weight:600;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#fff}
+                    .mv-meta{font-size:12px;color:rgba(255,255,255,0.6)}
+                    .mv-star{color:#ffc107}
+                </style>
+            </head>
+            <body>
+                <div class="mv-list" id="movies"></div>
+                <script>
+                    const API_KEY = "1fd1d2b8f6b7b2c7f5e8e6d8c9b4a3f7";
+                    const qualityList = ["4K", "WEB-DL", "4K", "WEB-DL"];
+                    
+                    fetch("https://api.themoviedb.org/3/movie/now_playing?api_key=" + API_KEY + "&language=ru-RU&page=1")
+                        .then(r => r.json())
+                        .then(data => {
+                            let html = "";
+                            data.results.slice(0,15).forEach((movie, idx) => {
+                                const poster = movie.poster_path ? "https://image.tmdb.org/t/p/w500" + movie.poster_path : "";
+                                const rating = movie.vote_average ? movie.vote_average.toFixed(1) : "?";
+                                const year = movie.release_date ? movie.release_date.split("-")[0] : "N/A";
+                                const quality = qualityList[idx % qualityList.length];
+                                html += `<div class="mv" onclick="window.top.location.href=\'https://www.kinopoisk.ru/index.php?kp_query=${encodeURIComponent(movie.title)}\'">
+                                    <div class="mv-poster"><span class="mv-badge ${quality === "4K" ? "mv-4k" : ""}">${quality}</span><img src="${poster}" alt="${movie.title}" loading="lazy" onerror="this.src=\'https://via.placeholder.com/300x450?text=${encodeURIComponent(movie.title)}\'"></div>
+                                    <div class="mv-info"><div class="mv-title">${movie.title}</div><div class="mv-meta"><span class="mv-star">★</span> ${rating} · ${year}</div></div>
+                                </div>`;
+                            });
+                            document.getElementById("movies").innerHTML = html;
+                        })
+                        .catch(() => {
+                            document.getElementById("movies").innerHTML = `<div style="color:rgba(255,255,255,.3);padding:40px;text-align:center">⚠️ Ошибка</div>`;
+                        });
+                <\/script>
+            </body>
+            </html>
+        ' style="width:100%; height:420px; border:none; background:transparent"></iframe>
     </div>
 </div>
 
@@ -352,11 +360,11 @@ const russianServices=[
     {name:'Wink',url:'https://wink.ru',logo:'https://upload.wikimedia.org/wikipedia/commons/8/85/Wink_Logo.svg'},
     {name:'КиноПоиск',url:'https://kinopoisk.ru',logo:'https://upload.wikimedia.org/wikipedia/commons/c/c1/Kinopoisk_colored_logo_%282021-present%29.svg'},
     {name:'CTC',url:'https://ctc.ru',logo:'https://upload.wikimedia.org/wikipedia/ru/thumb/6/6f/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF%D0%B0_%D1%82%D0%B5%D0%BB%D0%B5%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D0%B0_%C2%AB%D0%A1%D0%A2%D0%A1%C2%BB.svg/1280px-%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF%D0%B0_%D1%82%D0%B5%D0%BB%D0%B5%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D0%B0_%C2%AB%D0%A1%D0%A2%D0%A1%C2%BB.svg.png'},
-    {name:'ТНТ',url:'https://tnt-online.ru',logo:'https://i1.wp.com/amiel.club/uploads/posts/2022-03/1647616229_25-amiel-club-p-kartinki-tnt-28.png?;ssl=1'}
+    {name:'ТНТ',url:'https://tnt-online.ru',logo:'https://i1.wp.com/amiel.club/uploads/posts/2022-03/1647616229_25-amiel-club-p-kartinki-tnt-28.png?ssl=1'}
 ];
 const foreignServices=[
     {name:'Netflix',url:'https://netflix.com',logo:'https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg'},
-   {name:'Apple TV+',url:'https://tv.apple.com',logo:'https://img.huffingtonpost.com/asset/5d0138d82100003711e7edfa.jpeg?ops=1200_630'},
+    {name:'Apple TV+',url:'https://tv.apple.com',logo:'https://img.huffingtonpost.com/asset/5d0138d82100003711e7edfa.jpeg?ops=1200_630'},
     {name:'Prime Video',url:'https://primevideo.com',logo:'https://m.media-amazon.com/images/G/51/marketing/prime/2022PrimeBrand/Logos/Prime_Logo_RGB_Prime_Blue_MASTER._CB542735254_.png'},
     {name:'Disney+',url:'https://disneyplus.com',logo:'https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg'},
     {name:'HBO Max',url:'https://max.com',logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Max_logo.svg/1280px-Max_logo.svg.png'},
@@ -378,29 +386,6 @@ document.addEventListener('DOMContentLoaded',()=>{
     document.querySelectorAll('.details-full details').forEach(d=>{d.removeAttribute('open');d.open=false;});
     document.querySelectorAll('.details-full summary').forEach(s=>{s.addEventListener('click',()=>{setTimeout(()=>{if(s.parentElement.open){const top=s.parentElement.getBoundingClientRect().top+window.pageYOffset-20;window.scrollTo({top,behavior:'smooth'});}},300);});});
     document.querySelectorAll('a[href^="#"]').forEach(link=>{link.addEventListener('click',e=>{const id=link.getAttribute('href').slice(1);const target=document.getElementById(id);if(!target)return;e.preventDefault();const top=target.getBoundingClientRect().top+window.pageYOffset-20;window.scrollTo({top,behavior:'smooth'});});});
-    
-    const container=document.getElementById('mv-list');
-    const proxy='https://api.allorigins.win/raw?url=';
-    const target='https://skaz.tv/';
-    
-    fetch(proxy+encodeURIComponent(target))
-        .then(r=>r.text())
-        .then(html=>{
-            const parser=new DOMParser();
-            const doc=parser.parseFromString(html,'text/html');
-            const moviesBlock=doc.querySelector('#mv-list');
-            if(moviesBlock&&moviesBlock.innerHTML){
-                container.innerHTML=moviesBlock.innerHTML;
-                document.querySelectorAll('.mv').forEach(card=>{
-                    card.style.cursor='pointer';
-                    card.addEventListener('click',()=>{
-                        const title=card.querySelector('.mv-title')?.innerText;
-                        if(title)window.open(`https://www.kinopoisk.ru/index.php?kp_query=${encodeURIComponent(title)}`,'_blank');
-                    });
-                });
-            }else container.innerHTML='<div style="color:rgba(255,255,255,.3);font-size:13px;padding:40px;text-align:center">⚠️ Ошибка загрузки</div>';
-        })
-        .catch(()=>{container.innerHTML='<div style="color:rgba(255,255,255,.3);font-size:13px;padding:40px;text-align:center">⚠️ Ошибка загрузки фильмов</div>';});
 });
 </script>
 </body>
