@@ -42,41 +42,24 @@ body{
     box-shadow:0 0 50px rgba(56,189,248,.25),inset 0 0 0 1px rgba(255,255,255,.06);
 }
 
-.hero{
-    position:relative;
-    overflow:hidden;
-    padding:80px 40px;
+/* Упрощённый заголовок без анимаций */
+.simple-header {
+    text-align: center;
+    padding: 30px 20px;
 }
-.hero-glow{
-    position:absolute;
-    inset:-40%;
-    background:radial-gradient(circle at 30% 30%,rgba(56,189,248,.35),transparent 40%),radial-gradient(circle at 70% 60%,rgba(34,197,94,.25),transparent 45%);
-    animation:glowMove 12s linear infinite;
-    filter:blur(40px);
+.simple-header .main-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    letter-spacing: .1em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin: 0;
 }
-@keyframes glowMove{0%{transform:translate(0,0)}50%{transform:translate(6%,-4%)}100%{transform:translate(0,0)}}
-
-.hero-scan{
-    position:absolute;
-    top:-100%;left:0;width:100%;height:200%;
-    background:linear-gradient(180deg,transparent,rgba(56,189,248,.12),transparent);
-    animation:scan 6s ease-in-out infinite;
+.simple-header .sub {
+    font-size: 12px;
+    opacity: 0.5;
+    margin-top: 8px;
 }
-@keyframes scan{0%{transform:translateY(-60%)}100%{transform:translateY(60%)}}
-
-.main-title{
-    text-align:center;
-    font-family:Orbitron,sans-serif;
-    font-size:34px;
-    letter-spacing:.14em;
-    color:var(--accent);
-    text-transform:uppercase;
-    text-shadow:0 0 20px rgba(56,189,248,.5);
-    position:relative;
-    z-index:2;
-    animation:titlePulse 4s ease-in-out infinite;
-}
-@keyframes titlePulse{0%,100%{text-shadow:0 0 20px rgba(56,189,248,.5),0 0 60px rgba(56,189,248,.25)}50%{text-shadow:0 0 35px rgba(56,189,248,.9),0 0 90px rgba(56,189,248,.5)}}
 
 .services-section{text-align:center}
 .services-grid{
@@ -278,7 +261,7 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
 .footer{text-align:center;font-size:12px;opacity:.45}
 
 @media (max-width:600px){
-    .main-title{font-size:26px}
+    .simple-header .main-title{font-size:22px}
     .services-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:16px}
     .service-card{height:118px}
     .service-logo{max-height:48px}
@@ -313,18 +296,18 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
 <body>
 <div class="wrapper">
 
-<div class="card hero">
-    <div class="hero-glow"></div>
-    <div class="hero-scan"></div>
-    <div class="main-title hero-title">PREMIUM CATALOG</div>
+<!-- Упрощённый заголовок без анимаций -->
+<div class="card simple-header">
+    <div class="main-title">PREMIUM CATALOG</div>
+    <div class="sub">E-Online</div>
 </div>
 
 <div class="card movies-sec">
     <div class="movies-top">
         <div>
             <div class="sec-tag">Кинотеатр</div>
-            <div class="sec-h">Сейчас в E-Online</div>
-            <p class="sec-p">Новинки! В отличном качестве!</p>
+            <div class="sec-h">Сейчас у нас</div>
+            <p class="sec-p">Новинки в отличном качестве.</p>
         </div>
     </div>
     <div class="movies-scroll" id="mv-list">
