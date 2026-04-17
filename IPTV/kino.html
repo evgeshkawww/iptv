@@ -5,16 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>E-Online</title>
 
-
 <link rel="icon" href="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/favicon.ico">    
-    
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@500;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 <style>
 :root{
     --bg:#020617;
     --card:rgba(15,23,42,.75);
     --accent:#38bdf8;
     --text:#e5e7eb;
+    --gold:#F5D76E;
+    --gold-glow:rgba(245,215,110,0.5);
 }
 *{box-sizing:border-box}
 
@@ -51,10 +52,10 @@ body{
     padding: 30px 20px;
 }
 .simple-header .main-title {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 28px;
     letter-spacing: .1em;
-    color: #F5D76E;
+    color: var(--gold);
     text-transform: uppercase;
     margin: 0;
     text-shadow: 0 0 20px rgba(245, 215, 110, 0.9), 0 0 8px rgba(255, 255, 200, 0.6);
@@ -108,15 +109,18 @@ body{
     font-size:12px;
     text-transform:uppercase;
     letter-spacing:2px;
-    color: #F5D76E;
+    color: var(--gold);
     text-shadow: 0 0 8px rgba(245, 215, 110, 0.5);
     margin-bottom:8px;
 }
+/* ЗОЛОТОЙ ЗАГОЛОВОК "Сейчас у нас" */
 .sec-h{
-    font-family:Orbitron,sans-serif;
-    font-size:28px;
-    font-weight:700;
-    margin-bottom:8px;
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--gold);
+    text-shadow: 0 0 12px rgba(245, 215, 110, 0.7);
+    margin-bottom: 8px;
 }
 .sec-p{font-size:14px;opacity:0.7;margin:0}
 
@@ -194,7 +198,7 @@ body{
     text-transform: uppercase;
     background: transparent;
     border: none;
-    color: #F5D76E !important;
+    color: var(--gold) !important;
     text-shadow: 0 0 8px rgba(245, 215, 110, 0.5);
 }
 
@@ -214,7 +218,7 @@ body{
     text-align: center;
     cursor: pointer;
     font-family: 'Orbitron', sans-serif;
-    color: #F5D76E !important;
+    color: var(--gold) !important;
     text-shadow: 0 0 8px rgba(245, 215, 110, 0.5);
     font-size: 20px;
 }
@@ -223,7 +227,7 @@ body{
 /* Цифры 1,2,3 в инструкции — золотые */
 .instruction-table td:first-child {
     width: 40px;
-    color: #F5D76E !important;
+    color: var(--gold) !important;
     font-weight: 700;
     text-align: center;
     background: rgba(245, 215, 110, 0.1);
@@ -338,77 +342,4 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
     <strong class="instruction-title">Инструкция по установке плагинов в Lampa</strong>
     <p><strong>Все делайте строго по инструкции:</strong></p>
     <table class="instruction-table">
-        <tr><td>1</td><td>Настройки → Расширения → Добавить плагин → добавляете ссылки от бота</td></tr>
-        <tr><td>2</td><td>Настройки → Плеер → Тип плеера - Встроенный! Листаем вниз там же и меняем качество видео на <strong>2160P</strong></td></tr>
-        <tr><td>3</td><td>Настройки → Плагины → Интерфейс → ставим Зарубежные подборки, Русские новинки и Start</td></tr>
-    </table>
-    <p><strong>Стартовый адрес:</strong></p>
-    <div class="terminal">http://bylampa.online</div>
-    <a class="button" href="https://dl.dropbox.com/scl/fi/4nv1qiforjaapuaie7kk7/LAMPA-1.12.4-clone-un.apk?rlkey=ozisntppiapb7ehljbwklhach&dl=0" target="_blank">📥 Скачать Lampa</a>
-    <a class="button" href="https://dl.dropbox.com/scl/fi/8puxrkv46zm8bqv0fsovt/LAMPA-ATV-v1.12.4-Uncensored.apk?rlkey=7xd0lyfsopduqqd87t71dohp6&dl=0" target="_blank">📥 Скачать Lampa ATV</a>
-    <a class="button" href="https://dl.dropbox.com/scl/fi/xknj7vunp90wxe3bom9ot/MX_Player_v2_6_3_Offline_arm7-arm64.apk?rlkey=y6ogo45cn8v0fdg21lfcz77z7" target="_blank">📥 Скачать MX Player для Lampa Android</a>
-</div>
-
-<div class="card details-full">
-    <details>
-        <summary>Плагины для LAMPA</summary>
-        <iframe src="plugins.html"></iframe>
-    </details>
-</div>
-
-<div class="footer">© E-Online</div>
-</div>
-
-<script>
-const russianServices=[
-    {name:'Start',url:'https://start.ru',logo:'https://upload.wikimedia.org/wikipedia/commons/6/67/START_logo.svg'},
-    {name:'Premier',url:'https://premier.one',logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PREMIER_logo.svg/1280px-PREMIER_logo.svg.png'},
-    {name:'KION',url:'https://kion.ru',logo:'https://upload.wikimedia.org/wikipedia/commons/d/dd/Kion_Group_logo.svg'},
-    {name:'ИВИ',url:'https://ivi.ru',logo:'https://upload.wikimedia.org/wikipedia/commons/5/55/Ivi_logo.svg'},
-    {name:'Okko',url:'https://okko.tv',logo:'https://static.tildacdn.com/tild3535-6436-4834-a230-353339643333/Logo.png'},
-    {name:'Wink',url:'https://wink.ru',logo:'https://upload.wikimedia.org/wikipedia/commons/8/85/Wink_Logo.svg'},
-    {name:'КиноПоиск',url:'https://kinopoisk.ru',logo:'https://upload.wikimedia.org/wikipedia/commons/c/c1/Kinopoisk_colored_logo_%282021-present%29.svg'},
-    {name:'CTC',url:'https://ctc.ru',logo:'https://upload.wikimedia.org/wikipedia/ru/thumb/6/6f/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF%D0%B0_%D1%82%D0%B5%D0%BB%D0%B5%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D0%B0_%C2%AB%D0%A1%D0%A2%D0%A1%C2%BB.svg/1280px-%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF%D0%B0_%D1%82%D0%B5%D0%BB%D0%B5%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D0%B0_%C2%AB%D0%A1%D0%A2%D0%A1%C2%BB.svg.png'},
-    {name:'ТНТ',url:'https://tnt-online.ru',logo:'https://i1.wp.com/amiel.club/uploads/posts/2022-03/1647616229_25-amiel-club-p-kartinki-tnt-28.png?ssl=1'}
-];
-const foreignServices=[
-    {name:'Netflix',url:'https://netflix.com',logo:'https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg'},
-    {name:'Apple TV+',url:'https://tv.apple.com',logo:'https://img.huffingtonpost.com/asset/5d0138d82100003711e7edfa.jpeg?ops=1200_630'},
-    {name:'Prime Video',url:'https://primevideo.com',logo:'https://m.media-amazon.com/images/G/51/marketing/prime/2022PrimeBrand/Logos/Prime_Logo_RGB_Prime_Blue_MASTER._CB542735254_.png'},
-    {name:'Disney+',url:'https://disneyplus.com',logo:'https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg'},
-    {name:'HBO Max',url:'https://max.com',logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Max_logo.svg/1280px-Max_logo.svg.png'},
-    {name:'Paramount+',url:'https://paramountplus.com',logo:'https://www.getwizer.com/wp-content/uploads/2024/01/Paramount-Logo-2048x1868.png'},
-    {name:'MGM+',url:'https://mgmplus.com',logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/MGM%2B_logo.svg/1280px-MGM%2B_logo.svg.png'}
-];
-
-function renderServices(s,c){
-    const cont=document.getElementById(c);
-    if(!cont)return;
-    let h='';
-    s.forEach(service=>{h+=`<div class="service-card" onclick="window.open('${service.url}','_blank')"><img class="service-logo" src="${service.logo}" alt="${service.name}"><div class="service-name">${service.name}</div></div>`;});
-    cont.innerHTML=h;
-}
-
-document.addEventListener('DOMContentLoaded',()=>{
-    renderServices(russianServices,'russian-services');
-    renderServices(foreignServices,'foreign-services');
-    
-    document.querySelectorAll('.details-full details').forEach(d=>{d.removeAttribute('open');d.open=false;});
-    document.querySelectorAll('.details-full summary').forEach(s=>{s.addEventListener('click',()=>{setTimeout(()=>{if(s.parentElement.open){const top=s.parentElement.getBoundingClientRect().top+window.pageYOffset-20;window.scrollTo({top,behavior:'smooth'});}},300);});});
-    document.querySelectorAll('a[href^="#"]').forEach(link=>{link.addEventListener('click',e=>{const id=link.getAttribute('href').slice(1);const target=document.getElementById(id);if(!target)return;e.preventDefault();const top=target.getBoundingClientRect().top+window.pageYOffset-20;window.scrollTo({top,behavior:'smooth'});});});
-    
-    const container = document.getElementById('mv-list');
-    
-    fetch('https://premium-iptv.ru/api/movies.php')
-        .then(response => response.text())
-        .then(html => {
-            container.innerHTML = html;
-        })
-        .catch(err => {
-            console.error('Ошибка:', err);
-            container.innerHTML = '<div style="color:rgba(255,255,255,.3);font-size:13px;padding:40px;text-align:center">⚠️ Ошибка загрузки фильмов</div>';
-        });
-});
-</script>
-</body>
-</html>
+        <tr><td>1</td><td>Настройки → Расширения → Добавить плагин → добавляете ссылки от бота</strong></td> </tr> <tr> <td>2</td> <td>Настройки → Плеер → Тип плеера - Встроенный! Листаем вниз там же и меняем качество видео на <strong>2160P</strong></td> </tr> <tr> <td>3</td> <td>Настройки → Плагины → Интерфейс → ставим Зарубежные подборки, Русские новинки и Start</strong></td> </tr> </table> <p><strong>Стартовый адрес:</strong></p> <div class="terminal">http://bylampa.online</div> <a class="button" href="https://dl.dropbox.com/scl/fi/4nv1qiforjaapuaie7kk7/LAMPA-1.12.4-clone-un.apk?rlkey=ozisntppiapb7ehljbwklhach&dl=0" target="_blank">📥 Скачать Lampa</a> <a class="button" href="https://dl.dropbox.com/scl/fi/8puxrkv46zm8bqv0fsovt/LAMPA-ATV-v1.12.4-Uncensored.apk?rlkey=7xd0lyfsopduqqd87t71dohp6&dl=0" target="_blank">📥 Скачать Lampa ATV</a> <a class="button" href="https://dl.dropbox.com/scl/fi/xknj7vunp90wxe3bom9ot/MX_Player_v2_6_3_Offline_arm7-arm64.apk?rlkey=y6ogo45cn8v0fdg21lfcz77z7" target="_blank">📥 Скачать MX Player для Lampa Android</a> </div> <div class="card details-full"> <details> <summary>Плагины для LAMPA</summary> <iframe src="plugins.html"></iframe> </details> </div> <div class="footer">© E-Online</div> </div> <script> const russianServices=[ {name:'Start',url:'https://start.ru',logo:'https://upload.wikimedia.org/wikipedia/commons/6/67/START_logo.svg'}, {name:'Premier',url:'https://premier.one',logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PREMIER_logo.svg/1280px-PREMIER_logo.svg.png'}, {name:'KION',url:'https://kion.ru',logo:'https://upload.wikimedia.org/wikipedia/commons/d/dd/Kion_Group_logo.svg'}, {name:'ИВИ',url:'https://ivi.ru',logo:'https://upload.wikimedia.org/wikipedia/commons/5/55/Ivi_logo.svg'}, {name:'Okko',url:'https://okko.tv',logo:'https://static.tildacdn.com/tild3535-6436-4834-a230-353339643333/Logo.png'}, {name:'Wink',url:'https://wink.ru',logo:'https://upload.wikimedia.org/wikipedia/commons/8/85/Wink_Logo.svg'}, {name:'КиноПоиск',url:'https://kinopoisk.ru',logo:'https://upload.wikimedia.org/wikipedia/commons/c/c1/Kinopoisk_colored_logo_%282021-present%29.svg'}, {name:'CTC',url:'https://ctc.ru',logo:'https://upload.wikimedia.org/wikipedia/ru/thumb/6/6f/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF%D0%B0_%D1%82%D0%B5%D0%BB%D0%B5%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D0%B0_%C2%AB%D0%A1%D0%A2%D0%A1%C2%BB.svg/1280px-%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF%D0%B0_%D1%82%D0%B5%D0%BB%D0%B5%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D0%B0_%C2%AB%D0%A1%D0%A2%D0%A1%C2%BB.svg.png'}, {name:'ТНТ',url:'https://tnt-online.ru',logo:'https://i1.wp.com/amiel.club/uploads/posts/2022-03/1647616229_25-amiel-club-p-kartinki-tnt-28.png?ssl=1'} ]; const foreignServices=[ {name:'Netflix',url:'https://netflix.com',logo:'https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg'}, {name:'Apple TV+',url:'https://tv.apple.com',logo:'https://img.huffingtonpost.com/asset/5d0138d82100003711e7edfa.jpeg?ops=1200_630'}, {name:'Prime Video',url:'https://primevideo.com',logo:'https://m.media-amazon.com/images/G/51/marketing/prime/2022PrimeBrand/Logos/Prime_Logo_RGB_Prime_Blue_MASTER._CB542735254_.png'}, {name:'Disney+',url:'https://disneyplus.com',logo:'https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg'}, {name:'HBO Max',url:'https://max.com',logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Max_logo.svg/1280px-Max_logo.svg.png'}, {name:'Paramount+',url:'https://paramountplus.com',logo:'https://www.getwizer.com/wp-content/uploads/2024/01/Paramount-Logo-2048x1868.png'}, {name:'MGM+',url:'https://mgmplus.com',logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/MGM%2B_logo.svg/1280px-MGM%2B_logo.svg.png'} ]; function renderServices(s,c){ const cont=document.getElementById(c); if(!cont)return; let h=''; s.forEach(service=>{h+=`<div class="service-card" onclick="window.open('${service.url}','_blank')"><img class="service-logo" src="${service.logo}" alt="${service.name}"><div class="service-name">${service.name}</div></div>`;}); cont.innerHTML=h; } document.addEventListener('DOMContentLoaded',()=>{ renderServices(russianServices,'russian-services'); renderServices(foreignServices,'foreign-services'); document.querySelectorAll('.details-full details').forEach(d=>{d.removeAttribute('open');d.open=false;}); document.querySelectorAll('.details-full summary').forEach(s=>{s.addEventListener('click',()=>{setTimeout(()=>{if(s.parentElement.open){const top=s.parentElement.getBoundingClientRect().top+window.pageYOffset-20;window.scrollTo({top,behavior:'smooth'});}},300);});}); document.querySelectorAll('a[href^="#"]').forEach(link=>{link.addEventListener('click',e=>{const id=link.getAttribute('href').slice(1);const target=document.getElementById(id);if(!target)return;e.preventDefault();const top=target.getBoundingClientRect().top+window.pageYOffset-20;window.scrollTo({top,behavior:'smooth'});});}); const container = document.getElementById('mv-list'); fetch('https://premium-iptv.ru/api/movies.php') .then(response => response.text()) .then(html => { container.innerHTML = html; }) .catch(err => { console.error('Ошибка:', err); container.innerHTML = '<div style="color:rgba(255,255,255,.3);font-size:13px;padding:40px;text-align:center">⚠️ Ошибка загрузки фильмов</div>'; }); }); </script> </body> </html>
