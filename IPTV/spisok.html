@@ -513,8 +513,10 @@ summary::-webkit-details-marker {
   animation: scrollLoop 60s linear infinite;
 }
 
-.movies-scroll:hover .movies-track {
-  animation-play-state: paused;
+@media (hover: hover) and (pointer: fine) {
+  .movies-scroll:hover .movies-track {
+    animation-play-state: paused;
+  }
 }
 
 @keyframes scrollLoop {
