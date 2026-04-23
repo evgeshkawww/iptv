@@ -501,6 +501,44 @@ summary::-webkit-details-marker {
     padding: 4px 12px;
   }
 }
+.movies-scroll {
+  overflow: hidden; /* убираем ручной скролл */
+  position: relative;
+}
+
+.movies-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: scrollLoop 60s linear infinite;
+}
+
+.movies-scroll:hover .movies-track {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLoop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* плавное появление */
+.mv {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 </style>
 </head>
 
@@ -546,16 +584,54 @@ summary::-webkit-details-marker {
 
 <script>
 // ===== ЗАГРУЗКА ФИЛЬМОВ =====
-fetch('https://premium-iptv.ru/api/movies.php')
-  .then(response => response.text())
-  .then(html => {
-    document.getElementById('mv-list').innerHTML = html;
-  })
-  .catch(err => {
-    console.error('Ошибка:', err);
-    document.getElementById('mv-list').innerHTML = '<div style="color:rgba(255,255,255,.3);font-size:13px;padding:40px;text-align:center">⚠️ Ошибка загрузки фильмов</div>';
-  });
+const mvList = document.getElementById('mv-list');
 
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+function initMovies(html) {
+  // создаём временный контейнер
+  const temp = document.createElement('div');
+  temp.innerHTML = html;
+
+  let items = Array.from(temp.children);
+
+  // рандомим
+  items = shuffle(items);
+
+  // создаём трек
+  const track = document.createElement('div');
+  track.className = 'movies-track';
+
+  // добавляем элементы
+  items.forEach(el => track.appendChild(el.cloneNode(true)));
+
+  // дублируем для бесконечного скролла
+  items.forEach(el => track.appendChild(el.cloneNode(true)));
+
+  mvList.innerHTML = '';
+  mvList.appendChild(track);
+}
+
+// загрузка
+fetch('https://premium-iptv.ru/api/movies.php')
+  .then(res => res.text())
+  .then(html => {
+    initMovies(html);
+
+    // каждые 60 сек — новый рандом
+    setInterval(() => {
+      initMovies(html);
+    }, 60000);
+  })
+  .catch(() => {
+    mvList.innerHTML = '<div style="padding:40px;text-align:center">⚠️ Ошибка загрузки</div>';
+  });
 // ===== ВАШИ ДАННЫЕ КАНАЛОВ (groupsData) =====
 const groupsData = [
   {
