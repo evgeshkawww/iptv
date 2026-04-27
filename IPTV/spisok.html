@@ -626,10 +626,10 @@ fetch('https://premium-iptv.ru/api/movies.php')
   .then(html => {
     initMovies(html);
 
-    // каждые 60 сек — новый рандом
+    // каждые 20 мин — новый рандом
     setInterval(() => {
       initMovies(html);
-    }, 60000);
+    }, 1200000);
   })
   .catch(() => {
     mvList.innerHTML = '<div style="padding:40px;text-align:center">⚠️ Ошибка загрузки</div>';
