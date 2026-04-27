@@ -554,8 +554,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Инициализируем фильмы с бесконечной прокруткой
     updateMovies();
     
-    // Обновляем фильмы каждые 60 секунд для свежего контента
-    setInterval(updateMovies, 120000);
+    // Обновляем фильмы каждые 20 мин для свежего контента
+    setInterval(updateMovies, 1200000);
     
     // Настройка для details элементов (плавная прокрутка)
     document.querySelectorAll('.details-full details').forEach(d => {
