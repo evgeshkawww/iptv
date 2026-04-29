@@ -285,11 +285,12 @@ body{
 .details-full summary::-webkit-details-marker { display: none; }
 
 .instruction-table td:first-child {
-    width: 40px;
+    width: 50px;
     color: var(--gold) !important;
     font-weight: 700;
     text-align: center;
     background: rgba(245, 215, 110, 0.1);
+    vertical-align: top;
 }
 
 .instruction p strong {
@@ -313,6 +314,70 @@ body{
     vertical-align:top;
 }
 .instruction-table tr:last-child td{border-bottom:none}
+
+/* ===== АДАПТИВ ДЛЯ ТАБЛИЦЫ НА МОБИЛЬНЫХ ===== */
+@media (max-width: 600px) {
+    .instruction-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .instruction-table td {
+        display: table-cell;
+        padding: 12px 12px;
+        font-size: 13px;
+        word-break: break-word;
+    }
+    
+    .instruction-table td:first-child {
+        width: 45px;
+        font-size: 16px;
+    }
+    
+    .instruction-table td:last-child {
+        word-break: break-word;
+        white-space: normal;
+    }
+    
+    /* Альтернативный вариант - блочный на совсем маленьких экранах */
+    @media (max-width: 480px) {
+        .instruction-table,
+        .instruction-table tbody,
+        .instruction-table tr,
+        .instruction-table td {
+            display: block;
+        }
+        
+        .instruction-table tr {
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .instruction-table td {
+            border-bottom: none;
+            padding: 8px 12px;
+        }
+        
+        .instruction-table td:first-child {
+            width: 100%;
+            text-align: left;
+            background: rgba(245, 215, 110, 0.15);
+            font-weight: 700;
+        }
+        
+        .instruction-table td:first-child:before {
+            content: "Шаг ";
+            font-weight: normal;
+            opacity: 0.7;
+        }
+        
+        .instruction-table td:last-child {
+            padding-top: 0;
+        }
+    }
+}
 
 .terminal{
     background:#fff;
@@ -361,6 +426,15 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
     .service-card{height:118px}
     .service-logo{max-height:48px}
     .mv{width:160px}
+    .card {
+        padding: 36px 20px 28px;
+    }
+    .badge {
+        top: 10px;
+        left: 12px;
+        font-size: 9px;
+        padding: 4px 10px;
+    }
 }
 
 @media (max-width:480px){
@@ -412,12 +486,12 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
     <p><strong>Все делайте строго по инструкции:</strong></p>
     <table class="instruction-table">
         <tr>
-            <tr>1</td>
+            <td>1</td>
             <td><strong>Настройки → Расширения → Добавить плагин → добавляете ссылки от бота</strong></td>
         </tr>
         <tr>
             <td>2</td>
-            <td><strong>Настройки → Плеер → Тип плеера - Встроенный! Листаем вниз там же и меняем качество видео на <strong>2160P</strong></strong></td>
+            <td><strong>Настройки → Плеер → Тип плеера - Встроенный! Листаем вниз там же и меняем качество видео на 2160P</strong></td>
         </tr>
         <tr>
             <td>3</td>
@@ -442,16 +516,42 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
 </div>
 
 <script>
+// ===== ФУНКЦИЯ ДЛЯ ВОССТАНОВЛЕНИЯ АНИМАЦИИ КАРУСЕЛИ =====
+function resumeCarouselAnimation() {
+    const track = document.querySelector('.movies-track');
+    if (track) {
+        track.style.animation = 'none';
+        track.offsetHeight;
+        track.style.animation = '';
+        console.log('Анимация карусели восстановлена');
+    }
+}
+
+// Следим за видимостью страницы
+document.addEventListener('visibilitychange', function() {
+    if (!document.hidden) {
+        setTimeout(resumeCarouselAnimation, 100);
+    }
+});
+
+window.addEventListener('pageshow', function(event) {
+    if (event.persisted) {
+        setTimeout(resumeCarouselAnimation, 100);
+    }
+});
+
+window.addEventListener('focus', function() {
+    setTimeout(resumeCarouselAnimation, 100);
+});
+
 // ===== ЗАЩИТА ОТ АНТИБАНЕРОВ =====
 (function antiAdblockProtection() {
-    // Функция маскировки URL изображений
     function maskImageUrl(originalUrl) {
         if (!originalUrl) return '';
         const separator = originalUrl.includes('?') ? '&' : '?';
         return originalUrl + separator + '_protect=' + Date.now() + '_' + Math.random().toString(36).substring(2, 8);
     }
     
-    // Защита всех изображений на странице
     function protectImages() {
         const allImages = document.querySelectorAll('img');
         allImages.forEach(img => {
@@ -474,7 +574,6 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
         });
     }
     
-    // Наблюдатель за новыми изображениями
     const observer = new MutationObserver(function(mutations) {
         mutations.forEach(mutation => {
             mutation.addedNodes.forEach(node => {
@@ -513,7 +612,6 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
         });
     });
     
-    // Запускаем защиту
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
             protectImages();
@@ -550,7 +648,6 @@ const foreignServices = [
     {name:'MGM+', url:'https://mgmplus.com', logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/MGM%2B_logo.svg/1280px-MGM%2B_logo.svg.png'}
 ];
 
-// Функция отрисовки сервисов
 function renderServices(services, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
@@ -565,7 +662,6 @@ function renderServices(services, containerId) {
     container.innerHTML = html;
 }
 
-// Функция для случайного перемешивания массива
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -574,7 +670,6 @@ function shuffleArray(array) {
     return array;
 }
 
-// Функция защиты картинок фильмов
 function protectMovieImages(container) {
     const movieImages = container.querySelectorAll('img');
     movieImages.forEach(img => {
@@ -595,7 +690,6 @@ function protectMovieImages(container) {
     });
 }
 
-// Функция инициализации бесконечной прокрутки фильмов
 function initMovies(html) {
     const container = document.getElementById('mv-list');
     if (!container) return;
@@ -615,7 +709,6 @@ function initMovies(html) {
     const track = document.createElement('div');
     track.className = 'movies-track';
     
-    // Добавляем оригинальные элементы (4 копии для бесконечности)
     for (let repeat = 0; repeat < 4; repeat++) {
         movieElements.forEach(el => {
             track.appendChild(el.cloneNode(true));
@@ -625,12 +718,22 @@ function initMovies(html) {
     container.innerHTML = '';
     container.appendChild(track);
     
-    // Защищаем картинки в загруженных фильмах
+    // Добавляем обработчик кликов на фильмы (чтобы анимация не останавливалась)
+    const allMovies = container.querySelectorAll('.mv');
+    allMovies.forEach(movie => {
+        movie.addEventListener('click', function(e) {
+            const link = this.querySelector('a');
+            if (link && link.href) {
+                window.open(link.href, '_blank');
+            }
+            e.stopPropagation();
+        });
+    });
+    
     setTimeout(() => {
         protectMovieImages(container);
     }, 100);
     
-    // Проверяем ширину трека
     setTimeout(() => {
         const trackWidth = track.scrollWidth;
         const viewportWidth = window.innerWidth;
@@ -647,7 +750,6 @@ function initMovies(html) {
     }, 200);
 }
 
-// Функция обновления фильмов
 function updateMovies() {
     const container = document.getElementById('mv-list');
     if (container) {
@@ -672,7 +774,6 @@ function updateMovies() {
         });
 }
 
-// Запуск при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
     renderServices(russianServices, 'russian-services');
     renderServices(foreignServices, 'foreign-services');
