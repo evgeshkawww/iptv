@@ -242,15 +242,6 @@ header {
   will-change: transform;
 }
 
-/* Класс для паузы анимации */
-.movies-track-paused {
-  animation-play-state: paused !important;
-}
-
-.movies-scroll:hover .movies-track {
-  animation-play-state: paused;
-}
-
 @media (max-width: 1200px) {
   .movies-track {
     animation-duration: 140s;
@@ -266,6 +257,12 @@ header {
 @media (max-width: 480px) {
   .movies-track {
     animation-duration: 180s;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .movies-scroll:hover .movies-track {
+    animation-play-state: paused;
   }
 }
 
@@ -581,226 +578,225 @@ summary::-webkit-details-marker {
 function resumeCarouselAnimation() {
     const track = document.querySelector('.movies-track');
     if (track) {
-        // Убираем класс паузы, если он был
-        track.classList.remove('movies-track-paused');
-        // Принудительно перезапускаем анимацию
         track.style.animation = 'none';
-        // Форсируем перерисовку
         track.offsetHeight;
-        // Возвращаем анимацию
         track.style.animation = '';
         console.log('Анимация карусели восстановлена');
     }
 }
 
-// Следим за видимостью страницы (при возврате из другой вкладки)
+// Следим за видимостью страницы
 document.addEventListener('visibilitychange', function() {
     if (!document.hidden) {
-        // Страница стала видимой - восстанавливаем анимацию
         setTimeout(resumeCarouselAnimation, 100);
     }
 });
 
-// При загрузке страницы (для Safari и других браузеров)
 window.addEventListener('pageshow', function(event) {
-    // Если страница загружена из кэша (при нажатии "назад")
     if (event.persisted) {
         setTimeout(resumeCarouselAnimation, 100);
     }
 });
 
-// Также при потере фокуса и возврате
 window.addEventListener('focus', function() {
     setTimeout(resumeCarouselAnimation, 100);
 });
 
 // ===== ЗАЩИТА ОТ АНТИБАНЕРОВ =====
 (function antiAdblockProtection() {
-  // Функция маскировки URL изображений
-  function maskImageUrl(originalUrl) {
-    if (!originalUrl) return '';
-    const separator = originalUrl.includes('?') ? '&' : '?';
-    return originalUrl + separator + '_t=' + Date.now() + '_r=' + Math.random().toString(36).substring(2, 8);
-  }
-  
-  // Применение защиты ко всем изображениям на странице
-  function protectImages() {
-    const allImages = document.querySelectorAll('img');
-    allImages.forEach(img => {
-      if (img.src && !img.hasAttribute('data-protected') && !img.src.includes('placehold.co')) {
-        const originalSrc = img.src;
-        img.setAttribute('data-original', originalSrc);
-        img.setAttribute('data-protected', 'true');
-        img.src = maskImageUrl(originalSrc);
-        
-        img.onerror = function() {
-          if (!this.hasAttribute('data-retried')) {
-            this.setAttribute('data-retried', 'true');
-            this.src = maskImageUrl(originalSrc);
-          } else {
-            this.style.opacity = '0.8';
-            this.style.filter = 'blur(2px)';
-          }
-        };
-      }
-    });
-  }
-  
-  // Наблюдатель за новыми изображениями
-  const observer = new MutationObserver(function(mutations) {
-    mutations.forEach(mutation => {
-      mutation.addedNodes.forEach(node => {
-        if (node.nodeType === 1) {
-          if (node.tagName === 'IMG' && node.src && !node.hasAttribute('data-protected')) {
-            const originalSrc = node.src;
-            node.setAttribute('data-original', originalSrc);
-            node.setAttribute('data-protected', 'true');
-            node.src = maskImageUrl(originalSrc);
-            
-            node.onerror = function() {
-              if (!this.hasAttribute('data-retried')) {
-                this.setAttribute('data-retried', 'true');
-                this.src = maskImageUrl(originalSrc);
-              }
-            };
-          }
-          const childImages = node.querySelectorAll ? node.querySelectorAll('img') : [];
-          childImages.forEach(img => {
+    function maskImageUrl(originalUrl) {
+        if (!originalUrl) return '';
+        const separator = originalUrl.includes('?') ? '&' : '?';
+        return originalUrl + separator + '_protect=' + Date.now() + '_' + Math.random().toString(36).substring(2, 8);
+    }
+    
+    function protectImages() {
+        const allImages = document.querySelectorAll('img');
+        allImages.forEach(img => {
             if (img.src && !img.hasAttribute('data-protected') && !img.src.includes('placehold.co')) {
-              const originalSrc = img.src;
-              img.setAttribute('data-original', originalSrc);
-              img.setAttribute('data-protected', 'true');
-              img.src = maskImageUrl(originalSrc);
-              
-              img.onerror = function() {
-                if (!this.hasAttribute('data-retried')) {
-                  this.setAttribute('data-retried', 'true');
-                  this.src = maskImageUrl(originalSrc);
-                }
-              };
+                const originalSrc = img.src;
+                img.setAttribute('data-original', originalSrc);
+                img.setAttribute('data-protected', 'true');
+                img.src = maskImageUrl(originalSrc);
+                
+                img.onerror = function() {
+                    if (!this.hasAttribute('data-retried')) {
+                        this.setAttribute('data-retried', 'true');
+                        this.src = maskImageUrl(originalSrc);
+                    } else if (!this.src.includes('placehold.co')) {
+                        this.style.opacity = '0.6';
+                        this.style.filter = 'blur(2px)';
+                    }
+                };
             }
-          });
-        }
-      });
+        });
+    }
+    
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(mutation => {
+            mutation.addedNodes.forEach(node => {
+                if (node.nodeType === 1) {
+                    if (node.tagName === 'IMG' && node.src && !node.hasAttribute('data-protected')) {
+                        const originalSrc = node.src;
+                        node.setAttribute('data-original', originalSrc);
+                        node.setAttribute('data-protected', 'true');
+                        node.src = maskImageUrl(originalSrc);
+                        
+                        node.onerror = function() {
+                            if (!this.hasAttribute('data-retried')) {
+                                this.setAttribute('data-retried', 'true');
+                                this.src = maskImageUrl(originalSrc);
+                            }
+                        };
+                    }
+                    const childImages = node.querySelectorAll ? node.querySelectorAll('img') : [];
+                    childImages.forEach(img => {
+                        if (img.src && !img.hasAttribute('data-protected') && !img.src.includes('placehold.co')) {
+                            const originalSrc = img.src;
+                            img.setAttribute('data-original', originalSrc);
+                            img.setAttribute('data-protected', 'true');
+                            img.src = maskImageUrl(originalSrc);
+                            
+                            img.onerror = function() {
+                                if (!this.hasAttribute('data-retried')) {
+                                    this.setAttribute('data-retried', 'true');
+                                    this.src = maskImageUrl(originalSrc);
+                                }
+                            };
+                        }
+                    });
+                }
+            });
+        });
     });
-  });
-  
-  // Запускаем защиту
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      protectImages();
-      observer.observe(document.body, { childList: true, subtree: true });
-      setInterval(protectImages, 5000);
-    });
-  } else {
-    protectImages();
-    observer.observe(document.body, { childList: true, subtree: true });
-    setInterval(protectImages, 5000);
-  }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            protectImages();
+            observer.observe(document.body, { childList: true, subtree: true });
+            setInterval(protectImages, 5000);
+        });
+    } else {
+        protectImages();
+        observer.observe(document.body, { childList: true, subtree: true });
+        setInterval(protectImages, 5000);
+    }
 })();
 
 // ===== БЕСКОНЕЧНАЯ КАРУСЕЛЬ ФИЛЬМОВ =====
 const mvList = document.getElementById('mv-list');
 
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+function protectMovieImages(container) {
+    const movieImages = container.querySelectorAll('img');
+    movieImages.forEach(img => {
+        if (img.src && !img.hasAttribute('data-protected') && !img.src.includes('placehold.co')) {
+            const originalSrc = img.src;
+            img.setAttribute('data-original', originalSrc);
+            img.setAttribute('data-protected', 'true');
+            const separator = originalSrc.includes('?') ? '&' : '?';
+            img.src = originalSrc + separator + '_protect=' + Date.now() + '_' + Math.random().toString(36).substring(2, 8);
+            
+            img.onerror = function() {
+                if (!this.hasAttribute('data-retried')) {
+                    this.setAttribute('data-retried', 'true');
+                    this.src = originalSrc + separator + '_retry=' + Date.now();
+                }
+            };
+        }
+    });
 }
 
 function initMovies(html) {
-  const temp = document.createElement('div');
-  temp.innerHTML = html;
-  
-  let items = Array.from(temp.children);
-  
-  if (items.length === 0) {
-    mvList.innerHTML = '<div style="padding:40px;text-align:center">🎬 Нет фильмов для отображения</div>';
-    return;
-  }
-  
-  items = shuffle(items);
-  
-  const track = document.createElement('div');
-  track.className = 'movies-track';
-  
-  for (let repeat = 0; repeat < 4; repeat++) {
-    items.forEach(item => {
-      track.appendChild(item.cloneNode(true));
-    });
-  }
-  
-  mvList.innerHTML = '';
-  mvList.appendChild(track);
-  
-  // Добавляем обработчик клика на каждый фильм - при клике не останавливаем анимацию
-  const allMovies = mvList.querySelectorAll('.mv');
-  allMovies.forEach(movie => {
-    movie.addEventListener('click', function(e) {
-      // Не останавливаем анимацию, просто открываем ссылку
-      const link = this.querySelector('a');
-      if (link && link.href) {
-        window.open(link.href, '_blank');
-      }
-      e.stopPropagation();
-    });
-  });
-  
-  // Применяем защиту к загруженным карточкам фильмов
-  setTimeout(() => {
-    const allMovieImgs = mvList.querySelectorAll('img');
-    allMovieImgs.forEach(img => {
-      if (img.src && !img.hasAttribute('data-protected') && !img.src.includes('placehold.co')) {
-        const originalSrc = img.src;
-        img.setAttribute('data-original', originalSrc);
-        img.setAttribute('data-protected', 'true');
-        const separator = originalSrc.includes('?') ? '&' : '?';
-        img.src = originalSrc + separator + '_protect=' + Date.now() + '_' + Math.random().toString(36).substring(2, 6);
-        
-        img.onerror = function() {
-          if (!this.hasAttribute('data-retried')) {
-            this.setAttribute('data-retried', 'true');
-            this.src = originalSrc + separator + '_retry=' + Date.now();
-          }
-        };
-      }
-    });
-  }, 100);
-  
-  setTimeout(() => {
-    const trackWidth = track.scrollWidth;
-    const viewportWidth = window.innerWidth;
+    const container = document.getElementById('mv-list');
+    if (!container) return;
     
-    if (trackWidth < viewportWidth * 2) {
-      const needMore = Math.ceil((viewportWidth * 3) / (trackWidth / 4)) + 1;
-      for (let i = 0; i < needMore; i++) {
-        items.forEach(item => {
-          track.appendChild(item.cloneNode(true));
-        });
-      }
+    const temp = document.createElement('div');
+    temp.innerHTML = html;
+    
+    let movieElements = Array.from(temp.children);
+    
+    if (movieElements.length === 0) {
+        container.innerHTML = '<div style="color:rgba(255,255,255,.3);font-size:13px;padding:40px;text-align:center">🎬 Нет фильмов для отображения</div>';
+        return;
     }
-  }, 100);
+    
+    movieElements = shuffleArray(movieElements);
+    
+    const track = document.createElement('div');
+    track.className = 'movies-track';
+    
+    for (let repeat = 0; repeat < 4; repeat++) {
+        movieElements.forEach(el => {
+            track.appendChild(el.cloneNode(true));
+        });
+    }
+    
+    container.innerHTML = '';
+    container.appendChild(track);
+    
+    // Добавляем обработчик кликов на фильмы (чтобы анимация не останавливалась)
+    const allMovies = container.querySelectorAll('.mv');
+    allMovies.forEach(movie => {
+        movie.addEventListener('click', function(e) {
+            const link = this.querySelector('a');
+            if (link && link.href) {
+                window.open(link.href, '_blank');
+            }
+            e.stopPropagation();
+        });
+    });
+    
+    setTimeout(() => {
+        protectMovieImages(container);
+    }, 100);
+    
+    setTimeout(() => {
+        const trackWidth = track.scrollWidth;
+        const viewportWidth = window.innerWidth;
+        
+        if (trackWidth < viewportWidth * 2) {
+            const needMore = Math.ceil((viewportWidth * 3) / (trackWidth / 4)) + 1;
+            for (let i = 0; i < needMore; i++) {
+                movieElements.forEach(el => {
+                    track.appendChild(el.cloneNode(true));
+                });
+            }
+            protectMovieImages(container);
+        }
+    }, 200);
 }
 
-// Загрузка фильмов с API
-fetch('https://premium-iptv.ru/api/movies.php')
-  .then(res => res.text())
-  .then(html => {
-    initMovies(html);
+function updateMovies() {
+    const container = document.getElementById('mv-list');
+    if (container) {
+        container.innerHTML = '<div style="color:rgba(255,255,255,.3);font-size:13px;padding:40px;text-align:center">🎬 Загрузка...</div>';
+    }
     
-    setInterval(() => {
-      fetch('https://premium-iptv.ru/api/movies.php')
-        .then(res => res.text())
-        .then(newHtml => initMovies(newHtml))
-        .catch(console.error);
-    }, 1800000);
-  })
-  .catch((error) => {
-    console.error('Ошибка загрузки фильмов:', error);
-    mvList.innerHTML = '<div style="padding:40px;text-align:center">⚠️ Ошибка загрузки фильмов</div>';
-  });
+    fetch('https://premium-iptv.ru/api/movies.php')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(html => {
+            initMovies(html);
+        })
+        .catch(err => {
+            console.error('Ошибка загрузки фильмов:', err);
+            if (container) {
+                container.innerHTML = '<div style="color:rgba(255,255,255,.3);font-size:13px;padding:40px;text-align:center">⚠️ Ошибка загрузки фильмов</div>';
+            }
+        });
+}
 
 // ===== ДАННЫЕ КАНАЛОВ =====
 const groupsData = [
@@ -3800,12 +3796,18 @@ function render(groups) {
   totalBox.textContent = 'Общее количество каналов: ' + total;
 }
 
-if (groupsData && groupsData.length > 0) {
-  render(groupsData);
-} else {
-  groupsContainer.innerHTML = '<div style="text-align:center; padding:40px; color:#9aa7b2;">📺 Данные каналов отсутствуют.</div>';
-  totalBox.textContent = 'Общее количество каналов: 0';
-}
+// Запуск
+document.addEventListener('DOMContentLoaded', () => {
+    updateMovies();
+    setInterval(updateMovies, 1800000);
+    
+    if (groupsData && groupsData.length > 0) {
+        render(groupsData);
+    } else {
+        groupsContainer.innerHTML = '<div style="text-align:center; padding:40px; color:#9aa7b2;">📺 Данные каналов отсутствуют.</div>';
+        totalBox.textContent = 'Общее количество каналов: 0';
+    }
+});
 
 searchInput.addEventListener('input', e => {
   const q = e.target.value.toLowerCase().trim();
