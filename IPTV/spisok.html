@@ -11,8 +11,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/style/style_all.css">
-
 <style>
 /* ===== ОСНОВНЫЕ ПЕРЕМЕННЫЕ ===== */
 :root {
@@ -172,7 +170,7 @@ header {
   text-shadow: 0 0 4px var(--gold-glow);
 }
 
-/* ===== БЛОК КИНОТЕАТРА (с кнопкой справа) ===== */
+/* ===== БЛОК КИНОТЕАТРА ===== */
 .movies-section {
   width: 100%;
   background: var(--bg-overlay-soft);
@@ -235,41 +233,76 @@ header {
   margin: 0;
 }
 .movies-scroll {
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-  scrollbar-width: thin;
-  scrollbar-color: var(--gold) rgba(255,255,255,0.1);
-  padding-bottom: 16px;
-  margin-bottom: -16px;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
 }
-.movies-scroll::-webkit-scrollbar {
-  height: 6px;
+
+.movies-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: scrollLoop 40s linear infinite;
+  will-change: transform;
 }
-.movies-scroll::-webkit-scrollbar-track {
-  background: rgba(255,255,255,0.1);
-  border-radius: 3px;
+
+.movies-scroll:hover .movies-track {
+  animation-play-state: paused;
 }
-.movies-scroll::-webkit-scrollbar-thumb {
-  background: var(--gold);
-  border-radius: 3px;
+
+@media (max-width: 1200px) {
+  .movies-track {
+    animation-duration: 50s;
+  }
 }
+
+@media (max-width: 768px) {
+  .movies-track {
+    animation-duration: 60s;
+  }
+}
+
+@media (max-width: 480px) {
+  .movies-track {
+    animation-duration: 80s;
+  }
+}
+
+@keyframes scrollLoop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .mv {
-  display: inline-block;
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeIn 0.3s ease forwards;
+  flex-shrink: 0;
   width: 200px;
-  margin-right: 16px;
   background: rgba(0,0,0,0.5);
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
-  vertical-align: top;
   backdrop-filter: blur(4px);
 }
+
 .mv:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(245,215,110,0.4);
 }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .mv-poster {
   position: relative;
 }
@@ -501,46 +534,6 @@ summary::-webkit-details-marker {
     padding: 4px 12px;
   }
 }
-.movies-scroll {
-  overflow: hidden; /* убираем ручной скролл */
-  position: relative;
-}
-
-.movies-track {
-  display: flex;
-  gap: 16px;
-  width: max-content;
-  animation: scrollLoop 60s linear infinite;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .movies-scroll:hover .movies-track {
-    animation-play-state: paused;
-  }
-}
-
-@keyframes scrollLoop {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-/* плавное появление */
-.mv {
-  opacity: 0;
-  transform: scale(0.95);
-  animation: fadeIn 0.5s ease forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 </style>
 </head>
 
@@ -562,7 +555,7 @@ summary::-webkit-details-marker {
   </div>
 </header>
 
-<!-- ===== БЛОК КИНОТЕАТРА С КНОПКОЙ СПРАВА ===== -->
+<!-- ===== БЛОК КИНОТЕАТРА ===== -->
 <div class="movies-section">
   <div class="movies-top">
     <div class="sec-tag">Кинотеатр</div>
@@ -585,56 +578,7 @@ summary::-webkit-details-marker {
 <div class="footer">© Premium-IPTV</div>
 
 <script>
-// ===== ЗАГРУЗКА ФИЛЬМОВ =====
-const mvList = document.getElementById('mv-list');
-
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
-
-function initMovies(html) {
-  // создаём временный контейнер
-  const temp = document.createElement('div');
-  temp.innerHTML = html;
-
-  let items = Array.from(temp.children);
-
-  // рандомим
-  items = shuffle(items);
-
-  // создаём трек
-  const track = document.createElement('div');
-  track.className = 'movies-track';
-
-  // добавляем элементы
-  items.forEach(el => track.appendChild(el.cloneNode(true)));
-
-  // дублируем для бесконечного скролла
-  items.forEach(el => track.appendChild(el.cloneNode(true)));
-
-  mvList.innerHTML = '';
-  mvList.appendChild(track);
-}
-
-// загрузка
-fetch('https://premium-iptv.ru/api/movies.php')
-  .then(res => res.text())
-  .then(html => {
-    initMovies(html);
-
-    // каждые 20 мин — новый рандом
-    setInterval(() => {
-      initMovies(html);
-    }, 1200000);
-  })
-  .catch(() => {
-    mvList.innerHTML = '<div style="padding:40px;text-align:center">⚠️ Ошибка загрузки</div>';
-  });
-// ===== ВАШИ ДАННЫЕ КАНАЛОВ (groupsData) =====
+// ===== ДАННЫЕ КАНАЛОВ =====
 const groupsData = [
   {
     id:'group1',
@@ -3565,7 +3509,81 @@ const groupsData = [
     ]
   }
 ];
-// ===== КОД ДЛЯ ОТОБРАЖЕНИЯ КАНАЛОВ =====
+// ===== БЕСКОНЕЧНАЯ КАРУСЕЛЬ ФИЛЬМОВ =====
+const mvList = document.getElementById('mv-list');
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+function initMovies(html) {
+  const temp = document.createElement('div');
+  temp.innerHTML = html;
+  
+  let items = Array.from(temp.children);
+  
+  if (items.length === 0) {
+    mvList.innerHTML = '<div style="padding:40px;text-align:center">🎬 Нет фильмов для отображения</div>';
+    return;
+  }
+  
+  items = shuffle(items);
+  
+  const track = document.createElement('div');
+  track.className = 'movies-track';
+  
+  // Добавляем фильмы 4 раза для создания непрерывной прокрутки
+  for (let repeat = 0; repeat < 4; repeat++) {
+    items.forEach(item => {
+      track.appendChild(item.cloneNode(true));
+    });
+  }
+  
+  mvList.innerHTML = '';
+  mvList.appendChild(track);
+  
+  // Проверяем и добавляем еще копий при необходимости
+  setTimeout(() => {
+    const trackWidth = track.scrollWidth;
+    const containerWidth = mvList.parentElement?.clientWidth || window.innerWidth;
+    const viewportWidth = window.innerWidth;
+    
+    // Если трек меньше 4x видимой области, добавляем еще
+    if (trackWidth < viewportWidth * 2) {
+      const needMore = Math.ceil((viewportWidth * 3) / (trackWidth / 4)) + 1;
+      for (let i = 0; i < needMore; i++) {
+        items.forEach(item => {
+          track.appendChild(item.cloneNode(true));
+        });
+      }
+    }
+  }, 100);
+}
+
+// Загрузка фильмов с API
+fetch('https://premium-iptv.ru/api/movies.php')
+  .then(res => res.text())
+  .then(html => {
+    initMovies(html);
+    
+    // Обновляем раз в 30 минут
+    setInterval(() => {
+      fetch('https://premium-iptv.ru/api/movies.php')
+        .then(res => res.text())
+        .then(newHtml => initMovies(newHtml))
+        .catch(console.error);
+    }, 1800000);
+  })
+  .catch((error) => {
+    console.error('Ошибка загрузки фильмов:', error);
+    mvList.innerHTML = '<div style="padding:40px;text-align:center">⚠️ Ошибка загрузки фильмов</div>';
+  });
+
+// ===== ОТОБРАЖЕНИЕ КАНАЛОВ =====
 const groupsContainer = document.getElementById('groupsContainer');
 const searchInput = document.getElementById('search');
 const totalBox = document.getElementById('total');
@@ -3634,7 +3652,7 @@ function render(groups) {
 if (groupsData && groupsData.length > 0) {
   render(groupsData);
 } else {
-  groupsContainer.innerHTML = '<div style="text-align:center; padding:40px; color:#9aa7b2;">📺 Данные каналов отсутствуют. Пожалуйста, вставьте ваш groupsData в код.</div>';
+  groupsContainer.innerHTML = '<div style="text-align:center; padding:40px; color:#9aa7b2;">📺 Данные каналов отсутствуют.</div>';
   totalBox.textContent = 'Общее количество каналов: 0';
 }
 
