@@ -85,7 +85,6 @@ header {
   min-width: 200px;
 }
 
-/* Золотой заголовок */
 .main-title {
   font-family: 'Playfair Display', serif;
   font-size: 28px;
@@ -96,7 +95,6 @@ header {
   text-shadow: 0 0 12px var(--gold-glow);
 }
 
-/* Промо-блок (только 18+ и 300+ каналов) */
 .promo {
   display: flex;
   align-items: center;
@@ -115,7 +113,6 @@ header {
   color: var(--text);
 }
 
-/* Кнопка International channels */
 .btn-int {
   display: inline-flex;
   align-items: center;
@@ -138,7 +135,6 @@ header {
   box-shadow: 0 4px 12px rgba(245,215,110,0.2);
 }
 
-/* Поиск */
 .controls {
   display: flex;
   gap: 12px;
@@ -242,7 +238,7 @@ header {
   display: flex;
   gap: 16px;
   width: max-content;
-  animation: scrollLoop 40s linear infinite;
+  animation: scrollLoop 120s linear infinite;
   will-change: transform;
 }
 
@@ -252,19 +248,19 @@ header {
 
 @media (max-width: 1200px) {
   .movies-track {
-    animation-duration: 50s;
+    animation-duration: 140s;
   }
 }
 
 @media (max-width: 768px) {
   .movies-track {
-    animation-duration: 60s;
+    animation-duration: 160s;
   }
 }
 
 @media (max-width: 480px) {
   .movies-track {
-    animation-duration: 80s;
+    animation-duration: 180s;
   }
 }
 
@@ -458,7 +454,6 @@ summary::-webkit-details-marker {
   border-top: 1px solid var(--border-medium);
 }
 
-/* ===== АДАПТАЦИЯ ===== */
 @media (max-width: 900px) {
   header {
     flex-direction: column;
@@ -555,7 +550,6 @@ summary::-webkit-details-marker {
   </div>
 </header>
 
-<!-- ===== БЛОК КИНОТЕАТРА ===== -->
 <div class="movies-section">
   <div class="movies-top">
     <div class="sec-tag">Кинотеатр</div>
@@ -578,7 +572,6 @@ summary::-webkit-details-marker {
 <div class="footer">© Premium-IPTV</div>
 
 <script>
-// ===== ДАННЫЕ КАНАЛОВ =====
 const groupsData = [
   {
     id:'group1',
@@ -3509,7 +3502,6 @@ const groupsData = [
     ]
   }
 ];
-// ===== БЕСКОНЕЧНАЯ КАРУСЕЛЬ ФИЛЬМОВ =====
 const mvList = document.getElementById('mv-list');
 
 function shuffle(array) {
@@ -3536,7 +3528,6 @@ function initMovies(html) {
   const track = document.createElement('div');
   track.className = 'movies-track';
   
-  // Добавляем фильмы 4 раза для создания непрерывной прокрутки
   for (let repeat = 0; repeat < 4; repeat++) {
     items.forEach(item => {
       track.appendChild(item.cloneNode(true));
@@ -3546,13 +3537,10 @@ function initMovies(html) {
   mvList.innerHTML = '';
   mvList.appendChild(track);
   
-  // Проверяем и добавляем еще копий при необходимости
   setTimeout(() => {
     const trackWidth = track.scrollWidth;
-    const containerWidth = mvList.parentElement?.clientWidth || window.innerWidth;
     const viewportWidth = window.innerWidth;
     
-    // Если трек меньше 4x видимой области, добавляем еще
     if (trackWidth < viewportWidth * 2) {
       const needMore = Math.ceil((viewportWidth * 3) / (trackWidth / 4)) + 1;
       for (let i = 0; i < needMore; i++) {
@@ -3564,13 +3552,11 @@ function initMovies(html) {
   }, 100);
 }
 
-// Загрузка фильмов с API
 fetch('https://premium-iptv.ru/api/movies.php')
   .then(res => res.text())
   .then(html => {
     initMovies(html);
     
-    // Обновляем раз в 30 минут
     setInterval(() => {
       fetch('https://premium-iptv.ru/api/movies.php')
         .then(res => res.text())
@@ -3583,7 +3569,6 @@ fetch('https://premium-iptv.ru/api/movies.php')
     mvList.innerHTML = '<div style="padding:40px;text-align:center">⚠️ Ошибка загрузки фильмов</div>';
   });
 
-// ===== ОТОБРАЖЕНИЕ КАНАЛОВ =====
 const groupsContainer = document.getElementById('groupsContainer');
 const searchInput = document.getElementById('search');
 const totalBox = document.getElementById('total');
