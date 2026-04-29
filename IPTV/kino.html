@@ -16,6 +16,7 @@
     --text:#e5e7eb;
     --gold:#F5D76E;
     --gold-glow:rgba(245,215,110,0.5);
+    --red-accent:#ff3333;
 }
 *{box-sizing:border-box}
 
@@ -103,7 +104,6 @@ body{
 }
 .service-name{font-size:14px;font-weight:600}
 
-/* Стиль для пометки о совместимости с телевизорами */
 .tv-compat-note {
     margin-top: 20px;
     padding: 12px 16px;
@@ -133,7 +133,6 @@ body{
     text-shadow: 0 0 8px rgba(245, 215, 110, 0.5);
     margin-bottom:8px;
 }
-/* ЗОЛОТОЙ ЗАГОЛОВОК "Сейчас у нас" */
 .sec-h{
     font-family: 'Playfair Display', serif;
     font-size: 28px;
@@ -144,7 +143,6 @@ body{
 }
 .sec-p{font-size:14px;opacity:0.7;margin:0}
 
-/* ===== НОВЫЙ СТИЛЬ ДЛЯ БЕСКОНЕЧНОЙ ПРОКРУТКИ ===== */
 .movies-scroll{
     overflow: hidden;
     position: relative;
@@ -155,10 +153,28 @@ body{
     display: flex;
     gap: 16px;
     width: max-content;
-    animation: scrollLoop 60s linear infinite;
+    animation: scrollLoop 120s linear infinite;
+    will-change: transform;
 }
 
-/* Пауза при наведении (если есть мышь) */
+@media (max-width: 1200px) {
+    .movies-track {
+        animation-duration: 140s;
+    }
+}
+
+@media (max-width: 768px) {
+    .movies-track {
+        animation-duration: 160s;
+    }
+}
+
+@media (max-width: 480px) {
+    .movies-track {
+        animation-duration: 180s;
+    }
+}
+
 @media (hover: hover) and (pointer: fine) {
     .movies-scroll:hover .movies-track {
         animation-play-state: paused;
@@ -233,7 +249,6 @@ body{
 .mv-meta{font-size:12px;color:rgba(255,255,255,0.6)}
 .mv-star{color:#ffc107}
 
-/* ===== ЗОЛОТЫЕ ЭЛЕМЕНТЫ ===== */
 .badge {
     position: absolute;
     top: 16px;
@@ -249,7 +264,6 @@ body{
     text-shadow: 0 0 8px rgba(245, 215, 110, 0.5);
 }
 
-/* Заголовок инструкции — НЕ золотой */
 .instruction-title {
     display: block;
     margin: 22px 0 12px;
@@ -259,7 +273,6 @@ body{
     text-shadow: none;
 }
 
-/* Плагины для LAMPA — золотой */
 .details-full summary {
     list-style: none;
     text-align: center;
@@ -271,7 +284,6 @@ body{
 }
 .details-full summary::-webkit-details-marker { display: none; }
 
-/* Цифры 1,2,3 в инструкции — золотые */
 .instruction-table td:first-child {
     width: 40px;
     color: var(--gold) !important;
@@ -280,7 +292,6 @@ body{
     background: rgba(245, 215, 110, 0.1);
 }
 
-/* Фраза "Все делайте строго по инструкции:" — красная */
 .instruction p strong {
     color: #ff3333 !important;
     text-shadow: none;
@@ -364,7 +375,6 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
     <div class="main-title">E-ONLINE Catalog</div>
     <div class="sub">
         Premium<br>
-       
     </div>
 </div>
 
@@ -384,7 +394,6 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
 <div class="card services-section">
     <span class="badge">русские кинотеатры</span>
     <div class="services-grid" id="russian-services"></div>
-
 </div>
 
 <div class="card services-section">
@@ -403,7 +412,7 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
     <p><strong>Все делайте строго по инструкции:</strong></p>
     <table class="instruction-table">
         <tr>
-            <td>1</td>
+            <tr>1</td>
             <td><strong>Настройки → Расширения → Добавить плагин → добавляете ссылки от бота</strong></td>
         </tr>
         <tr>
@@ -420,7 +429,6 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
     <a class="button" href="https://dl.dropbox.com/scl/fi/4nv1qiforjaapuaie7kk7/LAMPA-1.12.4-clone-un.apk?rlkey=ozisntppiapb7ehljbwklhach&dl=0" target="_blank">📥 Скачать Lampa (Android)</a> 
     <a class="button" href="https://dl.dropbox.com/scl/fi/8puxrkv46zm8bqv0fsovt/LAMPA-ATV-v1.12.4-Uncensored.apk?rlkey=7xd0lyfsopduqqd87t71dohp6&dl=0" target="_blank">📥 Скачать Lampa ATV (Android TV)</a> 
     <a class="button" href="https://dl.dropbox.com/scl/fi/xknj7vunp90wxe3bom9ot/MX_Player_v2_6_3_Offline_arm7-arm64.apk?rlkey=y6ogo45cn8v0fdg21lfcz77z7" target="_blank">📥 Скачать MX Player для Lampa Android</a>
-
 </div>
 
 <div class="card details-full">
@@ -434,6 +442,91 @@ a.button:hover{background:#22d3ee;transform:translateY(-2px)}
 </div>
 
 <script>
+// ===== ЗАЩИТА ОТ АНТИБАНЕРОВ =====
+(function antiAdblockProtection() {
+    // Функция маскировки URL изображений
+    function maskImageUrl(originalUrl) {
+        if (!originalUrl) return '';
+        const separator = originalUrl.includes('?') ? '&' : '?';
+        return originalUrl + separator + '_protect=' + Date.now() + '_' + Math.random().toString(36).substring(2, 8);
+    }
+    
+    // Защита всех изображений на странице
+    function protectImages() {
+        const allImages = document.querySelectorAll('img');
+        allImages.forEach(img => {
+            if (img.src && !img.hasAttribute('data-protected') && !img.src.includes('placehold.co')) {
+                const originalSrc = img.src;
+                img.setAttribute('data-original', originalSrc);
+                img.setAttribute('data-protected', 'true');
+                img.src = maskImageUrl(originalSrc);
+                
+                img.onerror = function() {
+                    if (!this.hasAttribute('data-retried')) {
+                        this.setAttribute('data-retried', 'true');
+                        this.src = maskImageUrl(originalSrc);
+                    } else if (!this.src.includes('placehold.co')) {
+                        this.style.opacity = '0.6';
+                        this.style.filter = 'blur(2px)';
+                    }
+                };
+            }
+        });
+    }
+    
+    // Наблюдатель за новыми изображениями
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(mutation => {
+            mutation.addedNodes.forEach(node => {
+                if (node.nodeType === 1) {
+                    if (node.tagName === 'IMG' && node.src && !node.hasAttribute('data-protected')) {
+                        const originalSrc = node.src;
+                        node.setAttribute('data-original', originalSrc);
+                        node.setAttribute('data-protected', 'true');
+                        node.src = maskImageUrl(originalSrc);
+                        
+                        node.onerror = function() {
+                            if (!this.hasAttribute('data-retried')) {
+                                this.setAttribute('data-retried', 'true');
+                                this.src = maskImageUrl(originalSrc);
+                            }
+                        };
+                    }
+                    const childImages = node.querySelectorAll ? node.querySelectorAll('img') : [];
+                    childImages.forEach(img => {
+                        if (img.src && !img.hasAttribute('data-protected') && !img.src.includes('placehold.co')) {
+                            const originalSrc = img.src;
+                            img.setAttribute('data-original', originalSrc);
+                            img.setAttribute('data-protected', 'true');
+                            img.src = maskImageUrl(originalSrc);
+                            
+                            img.onerror = function() {
+                                if (!this.hasAttribute('data-retried')) {
+                                    this.setAttribute('data-retried', 'true');
+                                    this.src = maskImageUrl(originalSrc);
+                                }
+                            };
+                        }
+                    });
+                }
+            });
+        });
+    });
+    
+    // Запускаем защиту
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            protectImages();
+            observer.observe(document.body, { childList: true, subtree: true });
+            setInterval(protectImages, 5000);
+        });
+    } else {
+        protectImages();
+        observer.observe(document.body, { childList: true, subtree: true });
+        setInterval(protectImages, 5000);
+    }
+})();
+
 // Данные для сервисов
 const russianServices = [
     {name:'Start', url:'https://start.ru', logo:'https://upload.wikimedia.org/wikipedia/commons/6/67/START_logo.svg'},
@@ -481,16 +574,35 @@ function shuffleArray(array) {
     return array;
 }
 
+// Функция защиты картинок фильмов
+function protectMovieImages(container) {
+    const movieImages = container.querySelectorAll('img');
+    movieImages.forEach(img => {
+        if (img.src && !img.hasAttribute('data-protected') && !img.src.includes('placehold.co')) {
+            const originalSrc = img.src;
+            img.setAttribute('data-original', originalSrc);
+            img.setAttribute('data-protected', 'true');
+            const separator = originalSrc.includes('?') ? '&' : '?';
+            img.src = originalSrc + separator + '_protect=' + Date.now() + '_' + Math.random().toString(36).substring(2, 8);
+            
+            img.onerror = function() {
+                if (!this.hasAttribute('data-retried')) {
+                    this.setAttribute('data-retried', 'true');
+                    this.src = originalSrc + separator + '_retry=' + Date.now();
+                }
+            };
+        }
+    });
+}
+
 // Функция инициализации бесконечной прокрутки фильмов
 function initMovies(html) {
     const container = document.getElementById('mv-list');
     if (!container) return;
     
-    // Создаем временный DOM элемент для парсинга HTML
     const temp = document.createElement('div');
     temp.innerHTML = html;
     
-    // Получаем все элементы фильмов
     let movieElements = Array.from(temp.children);
     
     if (movieElements.length === 0) {
@@ -498,29 +610,44 @@ function initMovies(html) {
         return;
     }
     
-    // Перемешиваем фильмы
     movieElements = shuffleArray(movieElements);
     
-    // Создаем трек для бесконечной прокрутки
     const track = document.createElement('div');
     track.className = 'movies-track';
     
-    // Добавляем оригинальные элементы
-    movieElements.forEach(el => {
-        track.appendChild(el.cloneNode(true));
-    });
+    // Добавляем оригинальные элементы (4 копии для бесконечности)
+    for (let repeat = 0; repeat < 4; repeat++) {
+        movieElements.forEach(el => {
+            track.appendChild(el.cloneNode(true));
+        });
+    }
     
-    // Дублируем элементы для создания эффекта бесконечности
-    movieElements.forEach(el => {
-        track.appendChild(el.cloneNode(true));
-    });
-    
-    // Очищаем контейнер и добавляем трек
     container.innerHTML = '';
     container.appendChild(track);
+    
+    // Защищаем картинки в загруженных фильмах
+    setTimeout(() => {
+        protectMovieImages(container);
+    }, 100);
+    
+    // Проверяем ширину трека
+    setTimeout(() => {
+        const trackWidth = track.scrollWidth;
+        const viewportWidth = window.innerWidth;
+        
+        if (trackWidth < viewportWidth * 2) {
+            const needMore = Math.ceil((viewportWidth * 3) / (trackWidth / 4)) + 1;
+            for (let i = 0; i < needMore; i++) {
+                movieElements.forEach(el => {
+                    track.appendChild(el.cloneNode(true));
+                });
+            }
+            protectMovieImages(container);
+        }
+    }, 200);
 }
 
-// Функция обновления фильмов с бесконечной прокруткой
+// Функция обновления фильмов
 function updateMovies() {
     const container = document.getElementById('mv-list');
     if (container) {
@@ -547,17 +674,11 @@ function updateMovies() {
 
 // Запуск при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
-    // Рендерим сервисы
     renderServices(russianServices, 'russian-services');
     renderServices(foreignServices, 'foreign-services');
-    
-    // Инициализируем фильмы с бесконечной прокруткой
     updateMovies();
+    setInterval(updateMovies, 1800000);
     
-    // Обновляем фильмы каждые 20 мин для свежего контента
-    setInterval(updateMovies, 1200000);
-    
-    // Настройка для details элементов (плавная прокрутка)
     document.querySelectorAll('.details-full details').forEach(d => {
         d.removeAttribute('open');
         d.open = false;
@@ -574,7 +695,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Обработка якорных ссылок
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {
             const id = link.getAttribute('href').slice(1);
