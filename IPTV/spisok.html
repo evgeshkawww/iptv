@@ -242,6 +242,11 @@ header {
   will-change: transform;
 }
 
+/* Класс для паузы анимации */
+.movies-track-paused {
+  animation-play-state: paused !important;
+}
+
 .movies-scroll:hover .movies-track {
   animation-play-state: paused;
 }
@@ -572,233 +577,125 @@ summary::-webkit-details-marker {
 <div class="footer">© Premium-IPTV</div>
 
 <script>
+// ===== ФУНКЦИЯ ДЛЯ ВОССТАНОВЛЕНИЯ АНИМАЦИИ КАРУСЕЛИ =====
+function resumeCarouselAnimation() {
+    const track = document.querySelector('.movies-track');
+    if (track) {
+        // Убираем класс паузы, если он был
+        track.classList.remove('movies-track-paused');
+        // Принудительно перезапускаем анимацию
+        track.style.animation = 'none';
+        // Форсируем перерисовку
+        track.offsetHeight;
+        // Возвращаем анимацию
+        track.style.animation = '';
+        console.log('Анимация карусели восстановлена');
+    }
+}
+
+// Следим за видимостью страницы (при возврате из другой вкладки)
+document.addEventListener('visibilitychange', function() {
+    if (!document.hidden) {
+        // Страница стала видимой - восстанавливаем анимацию
+        setTimeout(resumeCarouselAnimation, 100);
+    }
+});
+
+// При загрузке страницы (для Safari и других браузеров)
+window.addEventListener('pageshow', function(event) {
+    // Если страница загружена из кэша (при нажатии "назад")
+    if (event.persisted) {
+        setTimeout(resumeCarouselAnimation, 100);
+    }
+});
+
+// Также при потере фокуса и возврате
+window.addEventListener('focus', function() {
+    setTimeout(resumeCarouselAnimation, 100);
+});
+
 // ===== ЗАЩИТА ОТ АНТИБАНЕРОВ =====
 (function antiAdblockProtection() {
-  // 1. Обнаружение блокировщиков рекламы
-  const adDetectors = {
-    // Проверка через бэйджик - если его нет, значит сработал баннерорезка
-    checkByClass: function() {
-      const testDiv = document.createElement('div');
-      testDiv.className = 'adsbox anAdvert testAd ad-banner';
-      testDiv.style.cssText = 'position:absolute;top:-1000px;left:-1000px;';
-      document.body.appendChild(testDiv);
-      
-      const isBlocked = testDiv.offsetHeight === 0 || testDiv.offsetWidth === 0;
-      document.body.removeChild(testDiv);
-      return isBlocked;
-    },
-    
-    // Проверка через расстояние до элемента (хитрый метод)
-    checkByPosition: function() {
-      const bait = document.createElement('div');
-      bait.innerHTML = '&nbsp;';
-      bait.style.cssText = 'position:absolute;top:0;left:0;width:1px;height:1px;visibility:hidden;';
-      document.body.appendChild(bait);
-      
-      const baitRect = bait.getBoundingClientRect();
-      const isHidden = baitRect.height === 0 && baitRect.width === 0;
-      document.body.removeChild(bait);
-      return isHidden;
-    },
-    
-    // Проверка через загрузку тестового изображения
-    checkImageLoad: function() {
-      return new Promise((resolve) => {
-        const img = document.createElement('img');
-        img.src = 'https://raw.githubusercontent.com/evgeshkawww/iptv/main/IPTV/pixel.png?' + Date.now();
-        img.style.cssText = 'position:absolute;top:-1000px;left:-1000px;';
-        
-        let timeout = setTimeout(() => {
-          document.body.removeChild(img);
-          resolve(false);
-        }, 2000);
-        
-        img.onload = function() {
-          clearTimeout(timeout);
-          document.body.removeChild(img);
-          resolve(true);
-        };
-        
-        img.onerror = function() {
-          clearTimeout(timeout);
-          document.body.removeChild(img);
-          resolve(false);
-        };
-        
-        document.body.appendChild(img);
-      });
-    }
-  };
-  
-  // 2. Функция восстановления картинок (маскировка URL)
+  // Функция маскировки URL изображений
   function maskImageUrl(originalUrl) {
     if (!originalUrl) return '';
-    // Методы обхода блокировки:
-    // - Добавление случайного параметра
-    // - Использование прокси-стилей
-    // - Изменение регистра (не работает, но оставлено для примера)
     const separator = originalUrl.includes('?') ? '&' : '?';
     return originalUrl + separator + '_t=' + Date.now() + '_r=' + Math.random().toString(36).substring(2, 8);
   }
   
-  // 3. Применение защиты ко всем изображениям на странице
+  // Применение защиты ко всем изображениям на странице
   function protectImages() {
-    // Все img на странице
     const allImages = document.querySelectorAll('img');
     allImages.forEach(img => {
-      if (img.src && !img.hasAttribute('data-protected')) {
+      if (img.src && !img.hasAttribute('data-protected') && !img.src.includes('placehold.co')) {
         const originalSrc = img.src;
         img.setAttribute('data-original', originalSrc);
         img.setAttribute('data-protected', 'true');
-        
-        // Метод 1: Обновление src с обходом кэша
         img.src = maskImageUrl(originalSrc);
         
-        // Метод 2: Перезагрузка при ошибке
         img.onerror = function() {
           if (!this.hasAttribute('data-retried')) {
             this.setAttribute('data-retried', 'true');
             this.src = maskImageUrl(originalSrc);
           } else {
-            // Если все еще не загрузилось - показываем fallback
             this.style.opacity = '0.8';
             this.style.filter = 'blur(2px)';
           }
         };
       }
     });
-    
-    // Все фоновые изображения через CSS (ищем элементы со style.backgroundImage)
-    const bgElements = document.querySelectorAll('[style*="background-image"]');
-    bgElements.forEach(el => {
-      const style = el.style.backgroundImage;
-      if (style && style.includes('url(') && !el.hasAttribute('data-bg-protected')) {
-        const urlMatch = style.match(/url\(["']?([^"')]+)["']?\)/);
-        if (urlMatch && urlMatch[1]) {
-          const newUrl = maskImageUrl(urlMatch[1]);
-          el.style.backgroundImage = `url('${newUrl}')`;
-          el.setAttribute('data-bg-protected', 'true');
-        }
-      }
-    });
   }
   
-  // 4. Обход Content Security Policy (CSP) для изображений
-  // Используем динамически создаваемые Blob URL, где это возможно
-  async function loadImageViaBlob(url) {
-    try {
-      const response = await fetch(url);
-      const blob = await response.blob();
-      return URL.createObjectURL(blob);
-    } catch (e) {
-      return url;
-    }
-  }
-  
-  // 5. Защита карточек фильмов (основная проблема)
-  function protectMovieCards() {
-    // Наблюдатель за добавлением новых карточек
-    const observer = new MutationObserver(function(mutations) {
-      mutations.forEach(mutation => {
-        mutation.addedNodes.forEach(node => {
-          if (node.nodeType === 1) { // Element
-            // Если добавился новый фильм - защищаем его картинки
-            const movieImages = node.querySelectorAll ? node.querySelectorAll('img') : [];
-            movieImages.forEach(img => {
-              if (img.src && !img.hasAttribute('data-protected')) {
-                const originalSrc = img.src;
-                img.setAttribute('data-original', originalSrc);
-                img.setAttribute('data-protected', 'true');
-                img.src = maskImageUrl(originalSrc);
-                
-                img.onerror = function() {
-                  if (!this.hasAttribute('data-retried')) {
-                    this.setAttribute('data-retried', 'true');
-                    this.src = maskImageUrl(originalSrc);
-                  }
-                };
-              }
-            });
+  // Наблюдатель за новыми изображениями
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(mutation => {
+      mutation.addedNodes.forEach(node => {
+        if (node.nodeType === 1) {
+          if (node.tagName === 'IMG' && node.src && !node.hasAttribute('data-protected')) {
+            const originalSrc = node.src;
+            node.setAttribute('data-original', originalSrc);
+            node.setAttribute('data-protected', 'true');
+            node.src = maskImageUrl(originalSrc);
             
-            // Также проверяем сам узел, если это img
-            if (node.tagName === 'IMG' && node.src && !node.hasAttribute('data-protected')) {
-              const originalSrc = node.src;
-              node.setAttribute('data-original', originalSrc);
-              node.setAttribute('data-protected', 'true');
-              node.src = maskImageUrl(originalSrc);
+            node.onerror = function() {
+              if (!this.hasAttribute('data-retried')) {
+                this.setAttribute('data-retried', 'true');
+                this.src = maskImageUrl(originalSrc);
+              }
+            };
+          }
+          const childImages = node.querySelectorAll ? node.querySelectorAll('img') : [];
+          childImages.forEach(img => {
+            if (img.src && !img.hasAttribute('data-protected') && !img.src.includes('placehold.co')) {
+              const originalSrc = img.src;
+              img.setAttribute('data-original', originalSrc);
+              img.setAttribute('data-protected', 'true');
+              img.src = maskImageUrl(originalSrc);
               
-              node.onerror = function() {
+              img.onerror = function() {
                 if (!this.hasAttribute('data-retried')) {
                   this.setAttribute('data-retried', 'true');
                   this.src = maskImageUrl(originalSrc);
                 }
               };
             }
-          }
-        });
+          });
+        }
       });
     });
-    
-    // Начинаем следить за всем контейнером фильмов
-    const mvList = document.getElementById('mv-list');
-    if (mvList) {
-      observer.observe(mvList, { childList: true, subtree: true });
-    }
-  }
+  });
   
-  // 6. Альтернативный метод: использование CSS-фона вместо img (если совсем беда)
-  // Заменяем img на div с background-image (обходит многие блокировщики)
-  function convertImgsToBackground(elements) {
-    elements.forEach(img => {
-      if (img.src && img.parentNode) {
-        const imgUrl = img.src;
-        const parent = img.parentNode;
-        const container = document.createElement('div');
-        container.style.cssText = img.style.cssText;
-        container.className = img.className;
-        container.style.backgroundImage = `url('${imgUrl}')`;
-        container.style.backgroundSize = 'cover';
-        container.style.backgroundPosition = 'center';
-        container.style.display = 'block';
-        // Копируем важные атрибуты
-        if (img.width) container.style.width = img.width + 'px';
-        if (img.height) container.style.height = img.height + 'px';
-        if (img.alt) container.setAttribute('aria-label', img.alt);
-        parent.replaceChild(container, img);
-      }
-    });
-  }
-  
-  // 7. Запуск защиты при загрузке страницы
-  async function initProtection() {
-    // Проверяем, не заблокированы ли изображения
-    const imageLoadOk = await adDetectors.checkImageLoad();
-    
-    if (!imageLoadOk) {
-      console.warn('Обнаружена проблема с загрузкой изображений, применяем усиленную защиту');
-      // Включаем усиленный режим защиты
-      setInterval(() => {
-        protectImages();
-      }, 2000);
-    }
-    
-    // Защищаем существующие изображения
-    protectImages();
-    
-    // Включаем защиту для динамически добавляемых карточек фильмов
-    protectMovieCards();
-    
-    // Периодическая проверка для вновь добавленных изображений
-    setInterval(() => {
-      protectImages();
-    }, 5000);
-  }
-  
-  // Запускаем защиту после загрузки DOM
+  // Запускаем защиту
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initProtection);
+    document.addEventListener('DOMContentLoaded', () => {
+      protectImages();
+      observer.observe(document.body, { childList: true, subtree: true });
+      setInterval(protectImages, 5000);
+    });
   } else {
-    initProtection();
+    protectImages();
+    observer.observe(document.body, { childList: true, subtree: true });
+    setInterval(protectImages, 5000);
   }
 })();
 
@@ -838,15 +735,27 @@ function initMovies(html) {
   mvList.innerHTML = '';
   mvList.appendChild(track);
   
+  // Добавляем обработчик клика на каждый фильм - при клике не останавливаем анимацию
+  const allMovies = mvList.querySelectorAll('.mv');
+  allMovies.forEach(movie => {
+    movie.addEventListener('click', function(e) {
+      // Не останавливаем анимацию, просто открываем ссылку
+      const link = this.querySelector('a');
+      if (link && link.href) {
+        window.open(link.href, '_blank');
+      }
+      e.stopPropagation();
+    });
+  });
+  
   // Применяем защиту к загруженным карточкам фильмов
   setTimeout(() => {
     const allMovieImgs = mvList.querySelectorAll('img');
     allMovieImgs.forEach(img => {
-      if (img.src && !img.hasAttribute('data-protected')) {
+      if (img.src && !img.hasAttribute('data-protected') && !img.src.includes('placehold.co')) {
         const originalSrc = img.src;
         img.setAttribute('data-original', originalSrc);
         img.setAttribute('data-protected', 'true');
-        // Обновляем src для обхода блокировки
         const separator = originalSrc.includes('?') ? '&' : '?';
         img.src = originalSrc + separator + '_protect=' + Date.now() + '_' + Math.random().toString(36).substring(2, 6);
         
@@ -3824,6 +3733,7 @@ const groupsData = [
     ]
   }
 ];
+
 // ===== ОТОБРАЖЕНИЕ КАНАЛОВ =====
 const groupsContainer = document.getElementById('groupsContainer');
 const searchInput = document.getElementById('search');
