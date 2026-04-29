@@ -531,6 +531,16 @@ summary::-webkit-details-marker {
     padding: 4px 12px;
   }
 }
+
+/* Скрываем второстепенные изображения до загрузки главных */
+.lazy-load {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lazy-load.loaded {
+  opacity: 1;
+}
 </style>
 </head>
 
@@ -574,6 +584,109 @@ summary::-webkit-details-marker {
 <div class="footer">© Premium-IPTV</div>
 
 <script>
+// ===== ПРИОРИТЕТНАЯ ЗАГРУЗКА КАРТИНОК КАРУСЕЛИ =====
+
+// Очередь загрузки изображений с приоритетом
+const imageLoadQueue = {
+    highPriority: [],  // Карусель - загружается сразу
+    lowPriority: [],   // Остальные картинки - после карусели
+    isProcessing: false,
+    
+    // Добавить изображение с приоритетом
+    add(img, priority = 'low') {
+        if (!img || !img.src) return;
+        
+        // Если уже загружено, не добавляем
+        if (img.complete || img.hasAttribute('data-loaded')) return;
+        
+        const item = { img, src: img.src };
+        
+        if (priority === 'high') {
+            this.highPriority.push(item);
+        } else {
+            this.lowPriority.push(item);
+        }
+        
+        this.process();
+    },
+    
+    async process() {
+        if (this.isProcessing) return;
+        this.isProcessing = true;
+        
+        // Сначала загружаем все высокоприоритетные (карусель)
+        while (this.highPriority.length > 0) {
+            const item = this.highPriority.shift();
+            await this.loadImage(item.img, item.src);
+        }
+        
+        // Затем загружаем низкоприоритетные (остальные)
+        while (this.lowPriority.length > 0) {
+            const item = this.lowPriority.shift();
+            await this.loadImage(item.img, item.src);
+        }
+        
+        this.isProcessing = false;
+    },
+    
+    loadImage(img, src) {
+        return new Promise((resolve) => {
+            if (img.complete) {
+                img.setAttribute('data-loaded', 'true');
+                resolve();
+                return;
+            }
+            
+            const timeout = setTimeout(() => {
+                resolve();
+            }, 5000);
+            
+            img.onload = () => {
+                clearTimeout(timeout);
+                img.setAttribute('data-loaded', 'true');
+                resolve();
+            };
+            
+            img.onerror = () => {
+                clearTimeout(timeout);
+                img.setAttribute('data-loaded', 'error');
+                resolve();
+            };
+            
+            // Устанавливаем src для загрузки
+            img.src = src;
+        });
+    }
+};
+
+// Функция маскировки URL для защиты от антибанеров
+function maskImageUrl(originalUrl) {
+    if (!originalUrl || originalUrl.includes('placehold.co')) return originalUrl;
+    const separator = originalUrl.includes('?') ? '&' : '?';
+    return originalUrl + separator + '_protect=' + Date.now() + '_' + Math.random().toString(36).substring(2, 6);
+}
+
+// Защита и добавление в очередь изображений
+function protectAndQueueImages(container, priority = 'low') {
+    const images = container.querySelectorAll('img');
+    images.forEach(img => {
+        if (!img.src || img.hasAttribute('data-protected')) return;
+        if (img.src.includes('placehold.co')) return;
+        
+        const originalSrc = img.src;
+        img.setAttribute('data-original', originalSrc);
+        img.setAttribute('data-protected', 'true');
+        
+        // Маскируем URL
+        const maskedSrc = maskImageUrl(originalSrc);
+        img.src = '';
+        img.setAttribute('data-src', maskedSrc);
+        
+        // Добавляем в очередь с нужным приоритетом
+        imageLoadQueue.add(img, priority);
+    });
+}
+
 // ===== ФУНКЦИЯ ДЛЯ ВОССТАНОВЛЕНИЯ АНИМАЦИИ КАРУСЕЛИ =====
 function resumeCarouselAnimation() {
     const track = document.querySelector('.movies-track');
@@ -602,87 +715,6 @@ window.addEventListener('focus', function() {
     setTimeout(resumeCarouselAnimation, 100);
 });
 
-// ===== ЗАЩИТА ОТ АНТИБАНЕРОВ =====
-(function antiAdblockProtection() {
-    function maskImageUrl(originalUrl) {
-        if (!originalUrl) return '';
-        const separator = originalUrl.includes('?') ? '&' : '?';
-        return originalUrl + separator + '_protect=' + Date.now() + '_' + Math.random().toString(36).substring(2, 8);
-    }
-    
-    function protectImages() {
-        const allImages = document.querySelectorAll('img');
-        allImages.forEach(img => {
-            if (img.src && !img.hasAttribute('data-protected') && !img.src.includes('placehold.co')) {
-                const originalSrc = img.src;
-                img.setAttribute('data-original', originalSrc);
-                img.setAttribute('data-protected', 'true');
-                img.src = maskImageUrl(originalSrc);
-                
-                img.onerror = function() {
-                    if (!this.hasAttribute('data-retried')) {
-                        this.setAttribute('data-retried', 'true');
-                        this.src = maskImageUrl(originalSrc);
-                    } else if (!this.src.includes('placehold.co')) {
-                        this.style.opacity = '0.6';
-                        this.style.filter = 'blur(2px)';
-                    }
-                };
-            }
-        });
-    }
-    
-    const observer = new MutationObserver(function(mutations) {
-        mutations.forEach(mutation => {
-            mutation.addedNodes.forEach(node => {
-                if (node.nodeType === 1) {
-                    if (node.tagName === 'IMG' && node.src && !node.hasAttribute('data-protected')) {
-                        const originalSrc = node.src;
-                        node.setAttribute('data-original', originalSrc);
-                        node.setAttribute('data-protected', 'true');
-                        node.src = maskImageUrl(originalSrc);
-                        
-                        node.onerror = function() {
-                            if (!this.hasAttribute('data-retried')) {
-                                this.setAttribute('data-retried', 'true');
-                                this.src = maskImageUrl(originalSrc);
-                            }
-                        };
-                    }
-                    const childImages = node.querySelectorAll ? node.querySelectorAll('img') : [];
-                    childImages.forEach(img => {
-                        if (img.src && !img.hasAttribute('data-protected') && !img.src.includes('placehold.co')) {
-                            const originalSrc = img.src;
-                            img.setAttribute('data-original', originalSrc);
-                            img.setAttribute('data-protected', 'true');
-                            img.src = maskImageUrl(originalSrc);
-                            
-                            img.onerror = function() {
-                                if (!this.hasAttribute('data-retried')) {
-                                    this.setAttribute('data-retried', 'true');
-                                    this.src = maskImageUrl(originalSrc);
-                                }
-                            };
-                        }
-                    });
-                }
-            });
-        });
-    });
-    
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
-            protectImages();
-            observer.observe(document.body, { childList: true, subtree: true });
-            setInterval(protectImages, 5000);
-        });
-    } else {
-        protectImages();
-        observer.observe(document.body, { childList: true, subtree: true });
-        setInterval(protectImages, 5000);
-    }
-})();
-
 // ===== БЕСКОНЕЧНАЯ КАРУСЕЛЬ ФИЛЬМОВ =====
 const mvList = document.getElementById('mv-list');
 
@@ -692,26 +724,6 @@ function shuffleArray(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
-}
-
-function protectMovieImages(container) {
-    const movieImages = container.querySelectorAll('img');
-    movieImages.forEach(img => {
-        if (img.src && !img.hasAttribute('data-protected') && !img.src.includes('placehold.co')) {
-            const originalSrc = img.src;
-            img.setAttribute('data-original', originalSrc);
-            img.setAttribute('data-protected', 'true');
-            const separator = originalSrc.includes('?') ? '&' : '?';
-            img.src = originalSrc + separator + '_protect=' + Date.now() + '_' + Math.random().toString(36).substring(2, 8);
-            
-            img.onerror = function() {
-                if (!this.hasAttribute('data-retried')) {
-                    this.setAttribute('data-retried', 'true');
-                    this.src = originalSrc + separator + '_retry=' + Date.now();
-                }
-            };
-        }
-    });
 }
 
 function initMovies(html) {
@@ -742,7 +754,7 @@ function initMovies(html) {
     container.innerHTML = '';
     container.appendChild(track);
     
-    // Добавляем обработчик кликов на фильмы (чтобы анимация не останавливалась)
+    // Добавляем обработчик кликов на фильмы
     const allMovies = container.querySelectorAll('.mv');
     allMovies.forEach(movie => {
         movie.addEventListener('click', function(e) {
@@ -754,24 +766,10 @@ function initMovies(html) {
         });
     });
     
+    // Высокий приоритет для картинок в карусели
     setTimeout(() => {
-        protectMovieImages(container);
-    }, 100);
-    
-    setTimeout(() => {
-        const trackWidth = track.scrollWidth;
-        const viewportWidth = window.innerWidth;
-        
-        if (trackWidth < viewportWidth * 2) {
-            const needMore = Math.ceil((viewportWidth * 3) / (trackWidth / 4)) + 1;
-            for (let i = 0; i < needMore; i++) {
-                movieElements.forEach(el => {
-                    track.appendChild(el.cloneNode(true));
-                });
-            }
-            protectMovieImages(container);
-        }
-    }, 200);
+        protectAndQueueImages(container, 'high');
+    }, 50);
 }
 
 function updateMovies() {
@@ -3729,8 +3727,7 @@ const groupsData = [
     ]
   }
 ];
-
-// ===== ОТОБРАЖЕНИЕ КАНАЛОВ =====
+// ===== ОТОБРАЖЕНИЕ КАНАЛОВ (С НИЗКИМ ПРИОРИТЕТОМ) =====
 const groupsContainer = document.getElementById('groupsContainer');
 const searchInput = document.getElementById('search');
 const totalBox = document.getElementById('total');
@@ -3747,8 +3744,9 @@ function render(groups) {
     const ic = document.createElement('div');
     ic.className = 'group-icon';
     const img = document.createElement('img');
-    img.src = g.icon;
-    img.onerror = function() { this.style.display = 'none'; };
+    img.src = '';
+    img.setAttribute('data-src', g.icon);
+    img.alt = g.name;
     ic.appendChild(img);
     const info = document.createElement('div');
     info.className = 'group-info';
@@ -3770,12 +3768,11 @@ function render(groups) {
       el.className = 'channel';
       const ci = document.createElement('div');
       ci.className = 'ch-icon';
-      if (ch.icon) {
-        const im = document.createElement('img');
-        im.src = ch.icon;
-        im.onerror = function() { this.style.display = 'none'; };
-        ci.appendChild(im);
-      }
+      const im = document.createElement('img');
+      im.src = '';
+      im.setAttribute('data-src', ch.icon);
+      im.alt = ch.name;
+      ci.appendChild(im);
       const body = document.createElement('div');
       body.className = 'ch-body';
       const n = document.createElement('div');
@@ -3794,13 +3791,31 @@ function render(groups) {
     groupsContainer.appendChild(det);
   });
   totalBox.textContent = 'Общее количество каналов: ' + total;
+  
+  // Низкий приоритет для картинок каналов (загрузятся после карусели)
+  setTimeout(() => {
+    const channelImages = groupsContainer.querySelectorAll('img');
+    channelImages.forEach(img => {
+      const src = img.getAttribute('data-src');
+      if (src && !img.hasAttribute('data-protected')) {
+        const originalSrc = src;
+        img.setAttribute('data-original', originalSrc);
+        img.setAttribute('data-protected', 'true');
+        const maskedSrc = maskImageUrl(originalSrc);
+        img.setAttribute('data-src', maskedSrc);
+        imageLoadQueue.add(img, 'low');
+      }
+    });
+  }, 100);
 }
 
 // Запуск
 document.addEventListener('DOMContentLoaded', () => {
+    // Сначала загружаем карусель (высокий приоритет)
     updateMovies();
     setInterval(updateMovies, 1800000);
     
+    // Каналы загружаются с низким приоритетом
     if (groupsData && groupsData.length > 0) {
         render(groupsData);
     } else {
