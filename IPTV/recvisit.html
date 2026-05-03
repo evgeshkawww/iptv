@@ -18,6 +18,9 @@
       --text-primary: #f0f3fa;
       --text-muted: #9aa9c2;
       --shadow-xl: 0 20px 35px -12px rgba(0, 0, 0, 0.5);
+      --warning-bg: rgba(255, 193, 7, 0.12);
+      --warning-border: rgba(255, 193, 7, 0.35);
+      --warning-text: #ffdf8c;
     }
 
     * {
@@ -56,7 +59,7 @@
       align-items: center;
       gap: 1rem;
       flex-wrap: wrap;
-      margin-bottom: 1.6rem;
+      margin-bottom: 1.2rem;
       border-bottom: 1px solid var(--border-light);
       padding-bottom: 1rem;
     }
@@ -110,12 +113,97 @@
       font-size: 0.75rem;
     }
 
+    /* НОВЫЙ БЛОК — уникальный перевод (важное предупреждение) */
+    .unique-payment-alert {
+      background: var(--warning-bg);
+      border-left: 4px solid #ffc107;
+      border-radius: 1.2rem;
+      padding: 1rem 1.2rem;
+      margin: 0.5rem 0 1.5rem 0;
+      backdrop-filter: blur(4px);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .alert-icon {
+      font-size: 2rem;
+      background: rgba(255,193,7,0.2);
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 60px;
+    }
+
+    .alert-content {
+      flex: 1;
+    }
+
+    .alert-title {
+      font-weight: 800;
+      color: #ffdf8c;
+      letter-spacing: -0.2px;
+      font-size: 1rem;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .alert-title span {
+      background: rgba(0,0,0,0.5);
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 40px;
+      font-weight: 500;
+      color: #ffcd74;
+    }
+
+    .alert-text {
+      font-size: 0.85rem;
+      line-height: 1.35;
+      color: #f0e6c5;
+    }
+
+    .alert-text strong {
+      color: #ffe5a3;
+      background: rgba(0,0,0,0.3);
+      padding: 2px 6px;
+      border-radius: 20px;
+      font-family: monospace;
+      font-size: 0.9rem;
+    }
+
+    .alert-examples {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .example-badge {
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 40px;
+      padding: 4px 12px;
+      font-family: 'SF Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #ffeaac;
+      border: 1px solid rgba(255,193,7,0.3);
+    }
+
     /* сетка 2 карты в ряд */
     .grid-cards {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.6rem;
-      margin: 2rem 0 1.5rem;
+      margin: 1.8rem 0 1.5rem;
     }
 
     /* карточка с эффектом стекла */
@@ -358,6 +446,14 @@
       .header-text h1 {
         font-size: 1.4rem;
       }
+      .unique-payment-alert {
+        padding: 0.9rem;
+      }
+      .alert-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1.5rem;
+      }
     }
 
     @media (min-width: 701px) and (max-width: 1000px) {
@@ -393,6 +489,29 @@
       </div>
     </div>
   </header>
+
+  <!-- НОВЫЙ БЛОК: уникальная сумма перевода (критически важно) -->
+  <div class="unique-payment-alert">
+    <div class="alert-icon">⚠️</div>
+    <div class="alert-content">
+      <div class="alert-title">
+        🔔 ВАЖНО! Уникальная сумма перевода
+        <span>обязательно к выполнению</span>
+      </div>
+      <div class="alert-text">
+        При переводе средств, пожалуйста, <strong>делайте уникальный перевод</strong>, не используйте круглую сумму 300. 
+        Например: <strong>301</strong> или <strong>300.02</strong> (или любая сумма с копейками). 
+        Это поможет нам быстро и точно идентифицировать именно ваш платеж, избежать задержек и путаницы.
+      </div>
+      <div class="alert-examples">
+        <span class="example-badge">✅ 301 рубль</span>
+        <span class="example-badge">✅ 300,10 руб</span>
+        <span class="example-badge">✅ 302.50 руб</span>
+        <span class="example-badge">✅ 299,99 руб</span>
+        <span class="example-badge">❌ 300 (круглая сумма)</span>
+      </div>
+    </div>
+  </div>
 
   <!-- сетка 2 карты в ряд (на мобильном 1) -->
   <div class="grid-cards">
