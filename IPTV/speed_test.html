@@ -533,53 +533,88 @@ function appendResult(server, serveropen, dl, ping, jitter) {
         statusIcon + "</td></tr>";
 }
 
-// Функция для определения, рекомендуется ли сервер
-function isServerRecommended(jitter, dl, ping) {
-    if (jitter === "Таймаут" || dl === "Таймаут" || ping === "Таймаут") return false;
-    if (jitter === "⛔ STOP" || dl === "⛔ STOP" || ping === "⛔ STOP") return false;
-   
-    var jitterNum = Number(jitter);
-    var dlNum = Number(dl);
-    var pingNum = Number(ping);
-   
-    if (dlNum > 100 && jitterNum < 4 && pingNum > 0 && pingNum < 999) {
-        return true;
-    }
-   
-    return getServerRating(jitterNum, dlNum) !== "✖︎";
-}
-// Функция для определения рейтинга сервера
+// === ИСПРАВЛЕННАЯ ФУНКЦИЯ getServerRating ===
 function getServerRating(jitter, dl, ping) {
+    // Обработка ошибок/таймаутов
+    if (jitter === "Таймаут" || dl === "Таймаут" || ping === "Таймаут") return "✖︎";
+    if (jitter === "⛔ STOP" || dl === "⛔ STOP" || ping === "⛔ STOP") return "✖︎";
+    
     var jitterNum = Number(jitter);
     var dlNum = Number(dl);
     var pingNum = Number(ping);
- 
+    
+    // Если нет данных
+    if (isNaN(jitterNum) || isNaN(dlNum) || isNaN(pingNum)) return "✖︎";
+    
+    // Пинг > 150 → всегда одна галочка
+    if (pingNum > 150) {
+        return "✔︎";
+    }
+    
+    // Пинг > 100 → проверяем скорость
+    if (pingNum > 100) {
+        // Если скорость меньше 50 → одна галочка
+        if (dlNum < 50) {
+            return "✔︎";
+        }
+        // Если скорость >= 50 → две галочки
+        return "✔︎✔︎";
+    }
+    
+    // Если пинг <= 100, оцениваем по скорости и джиттеру
     if (dlNum < 30 || jitterNum >= 15) {
         return "✖︎";
     }
- 
-    if (dlNum >= 100 && jitterNum < 4 && pingNum < 50) {
+    
+    if (dlNum >= 100 && jitterNum < 4) {
         return "❤︎";
     }
- 
+    
     if (dlNum >= 100 && jitterNum < 4) {
         return "✔︎✔︎✔︎";
     }
- 
+    
     if (dlNum >= 80 && jitterNum < 5) {
         return "✔︎✔︎✔︎";
     }
- 
+    
     if (dlNum >= 50 && jitterNum < 10) {
         return "✔︎✔︎";
     }
- 
+    
     if (dlNum >= 30) {
         return "✔︎";
     }
- 
+    
     return "✖︎";
 }
+// === НОВАЯ ФУНКЦИЯ isServerRecommended (обновлена с учетом ping) ===
+function isServerRecommended(jitter, dl, ping) {
+    if (jitter === "Таймаут" || dl === "Таймаут" || ping === "Таймаут") return false;
+    if (jitter === "⛔ STOP" || dl === "⛔ STOP" || ping === "⛔ STOP") return false;
+    
+    var jitterNum = Number(jitter);
+    var dlNum = Number(dl);
+    var pingNum = Number(ping);
+    
+    if (isNaN(jitterNum) || isNaN(dlNum) || isNaN(pingNum)) return false;
+    
+    // Пинг > 150 → не рекомендуется
+    if (pingNum > 150) return false;
+    
+    // Пинг > 100 → условно рекомендуется (но с двумя галочками)
+    if (pingNum > 100) {
+        return dlNum >= 30 && jitterNum < 15;
+    }
+    
+    // Для пинга <= 100 используем обычную логику
+    if (dlNum > 100 && jitterNum < 4 && pingNum > 0 && pingNum < 999) {
+        return true;
+    }
+    
+    return getServerRating(jitterNum, dlNum, pingNum) !== "✖︎";
+}
+
 // Функция для поиска лучшего сервера (улучшенная версия)
 function findBestServer(results) {
     if (!results || results.length === 0) {
@@ -606,7 +641,7 @@ function findBestServer(results) {
         var ratingB = getServerRating(b.jitter, b.dl, b.ping);
 
         // Приоритет рейтинга: ❤︎ самый лучший
-        var ratingOrder = { "❤︎": 4, "✔︎✔︎✔︎": 3, "✔︎✔︎": 2, "✔︎": 1, "✖︎": 0 };
+        var ratingOrder = { "❤︎": 5, "✔︎✔︎✔︎": 4, "✔︎✔︎": 3, "✔︎": 2, "✖︎": 1 };
         if (ratingOrder[ratingA] !== ratingOrder[ratingB]) {
             return ratingOrder[ratingB] - ratingOrder[ratingA];   // выше рейтинг = лучше
         }
@@ -794,7 +829,7 @@ html, body{
 		border-radius:0.3em;
 		transition:all 0.3s;
 		box-sizing:content-box;
-		width:8em; height:2.5em;
+		 width:8em; height:2.5em;
 		line-height:2.2em;
 		cursor:pointer;
 		box-shadow: 0 0 0 rgba(0,0,0,0.1), inset 0 0 0 rgba(0,0,0,0.1);
@@ -1138,22 +1173,3 @@ h1, h3{
 <div class="footer">© E-IPTV</div>	
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
