@@ -533,7 +533,7 @@ function appendResult(server, serveropen, dl, ping, jitter) {
         statusIcon + "</td></tr>";
 }
 
-// === ИСПРАВЛЕННАЯ ФУНКЦИЯ getServerRating ===
+// === ИСПРАВЛЕННАЯ ФУНКЦИЯ getServerRating (приоритет: джиттер → пинг → скорость) ===
 function getServerRating(jitter, dl, ping) {
     // Обработка ошибок/таймаутов
     if (jitter === "Таймаут" || dl === "Таймаут" || ping === "Таймаут") return "✖︎";
@@ -546,49 +546,51 @@ function getServerRating(jitter, dl, ping) {
     // Если нет данных
     if (isNaN(jitterNum) || isNaN(dlNum) || isNaN(pingNum)) return "✖︎";
     
-    // Пинг > 150 → всегда одна галочка
-    if (pingNum > 150) {
-        return "✔︎";
-    }
+    // ========== 1. ДЖИТТЕР (САМЫЙ ВАЖНЫЙ) ==========
+    // Джиттер больше 50 → полный провал
+    if (jitterNum > 50) return "✖︎";
     
-    // Пинг > 100 → проверяем скорость
-    if (pingNum > 100) {
-        // Если скорость меньше 50 → одна галочка
-        if (dlNum < 50) {
-            return "✔︎";
-        }
-        // Если скорость >= 50 → две галочки
-        return "✔︎✔︎";
-    }
-    
-    // Если пинг <= 100, оцениваем по скорости и джиттеру
-    if (dlNum < 30 || jitterNum >= 15) {
+    // Джиттер больше 30 → только одна галочка (и то только если скорость нормальная)
+    if (jitterNum > 30) {
+        if (dlNum >= 30) return "✔︎";
         return "✖︎";
     }
     
-    if (dlNum >= 100 && jitterNum < 4) {
-        return "❤︎";
+    // Джиттер больше 15 → максимум две галочки
+    if (jitterNum > 15) {
+        if (dlNum >= 50) return "✔︎✔︎";
+        if (dlNum >= 30) return "✔︎";
+        return "✖︎";
     }
     
-    if (dlNum >= 100 && jitterNum < 4) {
-        return "✔︎✔︎✔︎";
+    // ========== 2. ПИНГ (при джиттере <= 15) ==========
+    // Пинг > 150 → максимум одна галочка
+    if (pingNum > 150) {
+        if (dlNum >= 30) return "✔︎";
+        return "✖︎";
     }
     
-    if (dlNum >= 80 && jitterNum < 5) {
-        return "✔︎✔︎✔︎";
+    // Пинг > 100 → максимум две галочки
+    if (pingNum > 100) {
+        if (dlNum >= 80) return "✔︎✔︎";
+        if (dlNum >= 50) return "✔︎";
+        return "✖︎";
     }
     
-    if (dlNum >= 50 && jitterNum < 10) {
-        return "✔︎✔︎";
-    }
+    // ========== 3. СКОРОСТЬ (при джиттере <= 15 и пинге <= 100) ==========
+    if (dlNum < 30) return "✖︎";
     
-    if (dlNum >= 30) {
-        return "✔︎";
-    }
+    if (dlNum >= 100 && jitterNum < 4) return "❤︎";
+    if (dlNum >= 100) return "✔︎✔︎✔︎";
+    if (dlNum >= 80 && jitterNum < 8) return "✔︎✔︎✔︎";
+    if (dlNum >= 80) return "✔︎✔︎";
+    if (dlNum >= 50) return "✔︎✔︎";
+    if (dlNum >= 30) return "✔︎";
     
     return "✖︎";
 }
-// === НОВАЯ ФУНКЦИЯ isServerRecommended (обновлена с учетом ping) ===
+
+// === ИСПРАВЛЕННАЯ isServerRecommended ===
 function isServerRecommended(jitter, dl, ping) {
     if (jitter === "Таймаут" || dl === "Таймаут" || ping === "Таймаут") return false;
     if (jitter === "⛔ STOP" || dl === "⛔ STOP" || ping === "⛔ STOP") return false;
@@ -599,20 +601,25 @@ function isServerRecommended(jitter, dl, ping) {
     
     if (isNaN(jitterNum) || isNaN(dlNum) || isNaN(pingNum)) return false;
     
-    // Пинг > 150 → не рекомендуется
+    // Джиттер > 30 → НЕ РЕКОМЕНДУЕТСЯ
+    if (jitterNum > 30) return false;
+    
+    // Джиттер > 15 → только при хорошей скорости
+    if (jitterNum > 15) {
+        return dlNum >= 50;
+    }
+    
+    // Джиттер <= 15
+    // Пинг > 150 → НЕ РЕКОМЕНДУЕТСЯ
     if (pingNum > 150) return false;
     
-    // Пинг > 100 → условно рекомендуется (но с двумя галочками)
+    // Пинг > 100 → только при очень хорошей скорости
     if (pingNum > 100) {
-        return dlNum >= 30 && jitterNum < 15;
+        return dlNum >= 80;
     }
     
-    // Для пинга <= 100 используем обычную логику
-    if (dlNum > 100 && jitterNum < 4 && pingNum > 0 && pingNum < 999) {
-        return true;
-    }
-    
-    return getServerRating(jitterNum, dlNum, pingNum) !== "✖︎";
+    // Нормальные условия
+    return dlNum >= 30 && jitterNum < 15;
 }
 
 // Функция для поиска лучшего сервера (улучшенная версия)
