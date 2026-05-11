@@ -533,7 +533,7 @@ function appendResult(server, serveropen, dl, ping, jitter) {
         statusIcon + "</td></tr>";
 }
 
-// === ИСПРАВЛЕННАЯ ФУНКЦИЯ getServerRating (приоритет: джиттер → пинг → скорость) ===
+// === ИСПРАВЛЕННАЯ ФУНКЦИЯ getServerRating ===
 function getServerRating(jitter, dl, ping) {
     // Обработка ошибок/таймаутов
     if (jitter === "Таймаут" || dl === "Таймаут" || ping === "Таймаут") return "✖︎";
@@ -556,14 +556,19 @@ function getServerRating(jitter, dl, ping) {
         return "✖︎";
     }
     
-    // Джиттер больше 15 → максимум две галочки
+    // Джиттер больше 15 → максимум одна галочка (даже при высокой скорости)
     if (jitterNum > 15) {
-        if (dlNum >= 50) return "✔︎✔︎";
         if (dlNum >= 30) return "✔︎";
         return "✖︎";
     }
     
-    // ========== 2. ПИНГ (при джиттере <= 15) ==========
+    // Джиттер больше 10 → максимум одна галочка
+    if (jitterNum > 10) {
+        if (dlNum >= 30) return "✔︎";
+        return "✖︎";
+    }
+    
+    // ========== 2. ПИНГ (при джиттере <= 10) ==========
     // Пинг > 150 → максимум одна галочка
     if (pingNum > 150) {
         if (dlNum >= 30) return "✔︎";
@@ -577,13 +582,12 @@ function getServerRating(jitter, dl, ping) {
         return "✖︎";
     }
     
-    // ========== 3. СКОРОСТЬ (при джиттере <= 15 и пинге <= 100) ==========
+    // ========== 3. СКОРОСТЬ (при джиттере <= 10 и пинге <= 100) ==========
     if (dlNum < 30) return "✖︎";
     
     if (dlNum >= 100 && jitterNum < 4) return "❤︎";
     if (dlNum >= 100) return "✔︎✔︎✔︎";
-    if (dlNum >= 80 && jitterNum < 8) return "✔︎✔︎✔︎";
-    if (dlNum >= 80) return "✔︎✔︎";
+    if (dlNum >= 80) return "✔︎✔︎✔︎";
     if (dlNum >= 50) return "✔︎✔︎";
     if (dlNum >= 30) return "✔︎";
     
