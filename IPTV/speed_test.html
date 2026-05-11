@@ -537,6 +537,19 @@ function appendResult(server, serveropen, dl, ping, jitter) {
 // IPTV SERVER QUALITY SYSTEM
 // =======================================
 
+// IPTV приоритет:
+// 1. Jitter
+// 2. Ping
+// 3. Download speed
+//
+// Для IPTV:
+// - стабильность важнее скорости
+// - 30-50 Mbps уже достаточно
+// - высокий jitter = фризы
+// - высокий ping = медленный zapping / лаги
+//
+// Ping 0-50 = идеал
+
 // =======================================
 // HELPERS
 // =======================================
@@ -554,9 +567,15 @@ function isBadValue(v) {
 }
 
 function parseValues(jitter, dl, ping) {
-    if (isBadValue(jitter) || isBadValue(dl) || isBadValue(ping)) {
+
+    if (
+        isBadValue(jitter) ||
+        isBadValue(dl) ||
+        isBadValue(ping)
+    ) {
         return null;
     }
+
     return {
         jitter: Number(jitter),
         dl: Number(dl),
@@ -565,51 +584,148 @@ function parseValues(jitter, dl, ping) {
 }
 
 // =======================================
-// IPTV SCORE (СТАБИЛЬНАЯ ВЕРСИЯ)
+// IPTV SCORE
 // =======================================
 
 function calculateIPTVScore(jitter, dl, ping) {
-    const data = parseValues(jitter, dl, ping);
-    if (!data) return { valid: false, score: 0 };
 
-    let j = data.jitter, d = data.dl, p = data.ping;
+    const data = parseValues(jitter, dl, ping);
+
+    if (!data) {
+        return {
+            valid: false,
+            score: 0
+        };
+    }
+
+    const j = data.jitter;
+    const d = data.dl;
+    const p = data.ping;
+
     let score = 100;
 
-    // Jitter (главное)
-    if (j <= 3) score += 25;
-    else if (j <= 6) score += 18;
-    else if (j <= 12) score += 5;
-    else if (j <= 18) score -= 20;
-    else if (j <= 25) score -= 50;
-    else score -= 90;
+    // =======================================
+    // JITTER (самое важное)
+    // =======================================
 
-    // Ping
-    if (p <= 20) score += 15;
-    else if (p <= 40) score += 12;
-    else if (p <= 60) score += 5;
-    else if (p <= 80) score -= 10;
-    else if (p <= 100) score -= 30;
-    else if (p <= 150) score -= 55;
-    else score -= 85;
+    if (j <= 2) {
+        score += 25;
+    }
+    else if (j <= 5) {
+        score += 18;
+    }
+    else if (j <= 10) {
+        score += 5;
+    }
+    else if (j <= 15) {
+        score -= 15;
+    }
+    else if (j <= 20) {
+        score -= 40;
+    }
+    else if (j <= 30) {
+        score -= 70;
+    }
+    else {
+        score -= 100;
+    }
 
-    // Speed
-    if (d >= 80) score += 10;
-    else if (d >= 50) score += 8;
-    else if (d >= 30) score += 5;
-    else if (d >= 20) score -= 5;
-    else if (d >= 15) score -= 15;
-    else if (d >= 10) score -= 35;
-    else score -= 60;
+    // =======================================
+    // PING
+    // 0-50 = идеал
+    // =======================================
 
-    // Штрафы
-    if (j > 15) score -= 25;
-    if (j > 25) score -= 40;
-    if (p > 100 && j > 8) score -= 25;
-    if (p > 150) score -= 25;
-    if (d < 20) score -= 25;
+    if (p <= 15) {
+        score += 15;
+    }
+    else if (p <= 30) {
+        score += 12;
+    }
+    else if (p <= 50) {
+        score += 10;
+    }
+    else if (p <= 70) {
+        score += 0;
+    }
+    else if (p <= 90) {
+        score -= 20;
+    }
+    else if (p <= 120) {
+        score -= 35;
+    }
+    else if (p <= 180) {
+        score -= 55;
+    }
+    else {
+        score -= 80;
+    }
 
-    score = Math.min(100, Math.max(0, score));
-    return { valid: true, score, jitter: j, ping: p, dl: d };
+    // =======================================
+    // SPEED
+    // IPTV не нужны огромные скорости
+    // =======================================
+
+    if (d >= 100) {
+        score += 10;
+    }
+    else if (d >= 50) {
+        score += 8;
+    }
+    else if (d >= 30) {
+        score += 5;
+    }
+    else if (d >= 20) {
+        score += 0;
+    }
+    else if (d >= 15) {
+        score -= 10;
+    }
+    else if (d >= 10) {
+        score -= 25;
+    }
+    else {
+        score -= 50;
+    }
+
+    // =======================================
+    // ДОПОЛНИТЕЛЬНЫЕ ШТРАФЫ
+    // =======================================
+
+    // Высокий jitter = плохо для IPTV
+    if (j > 15) {
+        score -= 20;
+    }
+
+    // Очень плохой jitter
+    if (j > 25) {
+        score -= 30;
+    }
+
+    // Высокий ping + высокий jitter
+    if (p > 100 && j > 10) {
+        score -= 20;
+    }
+
+    // Очень плохой ping
+    if (p > 150) {
+        score -= 20;
+    }
+
+    // Скорость ниже IPTV-safe
+    if (d < 15) {
+        score -= 20;
+    }
+
+    // Ограничиваем
+    score = Math.max(0, Math.min(100, score));
+
+    return {
+        valid: true,
+        score: score,
+        jitter: j,
+        ping: p,
+        dl: d
+    };
 }
 
 // =======================================
@@ -617,64 +733,175 @@ function calculateIPTVScore(jitter, dl, ping) {
 // =======================================
 
 function getServerRating(jitter, dl, ping) {
-    const res = calculateIPTVScore(jitter, dl, ping);
-    if (!res.valid) return "✖︎";
 
-    // ❤︎ только идеал
-    if (res.score >= 90 && res.ping <= 40 && res.jitter <= 3 && res.dl >= 30) {
-        return "❤︎";
-    }
+    const result = calculateIPTVScore(
+        jitter,
+        dl,
+        ping
+    );
 
-    if (res.ping > 70) {
-        if (res.score >= 60) return "✔︎✔︎";
-        if (res.score >= 40) return "✔︎";
+    if (!result.valid) {
         return "✖︎";
     }
 
-    if (res.score >= 80) return "✔︎✔︎✔︎";
-    if (res.score >= 60) return "✔︎✔︎";
-    if (res.score >= 40) return "✔︎";
+    const score = result.score;
+
+    // =======================================
+    // ❤︎ ТОЛЬКО ИДЕАЛЬНЫЙ IPTV
+    // =======================================
+
+    if (
+        score >= 90 &&
+        result.ping <= 50 &&
+        result.jitter <= 4
+    ) {
+        return "❤︎";
+    }
+
+    // =======================================
+    // Высокий ping ограничивает рейтинг
+    // =======================================
+
+    // ping > 80 никогда не может быть 3 галки
+    if (result.ping > 80) {
+
+        if (score >= 55) {
+            return "✔︎✔︎";
+        }
+
+        if (score >= 35) {
+            return "✔︎";
+        }
+
+        return "✖︎";
+    }
+
+    // =======================================
+    // Обычный рейтинг
+    // =======================================
+
+    if (score >= 75) {
+        return "✔︎✔︎✔︎";
+    }
+
+    if (score >= 55) {
+        return "✔︎✔︎";
+    }
+
+    if (score >= 35) {
+        return "✔︎";
+    }
+
     return "✖︎";
 }
 
 // =======================================
-// FIND BEST SERVER (❤︎ приоритет, иначе min jitter)
+// RECOMMENDED
 // =======================================
 
-function findBestServer(results) {
-    if (!results || !results.length) return null;
+function isServerRecommended(jitter, dl, ping) {
 
-    const candidates = results.map(server => {
-        const calc = calculateIPTVScore(server.jitter, server.dl, server.ping);
-        if (!calc.valid) return null;
-        return {
-            ...server,
-            score: calc.score,
-            jitter: calc.jitter,
-            ping: calc.ping,
-            dl: calc.dl,
-            rating: getServerRating(server.jitter, server.dl, server.ping)
-        };
-    }).filter(Boolean);
+    const result = calculateIPTVScore(
+        jitter,
+        dl,
+        ping
+    );
 
-    if (!candidates.length) return null;
-
-    // Сначала ищем сердечки
-    const hearts = candidates.filter(s => s.rating === "❤︎");
-    if (hearts.length) {
-        hearts.sort((a,b) => a.jitter - b.jitter || a.ping - b.ping || b.dl - a.dl);
-        return hearts[0];
+    if (!result.valid) {
+        return false;
     }
 
-    // Нет сердечек — берём с минимальным jitter, затем ping
-    candidates.sort((a,b) => a.jitter - b.jitter || a.ping - b.ping || b.dl - a.dl);
-    return candidates[0];
+    // =======================================
+    // HARD LIMITS
+    // =======================================
+
+    // слишком высокий jitter
+    if (result.jitter > 20) {
+        return false;
+    }
+
+    // слишком высокий ping
+    if (result.ping > 180) {
+        return false;
+    }
+
+    // слишком низкая скорость
+    if (result.dl < 15) {
+        return false;
+    }
+
+    // минимальный acceptable score
+    return result.score >= 55;
 }
 
 // =======================================
-// MOVE TO NEXT SERVER (РАБОЧАЯ ВЕРСИЯ)
+// FIND BEST SERVER
 // =======================================
 
+function findBestServer(results) {
+
+    if (!results || !results.length) {
+        return null;
+    }
+
+    const candidates = results
+        .map(server => {
+
+            const calc = calculateIPTVScore(
+                server.jitter,
+                server.dl,
+                server.ping
+            );
+
+            if (!calc.valid) {
+                return null;
+            }
+
+            return {
+                ...server,
+                score: calc.score,
+                rating: getServerRating(
+                    server.jitter,
+                    server.dl,
+                    server.ping
+                )
+            };
+        })
+        .filter(Boolean);
+
+    if (!candidates.length) {
+        return null;
+    }
+
+    // =======================================
+    // SORT
+    // =======================================
+
+    candidates.sort((a, b) => {
+
+        // 1. Главный критерий — score
+        if (b.score !== a.score) {
+            return b.score - a.score;
+        }
+
+        // 2. IPTV любит низкий jitter
+        if (a.jitter !== b.jitter) {
+            return a.jitter - b.jitter;
+        }
+
+        // 3. Потом ping
+        if (a.ping !== b.ping) {
+            return a.ping - b.ping;
+        }
+
+        // 4. Скорость — последний критерий
+        return b.dl - a.dl;
+    });
+
+    return candidates[0];
+}
+
+// Функция перехода к следующему серверу + показ финальной рекомендации
 function moveToNextServer() {
     var currentIndex = serversToTest.indexOf(currentServer);
 
@@ -685,10 +912,10 @@ function moveToNextServer() {
             " (" + (currentIndex + 2) + " из " + serversToTest.length + ")";
         s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
         setTimeout(function() {
-            startMultiTest();   // <-- эта функция должна быть определена глобально
+            startMultiTest();
         }, 500);
     } else {
-        // Все серверы протестированы
+        // === ВСЕ СЕРВЕРА ПРОТЕСТИРОВАНЫ ===
         I("startStopBtn").className = "";
         I("server").disabled = false;
 
@@ -699,15 +926,13 @@ function moveToNextServer() {
             var rating = bestServer.rating;
 
             if (rating === "❤︎") {
-                explanation = `❤︎ Идеальный сервер: джиттер ${bestServer.jitter} ms, ping ${bestServer.ping} ms, скорость ${bestServer.dl} Mbps`;
+                explanation = `Отличный сервер: минимальный джиттер (${bestServer.jitter} ms), ping ${bestServer.ping} ms, скорость ${bestServer.dl} Mbps`;
             } else if (rating === "✔︎✔︎✔︎") {
-                explanation = `Отличный баланс: джиттер ${bestServer.jitter} ms, ping ${bestServer.ping} ms, скорость ${bestServer.dl} Mbps`;
+                explanation = `Хороший баланс: джиттер ${bestServer.jitter} ms, ping ${bestServer.ping} ms, скорость ${bestServer.dl} Mbps`;
             } else if (rating === "✔︎✔︎") {
                 explanation = `Среднее качество: джиттер ${bestServer.jitter} ms, возможны небольшие задержки`;
             } else if (rating === "✔︎") {
                 explanation = `Минимально пригодный сервер (скорость ${bestServer.dl} Mbps)`;
-            } else {
-                explanation = `Джиттер ${bestServer.jitter} ms, ping ${bestServer.ping} ms, скорость ${bestServer.dl} Mbps`;
             }
 
             document.getElementById("currentTest").innerHTML =
