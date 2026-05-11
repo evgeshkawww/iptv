@@ -537,17 +537,6 @@ function appendResult(server, serveropen, dl, ping, jitter) {
 // IPTV SERVER QUALITY SYSTEM
 // =======================================
 
-// IPTV приоритет:
-// 1. Jitter
-// 2. Ping
-// 3. Download speed
-//
-// Для IPTV:
-// - стабильность важнее скорости
-// - 30-50 Mbps уже достаточно
-// - высокий jitter = фризы
-// - высокий ping = медленный zapping / лаги
-
 // =======================================
 // HELPERS
 // =======================================
@@ -565,15 +554,9 @@ function isBadValue(v) {
 }
 
 function parseValues(jitter, dl, ping) {
-
-    if (
-        isBadValue(jitter) ||
-        isBadValue(dl) ||
-        isBadValue(ping)
-    ) {
+    if (isBadValue(jitter) || isBadValue(dl) || isBadValue(ping)) {
         return null;
     }
-
     return {
         jitter: Number(jitter),
         dl: Number(dl),
@@ -586,130 +569,47 @@ function parseValues(jitter, dl, ping) {
 // =======================================
 
 function calculateIPTVScore(jitter, dl, ping) {
-
     const data = parseValues(jitter, dl, ping);
+    if (!data) return { valid: false, score: 0 };
 
-    if (!data) {
-        return {
-            valid: false,
-            score: 0
-        };
-    }
-
-    const j = data.jitter;
-    const d = data.dl;
-    const p = data.ping;
-
+    let j = data.jitter, d = data.dl, p = data.ping;
     let score = 100;
 
-    // =======================================
-    // JITTER (самое важное)
-    // =======================================
+    // Jitter (главное)
+    if (j <= 3) score += 25;
+    else if (j <= 6) score += 18;
+    else if (j <= 12) score += 5;
+    else if (j <= 18) score -= 20;
+    else if (j <= 25) score -= 50;
+    else score -= 90;
 
-    if (j <= 3) {
-        score += 25;
-    }
-    else if (j <= 6) {
-        score += 18;
-    }
-    else if (j <= 12) {
-        score += 5;
-    }
-    else if (j <= 18) {
-        score -= 20;
-    }
-    else if (j <= 25) {
-        score -= 50;
-    }
-    else {
-        score -= 90;
-    }
+    // Ping
+    if (p <= 20) score += 15;
+    else if (p <= 40) score += 12;
+    else if (p <= 60) score += 5;
+    else if (p <= 80) score -= 10;
+    else if (p <= 100) score -= 30;
+    else if (p <= 150) score -= 55;
+    else score -= 85;
 
-    // =======================================
-    // PING
-    // =======================================
+    // Speed
+    if (d >= 80) score += 10;
+    else if (d >= 50) score += 8;
+    else if (d >= 30) score += 5;
+    else if (d >= 20) score -= 5;
+    else if (d >= 15) score -= 15;
+    else if (d >= 10) score -= 35;
+    else score -= 60;
 
-    if (p <= 20) {
-        score += 15;
-    }
-    else if (p <= 40) {
-        score += 12;
-    }
-    else if (p <= 60) {
-        score += 5;
-    }
-    else if (p <= 80) {
-        score -= 10;
-    }
-    else if (p <= 100) {
-        score -= 30;
-    }
-    else if (p <= 150) {
-        score -= 55;
-    }
-    else {
-        score -= 85;
-    }
+    // Штрафы
+    if (j > 15) score -= 25;
+    if (j > 25) score -= 40;
+    if (p > 100 && j > 8) score -= 25;
+    if (p > 150) score -= 25;
+    if (d < 20) score -= 25;
 
-    // =======================================
-    // SPEED
-    // =======================================
-
-    if (d >= 80) {
-        score += 10;
-    }
-    else if (d >= 50) {
-        score += 8;
-    }
-    else if (d >= 30) {
-        score += 5;
-    }
-    else if (d >= 20) {
-        score -= 5;
-    }
-    else if (d >= 15) {
-        score -= 15;
-    }
-    else if (d >= 10) {
-        score -= 35;
-    }
-    else {
-        score -= 60;
-    }
-
-    // =======================================
-    // ДОПОЛНИТЕЛЬНЫЕ ШТРАФЫ
-    // =======================================
-
-    if (j > 15) {
-        score -= 25;
-    }
-
-    if (j > 25) {
-        score -= 40;
-    }
-
-    if (p > 100 && j > 8) {
-        score -= 25;
-    }
-
-    if (p > 150) {
-        score -= 25;
-    }
-
-    if (d < 20) {
-        score -= 25;
-    }
-
-    score = Math.max(0, Math.min(100, score));
-
-    return {
-        valid: true,
-        score: score,
-        jitter: j,
-        ping: p,
-        dl: d
-    };
+    score = Math.min(100, Math.max(0, score));
+    return { valid: true, score, jitter: j, ping: p, dl: d };
 }
 
 // =======================================
@@ -717,174 +617,62 @@ function calculateIPTVScore(jitter, dl, ping) {
 // =======================================
 
 function getServerRating(jitter, dl, ping) {
+    const res = calculateIPTVScore(jitter, dl, ping);
+    if (!res.valid) return "✖︎";
 
-    const result = calculateIPTVScore(jitter, dl, ping);
-
-    if (!result.valid) {
-        return "✖︎";
-    }
-
-    const score = result.score;
-
-    // ❤︎ ТОЛЬКО АБСОЛЮТНЫЙ ИДЕАЛ
-    if (
-        score >= 90 &&
-        result.ping <= 40 &&
-        result.jitter <= 3 &&
-        result.dl >= 30
-    ) {
+    // ❤︎ только идеал
+    if (res.score >= 90 && res.ping <= 40 && res.jitter <= 3 && res.dl >= 30) {
         return "❤︎";
     }
 
-    // ОСТАЛЬНЫЕ РЕЙТИНГИ
-    if (result.ping > 70) {
-        if (score >= 60) return "✔︎✔︎";
-        if (score >= 40) return "✔︎";
+    if (res.ping > 70) {
+        if (res.score >= 60) return "✔︎✔︎";
+        if (res.score >= 40) return "✔︎";
         return "✖︎";
     }
 
-    if (score >= 80) return "✔︎✔︎✔︎";
-    if (score >= 60) return "✔︎✔︎";
-    if (score >= 40) return "✔︎";
+    if (res.score >= 80) return "✔︎✔︎✔︎";
+    if (res.score >= 60) return "✔︎✔︎";
+    if (res.score >= 40) return "✔︎";
     return "✖︎";
 }
 
 // =======================================
-// FIND BEST SERVER (С ПРИОРИТЕТОМ НА ❤︎)
+// FIND BEST SERVER (❤︎ приоритет, иначе min jitter)
 // =======================================
 
 function findBestServer(results) {
+    if (!results || !results.length) return null;
 
-    if (!results || !results.length) {
-        return null;
-    }
+    const candidates = results.map(server => {
+        const calc = calculateIPTVScore(server.jitter, server.dl, server.ping);
+        if (!calc.valid) return null;
+        return {
+            ...server,
+            score: calc.score,
+            jitter: calc.jitter,
+            ping: calc.ping,
+            dl: calc.dl,
+            rating: getServerRating(server.jitter, server.dl, server.ping)
+        };
+    }).filter(Boolean);
 
-    const candidates = results
-        .map(server => {
-            const calc = calculateIPTVScore(server.jitter, server.dl, server.ping);
-            if (!calc.valid) return null;
-            
-            return {
-                ...server,
-                score: calc.score,
-                jitter: calc.jitter,
-                ping: calc.ping,
-                dl: calc.dl,
-                rating: getServerRating(server.jitter, server.dl, server.ping)
-            };
-        })
-        .filter(Boolean);
+    if (!candidates.length) return null;
 
-    if (!candidates.length) {
-        return null;
-    }
-
-    // Сначала ищем ❤︎
+    // Сначала ищем сердечки
     const hearts = candidates.filter(s => s.rating === "❤︎");
-    
-    if (hearts.length > 0) {
-        // Сортируем сердечки по jitter (самый низкий первый)
-        hearts.sort((a, b) => {
-            if (a.jitter !== b.jitter) return a.jitter - b.jitter;
-            if (a.ping !== b.ping) return a.ping - b.ping;
-            return b.dl - a.dl;
-        });
+    if (hearts.length) {
+        hearts.sort((a,b) => a.jitter - b.jitter || a.ping - b.ping || b.dl - a.dl);
         return hearts[0];
     }
-    
-    // Если нет ❤︎ - берем лучший по jitter и ping
-    candidates.sort((a, b) => {
-        // Сначала по jitter (самый важный)
-        if (a.jitter !== b.jitter) return a.jitter - b.jitter;
-        // Потом по ping
-        if (a.ping !== b.ping) return a.ping - b.ping;
-        // Потом по скорости
-        return b.dl - a.dl;
-    });
-    
+
+    // Нет сердечек — берём с минимальным jitter, затем ping
+    candidates.sort((a,b) => a.jitter - b.jitter || a.ping - b.ping || b.dl - a.dl);
     return candidates[0];
 }
 
 // =======================================
-// GET RECOMMENDATION TEXT
-// =======================================
-
-function getRecommendationText(server) {
-    if (!server) return null;
-    
-    const rating = server.rating;
-    
-    if (rating === "❤︎") {
-        return {
-            title: "❤︎ ИДЕАЛЬНЫЙ СЕРВЕР ❤︎",
-            description: `Лучший выбор для IPTV!`,
-            details: [
-                `Джиттер: ${server.jitter} ms (отлично)`,
-                `Ping: ${server.ping} ms`,
-                `Скорость: ${server.dl} Mbps`,
-                `⭐ Стабильное соединение без фризов`
-            ],
-            style: "heart"
-        };
-    }
-    
-    if (rating === "✔︎✔︎✔︎") {
-        return {
-            title: "✔︎✔︎✔︎ ОЧЕНЬ ХОРОШИЙ",
-            description: `Отличный сервер, но не идеален`,
-            details: [
-                `Джиттер: ${server.jitter} ms`,
-                `Ping: ${server.ping} ms`,
-                `Скорость: ${server.dl} Mbps`,
-                `👍 Хорошо для IPTV`
-            ],
-            style: "good"
-        };
-    }
-    
-    if (rating === "✔︎✔︎") {
-        return {
-            title: "✔︎✔︎ ХОРОШИЙ",
-            description: `Неплохой сервер, возможны небольшие задержки`,
-            details: [
-                `Джиттер: ${server.jitter} ms`,
-                `Ping: ${server.ping} ms`,
-                `Скорость: ${server.dl} Mbps`,
-                `⚠️ Иногда возможны микрофризы`
-            ],
-            style: "medium"
-        };
-    }
-    
-    if (rating === "✔︎") {
-        return {
-            title: "✔︎ ПРИГОДНЫЙ",
-            description: `Минимально приемлемый сервер`,
-            details: [
-                `Джиттер: ${server.jitter} ms`,
-                `Ping: ${server.ping} ms`,
-                `Скорость: ${server.dl} Mbps`,
-                `⚠️ Возможны проблемы при пиковых нагрузках`
-            ],
-            style: "low"
-        };
-    }
-    
-    return {
-        title: "✖︎ ПЛОХОЙ",
-        description: `Не рекомендуется для IPTV`,
-        details: [
-            `Джиттер: ${server.jitter} ms (высокий)`,
-            `Ping: ${server.ping} ms`,
-            `Скорость: ${server.dl} Mbps`,
-            `❌ Будут постоянные фризы и лаги`
-        ],
-        style: "bad"
-    };
-}
-
-// =======================================
-// MOVE TO NEXT SERVER
+// MOVE TO NEXT SERVER (РАБОЧАЯ ВЕРСИЯ)
 // =======================================
 
 function moveToNextServer() {
@@ -897,51 +685,39 @@ function moveToNextServer() {
             " (" + (currentIndex + 2) + " из " + serversToTest.length + ")";
         s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
         setTimeout(function() {
-            startMultiTest();
+            startMultiTest();   // <-- эта функция должна быть определена глобально
         }, 500);
     } else {
-        // === ВСЕ СЕРВЕРА ПРОТЕСТИРОВАНЫ ===
+        // Все серверы протестированы
         I("startStopBtn").className = "";
         I("server").disabled = false;
 
         var bestServer = findBestServer(groupTestResults);
 
         if (bestServer) {
-            const rec = getRecommendationText(bestServer);
-            
-            let bgColor = "";
-            let borderColor = "";
-            
-            if (rec.style === "heart") {
-                bgColor = "linear-gradient(135deg, #667eea 0%, #764ba2 100%)";
-                borderColor = "gold";
-            } else if (rec.style === "good") {
-                bgColor = "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)";
-                borderColor = "#2ecc71";
-            } else if (rec.style === "medium") {
-                bgColor = "linear-gradient(135deg, #fa709a 0%, #fee140 100%)";
-                borderColor = "#f39c12";
-            } else if (rec.style === "low") {
-                bgColor = "linear-gradient(135deg, #f6d365 0%, #fda085 100%)";
-                borderColor = "#e67e22";
+            var explanation = "";
+            var rating = bestServer.rating;
+
+            if (rating === "❤︎") {
+                explanation = `❤︎ Идеальный сервер: джиттер ${bestServer.jitter} ms, ping ${bestServer.ping} ms, скорость ${bestServer.dl} Mbps`;
+            } else if (rating === "✔︎✔︎✔︎") {
+                explanation = `Отличный баланс: джиттер ${bestServer.jitter} ms, ping ${bestServer.ping} ms, скорость ${bestServer.dl} Mbps`;
+            } else if (rating === "✔︎✔︎") {
+                explanation = `Среднее качество: джиттер ${bestServer.jitter} ms, возможны небольшие задержки`;
+            } else if (rating === "✔︎") {
+                explanation = `Минимально пригодный сервер (скорость ${bestServer.dl} Mbps)`;
             } else {
-                bgColor = "#2d2d2d";
-                borderColor = "#e74c3c";
+                explanation = `Джиттер ${bestServer.jitter} ms, ping ${bestServer.ping} ms, скорость ${bestServer.dl} Mbps`;
             }
-            
-            let detailsHtml = rec.details.map(d => `• ${d}`).join("<br>");
-            
+
             document.getElementById("currentTest").innerHTML =
-                `<div class="recommendationBox" style="background: ${bgColor}; border: 2px solid ${borderColor}; padding: 15px; border-radius: 10px; margin: 10px 0;">
-                    <strong style="font-size: 18px;">🎯 РЕКОМЕНДОВАН: ${bestServer.name}</strong><br>
-                    <strong>${rec.title}</strong><br>
-                    <small>${rec.description}</small><br><br>
-                    <small>${detailsHtml}</small>
+                `<div class="recommendationBox recommended">
+                    ➡︎ Рекомендован: <strong>${bestServer.name}</strong><br>
+                    <small>${explanation}</small>
                  </div>`;
         } else {
             document.getElementById("currentTest").innerHTML =
-                '<div class="recommendationBox notRecommended" style="background: #2d2d2d; border: 2px solid #ff4444; padding: 15px; border-radius: 10px;">' +
-                '✖︎ НЕТ ДОСТУПНЫХ СЕРВЕРОВ<br><small>Не удалось протестировать ни один сервер</small></div>';
+                '<div class="recommendationBox notRecommended">✖︎ Нет подходящих серверов</div>';
         }
     }
 }
