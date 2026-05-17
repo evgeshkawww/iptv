@@ -461,28 +461,27 @@
         s.start();
     }
     
-    function moveToNextServer(){
-        let idx = serversToTest.indexOf(currentServer);
-        if(idx < serversToTest.length-1){
-            currentServer = serversToTest[idx+1];
-            I("currentTest").innerHTML = "Тестируется: " + SPEEDTEST_SERVERS[currentServer].name + " ("+(idx+2)+" из "+serversToTest.length+")";
-            s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
-            setTimeout(()=> startMultiTest(), 500);
-        } else {
-            I("startStopBtn").className = "";
-            I("server").disabled = false;
-            
-            // Собираем валидные результаты
-            let validResults = [];
-            for(let res of groupTestResults){
-                if(res.dl !== "Таймаут" && res.dl !== "⛔ STOP" && typeof res.dl === 'number'){
-                    validResults.push({ name: res.name, dl: res.dl, ping: res.ping, jitter: res.jitter });
-                }
-            }
-            
-			// В функции moveToNextServer, после сбора validResults, вместо старого if(best)...
+	function moveToNextServer(){
+		let idx = serversToTest.indexOf(currentServer);
+		if(idx < serversToTest.length-1){
+			currentServer = serversToTest[idx+1];
+			I("currentTest").innerHTML = "Тестируется: " + SPEEDTEST_SERVERS[currentServer].name + " ("+(idx+2)+" из "+serversToTest.length+")";
+			s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
+			setTimeout(()=> startMultiTest(), 500);
+		} else {
+			I("startStopBtn").className = "";
+			I("server").disabled = false;
+			
+			// Собираем валидные результаты
+			let validResults = [];
+			for(let res of groupTestResults){
+				if(res.dl !== "Таймаут" && res.dl !== "⛔ STOP" && typeof res.dl === 'number'){
+					validResults.push({ name: res.name, dl: res.dl, ping: res.ping, jitter: res.jitter });
+				}
+			}
+			
 			let best = findBestServerForRecommendation(validResults);
-
+			
 			if (best) {
 				let srv = best.server;
 				let expl = "";
@@ -505,6 +504,8 @@
 			} else {
 				I("currentTest").innerHTML = '<div class="recommendationBox notRecommended">✖︎ Нет доступных серверов. Обратитесь к администратору.</div>';
 			}
+		}
+	}  
     
     function prepareMultiTest(groupType){
         stopAllTests = false;
