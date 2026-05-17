@@ -919,34 +919,22 @@ function moveToNextServer() {
         I("startStopBtn").className = "";
         I("server").disabled = false;
 
-        // Собираем валидные результаты
-        var validResults = [];
-        for (var i = 0; i < groupTestResults.length; i++) {
-            var res = groupTestResults[i];
-            if (res.dl !== "Таймаут" && res.dl !== "⛔ STOP" && typeof res.dl === 'number') {
-                validResults.push({
-                    name: res.name,
-                    dl: res.dl,
-                    ping: res.ping,
-                    jitter: res.jitter
-                });
-            }
-        }
-        
-        // Ищем лучший сервер по приоритету: ❤︎ → ✔︎✔︎✔︎ → ✔︎✔︎ → ✔︎
+        // Приоритеты
+        var priority = ["❤︎", "✔︎✔︎✔︎", "✔︎✔︎", "✔︎"];
         var bestServer = null;
         var bestRating = "";
-        
-        // Приоритеты в порядке убывания
-        var priority = ["❤︎", "✔︎✔︎✔︎", "✔︎✔︎", "✔︎"];
         
         for (var p = 0; p < priority.length; p++) {
             var currentPriority = priority[p];
             var candidates = [];
             
-            for (var r = 0; r < validResults.length; r++) {
-                var res = validResults[r];
+            for (var i = 0; i < groupTestResults.length; i++) {
+                var res = groupTestResults[i];
+                // Пропускаем таймауты
+                if (res.dl === "Таймаут" || res.dl === "⛔ STOP" || typeof res.dl !== 'number') continue;
+                
                 var rating = getServerRating(res.jitter, res.dl, res.ping);
+                
                 if (rating === currentPriority) {
                     var calc = calculateIPTVScore(res.jitter, res.dl, res.ping);
                     candidates.push({
@@ -954,8 +942,7 @@ function moveToNextServer() {
                         dl: res.dl,
                         ping: res.ping,
                         jitter: res.jitter,
-                        score: calc.score,
-                        rating: rating
+                        score: calc.score
                     });
                 }
             }
@@ -976,7 +963,6 @@ function moveToNextServer() {
         
         if (bestServer) {
             var explanation = "";
-            
             if (bestRating === "❤︎") {
                 explanation = "❤️ Отличный сервер: джиттер " + bestServer.jitter.toFixed(2) + " ms, ping " + bestServer.ping.toFixed(0) + " ms, скорость " + bestServer.dl.toFixed(1) + " Mbps";
             } else if (bestRating === "✔︎✔︎✔︎") {
@@ -994,7 +980,7 @@ function moveToNextServer() {
                 '</div>';
         } else {
             document.getElementById("currentTest").innerHTML =
-                '<div class="recommendationBox notRecommended">✖︎ Нет доступных серверов. Обратитесь к администратору.</div>';
+                '<div class="recommendationBox notRecommended">✖︎ Нет подходящих серверов. Обратитесь к администратору.</div>';
         }
     }
 }
