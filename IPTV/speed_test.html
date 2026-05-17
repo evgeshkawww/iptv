@@ -501,34 +501,59 @@
     }
 
     // ========== ФУНКЦИЯ ПОИСКА ЛУЧШЕГО СЕРВЕРА (С ПРИОРИТЕТОМ) ==========
-    function findBestServer(results){
-        if(!results||!results.length) return null;
-        var priority=["❤︎","✔︎✔︎✔︎","✔︎✔︎","✔︎"];
-        for(var p=0;p<priority.length;p++){
-            var currentPriority=priority[p];
-            var candidates=[];
-            for(var i=0;i<results.length;i++){
-                var server=results[i];
-                if(server.dl==="Таймаут"||server.dl==="⛔ STOP"||typeof server.dl!=='number') continue;
-                var calc=calculateIPTVScore(server.jitter,server.dl,server.ping);
-                if(!calc.valid) continue;
-                var rating=getServerRating(server.jitter,server.dl,server.ping);
-                if(rating===currentPriority){
-                    candidates.push({name:server.name,dl:server.dl,ping:server.ping,jitter:server.jitter,score:calc.score,rating:rating});
-                }
-            }
-            if(candidates.length>0){
-                candidates.sort(function(a,b){
-                    if(a.score!==b.score) return b.score-a.score;
-                    if(a.jitter!==b.jitter) return a.jitter-b.jitter;
-                    if(a.ping!==b.ping) return a.ping-b.ping;
-                    return b.dl-a.dl;
-                });
-                return candidates[0];
-            }
-        }
-        return null;
-    }
+	function findBestServer(results) {
+		if (!results || results.length === 0) return null;
+		
+		var priority = ["❤︎", "✔︎✔︎✔︎", "✔︎✔︎", "✔︎"];
+		
+		for (var p = 0; p < priority.length; p++) {
+			var targetRating = priority[p];
+			var best = null;
+			var bestScore = -1;
+			var bestJitter = Infinity;
+			
+			for (var i = 0; i < results.length; i++) {
+				var r = results[i];
+				
+				// Принудительно извлекаем числа из любых полей
+				var dlNum = (typeof r.dl === 'number') ? r.dl : parseFloat(r.dl);
+				var pingNum = (typeof r.ping === 'number') ? r.ping : parseFloat(r.ping);
+				var jitterNum = (typeof r.jitter === 'number') ? r.jitter : parseFloat(r.jitter);
+				
+				// Если не получилось число — пропускаем
+				if (isNaN(dlNum) || isNaN(pingNum) || isNaN(jitterNum)) continue;
+				
+				var rating = getServerRating(jitterNum, dlNum, pingNum);
+				if (rating !== targetRating) continue;
+				
+				var calc = calculateIPTVScore(jitterNum, dlNum, pingNum);
+				if (!calc.valid) continue;
+				
+				var score = calc.score;
+				
+				if (best === null || 
+					score > bestScore || 
+					(Math.abs(score - bestScore) < 0.01 && jitterNum < bestJitter)) {
+					best = {
+						name: r.name,
+						dl: dlNum,
+						ping: pingNum,
+						jitter: jitterNum,
+						rating: rating,
+						score: score
+					};
+					bestScore = score;
+					bestJitter = jitterNum;
+				}
+			}
+			
+			if (best !== null) {
+				return best;
+			}
+		}
+		
+		return null;
+	}
 
     function moveToNextServer(){
         var currentIndex=serversToTest.indexOf(currentServer);
