@@ -215,60 +215,70 @@
         if (isBadValue(jitter) || isBadValue(dl) || isBadValue(ping)) return null;
         return { jitter: Number(jitter), dl: Number(dl), ping: Number(ping) };
     }
-    function calculateIPTVScore(jitter, dl, ping) {
-        const data = parseValues(jitter, dl, ping);
-        if (!data) return { valid: false, score: 0 };
-        let j = data.jitter, d = data.dl, p = data.ping;
-        let score = 100;
-        if (j <= 2) score += 25;
-        else if (j <= 5) score += 18;
-        else if (j <= 10) score += 5;
-        else if (j <= 15) score -= 15;
-        else if (j <= 20) score -= 40;
-        else if (j <= 30) score -= 70;
-        else score -= 100;
-        
-        if (p <= 15) score += 15;
-        else if (p <= 30) score += 12;
-        else if (p <= 50) score += 10;
-        else if (p <= 70) score += 0;
-        else if (p <= 90) score -= 20;
-        else if (p <= 120) score -= 35;
-        else if (p <= 180) score -= 55;
-        else score -= 80;
-        
-        if (d >= 100) score += 10;
-        else if (d >= 50) score += 8;
-        else if (d >= 30) score += 5;
-        else if (d >= 20) score += 0;
-        else if (d >= 15) score -= 10;
-        else if (d >= 10) score -= 25;
-        else score -= 50;
-        
-        if (j > 15) score -= 20;
-        if (j > 25) score -= 30;
-        if (p > 100 && j > 10) score -= 20;
-        if (p > 150) score -= 20;
-        if (d < 15) score -= 20;
-        score = Math.max(0, Math.min(100, score));
-        return { valid: true, score, jitter: j, ping: p, dl: d };
-    }
+	function calculateIPTVScore(jitter, dl, ping) {
+		const data = parseValues(jitter, dl, ping);
+		if (!data) return { valid: false, score: 0 };
+		
+		let j = data.jitter;
+		let d = data.dl;
+		let p = data.ping;
+		
+		let score = 100;
+		
+		// Jitter (главный параметр) - максимальный вес
+		if (j <= 2) score += 30;
+		else if (j <= 5) score += 20;
+		else if (j <= 10) score += 5;
+		else if (j <= 15) score -= 10;
+		else if (j <= 20) score -= 30;
+		else if (j <= 30) score -= 60;
+		else score -= 100;
+		
+		// Ping (важно для zapping)
+		if (p <= 30) score += 20;
+		else if (p <= 50) score += 15;
+		else if (p <= 70) score += 5;
+		else if (p <= 90) score += 0;
+		else if (p <= 120) score -= 15;
+		else if (p <= 180) score -= 35;
+		else score -= 60;
+		
+		// Speed (достаточно 30-50)
+		if (d >= 100) score += 10;
+		else if (d >= 50) score += 8;
+		else if (d >= 30) score += 5;
+		else if (d >= 20) score += 0;
+		else if (d >= 15) score -= 10;
+		else if (d >= 10) score -= 25;
+		else score -= 50;
+		
+		// Бонус за отличное сочетание
+		if (j <= 3 && p <= 40 && d >= 50) score += 15;
+		if (j <= 6 && p <= 60 && d >= 30) score += 5;
+		
+		score = Math.max(0, Math.min(100, score));
+		return { valid: true, score, jitter: j, ping: p, dl: d };
+	}
     
-    function getServerRating(jitter, dl, ping) {
-        const res = calculateIPTVScore(jitter, dl, ping);
-        if (!res.valid) return "✖︎";
-        const score = res.score;
-        if (score >= 90 && res.ping <= 50 && res.jitter <= 4) return "❤︎";
-        if (res.ping > 80) {
-            if (score >= 55) return "✔︎✔︎";
-            if (score >= 35) return "✔︎";
-            return "✖︎";
-        }
-        if (score >= 75) return "✔︎✔︎✔︎";
-        if (score >= 55) return "✔︎✔︎";
-        if (score >= 35) return "✔︎";
-        return "✖︎";
-    }
+	function getServerRating(jitter, dl, ping) {
+		const res = calculateIPTVScore(jitter, dl, ping);
+		if (!res.valid) return "✖︎";
+		const score = res.score;
+		
+		// ❤︎ - идеал: score >= 85
+		if (score >= 85) return "❤︎";
+		
+		// ✔︎✔︎✔︎ - отлично: score >= 70
+		if (score >= 70) return "✔︎✔︎✔︎";
+		
+		// ✔︎✔︎ - хорошо: score >= 50
+		if (score >= 50) return "✔︎✔︎";
+		
+		// ✔︎ - удовлетворительно: score >= 35
+		if (score >= 35) return "✔︎";
+		
+		return "✖︎";
+	}
     
 	// === НОВАЯ ЛОГИКА РЕКОМЕНДАЦИИ ===
 	// Приоритет: ❤︎ → ✔︎✔︎✔︎ → ✔︎✔︎ → ✔︎
