@@ -529,7 +529,7 @@
             document.getElementById("test").appendChild(timeDiv);
         }
         if(!document.getElementById("multi_results")){
-            var tableHtml = '<div class="table-wrapper"><table id="multi_results"><thead><tr><th>Сервер</th><th>Ping</th><th>Jitter</th><th>Скорость</th><th>Оценка</th></tr></thead><tbody></tbody></table></div>';
+            var tableHtml = '<div class="table-wrapper"><table id="multi_results"><thead><tr><th>Сервер</th><th>Ping</th><th>Jitter</th><th>Скорость</th><th>QL</th></tr></thead><tbody></tbody></table></div>';
             document.getElementById("test").innerHTML += tableHtml;
         } else {
             document.getElementById("multi_results").getElementsByTagName('tbody')[0].innerHTML = '';
