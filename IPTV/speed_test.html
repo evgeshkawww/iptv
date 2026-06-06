@@ -187,7 +187,7 @@
     @keyframes fadeIn{ 0%{ opacity:0; } 100%{ opacity:1; } }
     @keyframes fadeOut{ 0%{ display:block; opacity:1; } 100%{ display:block; opacity:0; } }
     
-    /* АДАПТИВНАЯ ТАБЛИЦА ДЛЯ МОБИЛЬНЫХ — ширина колонок скорректирована: Сервер чуть уже, QL чуть шире */
+    /* АДАПТИВНАЯ ТАБЛИЦА ДЛЯ МОБИЛЬНЫХ - изменена только ширина колонок */
 	.table-wrapper {
 		width:100%;
 		overflow-x:auto;
@@ -255,41 +255,51 @@
     }
     .footer{ margin-top:30px; text-align:center; font-size:11px; opacity:.5; padding-bottom: 20px; }
     
-	/* Новая адаптация: убираем 1 символ у колонки Сервер, добавляем 1 символ колонке QL */
+	/* ТОЛЬКО ЭТОТ БЛОК ИЗМЕНЁН - ширина колонок */
 	@media (max-width:480px){
+
 		div.testArea{
 			width:14em;
 			height:11em;
 		}
+
 		div.testArea2{
 			width:10em;
 		}
+
 		div.testArea2 div.meterText{
 			font-size:1.5rem;
 		}
+
 		.recommendationBox{
 			font-size:.85rem;
 		}
-		/* тонкая настройка ширины для мобильных: сервер был 36% -> станет 34% (минус 2% условно под символ), QL было 12% -> станет 14% */
+
+		/* Сервер был 36% -> стал 35% (минус 1 символ) */
+		/* QL было 12% -> стало 13% (плюс этот 1 символ) */
 		#multi_results th:nth-child(1),
 		#multi_results td:nth-child(1){
-			width:34%;
+			width:35%;
 		}
+
 		#multi_results th:nth-child(2),
 		#multi_results td:nth-child(2){
 			width:16%;
 		}
+
 		#multi_results th:nth-child(3),
 		#multi_results td:nth-child(3){
 			width:16%;
 		}
+
 		#multi_results th:nth-child(4),
 		#multi_results td:nth-child(4){
 			width:20%;
 		}
+
 		#multi_results th:nth-child(5),
 		#multi_results td:nth-child(5){
-			width:14%;
+			width:13%;
 		}
 	}
   </style>
