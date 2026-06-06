@@ -35,10 +35,16 @@
         text-align:center;
     }
     *, *::before, *::after{ box-sizing:border-box; }
-    h1{ color:#38bdf8; text-shadow:0 0 12px rgba(56,189,248,.6); margin-bottom:10px; }
+    h1{ 
+        color:#38bdf8; 
+        text-shadow:0 0 12px rgba(56,189,248,.6); 
+        margin-bottom:10px;
+        font-size: 1.5rem;
+        padding: 0 10px;
+    }
     .auth-status {
-        font-size: 0.9rem;
-        margin-bottom: 20px;
+        font-size: 0.85rem;
+        margin-bottom: 15px;
         font-weight: 500;
         background: rgba(0,0,0,0.4);
         display: inline-block;
@@ -64,7 +70,7 @@
     @keyframes spin{ 0%{transform:rotate(0deg);} 100%{transform:rotate(359deg);} }
     #startStopBtn{
         display:inline-block;
-        margin:0 auto;
+        margin:10px auto;
         color:#38bdf8;
         background-color:rgba(0,0,0,0);
         border:0.15em solid #38bdf8;
@@ -73,7 +79,8 @@
         letter-spacing:.05em;
         transition:all 0.3s;
         box-sizing:content-box;
-        width:8em; height:2.5em;
+        width:8em; 
+        height:2.5em;
         line-height:2.2em;
         cursor:pointer;
         box-shadow:0 0 18px rgba(56,189,248,.35);
@@ -82,53 +89,61 @@
     #startStopBtn.running{ background:#ef4444 !important; border-color:#ef4444 !important; color:#fff !important; box-shadow:0 0 18px rgba(239,68,68,.6); }
     #startStopBtn:before{ content:"Тест"; }
     #startStopBtn.running:before{ content:"Прервать"; }
-    #serverArea{ margin-top:1em; }
+    #serverArea{ margin-top:1em; padding: 0 10px; }
     #server{
         background:#020617;
         color:#e5e7eb;
         border:1px solid rgba(255,255,255,.15);
         border-radius:10px;
-        padding:6px 10px;
-        font-size:1em;
+        padding:8px 10px;
+        font-size:0.9rem;
+        max-width: 90%;
+        width: auto;
     }
-    #test{ margin-top:2em; margin-bottom:12em; }
+    #test{ 
+        margin-top:1.5em; 
+        margin-bottom:8em;
+        padding: 0 10px;
+    }
     div.testArea{
         display:inline-block;
         width:16em;
         height:12.5em;
         position:relative;
         box-sizing:border-box;
+        max-width: 90%;
     }
     div.testArea2{
         display:inline-block;
-        width:14em;
-        height:7em;
+        width:12em;
+        height:6em;
         position:relative;
         box-sizing:border-box;
         text-align:center;
+        max-width: 45%;
     }
     div.testArea div.testName{
         position:absolute;
         top:0.1em; left:0;
         width:100%;
-        font-size:1.4em;
+        font-size:1.2rem;
         z-index:9;
     }
     div.testArea2 div.testName{
         display:block;
         text-align:center;
-        font-size:1.4em;
+        font-size:1.1rem;
     }
     div.testArea div.meterText{
         position:absolute;
         bottom:1.55em; left:0;
         width:100%;
-        font-size:2.5em;
+        font-size:2rem;
         z-index:9;
     }
     div.testArea2 div.meterText{
         display:inline-block;
-        font-size:2.5em;
+        font-size:2rem;
     }
     div.meterText:empty:before{ content:"0.00"; }
     div.testArea div.unit{
@@ -136,9 +151,11 @@
         bottom:2em; left:0;
         width:100%;
         z-index:9;
+        font-size:0.8rem;
     }
     div.testArea2 div.unit{
         display:inline-block;
+        font-size:0.8rem;
     }
     div.testArea canvas{
         position:absolute;
@@ -146,7 +163,11 @@
         z-index:1;
     }
     div.testGroup{
-        display:block;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
         margin: 0 auto;
     }
     #shareArea{
@@ -166,25 +187,35 @@
     @keyframes fadeIn{ 0%{ opacity:0; } 100%{ opacity:1; } }
     @keyframes fadeOut{ 0%{ display:block; opacity:1; } 100%{ display:block; opacity:0; } }
     
+    /* АДАПТИВНАЯ ТАБЛИЦА ДЛЯ МОБИЛЬНЫХ */
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 20px 0;
+        border-radius: 14px;
+        background: rgba(2,6,23,.9);
+    }
     #multi_results{
-        width:100% !important;
-        max-width:100% !important;
-        table-layout:fixed;
-        background:rgba(2,6,23,.9);
-        border-radius:14px;
-        overflow:hidden;
-        margin-top:20px;
+        width: 100%;
+        min-width: 500px;
+        border-collapse: collapse;
+        background: transparent;
+        border-radius: 14px;
+        overflow: hidden;
     }
     #multi_results th, #multi_results td{
         word-break:break-word;
         overflow-wrap:anywhere;
         white-space:normal;
         border: 1px solid rgba(255,255,255,0.1);
-        padding: 7px 10px;
+        padding: 10px 8px;
+        font-size: 0.85rem;
     }
     #multi_results th{
         background:rgba(56,189,248,.15);
         color:#38bdf8;
+        font-weight: 600;
     }
     #multi_results td{ color:#e5e7eb; }
     canvas{ max-width:100%; }
@@ -193,19 +224,21 @@
         background:rgba(15,23,42,.75);
         backdrop-filter:blur(14px);
         border-radius:22px;
-        padding:24px;
+        padding:20px 15px;
+        margin: 0 10px;
         box-shadow: 0 0 50px rgba(56,189,248,.25), inset 0 0 0 1px rgba(255,255,255,.06);
     }
     #currentTest{
         margin-top:12px;
-        font-size:16px;
+        font-size:14px;
+        padding: 0 5px;
     }
-    #ip{ opacity:.6; font-size:13px; }
+    #ip{ opacity:.6; font-size:12px; }
     .recommendationBox {
-        padding: 10px 15px;
+        padding: 8px 12px;
         margin: 10px 0;
         border-radius: 5px;
-        font-size: 1.2em;
+        font-size: 1rem;
         text-align: center;
         display: inline-block;
     }
@@ -219,12 +252,32 @@
         border-color:#ef4444 !important;
         color:#ef4444 !important;
     }
-    .footer{ margin-top:40px; text-align:center; font-size:12px; opacity:.5; }
+    .footer{ margin-top:30px; text-align:center; font-size:11px; opacity:.5; padding-bottom: 20px; }
+    
+    @media (max-width: 480px) {
+        div.testArea2 {
+            width: 10em;
+        }
+        div.testArea2 div.meterText {
+            font-size: 1.5rem;
+        }
+        div.testArea {
+            width: 14em;
+            height: 11em;
+        }
+        .recommendationBox {
+            font-size: 0.85rem;
+        }
+        #multi_results th, #multi_results td {
+            padding: 6px 4px;
+            font-size: 0.75rem;
+        }
+    }
   </style>
   <script type="text/javascript">
     function I(i){return document.getElementById(i);}
 
-    // ========== ФУНКЦИЯ ПРОВЕРКИ ДОСТУПНОСТИ СЕРВЕРА АВТОРИЗАЦИИ (БЕЗ CORS) ==========
+    // Функция проверки доступности сервера авторизации
     function checkAuthServer() {
         const statusDiv = document.getElementById("authServerStatus");
         if (!statusDiv) return;
@@ -232,111 +285,8 @@
         statusDiv.innerHTML = `<span>🔍 Сервер авторизации - проверка...</span>`;
         
         let isResolved = false;
-        let timeoutId = null;
         
-        // Способ 1: через тег img (обходит CORS)
-        const img = new Image();
-        img.crossOrigin = "anonymous"; // не поможет, но попытка
-        
-        // Способ 2: через fetch с режимом no-cors (узнаем только достижимость)
-        const testFetch = () => {
-            fetch("https://premium-iptv.ru/", {
-                method: "GET",
-                mode: "no-cors",
-                cache: "no-store"
-            }).then(() => {
-                if (!isResolved) {
-                    isResolved = true;
-                    if (timeoutId) clearTimeout(timeoutId);
-                    statusDiv.innerHTML = `<span>🟢 Сервер авторизации - </span><span class="status-ok">✅ ОК</span>`;
-                }
-            }).catch(() => {
-                // fallback - не сработает при no-cors, ошибки не будет
-            });
-        };
-        
-        // Способ 3: динамический скрипт (JSONP-подобный, но просто проверяем загрузку)
-        const script = document.createElement('script');
-        script.src = "https://premium-iptv.ru/color.js?_=" + Date.now();
-        script.onload = () => {
-            if (!isResolved) {
-                isResolved = true;
-                if (timeoutId) clearTimeout(timeoutId);
-                statusDiv.innerHTML = `<span>🟢 Сервер авторизации - </span><span class="status-ok">✅ ОК</span>`;
-            }
-        };
-        script.onerror = () => {
-            // Если скрипт не загрузился, пробуем img
-            img.src = "https://premium-iptv.ru/favicon.ico?_=" + Date.now();
-        };
-        
-        img.onload = () => {
-            if (!isResolved) {
-                isResolved = true;
-                if (timeoutId) clearTimeout(timeoutId);
-                statusDiv.innerHTML = `<span>🟢 Сервер авторизации - </span><span class="status-ok">✅ ОК</span>`;
-            }
-        };
-        img.onerror = () => {
-            // Если и img не загрузился, считаем недоступным
-            if (!isResolved) {
-                isResolved = true;
-                if (timeoutId) clearTimeout(timeoutId);
-                statusDiv.innerHTML = `<span>🔴 Сервер авторизации - </span><span class="status-error">❌ НЕДОСТУПЕН</span>`;
-            }
-        };
-        
-        // Таймаут 5 секунд
-        timeoutId = setTimeout(() => {
-            if (!isResolved) {
-                isResolved = true;
-                statusDiv.innerHTML = `<span>🔴 Сервер авторизации - </span><span class="status-error">❌ НЕДОСТУПЕН</span>`;
-            }
-        }, 5000);
-        
-        // Запускаем все способы параллельно
-        document.head.appendChild(script);
-        testFetch();
-        
-        // Убираем скрипт после проверки (через небольшую задержку)
-        setTimeout(() => {
-            if (script.parentNode) script.parentNode.removeChild(script);
-        }, 100);
-    }
-    
-    // ========== УЛУЧШЕННАЯ ПРОВЕРКА ЧЕРЕЗ ПОСЛЕДОВАТЕЛЬНЫЕ ЗАПРОСЫ ==========
-    // Более надежный метод: пробуем дозвониться до реального API или ресурса
-    function checkAuthServerRobust() {
-        const statusDiv = document.getElementById("authServerStatus");
-        if (!statusDiv) return;
-        
-        statusDiv.innerHTML = `<span>🔍 Сервер авторизации - проверка...</span>`;
-        
-        let attemptCount = 0;
-        let success = false;
-        
-        const tryUrl = (url, timeout = 3000) => {
-            return new Promise((resolve) => {
-                const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), timeout);
-                
-                fetch(url, {
-                    method: "HEAD",
-                    mode: "no-cors", // no-cors позволяет узнать только что запрос ушел, но не статус
-                    cache: "no-store",
-                    signal: controller.signal
-                }).then(() => {
-                    clearTimeout(timeoutId);
-                    // При no-cors мы не знаем статус, но если нет ошибки сети - сервер доступен
-                    resolve(true);
-                }).catch(() => {
-                    clearTimeout(timeoutId);
-                    resolve(false);
-                });
-            });
-        };
-        
-        const tryImage = (url, timeout = 3000) => {
+        const tryImage = (url, timeout = 4000) => {
             return new Promise((resolve) => {
                 const img = new Image();
                 let resolved = false;
@@ -364,7 +314,7 @@
             });
         };
         
-        const tryScript = (url, timeout = 3000) => {
+        const tryScript = (url, timeout = 4000) => {
             return new Promise((resolve) => {
                 const script = document.createElement('script');
                 let resolved = false;
@@ -396,29 +346,31 @@
             });
         };
         
-        // Пробуем разные методы и ресурсы
         Promise.any([
             tryImage("https://premium-iptv.ru/favicon.ico", 4000),
-            tryScript("https://premium-iptv.ru/color.js", 4000),
-            tryUrl("https://premium-iptv.ru/", 4000)
-        ]).then((result) => {
-            if (result === true && !success) {
-                success = true;
+            tryScript("https://premium-iptv.ru/color.js", 4000)
+        ]).then(() => {
+            if (!isResolved) {
+                isResolved = true;
                 statusDiv.innerHTML = `<span>🟢 Сервер авторизации - </span><span class="status-ok">✅ ОК</span>`;
-            } else if (!success) {
-                statusDiv.innerHTML = `<span>🔴 Сервер авторизации - </span><span class="status-error">❌ НЕДОСТУПЕН</span>`;
             }
         }).catch(() => {
-            if (!success) {
+            if (!isResolved) {
+                isResolved = true;
                 statusDiv.innerHTML = `<span>🔴 Сервер авторизации - </span><span class="status-error">❌ НЕДОСТУПЕН</span>`;
             }
         });
+        
+        setTimeout(() => {
+            if (!isResolved) {
+                isResolved = true;
+                statusDiv.innerHTML = `<span>🔴 Сервер авторизации - </span><span class="status-error">❌ НЕДОСТУПЕН</span>`;
+            }
+        }, 4500);
     }
     
-    // Запускаем проверку при загрузке страницы
     document.addEventListener('DOMContentLoaded', function() {
-        // Используем улучшенную проверку
-        checkAuthServerRobust();
+        checkAuthServer();
         setTimeout(initServers, 100);
     });
 
@@ -537,23 +489,25 @@
         }else{
             var timeDiv=document.createElement("div");
             timeDiv.id="generatedTime";
-            timeDiv.innerHTML='Сгенерировано: '+currentDateTime;
+            timeDiv.innerHTML='📅 Сгенерировано: '+currentDateTime;
             timeDiv.style.marginTop="10px";
-            timeDiv.style.fontSize="0.9em";
+            timeDiv.style.fontSize="0.8rem";
             timeDiv.style.color="#aaa";
             document.getElementById("test").appendChild(timeDiv);
         }
         if(!document.getElementById("multi_results")){
-            document.getElementById("test").innerHTML+='<table id="multi_results"><tbody></tbody></table>';
+            var tableHtml = '<div class="table-wrapper"><table id="multi_results"><thead><tr><th>Сервер</th><th>Ping</th><th>Jitter</th><th>Скорость</th><th>Оценка</th></tr></thead><tbody></tbody></table></div>';
+            document.getElementById("test").innerHTML += tableHtml;
+        } else {
+            document.getElementById("multi_results").getElementsByTagName('tbody')[0].innerHTML = '';
         }
-        document.getElementById("multi_results").getElementsByTagName('tbody')[0].innerHTML='<tr><th>Сервер</th><th>Ping</th><th>Jit</th><th>DL</th><th>Оценка</th><tr>';
     }
 
     function runSingleServerTest(){
         var serverIndex=parseInt(I("server").value);
         if(isNaN(serverIndex)) return;
         var serverObj=SPEEDTEST_SERVERS[serverIndex];
-        document.getElementById("currentTest").innerHTML="Тестируется: "+serverObj.name;
+        document.getElementById("currentTest").innerHTML="📡 Тестируется: "+serverObj.name;
         s.setSelectedServer(serverObj);
         s.onupdate=function(data){ uiData=data; };
         s.onend=function(aborted){
@@ -585,7 +539,7 @@
         }
         if(serversToTest.length>0){
             currentServer=serversToTest[0];
-            document.getElementById("currentTest").innerHTML="Тестируется: "+SPEEDTEST_SERVERS[currentServer].name+" (1 из "+serversToTest.length+")";
+            document.getElementById("currentTest").innerHTML="📡 Тестируется: "+SPEEDTEST_SERVERS[currentServer].name+" (1 из "+serversToTest.length+")";
             s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
             startMultiTest();
         }else{
@@ -642,8 +596,10 @@
         else if(typeof ping==='number'){ pingDisplay=format(ping)+" ms"; }
         var jitterDisplay=(typeof jitter==='number')?jitter.toFixed(2)+" ms":jitter;
         var dlDisplay=(typeof dl==='number')?dl.toFixed(1)+" Mbps":dl;
-        document.getElementById("multi_results").getElementsByTagName('tbody')[0].innerHTML+= 
-            '<tr><tr>'+server+'</td><td>'+pingDisplay+'</td><td>'+jitterDisplay+'</td><td>'+dlDisplay+'</td><td>'+statusIcon+'</td></tr>';
+        var tbody = document.getElementById("multi_results").getElementsByTagName('tbody')[0];
+        if(tbody){
+            tbody.innerHTML += '<tr><td>'+server+'</td><td>'+pingDisplay+'</td><td>'+jitterDisplay+'</td><td>'+dlDisplay+'</td><td>'+statusIcon+'</td></tr>';
+        }
     }
 
     function isBadValue(v){
@@ -692,16 +648,16 @@
         var res=calculateIPTVScore(jitter,dl,ping);
         if(!res.valid) return "✖︎";
         var score=res.score;
-        if(score>=90 && res.ping<=50 && res.jitter<=4) return "❤︎";
+        if(score>=90 && res.ping<=50 && res.jitter<=4) return "❤️";
         if(res.ping>80){
-            if(score>=55) return "✔︎✔︎";
-            if(score>=35) return "✔︎";
-            return "✖︎";
+            if(score>=55) return "✔️✔️";
+            if(score>=35) return "✔️";
+            return "✖️";
         }
-        if(score>=75) return "✔︎✔︎✔︎";
-        if(score>=55) return "✔︎✔︎";
-        if(score>=35) return "✔︎";
-        return "✖︎";
+        if(score>=75) return "✔️✔️✔️";
+        if(score>=55) return "✔️✔️";
+        if(score>=35) return "✔️";
+        return "✖️";
     }
     function isServerRecommended(jitter,dl,ping){
         var res=calculateIPTVScore(jitter,dl,ping);
@@ -714,7 +670,7 @@
 
     function findBestServer(results) {
         if (!results || results.length === 0) return null;
-        var priority = ["❤︎", "✔︎✔︎✔︎", "✔︎✔︎", "✔︎"];
+        var priority = ["❤️", "✔️✔️✔️", "✔️✔️", "✔️"];
         for (var p = 0; p < priority.length; p++) {
             var targetRating = priority[p];
             var best = null;
@@ -746,7 +702,7 @@
         var currentIndex=serversToTest.indexOf(currentServer);
         if(currentIndex<serversToTest.length-1){
             currentServer=serversToTest[currentIndex+1];
-            document.getElementById("currentTest").innerHTML="Тестируется: "+SPEEDTEST_SERVERS[currentServer].name+" ("+(currentIndex+2)+" из "+serversToTest.length+")";
+            document.getElementById("currentTest").innerHTML="📡 Тестируется: "+SPEEDTEST_SERVERS[currentServer].name+" ("+(currentIndex+2)+" из "+serversToTest.length+")";
             s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
             setTimeout(function(){ startMultiTest(); },500);
         }else{
@@ -756,13 +712,13 @@
             if(bestServer){
                 var explanation="";
                 var rating=bestServer.rating;
-                if(rating==="❤︎") explanation="❤️ Отличный сервер: джиттер "+bestServer.jitter.toFixed(2)+" ms, ping "+bestServer.ping.toFixed(0)+" ms, скорость "+bestServer.dl.toFixed(1)+" Mbps";
-                else if(rating==="✔︎✔︎✔︎") explanation="✔︎✔︎✔︎ Хороший баланс: джиттер "+bestServer.jitter.toFixed(2)+" ms, ping "+bestServer.ping.toFixed(0)+" ms, скорость "+bestServer.dl.toFixed(1)+" Mbps";
-                else if(rating==="✔︎✔︎") explanation="✔︎✔︎ Среднее качество: джиттер "+bestServer.jitter.toFixed(2)+" ms, возможны небольшие задержки";
-                else if(rating==="✔︎") explanation="✔︎ Минимально пригодный сервер (скорость "+bestServer.dl.toFixed(1)+" Mbps)";
-                document.getElementById("currentTest").innerHTML='<div class="recommendationBox recommended">➡︎ Рекомендован: <strong>'+bestServer.name+'</strong><br><small>'+explanation+'</small></div>';
+                if(rating==="❤️") explanation="❤️ Отличный сервер: джиттер "+bestServer.jitter.toFixed(2)+" ms, ping "+bestServer.ping.toFixed(0)+" ms, скорость "+bestServer.dl.toFixed(1)+" Mbps";
+                else if(rating==="✔️✔️✔️") explanation="✔️✔️✔️ Хороший баланс: джиттер "+bestServer.jitter.toFixed(2)+" ms, ping "+bestServer.ping.toFixed(0)+" ms, скорость "+bestServer.dl.toFixed(1)+" Mbps";
+                else if(rating==="✔️✔️") explanation="✔️✔️ Среднее качество: джиттер "+bestServer.jitter.toFixed(2)+" ms, возможны небольшие задержки";
+                else if(rating==="✔️") explanation="✔️ Минимально пригодный сервер (скорость "+bestServer.dl.toFixed(1)+" Mbps)";
+                document.getElementById("currentTest").innerHTML='<div class="recommendationBox recommended">⭐ Рекомендован: <strong>'+bestServer.name+'</strong><br><small>'+explanation+'</small></div>';
             }else{
-                document.getElementById("currentTest").innerHTML='<div class="recommendationBox notRecommended">✖︎ Нет подходящих серверов. Обратитесь к администратору.</div>';
+                document.getElementById("currentTest").innerHTML='<div class="recommendationBox notRecommended">❌ Нет подходящих серверов. Обратитесь к администратору.</div>';
             }
         }
     }
@@ -791,13 +747,13 @@
   </script>
 </head>
 <body>
-<h1 style="text-align:center;">🚀 Premium IPTV Speed Test</h1>
+<h1>🚀 Premium IPTV Speed Test</h1>
 <div id="authServerStatus" class="auth-status">🔍 Сервер авторизации - проверка...</div>
 <div id="loading" class="visible"><p id="message"><span class="loadCircle"></span>Секундочку...</p></div>
 <div id="testWrapper" class="hidden">
     <div id="serverArea">
-        <select id="server"></select>&nbsp;&nbsp;
-        <div id="startStopBtn" onclick="startStop()"></div><br/>
+        <select id="server"></select>
+        <div id="startStopBtn" onclick="startStop()"></div>
         <h3 id="currentTest"></h3>
     </div>
     <div id="test">
