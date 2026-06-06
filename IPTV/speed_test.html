@@ -188,22 +188,23 @@
     @keyframes fadeOut{ 0%{ display:block; opacity:1; } 100%{ display:block; opacity:0; } }
     
     /* АДАПТИВНАЯ ТАБЛИЦА ДЛЯ МОБИЛЬНЫХ */
-    .table-wrapper {
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        margin: 20px 0;
-        border-radius: 14px;
-        background: rgba(2,6,23,.9);
-    }
-    #multi_results{
-        width: 100%;
-        min-width: 500px;
-        border-collapse: collapse;
-        background: transparent;
-        border-radius: 14px;
-        overflow: hidden;
-    }
+	.table-wrapper {
+		width:100%;
+		overflow-x:auto;
+		-webkit-overflow-scrolling:touch;
+		margin:20px 0;
+		border-radius:14px;
+		background:rgba(2,6,23,.9);
+	}
+	#multi_results{
+		width:100%;
+		min-width:0;
+		table-layout:fixed;
+		border-collapse:collapse;
+		background:transparent;
+		border-radius:14px;
+		overflow:hidden;
+	}
     #multi_results th, #multi_results td{
         word-break:break-word;
         overflow-wrap:anywhere;
@@ -254,25 +255,57 @@
     }
     .footer{ margin-top:30px; text-align:center; font-size:11px; opacity:.5; padding-bottom: 20px; }
     
-    @media (max-width: 480px) {
-        div.testArea2 {
-            width: 10em;
-        }
-        div.testArea2 div.meterText {
-            font-size: 1.5rem;
-        }
-        div.testArea {
-            width: 14em;
-            height: 11em;
-        }
-        .recommendationBox {
-            font-size: 0.85rem;
-        }
-        #multi_results th, #multi_results td {
-            padding: 6px 4px;
-            font-size: 0.75rem;
-        }
-    }
+	@media (max-width:480px){
+
+		div.testArea{
+			width:14em;
+			height:11em;
+		}
+
+		div.testArea2{
+			width:10em;
+		}
+
+		div.testArea2 div.meterText{
+			font-size:1.5rem;
+		}
+
+		.recommendationBox{
+			font-size:.85rem;
+		}
+
+		#multi_results th,
+		#multi_results td{
+			padding:3px 1px;
+			font-size:9px;
+			line-height:1.15;
+		}
+
+		#multi_results th:nth-child(1),
+		#multi_results td:nth-child(1){
+			width:36%;
+		}
+
+		#multi_results th:nth-child(2),
+		#multi_results td:nth-child(2){
+			width:16%;
+		}
+
+		#multi_results th:nth-child(3),
+		#multi_results td:nth-child(3){
+			width:16%;
+		}
+
+		#multi_results th:nth-child(4),
+		#multi_results td:nth-child(4){
+			width:20%;
+		}
+
+		#multi_results th:nth-child(5),
+		#multi_results td:nth-child(5){
+			width:12%;
+		}
+	}
   </style>
   <script type="text/javascript">
     function I(i){return document.getElementById(i);}
