@@ -660,7 +660,7 @@
         var j = res.jitter;
         var p = res.ping;
         if (d >= 70) {
-            if (j <= 8 && p <= 50) {
+            if (j <= 8 && p <= 60) {
                 return "❤️";
             } else if (j <= 15 && p <= 80) {
                 return "✔️✔️✔️";
@@ -669,7 +669,7 @@
             }
         } 
         else if (d >= 50) {
-            if (j <= 10 && p <= 60) {
+            if (j <= 10 && p <= 70) {
                 return "✔️✔️";
             } else if (j <= 20 && p <= 100) {
                 return "✔️";
