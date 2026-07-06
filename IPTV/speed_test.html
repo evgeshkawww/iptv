@@ -356,20 +356,23 @@
                 document.head.appendChild(script);
             });
         };
-        Promise.any([
-            tryImage("https://premium-iptv.ru/favicon.ico", 4000),
-            tryScript("https://premium-iptv.ru/color.js", 4000)
-        ]).then(() => {
-            if (!isResolved) {
-                isResolved = true;
-                statusDiv.innerHTML = `<span>🟢 Сервер авторизации - </span><span class="status-ok">✅ ОК</span>`;
-            }
-        }).catch(() => {
-            if (!isResolved) {
-                isResolved = true;
-                statusDiv.innerHTML = `<span>🔴 Сервер авторизации - </span><span class="status-error">❌ НЕДОСТУПЕН</span>`;
-            }
-        });
+		Promise.all([
+			tryImage("https://premium-iptv.ru/favicon.ico", 4000),
+			tryScript("https://premium-iptv.ru/color.js", 4000)
+		]).then(([imgOk, scriptOk]) => {
+
+			if (isResolved) return;
+			isResolved = true;
+
+			if (imgOk || scriptOk) {
+				statusDiv.innerHTML =
+					`<span>🟢 Сервер авторизации - </span><span class="status-ok">✅ ОК</span>`;
+			} else {
+				statusDiv.innerHTML =
+					`<span>🔴 Сервер авторизации - </span><span class="status-error">❌ НЕДОСТУПЕН</span>`;
+			}
+
+		});
         setTimeout(() => {
             if (!isResolved) {
                 isResolved = true;
@@ -681,12 +684,15 @@
 		if (!res.valid)
 			return false;
 
+		if (res.jitter > 20)
+			return false;
+
 		return res.score >= 40;
 	}
 	function getServerRating(jitter, dl, ping){
 		var res = calculateIPTVScore(jitter, dl, ping);
 
-		if (!res.valid)
+		if (res.jitter > 25)
 			return "✖️";
 
 		if (res.score >= 95)
