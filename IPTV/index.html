@@ -55,11 +55,181 @@
     .qr-modal-img img { width: 100%; height: auto; display: block; border-radius: 16px; }
     .qr-modal-text { color: white; font-size: 16px; background: rgba(0,0,0,0.6); padding: 10px 20px; border-radius: 40px; font-weight: 500; }
     .close-modal-hint { color: var(--muted); font-size: 13px; margin-top: 8px; }
-    @media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr)} .header-buttons{margin-left:0;width:100%;justify-content:flex-start} }
-    @media (max-width:480px){ .grid{grid-template-columns:repeat(1,1fr)} .logo{width:48px;height:48px} h1{font-size:18px} .bank-logo{width:32px;height:32px} .bottom-logos img{width:22px;height:22px} }
-    /* дополнительный акцент на то, что это номера карт, а не телефоны */
     .card-number-hint { display: flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.4); border-radius: 10px; padding: 5px 10px; margin-top: 6px; font-size: 12px; color: #bdd3ff; border-left: 2px solid var(--accent); }
     .card-number-hint svg { width: 14px; height: 14px; fill: none; stroke: var(--accent); }
+
+    /* ===== АДАПТИВ ===== */
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .container {
+        padding: 14px 12px 16px;
+      }
+      body {
+        padding: 12px 10px;
+      }
+      .logo {
+        width: 48px;
+        height: 48px;
+      }
+      h1 {
+        font-size: 18px;
+      }
+      p.lead {
+        font-size: 12px;
+      }
+      .bank {
+        font-size: 13px;
+      }
+      .bank-logo {
+        width: 30px;
+        height: 30px;
+        flex: 0 0 30px;
+      }
+      .number-container {
+        font-size: 13px;
+        padding: 6px 10px;
+        letter-spacing: 0.8px;
+      }
+      button.copy, button.toggle {
+        font-size: 12px;
+        padding: 6px 8px;
+      }
+      .qr-wrap img {
+        width: 70px;
+        height: 70px;
+      }
+      .header-buttons {
+        margin-left: 0;
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .bottom-logos .item {
+        padding: 4px 8px;
+      }
+      .bottom-logos img {
+        width: 22px;
+        height: 22px;
+      }
+      .bottom-logos .label {
+        font-size: 10px;
+      }
+      footer {
+        font-size: 11px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .full-number-hint {
+        font-size: 10px;
+        padding: 3px 6px;
+      }
+      .card-number-hint {
+        font-size: 11px;
+        padding: 4px 8px;
+      }
+      .card-number-hint svg {
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 10px 8px 12px;
+        border-radius: 10px;
+      }
+      body {
+        padding: 8px 6px;
+      }
+      .logo {
+        width: 40px;
+        height: 40px;
+      }
+      h1 {
+        font-size: 16px;
+      }
+      p.lead {
+        font-size: 11px;
+      }
+      .bank {
+        font-size: 12px;
+        gap: 6px;
+      }
+      .bank-logo {
+        width: 26px;
+        height: 26px;
+        flex: 0 0 26px;
+        border-radius: 6px;
+      }
+      .number-container {
+        font-size: 12px;
+        padding: 5px 8px;
+        letter-spacing: 0.5px;
+      }
+      button.copy, button.toggle {
+        font-size: 11px;
+        padding: 5px 6px;
+        gap: 4px;
+      }
+      .card {
+        padding: 10px;
+        gap: 8px;
+        min-height: 120px;
+      }
+      .chip {
+        font-size: 10px;
+        padding: 4px 6px;
+      }
+      .holder {
+        font-size: 11px;
+      }
+      .qr-wrap img {
+        width: 60px;
+        height: 60px;
+      }
+      .qr-wrap {
+        gap: 8px;
+      }
+      .bottom-logos {
+        gap: 6px;
+      }
+      .bottom-logos .item {
+        padding: 3px 6px;
+      }
+      .bottom-logos img {
+        width: 18px;
+        height: 18px;
+      }
+      footer {
+        font-size: 10px;
+      }
+      .full-number-hint {
+        font-size: 9px;
+        padding: 2px 6px;
+      }
+      .card-number-hint {
+        font-size: 10px;
+        padding: 3px 6px;
+      }
+      .card-number-hint svg {
+        width: 10px;
+        height: 10px;
+      }
+      a.donate {
+        font-size: 12px;
+        padding: 6px 10px;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+    }
   </style>
 </head>
 <body>
