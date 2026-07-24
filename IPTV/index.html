@@ -90,7 +90,6 @@
           <span class="number-display" data-full="9112388038035577" data-masked="**** **** **** 5577">**** **** **** 5577</span>
         </div>
         <div class="holder">EVGENIY MASK</div>
-        <!-- Четкая подпись "номер карты" вместо телефона -->
         <div class="card-number-hint">
           <svg viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path d="M3 10h18M7 15h3m4 0h3M6 5h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <span>💳 Номер карты (не телефон)</span>
@@ -172,7 +171,7 @@
         <div class="title">
           <div class="bank">
             <span class="bank-logo" title="МИР Белинвестбанк"><img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/%D0%B1%D0%B5%D0%BB%D0%B8%D0%BD%D0%B2%D0%B5%D1%81%D1%82.jpeg" alt="Белинвестбанк логотип"></span>
-            МИР <span class="chip">Карта</span>
+            МИР (Белинвестбанк) <span class="chip">Карта</span>
           </div>
         </div>
         <div class="number-container">
@@ -189,8 +188,30 @@
         </div>
       </div>
 
-      <!-- КАРТА 6: Юмани (YooMoney) — здесь QR и кошелек, но тоже помечаем что это номер кошелька, а не телефона -->
+      <!-- КАРТА 6: МИР  номер: 9112 3860 0691 5291 -->
       <div class="card" data-card-id="6">
+        <div class="title">
+          <div class="bank">
+            <span class="bank-logo" title="МИР"><img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/%D0%BC%D0%B8%D1%80.jpg" alt="МИР логотип"></span>
+            МИР <span class="chip">Карта</span>
+          </div>
+        </div>
+        <div class="number-container">
+          <span class="number-display" data-full="9112386006915291" data-masked="**** **** **** 5291">**** **** **** 5291</span>
+        </div>
+        <div class="holder">EVGENIY MASK</div>
+        <div class="card-number-hint">
+          <svg viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path d="M3 10h18M7 15h3m4 0h3M6 5h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>💳 Номер карты (не телефон)</span>
+        </div>
+        <div class="actions">
+          <button class="copy" data-number="9112386006915291">📋 Скопировать номер карты</button>
+          <button class="toggle" data-full="9112386006915291" data-masked="**** **** **** 5291">👁️ Показать карту</button>
+        </div>
+      </div>
+
+      <!-- КАРТА 7: Юмани (YooMoney) — здесь QR и кошелек -->
+      <div class="card" data-card-id="7">
         <div class="title">
           <div class="bank">
             <span class="bank-logo" title="YooMoney"><img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/%D1%8E%D0%BC%D0%B0%D0%BD%D0%B8.png" alt="ЮMoney логотип"></span>
@@ -200,7 +221,6 @@
         <div class="number-container">
           <span class="number-display" data-full="4100119260753027" data-masked="**** **** **** 3027">**** **** **** 3027</span>
         </div>
-        <!-- для юмани тоже акцент что это не телефон -->
         <div class="card-number-hint" style="border-left-color:#f0b90b;">
           <svg viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path d="M12 4v16M8 8l4-4 4 4M8 16l4 4 4-4" stroke-linecap="round"/></svg>
           <span>💰 Кошелек ЮMoney (не телефон)</span>
@@ -215,7 +235,6 @@
           </div>
           <div style="color:var(--muted);font-size:13px">Нажмите на QR, чтобы открыть на весь экран</div>
         </div>
-        <!-- Подсказка с полным номером кошелька и пометкой "кошелек, а не телефон" -->
         <div class="full-number-hint" style="cursor:pointer; display:flex; align-items:center; gap:6px;">
           <span>🧾 Кошелек ЮMoney: 4100119260753027 (это не номер телефона)</span>
         </div>
@@ -289,7 +308,6 @@
         }
       }
 
-      // Кнопки копирования (с понятным названием)
       const copyButtons = document.querySelectorAll('.copy');
       copyButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -308,7 +326,6 @@
         });
       });
 
-      // Показать/скрыть номер карты
       const toggleButtons = document.querySelectorAll('.toggle');
       toggleButtons.forEach(btn => {
         const full = btn.getAttribute('data-full');
@@ -338,7 +355,6 @@
         });
       });
 
-      // QR на весь экран (только для Юмани)
       const qrModal = document.getElementById('qrModal');
       const modalQrImage = document.getElementById('modalQrImage');
       const yoomQrImage = document.getElementById('yoom-qr-fullscreen');
@@ -358,7 +374,6 @@
         document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && qrModal.classList.contains('active')) closeQrModal(); });
       }
 
-      // клик по full-number-hint для копирования кошелька Юмани
       const yoomHint = document.querySelector('.full-number-hint');
       if(yoomHint && yoomHint.closest('.card')?.querySelector('.bank')?.innerText.includes('Юмани')) {
         yoomHint.addEventListener('click', () => { copyToClipboard('4100119260753027', 'кошелек ЮMoney'); });
