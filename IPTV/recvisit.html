@@ -360,6 +360,85 @@
       transform: scale(0.97);
     }
 
+    /* стили для юмани */
+    .yoomoney-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .qr-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .qr-wrap img {
+      width: 90px;
+      height: 90px;
+      border-radius: 16px;
+      background: white;
+      padding: 6px;
+      object-fit: contain;
+      cursor: pointer;
+      transition: 0.2s;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .qr-wrap img:hover {
+      transform: scale(1.03);
+      border-color: var(--accent);
+    }
+
+    .qr-label {
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .donate-btn {
+      background: linear-gradient(135deg, #1a8a4a, #36b37e);
+      border: none;
+      padding: 8px 16px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: #0a1a12;
+      cursor: pointer;
+      transition: 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .donate-btn:hover {
+      transform: scale(0.96);
+      filter: brightness(1.1);
+    }
+
+    .wallet-hint {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      background: rgba(0,0,0,0.3);
+      padding: 4px 12px;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: 0.15s;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .wallet-hint:hover {
+      background: rgba(54, 179, 126, 0.15);
+      border-color: var(--accent);
+    }
+
     /* футер */
     footer {
       margin-top: 2rem;
@@ -423,6 +502,69 @@
       font-family: monospace;
     }
 
+    /* модальное окно QR */
+    .qr-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.92);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .qr-modal.active {
+      display: flex;
+    }
+
+    .qr-modal-content {
+      text-align: center;
+      padding: 20px;
+      max-width: 95vw;
+      max-height: 95vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .qr-modal-img {
+      width: 85vw;
+      height: auto;
+      max-width: 500px;
+      background: white;
+      padding: 16px;
+      border-radius: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+
+    .qr-modal-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+    }
+
+    .qr-modal-text {
+      color: white;
+      font-size: 16px;
+      background: rgba(0,0,0,0.6);
+      padding: 10px 20px;
+      border-radius: 40px;
+      font-weight: 500;
+    }
+
+    .close-modal-hint {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
     /* адаптация: на мобильных одна карта, на планшетах 2 приятно */
     @media (max-width: 700px) {
       body {
@@ -453,6 +595,14 @@
         width: 36px;
         height: 36px;
         font-size: 1.5rem;
+      }
+      .yoomoney-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .qr-wrap {
+        flex-direction: row;
+        justify-content: center;
       }
     }
 
@@ -608,6 +758,45 @@
         <button class="toggle" data-full="9112393040219532" data-masked="**** **** **** 9532">👁️ Показать</button>
       </div>
     </div>
+
+    <!-- ===== КАРТА 5: Юмани (добавлена) ===== -->
+    <div class="card">
+      <div class="bank-row">
+        <div class="bank-info">
+          <div class="bank-logo"><img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/%D1%8E%D0%BC%D0%B0%D0%BD%D0%B8.png" alt="ЮMoney"></div>
+          <span class="bank-name">Юмани (YooMoney)</span>
+        </div>
+        <div class="chip-badge">💰 кошелёк</div>
+      </div>
+      <div class="number-container">
+        <span class="number-display" data-full="4100119260753027" data-masked="**** **** **** 3027">**** **** **** 3027</span>
+      </div>
+      <div class="card-holder">YooMoney Wallet</div>
+      <div class="card-hint" style="border-left-color:#f0b90b;">
+        <svg viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path d="M12 4v16M8 8l4-4 4 4M8 16l4 4 4-4" stroke-linecap="round"/></svg>
+        <span>💰 кошелёк (не телефон)</span>
+      </div>
+      <div class="yoomoney-row">
+        <div class="qr-wrap">
+          <img id="yoom-qr-fullscreen" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://yoomoney.ru/to/4100119260753027" alt="QR ЮMoney">
+          <span class="qr-label">Нажмите для увеличения</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px; flex:1;">
+          <a class="donate-btn" href="https://yoomoney.ru/to/4100119260753027" target="_blank" rel="noopener noreferrer">
+            💰 Перейти к оплате
+          </a>
+          <span class="wallet-hint" id="yoomWalletCopy">
+            🧾 4100119260753027 (нажмите, чтобы скопировать)
+          </span>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="copy" data-number="4100119260753027" data-label="кошелёк ЮMoney">📋 Копировать кошелёк</button>
+        <button class="toggle" data-full="4100119260753027" data-masked="**** **** **** 3027">👁️ Показать</button>
+      </div>
+    </div>
+    <!-- ===== КОНЕЦ ЮМАНИ ===== -->
+
   </div>
 
   <footer>
@@ -623,6 +812,17 @@
     </div>
     <div class="copyright">© E-Online 2026 | Все реквизиты — номера банковских карт (не номера телефонов)</div>
   </footer>
+</div>
+
+<!-- Модальное окно для QR на весь экран -->
+<div id="qrModal" class="qr-modal">
+  <div class="qr-modal-content">
+    <div class="qr-modal-img">
+      <img id="modalQrImage" src="" alt="QR код увеличенный">
+    </div>
+    <div class="qr-modal-text">📱 Отсканируйте для оплаты через ЮMoney</div>
+    <div class="close-modal-hint">✖ Нажмите в любом месте, чтобы закрыть</div>
+  </div>
 </div>
 
 <script>
@@ -663,21 +863,22 @@
       }
     }
 
-    // кнопки копирования
+    // кнопки копирования (с поддержкой data-label)
     const copyBtns = document.querySelectorAll('.copy');
     copyBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         const rawNumber = btn.getAttribute('data-number');
+        const label = btn.getAttribute('data-label') || 'номер карты';
         if (rawNumber) {
-          copyToClip(rawNumber, 'номер карты');
+          copyToClip(rawNumber, label);
         } else {
           showToast('Не удалось найти номер', true);
         }
       });
     });
 
-    // тумблер показать/скрыть карту (с красивым форматированием пробелов)
+    // тумблер показать/скрыть карту
     const toggleBtns = document.querySelectorAll('.toggle');
     toggleBtns.forEach(btn => {
       const fullRaw = btn.getAttribute('data-full');
@@ -690,7 +891,6 @@
 
       let revealed = false;
 
-      // форматирует полный номер с пробелами (если 16 цифр)
       const formatFullNumber = (num) => {
         const digits = num.replace(/\s/g, '');
         if (digits.length === 16) {
@@ -716,11 +916,11 @@
         e.preventDefault();
         revealed = !revealed;
         updateUI();
-        showToast(revealed ? '🔓 Номер карты открыт' : '🔒 Номер скрыт');
+        showToast(revealed ? '🔓 Номер открыт' : '🔒 Номер скрыт');
       });
     });
 
-    // дополнительное удобство: клик по номеру карты копирует (только для карт)
+    // клик по номеру карты копирует
     const allNumberSpans = document.querySelectorAll('.number-display');
     allNumberSpans.forEach(span => {
       span.style.cursor = 'pointer';
@@ -733,12 +933,43 @@
         if (!toggleBtnInside) return;
         const fullNumAttr = toggleBtnInside.getAttribute('data-full');
         if (fullNumAttr) {
-          copyToClip(fullNumAttr, 'номер карты');
+          const isYoomoney = parentCard.querySelector('.bank-name')?.textContent.includes('Юмани');
+          const label = isYoomoney ? 'кошелёк ЮMoney' : 'номер карты';
+          copyToClip(fullNumAttr, label);
         } else {
           showToast('Не удалось определить номер', true);
         }
       });
     });
+
+    // QR на весь экран (Юмани)
+    const qrModal = document.getElementById('qrModal');
+    const modalQrImage = document.getElementById('modalQrImage');
+    const yoomQrImage = document.getElementById('yoom-qr-fullscreen');
+    if (yoomQrImage && qrModal) {
+      const qrSource = yoomQrImage.src;
+      const openQrModal = () => {
+        modalQrImage.src = qrSource;
+        qrModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      };
+      const closeQrModal = () => {
+        qrModal.classList.remove('active');
+        document.body.style.overflow = '';
+      };
+      yoomQrImage.addEventListener('click', (e) => { e.stopPropagation(); openQrModal(); });
+      qrModal.addEventListener('click', (e) => { if (e.target === qrModal || e.target.classList.contains('close-modal-hint')) closeQrModal(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && qrModal.classList.contains('active')) closeQrModal(); });
+    }
+
+    // копирование кошелька по клику на wallet-hint
+    const walletHint = document.getElementById('yoomWalletCopy');
+    if (walletHint) {
+      walletHint.addEventListener('click', () => {
+        copyToClip('4100119260753027', 'кошелёк ЮMoney');
+      });
+    }
+
   })();
 </script>
 </body>
