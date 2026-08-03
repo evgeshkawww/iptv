@@ -185,22 +185,22 @@
     @keyframes fadeIn{ 0%{ opacity:0; } 100%{ opacity:1; } }
     @keyframes fadeOut{ 0%{ display:block; opacity:1; } 100%{ display:block; opacity:0; } }
     .table-wrapper {
-		width:100%;
-		overflow-x:auto;
-		-webkit-overflow-scrolling:touch;
-		margin:20px 0;
-		border-radius:14px;
-		background:rgba(2,6,23,.9);
-	}
-	#multi_results{
-		width:100%;
-		min-width:0;
-		table-layout:fixed;
-		border-collapse:collapse;
-		background:transparent;
-		border-radius:14px;
-		overflow:hidden;
-	}
+        width:100%;
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch;
+        margin:20px 0;
+        border-radius:14px;
+        background:rgba(2,6,23,.9);
+    }
+    #multi_results{
+        width:100%;
+        min-width:0;
+        table-layout:fixed;
+        border-collapse:collapse;
+        background:transparent;
+        border-radius:14px;
+        overflow:hidden;
+    }
     #multi_results th, #multi_results td{
         word-break:break-word;
         overflow-wrap:anywhere;
@@ -229,6 +229,10 @@
         font-size:14px;
         padding: 0 5px;
     }
+    
+    /* Скрываем старый блок вывода IP снизу */
+    #ipArea{ display: none; }
+    
     #ip{ opacity:.6; font-size:12px; }
     .recommendationBox {
         padding: 8px 12px;
@@ -249,47 +253,47 @@
         color:#ef4444 !important;
     }
     .footer{ margin-top:30px; text-align:center; font-size:11px; opacity:.5; padding-bottom: 20px; }
-	@media (max-width:480px){
-		div.testArea{
-			width:14em;
-			height:11em;
-		}
-		div.testArea2{
-			width:10em;
-		}
-		div.testArea2 div.meterText{
-			font-size:1.5rem;
-		}
-		.recommendationBox{
-			font-size:.85rem;
-		}
-		#multi_results th,
-		#multi_results td{
-			padding:3px 1px;
-			font-size:9px;
-			line-height:1.15;
-		}
-		#multi_results th:nth-child(1),
-		#multi_results td:nth-child(1){
-			width:30%;
-		}
-		#multi_results th:nth-child(2),
-		#multi_results td:nth-child(2){
-			width:16%;
-		}
-		#multi_results th:nth-child(3),
-		#multi_results td:nth-child(3){
-			width:16%;
-		}
-		#multi_results th:nth-child(4),
-		#multi_results td:nth-child(4){
-			width:20%;
-		}
-		#multi_results th:nth-child(5),
-		#multi_results td:nth-child(5){
-			width:18%;
-		}
-	}
+    @media (max-width:480px){
+        div.testArea{
+            width:14em;
+            height:11em;
+        }
+        div.testArea2{
+            width:10em;
+        }
+        div.testArea2 div.meterText{
+            font-size:1.5rem;
+        }
+        .recommendationBox{
+            font-size:.85rem;
+        }
+        #multi_results th,
+        #multi_results td{
+            padding:3px 1px;
+            font-size:9px;
+            line-height:1.15;
+        }
+        #multi_results th:nth-child(1),
+        #multi_results td:nth-child(1){
+            width:30%;
+        }
+        #multi_results th:nth-child(2),
+        #multi_results td:nth-child(2){
+            width:16%;
+        }
+        #multi_results th:nth-child(3),
+        #multi_results td:nth-child(3){
+            width:16%;
+        }
+        #multi_results th:nth-child(4),
+        #multi_results td:nth-child(4){
+            width:20%;
+        }
+        #multi_results th:nth-child(5),
+        #multi_results td:nth-child(5){
+            width:18%;
+        }
+    }
   </style>
   <script type="text/javascript">
     function I(i){return document.getElementById(i);}
@@ -356,23 +360,20 @@
                 document.head.appendChild(script);
             });
         };
-		Promise.all([
-			tryImage("https://premium-iptv.ru/favicon.ico", 4000),
-			tryScript("https://premium-iptv.ru/color.js", 4000)
-		]).then(([imgOk, scriptOk]) => {
-
-			if (isResolved) return;
-			isResolved = true;
-
-			if (imgOk || scriptOk) {
-				statusDiv.innerHTML =
-					`<span>🟢 Сервер авторизации - </span><span class="status-ok">✅ ОК</span>`;
-			} else {
-				statusDiv.innerHTML =
-					`<span>🔴 Сервер авторизации - </span><span class="status-error">❌ НЕДОСТУПЕН</span>`;
-			}
-
-		});
+        Promise.all([
+            tryImage("https://premium-iptv.ru/favicon.ico", 4000),
+            tryScript("https://premium-iptv.ru/color.js", 4000)
+        ]).then(([imgOk, scriptOk]) => {
+            if (isResolved) return;
+            isResolved = true;
+            if (imgOk || scriptOk) {
+                statusDiv.innerHTML =
+                    `<span>🟢 Сервер авторизации - </span><span class="status-ok">✅ ОК</span>`;
+            } else {
+                statusDiv.innerHTML =
+                    `<span>🔴 Сервер авторизации - </span><span class="status-error">❌ НЕДОСТУПЕН</span>`;
+            }
+        });
         setTimeout(() => {
             if (!isResolved) {
                 isResolved = true;
@@ -380,12 +381,62 @@
             }
         }, 4500);
     }
+    
+    // --- Логика определения IP и локации ---
+    var globalIpInfo = "Определение IP и локации...";
+    function loadIpData(){
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/myip_info.php', true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState !== 4) return;
+            try {
+                var d = JSON.parse(xhr.responseText);
+                if (d && d.ip) {
+                    formatIpData(d);
+                    return;
+                }
+            } catch(e) {}
+            
+            // Если локальный скрипт не ответил, используем надежный внешний API
+            var x2 = new XMLHttpRequest();
+            x2.open('GET', 'https://ipapi.co/json/', true);
+            x2.onreadystatechange = function () {
+                if (x2.readyState === 4 && x2.status === 200) {
+                    try {
+                        var d2 = JSON.parse(x2.responseText);
+                        formatIpData({ip: d2.ip, country: d2.country_name || d2.country, isp: d2.org});
+                    } catch(e){}
+                }
+            };
+            x2.send();
+        };
+        xhr.send();
+    }
+
+    function formatIpData(d){
+        var line1 = "<span style='color:#38bdf8;'>IP " + (d.ip || "?") + "</span>";
+        var line2 = "";
+        if (d.country) line2 += d.country + " ";
+        if (d.isp) line2 += d.isp;
+        if (d.vps) line2 += " (" + d.vps + ")";
+
+        globalIpInfo = line1 + (line2 ? "<br><span style='font-size:0.9rem; color:#94a3b8;'>" + line2 + "</span>" : "");
+        
+        // Сразу обновляем интерфейс, если элемент уже создан
+        var el = document.getElementById("ipLocationInfoDisplay");
+        if(el) el.innerHTML = globalIpInfo;
+    }
+    // ---------------------------------------
+
     document.addEventListener('DOMContentLoaded', function() {
         checkAuthServer();
         setTimeout(initServers, 100);
+        loadIpData(); // Запускаем определение IP при загрузке страницы
     });
+    
     var s=new Speedtest();
     s.setParameter("telemetry_level","basic");
+    
     function initServers(){
         var noServersAvailable=function(){ I("message").innerHTML="No servers available"; }
         var runServerSelect=function(){
@@ -461,6 +512,7 @@
     var serversToTest=[];
     var currentServer=0;
     var stopAllTests=false;
+    
     function startStop(){
         if(s.getState()==3){
             stopAllTests=true;
@@ -486,16 +538,21 @@
             runSingleServerTest();
         }
     }
+    
+    // Модифицированная функция создания таблицы результатов с выводом IP и локации
     function prepareResultTable(){
         var currentDateTime=new Date().toLocaleString();
+        var infoHtml = '<div id="ipLocationInfoDisplay" style="margin-bottom:12px; font-size:1rem; font-weight:600; color:#e5e7eb; line-height:1.4;">' + globalIpInfo + '</div>' +
+                       '📅 Сгенерировано: '+currentDateTime+
+                       '<br><span style="font-size:11px;opacity:.7;">for E-IPTV</span>';
+
         if(document.getElementById("generatedTime")){
-            document.getElementById("generatedTime").innerHTML='Сгенерировано: '+currentDateTime;
+            document.getElementById("generatedTime").innerHTML= infoHtml;
         }else{
             var timeDiv=document.createElement("div");
             timeDiv.id="generatedTime";
-			timeDiv.innerHTML='📅 Сгенерировано: '+currentDateTime+
-			'<br><span style="font-size:11px;opacity:.7;">for E-IPTV</span>';
-            timeDiv.style.marginTop="10px";
+            timeDiv.innerHTML= infoHtml;
+            timeDiv.style.marginTop="20px";
             timeDiv.style.fontSize="0.8rem";
             timeDiv.style.color="#aaa";
             document.getElementById("test").appendChild(timeDiv);
@@ -507,6 +564,7 @@
             document.getElementById("multi_results").getElementsByTagName('tbody')[0].innerHTML = '';
         }
     }
+    
     function runSingleServerTest(){
         var serverIndex=parseInt(I("server").value);
         if(isNaN(serverIndex)) return;
@@ -609,153 +667,125 @@
         if(isBadValue(jitter)||isBadValue(dl)||isBadValue(ping)) return null;
         return {jitter:Number(jitter), dl:Number(dl), ping:Number(ping)};
     }
-	function calculateIPTVScore(jitter, dl, ping){
-		var data = parseValues(jitter, dl, ping);
-		if (!data) return { valid: false, score: 0 };
+    function calculateIPTVScore(jitter, dl, ping){
+        var data = parseValues(jitter, dl, ping);
+        if (!data) return { valid: false, score: 0 };
 
-		var j = data.jitter;
-		var d = data.dl;
-		var p = data.ping;
+        var j = data.jitter;
+        var d = data.dl;
+        var p = data.ping;
 
-		var score = 0;
+        // Если базовые показатели ниже плинтуса, сразу ставим 0 баллов
+        if (d < 10 || p > 150 || j > 30) {
+            return { valid: true, score: 0, jitter: j, ping: p, dl: d };
+        }
 
-		// Скорость (максимум 40 баллов)
-		if (d >= 200) {
-			score += 40;
-		} else if (d >= 150) {
-			score += 38;
-		} else if (d >= 100) {
-			score += 36;
-		} else if (d >= 70) {
-			score += 32;
-		} else if (d >= 50) {
-			score += 28;
-		} else if (d >= 30) {
-			score += 22;
-		} else if (d >= 20) {
-			score += 16;
-		} else {
-			score += 5;
-		}
+        var score = 0;
 
-		// Джиттер (максимум 40 баллов)
-		if (j <= 3) {
-			score += 40;
-		} else if (j <= 5) {
-			score += 36;
-		} else if (j <= 8) {
-			score += 32;
-		} else if (j <= 10) {
-			score += 28;
-		} else if (j <= 15) {
-			score += 20;
-		} else if (j <= 20) {
-			score += 12;
-		} else if (j <= 25) {
-			score += 4;
-		}
+        // Скорость (максимум 40 баллов)
+        if (d >= 100) { score += 40; }
+        else if (d >= 70) { score += 35; }
+        else if (d >= 50) { score += 30; }
+        else if (d >= 30) { score += 20; }
+        else if (d >= 15) { score += 10; }
+        else { score += 0; } // За скорость ниже 15 Мбит/с баллов не даем
 
-		// Ping (максимум 20 баллов)
-		if (p <= 40) {
-			score += 20;
-		} else if (p <= 60) {
-			score += 18;
-		} else if (p <= 80) {
-			score += 15;
-		} else if (p <= 120) {
-			score += 10;
-		} else if (p <= 180) {
-			score += 5;
-		}
+        // Джиттер (максимум 40 баллов)
+        if (j <= 3) { score += 40; }
+        else if (j <= 5) { score += 35; }
+        else if (j <= 10) { score += 25; }
+        else if (j <= 15) { score += 15; }
+        else if (j <= 20) { score += 5; }
+        else { score += 0; }
 
-		score = Math.max(0, Math.min(100, score));
+        // Ping (максимум 20 баллов)
+        if (p <= 40) { score += 20; }
+        else if (p <= 60) { score += 15; }
+        else if (p <= 80) { score += 10; }
+        else if (p <= 120) { score += 5; }
+        else { score += 0; }
 
-		return {
-			valid: true,
-			score: score,
-			jitter: j,
-			ping: p,
-			dl: d
-		};
-	}
-	function isServerRecommended(jitter, dl, ping){
-		var res = calculateIPTVScore(jitter, dl, ping);
+        score = Math.max(0, Math.min(100, score));
 
-		if (!res.valid)
-			return false;
+        return {
+            valid: true,
+            score: score,
+            jitter: j,
+            ping: p,
+            dl: d
+        };
+    }
 
-		if (res.jitter > 20)
-			return false;
+    function isServerRecommended(jitter, dl, ping){
+        var res = calculateIPTVScore(jitter, dl, ping);
+        if (!res.valid) return false;
 
-		return res.score >= 40;
-	}
-	function getServerRating(jitter, dl, ping){
-		var res = calculateIPTVScore(jitter, dl, ping);
+        // Жесткие лимиты для рекомендации пользователю
+        if (res.dl < 20) return false;    // Скорость меньше 20 Мбит/с - будут фризы
+        if (res.ping > 120) return false; // Пинг больше 120 - долгие переключения каналов
+        if (res.jitter > 15) return false;// Джиттер больше 15 - потеря пакетов
 
-		if (res.jitter > 25)
-			return "✖️";
+        return res.score >= 50;
+    }
 
-		if (res.score >= 95)
-			return "❤️";
+    function getServerRating(jitter, dl, ping){
+        var res = calculateIPTVScore(jitter, dl, ping);
 
-		if (res.score >= 80)
-			return "✔️✔️✔️";
+        // ЖЕСТКИЕ ЛИМИТЫ - если хоть один провален, сразу крест!
+        if (dl < 15) return "✖️"; 
+        if (ping > 150) return "✖️";
+        if (jitter > 25) return "✖️";
 
-		if (res.score >= 60)
-			return "✔️✔️";
+        // Если жесткие лимиты пройдены, смотрим на баллы
+        if (res.score >= 85 && dl >= 50) return "❤️";
+        if (res.score >= 70 && dl >= 30) return "✔️✔️✔️";
+        if (res.score >= 50 && dl >= 20) return "✔️✔️";
+        if (res.score >= 25 && dl >= 15) return "✔️";
 
-		if (res.score >= 40)
-			return "✔️";
+        return "✖️";
+    }
 
-		return "✖️";
-	}
-	function findBestServer(results) {
-		if (!results || results.length === 0) return null;
+    function findBestServer(results) {
+        if (!results || results.length === 0) return null;
 
-		var best = null;
-		var bestScore = -1;
-		var bestJitter = Infinity;
+        var best = null;
+        var bestScore = -1;
+        var bestJitter = Infinity;
 
-		for (var i = 0; i < results.length; i++) {
+        for (var i = 0; i < results.length; i++) {
+            var r = results[i];
 
-			var r = results[i];
+            var dlNum = (typeof r.dl === 'number') ? r.dl : parseFloat(r.dl);
+            var pingNum = (typeof r.ping === 'number') ? r.ping : parseFloat(r.ping);
+            var jitterNum = (typeof r.jitter === 'number') ? r.jitter : parseFloat(r.jitter);
 
-			var dlNum = (typeof r.dl === 'number') ? r.dl : parseFloat(r.dl);
-			var pingNum = (typeof r.ping === 'number') ? r.ping : parseFloat(r.ping);
-			var jitterNum = (typeof r.jitter === 'number') ? r.jitter : parseFloat(r.jitter);
+            if (isNaN(dlNum) || isNaN(pingNum) || isNaN(jitterNum)) continue;
 
-			if (isNaN(dlNum) || isNaN(pingNum) || isNaN(jitterNum))
-				continue;
+            // Пропускаем сервера, которые не прошли жесткий минимум
+            if (dlNum < 15 || pingNum > 150 || jitterNum > 25) continue;
 
-			var calc = calculateIPTVScore(jitterNum, dlNum, pingNum);
+            var calc = calculateIPTVScore(jitterNum, dlNum, pingNum);
+            if (!calc.valid) continue;
 
-			if (!calc.valid)
-				continue;
-
-			if (
-				best === null ||
-				calc.score > bestScore ||
-				(
-					calc.score === bestScore &&
-					jitterNum < bestJitter
-				)
-			) {
-				best = {
-					name: r.name,
-					dl: dlNum,
-					ping: pingNum,
-					jitter: jitterNum,
-					rating: getServerRating(jitterNum, dlNum, pingNum),
-					score: calc.score
-				};
-
-				bestScore = calc.score;
-				bestJitter = jitterNum;
-			}
-		}
-
-		return best;
-	}
+            if (
+                best === null ||
+                calc.score > bestScore ||
+                (calc.score === bestScore && jitterNum < bestJitter)
+            ) {
+                best = {
+                    name: r.name,
+                    dl: dlNum,
+                    ping: pingNum,
+                    jitter: jitterNum,
+                    rating: getServerRating(jitterNum, dlNum, pingNum),
+                    score: calc.score
+                };
+                bestScore = calc.score;
+                bestJitter = jitterNum;
+            }
+        }
+        return best;
+    }
     function moveToNextServer(){
         var currentIndex=serversToTest.indexOf(currentServer);
         if(currentIndex<serversToTest.length-1){
