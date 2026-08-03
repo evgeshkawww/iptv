@@ -575,7 +575,8 @@
         if(!timeDiv){
             timeDiv = document.createElement("div");
             timeDiv.id = "generatedTime";
-            timeDiv.style.marginTop = "10px";
+            timeDiv.style.marginTop = "15px";   // Отступ сверху (от блока с IP)
+            timeDiv.style.marginBottom = "0px"; // Убираем отступ снизу у текста
             timeDiv.style.fontSize = "0.8rem";
             timeDiv.style.color = "#aaa";
             document.getElementById("test").appendChild(timeDiv); // Вставляем вниз
@@ -587,8 +588,12 @@
             resultsTableWrap = document.createElement("div");
             resultsTableWrap.id = "multi_results_wrap";
             resultsTableWrap.className = "table-wrapper";
+            
+            // ПРИНУДИТЕЛЬНО ПРИЖИМАЕМ ТАБЛИЦУ ВЫШЕ, ПЕРЕБИВАЯ CSS
+            resultsTableWrap.style.marginTop = "8px"; 
+            
             resultsTableWrap.innerHTML = '<table id="multi_results"><thead><tr><th>Сервер</th><th>Ping</th><th>Jitter</th><th>Скорость</th><th>QL</th></tr></thead><tbody></tbody></table>';
-            document.getElementById("test").appendChild(resultsTableWrap); // Вставляем вниз
+            document.getElementById("test").appendChild(resultsTableWrap);
         } else {
             document.getElementById("multi_results").getElementsByTagName('tbody')[0].innerHTML = '';
         }
