@@ -344,48 +344,53 @@
         }, 4500);
     }
     
-    // --- Логика определения IP и страны (строго 2 буквы) ---
+// --- Логика определения IP и страны ---
+    var ipLoaded = false;
+
     function loadIpData(){
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', '/myip_info.php', true);
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState !== 4) return;
-            try {
-                var d = JSON.parse(xhr.responseText);
-                if (d && d.ip) {
-                    var c = d.country_code || d.countryCode || d.iso_code || d.country;
-                    formatIpData(d.ip, c, d.isp, d.vps);
-                    return;
-                }
-            } catch(e) {}
-            
-            // Надежный внешний API на случай недоступности локального
-            var x2 = new XMLHttpRequest();
-            x2.open('GET', 'https://ipapi.co/json/', true);
-            x2.onreadystatechange = function () {
-                if (x2.readyState === 4 && x2.status === 200) {
-                    try {
-                        var d2 = JSON.parse(x2.responseText);
-                        // ipapi.co возвращает 2-буквенный ISO-код в поле country
-                        formatIpData(d2.ip, d2.country, d2.org, null);
-                    } catch(e){}
-                }
-            };
-            x2.send();
+        ipLoaded = false;
+        
+        // 1. Запрос к внешнему API (для подстраховки)
+        var xhr1 = new XMLHttpRequest();
+        xhr1.open('GET', 'https://ipapi.co/json/', true);
+        xhr1.onreadystatechange = function () {
+            if (xhr1.readyState === 4 && xhr1.status === 200) {
+                try {
+                    var d = JSON.parse(xhr1.responseText);
+                    formatIpData(d.ip, d.country, d.org, null);
+                } catch(e){}
+            }
         };
-        xhr.send();
+        xhr1.send();
+
+        // 2. Запрос к ВАШЕМУ серверу (он теперь будет отрабатывать моментально)
+        var xhr2 = new XMLHttpRequest();
+        xhr2.open('GET', 'https://premium-iptv.ru/myip_info.php', true);
+        xhr2.onreadystatechange = function () {
+            if (xhr2.readyState === 4 && xhr2.status === 200) {
+                try {
+                    var d = JSON.parse(xhr2.responseText);
+                    if (d && d.ip) {
+                        var c = d.country_code || d.countryCode || d.iso_code || d.country;
+                        formatIpData(d.ip, c, d.isp, d.vps);
+                    }
+                } catch(e){}
+            }
+        };
+        xhr2.send();
     }
 
     function formatIpData(ip, countryStr, isp, vps){
+        if (ipLoaded) return; // Защита: если один запрос уже вывел данные, второй игнорируется
+        ipLoaded = true;
+
         var cCode = "";
         if (countryStr) {
             cCode = String(countryStr).trim().toUpperCase();
-            // Маппинг на случай, если пришло полное название
             if (cCode === "BELARUS") cCode = "BY";
             else if (cCode === "RUSSIA" || cCode === "RUSSIAN FEDERATION") cCode = "RU";
             else if (cCode === "UKRAINE") cCode = "UA";
             else if (cCode === "KAZAKHSTAN") cCode = "KZ";
-            // Строго обрезаем до 2 символов
             else if (cCode.length > 2) cCode = cCode.substring(0, 2);
         }
         
