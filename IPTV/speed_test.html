@@ -381,28 +381,62 @@
     }
 
     function formatIpData(ip, countryStr, isp, vps){
-        if (ipLoaded) return; // Защита: если один запрос уже вывел данные, второй игнорируется
+        if (ipLoaded) return; // Защита от двойного вывода
         ipLoaded = true;
 
         var cCode = "";
         if (countryStr) {
             cCode = String(countryStr).trim().toUpperCase();
-            if (cCode === "BELARUS") cCode = "BY";
-            else if (cCode === "RUSSIA" || cCode === "RUSSIAN FEDERATION") cCode = "RU";
-            else if (cCode === "UKRAINE") cCode = "UA";
-            else if (cCode === "KAZAKHSTAN") cCode = "KZ";
+            var countriesMap = {
+                "BELARUS": "BY", "RUSSIA": "RU", "RUSSIAN FEDERATION": "RU",
+                "UKRAINE": "UA", "KAZAKHSTAN": "KZ", "GERMANY": "DE",
+                "POLAND": "PL", "LITHUANIA": "LT", "LATVIA": "LV",
+                "ESTONIA": "EE", "MOLDOVA": "MD", "GEORGIA": "GE",
+                "ARMENIA": "AM", "AZERBAIJAN": "AZ", "UZBEKISTAN": "UZ",
+                "UNITED STATES": "US", "UNITED KINGDOM": "GB",
+                "NETHERLANDS": "NL", "FRANCE": "FR", "SPAIN": "ES", "ITALY": "IT"
+            };
+            if (countriesMap[cCode]) cCode = countriesMap[cCode];
             else if (cCode.length > 2) cCode = cCode.substring(0, 2);
+        }
+
+        // --- УСИЛЕННАЯ ПРОВЕРКА НА VPN ---
+        var isVpnDetected = !!vps;
+        var ispUpper = (isp || "").toUpperCase();
+        
+        // Обнаруживаем дата-центры и хостинги
+        if (ispUpper.indexOf("HOSTING") > -1 ||
+            ispUpper.indexOf("DATACENTER") > -1 ||
+            ispUpper.indexOf("CLOUD") > -1 ||
+            ispUpper.indexOf("DIGITALOCEAN") > -1 ||
+            ispUpper.indexOf("AMAZON") > -1 ||
+            ispUpper.indexOf("AWS") > -1 ||
+            ispUpper.indexOf("HETZNER") > -1 ||
+            ispUpper.indexOf("OVH") > -1 ||
+            ispUpper.indexOf("PROXY") > -1 ||
+            ispUpper.indexOf("VPN") > -1) {
+            isVpnDetected = true;
         }
         
         var line1 = "<span style='color:#38bdf8;'>IP: " + (ip || "?") + "</span>";
         var line2 = "";
         
-        if (cCode) line2 += cCode;
-        if (isp) line2 += (line2 ? " - " : "") + isp;
-        if (vps) line2 += " (" + vps + ")";
-
-        var finalInfo = line1 + (line2 ? "<br><span style='font-size:0.9rem; color:#94a3b8;'>" + line2 + "</span>" : "");
+        // 1. Белый квадратик со страной
+        if (cCode) {
+            line2 += "<span style='background: #fff; color: #000; padding: 1px 6px; border-radius: 3px; font-weight: 800; font-size: 0.75rem; margin-right: 6px; letter-spacing: 0.5px;'>" + cCode + "</span>";
+        }
         
+        // 2. Красный квадратик VPN (теперь рисуется прямо рядом со страной)
+        if (isVpnDetected) {
+            line2 += "<span style='background: #ef4444; color: #fff; padding: 1px 6px; border-radius: 3px; font-weight: 800; font-size: 0.75rem; margin-right: 6px; letter-spacing: 0.5px; box-shadow: 0 0 8px rgba(239,68,68,0.5);'>VPN</span>";
+        }
+        
+        // 3. Имя провайдера
+        if (isp) line2 += isp;
+
+        var finalInfo = line1 + (line2 ? "<br><div style='margin-top: 6px; display: inline-flex; align-items: center; justify-content: center; font-size:0.9rem; color:#94a3b8; text-align: center; flex-wrap: wrap;'>" + line2 + "</div>" : "");
+        
+        // Просто выводим информацию (без блокировки кнопки теста)
         var el = document.getElementById("ipLocationInfoDisplay");
         if(el) el.innerHTML = finalInfo;
     }
@@ -835,6 +869,6 @@
     </div>
 </div>
 
-<div class="footer">© E-IPTV</div>
+<div class="footer">© E-IPTV 2026</div>
 </body>
 </html>
