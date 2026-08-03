@@ -418,25 +418,33 @@
             isVpnDetected = true;
         }
         
-        var line1 = "<span style='color:#38bdf8;'>IP: " + (ip || "?") + "</span>";
+        // --- ПЕРВАЯ СТРОКА: IP и Страна (справа) ---
+        var line1 = "<div style='display: flex; align-items: center; justify-content: center; gap: 8px;'>";
+        line1 += "<span style='color:#38bdf8;'>IP: " + (ip || "?") + "</span>";
+        
+        if (cCode) { // Белый квадратик страны
+            line1 += "<span style='background: #fff; color: #000; padding: 1px 6px; border-radius: 3px; font-weight: 800; font-size: 0.75rem; letter-spacing: 0.5px;'>" + cCode + "</span>";
+        }
+        line1 += "</div>";
+
+        // --- ВТОРАЯ СТРОКА: VPN и Провайдер ---
         var line2 = "";
         
-        // 1. Белый квадратик со страной
-        if (cCode) {
-            line2 += "<span style='background: #fff; color: #000; padding: 1px 6px; border-radius: 3px; font-weight: 800; font-size: 0.75rem; margin-right: 6px; letter-spacing: 0.5px;'>" + cCode + "</span>";
+        if (isVpnDetected) { // Красный квадратик VPN
+            line2 += "<span style='background: #ef4444; color: #fff; padding: 1px 6px; border-radius: 3px; font-weight: 800; font-size: 0.75rem; letter-spacing: 0.5px; box-shadow: 0 0 8px rgba(239,68,68,0.5);'>VPN</span>";
         }
         
-        // 2. Красный квадратик VPN (теперь рисуется прямо рядом со страной)
-        if (isVpnDetected) {
-            line2 += "<span style='background: #ef4444; color: #fff; padding: 1px 6px; border-radius: 3px; font-weight: 800; font-size: 0.75rem; margin-right: 6px; letter-spacing: 0.5px; box-shadow: 0 0 8px rgba(239,68,68,0.5);'>VPN</span>";
+        if (isp) {
+            var space = isVpnDetected ? "<span style='margin-left: 8px;'></span>" : "";
+            line2 += space + isp; // Добавляем название провайдера с отступом от значка VPN
         }
-        
-        // 3. Имя провайдера
-        if (isp) line2 += isp;
 
-        var finalInfo = line1 + (line2 ? "<br><div style='margin-top: 6px; display: inline-flex; align-items: center; justify-content: center; font-size:0.9rem; color:#94a3b8; text-align: center; flex-wrap: wrap;'>" + line2 + "</div>" : "");
+        var finalInfo = line1;
+        if (line2) {
+            // Центрируем вторую строку прямо под первой
+            finalInfo += "<div style='margin-top: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: #94a3b8; text-align: center;'>" + line2 + "</div>";
+        }
         
-        // Просто выводим информацию (без блокировки кнопки теста)
         var el = document.getElementById("ipLocationInfoDisplay");
         if(el) el.innerHTML = finalInfo;
     }
