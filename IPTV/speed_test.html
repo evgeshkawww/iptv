@@ -100,8 +100,11 @@
     }
     #test{ 
         margin-top:1.5em; 
-        margin-bottom:8em;
         padding: 0 10px;
+    }
+    #bottomInfoArea {
+        padding: 0 10px;
+        margin-bottom: 8em;
     }
     div.testArea{
         display:inline-block;
@@ -350,7 +353,6 @@
     function loadIpData(){
         ipLoaded = false;
         
-        // 1. Запрос к внешнему API (для подстраховки)
         var xhr1 = new XMLHttpRequest();
         xhr1.open('GET', 'https://ipapi.co/json/', true);
         xhr1.onreadystatechange = function () {
@@ -363,7 +365,6 @@
         };
         xhr1.send();
 
-        // 2. Запрос к ВАШЕМУ серверу (он теперь будет отрабатывать моментально)
         var xhr2 = new XMLHttpRequest();
         xhr2.open('GET', 'https://premium-iptv.ru/myip_info.php', true);
         xhr2.onreadystatechange = function () {
@@ -400,11 +401,9 @@
             else if (cCode.length > 2) cCode = cCode.substring(0, 2);
         }
 
-        // --- УСИЛЕННАЯ ПРОВЕРКА НА VPN ---
         var isVpnDetected = !!vps;
         var ispUpper = (isp || "").toUpperCase();
         
-        // Обнаруживаем дата-центры и хостинги
         if (ispUpper.indexOf("HOSTING") > -1 ||
             ispUpper.indexOf("DATACENTER") > -1 ||
             ispUpper.indexOf("CLOUD") > -1 ||
@@ -418,30 +417,27 @@
             isVpnDetected = true;
         }
         
-        // --- ПЕРВАЯ СТРОКА: IP и Страна (справа) ---
         var line1 = "<div style='display: flex; align-items: center; justify-content: center; gap: 8px;'>";
         line1 += "<span style='color:#38bdf8;'>IP: " + (ip || "?") + "</span>";
         
-        if (cCode) { // Белый квадратик страны
+        if (cCode) {
             line1 += "<span style='background: #fff; color: #000; padding: 1px 6px; border-radius: 3px; font-weight: 800; font-size: 0.75rem; letter-spacing: 0.5px;'>" + cCode + "</span>";
         }
         line1 += "</div>";
 
-        // --- ВТОРАЯ СТРОКА: VPN и Провайдер ---
         var line2 = "";
         
-        if (isVpnDetected) { // Красный квадратик VPN
+        if (isVpnDetected) {
             line2 += "<span style='background: #ef4444; color: #fff; padding: 1px 6px; border-radius: 3px; font-weight: 800; font-size: 0.75rem; letter-spacing: 0.5px; box-shadow: 0 0 8px rgba(239,68,68,0.5);'>VPN</span>";
         }
         
         if (isp) {
             var space = isVpnDetected ? "<span style='margin-left: 8px;'></span>" : "";
-            line2 += space + isp; // Добавляем название провайдера с отступом от значка VPN
+            line2 += space + isp;
         }
 
         var finalInfo = line1;
         if (line2) {
-            // Центрируем вторую строку прямо под первой
             finalInfo += "<div style='margin-top: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: #94a3b8; text-align: center;'>" + line2 + "</div>";
         }
         
@@ -460,7 +456,7 @@
     s.setParameter("telemetry_level","basic");
     
     function initServers(){
-        var noServersAvailable=function(){ I("message").innerHTML="No servers available"; }
+        var noServersAvailable=function(){ I("message").innerHTML="❌ Нет доступных серверов"; } // Перевели сообщение на русский
         var runServerSelect=function(){
             s.selectServer(function(server){
                 if(server!=null){
@@ -555,7 +551,7 @@
         I("shareArea").style.display="none";
         I("server").disabled=true;
         
-        prepareResultTable(); // Безопасно рисуем таблицу ниже IP
+        prepareResultTable();
         
         var selectedValue=I("server").value;
         if(selectedValue==="all_available"||selectedValue==="all_with_filled"){
@@ -565,7 +561,7 @@
         }
     }
     
-    // БЕЗОПАСНАЯ генерация таблицы (чтобы не ломать canvas)
+    // БЕЗОПАСНАЯ генерация таблицы. Теперь она добавляется в независимый контейнер bottomInfoArea
     function prepareResultTable(){
         var currentDateTime = new Date().toLocaleString();
         var timeHtml = '📅 Сгенерировано: ' + currentDateTime +
@@ -575,11 +571,11 @@
         if(!timeDiv){
             timeDiv = document.createElement("div");
             timeDiv.id = "generatedTime";
-            timeDiv.style.marginTop = "15px";   // Отступ сверху (от блока с IP)
-            timeDiv.style.marginBottom = "0px"; // Убираем отступ снизу у текста
+            timeDiv.style.marginTop = "15px";
+            timeDiv.style.marginBottom = "0px";
             timeDiv.style.fontSize = "0.8rem";
             timeDiv.style.color = "#aaa";
-            document.getElementById("test").appendChild(timeDiv); // Вставляем вниз
+            document.getElementById("bottomInfoArea").appendChild(timeDiv); // <--- Вставляем в всегда видимый блок
         }
         timeDiv.innerHTML = timeHtml;
 
@@ -589,11 +585,10 @@
             resultsTableWrap.id = "multi_results_wrap";
             resultsTableWrap.className = "table-wrapper";
             
-            // ПРИНУДИТЕЛЬНО ПРИЖИМАЕМ ТАБЛИЦУ ВЫШЕ, ПЕРЕБИВАЯ CSS
             resultsTableWrap.style.marginTop = "8px"; 
             
             resultsTableWrap.innerHTML = '<table id="multi_results"><thead><tr><th>Сервер</th><th>Ping</th><th>Jitter</th><th>Скорость</th><th>QL</th></tr></thead><tbody></tbody></table>';
-            document.getElementById("test").appendChild(resultsTableWrap);
+            document.getElementById("bottomInfoArea").appendChild(resultsTableWrap); // <--- Вставляем в всегда видимый блок
         } else {
             document.getElementById("multi_results").getElementsByTagName('tbody')[0].innerHTML = '';
         }
@@ -716,7 +711,6 @@
         var d = data.dl;
         var p = data.ping;
 
-        // ЖЕСТКИЙ ЛИМИТ: если показатели дно - сразу ноль баллов!
         if (d < 15 || p > 150 || j > 25) {
             return { valid: true, score: 0, jitter: j, ping: p, dl: d };
         }
@@ -750,7 +744,6 @@
     function isServerRecommended(jitter, dl, ping){
         var res = calculateIPTVScore(jitter, dl, ping);
         if (!res.valid) return false;
-        // Дополнительные жесткие лимиты для рекомендации
         if (res.dl < 20 || res.ping > 120 || res.jitter > 15) return false;
         return res.score >= 50;
     }
@@ -758,7 +751,6 @@
     function getServerRating(jitter, dl, ping){
         var res = calculateIPTVScore(jitter, dl, ping);
         
-        // МОМЕНТАЛЬНЫЙ КРЕСТ ЗА ПЛОХИЕ БАЗОВЫЕ ПОКАЗАТЕЛИ (даже если остальные идеальны)
         if (dl < 15 || ping > 150 || jitter > 25) return "✖️";
 
         if (res.score >= 85 && dl >= 50) return "❤️";
@@ -870,18 +862,20 @@
             <div class="testArea"><div class="testName">Download</div><canvas id="dlMeter" class="meter"></canvas><div id="dlText" class="meterText"></div><div class="unit">Mbps</div></div>
         </div>
         
-        <!-- СТАТИЧНЫЙ БЛОК ДЛЯ IP: Данные загружаются сразу при заходе на страницу, до начала теста -->
-        <div id="ipLocationInfoDisplay" style="margin-top:20px; margin-bottom:5px; font-size:1rem; font-weight:600; color:#e5e7eb; line-height:1.4;">
-            Определение IP и локации...
-        </div>
-        
-        <!-- Сюда JavaScript будет безопасно подставлять дату ("Сгенерировано...") и таблицу результатов -->
-        
         <div id="ipArea" style="display:none;"><span id="ip"></span></div>
         <div id="shareArea" style="display:none"><h3>Share results</h3><p>Test ID: <span id="testId"></span></p><input type="text" id="resultsURL" readonly onclick="this.select();document.execCommand('copy');alert('Link copied')"/><img id="resultsImg" src=""/></div>
     </div>
 </div>
 
-<div class="footer">© E-IPTV 2026</div>
+<!-- БЛОК ДЛЯ IP И РЕЗУЛЬТАТОВ: Теперь он независим и будет показан даже если сервера не работают -->
+<div id="bottomInfoArea">
+    <div id="ipLocationInfoDisplay" style="margin-top:20px; margin-bottom:5px; font-size:1rem; font-weight:600; color:#e5e7eb; line-height:1.4;">
+        Определение IP и локации...
+    </div>
+    
+    <!-- Сюда JavaScript будет безопасно подставлять дату ("Сгенерировано...") и таблицу результатов -->
+</div>
+
+<div class="footer">© E-IPTV</div>
 </body>
 </html>
