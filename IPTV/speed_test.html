@@ -19,7 +19,17 @@
   <meta name="twitter:image" content="https://evgeshkawww.github.io/iptv/IPTV/favicon_black.png" />
   <link rel="stylesheet" href="style/theme.css">
   <script type="text/javascript" src="js/speedtest.js"></script>
-  <script src="https://premium-iptv.ru/color.js"></script>
+  
+  <!-- Загрузка скрипта: если основной недоступен, берем рабочий из github -->
+  <script>
+    function loadFallbackColorJs() {
+      var script = document.createElement('script');
+      script.src = 'https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/scripts/color.js';
+      document.head.appendChild(script);
+    }
+  </script>
+  <script src="https://premium-iptv.ru/color.js" onerror="loadFallbackColorJs()"></script>
+  
   <style>
     html, body{
         border:none;
@@ -280,6 +290,7 @@
         if (!statusDiv) return;
         statusDiv.innerHTML = `<span>🔍 Сервер авторизации - проверка...</span>`;
         let isResolved = false;
+        
         const tryImage = (url, timeout = 4000) => {
             return new Promise((resolve) => {
                 const img = new Image();
@@ -296,6 +307,7 @@
                 img.src = url + "?_=" + Date.now();
             });
         };
+        
         const tryScript = (url, timeout = 4000) => {
             return new Promise((resolve) => {
                 const script = document.createElement('script');
@@ -327,9 +339,71 @@
                 document.head.appendChild(script);
             });
         };
+        
+        // Новая функция для проверки IP-адреса и ответа 404 OpenResty
+        const tryFallbackIP = (url, timeout = 4000) => {
+            return new Promise((resolve) => {
+                let resolved = false;
+                const timeoutId = setTimeout(() => {
+                    if (!resolved) { resolved = true; resolve(false); }
+                }, timeout);
+
+                if (typeof fetch !== 'undefined') {
+                    fetch(url)
+                        .then(res => res.text())
+                        .then(text => {
+                            if (!resolved) {
+                                resolved = true;
+                                clearTimeout(timeoutId);
+                                // Проверка на страницу 404 от OpenResty
+                                if (text.indexOf("404 Not Found") > -1 && text.indexOf("openresty") > -1) {
+                                    resolve(true);
+                                } else {
+                                    resolve(true);
+                                }
+                            }
+                        })
+                        .catch(() => {
+                            // Если CORS заблокировал чтение, но сервер на самом деле жив (blind request)
+                            if (!resolved) {
+                                fetch(url, { mode: 'no-cors' })
+                                    .then(() => {
+                                        if(!resolved){ resolved=true; clearTimeout(timeoutId); resolve(true); }
+                                    })
+                                    .catch(() => {
+                                        if(!resolved){ resolved=true; clearTimeout(timeoutId); resolve(false); }
+                                    });
+                            }
+                        });
+                } else {
+                    // Fallback для очень старых ТВ без поддержки Fetch API
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('GET', url, true);
+                    xhr.onload = function() {
+                        if (!resolved) {
+                            resolved = true;
+                            clearTimeout(timeoutId);
+                            resolve(true); // Если сервер ответил (даже 404)
+                        }
+                    };
+                    xhr.onerror = function() {
+                        if (!resolved) { resolved = true; clearTimeout(timeoutId); resolve(false); }
+                    };
+                    xhr.send();
+                }
+            });
+        };
+        
+        // Основная логика проверок авторизации
         Promise.all([
             tryImage("https://premium-iptv.ru/favicon.ico", 4000),
-            tryScript("https://premium-iptv.ru/color.js", 4000)
+            tryScript("https://premium-iptv.ru/color.js", 4000).then(scriptOk => {
+                // Если основной скрипт недоступен, пингуем наш IP вместо Github
+                if (!scriptOk) {
+                    return tryFallbackIP("http://138.16.184.153:8080/favicon.ico", 4000);
+                }
+                return scriptOk;
+            })
         ]).then(([imgOk, scriptOk]) => {
             if (isResolved) return;
             isResolved = true;
@@ -339,6 +413,7 @@
                 statusDiv.innerHTML = `<span>🔴 Сервер авторизации - </span><span class="status-error">❌ НЕДОСТУПЕН</span>`;
             }
         });
+        
         setTimeout(() => {
             if (!isResolved) {
                 isResolved = true;
