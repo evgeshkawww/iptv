@@ -3,809 +3,749 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>E-Online</title>
+<title>E-ONLINE Catalog</title>
 
-<link rel="icon" href="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/favicon.ico">    
+<link rel="icon" href="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/favicon.ico">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@500;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
 <style>
-:root{
-    --bg:#020617;
-    --card:rgba(15,23,42,.75);
-    --accent:#38bdf8;
-    --text:#e5e7eb;
-    --gold:#F5D76E;
-    --gold-glow:rgba(245,215,110,0.5);
-    --red-accent:#ff3333;
-}
-*{box-sizing:border-box}
-
-body{
-    margin:0;
-    min-height:100vh;
-    background:radial-gradient(circle at top,#0f172a,transparent 60%),radial-gradient(circle at bottom,#020617,#000);
-    font-family:Inter,system-ui,sans-serif;
-    color:var(--text);
-    padding:40px 20px;
-    display:flex;
-    justify-content:center;
+:root {
+  --bg-main: #030712;
+  --bg-card: rgba(17, 24, 39, 0.75);
+  --bg-card-hover: rgba(31, 41, 55, 0.85);
+  --bg-inner: rgba(15, 23, 42, 0.6);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-active: rgba(245, 215, 110, 0.4);
+  --gold: #f5d76e;
+  --gold-gradient: linear-gradient(135deg, #ffe58f 0%, #d4af37 100%);
+  --cyan: #38bdf8;
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --radius-xl: 24px;
+  --radius-lg: 16px;
+  --radius-md: 12px;
 }
 
-.wrapper{
-    max-width:980px;
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    gap:28px;
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-main);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(245, 215, 110, 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(15, 23, 42, 0.5) 0px, transparent 100%);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-main);
+  padding: 30px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.card{
-    position:relative;
-    background:rgba(15,23,42,.75);
-    border-radius:22px;
-    padding:46px 38px 38px;
-    backdrop-filter:blur(14px);
-    box-shadow:0 0 50px rgba(56,189,248,.25),inset 0 0 0 1px rgba(255,255,255,.06);
+.container {
+  width: 100%;
+  max-width: 980px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
+.glass-card {
+  position: relative;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* HEADER */
 .simple-header {
-    text-align: center;
-    padding: 30px 20px;
+  text-align: center;
+  padding: 36px 20px 30px;
 }
+
 .simple-header .main-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    letter-spacing: .1em;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin: 0;
-    text-shadow: 0 0 20px rgba(245, 215, 110, 0.9), 0 0 8px rgba(255, 255, 200, 0.6);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
 }
+
 .simple-header .sub {
-    font-size: 12px;
-    opacity: 0.5;
-    margin-top: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-.services-section{text-align:center}
-.services-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
-    gap:20px;
-    margin-top:28px;
+/* MOVIES SECTION */
+.movies-sec {
+  position: relative;
+  overflow: hidden;
 }
 
-.service-card{
-    background:rgba(0,0,0,0.45);
-    border-radius:18px;
-    padding:20px 16px;
-    text-align:center;
-    cursor:pointer;
-    transition:all 0.3s ease;
-    backdrop-filter:blur(8px);
-    border:1px solid rgba(255,255,255,0.06);
-    height:130px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-}
-.service-card:hover{
-    transform:translateY(-8px) scale(1.04);
-    background:rgba(56,189,248,0.15);
-    border-color:rgba(56,189,248,0.4);
-    box-shadow:0 15px 35px rgba(56,189,248,0.3);
-}
-.service-logo{
-    width:100%;
-    max-height:58px;
-    object-fit:contain;
-    margin-bottom:8px;
-}
-.service-name{font-size:14px;font-weight:600}
-
-.tv-compat-note {
-    margin-top: 20px;
-    padding: 12px 16px;
-    background: rgba(56, 189, 248, 0.1);
-    border-radius: 12px;
-    border-left: 3px solid var(--gold);
-    font-size: 13px;
-    text-align: left;
-    color: var(--text);
-}
-.tv-compat-note strong {
-    color: var(--gold);
-    font-weight: 600;
-}
-.tv-compat-note .highlight {
-    color: #38bdf8;
-    font-weight: 500;
+.movies-top {
+  margin-bottom: 18px;
 }
 
-.movies-sec{width:100%}
-.movies-top{margin-bottom:24px}
-.sec-tag{
-    font-size:12px;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    color: var(--gold);
-    text-shadow: 0 0 8px rgba(245, 215, 110, 0.5);
-    margin-bottom:8px;
-}
-.sec-h{
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--gold);
-    text-shadow: 0 0 12px rgba(245, 215, 110, 0.7);
-    margin-bottom: 8px;
-}
-.sec-p{font-size:14px;opacity:0.7;margin:0}
-
-.movies-scroll{
-    overflow: hidden;
-    position: relative;
-    width: 100%;
+.sec-tag {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 4px;
 }
 
-.movies-track{
-    display: flex;
-    gap: 16px;
-    width: max-content;
-    animation: scrollLoop 120s linear infinite;
-    will-change: transform;
+.sec-h {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  color: var(--text-main);
+  margin-bottom: 4px;
 }
 
-@media (max-width: 1200px) {
-    .movies-track {
-        animation-duration: 140s;
-    }
+.sec-p {
+  font-size: 13px;
+  color: var(--text-muted);
 }
 
-@media (max-width: 768px) {
-    .movies-track {
-        animation-duration: 160s;
-    }
+.movies-scroll {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-lg);
 }
 
-@media (max-width: 480px) {
-    .movies-track {
-        animation-duration: 180s;
-    }
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .movies-scroll:hover .movies-track {
-        animation-play-state: paused;
-    }
+.movies-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: scrollLoop 120s linear infinite;
+  will-change: transform;
 }
 
 @keyframes scrollLoop {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
-.mv{
-    display: inline-block;
-    width: 200px;
-    flex-shrink: 0;
-    background: rgba(0,0,0,0.5);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
-    cursor: pointer;
-    backdrop-filter: blur(4px);
-    opacity: 0;
-    transform: scale(0.95);
-    animation: fadeIn 0.5s ease forwards;
+.movies-scroll:hover .movies-track {
+  animation-play-state: paused;
 }
 
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+.mv {
+  width: 180px;
+  background: var(--bg-inner);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
-.mv:hover{
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 10px 25px rgba(56,189,248,0.4);
+.mv:hover {
+  transform: translateY(-4px);
+  border-color: var(--cyan);
 }
 
-.mv-poster{position:relative}
-.mv-poster img{
-    width: 100%;
-    aspect-ratio: 2/3;
-    object-fit: cover;
-    display: block;
+.mv-poster {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2/3;
+  overflow: hidden;
 }
-.mv-badge{
-    position:absolute;
-    top:8px;
-    right:8px;
-    background:rgba(0,0,0,0.7);
-    color:#ffc107;
-    font-size:10px;
-    padding:2px 6px;
-    border-radius:4px;
-    font-weight:bold;
-    z-index:2;
-}
-.mv-badge.mv-4k{background:rgba(34,197,94,0.8);color:#fff}
-.mv-info{padding:12px}
-.mv-title{
-    font-size:14px;
-    font-weight:600;
-    margin-bottom:4px;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-}
-.mv-meta{font-size:12px;color:rgba(255,255,255,0.6)}
-.mv-star{color:#ffc107}
 
-.badge {
-    position: absolute;
-    top: 16px;
-    left: 18px;
-    padding: 6px 14px;
-    border-radius: 999px;
-    font-size: 11px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    background: transparent;
-    border: none;
-    color: var(--gold) !important;
-    text-shadow: 0 0 8px rgba(245, 215, 110, 0.5);
+.mv-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mv-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  color: #ffc107;
+  font-size: 11px;
+  padding: 3px 7px;
+  border-radius: 6px;
+  font-weight: 700;
+  z-index: 5;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mv-badge.mv-4k {
+  background: rgba(34, 197, 94, 0.85);
+  color: #fff;
+  border: none;
+}
+
+.mv-info {
+  padding: 10px 12px;
+}
+
+.mv-title {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mv-meta {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* SERVICES SECTION */
+.services-section {
+  text-align: left;
+}
+
+.badge-tag {
+  display: inline-block;
+  background: rgba(245, 215, 110, 0.1);
+  border: 1px solid var(--border-active);
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.service-card {
+  background: var(--bg-inner);
+  border-radius: var(--radius-lg);
+  padding: 18px 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 1px solid var(--border-subtle);
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  background: var(--bg-card-hover);
+  border-color: var(--cyan);
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+}
+
+.service-logo {
+  width: 100%;
+  max-height: 48px;
+  object-fit: contain;
+}
+
+.service-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* TV COMPAT BOX */
+.tv-compat-box {
+  margin-top: 20px;
+  padding: 18px 22px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius-lg);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #cbd5e1;
+  box-shadow: inset 0 0 20px rgba(56, 189, 248, 0.05);
+}
+
+.tv-compat-box strong {
+  color: var(--gold);
+}
+
+.tv-compat-box code {
+  background: #020617;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 3px 8px;
+  border-radius: 6px;
+  color: var(--cyan);
+  font-family: monospace;
+  font-weight: 700;
+}
+
+/* СОВРЕМЕННЫЙ БЛОК ИНСТРУКЦИИ */
+.instruction-header {
+  margin-bottom: 20px;
 }
 
 .instruction-title {
-    display: block;
-    margin: 22px 0 12px;
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text);
-    text-shadow: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.4;
+  margin-top: 6px;
+}
+
+.instruction-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.step-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg-inner);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  transition: all 0.2s ease;
+}
+
+.step-card:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(245, 215, 110, 0.3);
+  transform: translateX(4px);
+}
+
+.step-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(245, 215, 110, 0.12);
+  border: 1px solid var(--border-active);
+  color: var(--gold);
+  font-weight: 800;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.step-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-main);
+}
+
+.step-text strong {
+  color: #fff;
+}
+
+/* БЛОК СКОПИРОВАТЬ АДРЕС */
+.address-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #020617;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 8px 10px 8px 18px;
+  margin-bottom: 20px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.address-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.address-val {
+  font-family: monospace;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--cyan);
+  letter-spacing: 0.5px;
+}
+
+.copy-btn {
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: var(--cyan);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+  background: rgba(56, 189, 248, 0.25);
+  transform: translateY(-1px);
+}
+
+/* СТИЛЬНЫЕ КНОПКИ СКАЧИВАНИЯ */
+.buttons-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.btn-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 22px;
+  border-radius: var(--radius-lg);
+  font-weight: 700;
+  font-size: 14.5px;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-lampa {
+  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+  color: #030712;
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.25);
+}
+
+.btn-lampa:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(56, 189, 248, 0.45);
+}
+
+.btn-mx {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(245, 215, 110, 0.4);
+  color: var(--gold);
+}
+
+.btn-mx:hover {
+  background: rgba(245, 215, 110, 0.15);
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(245, 215, 110, 0.25);
+}
+
+/* DETAILS FULL */
+.details-full details {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
 }
 
 .details-full summary {
-    list-style: none;
-    text-align: center;
-    cursor: pointer;
-    font-family: 'Orbitron', sans-serif;
-    color: var(--gold) !important;
-    text-shadow: 0 0 8px rgba(245, 215, 110, 0.5);
-    font-size: 20px;
+  list-style: none;
+  text-align: center;
+  cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 18px;
+  padding: 14px;
+  background: rgba(245, 215, 110, 0.08);
+  border: 1px solid var(--border-active);
+  border-radius: var(--radius-lg);
+  transition: all 0.25s ease;
 }
+
+.details-full summary:hover {
+  background: rgba(245, 215, 110, 0.18);
+}
+
 .details-full summary::-webkit-details-marker { display: none; }
 
-.instruction-table td:first-child {
-    width: 50px;
-    color: var(--gold) !important;
-    font-weight: 700;
-    text-align: center;
-    background: rgba(245, 215, 110, 0.1);
-    vertical-align: top;
+.details-full iframe {
+  display: block;
+  width: 100%;
+  height: 0;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  margin-top: 16px;
+  transition: height 0.35s ease;
 }
 
-.instruction p strong {
-    color: #ff3333 !important;
-    text-shadow: none;
+.details-full details[open] iframe {
+  height: 80vh;
 }
 
-.instruction{line-height:1.65;font-size:15px}
-
-.instruction-table{
-    width:100%;
-    border-collapse:collapse;
-    margin:16px 0 20px;
-    background:rgba(0,0,0,0.3);
-    border-radius:10px;
-    overflow:hidden;
-}
-.instruction-table td{
-    padding:14px 16px;
-    border-bottom:1px solid rgba(255,255,255,0.1);
-    vertical-align:top;
-}
-.instruction-table tr:last-child td{border-bottom:none}
-
-/* ===== АДАПТИВ ДЛЯ ТАБЛИЦЫ НА МОБИЛЬНЫХ ===== */
-@media (max-width: 600px) {
-    .instruction-table {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-    
-    .instruction-table td {
-        display: table-cell;
-        padding: 12px 12px;
-        font-size: 13px;
-        word-break: break-word;
-    }
-    
-    .instruction-table td:first-child {
-        width: 45px;
-        font-size: 16px;
-    }
-    
-    .instruction-table td:last-child {
-        word-break: break-word;
-        white-space: normal;
-    }
-    
-    /* Альтернативный вариант - блочный на совсем маленьких экранах */
-    @media (max-width: 480px) {
-        .instruction-table,
-        .instruction-table tbody,
-        .instruction-table tr,
-        .instruction-table td {
-            display: block;
-        }
-        
-        .instruction-table tr {
-            margin-bottom: 12px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .instruction-table td {
-            border-bottom: none;
-            padding: 8px 12px;
-        }
-        
-        .instruction-table td:first-child {
-            width: 100%;
-            text-align: left;
-            background: rgba(245, 215, 110, 0.15);
-            font-weight: 700;
-        }
-        
-        .instruction-table td:first-child:before {
-            content: "Шаг ";
-            font-weight: normal;
-            opacity: 0.7;
-        }
-        
-        .instruction-table td:last-child {
-            padding-top: 0;
-        }
-    }
+/* FOOTER */
+footer {
+  text-align: center;
+  font-size: 13px;
+  color: #6b7280;
+  padding: 20px 0 10px;
 }
 
-.terminal{
-    background:#fff;
-    color:#0f0;
-    padding:16px 20px;
-    border-radius:10px;
-    font-family:monospace;
-    font-size:16px;
-    font-weight:600;
-    letter-spacing:1.5px;
-    display:inline-block;
-    margin:12px 0;
-    box-shadow:0 4px 15px rgba(0,0,0,0.3);
-}
-
-a.button{
-    display:block;margin-top:14px;padding:14px;
-    border-radius:14px;text-align:center;font-weight:600;
-    text-decoration:none;color:#000;background:var(--accent);
-}
-a.button:hover{background:#22d3ee;transform:translateY(-2px)}
-
-.details-full details{position:relative}
-.details-full iframe{
-    display:block;
-    width:100%;
-    height:0;
-    border-radius:14px;
-    border:1px solid rgba(255,255,255,.15);
-    transition:height .35s ease;
-}
-.details-full details[open] iframe{
-    height:90vh;
-    width:100vw;
-    max-width:100vw;
-    margin-left:calc(50% - 50vw);
-    margin-right:calc(50% - 50vw);
-    border-radius:0;
-}
-
-.footer{text-align:center;font-size:12px;opacity:.45}
-
-@media (max-width:600px){
-    .simple-header .main-title{font-size:22px}
-    .services-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:16px}
-    .service-card{height:118px}
-    .service-logo{max-height:48px}
-    .mv{width:160px}
-    .card {
-        padding: 36px 20px 28px;
-    }
-    .badge {
-        top: 10px;
-        left: 12px;
-        font-size: 9px;
-        padding: 4px 10px;
-    }
-}
-
-@media (max-width:480px){
-    .mv{width:140px}
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  body { padding: 16px 10px; }
+  .glass-card { padding: 20px 16px; }
+  .services-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
+  .buttons-group { grid-template-columns: 1fr; }
+  .mv { width: 145px; }
 }
 </style>
 </head>
+
 <body>
-<div class="wrapper">
+<div class="container">
 
-<div class="card simple-header">
+  <!-- HEADER -->
+  <header class="glass-card simple-header">
     <div class="main-title">E-ONLINE Catalog</div>
-    <div class="sub">
-        Premium<br>
-    </div>
-</div>
+    <div class="sub">Premium Movie Services</div>
+  </header>
 
-<div class="card movies-sec">
+  <!-- MOVIES SECTION -->
+  <section class="glass-card movies-sec">
     <div class="movies-top">
-        <div>
-            <div class="sec-tag">Кинотеатр</div>
-            <div class="sec-h">Сейчас у нас</div>
-            <p class="sec-p">новинки в отличном качестве!</p>
-        </div>
+      <div class="sec-tag">Кинотеатр</div>
+      <div class="sec-h">Сейчас у нас</div>
+      <p class="sec-p">новинки в отличном качестве!</p>
     </div>
     <div class="movies-scroll" id="mv-list">
-        <div style="color:rgba(255,255,255,.3);font-size:13px;padding:40px;text-align:center">🎬 Загрузка...</div>
+      <div style="color:var(--text-muted); font-size:13px; padding:40px; text-align:center">🎬 Загрузка...</div>
     </div>
-</div>
+  </section>
 
-<div class="card services-section">
-    <span class="badge">русские кинотеатры</span>
+  <!-- RUSSIAN SERVICES -->
+  <section class="glass-card services-section">
+    <span class="badge-tag">русские кинотеатры</span>
     <div class="services-grid" id="russian-services"></div>
-</div>
+  </section>
 
-<div class="card services-section">
-    <span class="badge">иностранные кинотеатры</span>
+  <!-- FOREIGN SERVICES -->
+  <section class="glass-card services-section">
+    <span class="badge-tag">иностранные кинотеатры</span>
     <div class="services-grid" id="foreign-services"></div>
-    <div style="margin-top: 20px; padding: 12px; background: rgba(245,215,110,0.1); border-radius: 12px; text-align: center; font-size: 13px;">
-        💡 <strong>Для Samsung / LG / Hisense:</strong> Установите <strong>Media Station X</strong> из магазина приложений вашего телевизора → 
-        Откройте MSX → Настройки → Стартовый адрес: <code style="background:#000;padding:2px 6px;border-radius:6px;">bylampa.online</code> → 
-        Сохраните → Запустите Lampa Uncensored и следуйте руководству ниже!
+    
+    <div class="tv-compat-box">
+      💡 <strong>Для Samsung / LG / Hisense:</strong> Установите <strong>Media Station X</strong> из магазина приложений вашего телевизора → 
+      Откройте MSX → Настройки → Стартовый адрес: <code>bylampa.online</code> → 
+      Сохраните → Запустите Lampa Uncensored и следуйте руководству ниже!
     </div>
-</div>
+  </section>
 
-<div class="card instruction">
-    <span class="badge">instruction</span>
-    <strong class="instruction-title">Инструкция по установке плагинов в Lampa <span style="color: red;">скаченной ниже</span> для Android</strong>
-    <p><strong>Все делайте строго по инструкции:</strong></p>
-    <table class="instruction-table">
-        <tr>
-            <td>1</td>
-            <td><strong>Настройки → Расширения → Добавить плагин → добавляете ссылки от бота</strong></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td><strong>Настройки → Плеер → Тип плеера - Встроенный! Листаем вниз там же и меняем качество видео на 2160P</strong></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td><strong>Настройки → Плагины → Интерфейс → ставим Зарубежные подборки, Русские новинки и Start</strong></td>
-        </tr>
-    </table>
-    <p><strong>Стартовый адрес:</strong></p> 
-    <div class="terminal">http://bylampa.online</div> 
-    <a class="button" href="https://dl.dropbox.com/scl/fi/cmyqruawrt1fao23f87bl/LAMPA-1.12.9-Clone-Un.apk?rlkey=dclai6agm0aqj4l3tfr61lhvt&dl=0" target="_blank">📥 Скачать Lampa (Android)</a> 
-    <!--<a class="button" href="https://dl.dropbox.com/scl/fi/8puxrkv46zm8bqv0fsovt/LAMPA-ATV-v1.12.4-Uncensored.apk?rlkey=7xd0lyfsopduqqd87t71dohp6&dl=0" target="_blank">📥 Скачать Lampa ATV (Android TV)</a> -->
-    <a class="button" href="https://dl.dropbox.com/scl/fi/xknj7vunp90wxe3bom9ot/MX_Player_v2_6_3_Offline_arm7-arm64.apk?rlkey=y6ogo45cn8v0fdg21lfcz77z7" target="_blank">📥 Скачать MX Player для Lampa Android</a>
-</div>
+  <!-- INSTRUCTION (REDESIGNED) -->
+  <section class="glass-card instruction">
+    <span class="badge-tag">инструкция</span>
+    
+    <div class="instruction-header">
+      <div class="instruction-title">
+        Установка плагинов в Lampa для Android
+      </div>
+      <p style="font-size: 13px; color: #f87171; margin-top: 4px; font-weight: 600;">
+        ⚠️ Следуйте шагам строго по порядку:
+      </p>
+    </div>
+    
+    <div class="instruction-steps">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Настройки → Расширения → Добавить плагин</strong> → вставьте полученные ссылки от бота.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>Настройки → Плеер → Тип плеера: Встроенный</strong>. Пролистайте вниз и установите качество <strong>2160P (4K)</strong>.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>Настройки → Плагины → Интерфейс</strong> → активируйте «Зарубежные подборки», «Русские новинки» и «Start».</div>
+      </div>
+    </div>
 
-<div class="card details-full">
+    <!-- Блок со стартовым адресом -->
+    <div class="address-box">
+      <div>
+        <div class="address-label">Стартовый адрес</div>
+        <div class="address-val" id="startUrl">http://bylampa.online</div>
+      </div>
+      <button class="copy-btn" onclick="copyAddress()">Копировать</button>
+    </div>
+
+    <!-- Кнопки загрузки -->
+    <div class="buttons-group">
+      <a class="btn-download btn-lampa" href="https://dl.dropbox.com/scl/fi/cmyqruawrt1fao23f87bl/LAMPA-1.12.9-Clone-Un.apk?rlkey=dclai6agm0aqj4l3tfr61lhvt&dl=0" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        Скачать Lampa (Android)
+      </a> 
+      
+      <a class="btn-download btn-mx" href="https://dl.dropbox.com/scl/fi/xknj7vunp90wxe3bom9ot/MX_Player_v2_6_3_Offline_arm7-arm64.apk?rlkey=y6ogo45cn8v0fdg21lfcz77z7" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        Скачать MX Player
+      </a>
+    </div>
+  </section>
+
+  <!-- PLUGINS ACCORDION -->
+  <section class="glass-card details-full">
     <details>
-        <summary>Плагины для LAMPA</summary>
-        <iframe src="plugins.html"></iframe>
+      <summary>Плагины для LAMPA</summary>
+      <iframe src="plugins.html"></iframe>
     </details>
-</div>
+  </section>
 
-<div class="footer">© E-Online 2026</div>
+  <footer>© E-Online 2026 • Каталог сервисов</footer>
 </div>
 
 <script>
-// ===== ФУНКЦИЯ ДЛЯ ВОССТАНОВЛЕНИЯ АНИМАЦИИ КАРУСЕЛИ =====
+// ===== КАРУСЕЛЬ ФИЛЬМОВ =====
 function resumeCarouselAnimation() {
-    const track = document.querySelector('.movies-track');
-    if (track) {
-        track.style.animation = 'none';
-        track.offsetHeight;
-        track.style.animation = '';
-        console.log('Анимация карусели восстановлена');
-    }
+  const track = document.querySelector('.movies-track');
+  if (track) {
+    track.style.animation = 'none';
+    track.offsetHeight;
+    track.style.animation = '';
+  }
 }
 
-// Следим за видимостью страницы
-document.addEventListener('visibilitychange', function() {
-    if (!document.hidden) {
-        setTimeout(resumeCarouselAnimation, 100);
-    }
-});
+document.addEventListener('visibilitychange', () => { if (!document.hidden) setTimeout(resumeCarouselAnimation, 100); });
+window.addEventListener('focus', () => setTimeout(resumeCarouselAnimation, 100));
 
-window.addEventListener('pageshow', function(event) {
-    if (event.persisted) {
-        setTimeout(resumeCarouselAnimation, 100);
-    }
-});
+// КОПИРОВАНИЕ АДРЕСА
+function copyAddress() {
+  const text = document.getElementById('startUrl').innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    btn.innerText = 'Скопировано! ✓';
+    btn.style.color = '#34d399';
+    btn.style.borderColor = '#34d399';
+    setTimeout(() => {
+      btn.innerText = 'Копировать';
+      btn.style.color = '';
+      btn.style.borderColor = '';
+    }, 2000);
+  });
+}
 
-window.addEventListener('focus', function() {
-    setTimeout(resumeCarouselAnimation, 100);
-});
-
-// ===== ЗАЩИТА ОТ АНТИБАНЕРОВ =====
-(function antiAdblockProtection() {
-    function maskImageUrl(originalUrl) {
-        if (!originalUrl) return '';
-        const separator = originalUrl.includes('?') ? '&' : '?';
-        return originalUrl + separator + '_protect=' + Date.now() + '_' + Math.random().toString(36).substring(2, 8);
-    }
-    
-    function protectImages() {
-        const allImages = document.querySelectorAll('img');
-        allImages.forEach(img => {
-            if (img.src && !img.hasAttribute('data-protected') && !img.src.includes('placehold.co')) {
-                const originalSrc = img.src;
-                img.setAttribute('data-original', originalSrc);
-                img.setAttribute('data-protected', 'true');
-                img.src = maskImageUrl(originalSrc);
-                
-                img.onerror = function() {
-                    if (!this.hasAttribute('data-retried')) {
-                        this.setAttribute('data-retried', 'true');
-                        this.src = maskImageUrl(originalSrc);
-                    } else if (!this.src.includes('placehold.co')) {
-                        this.style.opacity = '0.6';
-                        this.style.filter = 'blur(2px)';
-                    }
-                };
-            }
-        });
-    }
-    
-    const observer = new MutationObserver(function(mutations) {
-        mutations.forEach(mutation => {
-            mutation.addedNodes.forEach(node => {
-                if (node.nodeType === 1) {
-                    if (node.tagName === 'IMG' && node.src && !node.hasAttribute('data-protected')) {
-                        const originalSrc = node.src;
-                        node.setAttribute('data-original', originalSrc);
-                        node.setAttribute('data-protected', 'true');
-                        node.src = maskImageUrl(originalSrc);
-                        
-                        node.onerror = function() {
-                            if (!this.hasAttribute('data-retried')) {
-                                this.setAttribute('data-retried', 'true');
-                                this.src = maskImageUrl(originalSrc);
-                            }
-                        };
-                    }
-                    const childImages = node.querySelectorAll ? node.querySelectorAll('img') : [];
-                    childImages.forEach(img => {
-                        if (img.src && !img.hasAttribute('data-protected') && !img.src.includes('placehold.co')) {
-                            const originalSrc = img.src;
-                            img.setAttribute('data-original', originalSrc);
-                            img.setAttribute('data-protected', 'true');
-                            img.src = maskImageUrl(originalSrc);
-                            
-                            img.onerror = function() {
-                                if (!this.hasAttribute('data-retried')) {
-                                    this.setAttribute('data-retried', 'true');
-                                    this.src = maskImageUrl(originalSrc);
-                                }
-                            };
-                        }
-                    });
-                }
-            });
-        });
-    });
-    
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
-            protectImages();
-            observer.observe(document.body, { childList: true, subtree: true });
-            setInterval(protectImages, 5000);
-        });
-    } else {
-        protectImages();
-        observer.observe(document.body, { childList: true, subtree: true });
-        setInterval(protectImages, 5000);
-    }
-})();
-
-// Данные для сервисов
+// СЕРВИСЫ
 const russianServices = [
-    {name:'Start', url:'https://start.ru', logo:'https://upload.wikimedia.org/wikipedia/commons/6/67/START_logo.svg'},
-    {name:'Premier', url:'https://premier.one', logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PREMIER_logo.svg/1280px-PREMIER_logo.svg.png'},
-    {name:'KION', url:'https://kion.ru', logo:'https://upload.wikimedia.org/wikipedia/commons/d/dd/Kion_Group_logo.svg'},
-    {name:'ИВИ', url:'https://ivi.ru', logo:'https://upload.wikimedia.org/wikipedia/commons/5/55/Ivi_logo.svg'},
-    {name:'Okko', url:'https://okko.tv', logo:'https://static.tildacdn.com/tild3535-6436-4834-a230-353339643333/Logo.png'},
-    {name:'Wink', url:'https://wink.ru', logo:'https://upload.wikimedia.org/wikipedia/commons/8/85/Wink_Logo.svg'},
-    {name:'КиноПоиск', url:'https://kinopoisk.ru', logo:'https://upload.wikimedia.org/wikipedia/commons/c/c1/Kinopoisk_colored_logo_%282021-present%29.svg'},
-    {name:'CTC', url:'https://ctc.ru', logo:'https://papik.pro/uploads/posts/2021-11/1636127166_42-papik-pro-p-sts-logotip-foto-45.jpg'},
-    {name:'ТНТ', url:'https://tnt-online.ru', logo:'https://i1.wp.com/amiel.club/uploads/posts/2022-03/1647616229_25-amiel-club-p-kartinki-tnt-28.png?ssl=1'}
+  {name:'Start', url:'https://start.ru', logo:'https://upload.wikimedia.org/wikipedia/commons/6/67/START_logo.svg'},
+  {name:'Premier', url:'https://premier.one', logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PREMIER_logo.svg/1280px-PREMIER_logo.svg.png'},
+  {name:'KION', url:'https://kion.ru', logo:'https://upload.wikimedia.org/wikipedia/commons/d/dd/Kion_Group_logo.svg'},
+  {name:'ИВИ', url:'https://ivi.ru', logo:'https://upload.wikimedia.org/wikipedia/commons/5/55/Ivi_logo.svg'},
+  {name:'Okko', url:'https://okko.tv', logo:'https://static.tildacdn.com/tild3535-6436-4834-a230-353339643333/Logo.png'},
+  {name:'Wink', url:'https://wink.ru', logo:'https://upload.wikimedia.org/wikipedia/commons/8/85/Wink_Logo.svg'},
+  {name:'КиноПоиск', url:'https://kinopoisk.ru', logo:'https://upload.wikimedia.org/wikipedia/commons/c/c1/Kinopoisk_colored_logo_%282021-present%29.svg'},
+  {name:'CTC', url:'https://ctc.ru', logo:'https://papik.pro/uploads/posts/2021-11/1636127166_42-papik-pro-p-sts-logotip-foto-45.jpg'},
+  {name:'ТНТ', url:'https://tnt-online.ru', logo:'https://i1.wp.com/amiel.club/uploads/posts/2022-03/1647616229_25-amiel-club-p-kartinki-tnt-28.png?ssl=1'}
 ];
 
 const foreignServices = [
-    {name:'Netflix', url:'https://netflix.com', logo:'https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg'},
-    {name:'Apple TV+', url:'https://tv.apple.com', logo:'https://img.huffingtonpost.com/asset/5d0138d82100003711e7edfa.jpeg?ops=1200_630'},
-    {name:'Prime Video', url:'https://primevideo.com', logo:'https://m.media-amazon.com/images/G/51/marketing/prime/2022PrimeBrand/Logos/Prime_Logo_RGB_Prime_Blue_MASTER._CB542735254_.png'},
-    {name:'Disney+', url:'https://disneyplus.com', logo:'https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg'},
-    {name:'HBO Max', url:'https://max.com', logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Max_logo.svg/1280px-Max_logo.svg.png'},
-    {name:'Paramount+', url:'https://paramountplus.com', logo:'https://www.getwizer.com/wp-content/uploads/2024/01/Paramount-Logo-2048x1868.png'},
-    {name:'MGM+', url:'https://mgmplus.com', logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/MGM%2B_logo.svg/1280px-MGM%2B_logo.svg.png'}
+  {name:'Netflix', url:'https://netflix.com', logo:'https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg'},
+  {name:'Apple TV+', url:'https://tv.apple.com', logo:'https://img.huffingtonpost.com/asset/5d0138d82100003711e7edfa.jpeg?ops=1200_630'},
+  {name:'Prime Video', url:'https://primevideo.com', logo:'https://m.media-amazon.com/images/G/51/marketing/prime/2022PrimeBrand/Logos/Prime_Logo_RGB_Prime_Blue_MASTER._CB542735254_.png'},
+  {name:'Disney+', url:'https://disneyplus.com', logo:'https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg'},
+  {name:'HBO Max', url:'https://max.com', logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Max_logo.svg/1280px-Max_logo.svg.png'},
+  {name:'Paramount+', url:'https://paramountplus.com', logo:'https://www.getwizer.com/wp-content/uploads/2024/01/Paramount-Logo-2048x1868.png'},
+  {name:'MGM+', url:'https://mgmplus.com', logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/MGM%2B_logo.svg/1280px-MGM%2B_logo.svg.png'}
 ];
 
 function renderServices(services, containerId) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-    let html = '';
-    services.forEach(service => {
-        html += `<div class="service-card" onclick="window.open('${service.url}','_blank')">
-                    <img class="service-logo" src="${service.logo}" alt="${service.name}" loading="lazy" 
-                         onerror="this.src='https://placehold.co/200x80/0f172a/ffffff?text=${service.name}'">
-                    <div class="service-name">${service.name}</div>
-                 </div>`;
-    });
-    container.innerHTML = html;
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  let html = '';
+  services.forEach(service => {
+    html += `
+      <div class="service-card" onclick="window.open('${service.url}','_blank')">
+        <img class="service-logo" src="${service.logo}" alt="${service.name}" loading="lazy" onerror="this.src='https://placehold.co/200x80/0f172a/ffffff?text=${service.name}'">
+        <div class="service-name">${service.name}</div>
+      </div>
+    `;
+  });
+  container.innerHTML = html;
 }
 
 function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-}
-
-function protectMovieImages(container) {
-    const movieImages = container.querySelectorAll('img');
-    movieImages.forEach(img => {
-        if (img.src && !img.hasAttribute('data-protected') && !img.src.includes('placehold.co')) {
-            const originalSrc = img.src;
-            img.setAttribute('data-original', originalSrc);
-            img.setAttribute('data-protected', 'true');
-            const separator = originalSrc.includes('?') ? '&' : '?';
-            img.src = originalSrc + separator + '_protect=' + Date.now() + '_' + Math.random().toString(36).substring(2, 8);
-            
-            img.onerror = function() {
-                if (!this.hasAttribute('data-retried')) {
-                    this.setAttribute('data-retried', 'true');
-                    this.src = originalSrc + separator + '_retry=' + Date.now();
-                }
-            };
-        }
-    });
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
 
 function initMovies(html) {
-    const container = document.getElementById('mv-list');
-    if (!container) return;
-    
-    const temp = document.createElement('div');
-    temp.innerHTML = html;
-    
-    let movieElements = Array.from(temp.children);
-    
-    if (movieElements.length === 0) {
-        container.innerHTML = '<div style="color:rgba(255,255,255,.3);font-size:13px;padding:40px;text-align:center">🎬 Нет фильмов для отображения</div>';
-        return;
-    }
-    
-    movieElements = shuffleArray(movieElements);
-    
-    const track = document.createElement('div');
-    track.className = 'movies-track';
-    
-    for (let repeat = 0; repeat < 4; repeat++) {
-        movieElements.forEach(el => {
-            track.appendChild(el.cloneNode(true));
-        });
-    }
-    
-    container.innerHTML = '';
-    container.appendChild(track);
-    
-    // Добавляем обработчик кликов на фильмы (чтобы анимация не останавливалась)
-    const allMovies = container.querySelectorAll('.mv');
-    allMovies.forEach(movie => {
-        movie.addEventListener('click', function(e) {
-            const link = this.querySelector('a');
-            if (link && link.href) {
-                window.open(link.href, '_blank');
-            }
-            e.stopPropagation();
-        });
+  const container = document.getElementById('mv-list');
+  if (!container) return;
+  
+  const temp = document.createElement('div');
+  temp.innerHTML = html;
+  let items = Array.from(temp.children);
+  
+  if (items.length === 0) {
+    container.innerHTML = '<div style="color:var(--text-muted); font-size:13px; padding:40px; text-align:center">🎬 Нет фильмов для отображения</div>';
+    return;
+  }
+  
+  items = shuffleArray(items);
+  const track = document.createElement('div');
+  track.className = 'movies-track';
+  
+  for (let repeat = 0; repeat < 4; repeat++) {
+    items.forEach(el => track.appendChild(el.cloneNode(true)));
+  }
+  
+  container.innerHTML = '';
+  container.appendChild(track);
+  
+  const allMovies = container.querySelectorAll('.mv');
+  allMovies.forEach(movie => {
+    movie.addEventListener('click', function(e) {
+      const link = this.querySelector('a');
+      if (link && link.href) {
+        window.open(link.href, '_blank');
+      }
+      e.stopPropagation();
     });
-    
-    setTimeout(() => {
-        protectMovieImages(container);
-    }, 100);
-    
-    setTimeout(() => {
-        const trackWidth = track.scrollWidth;
-        const viewportWidth = window.innerWidth;
-        
-        if (trackWidth < viewportWidth * 2) {
-            const needMore = Math.ceil((viewportWidth * 3) / (trackWidth / 4)) + 1;
-            for (let i = 0; i < needMore; i++) {
-                movieElements.forEach(el => {
-                    track.appendChild(el.cloneNode(true));
-                });
-            }
-            protectMovieImages(container);
-        }
-    }, 200);
+  });
 }
 
 function updateMovies() {
-    const container = document.getElementById('mv-list');
-    if (container) {
-        container.innerHTML = '<div style="color:rgba(255,255,255,.3);font-size:13px;padding:40px;text-align:center">🎬 Загрузка...</div>';
-    }
-    
-    fetch('https://premium-iptv.ru/api/movies.php')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
-        .then(html => {
-            initMovies(html);
-        })
-        .catch(err => {
-            console.error('Ошибка загрузки фильмов:', err);
-            if (container) {
-                container.innerHTML = '<div style="color:rgba(255,255,255,.3);font-size:13px;padding:40px;text-align:center">⚠️ Ошибка загрузки фильмов</div>';
-            }
-        });
+  fetch('https://premium-iptv.ru/api/movies.php')
+    .then(r => r.ok ? r.text() : Promise.reject())
+    .then(html => initMovies(html))
+    .catch(() => {
+      const c = document.getElementById('mv-list');
+      if (c) c.innerHTML = '<div style="color:var(--text-muted); font-size:13px; padding:40px; text-align:center">⚠️ Ошибка загрузки фильмов</div>';
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    renderServices(russianServices, 'russian-services');
-    renderServices(foreignServices, 'foreign-services');
-    updateMovies();
-    setInterval(updateMovies, 1800000);
-    
-    document.querySelectorAll('.details-full details').forEach(d => {
-        d.removeAttribute('open');
-        d.open = false;
-    });
-    
-    document.querySelectorAll('.details-full summary').forEach(s => {
-        s.addEventListener('click', () => {
-            setTimeout(() => {
-                if (s.parentElement.open) {
-                    const top = s.parentElement.getBoundingClientRect().top + window.pageYOffset - 20;
-                    window.scrollTo({ top, behavior: 'smooth' });
-                }
-            }, 300);
-        });
-    });
-    
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-        link.addEventListener('click', (e) => {
-            const id = link.getAttribute('href').slice(1);
-            const target = document.getElementById(id);
-            if (!target) return;
-            e.preventDefault();
-            const top = target.getBoundingClientRect().top + window.pageYOffset - 20;
-            window.scrollTo({ top, behavior: 'smooth' });
-        });
-    });
+  renderServices(russianServices, 'russian-services');
+  renderServices(foreignServices, 'foreign-services');
+  updateMovies();
+  setInterval(updateMovies, 1800000);
 });
 </script>
 </body>
