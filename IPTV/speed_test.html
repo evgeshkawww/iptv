@@ -689,6 +689,7 @@
             s.selectServer(function(server){
                 if(server!=null){
                     I("loading").className="hidden";
+                    I("server").innerHTML = "";
                     for(var i=0;i<SPEEDTEST_SERVERS.length;i++){
                         if(SPEEDTEST_SERVERS[i].pingT==-1) continue;
                         if(SPEEDTEST_SERVERS[i].serveropen==="YES"){
@@ -722,9 +723,11 @@
                 if(servers==null) noServersAvailable();
                 else{ SPEEDTEST_SERVERS=servers; runServerSelect(); }
             });
-        }else{
+        }else if(typeof SPEEDTEST_SERVERS !== "undefined" && Array.isArray(SPEEDTEST_SERVERS)){
             s.addTestPoints(SPEEDTEST_SERVERS);
             runServerSelect();
+        }else{
+            noServersAvailable();
         }
     }
     
@@ -735,27 +738,42 @@
     var serversToTest=[];
     var currentServer=0;
     var stopAllTests=false;
+    var multiTimeoutId=null;
     
     function startStop(){
         if(s.getState()==3){
             stopAllTests=true;
+            if(multiTimeoutId) { clearTimeout(multiTimeoutId); multiTimeoutId = null; }
             serversToTest=[];
-            s.abort();
             s.onupdate=null;
             s.onend=null;
+            s.abort();
             uiData=null;
             I("startStopBtn").className="";
             I("server").disabled=false;
             initUI();
             
-            // Анализ и вердикт из того, что успело пройти проверку
             var bestServer = findBestServer(groupTestResults);
             renderVerdictCard(bestServer);
             return;
         }
+        
+        stopAllTests=false;
+        groupTestResults=[];
+        serversToTest=[];
+        currentServer=0;
+        uiData=null;
+        if(multiTimeoutId) { clearTimeout(multiTimeoutId); multiTimeoutId = null; }
+
+        s = new Speedtest();
+        s.setParameter("telemetry_level","basic");
+        if(typeof SPEEDTEST_SERVERS !== "undefined" && Array.isArray(SPEEDTEST_SERVERS)){
+            s.addTestPoints(SPEEDTEST_SERVERS);
+        }
+
         I("startStopBtn").className="running";
         I("server").disabled=true;
-        
+        initUI();
         prepareResultTable();
         
         var selectedValue=I("server").value;
@@ -844,33 +862,39 @@
     }
     
     function startMultiTest(){
-        if(s.getState()==3){ s.abort(); I("startStopBtn").className=""; I("server").disabled=false; return; }
-        var testTimeout=null;
+        if(stopAllTests || serversToTest.length === 0) return;
+        
         var testCompleted=false;
-        testTimeout=setTimeout(function(){
+        if(multiTimeoutId) { clearTimeout(multiTimeoutId); multiTimeoutId = null; }
+
+        multiTimeoutId=setTimeout(function(){
             if(!testCompleted && s.getState()==3){
                 testCompleted=true;
                 appendResult(SPEEDTEST_SERVERS[currentServer].name,SPEEDTEST_SERVERS[currentServer].serveropen,"Таймаут","Таймаут","Таймаут");
                 groupTestResults.push({index:currentServer,name:SPEEDTEST_SERVERS[currentServer].name,serveropen:SPEEDTEST_SERVERS[currentServer].serveropen,dl:"Таймаут",ping:"Таймаут",jitter:"Таймаут"});
                 if(s.getState()==3) s.abort();
-                setTimeout(function(){ if(!stopAllTests) moveToNextServer(); },500);
+                setTimeout(function(){ if(!stopAllTests) moveToNextServer(); },300);
             }
-        },30000);
+        },25000);
+
         s.onupdate=function(data){ uiData=data; };
         s.onend=function(aborted){
-            clearTimeout(testTimeout);
+            if(multiTimeoutId) { clearTimeout(multiTimeoutId); multiTimeoutId = null; }
             if(testCompleted) return;
             testCompleted=true;
+
             if(stopAllTests){
                 I("startStopBtn").className=""; I("server").disabled=false;
                 var bestServer = findBestServer(groupTestResults);
                 renderVerdictCard(bestServer);
                 return;
             }
+
             if(!uiData) uiData={dlStatus:0,pingStatus:999,jitterStatus:999};
             var dlValue=(uiData.dlStatus>0)?uiData.dlStatus:0;
             var pingValue=(uiData.pingStatus<999)?uiData.pingStatus:0;
             var jitterValue=(uiData.jitterStatus<999)?uiData.jitterStatus:0;
+
             if(aborted && dlValue===0){
                 appendResult(SPEEDTEST_SERVERS[currentServer].name,SPEEDTEST_SERVERS[currentServer].serveropen,"Таймаут","Таймаут","Таймаут");
                 groupTestResults.push({index:currentServer,name:SPEEDTEST_SERVERS[currentServer].name,serveropen:SPEEDTEST_SERVERS[currentServer].serveropen,dl:"Таймаут",ping:"Таймаут",jitter:"Таймаут"});
@@ -881,6 +905,22 @@
             moveToNextServer();
         };
         s.start();
+    }
+    
+    function moveToNextServer(){
+        if(stopAllTests) return;
+        var currentIndex=serversToTest.indexOf(currentServer);
+        if(currentIndex<serversToTest.length-1){
+            currentServer=serversToTest[currentIndex+1];
+            document.getElementById("currentTest").innerHTML="<span style='color:var(--cyan); font-size:13px;'>Тестируется: <strong>"+SPEEDTEST_SERVERS[currentServer].name+"</strong> ("+(currentIndex+2)+" из "+serversToTest.length+")</span>";
+            s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
+            setTimeout(function(){ startMultiTest(); },300);
+        }else{
+            I("startStopBtn").className="";
+            I("server").disabled=false;
+            var bestServer=findBestServer(groupTestResults);
+            renderVerdictCard(bestServer);
+        }
     }
     
     function appendResult(server,serveropen,dl,ping,jitter){
@@ -1034,21 +1074,6 @@
             </div>
           </div>
         `;
-    }
-    
-    function moveToNextServer(){
-        var currentIndex=serversToTest.indexOf(currentServer);
-        if(currentIndex<serversToTest.length-1){
-            currentServer=serversToTest[currentIndex+1];
-            document.getElementById("currentTest").innerHTML="<span style='color:var(--cyan); font-size:13px;'>Тестируется: <strong>"+SPEEDTEST_SERVERS[currentServer].name+"</strong> ("+(currentIndex+2)+" из "+serversToTest.length+")</span>";
-            s.setSelectedServer(SPEEDTEST_SERVERS[currentServer]);
-            setTimeout(function(){ startMultiTest(); },500);
-        }else{
-            I("startStopBtn").className="";
-            I("server").disabled=false;
-            var bestServer=findBestServer(groupTestResults);
-            renderVerdictCard(bestServer);
-        }
     }
     
     function updateUI(forced){
