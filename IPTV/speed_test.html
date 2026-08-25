@@ -15,15 +15,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dseg@0.46.0/css/dseg.min.css">
 
   <script type="text/javascript" src="js/speedtest.js"></script>
-  
-  <script>
-    function loadFallbackColorJs() {
-      var script = document.createElement('script');
-      script.src = 'https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/scripts/color.js';
-      document.head.appendChild(script);
-    }
-  </script>
-  <script src="https://premium-iptv.ru/color.js" onerror="loadFallbackColorJs()"></script>
+  <script src="https://premium-iptv.ru/color.js"></script>
   
   <style>
     :root {
@@ -40,9 +32,9 @@
       --digital-glow: 0 0 12px rgba(56, 189, 248, 0.4);
       --text-main: #f3f4f6;
       --text-muted: #9ca3af;
-      --radius-xl: 24px;
-      --radius-lg: 16px;
-      --radius-md: 12px;
+      --radius-xl: 20px;
+      --radius-lg: 14px;
+      --radius-md: 10px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -56,7 +48,7 @@
         radial-gradient(at 50% 50%, rgba(15, 23, 42, 0.5) 0px, transparent 100%);
       font-family: 'Plus Jakarta Sans', sans-serif;
       color: var(--text-main);
-      padding: 30px 16px;
+      padding: 16px 12px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -67,7 +59,7 @@
       max-width: 860px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 14px;
     }
 
     .glass-card {
@@ -77,51 +69,56 @@
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-xl);
-      padding: 28px;
+      padding: 20px;
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
     }
 
-    /* HEADER */
+    /* КОМПАКТНЫЙ HEADER */
     .speed-header {
       text-align: center;
-      padding: 32px 20px 24px;
+      padding: 14px 16px 12px !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
     }
 
     .speed-header .main-title {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 30px;
+      font-size: 20px;
       font-weight: 800;
-      letter-spacing: -0.02em;
+      letter-spacing: 0.5px;
       background: var(--gold-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-transform: uppercase;
+      line-height: 1.2;
     }
 
     .speed-header .sub {
-      font-size: 13px;
+      font-size: 11px;
       color: var(--text-muted);
-      margin-top: 4px;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
+      margin-bottom: 6px;
     }
 
     /* AUTH STATUS */
     .auth-status-wrap {
       display: flex;
       justify-content: center;
-      margin-top: 14px;
+      margin-top: 2px;
     }
 
     .auth-status {
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       font-weight: 600;
       background: var(--bg-inner);
       border: 1px solid var(--border-subtle);
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 6px 16px;
+      padding: 3px 12px;
       border-radius: 999px;
     }
 
@@ -131,20 +128,20 @@
     /* LOADING CIRCLE */
     span.loadCircle {
       display: inline-block;
-      width: 1.8em;
-      height: 1.8em;
+      width: 1.5em;
+      height: 1.5em;
       vertical-align: middle;
       background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAP1BMVEUAAAB2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZyFzwnAAAAFHRSTlMAEvRFvX406baecwbf0casimhSHyiwmqgAAADpSURBVHja7dbJbQMxAENRahnN5lkc//5rDRAkDeRgHszXgACJoKiIiIiIiIiIiIiIiIiIiIj4HHspsrpAVhdVVguzrA4OWc10WcEqpwKbnBo0OU1Q5NSpsoJFTgOecrrdEag85DRgktNqfoEdTjnd7hrEHMEJvmRUYJbTYk5Agy6nau6Abp5Cm7mDBtRdPi9gyKdU7w4p1fsLvyqs8hl4z9/w3n/Hmr9WoQ65lAU4d7lMYOz//QboRR5jBZibLMZdAR6O/Vfa1PlxNr3XdS3HzK/HVPRu/KnLs8iAOh993VpRRERERMT/fAN60wwWaVyWwAAAAABJRU5ErkJggg==');
-      background-size: 1.8em 1.8em;
-      margin-right: 0.6em;
+      background-size: 1.5em 1.5em;
+      margin-right: 0.5em;
       animation: spin 0.6s linear infinite;
     }
     @keyframes spin { 0%{transform:rotate(0deg);} 100%{transform:rotate(359deg);} }
 
     #loading {
       text-align: center;
-      padding: 24px;
-      font-size: 14px;
+      padding: 16px;
+      font-size: 13px;
       color: var(--text-muted);
     }
 
@@ -153,13 +150,13 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 16px;
-      margin-bottom: 24px;
+      gap: 12px;
+      margin-bottom: 16px;
     }
 
     .select-wrap {
       width: 100%;
-      max-width: 380px;
+      max-width: 360px;
     }
 
     #server {
@@ -168,8 +165,8 @@
       color: var(--text-main);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 10px 14px;
-      font-size: 0.95rem;
+      padding: 8px 12px;
+      font-size: 0.9rem;
       font-family: inherit;
       outline: none;
       transition: all 0.2s ease;
@@ -191,57 +188,57 @@
       border: none;
       border-radius: var(--radius-lg);
       font-weight: 700;
-      font-size: 15px;
+      font-size: 14px;
       letter-spacing: 0.5px;
-      padding: 12px 36px;
+      padding: 10px 30px;
       cursor: pointer;
       transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 8px 25px rgba(56, 189, 248, 0.25);
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.25);
     }
 
     #startStopBtn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.45);
+      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.45);
     }
 
     #startStopBtn.running {
       background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%) !important;
       color: #fff !important;
-      box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4) !important;
+      box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4) !important;
     }
 
     #startStopBtn:before { content: "Начать тест"; }
     #startStopBtn.running:before { content: "Прервать"; }
 
     #currentTest {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
       color: var(--text-muted);
-      min-height: 24px;
+      min-height: 20px;
       text-align: center;
     }
 
-    /* DASHBOARD & СЕКТОРНЫЕ ДИСПЛЕИ */
+    /* DASHBOARD */
     .dashboard-grid {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 12px;
       width: 100%;
-      max-width: 640px;
+      max-width: 600px;
       margin: 0 auto;
     }
 
     .small-meters-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 12px;
     }
 
     .digital-card {
       background: #020617;
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
-      padding: 16px 20px;
+      padding: 12px 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -252,17 +249,17 @@
     }
 
     .digital-card.main-meter {
-      padding: 24px 20px;
+      padding: 18px 16px;
       border-color: rgba(56, 189, 248, 0.25);
     }
 
     .meter-label {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 800;
       color: var(--gold);
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
 
     .digital-screen {
@@ -272,7 +269,6 @@
       justify-content: center;
     }
 
-    /* Фоновые неактивные сегменты */
     .digital-bg {
       position: absolute;
       left: 0;
@@ -285,7 +281,6 @@
       text-align: right;
     }
 
-    /* Активные сегменты (Электроника 5) */
     .meterText {
       font-family: 'DSEG7-Classic', monospace;
       font-weight: 700;
@@ -298,12 +293,12 @@
 
     .small-meters-row .meterText,
     .small-meters-row .digital-bg {
-      font-size: 2.2rem;
+      font-size: 2rem;
     }
 
     .main-meter .meterText,
     .main-meter .digital-bg {
-      font-size: 3.6rem;
+      font-size: 3.2rem;
     }
 
     .meterText:empty:before {
@@ -311,24 +306,24 @@
     }
 
     .unit-tag {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 800;
       color: var(--text-muted);
       letter-spacing: 1px;
       text-transform: uppercase;
-      margin-top: 6px;
+      margin-top: 4px;
     }
 
-    /* RECOMMENDATION BOXES */
+    /* RECOMMENDATIONS */
     .recommendationBox {
-      padding: 12px 18px;
-      margin: 10px 0;
+      padding: 10px 16px;
+      margin: 8px 0;
       border-radius: var(--radius-md);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 600;
       text-align: center;
       display: inline-block;
-      line-height: 1.5;
+      line-height: 1.4;
     }
 
     .recommended {
@@ -350,7 +345,7 @@
       width: 100%;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
-      margin-top: 16px;
+      margin-top: 14px;
       border-radius: var(--radius-lg);
       background: var(--bg-inner);
       border: 1px solid var(--border-subtle);
@@ -363,8 +358,8 @@
     }
 
     #multi_results th, #multi_results td {
-      padding: 12px 10px;
-      font-size: 0.85rem;
+      padding: 10px 8px;
+      font-size: 0.8rem;
       border-bottom: 1px solid var(--border-subtle);
     }
 
@@ -373,19 +368,13 @@
       color: var(--gold);
       font-weight: 700;
       text-transform: uppercase;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       letter-spacing: 0.5px;
     }
 
     #multi_results td { color: var(--text-main); }
-
-    #multi_results tbody tr:last-child td {
-      border-bottom: none;
-    }
-
-    #multi_results tbody tr:hover {
-      background: var(--bg-card-hover);
-    }
+    #multi_results tbody tr:last-child td { border-bottom: none; }
+    #multi_results tbody tr:hover { background: var(--bg-card-hover); }
 
     /* VISIBILITY */
     div.visible { animation: fadeIn 0.4s ease forwards; display: block; }
@@ -394,22 +383,22 @@
 
     /* FOOTER */
     footer {
-      margin-top: 30px;
+      margin-top: 20px;
       text-align: center;
       font-size: 12px;
       color: #6b7280;
-      padding-bottom: 20px;
+      padding-bottom: 16px;
     }
 
     @media (max-width: 600px) {
-      body { padding: 16px 10px; }
-      .glass-card { padding: 20px 14px; }
-      .speed-header .main-title { font-size: 24px; }
+      body { padding: 12px 8px; }
+      .glass-card { padding: 16px 12px; }
+      .speed-header .main-title { font-size: 18px; }
       .small-meters-row .meterText,
-      .small-meters-row .digital-bg { font-size: 1.6rem; }
+      .small-meters-row .digital-bg { font-size: 1.5rem; }
       .main-meter .meterText,
-      .main-meter .digital-bg { font-size: 2.5rem; }
-      #multi_results th, #multi_results td { padding: 8px 4px; font-size: 0.75rem; }
+      .main-meter .digital-bg { font-size: 2.4rem; }
+      #multi_results th, #multi_results td { padding: 8px 4px; font-size: 0.7rem; }
     }
   </style>
   
@@ -471,64 +460,9 @@
             });
         };
         
-        const tryFallbackIP = (url, timeout = 4000) => {
-            return new Promise((resolve) => {
-                let resolved = false;
-                const timeoutId = setTimeout(() => {
-                    if (!resolved) { resolved = true; resolve(false); }
-                }, timeout);
-
-                if (typeof fetch !== 'undefined') {
-                    fetch(url)
-                        .then(res => res.text())
-                        .then(text => {
-                            if (!resolved) {
-                                resolved = true;
-                                clearTimeout(timeoutId);
-                                if (text.indexOf("404 Not Found") > -1 && text.indexOf("openresty") > -1) {
-                                    resolve(true);
-                                } else {
-                                    resolve(true);
-                                }
-                            }
-                        })
-                        .catch(() => {
-                            if (!resolved) {
-                                fetch(url, { mode: 'no-cors' })
-                                    .then(() => {
-                                        if(!resolved){ resolved=true; clearTimeout(timeoutId); resolve(true); }
-                                    })
-                                    .catch(() => {
-                                        if(!resolved){ resolved=true; clearTimeout(timeoutId); resolve(false); }
-                                    });
-                            }
-                        });
-                } else {
-                    var xhr = new XMLHttpRequest();
-                    xhr.open('GET', url, true);
-                    xhr.onload = function() {
-                        if (!resolved) {
-                            resolved = true;
-                            clearTimeout(timeoutId);
-                            resolve(true);
-                        }
-                    };
-                    xhr.onerror = function() {
-                        if (!resolved) { resolved = true; clearTimeout(timeoutId); resolve(false); }
-                    };
-                    xhr.send();
-                }
-            });
-        };
-        
         Promise.all([
             tryImage("https://premium-iptv.ru/favicon.ico", 4000),
-            tryScript("https://premium-iptv.ru/color.js", 4000).then(scriptOk => {
-                if (!scriptOk) {
-                    return tryFallbackIP("http://138.16.184.153:8080/favicon.ico", 4000);
-                }
-                return scriptOk;
-            })
+            tryScript("https://premium-iptv.ru/color.js", 4000)
         ]).then(([imgOk, scriptOk]) => {
             if (isResolved) return;
             isResolved = true;
@@ -636,7 +570,7 @@
 
         var finalInfo = line1;
         if (line2) {
-            finalInfo += "<div style='margin-top:6px; display:flex; align-items:center; justify-content:center; font-size:0.85rem; color:var(--text-muted);'>" + line2 + "</div>";
+            finalInfo += "<div style='margin-top:4px; display:flex; align-items:center; justify-content:center; font-size:0.8rem; color:var(--text-muted);'>" + line2 + "</div>";
         }
         
         var el = document.getElementById("ipLocationInfoDisplay");
@@ -741,8 +675,8 @@
         if(!timeDiv){
             timeDiv = document.createElement("div");
             timeDiv.id = "generatedTime";
-            timeDiv.style.marginTop = "16px";
-            timeDiv.style.fontSize = "0.8rem";
+            timeDiv.style.marginTop = "14px";
+            timeDiv.style.fontSize = "0.75rem";
             timeDiv.style.textAlign = "center";
             document.getElementById("bottomInfoArea").appendChild(timeDiv);
         }
@@ -881,7 +815,6 @@
         }
 
         var score = 0;
-        
         if (d >= 100) { score += 40; }
         else if (d >= 70) { score += 35; }
         else if (d >= 50) { score += 30; }
@@ -1002,7 +935,7 @@
 
 <div class="container">
 
-  <!-- HEADER -->
+  <!-- КОМПАКТНЫЙ HEADER -->
   <header class="glass-card speed-header">
     <div class="main-title">Premium IPTV Speed Test</div>
     <div class="sub">Диагностика сетевого соединения и серверов</div>
@@ -1028,7 +961,7 @@
     <!-- DASHBOARD СЕКТОРНЫХ ЦИФР -->
     <div class="dashboard-grid">
       
-      <!-- PING & JITTER (Сверху 2 блока) -->
+      <!-- PING & JITTER -->
       <div class="small-meters-row">
         <div class="digital-card">
           <div class="meter-label">Ping</div>
@@ -1049,7 +982,7 @@
         </div>
       </div>
 
-      <!-- DOWNLOAD SPEED (Большой центральный секторный экран) -->
+      <!-- DOWNLOAD SPEED -->
       <div class="digital-card main-meter">
         <div class="meter-label">Скорость загрузки (Download)</div>
         <div class="digital-screen">
@@ -1064,7 +997,7 @@
 
   <!-- IP & DIAGNOSTICS INFO -->
   <div id="bottomInfoArea" class="glass-card">
-    <div id="ipLocationInfoDisplay" style="text-align:center; font-size:0.95rem; font-weight:600; line-height:1.5;">
+    <div id="ipLocationInfoDisplay" style="text-align:center; font-size:0.9rem; font-weight:600; line-height:1.4;">
       Определение IP и локации...
     </div>
   </div>
