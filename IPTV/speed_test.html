@@ -34,7 +34,7 @@
       --text-muted: #9ca3af;
       --radius-xl: 20px;
       --radius-lg: 14px;
-      --radius-md: 10px;
+      --radius-md: 8px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -48,7 +48,7 @@
         radial-gradient(at 50% 50%, rgba(15, 23, 42, 0.5) 0px, transparent 100%);
       font-family: 'Plus Jakarta Sans', sans-serif;
       color: var(--text-main);
-      padding: 16px 12px;
+      padding: 14px 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -59,7 +59,7 @@
       max-width: 860px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
     }
 
     .glass-card {
@@ -69,47 +69,33 @@
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-xl);
-      padding: 20px;
+      padding: 18px;
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
     }
 
-    /* HEADER */
+    /* МАКСИМАЛЬНО ТОНКАЯ ШАПКА */
     .speed-header {
-      text-align: center;
-      padding: 14px 16px 12px !important;
+      padding: 10px 18px !important;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 2px;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     .speed-header .main-title {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 20px;
+      font-size: 17px;
       font-weight: 800;
       letter-spacing: 0.5px;
       background: var(--gold-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-transform: uppercase;
-      line-height: 1.2;
+      line-height: 1;
     }
 
-    .speed-header .sub {
-      font-size: 11px;
-      color: var(--text-muted);
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    /* AUTH STATUS */
-    .auth-status-wrap {
-      display: flex;
-      justify-content: center;
-      margin-top: 2px;
-    }
-
+    /* АВТОРИЗАЦИЯ С ПУЛЬСИРУЮЩИМ ИНДИКАТОРОМ */
     .auth-status {
       font-size: 0.75rem;
       font-weight: 600;
@@ -117,8 +103,8 @@
       border: 1px solid var(--border-subtle);
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 4px 14px;
+      gap: 7px;
+      padding: 4px 12px;
       border-radius: 999px;
     }
 
@@ -128,8 +114,30 @@
       border-radius: 50%;
       background: #6b7280;
     }
-    .status-dot.ok { background: #22c55e; box-shadow: 0 0 8px #22c55e; }
-    .status-dot.err { background: #ef4444; box-shadow: 0 0 8px #ef4444; }
+
+    .status-dot.ok {
+      background: #22c55e;
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+      animation: pulseGreen 1.8s infinite;
+    }
+
+    .status-dot.err {
+      background: #ef4444;
+      box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+      animation: pulseRed 1.8s infinite;
+    }
+
+    @keyframes pulseGreen {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+
+    @keyframes pulseRed {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+    }
 
     .status-ok { color: #4ade80; font-weight: 700; }
     .status-error { color: #f87171; font-weight: 700; }
@@ -160,8 +168,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 14px;
-      margin-bottom: 18px;
+      gap: 12px;
+      margin-bottom: 16px;
     }
 
     .select-wrap {
@@ -175,7 +183,7 @@
       color: var(--text-main);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 9px 12px;
+      padding: 8px 12px;
       font-size: 0.9rem;
       font-family: inherit;
       outline: none;
@@ -188,18 +196,19 @@
       box-shadow: 0 0 0 3px var(--cyan-glow);
     }
 
+    /* СТРОГАЯ КНОПКА С МЯГКИМ КРАСНЫМ */
     #startStopBtn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       width: 100%;
       max-width: 360px;
-      height: 44px;
+      height: 42px;
       background: linear-gradient(180deg, #0284c7 0%, #0369a1 100%);
       color: #ffffff;
       border: 1px solid rgba(56, 189, 248, 0.4);
-      border-radius: 8px;
+      border-radius: var(--radius-md);
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
       font-size: 13.5px;
@@ -214,28 +223,26 @@
     #startStopBtn:hover {
       background: linear-gradient(180deg, #0ea5e9 0%, #0284c7 100%);
       border-color: #38bdf8;
-      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.35);
       transform: translateY(-1px);
     }
 
     #startStopBtn:active {
       transform: translateY(1px);
-      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.3);
     }
 
-    /* Кнопка в режиме «Прервать» */
+    /* Мягкий неядовитый цвет Прервать */
     #startStopBtn.running {
-      background: linear-gradient(180deg, #dc2626 0%, #991b1b 100%) !important;
-      color: #ffffff !important;
-      border-color: rgba(239, 68, 68, 0.5) !important;
-      box-shadow: 0 4px 14px rgba(220, 38, 38, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
-      animation: none !important;
+      background: linear-gradient(180deg, #8b2626 0%, #661818 100%) !important;
+      color: #f1f1f1 !important;
+      border-color: rgba(168, 50, 50, 0.6) !important;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
     }
 
     #startStopBtn.running:hover {
-      background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%) !important;
+      background: linear-gradient(180deg, #9e2b2b 0%, #7a1d1d 100%) !important;
       border-color: #ef4444 !important;
-      box-shadow: 0 6px 20px rgba(239, 68, 68, 0.45) !important;
+      box-shadow: 0 6px 20px rgba(168, 50, 50, 0.35) !important;
     }
 
     #startStopBtn:before {
@@ -483,7 +490,7 @@
     @media (max-width: 600px) {
       body { padding: 12px 8px; }
       .glass-card { padding: 16px 12px; }
-      .speed-header .main-title { font-size: 18px; }
+      .speed-header .main-title { font-size: 16px; }
       .small-meters-row .meterText,
       .small-meters-row .digital-bg { font-size: 1.5rem; }
       .main-meter .meterText,
@@ -736,11 +743,14 @@
             s.abort();
             s.onupdate=null;
             s.onend=null;
-            document.getElementById("currentTest").innerHTML="<span style='color:var(--text-muted); font-size:13px;'>Тест остановлен</span>";
             uiData=null;
             I("startStopBtn").className="";
             I("server").disabled=false;
             initUI();
+            
+            // Анализ и вердикт из того, что успело пройти проверку
+            var bestServer = findBestServer(groupTestResults);
+            renderVerdictCard(bestServer);
             return;
         }
         I("startStopBtn").className="running";
@@ -758,8 +768,10 @@
     
     function prepareResultTable(){
         var currentDateTime = new Date().toLocaleString();
-        var timeHtml = '📅 Сгенерировано: ' + currentDateTime +
-                       '<br><span style="font-size:11px; color:var(--text-muted);">Premium IPTV diagnostics</span>';
+        var timeHtml = '<div style="display:inline-flex; align-items:center; gap:6px; color:var(--text-muted);">' +
+                       '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>' +
+                       '<span>Сгенерировано: ' + currentDateTime + '</span>' +
+                       '</div>';
 
         var timeDiv = document.getElementById("generatedTime");
         if(!timeDiv){
@@ -850,9 +862,9 @@
             if(testCompleted) return;
             testCompleted=true;
             if(stopAllTests){
-                appendResult(SPEEDTEST_SERVERS[currentServer].name,SPEEDTEST_SERVERS[currentServer].serveropen,"STOP","STOP","STOP");
                 I("startStopBtn").className=""; I("server").disabled=false;
-                document.getElementById("currentTest").innerHTML="<span style='color:var(--text-muted); font-size:13px;'>Тест остановлен</span>";
+                var bestServer = findBestServer(groupTestResults);
+                renderVerdictCard(bestServer);
                 return;
             }
             if(!uiData) uiData={dlStatus:0,pingStatus:999,jitterStatus:999};
@@ -927,6 +939,13 @@
         return { valid: true, score: score, jitter: j, ping: p, dl: d };
     }
     
+    function isServerRecommended(jitter, dl, ping){
+        var res = calculateIPTVScore(jitter, dl, ping);
+        if (!res.valid) return false;
+        if (res.dl < 20 || res.ping > 120 || res.jitter > 15) return false;
+        return res.score >= 50;
+    }
+    
     function getServerRating(jitter, dl, ping){
         var res = calculateIPTVScore(jitter, dl, ping);
         if (dl < 15 || ping > 150 || jitter > 25) return "UNSTABLE";
@@ -984,7 +1003,7 @@
             document.getElementById("currentTest").innerHTML = `
               <div class="verdict-card" style="border-color: rgba(239, 68, 68, 0.4);">
                 <div class="verdict-header">
-                  <span class="verdict-title">Нет подходящего сервера</span>
+                  <span class="verdict-title">Нет подходящих серверов</span>
                   <span class="verdict-badge badge-bad">Критично</span>
                 </div>
                 <div class="verdict-metrics">
@@ -1055,10 +1074,9 @@
 
 <div class="container">
 
-  <!-- КОМПАКТНЫЙ HEADER -->
+  <!-- УЛЬТРАКОМПАКТНАЯ ШАПКА -->
   <header class="glass-card speed-header">
     <div class="main-title">Premium IPTV Speed Test</div>
-    <div class="sub">Диагностика сетевого соединения и серверов</div>
     <div class="auth-status-wrap">
       <div id="authServerStatus" class="auth-status">
         <span class="status-dot"></span>
