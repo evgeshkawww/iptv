@@ -602,87 +602,6 @@ window.addEventListener('focus', function() {
     setTimeout(resumeCarouselAnimation, 100);
 });
 
-// ===== ЗАЩИТА ОТ АНТИБАНЕРОВ =====
-(function antiAdblockProtection() {
-    function maskImageUrl(originalUrl) {
-        if (!originalUrl) return '';
-        const separator = originalUrl.includes('?') ? '&' : '?';
-        return originalUrl + separator + '_protect=' + Date.now() + '_' + Math.random().toString(36).substring(2, 8);
-    }
-    
-    function protectImages() {
-        const allImages = document.querySelectorAll('img');
-        allImages.forEach(img => {
-            if (img.src && !img.hasAttribute('data-protected') && !img.src.includes('placehold.co')) {
-                const originalSrc = img.src;
-                img.setAttribute('data-original', originalSrc);
-                img.setAttribute('data-protected', 'true');
-                img.src = maskImageUrl(originalSrc);
-                
-                img.onerror = function() {
-                    if (!this.hasAttribute('data-retried')) {
-                        this.setAttribute('data-retried', 'true');
-                        this.src = maskImageUrl(originalSrc);
-                    } else if (!this.src.includes('placehold.co')) {
-                        this.style.opacity = '0.6';
-                        this.style.filter = 'blur(2px)';
-                    }
-                };
-            }
-        });
-    }
-    
-    const observer = new MutationObserver(function(mutations) {
-        mutations.forEach(mutation => {
-            mutation.addedNodes.forEach(node => {
-                if (node.nodeType === 1) {
-                    if (node.tagName === 'IMG' && node.src && !node.hasAttribute('data-protected')) {
-                        const originalSrc = node.src;
-                        node.setAttribute('data-original', originalSrc);
-                        node.setAttribute('data-protected', 'true');
-                        node.src = maskImageUrl(originalSrc);
-                        
-                        node.onerror = function() {
-                            if (!this.hasAttribute('data-retried')) {
-                                this.setAttribute('data-retried', 'true');
-                                this.src = maskImageUrl(originalSrc);
-                            }
-                        };
-                    }
-                    const childImages = node.querySelectorAll ? node.querySelectorAll('img') : [];
-                    childImages.forEach(img => {
-                        if (img.src && !img.hasAttribute('data-protected') && !img.src.includes('placehold.co')) {
-                            const originalSrc = img.src;
-                            img.setAttribute('data-original', originalSrc);
-                            img.setAttribute('data-protected', 'true');
-                            img.src = maskImageUrl(originalSrc);
-                            
-                            img.onerror = function() {
-                                if (!this.hasAttribute('data-retried')) {
-                                    this.setAttribute('data-retried', 'true');
-                                    this.src = maskImageUrl(originalSrc);
-                                }
-                            };
-                        }
-                    });
-                }
-            });
-        });
-    });
-    
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
-            protectImages();
-            observer.observe(document.body, { childList: true, subtree: true });
-            setInterval(protectImages, 5000);
-        });
-    } else {
-        protectImages();
-        observer.observe(document.body, { childList: true, subtree: true });
-        setInterval(protectImages, 5000);
-    }
-})();
-
 // ===== БЕСКОНЕЧНАЯ КАРУСЕЛЬ ФИЛЬМОВ =====
 const mvList = document.getElementById('mv-list');
 
@@ -692,26 +611,6 @@ function shuffleArray(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
-}
-
-function protectMovieImages(container) {
-    const movieImages = container.querySelectorAll('img');
-    movieImages.forEach(img => {
-        if (img.src && !img.hasAttribute('data-protected') && !img.src.includes('placehold.co')) {
-            const originalSrc = img.src;
-            img.setAttribute('data-original', originalSrc);
-            img.setAttribute('data-protected', 'true');
-            const separator = originalSrc.includes('?') ? '&' : '?';
-            img.src = originalSrc + separator + '_protect=' + Date.now() + '_' + Math.random().toString(36).substring(2, 8);
-            
-            img.onerror = function() {
-                if (!this.hasAttribute('data-retried')) {
-                    this.setAttribute('data-retried', 'true');
-                    this.src = originalSrc + separator + '_retry=' + Date.now();
-                }
-            };
-        }
-    });
 }
 
 function initMovies(html) {
@@ -742,7 +641,7 @@ function initMovies(html) {
     container.innerHTML = '';
     container.appendChild(track);
     
-    // Добавляем обработчик кликов на фильмы (чтобы анимация не останавливалась)
+    // Добавляем обработчик кликов на фильмы
     const allMovies = container.querySelectorAll('.mv');
     allMovies.forEach(movie => {
         movie.addEventListener('click', function(e) {
@@ -755,10 +654,6 @@ function initMovies(html) {
     });
     
     setTimeout(() => {
-        protectMovieImages(container);
-    }, 100);
-    
-    setTimeout(() => {
         const trackWidth = track.scrollWidth;
         const viewportWidth = window.innerWidth;
         
@@ -769,7 +664,6 @@ function initMovies(html) {
                     track.appendChild(el.cloneNode(true));
                 });
             }
-            protectMovieImages(container);
         }
     }, 200);
 }
