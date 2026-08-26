@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="https://evgeshkawww.github.io/iptv/IPTV/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="https://evgeshkawww.github.io/iptv/IPTV/favicon.ico" type="image/x-icon">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>E-Online — безопасные платежи (карты + крипта)</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{ --bg1:#071127; --bg2:#071a28; --accent:#36b37e; --muted:#9aa7b2; --glass: rgba(255,255,255,0.03); }
+    :root{ --bg1:#071127; --bg2:#071a28; --accent:#38bdf8; --muted:#9aa7b2; --glass: rgba(255,255,255,0.03); }
     *{box-sizing:border-box}
     body{margin:0;font-family:"Inter",system-ui,Arial;background:linear-gradient(135deg,var(--bg1),var(--bg2));color:#e6eef6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px;}
     .container{width:100%;max-width:1120px;border-radius:14px;padding:18px 22px 20px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 10px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03);position:relative}
     header{display:flex;gap:14px;align-items:center;margin-bottom:14px;flex-wrap:wrap}
     .header-buttons{display:flex;gap:10px;margin-left:auto;align-items:center}
-    .logo{width:56px;height:56px;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff}
-    .logo img{width:100%;height:100%;object-fit:cover;display:block}
+    
+    /* УБРАЛИ БЕЛЫЙ ФОН У ЛОГОТИПА И СДЕЛАЛИ ПРОЗРАЧНЫМ */
+    .logo{width:56px;height:56px;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:transparent;border:none}
+    .logo img{width:100%;height:100%;object-fit:cover;display:block;background:transparent}
+    
     h1{margin:0;font-size:20px}
     p.lead{margin:4px 0 0 0;color:var(--muted);font-size:13px}
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
@@ -27,18 +30,23 @@
     .chip{background:var(--glass);padding:6px 8px;border-radius:8px;font-size:12px;color:var(--muted)}
     .number-container{font-family:ui-monospace, "Roboto Mono", monospace;font-size:15px;letter-spacing:1.2px;padding:8px;border-radius:8px;background:rgba(0,0,0,0.2);display:flex;align-items:center;justify-content:space-between;word-break:break-all;}
     .number-display{font-weight:500;}
-    .card-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(54,179,126,0.12);border-radius:20px;padding:4px 10px;font-size:11px;font-weight:600;color:var(--accent);border:1px solid rgba(54,179,126,0.3);letter-spacing:0.3px;}
     .holder{color:var(--muted);font-size:13px;margin-top:4px;}
     .actions{display:flex;gap:8px;margin-top:auto;flex-wrap:wrap}
-    button.copy, button.toggle{background:rgba(54,179,126,0.12);border:1px solid rgba(54,179,126,0.35);color:var(--accent);padding:8px 10px;border-radius:8px;cursor:pointer;font-weight:600;display:inline-flex;gap:8px;align-items:center;transition:all 0.2s ease;font-size:13px;}
-    button.copy:hover, button.toggle:hover{background:rgba(54,179,126,0.25);border-color:var(--accent);transform:translateY(-1px);}
+    
+    /* ВСЁ ПЕРЕВЕЛИ НА СИНИЙ/НЕЙТРАЛЬНЫЙ СТИЛЬ БЕЗ ЗЕЛЕНИ */
+    button.copy, button.toggle{background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.3);color:var(--accent);padding:8px 10px;border-radius:8px;cursor:pointer;font-weight:600;display:inline-flex;gap:8px;align-items:center;transition:all 0.2s ease;font-size:13px;}
+    button.copy:hover, button.toggle:hover{background:rgba(56,189,248,0.2);border-color:var(--accent);transform:translateY(-1px);}
     button.copy:active, button.toggle:active{transform:translateY(1px);}
+    
     .toast-msg{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#1f2a3a;color:#e6eef6;padding:10px 20px;border-radius:40px;font-size:14px;font-weight:500;z-index:1000;box-shadow:0 4px 12px rgba(0,0,0,0.4);border-left:4px solid var(--accent);backdrop-filter:blur(8px);transition:opacity 0.2s;pointer-events:none;}
-    a.donate{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:linear-gradient(90deg,#16a34a,#36b37e);color:#042022;padding:9px 12px;border-radius:8px;font-weight:700;transition:all 0.2s;}
+    
+    a.donate{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:linear-gradient(90deg,#0284c7,#38bdf8);color:#030712;padding:9px 12px;border-radius:8px;font-weight:700;transition:all 0.2s;}
     a.donate:hover{filter:brightness(1.05);transform:scale(0.98);}
+    
     .crypto-btn{background:linear-gradient(90deg,#f0b90b,#fcd535);color:#1e2026;padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,0.1);transition:all 0.2s;}
-    .crypto-btn:first-child{background:linear-gradient(90deg,#16a34a,#36b37e);color:#042022;}
+    .crypto-btn:first-child{background:linear-gradient(90deg,#0284c7,#38bdf8);color:#030712;}
     .crypto-btn:hover{filter:brightness(1.05);transform:scale(0.98);}
+    
     footer{margin-top:14px;color:var(--muted);font-size:13px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
     .qr-wrap{display:flex;gap:12px;align-items:center}
     .qr-wrap img{width:84px;height:84px;border-radius:8px;background:#fff;object-fit:cover;cursor:pointer;transition:0.2s;border:1px solid rgba(255,255,255,0.1);}
@@ -48,6 +56,7 @@
     .bottom-logos img{width:28px;height:28px;object-fit:cover;border-radius:6px}
     .bottom-logos .label{font-size:12px;color:var(--muted)}
     .full-number-hint{font-size:11px;color:var(--muted);margin-top:6px;background:rgba(0,0,0,0.2);padding:4px 8px;border-radius:8px;display:inline-block;}
+    
     /* модальное окно QR */
     .qr-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); backdrop-filter: blur(8px); z-index: 2000; justify-content: center; align-items: center; cursor: pointer; }
     .qr-modal.active { display: flex; }
@@ -56,10 +65,12 @@
     .qr-modal-img img { width: 100%; height: auto; display: block; border-radius: 16px; }
     .qr-modal-text { color: white; font-size: 16px; background: rgba(0,0,0,0.6); padding: 10px 20px; border-radius: 40px; font-weight: 500; }
     .close-modal-hint { color: var(--muted); font-size: 13px; margin-top: 8px; }
+    
     @media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr)} .header-buttons{margin-left:0;width:100%;justify-content:flex-start} }
     @media (max-width:480px){ .grid{grid-template-columns:repeat(1,1fr)} .logo{width:48px;height:48px} h1{font-size:18px} .bank-logo{width:32px;height:32px} .bottom-logos img{width:22px;height:22px} }
-    /* дополнительный акцент на то, что это номера карт, а не телефоны */
-    .card-number-hint { display: flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.4); border-radius: 10px; padding: 5px 10px; margin-top: 6px; font-size: 12px; color: #bdd3ff; border-left: 2px solid var(--accent); }
+    
+    /* Чистая плашка без зеленой левой обводки */
+    .card-number-hint { display: flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.3); border-radius: 8px; padding: 5px 10px; margin-top: 6px; font-size: 12px; color: #bdd3ff; border: 1px solid rgba(255,255,255,0.05); border-left: 2px solid var(--accent); }
     .card-number-hint svg { width: 14px; height: 14px; fill: none; stroke: var(--accent); }
   </style>
 </head>
@@ -71,17 +82,16 @@
       </div>
       <div>
         <h1>E-Online</h1>
-        <p class="lead">💳 Принимаются только банковские карты. Все номера ниже — это <strong>номера карт</strong>, а не телефоны. Пожалуйста, переводите только на банковские карты.</p>
+        <p class="lead">Принимаются только банковские карты. Все номера ниже — это <strong>номера карт</strong>, а не телефоны. Пожалуйста, переводите только на банковские карты.</p>
       </div>
-      <!-- КНОПКИ КРИПТО-ОПЛАТ, РАСПОЛОЖЕННЫЕ НАД КАРТАМИ (внутри header, справа) -->
       <div class="header-buttons">
-        <a href="https://premium-iptv.ru/tariffs.php" class="crypto-btn" style="background:linear-gradient(90deg,#16a34a,#36b37e);color:#042022;">Оплата криптой Online</a>
+        <a href="https://premium-iptv.ru/tariffs.php" class="crypto-btn">Оплата криптой Online</a>
         <a href="https://premium-iptv.ru/tariffs_p.php" class="crypto-btn">Оплата криптой Plugin</a>
       </div>
     </header>
 
     <div class="grid">
-      <!-- КАРТА 1: МИР (Без комиссии) RUS BLR   номер: 9112 3880 3803 5577 -->
+      <!-- КАРТА 1 -->
       <div class="card" data-card-id="1">
         <div class="title">
           <div class="bank">
@@ -93,18 +103,17 @@
           <span class="number-display" data-full="9112388038035577" data-masked="**** **** **** 5577">**** **** **** 5577</span>
         </div>
         <div class="holder">EVGENIY MASK</div>
-        <!-- Четкая подпись "номер карты" вместо телефона -->
         <div class="card-number-hint">
           <svg viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path d="M3 10h18M7 15h3m4 0h3M6 5h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>💳 Номер карты (не телефон)</span>
+          <span>Номер карты (не телефон)</span>
         </div>
         <div class="actions">
-          <button class="copy" data-number="9112388038035577">📋 Скопировать номер карты</button>
-          <button class="toggle" data-full="9112388038035577" data-masked="**** **** **** 5577">👁️ Показать карту</button>
+          <button class="copy" data-number="9112388038035577">Скопировать номер карты</button>
+          <button class="toggle" data-full="9112388038035577" data-masked="**** **** **** 5577">Показать карту</button>
         </div>
       </div>
 
-      <!-- КАРТА 2: MasterCard KZ UZ TJ USA   номер: 5185 9749 0681 0892 -->
+      <!-- КАРТА 2 -->
       <div class="card" data-card-id="2">
         <div class="title">
           <div class="bank">
@@ -118,15 +127,15 @@
         <div class="holder">EVGENIY MASK</div>
         <div class="card-number-hint">
           <svg viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path d="M3 10h18M7 15h3m4 0h3M6 5h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>💳 Номер карты (не телефон)</span>
+          <span>Номер карты (не телефон)</span>
         </div>
         <div class="actions">
-          <button class="copy" data-number="5185974906810892">📋 Скопировать номер карты</button>
-          <button class="toggle" data-full="5185974906810892" data-masked="**** **** **** 0892">👁️ Показать карту</button>
+          <button class="copy" data-number="5185974906810892">Скопировать номер карты</button>
+          <button class="toggle" data-full="5185974906810892" data-masked="**** **** **** 0892">Показать карту</button>
         </div>
       </div>     
 
-      <!-- КАРТА 3: MasterCard (логотип мир) номер: 5599 0021 1722 2853 -->
+      <!-- КАРТА 3 -->
       <div class="card" data-card-id="3">
         <div class="title">
           <div class="bank">
@@ -140,15 +149,15 @@
         <div class="holder">EVGENIY MASK</div>
         <div class="card-number-hint">
           <svg viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path d="M3 10h18M7 15h3m4 0h3M6 5h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>💳 Номер карты (не телефон)</span>
+          <span>Номер карты (не телефон)</span>
         </div>
         <div class="actions">
-          <button class="copy" data-number="5599002117222853">📋 Скопировать номер карты</button>
-          <button class="toggle" data-full="5599002117222853" data-masked="**** **** **** 2853">👁️ Показать карту</button>
+          <button class="copy" data-number="5599002117222853">Скопировать номер карты</button>
+          <button class="toggle" data-full="5599002117222853" data-masked="**** **** **** 2853">Показать карту</button>
         </div>
       </div>
 
-      <!-- КАРТА 4: МИР  номер: 2204 1201 2935 8848 -->
+      <!-- КАРТА 4 -->
       <div class="card" data-card-id="4">
         <div class="title">
           <div class="bank">
@@ -162,19 +171,19 @@
         <div class="holder">EVGENIY MASK</div>
         <div class="card-number-hint">
           <svg viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path d="M3 10h18M7 15h3m4 0h3M6 5h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>💳 Номер карты (не телефон)</span>
+          <span>Номер карты (не телефон)</span>
         </div>
         <div class="actions">
-          <button class="copy" data-number="2204120129358848">📋 Скопировать номер карты</button>
-          <button class="toggle" data-full="2204120129358848" data-masked="**** **** **** 8848">👁️ Показать карту</button>
+          <button class="copy" data-number="2204120129358848">Скопировать номер карты</button>
+          <button class="toggle" data-full="2204120129358848" data-masked="**** **** **** 8848">Показать карту</button>
         </div>
       </div>
 
-      <!-- КАРТА 5: Белинвестбанк МИР  номер: 9112 3930 4021 9532 -->
+      <!-- КАРТА 5 -->
       <div class="card" data-card-id="5">
         <div class="title">
           <div class="bank">
-            <span class="bank-logo" title="МИР Белинвестбанк"><img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/%D0%B1%D0%B5%D0%BB%D0%B8%D0%BD%D0%B2%D0%B5%D1%81%D1%82.jpeg" alt="Белинвестбанк логотип"></span>
+            <span class="bank-logo" title="Белинвестбанк"><img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/%D0%B1%D0%B5%D0%BB%D0%B8%D0%BD%D0%B2%D0%B5%D1%81%D1%82.jpeg" alt="Белинвестбанк логотип"></span>
             МИР <span class="chip">Карта</span>
           </div>
         </div>
@@ -184,15 +193,15 @@
         <div class="holder">EVGENIY MASK</div>
         <div class="card-number-hint">
           <svg viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path d="M3 10h18M7 15h3m4 0h3M6 5h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>💳 Номер карты (не телефон)</span>
+          <span>Номер карты (не телефон)</span>
         </div>
         <div class="actions">
-          <button class="copy" data-number="9112393040219532">📋 Скопировать номер карты</button>
-          <button class="toggle" data-full="9112393040219532" data-masked="**** **** **** 9532">👁️ Показать карту</button>
+          <button class="copy" data-number="9112393040219532">Скопировать номер карты</button>
+          <button class="toggle" data-full="9112393040219532" data-masked="**** **** **** 9532">Показать карту</button>
         </div>
       </div>
 
-      <!-- КАРТА 6: Юмани (YooMoney) — здесь QR и кошелек, но тоже помечаем что это номер кошелька, а не телефона -->
+      <!-- КАРТА 6 -->
       <div class="card" data-card-id="6">
         <div class="title">
           <div class="bank">
@@ -203,14 +212,13 @@
         <div class="number-container">
           <span class="number-display" data-full="4100119260753027" data-masked="**** **** **** 3027">**** **** **** 3027</span>
         </div>
-        <!-- для юмани тоже акцент что это не телефон -->
-        <div class="card-number-hint" style="border-left-color:#f0b90b;">
+        <div class="card-number-hint">
           <svg viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path d="M12 4v16M8 8l4-4 4 4M8 16l4 4 4-4" stroke-linecap="round"/></svg>
-          <span>💰 Кошелек ЮMoney (не телефон)</span>
+          <span>Кошелек ЮMoney (не телефон)</span>
         </div>
         <div class="actions">
-          <button class="copy" data-number="4100119260753027">📋 Скопировать номер кошелька</button>
-          <a class="donate" href="https://yoomoney.ru/to/4100119260753027" target="_blank" rel="noopener noreferrer">💰 Перейти на донат</a>
+          <button class="copy" data-number="4100119260753027">Скопировать номер кошелька</button>
+          <a class="donate" href="https://yoomoney.ru/to/4100119260753027" target="_blank" rel="noopener noreferrer">Перейти на донат</a>
         </div>
         <div style="margin-top:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
           <div class="qr-wrap" title="Нажмите, чтобы увеличить QR-код">
@@ -218,9 +226,8 @@
           </div>
           <div style="color:var(--muted);font-size:13px">Нажмите на QR, чтобы открыть на весь экран</div>
         </div>
-        <!-- Подсказка с полным номером кошелька и пометкой "кошелек, а не телефон" -->
         <div class="full-number-hint" style="cursor:pointer; display:flex; align-items:center; gap:6px;">
-          <span>🧾 Кошелек ЮMoney: 4100119260753027 (это не номер телефона)</span>
+          <span>Кошелек ЮMoney: 4100119260753027 (это не номер телефона)</span>
         </div>
       </div>
     </div>
@@ -228,12 +235,7 @@
     <footer>
       <div class="bottom-logos" aria-hidden="true">
         <div class="item" title="Безопасные платежи">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-            <rect width="24" height="24" rx="6" fill="#033b4a"/>
-            <path d="M12 6l6 2v4c0 5-4 8-6 9-2-1-6-4-6-9V8l6-2z" fill="#36b37e"/>
-            <path d="M10 12l2 2 4-4" stroke="#042022" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          </svg>
-          <div class="label">Безопасные платежи</div>
+          <div class="label">Защищенные переводы</div>
         </div>
         <div class="item" title="ЮMoney">
           <img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/%D1%8E%D0%BC%D0%B0%D0%BD%D0%B8.png" alt="ЮMoney">
@@ -253,8 +255,8 @@
       <div class="qr-modal-img">
         <img id="modalQrImage" src="" alt="QR код увеличенный">
       </div>
-      <div class="qr-modal-text">📱 Отсканируйте для оплаты</div>
-      <div class="close-modal-hint">✖ Нажмите в любом месте, чтобы закрыть</div>
+      <div class="qr-modal-text">Отсканируйте для оплаты</div>
+      <div class="close-modal-hint">Нажмите в любом месте, чтобы закрыть</div>
     </div>
   </div>
 
@@ -270,7 +272,7 @@
           toast.style.borderLeftColor = '#e34d4d';
           toast.style.background = '#2a1a1f';
         } else {
-          toast.style.borderLeftColor = '#36b37e';
+          toast.style.borderLeftColor = '#38bdf8';
         }
         document.body.appendChild(toast);
         setTimeout(() => { if(toast && toast.parentNode) toast.remove(); }, 2200);
@@ -279,7 +281,7 @@
       async function copyToClipboard(text, friendlyName = 'реквизит') {
         try {
           await navigator.clipboard.writeText(text);
-          showToast(`✅ ${friendlyName} скопирован: ${text.slice(-4)}...`, false);
+          showToast(`Скопировано: ${friendlyName} (${text.slice(-4)})`, false);
         } catch (err) {
           const textarea = document.createElement('textarea');
           textarea.value = text;
@@ -287,12 +289,11 @@
           textarea.select();
           const success = document.execCommand('copy');
           document.body.removeChild(textarea);
-          if(success) showToast(`📋 ${friendlyName} скопирован`, false);
-          else showToast(`❌ Не удалось скопировать`, true);
+          if(success) showToast(`Скопировано: ${friendlyName}`, false);
+          else showToast(`Не удалось скопировать`, true);
         }
       }
 
-      // Кнопки копирования (с понятным названием)
       const copyButtons = document.querySelectorAll('.copy');
       copyButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -311,7 +312,6 @@
         });
       });
 
-      // Показать/скрыть номер карты
       const toggleButtons = document.querySelectorAll('.toggle');
       toggleButtons.forEach(btn => {
         const full = btn.getAttribute('data-full');
@@ -320,7 +320,7 @@
         const numberSpan = btn.closest('.card')?.querySelector('.number-display');
         if(!numberSpan) return;
         let isRevealed = false;
-        const updateButtonText = () => { btn.innerHTML = isRevealed ? '🙈 Скрыть' : '👁️ Показать'; };
+        const updateButtonText = () => { btn.innerHTML = isRevealed ? 'Скрыть' : 'Показать'; };
         const updateDisplay = () => {
           if(isRevealed) {
             let formattedFull = full;
@@ -337,11 +337,10 @@
           isRevealed = !isRevealed;
           updateButtonText();
           updateDisplay();
-          showToast(isRevealed ? '🔓 Номер карты открыт' : '🔒 Номер скрыт', false);
+          showToast(isRevealed ? 'Номер карты открыт' : 'Номер скрыт', false);
         });
       });
 
-      // QR на весь экран (только для Юмани)
       const qrModal = document.getElementById('qrModal');
       const modalQrImage = document.getElementById('modalQrImage');
       const yoomQrImage = document.getElementById('yoom-qr-fullscreen');
@@ -361,16 +360,14 @@
         document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && qrModal.classList.contains('active')) closeQrModal(); });
       }
 
-      // клик по full-number-hint для копирования кошелька Юмани
       const yoomHint = document.querySelector('.full-number-hint');
       if(yoomHint && yoomHint.closest('.card')?.querySelector('.bank')?.innerText.includes('Юмани')) {
         yoomHint.addEventListener('click', () => { copyToClipboard('4100119260753027', 'кошелек ЮMoney'); });
         yoomHint.title = 'Нажмите, чтобы скопировать номер кошелька';
       }
       const styleExtra = document.createElement('style');
-      styleExtra.textContent = `.full-number-hint { transition: 0.1s; } .full-number-hint:hover { background: rgba(84, 196, 118, 0.25); text-decoration: underline; } .card-number-hint { transition: 0.1s; }`;
+      styleExtra.textContent = `.full-number-hint { transition: 0.1s; } .full-number-hint:hover { background: rgba(56, 189, 248, 0.15); text-decoration: underline; } .card-number-hint { transition: 0.1s; }`;
       document.head.appendChild(styleExtra);
-      console.log('Страница обновлена: добавлены кнопки оплаты криптовалютой над карточками.');
     })();
   </script>
 </body>
