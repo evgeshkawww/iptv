@@ -1,6 +1,6 @@
 #EXTM3U url-tvg="https://raw.githubusercontent.com/evgeshkawww/iptv/main/IPTV/epg.xml.gz,https://raw.githubusercontent.com/evgeshkawww/iptv/main/IPTV/epg7.xml.gz,http://epg.one/epg.xml.gz"
-#EXTINF:-1, Ревизия - 03.09.2026 17:50
-http://cdn10.live-tv.od.ua:8081/leonovtv/test-abr/playlist.m3u8
+#EXTINF:-1, Ревизия - 03.09.2026 18:06
+http://premium-iptv.ru/promo.m3u8
 
 
 #EXTINF:-1 group-title="KINO ZAL",Ласкаво просимо до капкану|2013|Бойовик|Кримінал|Трилер|Велика Британія|США
