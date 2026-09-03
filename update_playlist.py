@@ -7,9 +7,10 @@ APPEND_FILE = os.path.join("IPTV", "assets", "00111112222.m3u")
 OUTPUT_FILE = os.path.join("IPTV", "assets", "ropotel7844.m3u")
 
 HEADER_EPG = '#EXTM3U url-tvg="https://raw.githubusercontent.com/evgeshkawww/iptv/main/IPTV/epg.xml.gz,https://raw.githubusercontent.com/evgeshkawww/iptv/main/IPTV/epg7.xml.gz,http://epg.one/epg.xml.gz"'
+PROMO_STREAM_URL = "http://premium-iptv.ru/promo.m3u8"
 
 def main():
-    # 1. Задаем полные браузерные заголовки для обхода блокировки 403
+    # 1. Задаем браузерные заголовки
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
         "Accept": "*/*",
@@ -23,13 +24,14 @@ def main():
 
     lines = content.splitlines()
 
-    # 2. Формируем дату/время (по времени сервера UTC)
+    # 2. Формируем дату/время
     now_str = datetime.now().strftime("%d.%m.%Y %H:%M")
     new_revision_line = f"#EXTINF:-1, Ревизия - {now_str}"
 
-    # 3. Меняем заголовок и вторую строку
+    # 3. Меняем заголовок (строка 1), название ревизии (строка 2) и ссылку на поток (строка 3)
     lines[0] = HEADER_EPG
     lines[1] = new_revision_line
+    lines[2] = PROMO_STREAM_URL
 
     # 4. Читаем локальный файл хвоста
     append_lines = []
@@ -44,7 +46,7 @@ def main():
     # 5. Склеиваем всё вместе
     all_lines = lines + append_lines
 
-    # 6. Сохраняем в UTF-8 без BOM с переводами строк LF (\n)
+    # 6. Сохраняем результат
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
     with open(OUTPUT_FILE, "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(all_lines) + "\n")
