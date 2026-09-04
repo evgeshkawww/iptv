@@ -24,7 +24,7 @@ def clean_group_title(match):
     return f'group-title="{val}"'
 
 def main():
-    # 1. Задаем браузерные заголовки
+    # 1. Браузерные заголовки
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
         "Accept": "*/*",
@@ -38,45 +38,54 @@ def main():
 
     raw_lines = content.splitlines()
 
-    # 2. Фильтрация KINO ZAL и очистка group-title
-    cleaned_lines = []
-    skip_current_track = False
+    # 2. Разбираем плейлист на отдельные блоки каналов
+    # header_lines будут содержать первые служебные строки до первого канала
+    header_lines = []
+    blocks = []
+    current_block = []
 
     for line in raw_lines:
-        line_clean = line.strip()
-        
-        # Если строка с описанием канала
+        line_clean = line.rstrip("\r\n")
         if line_clean.startswith("#EXTINF"):
-            # Проверяем, не KINO ZAL ли это
-            if re.search(r'group-title\s*=\s*["\']KINO ZAL["\']', line_clean, re.IGNORECASE):
-                skip_current_track = True
-                continue
-            else:
-                skip_current_track = False
-                # Очищаем рубрики от VPN и скобок
-                line_clean = re.sub(r'group-title="([^"]*?)"', clean_group_title, line_clean)
-                cleaned_lines.append(line_clean)
-                continue
+            if current_block:
+                blocks.append(current_block)
+                current_block = []
+            current_block.append(line_clean)
+        elif current_block:
+            current_block.append(line_clean)
+        else:
+            header_lines.append(line_clean)
+            
+    if current_block:
+        blocks.append(current_block)
 
-        # Если это ссылка или вспомогательный тег (#EXTVLCOPT) удаляемого канала
-        if skip_current_track:
-            continue
+    # 3. Фильтруем блоки: выкидываем всё, где есть KINO ZAL
+    filtered_lines = list(header_lines)
+    for block in blocks:
+        extinf_line = block[0]
+        # Проверяем наличие KINO ZAL внутри group-title
+        if re.search(r'group-title\s*=\s*["\'][^"\']*kino\s*zal[^"\']*["\']', extinf_line, re.IGNORECASE):
+            continue  # Пропускаем весь блок целиком вместе с #EXTVLCOPT и ссылками
 
-        # Сохраняем остальные строки (пустые строки, EPG заголовок и т.д.)
-        cleaned_lines.append(line_clean)
+        # Если блок остается — чистим в нем group-title от VPN и скобок
+        block[0] = re.sub(r'group-title="([^"]*?)"', clean_group_title, block[0])
+        filtered_lines.extend(block)
 
-    lines = cleaned_lines
+    lines = filtered_lines
 
-    # 3. Формируем дату/время и категорию для первого канала
+    # 4. Формируем дату/время и категорию для первого канала
     now_str = datetime.now().strftime("%d.%m.%Y %H:%M")
     new_revision_line = f'#EXTINF:-1 group-title="Приобрести V.I.P⚠️", Ревизия - {now_str}'
 
-    # 4. Меняем заголовок (строка 1), название ревизии с категорией (строка 2) и ссылку на поток (строка 3)
-    lines[0] = HEADER_EPG
-    lines[1] = new_revision_line
-    lines[2] = PROMO_STREAM_URL
+    # 5. Меняем заголовок (строка 1), ревизию (строка 2) и промо-поток (строка 3)
+    if len(lines) > 0:
+        lines[0] = HEADER_EPG
+    if len(lines) > 1:
+        lines[1] = new_revision_line
+    if len(lines) > 2:
+        lines[2] = PROMO_STREAM_URL
 
-    # 5. Читаем локальный файл хвоста
+    # 6. Читаем локальный файл хвоста
     append_lines = []
     if os.path.exists(APPEND_FILE):
         with open(APPEND_FILE, "r", encoding="utf-8", errors="ignore") as f:
@@ -86,10 +95,10 @@ def main():
                     continue
                 append_lines.append(line_c)
 
-    # 6. Склеиваем всё вместе
+    # 7. Склеиваем всё вместе
     all_lines = lines + append_lines
 
-    # 7. Сохраняем результат в формате UTF-8 LF
+    # 8. Сохраняем в UTF-8 без BOM с переводами строк LF (\n)
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
     with open(OUTPUT_FILE, "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(all_lines) + "\n")
