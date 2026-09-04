@@ -13,16 +13,24 @@ PROMO_STREAM_URL = "http://premium-iptv.ru/promo.m3u8"
 def clean_group_name(val):
     # Заменяем возможные неразрывные пробелы
     val = val.replace('\xa0', ' ')
-    # 1. Удаляем вариации VPN
+    
+    # 1. Специфичные переименования (игнорируем регистр и убираем пробел перед эмодзи)
+    val = re.sub(r'МУЗИКА\s*🎶', 'Музыка🎶', val, flags=re.IGNORECASE)
+    
+    # 2. Удаляем вариации VPN
     val = re.sub(r'\s+с\s+VPN\b', '', val, flags=re.IGNORECASE)
     val = re.sub(r'[-–—]\s*VPN\b', '', val, flags=re.IGNORECASE)
     val = re.sub(r'\bVPN\b', '', val, flags=re.IGNORECASE)
-    # Удаляем слово Portal (если вдруг осталось в локальном файле)
+    
+    # 3. Удаляем слово Portal
     val = re.sub(r'\bPortal\b', '', val, flags=re.IGNORECASE)
-    # 2. Удаляем абсолютно все круглые скобки
+    
+    # 4. Удаляем абсолютно все круглые скобки
     val = val.replace('(', '').replace(')', '')
-    # 3. Убираем лишние пробелы
+    
+    # 5. Убираем лишние пробелы
     val = re.sub(r'\s{2,}', ' ', val).strip()
+    
     return val
 
 def main():
@@ -53,7 +61,6 @@ def main():
 
     for line in raw_lines:
         line_clean = line.rstrip("\r\n")
-        # Игнорируем пустые строки и старые M3U-заголовки
         if not line_clean or line_clean.startswith("#EXTM3U"):
             continue
 
@@ -74,21 +81,17 @@ def main():
     for block in blocks:
         extinf_line = block[0]
 
-        # Выкидываем оригинальную строку ревизии от источника
         if "Ревизия" in extinf_line or "iptv.org.ua" in extinf_line or "tva.org.ua" in extinf_line:
             continue
 
-        # Извлекаем значение group-title
         gt_match = re.search(r'group-title="([^"]*)"', extinf_line, re.IGNORECASE)
         if gt_match:
             raw_group = gt_match.group(1)
             clean_group = clean_group_name(raw_group)
 
-            # ЖЕЛЕЗНАЯ ПРОВЕРКА: если получилось строго "KINO ZAL" — выкидываем весь канал!
             if clean_group.upper() == "KINO ZAL":
                 continue
 
-            # Для оставшихся (включая "4K KINO ZAL") обновляем рубрику без скобок и VPN
             block[0] = extinf_line[:gt_match.start(1)] + clean_group + extinf_line[gt_match.end(1):]
 
         cleaned_channels.extend(block)
