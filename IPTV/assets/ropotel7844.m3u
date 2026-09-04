@@ -1,5 +1,5 @@
 #EXTM3U url-tvg="https://raw.githubusercontent.com/evgeshkawww/iptv/main/IPTV/epg.xml.gz,https://raw.githubusercontent.com/evgeshkawww/iptv/main/IPTV/epg7.xml.gz,http://epg.one/epg.xml.gz"
-#EXTINF:-1 group-title="Приобрести V.I.P⚠️", Ревизия - 04.09.2026 08:44
+#EXTINF:-1 group-title="Приобрести V.I.P⚠️", Ревизия - 04.09.2026 08:53
 http://premium-iptv.ru/promo.m3u8
 #EXTINF:-1 group-title="KINO ZAL" tvg-logo="https://pic.rtbcdn.ru/video/2026-08-25/52/1e/521e3a859d675eea015a3365041addcd.jpg", Детройт (2026)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1
