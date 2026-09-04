@@ -16,14 +16,13 @@ def clean_group_title(match):
     val = re.sub(r'\s+с\s+VPN\b', '', val, flags=re.IGNORECASE)
     val = re.sub(r'[-–—]\s*VPN\b', '', val, flags=re.IGNORECASE)
     val = re.sub(r'\bVPN\b', '', val, flags=re.IGNORECASE)
-    # 2. Удаляем абсолютно все круглые скобки
+    # 2. Удаляем круглые скобки
     val = val.replace('(', '').replace(')', '')
     # 3. Убираем лишние пробелы
     val = re.sub(r'\s{2,}', ' ', val).strip()
     return f'group-title="{val}"'
 
 def main():
-    # 1. Браузерные заголовки
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
         "Accept": "*/*",
@@ -37,13 +36,16 @@ def main():
 
     raw_lines = content.splitlines()
 
-    # 2. Разбиваем плейлист на блоки по каналам
-    header_lines = []
+    # 1. Группируем входящий плейлист по блокам (каждый блок = один канал)
     blocks = []
     current_block = []
 
     for line in raw_lines:
         line_clean = line.rstrip("\r\n")
+        # Пропускаем пустые строки и старый заголовок
+        if not line_clean or line_clean.startswith("#EXTM3U"):
+            continue
+
         if line_clean.startswith("#EXTINF"):
             if current_block:
                 blocks.append(current_block)
@@ -51,62 +53,60 @@ def main():
             current_block.append(line_clean)
         elif current_block:
             current_block.append(line_clean)
-        else:
-            header_lines.append(line_clean)
-            
+
     if current_block:
         blocks.append(current_block)
 
-    # 3. Фильтруем: сносим ТОЛЬКО чистый KINO ZAL (4K KINO ZAL остается)
-    filtered_lines = list(header_lines)
+    # 2. Фильтрация каналов
+    cleaned_channels = []
+
     for block in blocks:
         extinf_line = block[0]
-        
-        # Захватываем само значение внутри group-title="..."
+
+        # Удаляем старую ревизию источника
+        if "Ревизия" in extinf_line or "iptv.org.ua" in extinf_line:
+            continue
+
+        # Извлекаем точное значение group-title
         gt_match = re.search(r'group-title="([^"]*)"', extinf_line, re.IGNORECASE)
         if gt_match:
-            group_name = gt_match.group(1).strip().lower()
-            # Если это строго "kino zal", выкидываем весь блок канала целиком
-            if group_name == "kino zal":
+            group_value = gt_match.group(1).strip().upper()
+            # Если это в точности "KINO ZAL" — полностью отбрасываем весь блок
+            if group_value == "KINO ZAL":
                 continue
 
-        # Для оставшихся каналов (включая "4K KINO ZAL") чистим скобки и VPN
+        # В оставшихся категориях (включая "4K KINO ZAL") убираем VPN и скобки
         block[0] = re.sub(r'group-title="([^"]*?)"', clean_group_title, block[0])
-        filtered_lines.extend(block)
+        cleaned_channels.extend(block)
 
-    lines = filtered_lines
-
-    # 4. Формируем дату/время и категорию для первого промо-канала
+    # 3. Собираем результирующий список строк
     now_str = datetime.now().strftime("%d.%m.%Y %H:%M")
     new_revision_line = f'#EXTINF:-1 group-title="Приобрести V.I.P⚠️", Ревизия - {now_str}'
 
-    # 5. Меняем заголовок (строка 1), ревизию (строка 2) и промо-ссылку (строка 3)
-    if len(lines) > 0:
-        lines[0] = HEADER_EPG
-    if len(lines) > 1:
-        lines[1] = new_revision_line
-    if len(lines) > 2:
-        lines[2] = PROMO_STREAM_URL
+    output_lines = [
+        HEADER_EPG,
+        new_revision_line,
+        PROMO_STREAM_URL
+    ]
 
-    # 6. Читаем локальный хвост 00111112222.m3u
-    append_lines = []
+    # Добавляем отфильтрованные каналы из сети
+    output_lines.extend(cleaned_channels)
+
+    # 4. Добавляем хвост из файла 00111112222.m3u
     if os.path.exists(APPEND_FILE):
         with open(APPEND_FILE, "r", encoding="utf-8", errors="ignore") as f:
             for line in f:
                 line_c = line.rstrip("\r\n")
-                if line_c.startswith("#EXTM3U"):
+                if not line_c or line_c.startswith("#EXTM3U"):
                     continue
-                append_lines.append(line_c)
+                output_lines.append(line_c)
 
-    # 7. Склеиваем всё вместе
-    all_lines = lines + append_lines
-
-    # 8. Сохраняем результат
+    # 5. Записываем файл в UTF-8 без BOM с окончаниями LF (\n)
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
     with open(OUTPUT_FILE, "w", encoding="utf-8", newline="\n") as f:
-        f.write("\n".join(all_lines) + "\n")
+        f.write("\n".join(output_lines) + "\n")
 
-    print(f"Плейлист успешно сформирован: {OUTPUT_FILE}")
+    print(f"Готово! Сохранено строк: {len(output_lines)}")
 
 if __name__ == "__main__":
     main()
