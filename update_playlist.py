@@ -36,14 +36,35 @@ def main():
     with urllib.request.urlopen(req, timeout=30) as resp:
         content = resp.read().decode("utf-8", errors="ignore")
 
-    lines = content.splitlines()
+    raw_lines = content.splitlines()
 
-    # 2. Очищаем рубрики от VPN и всех скобок
+    # 2. Фильтрация KINO ZAL и очистка group-title
     cleaned_lines = []
-    for line in lines:
-        if line.startswith("#EXTINF"):
-            line = re.sub(r'group-title="([^"]*?)"', clean_group_title, line)
-        cleaned_lines.append(line)
+    skip_current_track = False
+
+    for line in raw_lines:
+        line_clean = line.strip()
+        
+        # Если строка с описанием канала
+        if line_clean.startswith("#EXTINF"):
+            # Проверяем, не KINO ZAL ли это
+            if re.search(r'group-title\s*=\s*["\']KINO ZAL["\']', line_clean, re.IGNORECASE):
+                skip_current_track = True
+                continue
+            else:
+                skip_current_track = False
+                # Очищаем рубрики от VPN и скобок
+                line_clean = re.sub(r'group-title="([^"]*?)"', clean_group_title, line_clean)
+                cleaned_lines.append(line_clean)
+                continue
+
+        # Если это ссылка или вспомогательный тег (#EXTVLCOPT) удаляемого канала
+        if skip_current_track:
+            continue
+
+        # Сохраняем остальные строки (пустые строки, EPG заголовок и т.д.)
+        cleaned_lines.append(line_clean)
+
     lines = cleaned_lines
 
     # 3. Формируем дату/время и категорию для первого канала
@@ -60,10 +81,10 @@ def main():
     if os.path.exists(APPEND_FILE):
         with open(APPEND_FILE, "r", encoding="utf-8", errors="ignore") as f:
             for line in f:
-                line_clean = line.rstrip("\r\n")
-                if line_clean.startswith("#EXTM3U"):
+                line_c = line.rstrip("\r\n")
+                if line_c.startswith("#EXTM3U"):
                     continue
-                append_lines.append(line_clean)
+                append_lines.append(line_c)
 
     # 6. Склеиваем всё вместе
     all_lines = lines + append_lines
