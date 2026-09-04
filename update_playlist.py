@@ -24,11 +24,11 @@ def main():
 
     lines = content.splitlines()
 
-    # 2. Формируем дату/время
+    # 2. Формируем дату/время и категорию для первого канала
     now_str = datetime.now().strftime("%d.%m.%Y %H:%M")
-    new_revision_line = f"#EXTINF:-1, Ревизия - {now_str}"
+    new_revision_line = f'#EXTINF:-1 group-title="Приобрести V.I.P⚠️", Ревизия - {now_str}'
 
-    # 3. Меняем заголовок (строка 1), название ревизии (строка 2) и ссылку на поток (строка 3)
+    # 3. Меняем заголовок (строка 1), название ревизии с категорией (строка 2) и ссылку на поток (строка 3)
     lines[0] = HEADER_EPG
     lines[1] = new_revision_line
     lines[2] = PROMO_STREAM_URL
