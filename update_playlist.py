@@ -16,14 +16,14 @@ def clean_group_title(match):
     val = re.sub(r'\s+с\s+VPN\b', '', val, flags=re.IGNORECASE)
     val = re.sub(r'[-–—]\s*VPN\b', '', val, flags=re.IGNORECASE)
     val = re.sub(r'\bVPN\b', '', val, flags=re.IGNORECASE)
-    # 2. Удаляем абсолютно все круглые скобки ( и )
+    # 2. Удаляем абсолютно все круглые скобки
     val = val.replace('(', '').replace(')', '')
     # 3. Убираем лишние пробелы
     val = re.sub(r'\s{2,}', ' ', val).strip()
     return f'group-title="{val}"'
 
 def main():
-    # 1. Задаем браузерные заголовки для обхода защиты 403
+    # 1. Браузерные заголовки
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
         "Accept": "*/*",
@@ -37,7 +37,7 @@ def main():
 
     raw_lines = content.splitlines()
 
-    # 2. Разбиваем плейлист на отдельные блоки каналов
+    # 2. Разбиваем плейлист на блоки по каналам
     header_lines = []
     blocks = []
     current_block = []
@@ -57,16 +57,20 @@ def main():
     if current_block:
         blocks.append(current_block)
 
-    # 3. Фильтруем: удаляем ТОЛЬКО точный KINO ZAL (4K KINO ZAL не трогаем)
+    # 3. Фильтруем: сносим ТОЛЬКО чистый KINO ZAL (4K KINO ZAL остается)
     filtered_lines = list(header_lines)
     for block in blocks:
         extinf_line = block[0]
         
-        # Точное совпадение значения "KINO ZAL" внутри кавычек
-        if re.search(r'group-title\s*=\s*["\']\s*kino\s+zal\s*["\']', extinf_line, re.IGNORECASE):
-            continue  # Пропускаем только KINO ZAL со всеми его ссылками
+        # Захватываем само значение внутри group-title="..."
+        gt_match = re.search(r'group-title="([^"]*)"', extinf_line, re.IGNORECASE)
+        if gt_match:
+            group_name = gt_match.group(1).strip().lower()
+            # Если это строго "kino zal", выкидываем весь блок канала целиком
+            if group_name == "kino zal":
+                continue
 
-        # Очищаем рубрики от VPN и всех круглых скобок
+        # Для оставшихся каналов (включая "4K KINO ZAL") чистим скобки и VPN
         block[0] = re.sub(r'group-title="([^"]*?)"', clean_group_title, block[0])
         filtered_lines.extend(block)
 
@@ -97,7 +101,7 @@ def main():
     # 7. Склеиваем всё вместе
     all_lines = lines + append_lines
 
-    # 8. Сохраняем в формате UTF-8 без BOM и с переводами LF
+    # 8. Сохраняем результат
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
     with open(OUTPUT_FILE, "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(all_lines) + "\n")
