@@ -1,4 +1,5 @@
 import os
+import re
 from datetime import datetime
 import urllib.request
 
@@ -8,6 +9,19 @@ OUTPUT_FILE = os.path.join("IPTV", "assets", "ropotel7844.m3u")
 
 HEADER_EPG = '#EXTM3U url-tvg="https://raw.githubusercontent.com/evgeshkawww/iptv/main/IPTV/epg.xml.gz,https://raw.githubusercontent.com/evgeshkawww/iptv/main/IPTV/epg7.xml.gz,http://epg.one/epg.xml.gz"'
 PROMO_STREAM_URL = "http://premium-iptv.ru/promo.m3u8"
+
+def clean_group_title(match):
+    val = match.group(1)
+    # 1. Удаляем упоминания с предлогом или дефисом: "с VPN", "-VPN"
+    val = re.sub(r'\s+с\s+VPN\b', '', val, flags=re.IGNORECASE)
+    val = re.sub(r'[-–—]\s*VPN\b', '', val, flags=re.IGNORECASE)
+    # 2. Удаляем отдельно стоящее слово VPN
+    val = re.sub(r'\bVPN\b', '', val, flags=re.IGNORECASE)
+    # 3. Удаляем абсолютно ВСЕ круглые скобки ( и ) внутри категории
+    val = val.replace('(', '').replace(')', '')
+    # 4. Убираем лишние пробелы
+    val = re.sub(r'\s{2,}', ' ', val).strip()
+    return f'group-title="{val}"'
 
 def main():
     # 1. Задаем браузерные заголовки
@@ -24,16 +38,24 @@ def main():
 
     lines = content.splitlines()
 
-    # 2. Формируем дату/время и категорию для первого канала
+    # 2. Очищаем рубрики от VPN и всех скобок
+    cleaned_lines = []
+    for line in lines:
+        if line.startswith("#EXTINF"):
+            line = re.sub(r'group-title="([^"]*?)"', clean_group_title, line)
+        cleaned_lines.append(line)
+    lines = cleaned_lines
+
+    # 3. Формируем дату/время и категорию для первого канала
     now_str = datetime.now().strftime("%d.%m.%Y %H:%M")
     new_revision_line = f'#EXTINF:-1 group-title="Приобрести V.I.P⚠️", Ревизия - {now_str}'
 
-    # 3. Меняем заголовок (строка 1), название ревизии с категорией (строка 2) и ссылку на поток (строка 3)
+    # 4. Меняем заголовок (строка 1), название ревизии с категорией (строка 2) и ссылку на поток (строка 3)
     lines[0] = HEADER_EPG
     lines[1] = new_revision_line
     lines[2] = PROMO_STREAM_URL
 
-    # 4. Читаем локальный файл хвоста
+    # 5. Читаем локальный файл хвоста
     append_lines = []
     if os.path.exists(APPEND_FILE):
         with open(APPEND_FILE, "r", encoding="utf-8", errors="ignore") as f:
@@ -43,10 +65,10 @@ def main():
                     continue
                 append_lines.append(line_clean)
 
-    # 5. Склеиваем всё вместе
+    # 6. Склеиваем всё вместе
     all_lines = lines + append_lines
 
-    # 6. Сохраняем результат
+    # 7. Сохраняем результат в формате UTF-8 LF
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
     with open(OUTPUT_FILE, "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(all_lines) + "\n")
