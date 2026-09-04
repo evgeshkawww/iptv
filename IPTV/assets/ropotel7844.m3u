@@ -1,8 +1,6 @@
 #EXTM3U url-tvg="https://raw.githubusercontent.com/evgeshkawww/iptv/main/IPTV/epg.xml.gz,https://raw.githubusercontent.com/evgeshkawww/iptv/main/IPTV/epg7.xml.gz,http://epg.one/epg.xml.gz"
-#EXTINF:-1 group-title="Приобрести V.I.P⚠️", Ревизия - 04.09.2026 08:42
+#EXTINF:-1 group-title="Приобрести V.I.P⚠️", Ревизия - 04.09.2026 08:44
 http://premium-iptv.ru/promo.m3u8
-
-
 #EXTINF:-1 group-title="KINO ZAL" tvg-logo="https://pic.rtbcdn.ru/video/2026-08-25/52/1e/521e3a859d675eea015a3365041addcd.jpg", Детройт (2026)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1
 https://river-4-467.rtbcdn.ru/hls-vod/BoNVKcwiASfh-e0IgMW11g/1788622813/3542/0x5000c500faf0602e/0188bfab60334db78a558a7dda12d5ff.mp4.m3u8?i=1920x800_1907
@@ -1053,8 +1051,6 @@ https://river-4-475.rtbcdn.ru/hls-vod/cKPCXmE48Khkou7RjT3qyg/1788622979/2510/0x5
 #EXTINF:-1 group-title="KINO ZAL" tvg-logo="https://pic.rtbcdn.ru/video/2026-02-27/56/e6/56e6af25bc01e361dccef9759e9f8d6c.jpg", Провод мертвеца (2025)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:136.0) Gecko/20100101 Firefox/136.0
 https://river-4-473.rtbcdn.ru/hls-vod/3e-WyVVPVL-d0csaNfaeVQ/1788622980/2520/0x5000039ce838288d/adedd5f00677469fb40b6ec92dc103ce.mp4.m3u8?i=1800x1080_3189
-
-
 #EXTINF:-1 group-title="4K KINO ZAL" tvg-logo="https://pic.rtbcdn.ru/video/2026-08-12/8e/9b/8e9bcb61e26cd353eab0940940ea3c4f.jpg", Увалень Томми (1995)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0
 https://river-3-346.rtbcdn.ru/hls-vod/nK_xa7X3-dMSxK2udV8unA/1788622615/3482/0x5000c500fae084db/1717a98d49ef4554897960a6355a57ba.mp4.m3u8?i=3840x2160_12067
@@ -2123,8 +2119,6 @@ https://river-ntv-ihome-d486.rtbcdn.ru/hls-vod/ew75eO-o2z63eDoCOHyTuw/1788622788
 #EXTINF:-1 group-title="4K KINO ZAL" tvg-logo="https://pic.rtbcdn.ru/video/2025-06-12/92/3d/923d02ec744710d2fdbd5683f8d7a3c3.jpg", Трудная мишень (1993)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
 https://salam-smf-mira-d160.rtbcdn.ru/dive/river-3-351.rtbcdn.ru/neI8S0lmOrHt7AKbjF7sUg/hls-vod/-hvZkv9LJJrPJiGSUSWkhg/1788622789/2696/0x5000039ce83bb73d/b7d3fb062a4444fbb809e0557f7e79b0.mp4.m3u8?i=3840x2160_12572
-
-
 #EXTINF:-1 group-title="Фильмы",007: СПЕКТР (2015)
 https://s3.mvzd.ru/content/sp/ec/Spectre_2015_x264_BDRip_1080p_ExKinoRay_1080p.m3u8
 #EXTINF:-1 group-title="Фильмы",101 далматинец (1996)
@@ -3403,8 +3397,6 @@ https://s4.mvzd.ru/content/pa/ri/Pariz_ya_lublyu_tebya_2006_x264_BDRip_1080p.m3u
 https://s4.mvzd.ru/content/33/vi/33-vi-idite-ja-necu-33-2015-sml_1080p.m3u8
 #EXTINF:-1 group-title="Фильмы" tvg-logo="https://1rus.ru/content/xr/xk/JasonArgonauts_013_720x406.webp",Ясон и аргонавты (1963)
 https://s5.mvzd.ru/content/f7/m6/Jason_i_Argonavty_1963_BDRip_MVO_DVO_1080p.m3u8
-
-
 #EXTINF:-1 group-title="Каналы",viju TV1000 romantica
 https://live-hls-viasat-secure-flus.cdnvideo.ru/viasat/Romantika_HD.smil/tracks-v1a1/mono.ts.m3u8?filter.tracks=v1v2v3a1&md5=ow4POWusg5YWczvB4Gak7A&e=1789049075&hls_proxy_host=e2c000defa6aa845b219ba5ca0db8ad5
 #EXTINF:-1 group-title="Каналы",TV1000 Action
@@ -3501,8 +3493,6 @@ https://cdn.rostelekom-tv.xyz/live/LQ3j0n7j0Kq4OQm8.m3u8
 https://cdn.rostelekom-tv.xyz/live/DeWr3Sgw1Aj2lJd0.m3u8
 #EXTINF:-1 tvg-id="velvetsvatyhd" tvg-name="Velvet. Сваты HD" tvg-logo="https://cdn.rostelekom-tv.xyz/picons/5c274519467ec9c5.png" group-title="Каналы",Velvet. Сваты HD
 https://cdn.rostelekom-tv.xyz/live/HSxyMqDlSVR54UTN.m3u8
-
-
 #EXTINF:-1 group-title="Кинозалы" tvg-logo="https://static.goodgame.ru/files/avatars/av_1301254_55T4.jpg",Katastroff
 https://kinowalk.hopto.org/katastroff_live
 #EXTINF:-1 group-title="Кинозалы" tvg-logo="https://kinowalk.hopto.org/web/image/120/128x128?unique=2026-07-24%2004:26:06.390445&access_token=65d292c0-44f1-4086-8f20-65bcbeee082a",Legion tv
@@ -3739,8 +3729,6 @@ http://kinowalk.hopto.org/topmoment_live
 http://kinowalk.hopto.org/foxkids_remastered_live
 #EXTINF:-1 group-title="Кинозалы" tvg-logo="https://kinowalk.hopto.org/web/image/271/128x128?unique=2026-04-19%2006:49:49.005553&access_token=bfdd2f15-29dc-4a9f-9fd9-8c88201c1357",MAKARSTRIM
 http://kinowalk.hopto.org/makarstrim_live
-
-
 #EXTINF:-1 group-title="KINO+📺",Кинопремьера HD
 https://stream8.cinerama.uz/1207/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="KINO+📺",Кинохит
@@ -3927,8 +3915,6 @@ http://176.118.197.101/Retro/index.m3u8
 http://93.84.105.184:443/retro
 #EXTINF:-1 group-title="KINO+📺",Ностальгия 
 http://hls127.freeott.top:8080/Nostalgiya/video.m3u8
-
-
 #EXTINF:-1 group-title="Україна 🇺🇦",ПЕРШИЙ HD
 https://api-tv.ipnet.ua/api/v1/manifest/2118742505.m3u8
 #EXTINF:-1 group-title="Україна 🇺🇦", Суспільне Перший (T2) (UA)
@@ -4037,9 +4023,6 @@ http://cdn10.live-tv.od.ua:8081/sk1zt/sk1zt-abr-lq/playlist.m3u8
 http://stream.ntktv.ua/s/ntk/ntk.m3u8
 #EXTINF:-1 group-title="Україна 🇺🇦",Сфера ТВ
 http://cdn10.live-tv.od.ua:8081/sferarv/720p/playlist.m3u8
-
-
-
 #EXTINF:-1 group-title="МОЛДОВА 🇲🇩",Realitatea TV
 https://realitatealive.md/tv/rlive.m3u8
 #EXTINF:-1 group-title="МОЛДОВА 🇲🇩",Moldova TV sd
@@ -4048,21 +4031,15 @@ http://89.38.8.130:39435
 https://6065d3147e895.streamlock.net:4444/npcl/live/playlist.m3u8
 #EXTINF:-1 group-title="МОЛДОВА 🇲🇩",Moldova 1
 https://v0.trm.md/static/streaming-playlists/hls/9b79338b-1870-4cd7-91d4-0f6ce5cac7ca/master.m3u8
-
-
 #EXTINF:-1 group-title="Казахстан 🇰🇿",Казахстан 24
 https://stream8.cinerama.uz/1408/tracks-v1a1/mono.m3u8
-
-
 #EXTINF:-1 group-title="Кыргызстан 🇰🇬",312
 http://176.126.166.43:1935/live/312musik/chunklist_w1516016500.m3u8
 #EXTINF:-1 group-title="Кыргызстан 🇰🇬",312Кино 
 http://176.126.166.43:1935/live/312kino/playlist.m3u8
 #EXTINF:-1 group-title="Кыргызстан 🇰🇬",Silk Way KG
 https://ikomg-kazakh.akamaized.net/kazakh/kazakh.m3u8
-
 #EXTINF:-1 group-title="Туркменистан 🇹🇲",Altyn Asyr TM
-
 #EXTINF:-1 group-title="Узбекистан 🇺🇿",Zor TV HD
 https://stream8.cinerama.uz/1016/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Узбекистан 🇺🇿",Yoshlar
@@ -4128,8 +4105,6 @@ https://stream8.cinerama.uz/1211/tracks-v1a1/mono.m3u8
 https://iptv.itv.uz/hls/live/t/Yv8TO7PtCQ-DJIbxOr9N_g/e/1799038269/4000/index.m3u8
 #EXTINF:-1 group-title="Узбекистан 🇺🇿",ITV Music
 https://iptv.itv.uz/hls/live/t/iR8iDnzqJIQrEetuXnP3iA/e/1799038327/4001/index.m3u8
-
-
 #EXTINF:-1 group-title="Азербайджан 🇦🇿",Al Zahra TV
 http://live.al-zahratv.com/live/playlist.m3u8
 #EXTINF:-1 group-title="Азербайджан 🇦🇿",STAR TV
@@ -4184,11 +4159,8 @@ http://176.65.146.189:8701/play/a09h
 http://live.cdn-vizi.workers.dev/?ID=53
 #EXTINF:-1 group-title="Азербайджан 🇦🇿",ITV AZ
 http://live.cdn-vizi.workers.dev/?ID=109
-
-
 #EXTINF:-1 tvg-id="AM: Geghama TV" tvg-logo="https://mytv.do.am/logo/geghama.png" group-title="Армения 🇦🇲",Գեղամա TV
 http://45.11.139.43:8555/geghama/index.m3u8
-
 #EXTINF:-1 tvg-id="AM: Armount TV" tvg-logo="https://cdn.epg.one/img2/5941.png" group-title="Армения 🇦🇲",Արմաունթ TV
 https://us1.ottstream.live:17071/C352/index.m3u8?token=GGfkFV4$TXeZjt3i
 #EXTINF:-1 tvg-id="" tvg-logo="https://mytv.do.am/logo/deltatravel.png" group-title="Армения 🇦🇲",Delta Travel
@@ -4201,8 +4173,6 @@ http://5.188.172.179/Shant/index.m3u8
 http://livestream.usatv.com/hls/m3u8/USARMENIA_NET1080.m3u8
 #EXTINF:-1 group-title="Армения 🇦🇲" tvg-logo="https://i.ibb.co/xS74qgH/SGN-12-18-2021-1639837346709.png",Luys
 http://b01c02nl.mediatriple.net/videoonlylive/mtpayqrfkgirxelive/broadcast_5e91c5ac96898.smil/playlist.m3u8
-
-
 #EXTINF:-1 group-title="Грузия 🇬🇪",Formula TV HD
 https://tv.cdn.xsg.ge/c4635/TVFormula/tracks-v1a1/index.m3u8
 #EXTINF:-1 group-title="Грузия 🇬🇪",1TV HD
@@ -4215,15 +4185,12 @@ https://tv.cdn.xsg.ge/gpb-radio1/tracks-a1/mono.m3u8?token=tva.org.ua
 https://tv.cdn.xsg.ge/gpb-radio2/tracks-a1/mono.m3u8?token=tva.org.ua
 #EXTINF:-1 group-title="Грузия 🇬🇪",Formula
 https://tv.cdn.xsg.ge/c4635/TVFormula/playlist.m3u8
-
 #EXTINF:-1 group-title="Латвия 🇱🇻",TV Net
 http://player.tvnet.lv/stream/amlst:61659/chunklist_w1822312625_b528000_pd892000.m3u8
 #EXTINF:-1 group-title="Латвия 🇱🇻" tvg-logo="https://i.imgur.com/r4rlHUt.png",Tvnet 
 https://player.tvnet.lv/stream/amlst:61659/playlist.m3u8
 #EXTINF:-1 group-title="Латвия 🇱🇻",Re TV
 https://retv2132.cloudycdn.services/slive/_definst_/retv_retv_channel_5k7_42787_default_891_hls.smil/playlist.m3u8
-
-
 #EXTINF:-1 group-title="Poland 🇵🇱",TV Kujawy
 http://stream.tvkujawy.pl:8080/live/broadcast.m3u8
 #EXTINF:-1 group-title="Poland 🇵🇱",TV Torun
@@ -4294,8 +4261,6 @@ http://91.246.72.88:8000/play/a00l/index.m3u8
 http://91.246.72.88:8000/play/a00m/index.m3u8
 #EXTINF:-1 group-title="Poland 🇵🇱",Wydarzenia 24
 http://91.246.72.88:8000/play/a009/index.m3u8
-
-
 #EXTINF:-1 group-title="Болгария 🇧🇬",Travel TV
 https://streamer103.neterra.tv/travel/travel_SD.m3u8
 #EXTINF:-1 group-title="Болгария 🇧🇬" tvg-logo="https://hd.traveltv.bg/wp-content/uploads/sites/3/2018/12/ThisIsBG.HDTV_.TV_-500x73.png",This is Bulgaria HD
@@ -4364,8 +4329,6 @@ https://shift03.isp.bg/NatGeoWild_HD/index.m3u8
 https://shift03.isp.bg/Discovery_HD/index.m3u8
 #EXTINF:-1 group-title="Болгария 🇧🇬",ID HD bg
 https://shift03.isp.bg/ID_HD/index.m3u8
-
-
 #EXTINF:-1 group-title="Румыния 🇷🇴",Aleph News
 https://stream-aleph.m.ro/Aleph/ngrp:Alephnewsmain.stream_all/playlist.m3u8
 #EXTINF:-1 group-title="Румыния 🇷🇴",Est TV (Neamt)
@@ -4374,7 +4337,6 @@ http://89.38.8.130:39435
 http://85.186.146.34:8080
 #EXTINF:-1 group-title="Румыния 🇷🇴",Super TV HD
 http://iptv.supertv.ro:8000/play/a001/index.m3u8
-
 #EXTINF:-1 group-title="Словакия 🇸🇰",TV Ružinov HD
 http://lb.streaming.sk/tvruzinov/stream/playlist.m3u8
 #EXTINF:-1 group-title="Словакия 🇸🇰",Óčko
@@ -4385,7 +4347,6 @@ https://ocko-live.ssl.cdn.cra.cz/channels/ocko/playlist/cze/live_hq.m3u8
 http://lb.streaming.sk/fashiontv/stream/playlist.m3u8
 #EXTINF:-1 group-title="Словакия 🇸🇰",Televízia OSEM
 http://109.74.145.11:1935/tv8/ngrp:tv8.stream_all/playlist.m3u8
-
 #EXTINF:-1 group-title="Великобритания 🇬🇧",Time Line
 https://timeline-samsung-uk.amagi.tv/playlist.m3u8
 #EXTINF:-1 group-title="Великобритания 🇬🇧",Afrobeats 247
@@ -4396,7 +4357,6 @@ https://hncfree-samsung-uk.amagi.tv/playlist.m3u8
 https://de1se01.v2beat.live/playlist.m3u8
 #EXTINF:-1 group-title="Великобритания 🇬🇧",V2BEAT
 https://abr.de1se01.v2beat.live/playlist.m3u8
-
 #EXTINF:-1 group-title="Португалия 🇵🇹",RTP1 HD
 http://50.7.120.34:8080/RTP_1/index.m3u8
 #EXTINF:-1 group-title="Португалия 🇵🇹",RTP2 HD
@@ -4433,8 +4393,6 @@ http://50.7.120.34:8080/FOX_LIFE/index.m3u8
 http://50.7.120.34:8080/FOX_COMEDY/index.m3u8
 #EXTINF:-1 group-title="Португалия 🇵🇹",Star Movies HD
 http://50.7.120.34:8080/FOX_MOVIES/index.m3u8
-
-
 #EXTINF:-1 group-title="Франция 🇫🇷",MDL
 http://tv.mondeduloisir.fr:1935/tixtv/smil:web.smil/playlist.m3u8
 #EXTINF:-1 group-title="Франция 🇫🇷",SYFY
@@ -4445,8 +4403,6 @@ http://99.27.51.147/CineClassic/index.m3u8
 http://99.27.51.147:8080/CineFrisson/index.m3u8
 #EXTINF:-1 group-title="Франция 🇫🇷",CineFamily
 http://99.27.51.147:8080/CineFamiz/index.m3u8
-
-
 #EXTINF:-1 group-title="Германия 🇩🇪",Bibel TV Musik
 http://bibeltv03.iptv-playoutcenter.de/bibeltv03/bibeltv03.stream_1/playlist.m3u8
 #EXTINF:-1 group-title="Германия 🇩🇪",Das Erste
@@ -4497,8 +4453,6 @@ http://58bd5b7a98e04.streamlock.net/medienasa-live/ok-salzwedel_high/playlist.m3
 http://58bd5b7a98e04.streamlock.net/medienasa-live/mp4:ok-stendal_high/playlist.m3u8
 #EXTINF:-1 group-title="Германия 🇩🇪" tvg-logo="https://raw.githubusercontent.com/jnk22/kodinerds-iptv/master/logos/tv/okwernigerode.png",OK Wernigerode (1080p)
 http://58bd5b7a98e04.streamlock.net/medienasa-live/mp4:ok-wernigerode_high/playlist.m3u8
-
-
 #EXTINF:-1 group-title="Испания 🇪🇸" ,ALCARRIA TV
 http://217.182.77.27/live/alcarriatv-livestream.m3u8
 #EXTINF:-1 group-title="Испания 🇪🇸" ,Onda Algeciras TV 
@@ -4515,8 +4469,6 @@ https://tvdirecto.teleelx.es/stream/teleelx.m3u8
 https://directo.tvferrol.es/tv.m3u8
 #EXTINF:-1 group-title="Испания 🇪🇸" ,MULTIMEDIOS COSTA RICA
 http://mdstrm.com/live-stream-playlist/5a7b1e63a8da282c34d65445.m3u8?ref=http://www.multimedios.com
-
-
 #EXTINF:-1 group-title="USA 🇺🇸" tvg-logo="https://i.imgur.com/0j5Aget.png",30A The Beach Show
 https://30a-tv.com/beachy.m3u8
 #EXTINF:-1 group-title="USA 🇺🇸" tvg-logo="https://i.imgur.com/hSYez3V.png",Atlanta Channel (720p)
@@ -4539,14 +4491,12 @@ http://otv3.ocfl.net:1936/OrangeTV/smil:OrangeTV.smil/playlist.m3u8
 https://2-fss-1.streamhoster.com/pl_134/amlst:200914-1282960/chunklist.m3u8
 #EXTINF:-1 group-title="USA 🇺🇸" tvg-logo="https://worcester.vod.castus.tv/wccalive.png",WCCA-TV (Worcester)
 https://worcester.vod.castus.tv/live/ch1.m3u8
-
 #EXTINF:-1 group-title="Израиль 🇮🇱",Alhayat TV
 https://cdn3.wowza.com/5/OE5HREpIcEkySlNT/alhayat-live/ngrp:livestream_all/chunklist_b2128000.m3u8
 #EXTINF:-1 group-title="Израиль 🇮🇱",Reshet 13
 https://d2xg1g9o5vns8m.cloudfront.net/out/v1/0855d703f7d5436fae6a9c7ce8ca5075/index_3.m3u8
 #EXTINF:-1 group-title="Израиль 🇮🇱",Ran TV Israel 
 https://streaminglive.co.il:3730/live/raniamranilive.m3u8
-
 #EXTINF:-1 group-title="Чехия 🇨🇿",TV BRNO 1 HD
 https://stream.polar.cz/tvbrno1/tvbrno1live-1/playlist.m3u8
 #EXTINF:-1 group-title="Чехия 🇨🇿",Vzpravy TV HD
@@ -4567,8 +4517,6 @@ https://ocko-live-dash.ssl.cdn.cra.cz/cra_live2/ocko.stream.1.smil/playlist.m3u8
 https://ocko-live.ssl.cdn.cra.cz/channels/ocko_gold/playlist/cze/live_hq.m3u8
 #EXTINF:-1 group-title="Чехия 🇨🇿",Ocko Express Tv
 https://ocko-live.ssl.cdn.cra.cz/channels/ocko_expres/playlist/cze/live_hq.m3u8
-
-
 #EXTINF:-1 group-title="Нидерланды 🇳🇱",24Kitchen
 http://86.87.15.10:8004/play/a02j/index.m3u8
 #EXTINF:-1 group-title="Нидерланды 🇳🇱",Comedy Central
@@ -4609,8 +4557,6 @@ http://86.87.15.10:8005/play/a00t/index.m3u8
 http://86.87.15.10:8003/play/a02m/index.m3u8
 #EXTINF:-1 group-title="Нидерланды 🇳🇱",TLC
 http://86.87.15.10:8003/play/a025/index.m3u8
-
-
 #EXTINF:-1 group-title="Венгрия 🇭🇺",TISZA
 https://live.tiszatv.hu:443/tmp_hls/stream/index.m3u8
 #EXTINF:-1 group-title="Венгрия 🇭🇺",Pannon RTV 
@@ -4625,8 +4571,6 @@ https://cloudfront44.lexanetwork.com:1344/freerelay/keszthelyivtv.sdp/playlist.m
 https://cloudfront41.lexanetwork.com:1344/relay01/livestream002.sdp/playlist.m3u8
 #EXTINF:-1 group-title="Венгрия 🇭🇺",Karcag TV
 https://cloudfront41.lexanetwork.com:1344/relay03/livestream003.sdp/playlist.m3u8
-
-
 #EXTINF:-1 group-title="Италия 🇮🇹",TVA Vicenza
 http://fms.tvavicenza.it:1935/live/diretta_1/playlist.m3u8
 #EXTINF:-1 group-title="Италия 🇮🇹",Teletricolore Reggio
@@ -4675,8 +4619,6 @@ https://59d7d6f47d7fc.streamlock.net/auroraarte/auroraarte/chunklist.m3u8
 http://wms.shared.streamshow.it:80/canale51/canale51/playlist.m3u8
 #EXTINF:-1 group-title="Италия 🇮🇹",Radio 51
 https://59d7d6f47d7fc.streamlock.net/canale51/canale51/playlist.m3u8
-
-
 #EXTINF:-1 group-title="Турция 🇹🇷",Briç ve Satranç TV
 http://139.162.182.79/live/test/index.m3u8
 #EXTINF:-1 group-title="Турция 🇹🇷",Finest TV
@@ -4727,8 +4669,6 @@ https://edge1.socialsmart.tv/tv1/bant1/chunks.m3u8
 https://mc1.mediatriple.net/videoonlylive/mtdxkkitgbrckilive/broadcast_5ee244263fd6d.smil/playlist.m3u8
 #EXTINF:-1 group-title="Турция 🇹🇷",UR FANATiK TV YEDEK
 https://edge1.socialsmart.tv/urfanatiktv/bant1/chunks.m3u8
-
-
 #EXTINF:-1 group-title="🔎 ПОЗНАВАТЕЛЬНЫЕ",Рыбалка
 http://iptv.prosto.tv:7000/ch344/video.m3u8
 #EXTINF:-1 group-title="🔎 ПОЗНАВАТЕЛЬНЫЕ",ЗЖ
@@ -4813,8 +4753,6 @@ https://stream8.cinerama.uz/1430/tracks-v1a1/mono.m3u8
 https://stream8.cinerama.uz/1410/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="🔎 ПОЗНАВАТЕЛЬНЫЕ",Наука
 http://178.134.1.158:8081/nauka/index.m3u8?token=tva.in.ua
-
-
 #EXTINF:-1 group-title="SPORT 🏆",Divi Sport
 https://vcdn.produck.company/out/ngrp:divisport_all/playlist.m3u8
 #EXTINF:-1 group-title="SPORT 🏆",X-Stream
@@ -4995,8 +4933,6 @@ http://45.129.141.180:9981/stream/channelid/1940136002?profile=iptv.org.ua
 http://45.129.141.180:9981/stream/channelid/1363722412?profile=iptv.org.ua
 #EXTINF:-1 group-title="SPORT 🏆",Tr VPN SPORT 1
 http://stream-msk-14.ott.tricolor.tv/dtv/id794_MSKSG-PVR-1--Nash_khokkey1/01/plst.m3u8
-
-
 #EXTINF:-1 group-title="CHILDREN'S 🧙",Кнопка ТВ
 http://api.alpaca.t62a.com/hls/9116/stream0.m3u8
 #EXTINF:-1 group-title="CHILDREN'S 🧙",Детское кино International
@@ -5067,8 +5003,6 @@ https://stream8.cinerama.uz/1441/tracks-v1a1/mono.m3u8
 https://stream8.cinerama.uz/1445/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="CHILDREN'S 🧙",Карусель
 http://31.131.141.195:8000/play/1080/index.m3u8
-
-
 #EXTINF:-1 group-title="МУЗИКА 🎶",Nashe Radio
 http://online.nasheradio.ua/NasheRadio_HD
 #EXTINF:-1 group-title="МУЗИКА 🎶",Наше Радіо
@@ -5223,14 +5157,10 @@ http://5db313b643fd8.streamlock.net:1935/HITTV/HITTV/chunklist.m3u8
 https://dash2.antik.sk/live/test_relax/playlist.m3u8
 #EXTINF:-1 tvg-id="MTV 90s (pl).cz" tvg-name="MTV 90s" tvg-logo="https://commons.m.wikimedia.org/wiki/Category:MTV_logos#/media/File%3AMTV_90s_logo.png" group-title="МУЗИКА 🎶",MTV 90s
 http://88.212.15.19/live/test_mtv_rocks_1200_atk/playlist.m3u8
-
-
 #EXTINF:-1 group-title="Кухня",Кулинар ТВ
 http://api.alpaca.t62a.com/hls/9110/stream0.m3u8
 #EXTINF:-1 group-title="Кухня",Кухня ТВ
 http://hls127.freeott.top:8080/Kuhnya_TV/video.m3u8
-
-
 #EXTINF:-1 group-title="RELAX 💐",SCREENSAVER
 http://45.159.94.49:8080/play/live.php?mac=00:1A:79:AD:A9:35&stream=210273&extension=ts
 #EXTINF:-1 group-title="RELAX 💐",SCREEN MEDIEVAL EUROPE
@@ -5291,8 +5221,6 @@ https://tgn.bozztv.com/betterlife/betternature/betternature/index.m3u8
 https://stream.ads.ottera.tv/playlist.m3u8?network_id=83
 #EXTINF:-1 group-title="RELAX 💐",Stingray Naturescape
 https://stream.ads.ottera.tv/cl/240211cn4j7g65sur7fq378vpg/1920x1080_5711200_3_f.m3u8
-
-
 #EXTINF:-1 group-title="ОБЩИЕ",Cirque du Soleil
 https://jmp2.uk/plex-647f8d22a2fc3fadb4721685-67642f277c5e3b38af72dcdb.m3u8
 #EXTINF:-1 group-title="ОБЩИЕ",Russischer Jahrmarkt
@@ -5303,8 +5231,6 @@ http://edge2.uk.kab.tv/rtplive/kabtv-rus-medium.stream/playlist.m3u8
 https://wl.tvrain.tv/transcode/ngrp:ses_all/playlist.m3u8
 #EXTINF:-1 group-title="ОБЩИЕ",Belsat TV
 http://91.246.72.88:8000/play/a01w/index.m3u8
-
-
 #EXTINF:-1 group-title="♥18+", Кино 18+
 https://autopilot.catcast.tv/content/40381/index.m3u8
 #EXTINF:-1 group-title="♥18+",SEX PRIVE
@@ -5385,7 +5311,6 @@ http://88.212.7.11/live/test_extasy_hd_hevc/playlist.m3u8
 http://88.212.7.11/live/test_basbes_hd_hevc/playlist.m3u8
 #EXTINF:-1 group-title="♥18+",Porn Classic
 http://200.194.238.229:8383/live/pornclassic/playlist.m3u8
-
 #EXTINF:-1 group-title="♥18+",  18+ zamuzhnyaya_no_raskreposhchennaya
 https://video2.tizam.cc/files/2284674/zamuzhnyaya_no_raskreposhchennaya.mp4
 #EXTINF:-1 group-title="♥18+",  18+ 5_klyuchey_k_naslazhdeniyu_1 
@@ -5430,7 +5355,6 @@ https://video1.tizam.cc/old_films/Luxurious4.mp4
 https://video1.tizam.cc/old_films/Luxurious5.mp4
 #EXTINF:-1 group-title="♥18+", НЕВЕСТА
 https://video2.tizam.cc/files/1940967/la_sposa__s_perevodom.mp4
-
 #EXTINF:-1 group-title="♥18+",Rough
 http://cdn.adultiptv.net/rough.m3u8
 #EXTINF:-1 group-title="♥18+",Gangbang
@@ -5479,8 +5403,6 @@ http://cdn.adultiptv.net/milf.m3u8
 http://cdn.adultiptv.net/pornstar.m3u8
 #EXTINF:-1 group-title="♥18+",Lesbian
 http://cdn.adultiptv.net/lesbian.m3u8
-
-
 #EXTINF:-1 group-title="♥18+",tva-in-ua-1
 https://ovhv47.twincdn.com/videos/48/48396/48396_720p.mp4?key_iptv.org.ua
 #EXTINF:-1 group-title="♥18+",tva-in-ua--2
@@ -5521,7 +5443,6 @@ https://ovhv47.twincdn.com/videos/7/7332/7332_720p.mp4?key_iptv.org.ua
 https://ovhv47.twincdn.com/videos/7/7337/7337_720p.mp4?key_iptv.org.ua
 #EXTINF:-1 group-title="♥18+",tva-in-ua-20
 https://ovhv47.twincdn.com/videos/7/7545/7545_720p.mp4?key_iptv.org.ua
-
 #EXTINF:-1 group-title="♥18+",tva-xx1
 https://ovhv47.twincdn.com/videos/43/43392/43392_720p.mp4?key_iptv.org.ua
 #EXTINF:-1 group-title="♥18+",tva-x1
@@ -5572,16 +5493,12 @@ https://ovhv47.twincdn.com/videos/42/42348/42348_720p.mp4?key_iptv.org.ua
 https://ovhv47.twincdn.com/videos/42/42356/42356_720p.mp4?key_iptv.org.ua
 #EXTINF:-1 group-title="♥18+",tva-x24 G
 https://ovhv47.twincdn.com/videos/45/45395/45395_720p.mp4?key_iptv.org.ua
-
-
 #EXTINF:-1 group-title="♥18+", ShaidenRogue на свежем воздухе (14min)
 https://v88188.cdn-d1.com/a98567b9b4cfb4e139bf955377851dfcef86f0cd/video.drive-movie.com/contents/videos/12000/12918/12918fhd.mp4
 #EXTINF:-1 group-title="♥18+", Alyx Star Лесби с Jazmin Luv (12min)
 https://v148173.cdn-d1.com/a98567b9b4cfb4e139bf750a4e37a40eec84f198/video.drive-movie.com/contents/videos/6000/6748/6748.mp4
 #EXTINF:-1 group-title="♥18+", Veronica Leal ЖМЖ(30min)
 https://v88188.cdn-d1.com/a98567b9b4cfb4e139bf41c7c22d28c28498a1a0/video.drive-movie.com/contents/videos/2000/2795/2795.mp4
-
-
 #EXTINF:-1 group-title="Tube 🎯",Нано ТВ
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 https://bl.rutube.ru/livestream/cf958b6c9ae4504be5fc2c1de358a017/index.m3u8?s=8i16wrFRafifViGI2cAGiQ&e=2077359307&scheme=https
@@ -5603,8 +5520,6 @@ https://bl.rutube.ru/livestream/3b7d1499da9396462bfd17282d758d30/index.m3u8?s=U8
 #EXTINF:-1 group-title="Tube 🎯",Кино и Жизнь
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 https://bl.rutube.ru/livestream/09e51eefa939595a4ac67182c6fb3e4e/index.m3u8?s=5Z6XUiXTN5xFPAFfg02tVQ&e=2077359309&scheme=https
-
-
 #EXTINF:-1 group-title="Инет",ТНТ
 http://185.46.16.239:8000/TNT
 #EXTINF:-1 group-title="Инет",Моя планета HD
@@ -5679,8 +5594,6 @@ http://185.46.16.239:8000/Match_Nash_Sport
 http://185.46.16.239:8000/Match_Igra
 #EXTINF:-1 group-title="Инет",Бокс ТВ
 http://185.46.16.239:8000/Eurosport_1
-
-
 #EXTINF:-1 group-title="Cloudflare_Inc",CPS Action HD
 http://hls127.freeott.top:8080/CPS_Action/video.m3u8
 #EXTINF:-1 group-title="Cloudflare_Inc",CPS Comedy HD
@@ -5749,8 +5662,6 @@ http://hls127.freeott.top:8080/Bober/video.m3u8
 http://hls127.freeott.top:8080/Da_Vinci_Learning/video.m3u8
 #EXTINF:-1 group-title="Cloudflare_Inc",СТС Kids
 http://hls127.freeott.top:8080/STS_Kids/video.m3u8
-
-
 #EXTINF:-1 group-title="Individual Entrepreneur",TV1000 Action
 http://46.8.46.14/actiontv/index.m3u8
 #EXTINF:-1 group-title="Individual Entrepreneur",TV1000
@@ -5875,8 +5786,6 @@ http://46.8.46.14/eurosport/index.m3u8
 http://46.8.46.14/boec/index.m3u8
 #EXTINF:-1 group-title="Individual Entrepreneur",Матч Премьер
 http://46.8.46.14/premier/index.m3u8
-
-
 #EXTINF:-1 group-title="Internet42 LLC", Bollywood HD
 http://176.118.197.101/Bollywood_HD/index.m3u8
 #EXTINF:-1 group-title="Internet42 LLC", Cinema
@@ -5937,8 +5846,6 @@ http://176.118.197.125/Mama/index.m3u8
 http://176.118.197.125/Match/index.m3u8
 #EXTINF:-1 group-title="Internet42 LLC", KHL
 http://176.118.197.101/KHL/index.m3u8
-
-
 #EXTINF:-1 group-title="Turon Media",Hollywood
 https://stream8.cinerama.uz/1443/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Turon Media",TV1000 Кино
@@ -6045,8 +5952,6 @@ https://stream8.cinerama.uz/1427/tracks-v1a1/mono.m3u8
 https://stream8.cinerama.uz/1036/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Turon Media",Авто 24
 https://stream8.cinerama.uz/1430/tracks-v1a1/mono.m3u8
-
-
 #EXTINF:-1 group-title="Hetzner Online AG",.Red
 http://5.9.11.197:57419/chu-97/mpegts
 #EXTINF:-1 group-title="Hetzner Online AG",.Sci-fi
@@ -6135,8 +6040,6 @@ http://5.9.11.197:57419/chu-138/mpegts
 http://5.9.11.197:57419/chu-136/mpegts
 #EXTINF:-1 group-title="Hetzner Online AG",Советское кино
 http://5.9.11.197:57419/chu-139/mpegts
-
-
 #EXTINF:-1 group-title="Cloud_Flare",Техно 24
 http://tinyurl.com/TvZaTak65?id=24techno
 #EXTINF:-1 group-title="Cloud_Flare",Viju Explore
@@ -6244,8 +6147,6 @@ http://tinyurl.com/TvZaTak65?id=davinci
 http://tinyurl.com/TvZaTak65?id=unikum
 #EXTINF:-1 group-title="Cloud_Flare",Детский Мир
 http://tinyurl.com/TvZaTak65?id=detskymir
-
-
 #EXTINF:-1 group-title="Оргтехсервис 🎯",TV1000
 https://flussonic.mkpnet.ru/tv-aab84159a39fbe84/video.m3u8
 #EXTINF:-1 group-title="Оргтехсервис 🎯",TV1000 кино
@@ -6356,8 +6257,6 @@ https://flussonic.mkpnet.ru/tv-1bfac9df3d938c1f/video.m3u8
 https://flussonic.mkpnet.ru/tv-ee3651e1e7ce5cbf/video.m3u8
 #EXTINF:-1 group-title="Оргтехсервис 🎯",Матч! Страна
 https://flussonic.mkpnet.ru/tv-6db4f59c21aec361/video.m3u8
-
-
 #EXTINF:-1 group-title="Наш Нет 🇺🇦", UA:Перший
 #EXTVLCOPT:http-user-agent=UA
 https://ext.cdn.nashnet.tv/228.0.2.45/index.m3u8
@@ -6427,9 +6326,6 @@ https://ext.cdn.nashnet.tv/228.0.2.165/index.m3u8
 #EXTINF:-1 group-title="Наш Нет 🇺🇦", Капучино TV
 #EXTVLCOPT:http-user-agent=UA
 http://ext.cdn.nashnet.tv/228.0.0.136/index.m3u8
-
-
-
 #EXTINF:-1 group-title="NNT",Hollywood HD
 http://45.145.32.13:20440/hollywood_hd/index.m3u8?token=test
 #EXTINF:-1 group-title="NNT",КИНО ЛИВИНГ
@@ -6534,8 +6430,6 @@ http://45.145.32.13:20440/mir_basketbola/index.m3u8?token=test
 http://45.145.32.13:20440/viasat_sport/index.m3u8?token=test
 #EXTINF:-1 group-title="NNT",Extreme sports
 http://45.145.32.13:20440/extreme_sports/index.m3u8?token=test
-
-
 #EXTINF:-1 group-title="Uplink",Техно 24
 https://fs.uplink.kz/tehno_24/mono.m3u8?token=onlinetv
 #EXTINF:-1 group-title="Uplink",Моя планета
@@ -6700,8 +6594,6 @@ https://fs.uplink.kz/mma/mono.m3u8?token=onlinetv
 https://fs.uplink.kz/extreme_sports/mono.m3u8?token=onlinetv
 #EXTINF:-1 group-title="Uplink",Qazsport HD
 https://fs.uplink.kz/qazsport_hd/mono.m3u8?token=onlinetv
-
-
 #EXTINF:-1 group-title="TEST-1" tvg-rec="7" timeshift="7",СТС
 http://stream.mcquack.net/138/index.m3u8
 #EXTINF:-1 group-title="TEST-1" tvg-rec="7" timeshift="7",СТС Love
@@ -7292,8 +7184,6 @@ http://stream.mcquack.net/284/index.m3u8
 http://stream.mcquack.net/289/index.m3u8
 #EXTINF:-1 group-title="TEST-1" parent-code="1234"tvg-rec="7" timeshift="7",Playboy TV
 http://stream.mcquack.net/290/index.m3u8
-
-
 #EXTINF:-1 group-title="Современные сетевые технологии",National geographic
 https://s70378.cdn.ngenix.net/national_geographic/1/index.m3u8
 #EXTINF:-1 group-title="Современные сетевые технологии",Terra
@@ -7440,8 +7330,6 @@ https://s70378.cdn.ngenix.net/boks_tv/1/index.m3u8
 https://s70378.cdn.ngenix.net/match_planeta/1/index.m3u8
 #EXTINF:-1 group-title="Современные сетевые технологии",KHL
 https://s70378.cdn.ngenix.net/kxl/1/index.m3u8
-
-
 #EXTINF:-1 group-title="Tест-08",1+1 UA
 http://89.33.29.115:8080/1plus1/index.m3u8
 #EXTINF:-1 group-title="Tест-08",2plus2
@@ -7554,8 +7442,6 @@ http://89.33.29.115:8080/ZeeTV/index.m3u8
 http://89.33.29.115:8080/Eda/index.m3u8
 #EXTINF:-1 group-title="Tест-08",Teleputeshestviya
 http://89.33.29.115:8080/Teleputeshestviya/index.m3u8
-
-
 #EXTINF:-1 group-title="test-09-08" tvg-logo="../Channel/Logo/Amedia Hit.png" tvg-id="650a0ae5672bd20d04bd2247b8cff705_amedia1",Amedia 1
 http://46.162.201.15:8000/play/a08r/index.m3u8
 #EXTINF:-1 group-title="test-09-08" tvg-logo="../Channel/Logo/Amedia Hit.png" tvg-id="650a0ae5672bd20d04bd2247b8cff705_amedia2",Amedia 2
@@ -7664,8 +7550,6 @@ http://46.162.201.15:8000/play/a04z/index.m3u8
 http://46.162.201.15:8000/play/a05d/index.m3u8
 #EXTINF:-1 group-title="test-09-08" tvg-logo="../Channel/Logo/СТС HD.png" tvg-id="650a0ae5672bd20d04bd2247b8cff705_sts",СТС HD
 http://46.162.201.15:8000/play/a09c/index.m3u8
-
-
 #EXTINF:-1 group-title="Tест-17-08",Kinoman
 http://185.121.1.163:8083/Kinoman/index.m3u8
 #EXTINF:-1 group-title="Tест-17-08",Kinomiks
@@ -7700,8 +7584,6 @@ http://185.121.1.163:8083/Avto24/index.m3u8
 http://185.121.1.163:8083/OhotaRybalka/index.m3u8
 #EXTINF:-1 group-title="Tест-17-08",Navo
 http://185.121.1.163:8083/Navo/index.m3u8
-
-
 #EXTINF:-1 group-title="LLC G&G-Telecom",Киносемья
 http://195.64.140.147:10042/42
 #EXTINF:-1 group-title="LLC G&G-Telecom",Киноужас
@@ -7970,8 +7852,6 @@ http://195.64.140.147:10114/114
 http://195.64.140.147:10115/115
 #EXTINF:-1 group-title="LLC G&G-Telecom",Ziggo Golf
 http://195.64.140.147:10116/116
-
-
 #EXTINF:-1 tvg-id="0648" tvg-name="Play-X Доктор хаус"  group-title="Play-X",Play-X Доктор хаус
 http://playxapp.play-x.app:2095/0648/index.m3u8?token=free_play_x_app_ru_server
 #EXTINF:-1 tvg-id="0973" tvg-name="Play-X Дрейк и Джош"  group-title="Play-X",Play-X Дрейк и Джош
