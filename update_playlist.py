@@ -11,45 +11,44 @@ HEADER_EPG = '#EXTM3U url-tvg="https://raw.githubusercontent.com/evgeshkawww/ipt
 PROMO_STREAM_URL = "http://premium-iptv.ru/promo.m3u8"
 
 def clean_group_name(val):
-    # Заменяем возможные неразрывные пробелы
     val = val.replace('\xa0', ' ')
-    
-    # 1. Специфичные переименования (игнорируем регистр и убираем пробел перед эмодзи)
     val = re.sub(r'МУЗИКА\s*🎶', 'Музыка🎶', val, flags=re.IGNORECASE)
-    
-    # 2. Удаляем вариации VPN
     val = re.sub(r'\s+с\s+VPN\b', '', val, flags=re.IGNORECASE)
     val = re.sub(r'[-–—]\s*VPN\b', '', val, flags=re.IGNORECASE)
     val = re.sub(r'\bVPN\b', '', val, flags=re.IGNORECASE)
-    
-    # 3. Удаляем слово Portal
     val = re.sub(r'\bPortal\b', '', val, flags=re.IGNORECASE)
-    
-    # 4. Удаляем абсолютно все круглые скобки
     val = val.replace('(', '').replace(')', '')
-    
-    # 5. Убираем лишние пробелы
     val = re.sub(r'\s{2,}', ' ', val).strip()
-    
     return val
 
-def main():
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
-        "Accept": "*/*",
-        "Accept-Language": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
-        "Referer": "https://iptv.org.ua/"
-    }
+def download_with_fallback(url):
+    # Перебираем заголовки: от медиаплееров до curl
+    agents = [
+        "VLC/3.0.18 LibVLC/3.0.18",
+        "Kodi/19.3 (X11; Linux x86_64) App_Bitness/64 Version/19.3-Git:20211024-nogitfound",
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+        "curl/7.81.0"
+    ]
     
+    for ua in agents:
+        try:
+            print(f"Пробуем скачать с User-Agent: {ua}")
+            req = urllib.request.Request(url, headers={"User-Agent": ua, "Referer": "https://iptv.org.ua/"})
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                return resp.read().decode("utf-8", errors="ignore")
+        except Exception as e:
+            print(f"Ошибка с {ua}: {e}")
+            
+    raise RuntimeError("Не удалось скачать плейлист! Все User-Agent заблокированы.")
+
+def main():
     raw_lines = []
 
-    # 1. Читаем скачиваемый плейлист
-    req = urllib.request.Request(SOURCE_URL, headers=headers)
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        content = resp.read().decode("utf-8", errors="ignore")
-        raw_lines.extend(content.splitlines())
+    # 1. Читаем скачиваемый плейлист с обходом 403
+    content = download_with_fallback(SOURCE_URL)
+    raw_lines.extend(content.splitlines())
 
-    # 2. СРАЗУ читаем локальный файл хвоста, чтобы фильтровать ВСЁ вместе
+    # 2. СРАЗУ читаем локальный файл хвоста
     if os.path.exists(APPEND_FILE):
         with open(APPEND_FILE, "r", encoding="utf-8", errors="ignore") as f:
             for line in f:
