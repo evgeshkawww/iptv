@@ -24,7 +24,6 @@
       --text-main: #f3f4f6;
       --text-muted: #9ca3af;
       
-      /* Возвращаем аккуратные, стильные скругления без перегибов */
       --radius-xl: 18px;
       --radius-lg: 14px;
       --radius-md: 10px;
@@ -62,6 +61,66 @@
       border-radius: var(--radius-xl);
       padding: 24px;
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* ИНФОРМАЦИОННЫЙ БЛОК */
+    .unique-payment-alert {
+      background: rgba(56, 189, 248, 0.05);
+      border-radius: var(--radius-lg);
+      padding: 18px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 16px;
+      border: 1px solid var(--border-subtle);
+    }
+    .alert-icon {
+      font-family: monospace;
+      font-size: 15px;
+      font-weight: 700;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--cyan);
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-md);
+      flex-shrink: 0;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+    .alert-content { flex: 1; min-width: 240px; }
+    .alert-title {
+      font-weight: 700;
+      color: #bae6fd;
+      font-size: 14.5px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .alert-title span {
+      background: rgba(0, 0, 0, 0.4);
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+      color: #7dd3fc;
+      border: 1px solid var(--border-subtle);
+    }
+    .alert-text {
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+    .alert-text strong {
+      color: var(--text-main);
+      background: rgba(0, 0, 0, 0.3);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-family: ui-monospace, monospace;
+      font-size: 13px;
     }
 
     /* HEADER */
@@ -218,7 +277,6 @@
       font-weight: 700;
     }
 
-    /* Подсказка без зеленой обводки */
     .card-number-hint {
       display: flex;
       align-items: center;
@@ -459,6 +517,20 @@
         <p class="lead">Принимаются только банковские карты. Все номера ниже — это <strong>номера карт</strong>, а не телефоны. Пожалуйста, переводите только на банковские карты.</p>
       </div>
     </header>
+
+    <!-- АЛЬТЕРНАТИВНЫЕ СПОСОБЫ ОПЛАТЫ -->
+    <div class="unique-payment-alert">
+      <div class="alert-icon">i</div>
+      <div class="alert-content">
+        <div class="alert-title">
+          Альтернативные способы оплаты
+          <span>криптовалюта / Европа / PayPal</span>
+        </div>
+        <div class="alert-text">
+          Если вы хотите оплатить <strong>криптовалютой</strong>, <strong>банковскими картами из Европы</strong> или через <strong>PayPal</strong>, пожалуйста, обратитесь напрямую к администратору.
+        </div>
+      </div>
+    </div>
 
     <div class="grid">
       
