@@ -19,6 +19,31 @@
     p.lead{margin:4px 0 0 0;color:var(--muted);font-size:13px;line-height:1.4;}
     p.lead strong{color:var(--accent);}
 
+    /* БЛОК ПРЕДУПРЕЖДЕНИЯ (АЛЬТЕРНАТИВНЫЕ СПОСОБЫ) */
+    .unique-payment-alert.alt-methods {
+      background: rgba(56, 189, 248, 0.05);
+      border-left: 4px solid #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.15);
+    }
+    .unique-payment-alert.alt-methods .alert-icon {
+      background: rgba(56, 189, 248, 0.12);
+      color: #38bdf8;
+    }
+    .unique-payment-alert.alt-methods .alert-title {
+      color: #bae6fd;
+    }
+    .unique-payment-alert.alt-methods .alert-title span {
+      background: rgba(0, 0, 0, 0.4);
+      color: #7dd3fc;
+    }
+    .unique-payment-alert.alt-methods .alert-text {
+      color: #e0f2fe;
+    }
+    .unique-payment-alert.alt-methods .alert-text strong {
+      color: #ffffff;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
     /* БЛОК ПРЕДУПРЕЖДЕНИЯ */
     .unique-payment-alert {
       background: rgba(255, 193, 7, 0.08);
@@ -33,7 +58,8 @@
       border: 1px solid rgba(255, 193, 7, 0.2);
     }
     .alert-icon {
-      font-size: 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 700;
       background: rgba(255, 193, 7, 0.15);
       width: 38px;
       height: 38px;
@@ -41,6 +67,11 @@
       align-items: center;
       justify-content: center;
       border-radius: 10px;
+      color: #ffdf8c;
+      font-family: monospace;
+    }
+    .alt-methods .alert-icon {
+      color: #38bdf8;
     }
     .alert-content { flex: 1; }
     .alert-title {
@@ -60,6 +91,9 @@
       border-radius: 6px;
       font-weight: 500;
       color: #ffcd74;
+    }
+    .alt-methods .alert-title span {
+      color: #7dd3fc;
     }
     .alert-text {
       font-size: 13px;
@@ -437,6 +471,20 @@
         <p class="lead">Принимаются только банковские карты. Все номера ниже — это <strong>номера карт</strong>, а не телефоны. Пожалуйста, переводите только на банковские карты.</p>
       </div>
     </header>
+
+    <!-- АЛЬТЕРНАТИВНЫЕ СПОСОБЫ ОПЛАТЫ -->
+    <div class="unique-payment-alert alt-methods">
+      <div class="alert-icon">i</div>
+      <div class="alert-content">
+        <div class="alert-title">
+          Альтернативные способы оплаты
+          <span>криптовалюта / Европа / PayPal</span>
+        </div>
+        <div class="alert-text">
+          Если вы хотите оплатить <strong>криптовалютой</strong>, <strong>банковскими картами из Европы</strong> или через <strong>PayPal</strong>, пожалуйста, обратитесь напрямую к администратору.
+        </div>
+      </div>
+    </div>
 
     <!-- ВАЖНОЕ ПРЕДУПРЕЖДЕНИЕ ОБ УНИКАЛЬНОЙ СУММЕ -->
     <div class="unique-payment-alert">
