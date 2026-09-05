@@ -8,7 +8,7 @@
   <title>E-Online — безопасные платежи (банковские карты)</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{ --bg1:#071127; --bg2:#071a28; --accent:#38bdf8; --muted:#9aa7b2; --glass: rgba(255,255,255,0.03); }
+    :root{ --bg1:#071127; --bg2:#071a28; --accent:#38bdf8; --muted:#9aa7b2; --glass: rgba(255,255,255,0.03); --gold:#f5d76e; }
     *{box-sizing:border-box}
     body{margin:0;font-family:"Inter",system-ui,Arial;background:linear-gradient(135deg,var(--bg1),var(--bg2));color:#e6eef6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px;}
     .container{width:100%;max-width:1100px;border-radius:14px;padding:18px 22px 20px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 10px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03);position:relative}
@@ -22,7 +22,13 @@
     /* БЛОК ПРЕДУПРЕЖДЕНИЯ (АЛЬТЕРНАТИВНЫЕ СПОСОБЫ) */
     .unique-payment-alert.alt-methods {
       background: rgba(56, 189, 248, 0.05);
-      border-left: 4px solid #38bdf8;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin: 0 0 16px 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 12px;
       border: 1px solid rgba(56, 189, 248, 0.15);
     }
     .unique-payment-alert.alt-methods .alert-icon {
@@ -44,10 +50,9 @@
       background: rgba(0, 0, 0, 0.3);
     }
 
-    /* БЛОК ПРЕДУПРЕЖДЕНИЯ */
+    /* БЛОК ПРЕДУПРЕЖДЕНИЯ ОБ УНИКАЛЬНОЙ СУММЕ */
     .unique-payment-alert {
       background: rgba(255, 193, 7, 0.08);
-      border-left: 4px solid #ffc107;
       border-radius: 12px;
       padding: 14px 16px;
       margin: 0 0 16px 0;
@@ -84,6 +89,9 @@
       gap: 8px;
       flex-wrap: wrap;
     }
+    .alt-methods .alert-title {
+      color: #bae6fd;
+    }
     .alert-title span {
       background: rgba(0, 0, 0, 0.4);
       font-size: 11px;
@@ -100,6 +108,9 @@
       line-height: 1.4;
       color: #f0e6c5;
     }
+    .alt-methods .alert-text {
+      color: #e0f2fe;
+    }
     .alert-text strong {
       color: #ffe5a3;
       background: rgba(0, 0, 0, 0.3);
@@ -107,6 +118,9 @@
       border-radius: 4px;
       font-family: monospace;
       font-size: 13.5px;
+    }
+    .alt-methods .alert-text strong {
+      color: #ffffff;
     }
     .alert-examples {
       display: flex;
@@ -179,7 +193,21 @@
       font-weight: 600;
       font-size: 15px;
       color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
     }
+    .flag-group {
+      display: inline-flex;
+      align-items: center;
+      font-size: 17px;
+      vertical-align: middle;
+    }
+    .flag-group span + span {
+      margin-left: 6px;
+    }
+
     .chip-badge {
       background: var(--glass);
       padding: 4px 8px;
@@ -205,13 +233,53 @@
       font-weight: 500;
       cursor: pointer;
     }
-    .card-holder {
-      color: var(--muted);
-      font-size: 12px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      font-weight: 600;
+
+    /* БЛОК ИМЕНИ ДЕРЖАТЕЛЯ */
+    .holder-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(245, 215, 110, 0.03);
+      border: 1px solid rgba(245, 215, 110, 0.15);
+      border-radius: 8px;
+      padding: 8px 12px;
+      gap: 8px;
     }
+    .holder-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .holder-label {
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .holder-name {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-family: ui-monospace, monospace;
+    }
+    button.copy-holder {
+      background: rgba(245, 215, 110, 0.1);
+      border: 1px solid rgba(245, 215, 110, 0.3);
+      color: var(--gold);
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 11px;
+      text-transform: uppercase;
+      transition: all 0.2s ease;
+    }
+    button.copy-holder:hover {
+      background: rgba(245, 215, 110, 0.2);
+      border-color: var(--gold);
+    }
+
     .card-hint {
       display: flex;
       align-items: center;
@@ -344,7 +412,6 @@
       font-weight: 500;
       z-index: 1000;
       box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-      border-left: 4px solid var(--accent);
       backdrop-filter: blur(8px);
       pointer-events: none;
     }
@@ -512,19 +579,25 @@
     <!-- СЕТКА КАРТ -->
     <div class="grid-cards">
       
-      <!-- КАРТА 1 -->
+      <!-- КАРТА 1: МИР (5291) -->
       <div class="card" data-card-id="1">
         <div class="bank-row">
           <div class="bank-info">
             <div class="bank-logo"><img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/%D0%BC%D0%B8%D1%80.jpg" alt="МИР"></div>
-            <span class="bank-name">МИР (Без комиссии)</span>
+            <span class="bank-name">МИР (Без комиссии) <span class="flag-group"><span>🇷🇺</span><span>🇧🇾</span></span></span>
           </div>
           <span class="chip-badge">карта</span>
         </div>
         <div class="number-container">
           <span class="number-display" data-full="9112386006915291" data-masked="**** **** **** 5291">**** **** **** 5291</span>
         </div>
-        <div class="card-holder">EVGENIY MASK</div>
+        <div class="holder-row">
+          <div class="holder-info">
+            <span class="holder-label">Получатель (Имя)</span>
+            <span class="holder-name">EVGENIY MASK</span>
+          </div>
+          <button class="copy-holder" data-holder="EVGENIY MASK">Копировать имя</button>
+        </div>
         <div class="card-hint">
           <svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M3 10h18M7 15h3m4 0h3M6 5h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" stroke-linecap="round"/></svg>
           <span>номер карты (не телефон)</span>
@@ -540,14 +613,20 @@
         <div class="bank-row">
           <div class="bank-info">
             <div class="bank-logo"><img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/%D0%B1%D0%B5%D0%BB%D0%B7%D0%B0%D0%B3%D0%B1%D0%B0%D0%BD%D0%BA.jpg" alt="MasterCard"></div>
-            <span class="bank-name">MasterCard (KZ/UZ/TJ/USA)</span>
+            <span class="bank-name">MasterCard <span class="flag-group"><span>🇰🇿</span><span>🇺🇿</span><span>🇹🇯</span><span>🇺🇸</span></span></span>
           </div>
           <span class="chip-badge">карта</span>
         </div>
         <div class="number-container">
           <span class="number-display" data-full="5185974906810892" data-masked="**** **** **** 0892">**** **** **** 0892</span>
         </div>
-        <div class="card-holder">EVGENIY MASK</div>
+        <div class="holder-row">
+          <div class="holder-info">
+            <span class="holder-label">Получатель (Имя)</span>
+            <span class="holder-name">EVGENIY MASK</span>
+          </div>
+          <button class="copy-holder" data-holder="EVGENIY MASK">Копировать имя</button>
+        </div>
         <div class="card-hint">
           <svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M3 10h18M7 15h3m4 0h3M6 5h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" stroke-linecap="round"/></svg>
           <span>номер карты (не телефон)</span>
@@ -558,19 +637,25 @@
         </div>
       </div>
 
-      <!-- КАРТА 3 -->
+      <!-- КАРТА 3: Сбер -->
       <div class="card" data-card-id="3">
         <div class="bank-row">
           <div class="bank-info">
             <div class="bank-logo"><img src="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/%D0%BC%D0%B8%D1%80.jpg" alt="МИР"></div>
-            <span class="bank-name">Sber</span>
+            <span class="bank-name">Sber (Без комиссии) <span class="flag-group"><span>🇷🇺</span><span>🇧🇾</span></span></span>
           </div>
           <span class="chip-badge">карта</span>
         </div>
         <div class="number-container">
           <span class="number-display" data-full="9112388038035577" data-masked="**** **** **** 5577">**** **** **** 5577</span>
         </div>
-        <div class="card-holder">EVGENIY MASK</div>
+        <div class="holder-row">
+          <div class="holder-info">
+            <span class="holder-label">Получатель (Имя)</span>
+            <span class="holder-name">EVGENIY MASK</span>
+          </div>
+          <button class="copy-holder" data-holder="EVGENIY MASK">Копировать имя</button>
+        </div>
         <div class="card-hint">
           <svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M3 10h18M7 15h3m4 0h3M6 5h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" stroke-linecap="round"/></svg>
           <span>номер карты (не телефон)</span>
@@ -593,7 +678,13 @@
         <div class="number-container">
           <span class="number-display" data-full="9112393040219532" data-masked="**** **** **** 9532">**** **** **** 9532</span>
         </div>
-        <div class="card-holder">EVGENIY MASK</div>
+        <div class="holder-row">
+          <div class="holder-info">
+            <span class="holder-label">Получатель (Имя)</span>
+            <span class="holder-name">EVGENIY MASK</span>
+          </div>
+          <button class="copy-holder" data-holder="EVGENIY MASK">Копировать имя</button>
+        </div>
         <div class="card-hint">
           <svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M3 10h18M7 15h3m4 0h3M6 5h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" stroke-linecap="round"/></svg>
           <span>номер карты (не телефон)</span>
@@ -616,7 +707,13 @@
         <div class="number-container">
           <span class="number-display" data-full="5599002117222853" data-masked="**** **** **** 2853">**** **** **** 2853</span>
         </div>
-        <div class="card-holder">EVGENIY MASK</div>
+        <div class="holder-row">
+          <div class="holder-info">
+            <span class="holder-label">Получатель (Имя)</span>
+            <span class="holder-name">EVGENIY MASK</span>
+          </div>
+          <button class="copy-holder" data-holder="EVGENIY MASK">Копировать имя</button>
+        </div>
         <div class="card-hint">
           <svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M3 10h18M7 15h3m4 0h3M6 5h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" stroke-linecap="round"/></svg>
           <span>номер карты (не телефон)</span>
@@ -627,7 +724,7 @@
         </div>
       </div>
 
-      <!-- КАРТА 6 -->
+      <!-- КАРТА 6: (8848) -->
       <div class="card" data-card-id="6">
         <div class="bank-row">
           <div class="bank-info">
@@ -639,7 +736,13 @@
         <div class="number-container">
           <span class="number-display" data-full="2204120129358848" data-masked="**** **** **** 8848">**** **** **** 8848</span>
         </div>
-        <div class="card-holder">EVGENIY MASK</div>
+        <div class="holder-row">
+          <div class="holder-info">
+            <span class="holder-label">Получатель (Имя)</span>
+            <span class="holder-name">EVGENIY MASK</span>
+          </div>
+          <button class="copy-holder" data-holder="EVGENIY MASK">Копировать имя</button>
+        </div>
         <div class="card-hint">
           <svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M3 10h18M7 15h3m4 0h3M6 5h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" stroke-linecap="round"/></svg>
           <span>номер карты (не телефон)</span>
@@ -662,7 +765,13 @@
         <div class="number-container">
           <span class="number-display" data-full="4100119260753027" data-masked="**** **** **** 3027">**** **** **** 3027</span>
         </div>
-        <div class="card-holder">YooMoney Wallet</div>
+        <div class="holder-row">
+          <div class="holder-info">
+            <span class="holder-label">Получатель (Имя)</span>
+            <span class="holder-name">YooMoney Wallet</span>
+          </div>
+          <button class="copy-holder" data-holder="YooMoney Wallet">Копировать имя</button>
+        </div>
         <div class="card-hint">
           <svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M12 4v16M8 8l4-4 4 4M8 16l4 4 4-4" stroke-linecap="round"/></svg>
           <span>кошелёк (не телефон)</span>
@@ -720,10 +829,9 @@
         toast.className = 'toast-msg';
         toast.textContent = message;
         if (isError) {
-          toast.style.borderLeftColor = '#e55c5c';
           toast.style.background = '#2d1f24';
         } else {
-          toast.style.borderLeftColor = '#38bdf8';
+          toast.style.background = '#0f172a';
         }
         document.body.appendChild(toast);
         setTimeout(() => {
@@ -734,7 +842,7 @@
       async function copyToClip(text, friendly = 'номер карты') {
         try {
           await navigator.clipboard.writeText(text);
-          showToast(`Скопировано: ${friendly} (...${text.slice(-4)})`);
+          showToast(`Скопировано: ${friendly}`);
         } catch (err) {
           const textarea = document.createElement('textarea');
           textarea.value = text;
@@ -757,6 +865,17 @@
             copyToClip(rawNumber, label);
           } else {
             showToast('Не удалось найти номер', true);
+          }
+        });
+      });
+
+      const copyHolderBtns = document.querySelectorAll('.copy-holder');
+      copyHolderBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const holderName = btn.getAttribute('data-holder');
+          if (holderName) {
+            copyToClip(holderName, `имя (${holderName})`);
           }
         });
       });
