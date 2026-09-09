@@ -1,5 +1,5 @@
 #EXTM3U url-tvg="https://raw.githubusercontent.com/evgeshkawww/iptv/main/IPTV/epg.xml.gz,https://raw.githubusercontent.com/evgeshkawww/iptv/main/IPTV/epg7.xml.gz,http://epg.one/epg.xml.gz"
-#EXTINF:-1 group-title="Приобрести V.I.P⚠️", Ревизия - 07.09.2026 09:11
+#EXTINF:-1 group-title="Приобрести V.I.P⚠️", Ревизия - 09.09.2026 08:52
 http://premium-iptv.ru/promo.m3u8
 #EXTINF:-1 group-title="4K KINO ZAL" tvg-logo="https://pic.rtbcdn.ru/video/3f/18/3f185850e7b3656bc9f11487e30aac36.jpg", Железный человек 1 (2008)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0
@@ -2442,63 +2442,29 @@ http://vod.tuva.ru/rusroman/index.m3u8
 http://vod.tuva.ru/myplanet/index.m3u8
 #EXTINF:-1 group-title="Каналы",Наука 2.0
 http://vod.tuva.ru/nauka2/index.m3u8
-#EXTINF:-1 group-title="Каналы",Alpha Cinema
-http://live.15plusmg.ru/memfs/b389173a-df4e-4171-8904-e249893e71eb.m3u8
-#EXTINF:-1 group-title="Каналы",Alpha Moretime
-http://live.15plusmg.ru/memfs/3546fc09-2eba-459d-9a1f-9a2fc39e50bd.m3u8
 #EXTINF:-1 group-title="Каналы",Твоё ТВ HD 
 http://tvoetv.space:8080/tvoetv/index.m3u8
 #EXTINF:-1 group-title="Каналы",Твоё ТВ HD Юмор
 http://tvoetv.space:8080/tvoetv_humor/index.m3u8
-#EXTINF:-1 group-title="Каналы",Кино ТВ
-http://31.148.48.15:80/Kino_TV/index.m3u8
-#EXTINF:-1 group-title="Каналы",Кино ТВ HD
-http://31.148.48.15:80/Kino_TV_HD/index.m3u8
-#EXTINF:-1 group-title="Каналы",Кинопоказ
-http://31.148.48.15:80/Kinopokaz/index.m3u8
-#EXTINF:-1 group-title="Каналы",ТВ 21
-http://31.148.48.15:80/TV_XXI/index.m3u8
-#EXTINF:-1 group-title="Каналы",Amedia 1
-http://31.148.48.15:80/A1/index.m3u8
-#EXTINF:-1 group-title="Каналы",Amedia 2
-http://31.148.48.15:80/A2/index.m3u8
-#EXTINF:-1 group-title="Каналы",Amedia Hit HD
-http://31.148.48.15:80/Amedia_HIT_HD/index.m3u8
-#EXTINF:-1 group-title="Каналы",Amedia Premium HD
-http://31.148.48.15:80/Amedia_Premium_HD/index.m3u8
-#EXTINF:-1 group-title="Каналы",Sci-Fi
-http://31.148.48.15:80/SONY_SCI_FI/index.m3u8
-#EXTINF:-1 group-title="Каналы",Hollywood
-http://31.148.48.15:80/AMC/index.m3u8
-#EXTINF:-1 group-title="Каналы",Hollywood HD
-http://31.148.48.15:80/MGM_HD/index.m3u8
-#EXTINF:-1 group-title="Каналы",Ностальгия
-http://31.148.48.15:80/Nostalgiya/index.m3u8
-#EXTINF:-1 group-title="Каналы",Бестселлер
-http://31.148.48.15:80/Russkiy_Bestseller/index.m3u8
-#EXTINF:-1 group-title="Каналы",Детектив
-http://31.148.48.15:80/Russkiy_Detektiv/index.m3u8
-#EXTINF:-1 group-title="Каналы",Иллюзион
-http://31.148.48.15:80/Russkiy_illusion/index.m3u8
-#EXTINF:-1 group-title="Каналы",Роман
-http://31.148.48.15:80/Russkiy_Roman/index.m3u8
-#EXTINF:-1 group-title="Каналы",Роман HD
-http://31.148.48.15:80/Russkiy_Roman_HD/index.m3u8
-#EXTINF:-1 group-title="Каналы",SD REX
-http://31.148.48.15:80/Russkiy_Ekstrim/index.m3u8
-#EXTINF:-1 tvg-id="detvoraplushd" tvg-name="ДетвораПлюс HD" group-title="Каналы",ДетвораПлюс HD
+#EXTINF:-1 group-title="Каналы" tvg-id="detvoraplushd" tvg-name="ДетвораПлюс HD" tvg-logo="https://cdn.rostelekom-tv.xyz/picons/89fe214904639432.png" ,Детвора Плюс HD
 https://cdn.rostelekom-tv.xyz/live/WAYU4PTJ_VVz4wAQ.m3u8
-#EXTINF:-1 tvg-id="velvetmenthd" tvg-name="Velvet. Ментовские Сериалы HD" group-title="Каналы",Velvet. Ментовские Сериалы HD
+#EXTINF:-1 group-title="Каналы" tvg-id="velvetmenthd" tvg-name="Velvet. Ментовские Сериалы HD" tvg-logo="https://cdn.rostelekom-tv.xyz/picons/d385074b6255d55c.png" ,Velvet. Ментовские Сериалы HD
 https://cdn.rostelekom-tv.xyz/live/tWQ0ge9rspBQhRst.m3u8
-#EXTINF:-1 tvg-id="velvetsovetskoehd" tvg-name="Velvet. Советское кино HD" group-title="Каналы",Velvet. Советское кино HD
+#EXTINF:-1 group-title="Каналы" tvg-id="velvetsovetskoehd" tvg-name="Velvet. Советское кино HD" tvg-logo="https://cdn.rostelekom-tv.xyz/picons/7129effd35bb63a1.png" ,Velvet. Советское кино HD
 https://cdn.rostelekom-tv.xyz/live/nF4sFCa49nFPHSF_.m3u8
-#EXTINF:-1 tvg-id="velvetzolotohd" tvg-name="Velvet. Золотая коллекция HD" group-title="Каналы",Velvet. Золотая коллекция HD
+#EXTINF:-1 group-title="Каналы" tvg-id="velvetzolotohd" tvg-name="Velvet. Золотая коллекция HD" tvg-logo="https://cdn.rostelekom-tv.xyz/picons/1d811cf354275a47.png" ,Velvet. Золотая коллекция HD
 https://cdn.rostelekom-tv.xyz/live/v804qFZr0QVQ1s9Z.m3u8
-#EXTINF:-1 tvg-id="velveteurkinohd" tvg-name="Velvet. Европейское кино HD" group-title="Каналы",Velvet. Европейское кино HD
+#EXTINF:-1 group-title="Каналы" tvg-id="velveteurkinohd" tvg-name="Velvet. Европейское кино HD" tvg-logo="https://cdn.rostelekom-tv.xyz/picons/e4351d9b387c625d.png" ,Velvet. Европейское кино HD
 https://cdn.rostelekom-tv.xyz/live/LQ3j0n7j0Kq4OQm8.m3u8
-#EXTINF:-1 tvg-id="serialyhityhd" tvg-name="Velvet. Сериалы Хиты HD" group-title="Каналы",Velvet. Сериалы Хиты HD
+#EXTINF:-1 group-title="Каналы" tvg-id="serialyhityhd" tvg-name="Velvet. Сериалы Хиты HD" tvg-logo="https://cdn.rostelekom-tv.xyz/picons/e5f4f860cf5111be.png" ,Velvet. Сериалы Хиты HD
 https://cdn.rostelekom-tv.xyz/live/DeWr3Sgw1Aj2lJd0.m3u8
-#EXTINF:-1 tvg-id="velvetsvatyhd" tvg-name="Velvet. Сваты HD" tvg-logo="https://cdn.rostelekom-tv.xyz/picons/5c274519467ec9c5.png" group-title="Каналы",Velvet. Сваты HD
+#EXTINF:-1 group-title="Каналы" tvg-id="velvetuzhasyhd" tvg-name="Velvet. Ужасы HD" tvg-logo="https://cdn.rostelekom-tv.xyz/picons/8dde3949fecff16c.png" ,Velvet. Ужасы HD
+https://cdn.rostelekom-tv.xyz/live/NImhIFLevxCbtcP-.m3u8
+#EXTINF:-1 group-title="Каналы" tvg-id="mirserialhd" tvg-name="Velvet. Мировые сериалы HD" tvg-logo="https://cdn.rostelekom-tv.xyz/picons/d834f5a9e60097e0.png" ,Velvet. Мировые сериалы HD
+https://cdn.rostelekom-tv.xyz/live/2RR44py-yGlIWQIp.m3u8
+#EXTINF:-1 group-title="Каналы" tvg-id="turkserial-hd" tvg-name="Velvet. Турецкие сериалы HD" tvg-logo="https://cdn.rostelekom-tv.xyz/picons/3a97ff710bd5fb7a.png" Velvet. Турецкие сериалы HD
+https://cdn.rostelekom-tv.xyz/live/3c9TIqiOO4n7o4zK.m3u8
+#EXTINF:-1 group-title="Каналы" tvg-id="velvetsvatyhd" tvg-name="Velvet. Сваты HD" tvg-logo="https://cdn.rostelekom-tv.xyz/picons/5c274519467ec9c5.png" ,Velvet. Сваты HD
 https://cdn.rostelekom-tv.xyz/live/HSxyMqDlSVR54UTN.m3u8
 #EXTINF:-1 group-title="Кинозалы" tvg-logo="https://static.goodgame.ru/files/avatars/av_1301254_55T4.jpg",Katastroff
 https://kinowalk.hopto.org/katastroff_live
