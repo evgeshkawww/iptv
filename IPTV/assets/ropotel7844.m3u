@@ -1,5 +1,5 @@
 #EXTM3U url-tvg="https://raw.githubusercontent.com/evgeshkawww/iptv/main/IPTV/epg.xml.gz,https://raw.githubusercontent.com/evgeshkawww/iptv/main/IPTV/epg7.xml.gz,http://epg.one/epg.xml.gz"
-#EXTINF:-1 group-title="Приобрести V.I.P⚠️", Ревизия - 09.09.2026 08:52
+#EXTINF:-1 group-title="Приобрести V.I.P⚠️", Ревизия - 10.09.2026 08:51
 http://premium-iptv.ru/promo.m3u8
 #EXTINF:-1 group-title="4K KINO ZAL" tvg-logo="https://pic.rtbcdn.ru/video/3f/18/3f185850e7b3656bc9f11487e30aac36.jpg", Железный человек 1 (2008)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0
@@ -2797,8 +2797,6 @@ http://hls127.freeott.top:8080/Zee_Russia/video.m3u8
 https://kb.catcast.tv/content/49702/index.m3u8
 #EXTINF:-1 group-title="KINO+📺",Bolt
 http://hls127.freeott.top:8080/Bolt/video.m3u8
-#EXTINF:-1 group-title="KINO+📺",CCCP
-http://dtv.vol.net.ua/CCCP/index.m3u8
 #EXTINF:-1 group-title="KINO+📺",Кино 1 International
 http://kino-1.catcast.tv/content/38617/index.m3u8
 #EXTINF:-1 group-title="KINO+📺",Amedia1
@@ -2925,14 +2923,10 @@ http://89.33.29.115:8080/enter_film_ua/index.m3u8
 http://88.99.215.227/FilmUADrama/index.m3u8
 #EXTINF:-1 group-title="Україна 🇺🇦",Epic Drama HD
 http://195.189.60.253/118/index.m3u8
-#EXTINF:-1 group-title="Україна 🇺🇦",Мега HD
-http://dtv.vol.net.ua/MEGA-HD/index.m3u8
 #EXTINF:-1 group-title="Україна 🇺🇦",ЗАКОН ТВ+
 http://195.189.60.253/zakon_tv_hd/video.m3u8
 #EXTINF:-1 group-title="Україна 🇺🇦",МАСОН ТВ
 http://195.189.60.253/mason_tv_hd/video.m3u8
-#EXTINF:-1 group-title="Україна 🇺🇦",Квартал ТВ
-http://dtv.vol.net.ua/Kvartal_TV/index.m3u8
 #EXTINF:0  tvg-id="http://ottiptvfilmtvgroup.zapto.org:8568/epg.xml"  tvg-name="FILM TV HD" group-title="Україна 🇺🇦" tvg-logo="http://filmtvgroup.site/uploads/channel/FILMTVHD.png",FILM TV HD
 #EXTGRP:filmtvgroup
 https://ottiptvfilmtvgroup.zapto.org:8080/kino_tv/index.m3u8?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3ODg2ODMzNjIsImV4cCI6MTc4ODc2OTc2Miwic3ViIjoiQWRtaW4ifQ.elQlt9rDrYlfbg85aZPXxIarprRqhdf58qFUNs3wQqs
@@ -7489,6 +7483,104 @@ http://playxapp.play-x.app:2095/0370/index.m3u8?token=free_play_x_app_ru_server
 http://playxapp.play-x.app:2095/0810/index.m3u8?token=free_play_x_app_ru_server
 #EXTINF:-1 tvg-id="0800" tvg-name="Play-X Чип и Дейл"  group-title="Play-X",Play-X Чип и Дейл
 http://playxapp.play-x.app:2095/0800/index.m3u8?token=free_play_x_app_ru_server
+#EXTINF:-1 group-title="Tест-voly" ,1+1 Marafon
+http://dtv.vol.net.ua:80/1PLUS1/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,2+2
+http://dtv.vol.net.ua:80/2PLUS2/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,K2
+http://dtv.vol.net.ua:80/K-2/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Inter+
+http://dtv.vol.net.ua:80/Inter_plus/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,TV-2
+http://dtv.vol.net.ua:80/ICTV-2/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,ProKino
+http://dtv.vol.net.ua:80/ProKino/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Kinosweet
+http://dtv.vol.net.ua:80/Kinosweet/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,KINOWOOD
+http://dtv.vol.net.ua:80/KINOWOOD/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Cine+
+http://dtv.vol.net.ua:80/Cine_plus/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Cine+ Legend
+http://dtv.vol.net.ua:80/Cine_plus_Legend/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Cine+ Hit
+http://dtv.vol.net.ua:80/Cine_plus_Hit/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Viasat Kino
+http://dtv.vol.net.ua:80/Viasat_Kino/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Viasat_Kino_Action_HD
+http://dtv.vol.net.ua:80/Viasat_Kino_Action_HD/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Hollywood
+http://dtv.vol.net.ua:80/Hollywood-HD/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Bolt
+http://dtv.vol.net.ua:80/Bolt/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Discovery Channel HD
+http://dtv.vol.net.ua:80/Discovery_Channel_HD/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,DOCUBOX
+http://dtv.vol.net.ua:80/DOCUBOX-HD/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Espreso
+http://dtv.vol.net.ua:80/Espreso_TV_HD/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Пятый канал
+http://dtv.vol.net.ua:80/5_kanal/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,H2
+http://dtv.vol.net.ua:80/H2-HD/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,History
+http://dtv.vol.net.ua:80/History_HD/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,InRating HD
+http://dtv.vol.net.ua:80/inrating/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Investigation Discovery
+http://dtv.vol.net.ua:80/Investigation-Discovery/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,1-HD
+http://dtv.vol.net.ua:80/M1-HD/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Maincast Sport
+http://dtv.vol.net.ua:80/Maincast_Sport/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Mega
+http://dtv.vol.net.ua:80/MEGA_HD/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Nat-Geo-Wild
+http://dtv.vol.net.ua:80/Nat-Geo-Wild_HD/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,National_Geographic
+http://dtv.vol.net.ua:80/National_Geographic-HD/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,NIKIKids
+http://dtv.vol.net.ua:80/NIKI_Kids/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,OCE HD
+http://dtv.vol.net.ua:80/OCE_HD/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,plusplus
+http://dtv.vol.net.ua:80/plus_plus/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,super_plus
+http://dtv.vol.net.ua:80/super_plus/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,TLC
+http://dtv.vol.net.ua:80/TLC/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,futbol-TV
+http://dtv.vol.net.ua:80/UPL-TV/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Viasat-Explore
+http://dtv.vol.net.ua:80/Viasat-Explore/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Svit+
+http://dtv.vol.net.ua:80/Svit_plus/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Cine+ Kids
+http://dtv.vol.net.ua:80/Cine_plus_Kids_HD/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,EU Music
+http://dtv.vol.net.ua:80/EU-MUSIC-HD/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,UA Music
+http://dtv.vol.net.ua:80/UA_MUSIC/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Music Box Classic
+http://dtv.vol.net.ua:80/Music_Box_Classic/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Music Box PL for UA
+http://dtv.vol.net.ua:80/Music_Box/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,24 Kanal
+http://dtv.vol.net.ua:80/24_Kanal/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Интер
+http://dtv.vol.net.ua:80/Inter_HD/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,We-Ukraine
+http://dtv.vol.net.ua:80/My-Ukraina/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Sea TV
+http://dtv.vol.net.ua:80/Sea_TV_HD/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,FREEDOM
+http://dtv.vol.net.ua:80/FREEDOM/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Suspilne Sport
+http://dtv.vol.net.ua:80/Suspilne-Sport/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,Fishing UA
+http://dtv.vol.net.ua:80/Rybalka-HD/index.m3u8
+#EXTINF:-1 group-title="Tест-voly" ,OnePlanet
+http://dtv.vol.net.ua:80/OnePlanet/index.m3u8
 #EXTINF:-1 group-title="🇷🇺Федеральные V.I.P⚠️" tvg-id="ch001" tvg-logo="http://138.16.184.153:8080/ico_r/146.png" tvg-rec="0", Первый канал UHD
 http://138.16.184.153:8081/iptv/TEST/19241/index.m3u8
 #EXTINF:-1 group-title="🇷🇺Федеральные V.I.P⚠️" tvg-id="ch003" tvg-logo="http://138.16.184.153:8080/ico_r/162.png" tvg-rec="0", НТВ UHD
