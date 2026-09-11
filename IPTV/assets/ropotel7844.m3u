@@ -1,5 +1,5 @@
 #EXTM3U url-tvg="https://raw.githubusercontent.com/evgeshkawww/iptv/main/IPTV/epg.xml.gz,https://raw.githubusercontent.com/evgeshkawww/iptv/main/IPTV/epg7.xml.gz,http://epg.one/epg.xml.gz"
-#EXTINF:-1 group-title="Приобрести V.I.P⚠️", Ревизия - 10.09.2026 08:51
+#EXTINF:-1 group-title="Приобрести V.I.P⚠️", Ревизия - 11.09.2026 08:48
 http://premium-iptv.ru/promo.m3u8
 #EXTINF:-1 group-title="4K KINO ZAL" tvg-logo="https://pic.rtbcdn.ru/video/3f/18/3f185850e7b3656bc9f11487e30aac36.jpg", Железный человек 1 (2008)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0
