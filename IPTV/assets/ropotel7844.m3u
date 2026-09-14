@@ -1,5 +1,5 @@
 #EXTM3U url-tvg="https://raw.githubusercontent.com/evgeshkawww/iptv/main/IPTV/epg.xml.gz,https://raw.githubusercontent.com/evgeshkawww/iptv/main/IPTV/epg7.xml.gz,http://epg.one/epg.xml.gz"
-#EXTINF:-1 group-title="Приобрести V.I.P⚠️", Ревизия - 13.09.2026 09:24
+#EXTINF:-1 group-title="Приобрести V.I.P⚠️", Ревизия - 14.09.2026 09:43
 http://premium-iptv.ru/promo.m3u8
 #EXTINF:-1 group-title="4K KINO ZAL" tvg-logo="https://pic.rtbcdn.ru/video/2026-09-07/26/d2/26d23f1ecc34aa423bd6966257d14f66.jpg", Добро пожаловать в джунгли (2026)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
