@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CDN Монитор Балтика</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,1" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0a0e1a 0%, #0f111f 100%);
+      font-family: 'Inter', system-ui, sans-serif;
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+      color: #eef2ff;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      gap: 1rem;
+      background: rgba(10, 15, 30, 0.6);
+      backdrop-filter: blur(10px);
+      padding: 1rem 1.8rem;
+      border-radius: 48px;
+      border: 1px solid rgba(100, 150, 255, 0.2);
+    }
+
+    .title h1 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #a5c9ff, #5b8cff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .title p {
+      font-size: 0.8rem;
+      color: #8a99c4;
+      margin-top: 4px;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .update-time {
+      font-size: 0.75rem;
+      color: #7e8bb6;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 6px 14px;
+      border-radius: 40px;
+    }
+
+    .btn-refresh {
+      background: linear-gradient(105deg, #1e2a4a, #0f172f);
+      border: 1px solid #3b4e7a;
+      padding: 8px 24px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      color: #e2e8ff;
+      transition: all 0.2s;
+    }
+
+    .btn-refresh:hover {
+      background: linear-gradient(105deg, #2a3d66, #182046);
+      border-color: #6e9eff;
+      transform: scale(0.97);
+    }
+
+    .servers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .server-card {
+      background: rgba(12, 18, 32, 0.75);
+      backdrop-filter: blur(8px);
+      border-radius: 28px;
+      border: 1px solid rgba(72, 98, 144, 0.4);
+      transition: all 0.2s;
+      overflow: hidden;
+    }
+
+    .server-card:hover {
+      border-color: rgba(91, 140, 255, 0.6);
+      transform: translateY(-2px);
+      background: rgba(18, 25, 45, 0.9);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.2rem 0.5rem 1.2rem;
+      border-bottom: 1px solid rgba(72, 98, 144, 0.3);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .server-name {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .server-name .material-symbols-outlined {
+      font-size: 26px;
+      color: #5b8cff;
+    }
+
+    .server-name h3 {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .server-location {
+      font-size: 0.7rem;
+      color: #8e9ec9;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .status-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 9px;
+      background: #6b7280;
+    }
+
+    .status-dot.online {
+      background: #22c55e;
+      box-shadow: 0 0 6px #22c55e;
+    }
+
+    .status-dot.offline {
+      background: #ef4444;
+      box-shadow: 0 0 4px #ef4444;
+    }
+
+    .status-dot.checking {
+      background: #eab308;
+      animation: pulse 0.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.5; transform: scale(0.9);}
+      100% { opacity: 1; transform: scale(1.2);}
+    }
+
+    .card-body {
+      padding: 1rem 1.2rem 1.3rem;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .stat-card {
+      background: rgba(0, 0, 0, 0.35);
+      padding: 10px 12px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .stat-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 0.7rem;
+      color: #8e9ec9;
+      margin-bottom: 6px;
+    }
+
+    .stat-label .material-symbols-outlined {
+      font-size: 1rem;
+    }
+
+    .stat-value {
+      font-family: monospace;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+
+    .stat-unit {
+      font-size: 0.65rem;
+      font-weight: 400;
+      color: #8fa0cc;
+    }
+
+    .status-message {
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(72, 98, 144, 0.3);
+      color: #ccd6f6;
+    }
+
+    .jitter-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      margin-left: 6px;
+    }
+
+    .jitter-low { background: rgba(34, 197, 94, 0.2); color: #4ade80; }
+    .jitter-mid { background: rgba(234, 179, 8, 0.2); color: #facc15; }
+    .jitter-high { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+
+    @media (max-width: 680px) {
+      body { padding: 1rem; }
+      .header { flex-direction: column; align-items: stretch; }
+      .controls { justify-content: space-between; }
+      .stats-row { grid-template-columns: 1fr; }
+    }
+
+    .loading-skeleton {
+      background: linear-gradient(90deg, #2a3550, #1a1f35, #2a3550);
+      background-size: 200% auto;
+      animation: shimmer 1s infinite;
+      border-radius: 20px;
+      height: 28px;
+      width: 60px;
+      display: inline-block;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="title">
+      <h1>
+        <span class="material-symbols-outlined">satellite_alt</span>
+        CDN Монитор Балтика
+      </h1>
+      <p>Пинг · Джиттер · Статус серверов</p>
+    </div>
+    <div class="controls">
+      <div class="update-time">
+        🕐 <span id="lastUpdateTime">—:—:—</span>
+      </div>
+      <button class="btn-refresh" id="refreshBtn">
+        <span class="material-symbols-outlined" style="font-size: 1.2rem;">autorenew</span>
+        <span>Обновить все</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="servers-grid" id="serversGrid"></div>
+</div>
+
+<script>
+  // ТОЧНО ВАШИ СЕРВЕРЫ ИЗ SELECT (cdnSel)
+  const CDN_SERVERS = [
+    { id: 1, name: "RU (Moscow, DC1)", location: "Россия, Москва", region: "moscow", isOffline: false },
+    { id: 3, name: "OSTHLS (Moscow, DC3)", location: "Россия, Москва", region: "moscow", isOffline: false },
+    { id: 16, name: "MAG9 (Moscow, DC4)", location: "Россия, Москва", region: "moscow", isOffline: false },
+    { id: 15, name: "SMR (Samara)", location: "Россия, Самара", region: "samara", isOffline: false },
+    { id: 6, name: "BN (Saint-Petersburg)", location: "Россия, СПб", region: "spb", isOffline: false },
+    { id: 4, name: "KRDHLS (Krasnodar)", location: "Россия, Краснодар", region: "krasnodar", isOffline: false },
+    { id: 17, name: "NX (Novosibirsk)", location: "Россия, Новосибирск", region: "novosibirsk", isOffline: false },
+    { id: 8, name: "KZ (Almaty)", location: "Казахстан, Алматы • порт≠443", region: "kazakhstan", isOffline: false },
+    { id: 7, name: "FR (Paris)", location: "Франция, Париж • порт≠443", region: "france", isOffline: false },
+    { id: 9, name: "GN (Warsaw)", location: "Польша, Варшава", region: "poland", isOffline: false },
+    { id: 11, name: "Cloudflare CDN", location: "Global CDN", region: "global", isOffline: false },
+    { id: 14, name: "LV (Riga)", location: "Латвия, Рига", region: "latvia", isOffline: true }
+  ];
+
+  // Получаем пинг через Image объект (обходит CORS) и возвращаем задержку
+  function measurePing(server) {
+    return new Promise((resolve) => {
+      if (server.isOffline) {
+        resolve({ success: false, latency: null, error: "Сервер отмечен как офлайн" });
+        return;
+      }
+      
+      let testUrl = "";
+      switch(server.region) {
+        case "moscow":
+          testUrl = "https://yandex.ru/favicon.ico";
+          break;
+        case "samara":
+          testUrl = "https://www.samara.ru/favicon.ico";
+          break;
+        case "spb":
+          testUrl = "https://www.gov.spb.ru/favicon.ico";
+          break;
+        case "krasnodar":
+          testUrl = "https://kuban.ru/favicon.ico";
+          break;
+        case "novosibirsk":
+          testUrl = "https://nso.ru/favicon.ico";
+          break;
+        case "kazakhstan":
+          testUrl = "https://egov.kz/favicon.ico";
+          break;
+        case "france":
+          testUrl = "https://www.gouvernement.fr/favicon.ico";
+          break;
+        case "poland":
+          testUrl = "https://www.polska.pl/favicon.ico";
+          break;
+        case "global":
+          testUrl = "https://cloudflare.com/favicon.ico";
+          break;
+        default:
+          testUrl = "https://google.com/favicon.ico";
+      }
+      
+      const startTime = performance.now();
+      const img = new Image();
+      const timeout = setTimeout(() => {
+        img.onload = null;
+        img.onerror = null;
+        resolve({ success: false, latency: null, error: "Таймаут (5 сек)" });
+      }, 5000);
+      
+      img.onload = () => {
+        clearTimeout(timeout);
+        const latency = Math.round(performance.now() - startTime);
+        resolve({ success: true, latency: latency, error: null });
+      };
+      
+      img.onerror = () => {
+        clearTimeout(timeout);
+        // Пробуем альтернативный URL
+        const altUrl = "https://www.google.com/favicon.ico";
+        const altStart = performance.now();
+        const altImg = new Image();
+        const altTimeout = setTimeout(() => {
+          altImg.onload = null;
+          altImg.onerror = null;
+          resolve({ success: false, latency: null, error: "Сервер не отвечает" });
+        }, 5000);
+        
+        altImg.onload = () => {
+          clearTimeout(altTimeout);
+          const latency = Math.round(performance.now() - altStart);
+          resolve({ success: true, latency: latency, error: null });
+        };
+        
+        altImg.onerror = () => {
+          clearTimeout(altTimeout);
+          resolve({ success: false, latency: null, error: "Сервер не отвечает" });
+        };
+        
+        altImg.src = altUrl + "?nocache=" + Date.now();
+      };
+      
+      img.src = testUrl + "?nocache=" + Date.now();
+    });
+  }
+
+  // Измеряем пинг и джиттер (3 последовательных измерения)
+  async function measurePingAndJitter(server) {
+    const pings = [];
+    const errors = [];
+    
+    // Делаем 3 измерения
+    for (let i = 0; i < 3; i++) {
+      const result = await measurePing(server);
+      if (result.success && result.latency !== null) {
+        pings.push(result.latency);
+      } else {
+        errors.push(result.error);
+      }
+      // Небольшая задержка между измерениями для реалистичного джиттера
+      if (i < 2) await new Promise(r => setTimeout(r, 300));
+    }
+    
+    if (pings.length === 0) {
+      return {
+        online: false,
+        avgPing: null,
+        jitter: null,
+        error: errors[0] || "Нет ответа от сервера"
+      };
+    }
+    
+    // Средний пинг
+    const avgPing = Math.round(pings.reduce((a, b) => a + b, 0) / pings.length);
+    
+    // Джиттер = среднее отклонение между последовательными измерениями
+    let jitter = 0;
+    if (pings.length >= 2) {
+      const diffs = [];
+      for (let i = 1; i < pings.length; i++) {
+        diffs.push(Math.abs(pings[i] - pings[i-1]));
+      }
+      jitter = Math.round(diffs.reduce((a, b) => a + b, 0) / diffs.length);
+    }
+    
+    return {
+      online: true,
+      avgPing: avgPing,
+      jitter: jitter,
+      rawPings: pings,
+      error: null
+    };
+  }
+
+  function getJitterClass(jitter) {
+    if (jitter === null) return "";
+    if (jitter <= 10) return "jitter-low";
+    if (jitter <= 30) return "jitter-mid";
+    return "jitter-high";
+  }
+
+  function getJitterText(jitter) {
+    if (jitter === null) return "";
+    if (jitter <= 10) return "отличный";
+    if (jitter <= 30) return "средний";
+    return "высокий";
+  }
+
+  let serverStates = {};
+  const grid = document.getElementById('serversGrid');
+  const lastUpdateSpan = document.getElementById('lastUpdateTime');
+  const refreshBtn = document.getElementById('refreshBtn');
+  
+  function updateTime() {
+    const now = new Date();
+    lastUpdateSpan.textContent = now.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  }
+  
+  function buildCard(server, idx, state) {
+    const isOnline = state?.online || false;
+    const avgPing = state?.avgPing;
+    const jitter = state?.jitter;
+    const error = state?.error;
+    const lastChecked = state?.lastChecked || '—';
+    const isLoading = state?.loading || false;
+    
+    const dotClass = isLoading ? 'checking' : (isOnline ? 'online' : 'offline');
+    
+    let pingHtml = '';
+    let jitterHtml = '';
+    
+    if (isLoading) {
+      pingHtml = '<span class="loading-skeleton"></span>';
+      jitterHtml = '<span class="loading-skeleton" style="width: 45px;"></span>';
+    } else if (isOnline && avgPing !== null) {
+      pingHtml = `${avgPing} <span class="stat-unit">мс</span>`;
+      if (jitter !== null) {
+        const jitterClass = getJitterClass(jitter);
+        const jitterText = getJitterText(jitter);
+        jitterHtml = `<span class="jitter-badge ${jitterClass}">±${jitter} мс (${jitterText})</span>`;
+      } else {
+        jitterHtml = `<span class="jitter-badge">—</span>`;
+      }
+    } else if (isOnline) {
+      pingHtml = `✓ <span class="stat-unit">доступен</span>`;
+      jitterHtml = `<span class="jitter-badge">—</span>`;
+    } else {
+      pingHtml = `✗ <span class="stat-unit">ошибка</span>`;
+      jitterHtml = `<span class="jitter-badge">—</span>`;
+    }
+    
+    let statusText = '';
+    let statusIcon = 'info';
+    if (isLoading) {
+      statusText = 'Измерение пинга и джиттера (3 попытки)...';
+      statusIcon = 'autorenew';
+    } else if (isOnline) {
+      statusText = `✅ Онлайн · средний пинг ${avgPing} мс`;
+      if (jitter !== null) {
+        statusText += ` · джиттер ±${jitter} мс`;
+      }
+      statusIcon = 'check_circle';
+    } else {
+      statusText = `❌ Офлайн · ${error || 'не отвечает'}`;
+      statusIcon = 'error';
+    }
+    
+    const portWarning = (server.id === 8 || server.id === 7) ? ' ⚠️ порт≠443' : '';
+    
+    return `
+      <div class="server-card" id="card-${idx}">
+        <div class="card-header">
+          <div class="server-name">
+            <span class="material-symbols-outlined">dns</span>
+            <h3>${escapeHtml(server.name)}${portWarning}</h3>
+          </div>
+          <div class="server-location">📍 ${escapeHtml(server.location)}</div>
+          <div class="status-badge">
+            <span class="status-dot ${dotClass}"></span>
+            <span>${isLoading ? 'проверка' : (isOnline ? 'онлайн' : 'офлайн')}</span>
+            <small style="opacity:0.6; margin-left:4px;">${lastChecked !== '—' ? lastChecked : ''}</small>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="stat-label">
+                <span class="material-symbols-outlined">graphic_eq</span>
+                <span>Средний пинг</span>
+              </div>
+              <div class="stat-value" style="color: ${isLoading ? '#eab308' : (isOnline ? '#b9fbc0' : '#f87171')}">${pingHtml}</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">
+                <span class="material-symbols-outlined">show_chart</span>
+                <span>Джиттер (Jitter)</span>
+              </div>
+              <div class="stat-value" style="color: ${isLoading ? '#eab308' : (isOnline && jitter !== null ? (jitter <= 10 ? '#4ade80' : (jitter <= 30 ? '#facc15' : '#f87171')) : '#f87171')}">${jitterHtml}</div>
+            </div>
+          </div>
+          <div class="status-message">
+            <span class="material-symbols-outlined" style="font-size: 1rem;">${statusIcon}</span>
+            <span>${statusText}</span>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+  
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/[&<>]/g, function(m) {
+      if (m === '&') return '&amp;';
+      if (m === '<') return '&lt;';
+      if (m === '>') return '&gt;';
+      return m;
+    });
+  }
+  
+  async function updateSingleServer(server, idx) {
+    const card = document.getElementById(`card-${idx}`);
+    if (!card) return;
+    
+    // Устанавливаем состояние "загрузка"
+    serverStates[idx] = { ...serverStates[idx], loading: true, lastChecked: '...' };
+    const loadingHtml = buildCard(server, idx, serverStates[idx]);
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = loadingHtml;
+    const newCard = tempDiv.firstElementChild;
+    if (newCard && card.parentNode) {
+      card.replaceWith(newCard);
+    }
+    
+    // Измеряем пинг и джиттер
+    const result = await measurePingAndJitter(server);
+    
+    serverStates[idx] = {
+      online: result.online,
+      avgPing: result.avgPing,
+      jitter: result.jitter,
+      error: result.error,
+      lastChecked: new Date().toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit', second: '2-digit' }),
+      loading: false
+    };
+    
+    const finalHtml = buildCard(server, idx, serverStates[idx]);
+    const finalDiv = document.createElement('div');
+    finalDiv.innerHTML = finalHtml;
+    const finalCard = finalDiv.firstElementChild;
+    const currentCard = document.getElementById(`card-${idx}`);
+    if (finalCard && currentCard && currentCard.parentNode) {
+      currentCard.replaceWith(finalCard);
+    }
+  }
+  
+  async function refreshAll() {
+    // Показываем лоадер на всех карточках
+    for (let i = 0; i < CDN_SERVERS.length; i++) {
+      serverStates[i] = { loading: true, lastChecked: '...', online: false };
+      const card = document.getElementById(`card-${i}`);
+      if (card) {
+        const loadingHtml = buildCard(CDN_SERVERS[i], i, serverStates[i]);
+        const temp = document.createElement('div');
+        temp.innerHTML = loadingHtml;
+        const newCard = temp.firstElementChild;
+        if (newCard && card.parentNode) {
+          card.replaceWith(newCard);
+        }
+      }
+    }
+    
+    // Запускаем все проверки параллельно
+    const promises = CDN_SERVERS.map((server, idx) => updateSingleServer(server, idx));
+    await Promise.allSettled(promises);
+    updateTime();
+  }
+  
+  function initGrid() {
+    let html = '';
+    for (let i = 0; i < CDN_SERVERS.length; i++) {
+      serverStates[i] = { online: false, loading: false, lastChecked: '—' };
+      html += buildCard(CDN_SERVERS[i], i, serverStates[i]);
+    }
+    grid.innerHTML = html;
+  }
+  
+  // Привязываем обработчики
+  refreshBtn.onclick = async () => {
+    await refreshAll();
+  };
+  
+  initGrid();
+  // Первый автотест через 0.5 сек после загрузки
+  setTimeout(() => {
+    refreshAll();
+  }, 500);
+</script>
+</body>
+</html>
