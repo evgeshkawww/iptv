@@ -1,0 +1,42 @@
+name: Update EPG Fast
+
+on:
+  schedule:
+    - cron: "0 */3 * * *"
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - run: pip install requests
+
+      - run: python IPTV/scripts/update_epg.py
+
+      - run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          
+          git add IPTV/epg.xml.gz IPTV/epg7.xml.gz
+          
+          # Проверяем, есть ли изменения, если файл не изменился — выходим без ошибок
+          git diff --staged --quiet && exit 0
+          
+          # Пересоздаем историю в один чистый коммит
+          git checkout --orphan temp_branch
+          git add IPTV/epg.xml.gz IPTV/epg7.xml.gz
+          git commit -m "Daily EPG update"
+          git branch -D main
+          git branch -m main
+          git push -f origin main
