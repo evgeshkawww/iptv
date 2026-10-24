@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#101d33">
+<meta name="description" content="E-Online — реквизиты для перевода: банковские карты и кошелёк ЮMoney.">
+<title>E-Online — Платёжные реквизиты</title>
+<link rel="icon" href="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme:light;
+    --page:#f4f6fa;--surface:#ffffff;--ink:#15243a;--muted:#718096;
+    --line:#e8edf4;--blue:#3d58cf;--blue-hover:#3147b1;--navy:#101d33;
+    --teal:#4ad5bb;--r-lg:22px;--shadow:0 12px 42px rgba(20,39,72,.045);
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:24px}
+  body{margin:0;min-width:320px;min-height:100vh;font-family:'Manrope',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ink);background:var(--page);-webkit-font-smoothing:antialiased}
+  button,a{-webkit-tap-highlight-color:transparent}
+  button{font:inherit;cursor:pointer}
+  button:focus-visible,a:focus-visible{outline:3px solid #7396ff;outline-offset:3px}
+  a{text-decoration:none;color:inherit}
+  .icon{width:18px;height:18px;flex:0 0 auto;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;fill:none}
+  .shell{max-width:1152px;width:calc(100% - 56px);margin-inline:auto}
+  .site-header{background:#fff;border-bottom:1px solid #e9edf3}
+  .navigation{height:86px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .identity{display:flex;align-items:center;gap:13px;min-width:0}
+  .identity-mark{width:43px;height:43px;border-radius:14px;background:var(--navy);color:#fff;display:grid;place-items:center;box-shadow:0 5px 13px rgba(16,29,51,.14);font-size:23px;font-weight:800;letter-spacing:-.07em;padding-right:3px}
+  .identity-name{display:block;font-size:17px;letter-spacing:-.055em;font-weight:800;line-height:1.25}
+  .identity-caption{display:block;font-size:10px;color:#9aa5b4;letter-spacing:.13em;text-transform:uppercase;font-weight:800;margin-top:4px}
+  .navigation-note{display:flex;align-items:center;gap:9px;color:#6b7a8e;font-size:12px;font-weight:700;white-space:nowrap}
+  .navigation-note .status-dot{height:8px;width:8px;background:#52bd9e;border-radius:50%;box-shadow:0 0 0 4px rgba(82,189,158,.13)}
+  .hero{padding-top:30px}
+  .hero-inner{position:relative;isolation:isolate;overflow:hidden;background:#12223c;border-radius:28px;min-height:323px;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(300px,.88fr);gap:36px;align-items:center;padding:50px 53px;box-shadow:0 25px 50px rgba(19,35,65,.13)}
+  .hero-inner::before{content:"";position:absolute;z-index:-1;inset:0;background:radial-gradient(ellipse at 85% -15%,rgba(89,139,221,.28),transparent 50%),radial-gradient(ellipse at 0% 100%,rgba(57,122,167,.13),transparent 42%)}
+  .hero-inner::after{content:"";position:absolute;width:440px;height:440px;border:1px solid rgba(255,255,255,.055);border-radius:50%;right:-155px;top:-228px;box-shadow:0 0 0 85px rgba(255,255,255,.018),0 0 0 170px rgba(255,255,255,.012);pointer-events:none}
+  .eyebrow{display:inline-flex;align-items:center;gap:11px;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#9cbedf}
+  .eyebrow::before{content:"";width:25px;height:2px;background:var(--teal);border-radius:10px}
+  h1{font-size:clamp(32px,4.2vw,52px);font-weight:800;line-height:1.17;letter-spacing:-.055em;color:#fff;margin:25px 0 18px;max-width:500px}
+  .hero-summary{max-width:490px;font-size:14px;line-height:1.9;color:#bac9dc;margin:0}
+  .hero-summary strong{color:#fff;font-weight:700}
+  .process{position:relative;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);border-radius:20px;padding:24px 28px;backdrop-filter:blur(8px)}
+  .process-caption{font-size:11px;text-transform:uppercase;letter-spacing:.16em;font-weight:800;color:#a8bad0;margin:0 0 23px}
+  .process-row{display:flex;align-items:flex-start;gap:15px;position:relative}
+  .process-row + .process-row{margin-top:23px}
+  .process-num{display:grid;place-items:center;width:29px;height:29px;border-radius:9px;background:rgba(114,217,201,.11);border:1px solid rgba(114,217,201,.22);font-size:11px;color:#92e1d3;font-weight:800;flex:none}
+  .process-row strong{display:block;color:#f7fbff;font-size:13px;line-height:1.3;margin:1px 0 5px}
+  .process-row p{font-size:11.5px;color:#a9b9cb;line-height:1.65;margin:0}
+  main{padding:40px 0 0}
+  .section-top{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:19px}
+  .section-heading{margin:0;font-size:21px;letter-spacing:-.035em;font-weight:800}
+  .section-subtitle{font-size:12px;line-height:1.6;color:var(--muted);margin:7px 0 0}
+  .section-count{font-size:11px;white-space:nowrap;font-weight:800;color:#8c9aac;background:#e9edf4;border:1px solid #e2e8ef;padding:8px 12px;border-radius:8px}
+  .advisories{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+  .advisory{display:flex;gap:16px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:23px 23px 22px;box-shadow:0 4px 20px rgba(30,56,91,.022)}
+  .advisory-icon{height:43px;width:43px;flex:none;border-radius:13px;display:grid;place-items:center}
+  .advisory-warning .advisory-icon{background:#fff2df;color:#ba812e}
+  .advisory-info .advisory-icon{background:#eaf2ff;color:#3c69bb}
+  .advisory-title{display:block;font-size:13px;font-weight:800;letter-spacing:-.015em;margin:0 0 7px}
+  .advisory p{color:#6d7d8f;font-size:12px;line-height:1.85;margin:0}
+  .advisory strong{color:#243750;font-weight:800}
+  .amount-example{display:inline-block;white-space:nowrap;background:#fff5e9;color:#93601d;border:1px solid #f5e5cd;padding:0 6px;margin:0 2px;border-radius:5px;font-weight:800;font-variant-numeric:tabular-nums}
+  .payment-section{margin-top:45px}
+  .payments-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+  .payment-card{position:relative;display:flex;flex-direction:column;gap:20px;min-width:0;background:#fff;border:1px solid #e5ebf2;border-radius:21px;padding:26px;box-shadow:var(--shadow);transition:box-shadow .25s ease,transform .25s ease,border-color .25s ease}
+  .payment-card:hover{box-shadow:0 22px 45px rgba(21,40,71,.085);transform:translateY(-2px);border-color:#dce3f1}
+  .card-top{display:flex;justify-content:space-between;align-items:start;gap:16px;min-height:48px}
+  .provider{display:flex;gap:12px;align-items:center;min-width:0}
+  .brand-mark{width:47px;height:47px;flex:0 0 47px;border:1px solid #e8edf4;border-radius:14px;display:flex;align-items:center;justify-content:center;background:#f7f9fc;position:relative;overflow:hidden}
+  .brand-mir{font-size:22px;letter-spacing:-.14em;padding-right:5px;font-weight:800;font-style:italic;color:#258d6c}
+  .brand-master i{display:block;position:absolute;width:19px;height:19px;border-radius:50%;top:13px}
+  .brand-master i:first-child{left:9px;background:#eb5a48}
+  .brand-master i:last-child{left:19px;background:#e8ac39;mix-blend-mode:multiply}
+  .brand-yoom{font-size:22px;color:#6f49db;font-weight:800}
+  .provider-titles{min-width:0}
+  .provider h3{font-size:15px;font-weight:800;letter-spacing:-.032em;line-height:1.35;margin:0 0 4px}
+  .provider p{color:#8997a9;font-size:11px;line-height:1.4;margin:0;font-weight:600}
+  .method-index{white-space:nowrap;font-size:10px;letter-spacing:.06em;font-weight:800;color:#99a4b5;background:#f6f8fb;border:1px solid #edf0f6;padding:7px 9px;border-radius:8px;font-variant-numeric:tabular-nums}
+  .number-panel{background:linear-gradient(124deg,#f5f7fc 0%,#f9fafe 72%,#f5f8fe 100%);border:1px solid #e9eef6;border-radius:15px;padding:18px 19px 16px;min-width:0}
+  .number-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:18px;font-size:10px;font-weight:800;letter-spacing:.115em;color:#8d9bad;text-transform:uppercase}
+  .flags{font-size:18px;letter-spacing:2px;white-space:nowrap;line-height:1;flex:none}
+  .payment-number{font-family:ui-monospace,'SFMono-Regular',Consolas,'Liberation Mono',monospace;font-size:clamp(15px,1.8vw,20px);font-weight:700;letter-spacing:.065em;display:block;color:#182a45;white-space:nowrap;margin:21px 0 18px;font-variant-numeric:tabular-nums}
+  .number-footnote{display:flex;align-items:center;gap:7px;color:#91a0b2;font-size:10px;font-weight:600;line-height:1.5}
+  .number-footnote .icon{width:14px;height:14px}
+  .holder-box{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:45px}
+  .holder-copy{display:flex;flex-direction:column;gap:6px;min-width:0}
+  .field-label{font-size:10px;color:#8997a9;font-weight:700;letter-spacing:.04em}
+  .holder-value{font-size:12px;letter-spacing:.065em;color:#273c55;font-weight:800;overflow-wrap:anywhere}
+  .quiet-button{border:0;background:transparent;display:inline-flex;align-items:center;gap:7px;color:#5269b4;font-size:11px;font-weight:800;padding:9px 0 9px 8px;white-space:nowrap;transition:color .15s}
+  .quiet-button:hover{color:var(--blue-hover)}
+  .quiet-button .icon{width:15px;height:15px}
+  .card-actions{display:grid;grid-template-columns:1.12fr .88fr;gap:10px;margin-top:auto}
+  .primary-button,.secondary-button{border-radius:11px;min-height:48px;padding:11px 12px;display:inline-flex;justify-content:center;align-items:center;gap:8px;font-size:11.5px;font-weight:800;text-align:center;transition:background .18s,border-color .18s,transform .18s}
+  .primary-button{background:var(--blue);color:#fff;border:1px solid var(--blue);box-shadow:0 6px 14px rgba(61,88,207,.14)}
+  .primary-button:hover{background:var(--blue-hover);border-color:var(--blue-hover)}
+  .secondary-button{background:#fff;color:#394c66;border:1px solid #e1e7f0}
+  .secondary-button:hover{background:#f7f9fc;border-color:#bfcce5}
+  .primary-button:active,.secondary-button:active{transform:scale(.98)}
+  .card-actions .icon{width:16px;height:16px}
+  .external-button .icon{width:14px;height:14px}
+  .wallet-extra{display:flex;justify-content:space-between;gap:15px;align-items:center;background:#fafbfe;border:1px solid #e9eef6;border-radius:14px;padding:14px 16px}
+  .qr-description{min-width:0}
+  .qr-description strong{display:block;font-size:12px;color:#273b56;margin-top:7px}
+  .qr-description p{color:#92a0b2;line-height:1.65;font-size:10.5px;max-width:245px;margin:5px 0 0}
+  .qr-button{padding:5px;border:1px solid #e5ebf3;border-radius:10px;background:white;display:block;flex:none;transition:transform .2s}
+  .qr-button:hover{transform:scale(1.04)}
+  .qr-button img{width:78px;height:78px;display:block;border-radius:4px}
+  .subfooter{margin-top:33px;padding:19px 22px;background:#edf1f7;border:1px solid #e5eaf1;border-radius:14px;display:flex;gap:12px;align-items:center;color:#65778d;font-size:11.5px;line-height:1.7}
+  .subfooter .icon{width:18px;height:18px;color:#6e84ad;flex:none}
+  .page-footer{margin-top:60px;border-top:1px solid #e4e9f0;background:#fff}
+  .footer-inner{min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:15px;color:#91a0af;font-size:11px;font-weight:600}
+  .footer-signature{font-size:12px;font-weight:800;color:#526278}
+  .toast{position:fixed;left:50%;bottom:max(25px,env(safe-area-inset-bottom));transform:translate(-50%,18px);opacity:0;pointer-events:none;z-index:100;display:flex;align-items:center;gap:10px;max-width:calc(100vw - 32px);padding:13px 18px;border-radius:12px;background:#142742;color:white;font-size:12px;font-weight:700;box-shadow:0 16px 35px rgba(15,31,52,.22);transition:opacity .2s,transform .2s}
+  .toast.visible{opacity:1;transform:translate(-50%,0)}
+  .toast .icon{width:17px;height:17px;color:#74dec8}
+  .toast.error .icon{color:#f2a9a9}
+  .qr-modal[hidden]{display:none}
+  .qr-modal{position:fixed;z-index:200;inset:0;display:flex;justify-content:center;align-items:center;padding:24px;background:rgba(7,17,34,.86);backdrop-filter:blur(7px)}
+  .qr-dialog{width:min(100%,390px);position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;background:white;border-radius:23px;padding:28px;box-shadow:0 25px 70px rgba(0,0,0,.35)}
+  .qr-dialog h2{font-size:19px;letter-spacing:-.025em;margin:0;color:var(--ink)}
+  .qr-dialog p{font-size:12px;color:#7b8a9d;line-height:1.6;margin:0 0 6px}
+  .qr-dialog img{width:min(100%,280px);height:auto;display:block;border:1px solid #edf1f5;border-radius:10px}
+  .modal-close{position:absolute;top:13px;right:13px;display:grid;place-items:center;width:34px;height:34px;background:#f2f5fa;color:#57677f;border:0;border-radius:10px}
+  .modal-close:hover{background:#e7edf7}
+  @media(max-width:960px){
+    .hero-inner{grid-template-columns:1fr 320px;padding:39px 34px;gap:25px}
+    .hero h1{font-size:39px}
+    .process{padding:20px}
+    .advisories{grid-template-columns:1fr}
+    .payment-number{font-size:17px;letter-spacing:.025em}
+    .payment-card{padding:22px;gap:17px}
+    .provider h3{font-size:14px}
+    .flags{font-size:16px;letter-spacing:0}
+  }
+  @media(max-width:690px){
+    .shell{width:calc(100% - 32px)}
+    .navigation{height:76px}
+    .navigation-note{font-size:0;gap:0}
+    .navigation-note .status-dot{margin:0 7px}
+    .hero{padding-top:17px}
+    .hero-inner{display:block;padding:36px 27px;border-radius:20px}
+    .hero h1{font-size:clamp(32px,8vw,43px);margin:17px 0 12px}
+    .hero-summary{font-size:12px}
+    .process{margin-top:27px;padding:22px 21px}
+    main{padding-top:34px}
+    .section-heading{font-size:19px}
+    .payments-grid{grid-template-columns:1fr;gap:14px}
+    .payment-section{margin-top:38px}
+    .payment-card{padding:21px;gap:18px}
+    .payment-number{font-size:clamp(16px,4.4vw,21px);letter-spacing:.065em}
+    .page-footer{margin-top:42px}
+  }
+  @media(max-width:390px){
+    .hero-inner{padding:31px 22px}
+    .section-count{display:none}
+    .advisory{padding:19px;gap:12px}
+    .advisory-icon{width:37px;height:37px}
+    .payment-card{padding:17px}
+    .provider{gap:9px}
+    .brand-mark{width:42px;height:42px;flex-basis:42px}
+    .provider h3{font-size:13px}
+    .payment-number{font-size:15px;letter-spacing:.025em}
+    .number-panel{padding:17px 14px}
+    .card-actions{grid-template-columns:1fr 1fr;gap:8px}
+    .primary-button,.secondary-button{font-size:10.5px;padding-inline:7px}
+    .wallet-extra{padding:11px}
+    .qr-button img{width:68px;height:68px}
+  }
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.7-6 10-6 10 6 10 6-3.7 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="m3 3 18 18M10.7 6.1a11 11 0 0 1 1.3-.1c6.3 0 10 6 10 6a16 16 0 0 1-3 3.4M6.2 6.2A16 16 0 0 0 2 12s3.7 6 10 6a11 11 0 0 0 4-.7M10 10a3 3 0 0 0 4 4"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.8 2.2 18a2 2 0 0 0 1.8 3h16a2 2 0 0 0 1.8-3L13.7 3.8a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 11v6M12 7h.01"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6.5 15h3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5 10 17l9-10"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M13 5h6v6M19 5l-9 9M19 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+</svg>
+<header class="site-header">
+  <div class="shell navigation">
+    <a class="identity" href="#top" aria-label="E-Online, перейти к началу страницы">
+      <span class="identity-mark" aria-hidden="true">E</span>
+      <span><span class="identity-name">E-Online</span><span class="identity-caption">Платёжные реквизиты</span></span>
+    </a>
+    <span class="navigation-note"><span class="status-dot" aria-hidden="true"></span>Доступные способы оплаты</span>
+  </div>
+</header>
+<div class="shell hero" id="top">
+  <section class="hero-inner" aria-labelledby="hero-title">
+    <div>
+      <span class="eyebrow">E-Online / Оплата</span>
+      <h1 id="hero-title">Всё для удобного перевода.</h1>
+      <p class="hero-summary">Выберите подходящие реквизиты, скопируйте номер карты или кошелька и выполните перевод. <strong>Все указанные ниже номера относятся к платёжным реквизитам, а не к телефонам.</strong></p>
+    </div>
+    <div class="process" aria-label="Порядок оплаты">
+      <p class="process-caption">Как выполнить перевод</p>
+      <div class="process-row"><span class="process-num">01</span><div><strong>Выберите способ оплаты</strong><p>Подходящую банковскую карту или кошелёк.</p></div></div>
+      <div class="process-row"><span class="process-num">02</span><div><strong>Скопируйте реквизиты</strong><p>Одним нажатием, без ручного ввода.</p></div></div>
+      <div class="process-row"><span class="process-num">03</span><div><strong>Укажите уникальную сумму</strong><p>Это поможет идентифицировать ваш платёж.</p></div></div>
+    </div>
+  </section>
+</div>
+<main class="shell">
+  <section aria-labelledby="important-title">
+    <div class="section-top">
+      <div><h2 class="section-heading" id="important-title">Перед оплатой</h2><p class="section-subtitle">Пожалуйста, ознакомьтесь с важной информацией.</p></div>
+    </div>
+    <div class="advisories">
+      <div class="advisory advisory-warning">
+        <div class="advisory-icon"> <svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg></div>
+        <div><h3 class="advisory-title">Уникальная сумма перевода</h3><p>Не переводите ровно <strong>300</strong> или <strong>500</strong>. Укажите, например, <span class="amount-example">301</span> или <span class="amount-example">500,02</span>. Так будет проще точно определить ваш платёж.</p></div>
+      </div>
+      <div class="advisory advisory-info">
+        <div class="advisory-icon"><svg class="icon" aria-hidden="true"><use href="#i-info"></use></svg></div>
+        <div><h3 class="advisory-title">Другие способы оплаты</h3><p>Для перевода <strong>криптовалютой</strong>, <strong>картой из Европы</strong> или через <strong>PayPal</strong> обратитесь напрямую к администратору.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="payment-section" aria-labelledby="payment-title" id="payments">
+    <div class="section-top">
+      <div><h2 class="section-heading" id="payment-title">Способы оплаты</h2><p class="section-subtitle">Нажмите «Скопировать» или откройте полный номер карты.</p></div>
+      <span class="section-count">06 вариантов</span>
+    </div>
+    <div class="payments-grid">
+      <article class="payment-card" data-card-id="3" data-number="2204120144505746">
+      <div class="card-top">
+        <div class="provider"><span class="brand-mark brand-mir" aria-hidden="true">мир</span><div class="provider-titles"><h3>МИР / Белкарт</h3><p>Банковская карта</p></div></div>
+        <span class="method-index">01 / 06</span>
+      </div>
+      <div class="number-panel">
+        <div class="number-heading"><span>Номер карты</span><span class="flags" aria-label="Страны">🇧🇾 🇷🇺</span></div>
+        <span class="payment-number" data-full="2204120144505746" data-masked="••••  ••••  ••••  5746" data-visible="false">••••  ••••  ••••  5746</span>
+        <span class="number-footnote"><svg class="icon" aria-hidden="true"><use href="#i-card"></use></svg> <span>Банковская карта, не номер телефона</span></span>
+      </div>
+      <div class="holder-box">
+          <div class="holder-copy"><span class="field-label">Получатель</span><span class="holder-value">EVGENIY MASK</span></div>
+          <button type="button" class="quiet-button copy-action" data-copy="EVGENIY MASK" data-label="имя получателя" aria-label="Копировать имя получателя" title="Скопировать имя получателя"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Копировать</span></button>
+        </div>
+      
+      <div class="card-actions"><button type="button" class="primary-button copy-action" data-copy="2204120144505746" data-label="номер карты"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Скопировать номер</span></button><button type="button" class="secondary-button reveal-action" data-reveal aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg><span>Показать</span></button></div>
+    </article>
+<article class="payment-card" data-card-id="4" data-number="2204120129358848">
+      <div class="card-top">
+        <div class="provider"><span class="brand-mark brand-mir" aria-hidden="true">мир</span><div class="provider-titles"><h3>МИР</h3><p>Банковская карта</p></div></div>
+        <span class="method-index">02 / 06</span>
+      </div>
+      <div class="number-panel">
+        <div class="number-heading"><span>Номер карты</span><span class="flags" aria-label="Страны">🇷🇺 🇧🇾</span></div>
+        <span class="payment-number" data-full="2204120129358848" data-masked="••••  ••••  ••••  8848" data-visible="false">••••  ••••  ••••  8848</span>
+        <span class="number-footnote"><svg class="icon" aria-hidden="true"><use href="#i-card"></use></svg> <span>Банковская карта, не номер телефона</span></span>
+      </div>
+      <div class="holder-box">
+          <div class="holder-copy"><span class="field-label">Получатель</span><span class="holder-value">EVGENIY MASK</span></div>
+          <button type="button" class="quiet-button copy-action" data-copy="EVGENIY MASK" data-label="имя получателя" aria-label="Копировать имя получателя" title="Скопировать имя получателя"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Копировать</span></button>
+        </div>
+      
+      <div class="card-actions"><button type="button" class="primary-button copy-action" data-copy="2204120129358848" data-label="номер карты"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Скопировать номер</span></button><button type="button" class="secondary-button reveal-action" data-reveal aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg><span>Показать</span></button></div>
+    </article>
+<article class="payment-card" data-card-id="5" data-number="5185974906810892">
+      <div class="card-top">
+        <div class="provider"><span class="brand-mark brand-master" aria-hidden="true"><i></i><i></i></span><div class="provider-titles"><h3>Mastercard</h3><p>Банковская карта</p></div></div>
+        <span class="method-index">03 / 06</span>
+      </div>
+      <div class="number-panel">
+        <div class="number-heading"><span>Номер карты</span><span class="flags" aria-label="Страны">🇰🇿 🇺🇿 🇹🇯 🇺🇸</span></div>
+        <span class="payment-number" data-full="5185974906810892" data-masked="••••  ••••  ••••  0892" data-visible="false">••••  ••••  ••••  0892</span>
+        <span class="number-footnote"><svg class="icon" aria-hidden="true"><use href="#i-card"></use></svg> <span>Банковская карта, не номер телефона</span></span>
+      </div>
+      <div class="holder-box">
+          <div class="holder-copy"><span class="field-label">Получатель</span><span class="holder-value">EVGENIY MASK</span></div>
+          <button type="button" class="quiet-button copy-action" data-copy="EVGENIY MASK" data-label="имя получателя" aria-label="Копировать имя получателя" title="Скопировать имя получателя"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Копировать</span></button>
+        </div>
+      
+      <div class="card-actions"><button type="button" class="primary-button copy-action" data-copy="5185974906810892" data-label="номер карты"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Скопировать номер</span></button><button type="button" class="secondary-button reveal-action" data-reveal aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg><span>Показать</span></button></div>
+    </article>
+<article class="payment-card" data-card-id="6" data-number="5599002117222853">
+      <div class="card-top">
+        <div class="provider"><span class="brand-mark brand-master" aria-hidden="true"><i></i><i></i></span><div class="provider-titles"><h3>Mastercard</h3><p>Банковская карта</p></div></div>
+        <span class="method-index">04 / 06</span>
+      </div>
+      <div class="number-panel">
+        <div class="number-heading"><span>Номер карты</span></div>
+        <span class="payment-number" data-full="5599002117222853" data-masked="••••  ••••  ••••  2853" data-visible="false">••••  ••••  ••••  2853</span>
+        <span class="number-footnote"><svg class="icon" aria-hidden="true"><use href="#i-card"></use></svg> <span>Банковская карта, не номер телефона</span></span>
+      </div>
+      <div class="holder-box">
+          <div class="holder-copy"><span class="field-label">Получатель</span><span class="holder-value">EVGENIY MASK</span></div>
+          <button type="button" class="quiet-button copy-action" data-copy="EVGENIY MASK" data-label="имя получателя" aria-label="Копировать имя получателя" title="Скопировать имя получателя"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Копировать</span></button>
+        </div>
+      
+      <div class="card-actions"><button type="button" class="primary-button copy-action" data-copy="5599002117222853" data-label="номер карты"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Скопировать номер</span></button><button type="button" class="secondary-button reveal-action" data-reveal aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg><span>Показать</span></button></div>
+    </article>
+<article class="payment-card" data-card-id="7" data-number="5599002145153005">
+      <div class="card-top">
+        <div class="provider"><span class="brand-mark brand-yoom" aria-hidden="true">Ю</span><div class="provider-titles"><h3>Mastercard · ЮMoney</h3><p>Банковская карта</p></div></div>
+        <span class="method-index">05 / 06</span>
+      </div>
+      <div class="number-panel">
+        <div class="number-heading"><span>Номер карты</span></div>
+        <span class="payment-number" data-full="5599002145153005" data-masked="••••  ••••  ••••  3005" data-visible="false">••••  ••••  ••••  3005</span>
+        <span class="number-footnote"><svg class="icon" aria-hidden="true"><use href="#i-card"></use></svg> <span>Банковская карта, не номер телефона</span></span>
+      </div>
+      <div class="holder-box">
+          <div class="holder-copy"><span class="field-label">Получатель</span><span class="holder-value">EVGENIY MASK</span></div>
+          <button type="button" class="quiet-button copy-action" data-copy="EVGENIY MASK" data-label="имя получателя" aria-label="Копировать имя получателя" title="Скопировать имя получателя"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Копировать</span></button>
+        </div>
+      
+      <div class="card-actions"><button type="button" class="primary-button copy-action" data-copy="5599002145153005" data-label="номер карты"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Скопировать номер</span></button><button type="button" class="secondary-button reveal-action" data-reveal aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg><span>Показать</span></button></div>
+    </article>
+<article class="payment-card" data-card-id="8" data-number="4100119260753027">
+      <div class="card-top">
+        <div class="provider"><span class="brand-mark brand-yoom" aria-hidden="true">Ю</span><div class="provider-titles"><h3>ЮMoney</h3><p>Электронный кошелёк</p></div></div>
+        <span class="method-index">06 / 06</span>
+      </div>
+      <div class="number-panel">
+        <div class="number-heading"><span>Номер кошелька</span></div>
+        <span class="payment-number" data-full="4100119260753027" data-masked="••••  ••••  ••••  3027" data-visible="true">4100 1192 6075 3027</span>
+        <span class="number-footnote"><svg class="icon" aria-hidden="true"><use href="#i-card"></use></svg> <span>Электронный кошелёк, не телефон</span></span>
+      </div>
+      
+      <div class="wallet-extra">
+          <div class="qr-description">
+            <span class="field-label">Оплата по QR-коду</span>
+            <strong>Откройте на телефоне</strong>
+            <p>Нажмите на QR-код для увеличения или перейдите на сайт ЮMoney.</p>
+          </div>
+          <button type="button" class="qr-button" data-open-qr aria-label="Увеличить QR-код ЮMoney"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyCAIAAABnRsZeAAAHFUlEQVR4nO3cwa0jRRhGUR56CZACeRA9eZACITTbWaDSQN9S/d0+Zzvyc49tXdXiU31d1/ULQOfX0w8AvI2sADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLEZAWIyQoQkxUgJitATFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQExWgJisADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLEZAWIyQoQkxUg9n3qjX/7/Y9Tb73J33/9+b9fu/407vzlO/Y91b5vf+ZTnXLql+O0AsRkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLEjq1s106tA9fetw1dv+/6X5/4adz5y5/2m7zDaQWIyQoQkxUgJitATFaAmKwAMVkBYrICxGQFiA1d2a7N3HeuPfGZZ77vzF3p+77fO5xWgJisADFZAWKyAsRkBYjJChCTFSAmK0BMVoDYI1e2n2bmTbcz165P3KS+j9MKEJMVICYrQExWgJisADFZAWKyAsRkBYjJChCzsn2AU/ekrt935l22M5/50zitADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrACxR65s37eVPLV2vfOX992Su++1+8x8qlOcVoCYrAAxWQFisgLEZAWIyQoQkxUgJitATFaA2NCV7b7bWz/Nvh3tvg3uqWde85v8eU4rQExWgJisADFZAWKyAsRkBYjJChCTFSAmK0Ds2MrW3Z8/OrVJXdu3o53Jb7LitALEZAWIyQoQkxUgJitATFaAmKwAMVkBYrICxI6tbE/dk7rP+plP3cC6NvN9T5n5VE/c/jqtADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrACxr+u6Tj/Df7ZvG3rqL58yc/u7NvOTXHvfTnrNaQWIyQoQkxUgJitATFaAmKwAMVkBYrICxGQFiL1wZXvKqXXvzE9jbd+6d+Yn+cT7aO9wWgFisgLEZAWIyQoQkxUgJitATFaAmKwAMVkBYt+nH6D3xPtZ12auTvctVp+4Kp75LZzitALEZAWIyQoQkxUgJitATFaAmKwAMVkBYrICxI7dZfvEO0c/bSu59sS16yn7NsczOa0AMVkBYrICxGQFiMkKEJMVICYrQExWgJisALFjK9u1U6vEfVvYU8vgtSduf2fus9f2fZIzv0GnFSAmK0BMVoCYrAAxWQFisgLEZAWIyQoQkxUgNnRlu/a+u2zXZi5H105tf9/3Hc3cOq85rQAxWQFisgLEZAWIyQoQkxUgJitATFaAmKwAse/TD/DvZt78OnPtOnPPOtOnfUenOK0AMVkBYrICxGQFiMkKEJMVICYrQExWgJisALGhK9u1U+vP991Iuu+TnLnBPfUtvO+Xs+a0AsRkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLEvq7rOvLGM1eYa3c2qfu2kp+24PTLqV67j9MKEJMVICYrQExWgJisADFZAWKyAsRkBYjJChAbepftvjtW7/zlfYvGJy5HT30aM++jPfVUM3fSTitATFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQGzoynafmdvQmQvdmXeszly73vHE22rXnFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQExWgNjXdV1H3vjUgnPfa/eZuaSc+WnMvBX41DOf+uU4rQAxWQFisgLEZAWIyQoQkxUgJitATFaAmKwAsWMr20/zxHXv2qkF551PY98z+45+5LQCxGQFiMkKEJMVICYrQExWgJisADFZAWKyAsSG3mX7RG6c/dGdT+PU3a4zl9Azf1drTitATFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQOz79AP8u5nLwjtLylMLzn270n3et2c9dYeuu2yBl5AVICYrQExWgJisADFZAWKyAsRkBYjJChAburJde+LOcu3UVvLUnvWOO888839059ufuUd3WgFisgLEZAWIyQoQkxUgJitATFaAmKwAMVkBYo9c2fLz3rfgvGPminrfa91lC7yErAAxWQFisgLEZAWIyQoQkxUgJitATFaAmJXtCHfuZ33icnTmHbozb7pdm7mEdloBYrICxGQFiMkKEJMVICYrQExWgJisADFZAWKPXNnOXBau3Xnm9+1o9712/cwzd7QzN8d3OK0AMVkBYrICxGQFiMkKEJMVICYrQExWgJisALGv67qOvPETt4Nr79tKrp36/z5xY31qr3yK0woQkxUgJitATFaAmKwAMVkBYrICxGQFiMkKEDu2sgXeymkFiMkKEJMVICYrQExWgJisADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLEZAWIyQoQkxUgJitATFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQExWgJisADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrAAxWQFi/wAqdxEp7kcBxAAAAABJRU5ErkJggg==" alt="QR-код перехода на ЮMoney" loading="lazy" width="96" height="96"></button>
+        </div>
+      <div class="card-actions"><button type="button" class="primary-button copy-action" data-copy="4100119260753027" data-label="номер кошелька"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Скопировать кошелёк</span></button><a class="secondary-button external-button" href="https://yoomoney.ru/to/4100119260753027" target="_blank" rel="noopener noreferrer">Открыть ЮMoney <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a></div>
+    </article>
+    </div>
+  </section>
+  <div class="subfooter"><svg class="icon" aria-hidden="true"><use href="#i-info"></use></svg><span>Проверьте реквизиты перед подтверждением перевода. Если вам нужен другой способ оплаты, обратитесь к администратору.</span></div>
+</main>
+<footer class="page-footer">
+  <div class="shell footer-inner"><span class="footer-signature">E-Online</span><span>© 2026 E-Online · Платёжные реквизиты</span></div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span id="toastText"></span></div>
+<div class="qr-modal" id="qrModal" hidden>
+  <div class="qr-dialog" role="dialog" aria-modal="true" aria-label="QR-код для оплаты через ЮMoney">
+    <button type="button" class="modal-close" id="closeQr" aria-label="Закрыть QR-код"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+    <h2>Оплата через ЮMoney</h2>
+    <p>Отсканируйте QR-код камерой телефона.</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyCAIAAABnRsZeAAAHFUlEQVR4nO3cwa0jRRhGUR56CZACeRA9eZACITTbWaDSQN9S/d0+Zzvyc49tXdXiU31d1/ULQOfX0w8AvI2sADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLEZAWIyQoQkxUgJitATFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQExWgJisADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLEZAWIyQoQkxUg9n3qjX/7/Y9Tb73J33/9+b9fu/407vzlO/Y91b5vf+ZTnXLql+O0AsRkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLEjq1s106tA9fetw1dv+/6X5/4adz5y5/2m7zDaQWIyQoQkxUgJitATFaAmKwAMVkBYrICxGQFiA1d2a7N3HeuPfGZZ77vzF3p+77fO5xWgJisADFZAWKyAsRkBYjJChCTFSAmK0BMVoDYI1e2n2bmTbcz165P3KS+j9MKEJMVICYrQExWgJisADFZAWKyAsRkBYjJChCzsn2AU/ekrt935l22M5/50zitADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrACxR65s37eVPLV2vfOX992Su++1+8x8qlOcVoCYrAAxWQFisgLEZAWIyQoQkxUgJitATFaA2NCV7b7bWz/Nvh3tvg3uqWde85v8eU4rQExWgJisADFZAWKyAsRkBYjJChCTFSAmK0Ds2MrW3Z8/OrVJXdu3o53Jb7LitALEZAWIyQoQkxUgJitATFaAmKwAMVkBYrICxI6tbE/dk7rP+plP3cC6NvN9T5n5VE/c/jqtADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrACxr+u6Tj/Df7ZvG3rqL58yc/u7NvOTXHvfTnrNaQWIyQoQkxUgJitATFaAmKwAMVkBYrICxGQFiL1wZXvKqXXvzE9jbd+6d+Yn+cT7aO9wWgFisgLEZAWIyQoQkxUgJitATFaAmKwAMVkBYt+nH6D3xPtZ12auTvctVp+4Kp75LZzitALEZAWIyQoQkxUgJitATFaAmKwAMVkBYrICxI7dZfvEO0c/bSu59sS16yn7NsczOa0AMVkBYrICxGQFiMkKEJMVICYrQExWgJisALFjK9u1U6vEfVvYU8vgtSduf2fus9f2fZIzv0GnFSAmK0BMVoCYrAAxWQFisgLEZAWIyQoQkxUgNnRlu/a+u2zXZi5H105tf9/3Hc3cOq85rQAxWQFisgLEZAWIyQoQkxUgJitATFaAmKwAse/TD/DvZt78OnPtOnPPOtOnfUenOK0AMVkBYrICxGQFiMkKEJMVICYrQExWgJisALGhK9u1U+vP991Iuu+TnLnBPfUtvO+Xs+a0AsRkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLEvq7rOvLGM1eYa3c2qfu2kp+24PTLqV67j9MKEJMVICYrQExWgJisADFZAWKyAsRkBYjJChAbepftvjtW7/zlfYvGJy5HT30aM++jPfVUM3fSTitATFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQGzoynafmdvQmQvdmXeszly73vHE22rXnFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQExWgNjXdV1H3vjUgnPfa/eZuaSc+WnMvBX41DOf+uU4rQAxWQFisgLEZAWIyQoQkxUgJitATFaAmKwAsWMr20/zxHXv2qkF551PY98z+45+5LQCxGQFiMkKEJMVICYrQExWgJisADFZAWKyAsSG3mX7RG6c/dGdT+PU3a4zl9Azf1drTitATFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQOz79AP8u5nLwjtLylMLzn270n3et2c9dYeuu2yBl5AVICYrQExWgJisADFZAWKyAsRkBYjJChAburJde+LOcu3UVvLUnvWOO888839059ufuUd3WgFisgLEZAWIyQoQkxUgJitATFaAmKwAMVkBYo9c2fLz3rfgvGPminrfa91lC7yErAAxWQFisgLEZAWIyQoQkxUgJitATFaAmJXtCHfuZ33icnTmHbozb7pdm7mEdloBYrICxGQFiMkKEJMVICYrQExWgJisADFZAWKPXNnOXBau3Xnm9+1o9712/cwzd7QzN8d3OK0AMVkBYrICxGQFiMkKEJMVICYrQExWgJisALGv67qOvPETt4Nr79tKrp36/z5xY31qr3yK0woQkxUgJitATFaAmKwAMVkBYrICxGQFiMkKEDu2sgXeymkFiMkKEJMVICYrQExWgJisADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLEZAWIyQoQkxUgJitATFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQExWgJisADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrAAxWQFi/wAqdxEp7kcBxAAAAABJRU5ErkJggg==" width="280" height="280" alt="QR-код перехода на страницу оплаты ЮMoney">
+  </div>
+</div>
+<script>
+(function () {
+  'use strict';
+  const toast=document.getElementById('toast');
+  const toastText=document.getElementById('toastText');
+  const toastSymbol=toast.querySelector('use');
+  let toastTimeout;
+  function notify(message,error=false){
+    clearTimeout(toastTimeout);
+    toastText.textContent=message;
+    toast.classList.toggle('error',error);
+    toastSymbol.setAttribute('href',error?'#i-alert':'#i-check');
+    toast.classList.add('visible');
+    toastTimeout=setTimeout(()=>toast.classList.remove('visible'),2600);
+  }
+  async function copyText(value){
+    if(navigator.clipboard && window.isSecureContext){
+      try {await navigator.clipboard.writeText(value);return true;}catch (_){}
+    }
+    const field=document.createElement('textarea');
+    field.value=value;field.setAttribute('readonly','');
+    field.style.cssText='position:fixed;top:0;left:-9999px;opacity:0';
+    document.body.appendChild(field);
+    field.focus();field.select();
+    let successful=false;
+    try {successful=document.execCommand('copy');}catch(_){}
+    field.remove();
+    return successful;
+  }
+  document.querySelectorAll('.copy-action').forEach(btn=>{
+    btn.addEventListener('click',async()=>{
+      const value=btn.getAttribute('data-copy');
+      if(!value){notify('Реквизиты не найдены',true);return;}
+      const copied=await copyText(value);
+      notify(copied?'Скопировано: '+(btn.getAttribute('data-label')||'реквизиты'):'Не удалось скопировать. Попробуйте вручную.',!copied);
+    });
+  });
+  document.querySelectorAll('.reveal-action').forEach(btn=>{
+    const number=btn.closest('.payment-card').querySelector('.payment-number');
+    const label=btn.querySelector('span');
+    const eye=btn.querySelector('use');
+    btn.addEventListener('click',()=>{
+      const visible=number.dataset.visible==='true';
+      const next=!visible;
+      number.dataset.visible=String(next);
+      number.textContent=next?number.dataset.full.replace(/(.{4})/g,'$1 ').trim():number.dataset.masked;
+      label.textContent=next?'Скрыть':'Показать';
+      eye.setAttribute('href',next?'#i-eye-off':'#i-eye');
+      btn.setAttribute('aria-pressed',String(next));
+      notify(next?'Номер карты открыт':'Номер карты скрыт');
+    });
+  });
+  const modal=document.getElementById('qrModal');
+  const closeBtn=document.getElementById('closeQr');
+  let focusReturn=null;
+  function closeModal(){
+    modal.hidden=true;
+    document.body.style.overflow='';
+    if(focusReturn)focusReturn.focus();
+  }
+  document.querySelectorAll('[data-open-qr]').forEach(btn=>btn.addEventListener('click',()=>{
+    focusReturn=btn;modal.hidden=false;
+    document.body.style.overflow='hidden';
+    closeBtn.focus();
+  }));
+  closeBtn.addEventListener('click',closeModal);
+  modal.addEventListener('click',event=>{if(event.target===modal)closeModal();});
+  document.addEventListener('keydown',event=>{
+    if(modal.hidden)return;
+    if(event.key==='Escape'){closeModal();return;}
+    if(event.key==='Tab'){
+      event.preventDefault();closeBtn.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>
