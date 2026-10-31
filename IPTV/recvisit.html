@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#101d33">
-<meta name="description" content="E-Online — реквизиты для перевода: банковские карты и кошелёк ЮMoney.">
+<meta name="description" content="E-Online — реквизиты для перевода: банковские карты.">
 <title>E-Online — Платёжные реквизиты</title>
 <link rel="icon" href="https://raw.githubusercontent.com/evgeshkawww/iptv/refs/heads/main/IPTV/favicon.ico" type="image/x-icon">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,6 +73,7 @@
   .provider{display:flex;gap:12px;align-items:center;min-width:0}
   .brand-mark{width:47px;height:47px;flex:0 0 47px;border:1px solid #e8edf4;border-radius:14px;display:flex;align-items:center;justify-content:center;background:#f7f9fc;position:relative;overflow:hidden}
   .brand-mir{font-size:22px;letter-spacing:-.14em;padding-right:5px;font-weight:800;font-style:italic;color:#258d6c}
+  .brand-sber{font-size:22px;font-weight:800;color:#239d6a;letter-spacing:-.045em}
   .brand-master i{display:block;position:absolute;width:19px;height:19px;border-radius:50%;top:13px}
   .brand-master i:first-child{left:9px;background:#eb5a48}
   .brand-master i:last-child{left:19px;background:#e8ac39;mix-blend-mode:multiply}
@@ -103,13 +104,13 @@
   .primary-button:active,.secondary-button:active{transform:scale(.98)}
   .card-actions .icon{width:16px;height:16px}
   .external-button .icon{width:14px;height:14px}
-  .wallet-extra{display:flex;justify-content:space-between;gap:15px;align-items:center;background:#fafbfe;border:1px solid #e9eef6;border-radius:14px;padding:14px 16px}
-  .qr-description{min-width:0}
-  .qr-description strong{display:block;font-size:12px;color:#273b56;margin-top:7px}
-  .qr-description p{color:#92a0b2;line-height:1.65;font-size:10.5px;max-width:245px;margin:5px 0 0}
-  .qr-button{padding:5px;border:1px solid #e5ebf3;border-radius:10px;background:white;display:block;flex:none;transition:transform .2s}
-  .qr-button:hover{transform:scale(1.04)}
-  .qr-button img{width:78px;height:78px;display:block;border-radius:4px}
+
+
+
+
+
+
+
   .subfooter{margin-top:33px;padding:19px 22px;background:#edf1f7;border:1px solid #e5eaf1;border-radius:14px;display:flex;gap:12px;align-items:center;color:#65778d;font-size:11.5px;line-height:1.7}
   .subfooter .icon{width:18px;height:18px;color:#6e84ad;flex:none}
   .page-footer{margin-top:60px;border-top:1px solid #e4e9f0;background:#fff}
@@ -119,14 +120,14 @@
   .toast.visible{opacity:1;transform:translate(-50%,0)}
   .toast .icon{width:17px;height:17px;color:#74dec8}
   .toast.error .icon{color:#f2a9a9}
-  .qr-modal[hidden]{display:none}
-  .qr-modal{position:fixed;z-index:200;inset:0;display:flex;justify-content:center;align-items:center;padding:24px;background:rgba(7,17,34,.86);backdrop-filter:blur(7px)}
-  .qr-dialog{width:min(100%,390px);position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;background:white;border-radius:23px;padding:28px;box-shadow:0 25px 70px rgba(0,0,0,.35)}
-  .qr-dialog h2{font-size:19px;letter-spacing:-.025em;margin:0;color:var(--ink)}
-  .qr-dialog p{font-size:12px;color:#7b8a9d;line-height:1.6;margin:0 0 6px}
-  .qr-dialog img{width:min(100%,280px);height:auto;display:block;border:1px solid #edf1f5;border-radius:10px}
-  .modal-close{position:absolute;top:13px;right:13px;display:grid;place-items:center;width:34px;height:34px;background:#f2f5fa;color:#57677f;border:0;border-radius:10px}
-  .modal-close:hover{background:#e7edf7}
+
+
+
+
+
+
+
+
   @media(max-width:960px){
     .hero-inner{grid-template-columns:1fr 320px;padding:39px 34px;gap:25px}
     .hero h1{font-size:39px}
@@ -168,8 +169,8 @@
     .number-panel{padding:17px 14px}
     .card-actions{grid-template-columns:1fr 1fr;gap:8px}
     .primary-button,.secondary-button{font-size:10.5px;padding-inline:7px}
-    .wallet-extra{padding:11px}
-    .qr-button img{width:68px;height:68px}
+
+
   }
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 </style>
@@ -200,13 +201,13 @@
     <div>
       <span class="eyebrow">E-Online / Оплата</span>
       <h1 id="hero-title">Всё для удобного перевода.</h1>
-      <p class="hero-summary">Выберите подходящие реквизиты, скопируйте номер карты или кошелька и выполните перевод. <strong>Все указанные ниже номера относятся к платёжным реквизитам, а не к телефонам.</strong></p>
+      <p class="hero-summary">Выберите подходящие реквизиты, скопируйте номер карты и выполните перевод. <strong>Все указанные ниже номера относятся к платёжным реквизитам, а не к телефонам.</strong></p>
     </div>
     <div class="process" aria-label="Порядок оплаты">
       <p class="process-caption">Как выполнить перевод</p>
-      <div class="process-row"><span class="process-num">01</span><div><strong>Выберите способ оплаты</strong><p>Подходящую банковскую карту или кошелёк.</p></div></div>
+      <div class="process-row"><span class="process-num">01</span><div><strong>Выберите способ оплаты</strong><p>Подходящую банковскую карту.</p></div></div>
       <div class="process-row"><span class="process-num">02</span><div><strong>Скопируйте реквизиты</strong><p>Одним нажатием, без ручного ввода.</p></div></div>
-      <div class="process-row"><span class="process-num">03</span><div><strong>Укажите уникальную сумму</strong><p>Это поможет идентифицировать ваш платёж.</p></div></div>
+      <div class="process-row"><span class="process-num">03</span><div><strong>Выберите Беларусь и укажите сумму</strong><p>Используйте уникальную сумму для идентификации платежа.</p></div></div>
     </div>
   </section>
 </div>
@@ -218,7 +219,7 @@
     <div class="advisories">
       <div class="advisory advisory-warning">
         <div class="advisory-icon"> <svg class="icon" aria-hidden="true"><use href="#i-alert"></use></svg></div>
-        <div><h3 class="advisory-title">Уникальная сумма перевода</h3><p>Не переводите ровно <strong>300</strong> или <strong>500</strong>. Укажите, например, <span class="amount-example">301</span> или <span class="amount-example">500,02</span>. Так будет проще точно определить ваш платёж.</p></div>
+        <div><h3 class="advisory-title">Страна перевода — Беларусь и уникальная сумма</h3><p>При переводе обязательно <strong>выберите страну Беларусь</strong> и укажите уникальную сумму. Не переводите ровно <strong>300</strong> или <strong>500</strong>. Примеры: <span class="amount-example">301</span> или <span class="amount-example">500,02</span>. Это поможет точно определить ваш платёж.</p></div>
       </div>
       <div class="advisory advisory-info">
         <div class="advisory-icon"><svg class="icon" aria-hidden="true"><use href="#i-info"></use></svg></div>
@@ -229,34 +230,17 @@
   <section class="payment-section" aria-labelledby="payment-title" id="payments">
     <div class="section-top">
       <div><h2 class="section-heading" id="payment-title">Способы оплаты</h2><p class="section-subtitle">Нажмите «Скопировать» или откройте полный номер карты.</p></div>
-      <span class="section-count">06 вариантов</span>
+      <span class="section-count">04 варианта</span>
     </div>
     <div class="payments-grid">
-      <article class="payment-card" data-card-id="3" data-number="2204120144505746">
+      <article class="payment-card" data-card-id="1" data-number="9112386006915291">
       <div class="card-top">
-        <div class="provider"><span class="brand-mark brand-mir" aria-hidden="true">мир</span><div class="provider-titles"><h3>МИР / Белкарт</h3><p>Банковская карта</p></div></div>
-        <span class="method-index">01 / 06</span>
-      </div>
-      <div class="number-panel">
-        <div class="number-heading"><span>Номер карты</span><span class="flags" aria-label="Страны">🇧🇾 🇷🇺</span></div>
-        <span class="payment-number" data-full="2204120144505746" data-masked="••••  ••••  ••••  5746" data-visible="false">••••  ••••  ••••  5746</span>
-        <span class="number-footnote"><svg class="icon" aria-hidden="true"><use href="#i-card"></use></svg> <span>Банковская карта, не номер телефона</span></span>
-      </div>
-      <div class="holder-box">
-          <div class="holder-copy"><span class="field-label">Получатель</span><span class="holder-value">EVGENIY MASK</span></div>
-          <button type="button" class="quiet-button copy-action" data-copy="EVGENIY MASK" data-label="имя получателя" aria-label="Копировать имя получателя" title="Скопировать имя получателя"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Копировать</span></button>
-        </div>
-      
-      <div class="card-actions"><button type="button" class="primary-button copy-action" data-copy="2204120144505746" data-label="номер карты"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Скопировать номер</span></button><button type="button" class="secondary-button reveal-action" data-reveal aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg><span>Показать</span></button></div>
-    </article>
-<article class="payment-card" data-card-id="4" data-number="2204120129358848">
-      <div class="card-top">
-        <div class="provider"><span class="brand-mark brand-mir" aria-hidden="true">мир</span><div class="provider-titles"><h3>МИР</h3><p>Банковская карта</p></div></div>
-        <span class="method-index">02 / 06</span>
+        <div class="provider"><span class="brand-mark brand-mir" aria-hidden="true">мир</span><div class="provider-titles"><h3>МИР</h3><p>Банковская карта · Без комиссии</p></div></div>
+        <span class="method-index">01 / 04</span>
       </div>
       <div class="number-panel">
         <div class="number-heading"><span>Номер карты</span><span class="flags" aria-label="Страны">🇷🇺 🇧🇾</span></div>
-        <span class="payment-number" data-full="2204120129358848" data-masked="••••  ••••  ••••  8848" data-visible="false">••••  ••••  ••••  8848</span>
+        <span class="payment-number" data-full="9112386006915291" data-masked="••••  ••••  ••••  5291" data-visible="false">••••  ••••  ••••  5291</span>
         <span class="number-footnote"><svg class="icon" aria-hidden="true"><use href="#i-card"></use></svg> <span>Банковская карта, не номер телефона</span></span>
       </div>
       <div class="holder-box">
@@ -264,12 +248,29 @@
           <button type="button" class="quiet-button copy-action" data-copy="EVGENIY MASK" data-label="имя получателя" aria-label="Копировать имя получателя" title="Скопировать имя получателя"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Копировать</span></button>
         </div>
       
-      <div class="card-actions"><button type="button" class="primary-button copy-action" data-copy="2204120129358848" data-label="номер карты"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Скопировать номер</span></button><button type="button" class="secondary-button reveal-action" data-reveal aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg><span>Показать</span></button></div>
+      <div class="card-actions"><button type="button" class="primary-button copy-action" data-copy="9112386006915291" data-label="номер карты"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Скопировать номер</span></button><button type="button" class="secondary-button reveal-action" data-reveal aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg><span>Показать</span></button></div>
+    </article>
+<article class="payment-card" data-card-id="2" data-number="9112388038035577">
+      <div class="card-top">
+        <div class="provider"><span class="brand-mark brand-sber" aria-hidden="true">S</span><div class="provider-titles"><h3>Sber</h3><p>Банковская карта · Без комиссии</p></div></div>
+        <span class="method-index">02 / 04</span>
+      </div>
+      <div class="number-panel">
+        <div class="number-heading"><span>Номер карты</span><span class="flags" aria-label="Страны">🇷🇺 🇧🇾</span></div>
+        <span class="payment-number" data-full="9112388038035577" data-masked="••••  ••••  ••••  5577" data-visible="false">••••  ••••  ••••  5577</span>
+        <span class="number-footnote"><svg class="icon" aria-hidden="true"><use href="#i-card"></use></svg> <span>Банковская карта, не номер телефона</span></span>
+      </div>
+      <div class="holder-box">
+          <div class="holder-copy"><span class="field-label">Получатель</span><span class="holder-value">EVGENIY MASK</span></div>
+          <button type="button" class="quiet-button copy-action" data-copy="EVGENIY MASK" data-label="имя получателя" aria-label="Копировать имя получателя" title="Скопировать имя получателя"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Копировать</span></button>
+        </div>
+      
+      <div class="card-actions"><button type="button" class="primary-button copy-action" data-copy="9112388038035577" data-label="номер карты"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Скопировать номер</span></button><button type="button" class="secondary-button reveal-action" data-reveal aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg><span>Показать</span></button></div>
     </article>
 <article class="payment-card" data-card-id="5" data-number="5185974906810892">
       <div class="card-top">
         <div class="provider"><span class="brand-mark brand-master" aria-hidden="true"><i></i><i></i></span><div class="provider-titles"><h3>Mastercard</h3><p>Банковская карта</p></div></div>
-        <span class="method-index">03 / 06</span>
+        <span class="method-index">03 / 04</span>
       </div>
       <div class="number-panel">
         <div class="number-heading"><span>Номер карты</span><span class="flags" aria-label="Страны">🇰🇿 🇺🇿 🇹🇯 🇺🇸</span></div>
@@ -283,60 +284,21 @@
       
       <div class="card-actions"><button type="button" class="primary-button copy-action" data-copy="5185974906810892" data-label="номер карты"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Скопировать номер</span></button><button type="button" class="secondary-button reveal-action" data-reveal aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg><span>Показать</span></button></div>
     </article>
-<article class="payment-card" data-card-id="6" data-number="5599002117222853">
+<article class="payment-card" data-card-id="4" data-number="9112393040219532">
       <div class="card-top">
-        <div class="provider"><span class="brand-mark brand-master" aria-hidden="true"><i></i><i></i></span><div class="provider-titles"><h3>Mastercard</h3><p>Банковская карта</p></div></div>
-        <span class="method-index">04 / 06</span>
+        <div class="provider"><span class="brand-mark brand-mir" aria-hidden="true">мир</span><div class="provider-titles"><h3>МИР</h3><p>Банковская карта · Без комиссии</p></div></div>
+        <span class="method-index">04 / 04</span>
       </div>
       <div class="number-panel">
-        <div class="number-heading"><span>Номер карты</span></div>
-        <span class="payment-number" data-full="5599002117222853" data-masked="••••  ••••  ••••  2853" data-visible="false">••••  ••••  ••••  2853</span>
+        <div class="number-heading"><span>Номер карты</span><span class="flags" aria-label="Страны">🇷🇺 🇧🇾</span></div>
+        <span class="payment-number" data-full="9112393040219532" data-masked="••••  ••••  ••••  9532" data-visible="false">••••  ••••  ••••  9532</span>
         <span class="number-footnote"><svg class="icon" aria-hidden="true"><use href="#i-card"></use></svg> <span>Банковская карта, не номер телефона</span></span>
       </div>
       <div class="holder-box">
-          <div class="holder-copy"><span class="field-label">Получатель</span><span class="holder-value">EVGENIY MASK</span></div>
-          <button type="button" class="quiet-button copy-action" data-copy="EVGENIY MASK" data-label="имя получателя" aria-label="Копировать имя получателя" title="Скопировать имя получателя"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Копировать</span></button>
+          <div class="holder-copy"><span class="field-label">Получатель</span><span class="holder-value">Уточняется</span></div>
         </div>
       
-      <div class="card-actions"><button type="button" class="primary-button copy-action" data-copy="5599002117222853" data-label="номер карты"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Скопировать номер</span></button><button type="button" class="secondary-button reveal-action" data-reveal aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg><span>Показать</span></button></div>
-    </article>
-<article class="payment-card" data-card-id="7" data-number="5599002145153005">
-      <div class="card-top">
-        <div class="provider"><span class="brand-mark brand-yoom" aria-hidden="true">Ю</span><div class="provider-titles"><h3>Mastercard · ЮMoney</h3><p>Банковская карта</p></div></div>
-        <span class="method-index">05 / 06</span>
-      </div>
-      <div class="number-panel">
-        <div class="number-heading"><span>Номер карты</span></div>
-        <span class="payment-number" data-full="5599002145153005" data-masked="••••  ••••  ••••  3005" data-visible="false">••••  ••••  ••••  3005</span>
-        <span class="number-footnote"><svg class="icon" aria-hidden="true"><use href="#i-card"></use></svg> <span>Банковская карта, не номер телефона</span></span>
-      </div>
-      <div class="holder-box">
-          <div class="holder-copy"><span class="field-label">Получатель</span><span class="holder-value">EVGENIY MASK</span></div>
-          <button type="button" class="quiet-button copy-action" data-copy="EVGENIY MASK" data-label="имя получателя" aria-label="Копировать имя получателя" title="Скопировать имя получателя"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Копировать</span></button>
-        </div>
-      
-      <div class="card-actions"><button type="button" class="primary-button copy-action" data-copy="5599002145153005" data-label="номер карты"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Скопировать номер</span></button><button type="button" class="secondary-button reveal-action" data-reveal aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg><span>Показать</span></button></div>
-    </article>
-<article class="payment-card" data-card-id="8" data-number="4100119260753027">
-      <div class="card-top">
-        <div class="provider"><span class="brand-mark brand-yoom" aria-hidden="true">Ю</span><div class="provider-titles"><h3>ЮMoney</h3><p>Электронный кошелёк</p></div></div>
-        <span class="method-index">06 / 06</span>
-      </div>
-      <div class="number-panel">
-        <div class="number-heading"><span>Номер кошелька</span></div>
-        <span class="payment-number" data-full="4100119260753027" data-masked="••••  ••••  ••••  3027" data-visible="true">4100 1192 6075 3027</span>
-        <span class="number-footnote"><svg class="icon" aria-hidden="true"><use href="#i-card"></use></svg> <span>Электронный кошелёк, не телефон</span></span>
-      </div>
-      
-      <div class="wallet-extra">
-          <div class="qr-description">
-            <span class="field-label">Оплата по QR-коду</span>
-            <strong>Откройте на телефоне</strong>
-            <p>Нажмите на QR-код для увеличения или перейдите на сайт ЮMoney.</p>
-          </div>
-          <button type="button" class="qr-button" data-open-qr aria-label="Увеличить QR-код ЮMoney"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyCAIAAABnRsZeAAAHFUlEQVR4nO3cwa0jRRhGUR56CZACeRA9eZACITTbWaDSQN9S/d0+Zzvyc49tXdXiU31d1/ULQOfX0w8AvI2sADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLEZAWIyQoQkxUgJitATFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQExWgJisADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLEZAWIyQoQkxUg9n3qjX/7/Y9Tb73J33/9+b9fu/407vzlO/Y91b5vf+ZTnXLql+O0AsRkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLEjq1s106tA9fetw1dv+/6X5/4adz5y5/2m7zDaQWIyQoQkxUgJitATFaAmKwAMVkBYrICxGQFiA1d2a7N3HeuPfGZZ77vzF3p+77fO5xWgJisADFZAWKyAsRkBYjJChCTFSAmK0BMVoDYI1e2n2bmTbcz165P3KS+j9MKEJMVICYrQExWgJisADFZAWKyAsRkBYjJChCzsn2AU/ekrt935l22M5/50zitADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrACxR65s37eVPLV2vfOX992Su++1+8x8qlOcVoCYrAAxWQFisgLEZAWIyQoQkxUgJitATFaA2NCV7b7bWz/Nvh3tvg3uqWde85v8eU4rQExWgJisADFZAWKyAsRkBYjJChCTFSAmK0Ds2MrW3Z8/OrVJXdu3o53Jb7LitALEZAWIyQoQkxUgJitATFaAmKwAMVkBYrICxI6tbE/dk7rP+plP3cC6NvN9T5n5VE/c/jqtADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrACxr+u6Tj/Df7ZvG3rqL58yc/u7NvOTXHvfTnrNaQWIyQoQkxUgJitATFaAmKwAMVkBYrICxGQFiL1wZXvKqXXvzE9jbd+6d+Yn+cT7aO9wWgFisgLEZAWIyQoQkxUgJitATFaAmKwAMVkBYt+nH6D3xPtZ12auTvctVp+4Kp75LZzitALEZAWIyQoQkxUgJitATFaAmKwAMVkBYrICxI7dZfvEO0c/bSu59sS16yn7NsczOa0AMVkBYrICxGQFiMkKEJMVICYrQExWgJisALFjK9u1U6vEfVvYU8vgtSduf2fus9f2fZIzv0GnFSAmK0BMVoCYrAAxWQFisgLEZAWIyQoQkxUgNnRlu/a+u2zXZi5H105tf9/3Hc3cOq85rQAxWQFisgLEZAWIyQoQkxUgJitATFaAmKwAse/TD/DvZt78OnPtOnPPOtOnfUenOK0AMVkBYrICxGQFiMkKEJMVICYrQExWgJisALGhK9u1U+vP991Iuu+TnLnBPfUtvO+Xs+a0AsRkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLEvq7rOvLGM1eYa3c2qfu2kp+24PTLqV67j9MKEJMVICYrQExWgJisADFZAWKyAsRkBYjJChAbepftvjtW7/zlfYvGJy5HT30aM++jPfVUM3fSTitATFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQGzoynafmdvQmQvdmXeszly73vHE22rXnFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQExWgNjXdV1H3vjUgnPfa/eZuaSc+WnMvBX41DOf+uU4rQAxWQFisgLEZAWIyQoQkxUgJitATFaAmKwAsWMr20/zxHXv2qkF551PY98z+45+5LQCxGQFiMkKEJMVICYrQExWgJisADFZAWKyAsSG3mX7RG6c/dGdT+PU3a4zl9Azf1drTitATFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQOz79AP8u5nLwjtLylMLzn270n3et2c9dYeuu2yBl5AVICYrQExWgJisADFZAWKyAsRkBYjJChAburJde+LOcu3UVvLUnvWOO888839059ufuUd3WgFisgLEZAWIyQoQkxUgJitATFaAmKwAMVkBYo9c2fLz3rfgvGPminrfa91lC7yErAAxWQFisgLEZAWIyQoQkxUgJitATFaAmJXtCHfuZ33icnTmHbozb7pdm7mEdloBYrICxGQFiMkKEJMVICYrQExWgJisADFZAWKPXNnOXBau3Xnm9+1o9712/cwzd7QzN8d3OK0AMVkBYrICxGQFiMkKEJMVICYrQExWgJisALGv67qOvPETt4Nr79tKrp36/z5xY31qr3yK0woQkxUgJitATFaAmKwAMVkBYrICxGQFiMkKEDu2sgXeymkFiMkKEJMVICYrQExWgJisADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLEZAWIyQoQkxUgJitATFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQExWgJisADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrAAxWQFi/wAqdxEp7kcBxAAAAABJRU5ErkJggg==" alt="QR-код перехода на ЮMoney" loading="lazy" width="96" height="96"></button>
-        </div>
-      <div class="card-actions"><button type="button" class="primary-button copy-action" data-copy="4100119260753027" data-label="номер кошелька"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Скопировать кошелёк</span></button><a class="secondary-button external-button" href="https://yoomoney.ru/to/4100119260753027" target="_blank" rel="noopener noreferrer">Открыть ЮMoney <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a></div>
+      <div class="card-actions"><button type="button" class="primary-button copy-action" data-copy="9112393040219532" data-label="номер карты"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span>Скопировать номер</span></button><button type="button" class="secondary-button reveal-action" data-reveal aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg><span>Показать</span></button></div>
     </article>
     </div>
   </section>
@@ -346,14 +308,6 @@
   <div class="shell footer-inner"><span class="footer-signature">E-Online</span><span>© 2026 E-Online · Платёжные реквизиты</span></div>
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span id="toastText"></span></div>
-<div class="qr-modal" id="qrModal" hidden>
-  <div class="qr-dialog" role="dialog" aria-modal="true" aria-label="QR-код для оплаты через ЮMoney">
-    <button type="button" class="modal-close" id="closeQr" aria-label="Закрыть QR-код"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
-    <h2>Оплата через ЮMoney</h2>
-    <p>Отсканируйте QR-код камерой телефона.</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyCAIAAABnRsZeAAAHFUlEQVR4nO3cwa0jRRhGUR56CZACeRA9eZACITTbWaDSQN9S/d0+Zzvyc49tXdXiU31d1/ULQOfX0w8AvI2sADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLEZAWIyQoQkxUgJitATFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQExWgJisADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLEZAWIyQoQkxUg9n3qjX/7/Y9Tb73J33/9+b9fu/407vzlO/Y91b5vf+ZTnXLql+O0AsRkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLEjq1s106tA9fetw1dv+/6X5/4adz5y5/2m7zDaQWIyQoQkxUgJitATFaAmKwAMVkBYrICxGQFiA1d2a7N3HeuPfGZZ77vzF3p+77fO5xWgJisADFZAWKyAsRkBYjJChCTFSAmK0BMVoDYI1e2n2bmTbcz165P3KS+j9MKEJMVICYrQExWgJisADFZAWKyAsRkBYjJChCzsn2AU/ekrt935l22M5/50zitADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrACxR65s37eVPLV2vfOX992Su++1+8x8qlOcVoCYrAAxWQFisgLEZAWIyQoQkxUgJitATFaA2NCV7b7bWz/Nvh3tvg3uqWde85v8eU4rQExWgJisADFZAWKyAsRkBYjJChCTFSAmK0Ds2MrW3Z8/OrVJXdu3o53Jb7LitALEZAWIyQoQkxUgJitATFaAmKwAMVkBYrICxI6tbE/dk7rP+plP3cC6NvN9T5n5VE/c/jqtADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrACxr+u6Tj/Df7ZvG3rqL58yc/u7NvOTXHvfTnrNaQWIyQoQkxUgJitATFaAmKwAMVkBYrICxGQFiL1wZXvKqXXvzE9jbd+6d+Yn+cT7aO9wWgFisgLEZAWIyQoQkxUgJitATFaAmKwAMVkBYt+nH6D3xPtZ12auTvctVp+4Kp75LZzitALEZAWIyQoQkxUgJitATFaAmKwAMVkBYrICxI7dZfvEO0c/bSu59sS16yn7NsczOa0AMVkBYrICxGQFiMkKEJMVICYrQExWgJisALFjK9u1U6vEfVvYU8vgtSduf2fus9f2fZIzv0GnFSAmK0BMVoCYrAAxWQFisgLEZAWIyQoQkxUgNnRlu/a+u2zXZi5H105tf9/3Hc3cOq85rQAxWQFisgLEZAWIyQoQkxUgJitATFaAmKwAse/TD/DvZt78OnPtOnPPOtOnfUenOK0AMVkBYrICxGQFiMkKEJMVICYrQExWgJisALGhK9u1U+vP991Iuu+TnLnBPfUtvO+Xs+a0AsRkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLEvq7rOvLGM1eYa3c2qfu2kp+24PTLqV67j9MKEJMVICYrQExWgJisADFZAWKyAsRkBYjJChAbepftvjtW7/zlfYvGJy5HT30aM++jPfVUM3fSTitATFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQGzoynafmdvQmQvdmXeszly73vHE22rXnFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQExWgNjXdV1H3vjUgnPfa/eZuaSc+WnMvBX41DOf+uU4rQAxWQFisgLEZAWIyQoQkxUgJitATFaAmKwAsWMr20/zxHXv2qkF551PY98z+45+5LQCxGQFiMkKEJMVICYrQExWgJisADFZAWKyAsSG3mX7RG6c/dGdT+PU3a4zl9Azf1drTitATFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQOz79AP8u5nLwjtLylMLzn270n3et2c9dYeuu2yBl5AVICYrQExWgJisADFZAWKyAsRkBYjJChAburJde+LOcu3UVvLUnvWOO888839059ufuUd3WgFisgLEZAWIyQoQkxUgJitATFaAmKwAMVkBYo9c2fLz3rfgvGPminrfa91lC7yErAAxWQFisgLEZAWIyQoQkxUgJitATFaAmJXtCHfuZ33icnTmHbozb7pdm7mEdloBYrICxGQFiMkKEJMVICYrQExWgJisADFZAWKPXNnOXBau3Xnm9+1o9712/cwzd7QzN8d3OK0AMVkBYrICxGQFiMkKEJMVICYrQExWgJisALGv67qOvPETt4Nr79tKrp36/z5xY31qr3yK0woQkxUgJitATFaAmKwAMVkBYrICxGQFiMkKEDu2sgXeymkFiMkKEJMVICYrQExWgJisADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrAAxWQFisgLEZAWIyQoQkxUgJitATFaAmKwAMVkBYrICxGQFiMkKEJMVICYrQExWgJisADFZAWKyAsRkBYjJChCTFSAmK0BMVoCYrAAxWQFi/wAqdxEp7kcBxAAAAABJRU5ErkJggg==" width="280" height="280" alt="QR-код перехода на страницу оплаты ЮMoney">
-  </div>
-</div>
 <script>
 (function () {
   'use strict';
@@ -405,28 +359,6 @@
       btn.setAttribute('aria-pressed',String(next));
       notify(next?'Номер карты открыт':'Номер карты скрыт');
     });
-  });
-  const modal=document.getElementById('qrModal');
-  const closeBtn=document.getElementById('closeQr');
-  let focusReturn=null;
-  function closeModal(){
-    modal.hidden=true;
-    document.body.style.overflow='';
-    if(focusReturn)focusReturn.focus();
-  }
-  document.querySelectorAll('[data-open-qr]').forEach(btn=>btn.addEventListener('click',()=>{
-    focusReturn=btn;modal.hidden=false;
-    document.body.style.overflow='hidden';
-    closeBtn.focus();
-  }));
-  closeBtn.addEventListener('click',closeModal);
-  modal.addEventListener('click',event=>{if(event.target===modal)closeModal();});
-  document.addEventListener('keydown',event=>{
-    if(modal.hidden)return;
-    if(event.key==='Escape'){closeModal();return;}
-    if(event.key==='Tab'){
-      event.preventDefault();closeBtn.focus();
-    }
   });
 })();
 </script>
