@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080a10">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>E-Online — страница устарела</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #080a10;
+    --gold: #edc982;
+    --muted: #aab4c4;
+    --text: #f5f3ef;
+  }
+  * { box-sizing: border-box; }
+  html { min-height: 100%; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    padding: 24px 15px;
+    background:
+      radial-gradient(ellipse 55% 40% at 50% 3%, rgba(197,140,51,.15), transparent 85%),
+      radial-gradient(ellipse 40% 46% at 0% 90%, rgba(34,103,141,.09), transparent 90%),
+      var(--bg);
+    color: var(--text);
+    font: 500 14px 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+  body::before {
+    content: "";
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(#ffffff06 1px, transparent 1px),
+      linear-gradient(90deg, #ffffff06 1px, transparent 1px);
+    background-size: 64px 64px;
+    opacity: .3;
+  }
+  .wrap { position: relative; width: min(100%, 500px); }
+  .card {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 37px 36px 33px;
+    border: 1px solid rgba(237,201,130,.19);
+    border-radius: 27px;
+    background: linear-gradient(147deg, #192131f5, #0f1522f8 82%);
+    box-shadow: 0 28px 80px #0007, inset 0 1px #ffffff0b;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    left: 16%;
+    right: 16%;
+    top: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #f0cd88a8, transparent);
+  }
+  .brand {
+    display: inline-block;
+    color: #fff2d3;
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -1.15px;
+  }
+  .brand span { color: var(--gold); }
+  .symbol {
+    width: 77px;
+    height: 77px;
+    border: 1px solid rgba(237,201,130,.28);
+    border-radius: 23px;
+    background: linear-gradient(145deg, rgba(237,201,130,.14), rgba(237,201,130,.045));
+    color: var(--gold);
+    display: grid;
+    place-items: center;
+    margin: 28px auto 22px;
+    box-shadow: 0 8px 28px rgba(0,0,0,.13);
+  }
+  .symbol svg { width: 64px; height: 64px; shape-rendering: geometricPrecision; }
+  .symbol .clock-canvas { width: 64px; height: 64px; display: none; }
+  .clock-hour { stroke: currentColor; stroke-width: 3.2; }
+  .clock-minute { stroke: currentColor; stroke-width: 2.5; }
+  .clock-second { stroke: #ffe2a7; stroke-width: 1.6; }
+  .clock-center { fill: #ffe2a7; stroke: none; }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 10px rgba(237,201,130,.5);
+  }
+  h1 {
+    margin: 14px 0 10px;
+    font-size: clamp(24px, 5.2vw, 28px);
+    font-weight: 800;
+    letter-spacing: -.75px;
+    line-height: 1.3;
+  }
+  .subtext {
+    margin: 0;
+    color: #cbd3df;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  .rule {
+    height: 1px;
+    margin: 27px 0 23px;
+    background: linear-gradient(90deg, transparent, #ffffff20, transparent);
+  }
+  .helper {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    text-align: left;
+    padding: 16px;
+    border-radius: 14px;
+    background: rgba(116,210,244,.055);
+    border: 1px solid rgba(116,210,244,.16);
+  }
+  .helper-icon {
+    width: 35px;
+    height: 35px;
+    flex: none;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    color: #8cddf8;
+    background: rgba(116,210,244,.10);
+  }
+  .helper-icon svg { width: 21px; height: 21px; }
+  .helper strong {
+    display: block;
+    margin: 0 0 5px;
+    color: #f0f4fb;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.5;
+  }
+  .helper p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.8;
+  }
+  .menu-path { color: #e8c987; font-weight: 800; white-space: nowrap; }
+  .footer {
+    margin-top: 19px;
+    color: #6f7c90;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: .3px;
+  }
+  @media (max-width: 460px) {
+    .card { padding: 31px 22px 26px; border-radius: 22px; }
+    .symbol { margin: 26px auto 20px; }
+    .helper { padding: 13px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <main class="card">
+    <div class="brand">E-<span>Online</span></div>
+
+    <div class="symbol" aria-hidden="true">
+      <svg class="live-clock" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        <line class="clock-hour" x1="32" y1="32" x2="32" y2="17"/>
+        <line class="clock-minute" x1="32" y1="32" x2="32" y2="9"/>
+        <line class="clock-second" x1="32" y1="35" x2="32" y2="5"/>
+        <circle class="clock-center" cx="32" cy="32" r="2"/>
+      </svg>
+      <canvas class="clock-canvas" width="64" height="64" aria-hidden="true"></canvas>
+    </div>
+
+    <span class="eyebrow">Ссылка больше не актуальна</span>
+    <h1>Страница устарела</h1>
+    <p class="subtext">Для оплаты используйте только действующие реквизиты.</p>
+
+    <div class="rule"></div>
+
+    <section class="helper" aria-label="Как получить новые реквизиты">
+      <div class="helper-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="16" rx="3"/>
+          <path d="M7 9h10M7 13h7"/>
+          <path d="m15 17 2-2 2 2"/>
+        </svg>
+      </div>
+      <div>
+        <strong>Как получить новые реквизиты?</strong>
+        <p>Откройте Telegram-бот, из которого вы перешли на эту страницу. Выберите <span class="menu-path">«Меню» → «Старт»</span> (или отправьте <span class="menu-path">/start</span>) и запросите актуальные реквизиты для оплаты.</p>
+      </div>
+    </section>
+  </main>
+  <div class="footer">E-Online · Актуальные реквизиты в Telegram-боте</div>
+</div>
+<script>
+(() => {
+  'use strict';
+  const clock = document.querySelector('.live-clock');
+  const canvas = document.querySelector('.clock-canvas');
+  if (!clock) return;
+
+  const hour = clock.querySelector('.clock-hour');
+  const minute = clock.querySelector('.clock-minute');
+  const second = clock.querySelector('.clock-second');
+  const context = canvas && canvas.getContext('2d', { alpha: true });
+
+  // Рисуем стрелки в 4 раза большем разрешении, чем размер на экране.
+  // При уменьшении браузер сглаживает края — особенно заметно в Firefox.
+  if (context) {
+    const scale = 4 * Math.min(window.devicePixelRatio || 1, 3);
+    canvas.width = Math.round(64 * scale);
+    canvas.height = Math.round(64 * scale);
+    context.scale(scale, scale);
+  }
+
+  function drawHand(angle, length, width, color, tail = 0) {
+    const sx = Math.sin(angle);
+    const cy = Math.cos(angle);
+    context.beginPath();
+    context.moveTo(32 - sx * tail, 32 + cy * tail);
+    context.lineTo(32 + sx * length, 32 - cy * length);
+    context.lineWidth = width;
+    context.strokeStyle = color;
+    context.lineCap = 'round';
+    context.stroke();
+  }
+
+  function updateClock() {
+    const now = new Date();
+    const seconds = now.getSeconds() + now.getMilliseconds() / 1000;
+    const minutes = now.getMinutes() + seconds / 60;
+    const hours = (now.getHours() % 12) + minutes / 60;
+
+    if (context) {
+      context.clearRect(0, 0, 64, 64);
+      drawHand(hours * Math.PI / 6, 15, 2.8, '#edc982');
+      drawHand(minutes * Math.PI / 30, 23, 2.0, '#edc982');
+      drawHand(seconds * Math.PI / 30, 27, 1.15, '#ffe2a7', 3);
+      context.beginPath();
+      context.arc(32, 32, 1.8, 0, Math.PI * 2);
+      context.fillStyle = '#ffe2a7';
+      context.fill();
+    } else {
+      // Запасной вариант: SVG остаётся рабочим, даже если Canvas недоступен.
+      hour.setAttribute('transform', `rotate(${hours * 30} 32 32)`);
+      minute.setAttribute('transform', `rotate(${minutes * 6} 32 32)`);
+      second.setAttribute('transform', `rotate(${seconds * 6} 32 32)`);
+    }
+  }
+
+  updateClock();
+  if (context) {
+    clock.style.display = 'none';
+    canvas.style.display = 'block';
+  }
+  const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  setInterval(updateClock, reducedMotion ? 60000 : 100);
+})();
+</script>
+</body>
+</html>
