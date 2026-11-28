@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101e35">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Premium IPTV — автоматическая проверка доступности теста скорости через Россию и Европу.">
+  <title>Premium IPTV — Тест скорости</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172843;
+      --muted: #718198;
+      --blue: #315ed8;
+      --mint: #58dfcd;
+      --line: #e7ebf3;
+      --page: #f5f7fb;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; min-width: 320px; min-height: 100vh; min-height: 100dvh; background: var(--page); color: var(--ink); }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible { outline: 3px solid #6c94f4; outline-offset: 5px; }
+    .shell { max-width: 1050px; width: calc(100% - 44px); margin-inline: auto; }
+    .topbar { background: white; border-bottom: 1px solid #e8edf5; }
+    .topbar-inner { height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-icon { display: grid; place-items: center; width: 43px; height: 43px; flex: none; border: 1px solid #dde7f4; border-radius: 13px; background: #edf4fe; }
+    .brand-icon img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .brand-name { display: block; font-size: 17px; font-weight: 850; letter-spacing: -.05em; }
+    .brand-sub { display: block; margin-top: 2px; color: #8999af; font-size: 10px; font-weight: 800; letter-spacing: .16em; }
+    .network { display: inline-flex; align-items: center; gap: 9px; color: #75859a; font-size: 11px; font-weight: 750; }
+    .network-dot { width: 8px; height: 8px; flex: none; border-radius: 50%; background: #35bd9b; box-shadow: 0 0 0 4px #e2f8f1; }
+    main { padding: 45px 0 54px; }
+    .intro { padding: 34px 38px 35px; border-radius: 24px; color: white; position: relative; overflow: hidden; background: linear-gradient(132deg, #1a3052 0%, #101e35 72%, #122a43 100%); }
+    .intro::before { content: ""; position: absolute; width: 320px; height: 320px; right: -85px; top: -160px; background: radial-gradient(circle, rgba(86, 220, 207, .19), transparent 70%); pointer-events: none; }
+    .intro::after { content: ""; position: absolute; width: 280px; height: 280px; right: 80px; bottom: -240px; background: radial-gradient(circle, rgba(87, 116, 218, .24), transparent 70%); pointer-events: none; }
+    .eyebrow { color: #70e1d3; font-size: 11px; letter-spacing: .15em; font-weight: 850; }
+    h1 { margin: 13px 0 14px; font-size: clamp(29px, 5vw, 45px); font-weight: 850; line-height: 1.13; letter-spacing: -.055em; }
+    .intro p { max-width: 600px; margin: 0; color: #c4d2e3; font-size: 15px; line-height: 1.7; }
+    .intro .lead-icon { width: 21px; height: 21px; display: inline-block; vertical-align: -4px; margin-right: 7px; color: #6de6d4; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .headline { display: flex; align-items: baseline; justify-content: space-between; gap: 15px; margin: 31px 1px 17px; }
+    h2 { font-size: 21px; font-weight: 850; letter-spacing: -.045em; margin: 0; }
+    .headline span { color: var(--muted); font-size: 12px; font-weight: 700; }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .card { position: relative; display: flex; flex-direction: column; min-width: 0; min-height: 272px; padding: 25px; border: 1px solid var(--line); border-radius: 21px; background: #fff; box-shadow: 0 9px 30px rgba(27, 46, 82, .045); transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+    .card.selected { border-color: #8eb6f2; box-shadow: 0 13px 40px rgba(42, 94, 192, .105); }
+    .card.selected.eu { border-color: #81cbc9; box-shadow: 0 13px 40px rgba(26, 142, 149, .105); }
+    .card.offline { background: #fbfcfe; }
+    .card.offline .flag { filter: grayscale(.85); opacity: .7; }
+    .card.offline h3, .card.offline p { opacity: .65; }
+    .card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+    .live-status { display: inline-flex; align-items: center; gap: 7px; color: #677f9c; background: #eef3fb; padding: 8px 11px; border: 1px solid #e1e9f4; border-radius: 999px; font-size: 11px; font-weight: 800; white-space: nowrap; }
+    .live-status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #99acc4; flex: none; }
+    .live-status.online { color: #14785d; background: #e8f8ef; border-color: #ccefdc; }
+    .live-status.online::before { background: #27b78c; box-shadow: 0 0 0 3px #d2f3e7; }
+    .live-status.offline { color: #a5505d; background: #fff0f1; border-color: #f5d7dc; }
+    .live-status.offline::before { background: #cc6271; }
+    .region-line { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-top: 18px; }
+    .region-line h3 { margin: 0; }
+    .region-latency { color: #3a5478; font-size: 16px; font-weight: 850; white-space: nowrap; text-align: right; }
+    .card.selected .region-latency { color: #187b89; }
+    .card.ru.selected .region-latency { color: #315ed8; }
+    .flag { display: grid; place-items: center; flex: none; width: 68px; height: 68px; border-radius: 20px; position: relative; overflow: hidden; background: linear-gradient(180deg, #f6f9ff 0%, #edf3fb 100%); border: 1px solid #dce6f4; box-shadow: inset 0 1px 0 rgba(255,255,255,.85), 0 8px 18px rgba(33, 55, 96, .08); }
+    .flag::before { content: ""; position: absolute; inset: 8px; border-radius: 16px; background: rgba(255,255,255,.65); }
+    .flag svg { position: relative; z-index: 1; width: 42px; height: 42px; display: block; }
+    .card.eu .flag svg { width: 44px; height: 44px; }
+    h3 { margin: 18px 0 7px; font-size: 26px; letter-spacing: -.055em; font-weight: 850; }
+    .card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+    .launch { margin-top: 20px; padding: 22px 24px; border: 1px solid #dfe9f5; background: white; border-radius: 20px; display: flex; justify-content: space-between; align-items: center; gap: 25px; box-shadow: 0 8px 29px rgba(26, 48, 80, .045); }
+    .launch-meta { flex: 1; min-width: 0; }
+    .launch-meta strong { display: block; color: #203854; font-size: 15px; letter-spacing: -.025em; }
+    .launch-meta span { display: block; margin-top: 5px; color: #74859b; font-size: 12px; line-height: 1.55; }
+    .launch-meta span:empty { display: none; }
+    .launch-btn { flex: 0 0 240px; padding: 15px 18px; border: 0; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px; background: linear-gradient(110deg, #2753c4, #4876e7); color: white; font-family: inherit; font-size: 13px; font-weight: 800; cursor: pointer; transition: filter .2s, transform .2s; }
+    .launch-btn:hover:not(:disabled) { filter: brightness(1.075); transform: translateY(-1px); }
+    .launch-btn:disabled { cursor: not-allowed; background: #9cacc1; opacity: .85; }
+    .launch-btn.retry { background: linear-gradient(110deg, #536780, #6f839c); cursor: pointer; }
+    .launch-btn svg { width: 18px; height: 18px; flex: none; }
+    .launch-btn.eu-choice { background: linear-gradient(120deg, #167a89, #1a9e9d); }
+    .hint { margin-top: 18px; display: flex; align-items: flex-start; gap: 12px; padding: 17px 19px; background: #ebf2fc; border: 1px solid #dfeaf9; border-radius: 15px; color: #536c90; font-size: 12px; line-height: 1.65; }
+    .hint svg { width: 20px; height: 20px; flex: none; margin-top: 1px; stroke: #527ac1; }
+    .hint strong { color: #28446f; }
+    footer { display: flex; justify-content: space-between; gap: 15px; padding: 21px 0 26px; border-top: 1px solid #e3e8f0; color: #9aa8b9; font-size: 11px; }
+    footer strong { color: #71849d; }
+    @media (max-width: 650px) {
+      .shell { width: calc(100% - 24px); }
+      .topbar-inner { height: 70px; }
+      .network { font-size: 0; }
+      main { padding: 19px 0 32px; }
+      .intro { padding: 28px 22px 30px; border-radius: 19px; }
+      .intro p { font-size: 13px; }
+      .headline { margin-top: 26px; }
+      .headline span { display: none; }
+      .cards { grid-template-columns: 1fr; gap: 13px; }
+      .card { padding: 20px; min-height: 240px; border-radius: 18px; }
+      .live-status { font-size: 10px; padding: 7px 9px; }
+      .launch { padding: 18px; flex-direction: column; align-items: stretch; gap: 16px; }
+      .launch-btn { flex: none; width: 100%; }
+      .region-line { margin-top: 17px; }
+      .region-latency { font-size: 15px; }
+      .flag { width: 60px; height: 60px; border-radius: 18px; }
+      .flag::before { inset: 7px; border-radius: 14px; }
+      .flag svg { width: 37px; height: 37px; }
+      .card.eu .flag svg { width: 39px; height: 39px; }
+      .hint { padding: 15px; }
+      footer { flex-direction: column; gap: 5px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .launch-btn { transition: none; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <div class="brand">
+        <span class="brand-icon" aria-hidden="true"><img src="favicon.ico" alt="" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/evgeshkawww/iptv/main/IPTV/favicon.ico'"></span>
+        <span><span class="brand-name">Premium IPTV</span><span class="brand-sub">NETWORK SPEED TEST</span></span>
+      </div>
+      <span class="network"><span class="network-dot"></span>Автоматический выбор</span>
+    </div>
+  </header>
+  <main class="shell">
+    <section class="intro" aria-labelledby="page-title">
+      <div class="eyebrow">PREMIUM IPTV · NETWORK CONTROL</div>
+      <h1 id="page-title">Сначала маршрут.<br>Затем скорость.</h1>
+      <p><svg class="lead-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="2.3"/><circle cx="18.5" cy="5.5" r="2.3"/><circle cx="18.5" cy="18.5" r="2.3"/><path d="M7.3 12h3.5c2.5 0 2.8-6.5 5.4-6.5M10.8 12c2.5 0 2.8 6.5 5.4 6.5"/></svg>Каждая сеть уникальна. Система определит, какой способ подключения работает лучше именно у вас, и подготовит переход к тестированию.</p>
+    </section>
+
+    <div class="launch" aria-live="polite">
+      <div class="launch-meta"><strong id="selectedTitle">Определяем доступное подключение…</strong><span id="selectedDetail">Подождите завершения проверки обоих адресов.</span></div>
+      <button id="launchBtn" class="launch-btn" type="button" disabled><span id="launchText">Проверяем…</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+    </div>
+
+    <div class="headline"><h2>Доступность подключений</h2><span>Автоматическая проверка</span></div>
+
+    <section class="cards" aria-label="Доступность теста по регионам">
+      <div class="card ru" id="card-ru">
+        <div class="card-top"><span class="flag" aria-hidden="true">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <clipPath id="ruCircle"><circle cx="32" cy="32" r="20.5"/></clipPath>
+            </defs>
+            <circle cx="32" cy="32" r="24" fill="#ffffff"/>
+            <circle cx="32" cy="32" r="21.5" fill="#fff" stroke="#d8e3f0" stroke-width="1.5"/>
+            <g clip-path="url(#ruCircle)">
+              <rect x="11.5" y="11.5" width="41" height="13.7" fill="#ffffff"/>
+              <rect x="11.5" y="25.2" width="41" height="13.7" fill="#2d62d6"/>
+              <rect x="11.5" y="38.9" width="41" height="13.7" fill="#e04d5a"/>
+            </g>
+            <circle cx="32" cy="32" r="20.5" fill="none" stroke="#cfdced" stroke-width="1.2"/>
+          </svg>
+        </span><span class="live-status" id="status-ru" role="status" aria-live="polite">Проверяем…</span></div>
+        <div class="region-line"><h3>Россия</h3><strong class="region-latency" id="metric-ru">Проверка сети</strong></div>
+      </div>
+
+      <div class="card eu" id="card-eu">
+        <div class="card-top"><span class="flag" aria-hidden="true">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="32" cy="32" r="24" fill="#ffffff"/>
+            <circle cx="32" cy="32" r="21.5" fill="#2057d4" stroke="#d8e3f0" stroke-width="1.5"/>
+            <g fill="#ffd84c">
+              <circle cx="32" cy="16.5" r="2.1"/>
+              <circle cx="39.75" cy="18.58" r="2.1"/>
+              <circle cx="45.42" cy="24.25" r="2.1"/>
+              <circle cx="47.5" cy="32" r="2.1"/>
+              <circle cx="45.42" cy="39.75" r="2.1"/>
+              <circle cx="39.75" cy="45.42" r="2.1"/>
+              <circle cx="32" cy="47.5" r="2.1"/>
+              <circle cx="24.25" cy="45.42" r="2.1"/>
+              <circle cx="18.58" cy="39.75" r="2.1"/>
+              <circle cx="16.5" cy="32" r="2.1"/>
+              <circle cx="18.58" cy="24.25" r="2.1"/>
+              <circle cx="24.25" cy="18.58" r="2.1"/>
+            </g>
+          </svg>
+        </span><span class="live-status" id="status-eu" role="status" aria-live="polite">Проверяем…</span></div>
+        <div class="region-line"><h3>Европа</h3><strong class="region-latency" id="metric-eu">Проверка сети</strong></div>
+      </div>
+    </section>
+
+    <div class="hint" role="note">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg>
+      <span><strong>Как это работает?</strong> Проверка выполняется прямо в вашем браузере. Если Россия недоступна, используем Европу, и наоборот. При доступности обоих маршрутов учитываем скорость ответа. Сам тест измеряет соединение с IPTV-серверами напрямую с вашего устройства.</span>
+    </div>
+  </main>
+  <footer class="shell"><span><strong>Premium IPTV</strong> · Network Diagnostics</span><span>Тест скорости соединения</span></footer>
+
+  <script>
+  (function () {
+    'use strict';
+    const routes = [
+      {id: 'ru', name: 'Россия', url: 'https://eiptv.duckdns.org/speedtest/'},
+      {id: 'eu', name: 'Европа', url: 'https://e-online.duckdns.org/speedtest/'}
+    ];
+    const PROBE_TIMEOUT = 6500;
+    const CHECK_INTERVAL = 30000;
+    const $ = id => document.getElementById(id);
+    const button = $('launchBtn');
+    let generation = 0;
+    let activeRoute = null;
+    let busy = false;
+
+    // Проверяем выполнение небольшого JS через каждый домен, а не favicon.
+    // Обычный <script src> разрешён между доменами без CORS. Подтверждение
+    // с уникальным токеном отличает настоящий ответ от HTML-страницы ошибки.
+    const confirmations = new Map();
+    window.__eSpeedtestProbeOK = token => {
+      if (confirmations.has(token)) confirmations.set(token, true);
+    };
+
+    function probe(route, marker) {
+      return new Promise(resolve => {
+        const script = document.createElement('script');
+        const token = marker + '-' + route.id;
+        let finished = false;
+        const started = performance.now();
+        confirmations.set(token, false);
+        const deadline = setTimeout(() => finish(false), PROBE_TIMEOUT);
+
+        function finish(ok) {
+          if (finished) return;
+          finished = true;
+          clearTimeout(deadline);
+          script.onload = null;
+          script.onerror = null;
+          script.remove();
+          confirmations.delete(token);
+          resolve({ route, ok, latency: ok ? Math.round(performance.now() - started) : null });
+        }
+
+        script.async = true;
+        script.setAttribute('data-probe-token', token);
+        script.onload = () => finish(confirmations.get(token) === true);
+        script.onerror = () => finish(false);
+        script.src = route.url + 'js/health.js?check=' + encodeURIComponent(marker);
+        document.head.appendChild(script);
+      });
+    }
+
+    function mark(route, result) {
+      const status = $('status-' + route.id);
+      const metric = $('metric-' + route.id);
+      const card = $('card-' + route.id);
+      status.className = 'live-status' + (result ? (result.ok ? ' online' : ' offline') : '');
+      status.textContent = result ? (result.ok ? 'Доступен' : 'Нет ответа') : 'Проверяем…';
+      metric.textContent = !result ? 'Проверка сети' : result.ok ? result.latency + ' мс' : 'Нет соединения';
+      card.classList.toggle('offline', !!result && !result.ok);
+      card.classList.remove('selected');
+    }
+
+    function select(results) {
+      const reachable = results.filter(r => r.ok);
+      if (!reachable.length) return null;
+      if (reachable.length === 1) return reachable[0];
+      const ru = results.find(r => r.route.id === 'ru');
+      const eu = results.find(r => r.route.id === 'eu');
+      // Если скорости близки, предпочитаем прямое соединение с Россией.
+      // Европа выбирается лишь при заметном преимуществе (25% и минимум 80 мс).
+      return ru.latency - eu.latency >= Math.max(80, ru.latency * 0.25) ? eu : ru;
+    }
+
+    function updateChoice(selected) {
+      activeRoute = selected?.route ?? null;
+      button.classList.remove('retry', 'eu-choice');
+      if (!selected) {
+        $('selectedTitle').textContent = 'Оба подключения не ответили';
+        $('selectedDetail').textContent = 'Проверьте интернет или повторите проверку. Возможно, адреса ограничены вашим провайдером.';
+        $('launchText').textContent = 'Проверить ещё раз';
+        button.classList.add('retry');
+        button.disabled = false;
+        return;
+      }
+      $('card-' + selected.route.id).classList.add('selected');
+      $('selectedTitle').textContent = 'Автоматически выбрано: ' + selected.route.name;
+      $('selectedDetail').textContent = '';
+      $('launchText').textContent = 'Начать тест';
+      if (selected.route.id === 'eu') button.classList.add('eu-choice');
+      button.disabled = false;
+    }
+
+    async function check() {
+      if (busy) return;
+      busy = true;
+      const seq = ++generation;
+      // Предыдущий удачный маршрут остаётся доступен, пока идёт перепроверка.
+      if (!activeRoute) {
+        button.disabled = true;
+        $('launchText').textContent = 'Проверяем…';
+        $('selectedTitle').textContent = 'Определяем доступное подключение…';
+        $('selectedDetail').textContent = 'Проверяем Россию и Европу с вашего устройства.';
+      }
+      routes.forEach(route => mark(route, null));
+      const marker = Date.now().toString(36) + '-' + seq;
+      const results = await Promise.all(routes.map(route => probe(route, marker)));
+      if (seq !== generation) return;
+      activeRoute = null;
+      updateChoice(select(results));
+      results.forEach(r => mark(r.route, r));
+      if (activeRoute) $('card-' + activeRoute.id).classList.add('selected');
+      busy = false;
+    }
+
+    button.addEventListener('click', () => {
+      if (activeRoute) window.location.assign(activeRoute.url);
+      else check();
+    });
+    window.addEventListener('pageshow', event => { if (event.persisted) check(); });
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) check(); });
+    setInterval(() => { if (!document.hidden) check(); }, CHECK_INTERVAL);
+    check();
+  })();
+  </script>
+</body>
+</html>
